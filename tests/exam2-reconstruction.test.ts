@@ -1,7 +1,7 @@
 import {describe, expect, test} from 'bun:test';
-import {createHash} from 'node:crypto';
-import {readFileSync, statSync} from 'node:fs';
+import {readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
+import {expectIndependentPageImages, expectPaperSourceMetadata} from './fixtures/paper-provenance';
 import {readQuestionMarkdown} from '../content/markdown';
 import {displayEquations} from '../content/text';
 
@@ -98,30 +98,25 @@ describe('undated Exam 2 reconstruction', () => {
     }
   });
 
-  test('both locale PDF copies have real hashes, separate inodes and clean independent provenance', () => {
+  test('both locales retain clean reconstruction provenance metadata and independent page images', () => {
     for (const id of ['e2-u00', 'e2-u00-sol']) {
-      const paths = ['en', 'zh-cn'].map(l => resolve(folder(l), `assets/sources/${id}.pdf`));
-      expect(statSync(paths[0]).ino).not.toBe(statSync(paths[1]).ino);
       for (const locale of ['en', 'zh-cn']) {
         const documents = json(resolve(folder(locale), 'documents.json'));
         const doc = documents[id];
-        const bytes = readFileSync(resolve(folder(locale), 'assets', doc.pdf));
-        expect(createHash('sha256').update(bytes).digest('hex')).toBe(doc.sha256);
+        expectPaperSourceMetadata(doc, id);
         expect(doc.sha256).not.toBe('835d89bf996ba7fa0f8f92c6ffa835bc79f2ca626386c26feba001891743f792');
         expect(doc.pages).toBe(5);
-        expect(doc.original).toStartWith('scripts/reconstruct_exam2.py#');
+        expect(doc.original).toBe(`scripts/reconstruct_exam2.py#${id === 'e2-u00' ? 'printed-questions' : 'independent-solutions'}`);
       }
+      expectIndependentPageImages(['en', 'zh-cn'].map(folder), id, 5);
     }
     expect(json(resolve(folder('en'), 'documents.json'))['e2-u00-sol'].title).toContain('Not official');
   });
 
-  test('published PDFs exclude image objects and preserved extraction excludes grading records', () => {
-    // Deep PDF object/text verification runs in scripts/check_reconstruction.py;
-    // ordinary frontend tests deliberately require no Python installation.
+  test('preserved reconstruction extraction excludes grading records', () => {
+    // PDF bytes, vector objects and PDF text are audited offline by
+    // scripts/check_reconstruction.py, independently of these frontend tests.
     for (const locale of ['en', 'zh-cn']) for (const id of ['e2-u00', 'e2-u00-sol']) {
-      const bytes = readFileSync(resolve(folder(locale), `assets/sources/${id}.pdf`));
-      expect(bytes.subarray(0, 5).toString()).toBe('%PDF-');
-      expect(bytes.toString('latin1')).not.toMatch(/\/Subtype\s*\/Image\b/);
       const text = readFileSync(resolve(folder(locale), `extracted/${id}.txt`), 'utf8');
       expect(text).toContain('1.732');
       expect(text).toContain('600');

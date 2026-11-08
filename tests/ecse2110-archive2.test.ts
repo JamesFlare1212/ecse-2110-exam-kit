@@ -1,7 +1,7 @@
 import {describe, expect, test} from 'bun:test';
-import {createHash} from 'node:crypto';
-import {existsSync, readFileSync, statSync} from 'node:fs';
+import {existsSync, readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
+import {expectIndependentPageImages, expectPaperSourceMetadata} from './fixtures/paper-provenance';
 import {readQuestionMarkdown} from '../content/markdown';
 import {joinTranslations} from '../content/localization';
 import {displayEquations, formulaReferences} from '../content/text';
@@ -54,7 +54,7 @@ describe.skipIf(!available)('ECSE 2110 historical Exam 2 scientific archive', ()
     expect(parseContent([exam], json(resolve('content/formulas.json')), docs).exams).toHaveLength(1);
   });
 
-  test('owns byte-identical PDF copies and measured question crops independently', () => {
+  test('retains source identity metadata, independent page images and measured question crops', () => {
     const expected = '41a823cb045c5124845717f8c78208baf604d8542509d2c1233be11604b21786';
     for (const locale of ['en', 'zh-cn'] as const) {
       const root = resolve('content', locale, 'exam2_s25');
@@ -63,11 +63,7 @@ describe.skipIf(!available)('ECSE 2110 historical Exam 2 scientific archive', ()
       expect(doc.sizes).toEqual(Array.from({length:16}, () => [612, 792]));
       expect(doc.sha256).toBe(expected);
       expect(doc.original).toBe('Exams/Exam2/ECSE2110Test2Sol.pdf');
-      const pdf = resolve(root, 'assets', doc.pdf);
-      if (existsSync(pdf)) {
-        expect(statSync(pdf).size).toBe(3715624);
-        expect(createHash('sha256').update(readFileSync(pdf)).digest('hex')).toBe(expected);
-      }
+      expectPaperSourceMetadata(doc, 'e2-s25-sol');
       const crops = json(resolve(root, 'figure-sources.json')).figures;
       for (let q=1; q<=7; q++) {
         const crop = crops[`e2-s25-q${q}`];
@@ -82,8 +78,7 @@ describe.skipIf(!available)('ECSE 2110 historical Exam 2 scientific archive', ()
       }
       for (let page=1; page<=16; page++) expect(existsSync(resolve(root, `assets/pages/e2-s25-sol/${page}.webp`))).toBe(true);
     }
-    const copies = ['en','zh-cn'].map(locale => resolve('content', locale, 'exam2_s25/assets/sources/e2-s25-sol.pdf'));
-    if (copies.every(existsSync)) expect(statSync(copies[0]).ino).not.toBe(statSync(copies[1]).ino);
+    expectIndependentPageImages(['en', 'zh-cn'].map(locale => resolve('content', locale, 'exam2_s25')), 'e2-s25-sol', 16);
   });
 
   test('retains magnetic-locking conditions and the limited round-rotor stability model', () => {

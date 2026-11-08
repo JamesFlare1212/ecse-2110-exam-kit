@@ -1,7 +1,7 @@
 import {describe, expect, test} from 'bun:test';
-import {createHash} from 'node:crypto';
 import {readFileSync, readdirSync, statSync} from 'node:fs';
 import {resolve} from 'node:path';
+import {expectIndependentPageImages, expectPaperSourceMetadata} from './fixtures/paper-provenance';
 import {readQuestionMarkdown} from '../content/markdown';
 import {displayEquations, formulaReferences} from '../content/text';
 
@@ -64,22 +64,17 @@ describe('ECSE 2110 Practice Set 2', () => {
     }
   });
 
-  test('keeps independent byte-verified locale PDF/page copies and actual ten-page provenance', () => {
-    const copies = locales.map(l => resolve(directory(l), 'assets/sources/p2-f26-sol.pdf'));
-    expect(statSync(copies[0]).ino).not.toBe(statSync(copies[1]).ino);
+  test('retains ten-page source provenance metadata and independent locale page images', () => {
     for (const locale of locales) {
       const doc = json(resolve(directory(locale), 'documents.json'))['p2-f26-sol'];
       expect(doc.pages).toBe(10);
       expect(doc.sizes).toEqual(Array.from({length: 10}, () => [612, 792]));
-      const bytes = readFileSync(resolve(directory(locale), 'assets', doc.pdf));
-      expect(createHash('sha256').update(bytes).digest('hex'))
-        .toBe('5b823f8d4fdeaf2b421e58825cc58194def4fb49e68e50d4ec978af7081f5c36');
-      expect(doc.sha256).toBe(createHash('sha256').update(bytes).digest('hex'));
+      expectPaperSourceMetadata(doc, 'p2-f26-sol');
+      expect(doc.sha256).toBe('5b823f8d4fdeaf2b421e58825cc58194def4fb49e68e50d4ec978af7081f5c36');
       expect(readdirSync(resolve(directory(locale), 'assets/pages/p2-f26-sol')).length).toBe(10);
       expect(readFileSync(resolve(directory(locale), 'extracted/p2-f26-sol.txt'), 'utf8')).toContain('Page 10 of 13');
     }
-    expect(statSync(resolve(directory('en'), 'assets/pages/p2-f26-sol/1.webp')).ino)
-      .not.toBe(statSync(resolve(directory('zh-cn'), 'assets/pages/p2-f26-sol/1.webp')).ino);
+    expectIndependentPageImages(locales.map(directory), 'p2-f26-sol', 10);
   });
 
   test('preserves source givens, editorial numbering, ambiguities and complete independent solutions', () => {

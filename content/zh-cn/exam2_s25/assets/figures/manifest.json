@@ -5,7 +5,7 @@
   "sourceSha256": {
     "content/zh-cn/exam2_s25/generate_figures.py": "f78f111bc485e37e9c687ef15284ec6a76c020de2735808a10c5646888b22fcb",
     "content/zh-cn/exam2_s25/figure-sources.json": "87d2d3dc0a93f8a84a81fa4335f4846ef8dc950dfe5c286324604365bd071034",
-    "scripts/plotting.py": "a8c56077b7b51856b11055baa940257463bfb762d9b8773086197dd02f9e7e74",
+    "scripts/plotting.py": "884ac5b709f524d419764f481fb5ddde18f814b41a7c7d6fce6c0b6cce73a613",
     "scripts/question_primitives.py": "ff01131c66a2fc665cc4fecfc24e6fcced4f49eaeb86e7c922884b55cf978969"
   },
   "svgFonttype": "none",

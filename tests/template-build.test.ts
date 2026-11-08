@@ -1,29 +1,9 @@
 import {expect, test} from 'bun:test';
-import {createHash} from 'node:crypto';
 import {cpSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, renameSync, rmSync, symlinkSync, writeFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {dirname, resolve} from 'node:path';
 import {project, templateFixture} from './fixtures/template';
 import type {SourceDocument} from '../content/types';
-
-/** A tiny, genuinely separate source PDF, not a copy of any shipped course file. */
-function pdf(title: string) {
-  const stream = `BT /F1 12 Tf 60 720 Td (${title}) Tj ET`;
-  const objects = [
-    '<< /Type /Catalog /Pages 2 0 R >>',
-    '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
-    '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>',
-    `<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`,
-    '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>',
-  ];
-  let result = '%PDF-1.4\n';
-  const offsets = [0];
-  objects.forEach((object, index) => { offsets.push(result.length); result += `${index + 1} 0 obj\n${object}\nendobj\n`; });
-  const xref = result.length;
-  result += `xref\n0 ${offsets.length}\n0000000000 65535 f \n`;
-  for (const offset of offsets.slice(1)) result += `${String(offset).padStart(10, '0')} 00000 n \n`;
-  return Buffer.from(result + `trailer\n<< /Size ${offsets.length} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF\n`);
-}
 
 test('another subject builds static pages with its own branding, sources and storage namespace', async () => {
   const root = mkdtempSync(resolve(tmpdir(), 'fieldnotes-migration-build-'));
@@ -47,9 +27,8 @@ test('another subject builds static pages with its own branding, sources and sto
     const populate = (registryPath: string, assets: string) => {
       const registry = JSON.parse(readFileSync(registryPath, 'utf8')) as Record<string, SourceDocument>;
       for (const document of Object.values(registry)) {
-        const source = pdf(document.id);
-        document.sha256 = createHash('sha256').update(source).digest('hex');
-        put(resolve(assets, document.pdf.replace(/^\//, '')), source);
+        // Deliberately provide no PDF: provenance stays synthetic metadata,
+        // while rendered page images are the deployable reading resources.
         put(resolve(assets, document.pageBase.replace(/^\//, ''), '1.webp'), image);
       }
       writeFileSync(registryPath, JSON.stringify(registry));
@@ -74,6 +53,8 @@ test('another subject builds static pages with its own branding, sources and sto
     expect(html).not.toContain('ECSE 2100');
     expect(html).not.toContain('ecse2100-fieldnotes-v1');
     expect(html).toContain('Lecture A');
+    expect(html).not.toMatch(/href=["'][^"']*\.pdf["'#?]/i);
+    expect(Array.from(new Bun.Glob('**/*.pdf').scanSync({cwd: resolve(root, 'build')}))).toEqual([]);
     expect(html).not.toContain('All 10 pages');
     expect(readFileSync(resolve(root, 'build/index.html'), 'utf8')).toContain('/problems/e1-f00-q1/');
     expect(stdout + stderr).toContain('Prerender verified: 1 problem HTML pages, 2 question parts');

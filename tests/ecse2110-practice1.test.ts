@@ -1,7 +1,7 @@
 import {describe, expect, test} from 'bun:test';
-import {createHash} from 'node:crypto';
-import {lstatSync, readFileSync, readdirSync} from 'node:fs';
+import {readFileSync, readdirSync} from 'node:fs';
 import {resolve} from 'node:path';
+import {expectIndependentPageImages, expectPaperSourceMetadata} from './fixtures/paper-provenance';
 import {readQuestionMarkdown} from '../content/markdown';
 import {displayEquations, formulaReferences} from '../content/text';
 import {joinTranslations} from '../content/localization';
@@ -124,27 +124,19 @@ describe('Practice set 1 package, original prompts and diagram boundary', () => 
     }
   });
 
-  test('preserves authentic 13-page PDF, hashes, sizes and separate locale resources', () => {
-    const paths = locales.map(locale => `${base(locale)}/assets/sources/p1-f26-sol.pdf`);
+  test('retains 13-page source provenance metadata and independent locale resources', () => {
     const expectedHash = 'b095acdc4c46ee4e96311a69aae79c8179f591646b8949914e711cf4132bfab8';
-    for (const [i, locale] of locales.entries()) {
+    for (const locale of locales) {
       const registry = json(`${base(locale)}/documents.json`);
       expect(Object.keys(registry)).toEqual(['p1-f26-sol']);
       const doc = registry['p1-f26-sol'];
       expect(doc.pages).toBe(13); expect(doc.sizes).toEqual(Array.from({length: 13}, () => [612, 792]));
       expect(doc.original).toBe('Exams/Exam1/Practice_Problems_-_Set1_-_ECSE_2110_-_Electrical_Energy_Systems.pdf');
       expect(doc.sha256).toBe(expectedHash);
-      expect(lstatSync(paths[i]).isSymbolicLink()).toBe(false);
-      expect(lstatSync(paths[i]).size).toBe(2328582);
-      expect(createHash('sha256').update(readFileSync(paths[i])).digest('hex')).toBe(expectedHash);
-      for (let page = 1; page <= 13; page++) {
-        const image = `${base(locale)}/assets/pages/p1-f26-sol/${page}.webp`;
-        expect(lstatSync(image).isSymbolicLink()).toBe(false);
-        expect(lstatSync(image).size).toBeGreaterThan(1000);
-      }
+      expectPaperSourceMetadata(doc, 'p1-f26-sol');
       expect(readFileSync(`${base(locale)}/extracted/p1-f26-sol.txt`, 'utf8')).toContain('--- PAGE 13 ---');
     }
-    expect(lstatSync(paths[0]).ino).not.toBe(lstatSync(paths[1]).ino);
+    expectIndependentPageImages(locales.map(base), 'p1-f26-sol', 13);
   });
 });
 

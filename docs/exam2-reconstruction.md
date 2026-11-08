@@ -29,7 +29,7 @@ reference sheet, **not a verified printed pledge question**. The export's
 assessment entry does not recover a printed problem statement. A pledge is
 therefore not invented. Student names, identifiers, handwriting, grading marks,
 rubrics, submission overlays and photographed surroundings are absent from the
-published PDFs, page images, crops, SVGs and articles. The raw export is never
+local clean PDFs and published page images, crops, SVGs and articles. The raw export is never
 copied into either paper's `assets/`.
 
 ## Scores and page mapping
@@ -161,6 +161,7 @@ their pages after standard crop padding, and cite actual clean-PDF page numbers.
 
 ## Regeneration and checks
 
+The website publishes only rendered page images, SVGs and crops, never PDF files.
 The PDF generator writes only the owned paper metadata and offline assets; it
 does not read, synthesize or rewrite Markdown question-bank articles. ReportLab,
 PyMuPDF, Pillow and Matplotlib are required. DejaVu font files come from the
@@ -183,8 +184,9 @@ bun run build
 ```
 
 Both locale copies remain separate files, even though their PDF bytes
-are identical English reconstructions. The small clean PDFs are committed
-as deliverables; large original source PDFs are separately provisioned. Re-run page/crop generation
+are identical English reconstructions. The already tracked small clean PDFs remain offline provenance originals, not
+site downloads. Large original PDFs are optional local inputs for offline
+regeneration; frontend CI and deployment require neither kind of PDF. Re-run page/crop generation
 when changing typesetting, and update independently authored Markdown if a
 transcription changes. PDF hashes are computed from actual bytes. Targeted Bun tests check printed scores and defects, exact numerical phasor
 calculations, ambiguity notes, independent locale copies and real document hashes

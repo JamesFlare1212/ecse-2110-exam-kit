@@ -25,12 +25,12 @@ export async function checkContentLocales(browser, base, record) {
         const dialog = page.locator('.source-dialog');
         await dialog.waitFor();
         assert.ok((await dialog.locator('.source-paper img').getAttribute('src')).startsWith(prefix + 'pages/'));
-        assert.ok((await dialog.locator('a[download]').getAttribute('href')).startsWith(prefix + 'sources/'));
+        assert.equal(await dialog.locator('a[download],a[href*=".pdf"]').count(),0);
         await page.keyboard.press('Escape');
         await dialog.waitFor({ state: 'detached' });
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       }
-      record(`${width}px language switching uses separate SVG, crop, PDF page and download copies`);
+      record(`${width}px language switching uses separate SVG, crop and source-page images without PDF downloads`);
     } finally { await context.close(); }
   }
 }

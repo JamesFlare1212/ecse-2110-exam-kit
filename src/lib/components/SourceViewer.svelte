@@ -7,10 +7,8 @@
   import SourceOverview from './SourceOverview.svelte';
   import ChevronLeft from '@lucide/svelte/icons/chevron-left';
   import ChevronRight from '@lucide/svelte/icons/chevron-right';
-  import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
   import ZoomIn from '@lucide/svelte/icons/zoom-in';
   import ZoomOut from '@lucide/svelte/icons/zoom-out';
-  import Download from '@lucide/svelte/icons/download';
   import type { SourceRef, Locale, SourceDocument } from '#lib/types';
   let {source,locale,documents,onclose,onCloseAutoFocus}: {source:SourceRef|null;locale:Locale;documents:Record<string,SourceDocument>;onclose:()=>void;onCloseAutoFocus?:(event:Event)=>void}=$props();
   let requestedPage=$state(1);
@@ -77,7 +75,7 @@
       <div class="source-viewer-layout">
       <!-- svelte-ignore a11y_no_noninteractive_tabindex (The source reading region must support keyboard scrolling.) -->
       <div class="source-stage" bind:this={stage} role="region" tabindex="0" aria-label={locale==='zh'?'原页阅读区，方向键滚动':'Source reading area; use arrow keys to scroll'}>
-        {#if failed}<p class="source-failed">{locale==='zh'?'预览暂不可用，可重试或打开原始 PDF。':'Preview unavailable. Retry or open the original PDF below.'}</p><Button variant="outline" onclick={()=>{retry++;failed=false;}}>{locale==='zh'?'重试预览':'Retry preview'}</Button>{:else}
+        {#if failed}<p class="source-failed">{locale==='zh'?'页图暂不可用，请重试。':'Page image unavailable. Please retry.'}</p><Button variant="outline" onclick={()=>{retry++;failed=false;}}>{locale==='zh'?'重试预览':'Retry preview'}</Button>{:else}
           <div class="source-paper" bind:this={paper} style:width={`${zoom}%`} style:aspect-ratio={`${size[0]} / ${size[1]}`}>
             <img src={`${doc.pageBase}/${page}.webp${retry?'?retry='+retry:''}`} alt={locale==='zh'?`${doc.title}，第 ${page} 页`:`${doc.title}, page ${page}`} onload={imageLoaded} onerror={()=>failed=true}/>
             {#if region}<div class="source-highlight" data-source-highlight style:left={`${region[0]*100}%`} style:top={`${region[1]*100}%`} style:width={`${region[2]*100}%`} style:height={`${region[3]*100}%`} role="img" aria-label={locale==='zh'?'引用区域':'Cited region'}></div>{/if}
@@ -87,9 +85,8 @@
       {#if !failed}<SourceOverview {stage} {paper} {doc} {page} {source} {locale} onpage={go}/>{/if}
       </div>
       <Dialog.Footer class="source-footer">
-        <span class="source-origin">{locale==='zh'?'原始课程资料':'Original course material'} · {doc.kind==='lecture'?'LECTURE':'PDF'}</span>
-        <Button variant="outline" href={doc.pdf} download><Download data-icon="inline-start" aria-hidden="true"/>{locale==='zh'?'下载':'Download'}</Button>
-        <Button href={`${doc.pdf}#page=${page}`} target="_blank" rel="noopener noreferrer"><ArrowUpRight data-icon="inline-start" aria-hidden="true"/>{locale==='zh'?'打开原始 PDF':'Open original PDF'}</Button>
+        <span class="source-origin">{locale==='zh'?'原始课程资料':'Original course material'} · {doc.kind==='lecture'?'LECTURE':'PAGE IMAGE'}</span>
+        <Button variant="secondary" onclick={onclose}>{locale==='zh'?'关闭原页':'Close source'}</Button>
       </Dialog.Footer>
     {/if}
   </Dialog.Content>

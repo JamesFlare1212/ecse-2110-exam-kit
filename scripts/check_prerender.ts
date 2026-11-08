@@ -7,6 +7,14 @@ import { DEFAULT_PROBLEM_ID, problemPath } from '../src/lib/problem-navigation';
 import { renderText } from '../src/lib/math';
 
 const root = resolve(import.meta.dir, '..', 'build');
+function checkPublishedFiles(directory: string) {
+  for (const entry of readdirSync(directory, {withFileTypes: true})) {
+    const path = resolve(directory, entry.name);
+    assert.ok(!/\.pdf$/i.test(entry.name), `Original PDF must not be published: ${path}`);
+    if (entry.isDirectory()) checkPublishedFiles(path);
+  }
+}
+checkPublishedFiles(root);
 assert.ok(readFileSync(resolve(root, '404.html'), 'utf8').includes('startup-status'), 'readable static error fallback');
 const ids = problemEntries.map(({ problem }) => problem.id).sort();
 assert.deepEqual(readdirSync(resolve(root, 'problems')).sort(), ids);
@@ -25,6 +33,8 @@ for (const { problem } of problemEntries) {
   const fontBytes = fontPreloads.reduce((sum, href) => sum + statSync(resolve(root, '.' + href)).size, 0);
   assert.ok(fontBytes <= 64 * 1024, `${problem.id}: font preload budget exceeded (${fontBytes} bytes)`);
   const document = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+  assert.ok(!/<a\b[^>]*\bdownload(?:\s|=|>)/i.test(document), `${problem.id}: no download action`);
+  assert.ok(!/<a\b[^>]*href=["'][^"']*\.pdf(?:[?#"'])/i.test(document), `${problem.id}: no original-PDF links`);
   assert.ok(document.includes(`data-problem="${problem.id}"`), `${problem.id}: page identity`);
   assert.ok(document.includes(`>${problem.title.zh}</h1>`), `${problem.id}: prerendered title`);
   assert.ok(document.includes(renderText(problem.statement.zh)), `${problem.id}: prerendered statement`);

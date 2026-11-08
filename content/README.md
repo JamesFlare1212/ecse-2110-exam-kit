@@ -56,10 +56,11 @@ PDF text in `extracted/`, and all PDFs/page images/SVGs/original crops in `asset
 SVGs retain both color themes. Document resource paths are relative to that
 paper's own `assets/`.
 
-Course PDFs may be published as site assets. Do not commit new large PDF binaries
-to Git: provision them separately in the canonical local asset directories before
-building or deploying, keeping both language copies and their provenance. This is
-not a ban on serving PDFs, nor an instruction to delete or untrack existing files.
+Original PDF downloads are retired. Frontend builds require the registered page
+images, excerpts and SVGs, not PDF files. PDFs remain optional local inputs for
+offline rendering/auditing; preserve their metadata and independent locale copies
+without deleting or untracking existing originals. Public staging excludes PDFs,
+including the small reconstructed PDFs already stored in the repository.
 
 Edit each language directly. Stable IDs, points, physical givens and source
 metadata must agree across the pair. Guides and solutions are complete independent
@@ -152,9 +153,10 @@ Language switching selects that language's figures, original crops, PDF pages an
 downloads at `/papers/en/...` or `/papers/zh-cn/...`. Portals remain attached to
 `#fieldnotes-overlays` across swaps.
 
-`bun run papers:prepare` copies only `assets/` into ignored
-`static/papers/{en|zh-cn}/`. Markdown, metadata, extraction and Python are not
-staged. Never edit staging copies. Development watches both language trees.
+`bun run papers:prepare` copies rendered assets, excluding PDFs, into ignored
+`static/papers/{en|zh-cn}/`, then stages the PDF-filtered static tree into
+`.public-assets/`, Astro's public directory. Markdown, source PDF files,
+extraction and Python are not published. Never edit either staging directory. Development watches both language trees.
 
 ## Adding a paper
 
@@ -196,8 +198,8 @@ the same document ID for `doc` and `solutionDoc`.
 
 Provide separate, byte-identical source copies in each language's
 `assets/sources/`, for example `e1-f27.pdf` and `e1-f27-sol.pdf`. Keep new large
-PDFs outside Git and provision them before running these tools or building the
-site. Do not replace either language's file with a fallback or symlink.
+PDFs outside Git and provide them only when running offline PDF/image tools;
+they are not needed to build the site. Do not replace either language's file with a fallback or symlink.
 
 Inspect each real PDF with PyMuPDF and SHA-256. This example prints one registry
 entry to stdout; it does not write a manifest or author question content:
@@ -318,7 +320,8 @@ No route registration is needed. Inspect the new questions, both languages'
 final SVGs/crops and exam/answer page links in the browser at desktop and phone
 widths. Shared formulas need `render_excerpts.py` only when their source excerpts
 are added or changed. Review the Git diff to exclude new large PDF binaries and
-unrelated generated changes; PDFs must still be present in the build environment.
+unrelated changes. Frontend CI/build runs without source PDFs; use the separate
+offline source-check commands when original PDFs are available.
 
 To unplug a paper, move both language folders outside `content/` and rebuild;
 routes and both staged copies disappear while saved records survive without

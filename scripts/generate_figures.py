@@ -5,8 +5,6 @@ import importlib.util
 import json
 from pathlib import Path
 
-import pymupdf
-from PIL import Image
 import plotting
 from plotting import prepare_figure, plt
 from paper_assets import ROOT, papers, documents, asset_source
@@ -47,6 +45,10 @@ def render_figures(save, dark, selected=None):
 
 
 def generate_paper(directory):
+    # PDF rendering is an offline regeneration dependency, not needed by figure QA.
+    import pymupdf
+    from PIL import Image
+
     directory = Path(directory).resolve()
     paper = next(p for p in papers() if p['directory'] == directory)
     output = directory / 'assets/figures'

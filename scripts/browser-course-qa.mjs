@@ -24,6 +24,7 @@ try {
       await page.locator('.solution-section-heading button').click();
       assert.equal(await page.locator('.part-trigger[aria-expanded=true]').count(),question.parts.length);
       assert.equal(await page.locator('.katex-error').count(),0);
+      assert.equal(await page.locator('a[download],a[href*=".pdf"]').count(),0);
       for(const image of await page.locator('.study-figure img').all()) {
         await image.scrollIntoViewIfNeeded();
         await image.evaluate(image=>image.decode());
@@ -41,22 +42,22 @@ try {
     assert.deepEqual(errors,[]);
     await context.close();
   }
-  // Independently ensure the reconstructed download is the clean file and the
-  // solution action never describes our independent PDF as an official key.
-  const context=await browser.newContext({viewport:{width:1440,height:900}});
+  // Source reading remains image-based; no PDF links, downloads or published PDFs.
+  const context=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'reduce'});
   await context.addInitScript(key=>localStorage.setItem(key,JSON.stringify({version:1,locale:'en'})),course.storageKey);
   const page=await context.newPage();
   await page.goto(`${base}/problems/e2-u00-q3/`);await page.waitForSelector('main[data-study-ready=true]');
   await page.locator('.solution-section-heading button').click();
   assert.equal(await page.getByRole('button',{name:/Official solution/}).count(),0);
   await page.getByRole('button',{name:'Part a: Solution source',exact:true}).click();
-  const download=page.locator('.source-dialog a[download]');
-  assert.ok((await download.getAttribute('href')).includes('/exam2_u00/sources/e2-u00-sol.pdf'));
-  const response=await page.request.get(`${base}/papers/en/exam2_u00/sources/e2-u00.pdf`);
-  assert.equal(response.status(),200);
-  assert.ok((await response.body()).subarray(0,5).equals(Buffer.from('%PDF-')));
+  await page.locator('.source-paper img').evaluate(image=>image.decode());
+  assert.ok((await page.locator('.source-paper img').getAttribute('src')).includes('/pages/e2-u00-sol/3.webp'));
+  assert.equal(await page.locator('a[download],a[href*=".pdf"]').count(),0);
+  for(const path of ['/papers/en/exam2_u00/sources/e2-u00.pdf','/papers/en/practice1_f26/sources/p1-f26-sol.pdf','/sources/reference-exam1.pdf']) {
+    assert.equal((await page.request.get(`${base}${path}`)).status(),404,`${path}: original PDFs are not published`);
+  }
   await context.close();
-  const references=await browser.newContext({viewport:{width:1440,height:900}});
+  const references=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'reduce'});
   await references.addInitScript(key=>localStorage.setItem(key,JSON.stringify({version:1,locale:'en'})),course.storageKey);
   const referencePage=await references.newPage();
   for(const [id,number,count] of [['e1-f26-q4',1,9],['e2-u00-q3',2,13],['p1-f26-q1',1,9],['p2-f26-q1',2,13]]) {
@@ -65,9 +66,11 @@ try {
     const library=referencePage.locator('.library-dialog');
     assert.equal(await library.locator('.library-formula').count(),count);
     const hrefs=await library.locator('.formula-link').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('href')));
-    assert.ok(hrefs.every(href=>href.startsWith(`/sources/reference-exam${number}.pdf#page=`)));
+    assert.ok(hrefs.every(href=>href.startsWith(`/pages/reference-exam${number}/`)&&href.endsWith('.webp')));
     await library.getByRole('button',{name:'All 2 pages',exact:true}).click();
-    assert.equal(await referencePage.locator('.source-dialog a[download]').getAttribute('href'),`/sources/reference-exam${number}.pdf`);
+    await referencePage.locator('.source-paper img').evaluate(image=>image.decode());
+    assert.ok((await referencePage.locator('.source-paper img').getAttribute('src')).includes(`/pages/reference-exam${number}/1.webp`));
+    assert.equal(await referencePage.locator('a[download],a[href*=".pdf"]').count(),0);
     await referencePage.keyboard.press('Escape');await referencePage.keyboard.press('Escape');
   }
   await referencePage.goto(`${base}/problems/e1-f26-q4/`);await referencePage.waitForSelector('main[data-study-ready=true]');
@@ -75,9 +78,9 @@ try {
   await referencePage.locator('.solution-section-heading button').click();
   await referencePage.getByRole('button',{name:'Part a: View original question',exact:true}).click();
   assert.ok((await referencePage.locator('.source-paper img').getAttribute('src')).includes('/pages/e1-f26-sol/9.webp'));
-  assert.ok((await referencePage.locator('.source-dialog a[download]').getAttribute('href')).endsWith('/sources/e1-f26-sol.pdf'));
+  assert.equal(await referencePage.locator('a[download],a[href*=".pdf"]').count(),0);
   await references.close();
-  console.log(`PASS ${cases.length} corpus cases: all discovered questions/parts, both languages/themes, desktop/phone, authentic prompt-only figures and clean source downloads.`);
+  console.log(`PASS ${cases.length} corpus cases: all discovered questions/parts, both languages/themes, desktop/phone, authentic prompt-only figures and image-only source readers without downloads.`);
 } finally {
   await writeFile('artifacts/course-review/report.json',JSON.stringify({cases},null,2));
   await browser.close();

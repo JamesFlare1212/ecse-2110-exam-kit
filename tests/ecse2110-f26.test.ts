@@ -1,11 +1,12 @@
 import { describe, expect, test } from 'bun:test';
-import { createHash } from 'node:crypto';
-import { readFileSync, statSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { expectIndependentPageImages, expectPaperSourceMetadata } from './fixtures/paper-provenance';
 import katex from 'katex';
 import { readQuestionMarkdown } from '../content/markdown';
 import { displayEquations } from '../content/text';
 import { joinTranslations } from '../content/localization';
+import type { SourceDocument } from '../content/types';
 
 const root = resolve(import.meta.dir, '..');
 const dir = (locale: string) => resolve(root, 'content', locale, 'exam1_f26');
@@ -149,15 +150,13 @@ describe('ECSE 2110 Exam 1 Fall 2026 scientific regressions', () => {
     }
   });
 
-  test('both locales preserve separate, real PDFs with hash and 1-based crop provenance', () => {
+  test('both locales retain source identity metadata, independent page images and 1-based crops', () => {
     for (const locale of ['en','zh-cn']) {
       const docs=JSON.parse(read(locale,'documents.json'));
       expect(docs['e1-f26']).toBeUndefined();
       expect(docs['e1-f26-sol'].pages).toBe(15);
-      for (const doc of Object.values(docs) as {pdf:string;sha256:string;sizes:number[][];pages:number}[]) {
-        const path=resolve(dir(locale),'assets',doc.pdf);
-        expect(statSync(path).isFile()).toBe(true);
-        expect(createHash('sha256').update(readFileSync(path)).digest('hex')).toBe(doc.sha256);
+      for (const [id, doc] of Object.entries(docs) as [string, SourceDocument][]) {
+        expectPaperSourceMetadata(doc, id);
         expect(doc.sizes).toHaveLength(doc.pages);
         expect(doc.sizes.every(size=>size[0]===612&&size[1]===792)).toBe(true);
       }
@@ -171,6 +170,6 @@ describe('ECSE 2110 Exam 1 Fall 2026 scientific regressions', () => {
         expect(y+h+.002).toBeLessThanOrEqual(1);
       }
     }
-    expect(statSync(resolve(dir('en'),'assets/sources/e1-f26-sol.pdf')).ino).not.toBe(statSync(resolve(dir('zh-cn'),'assets/sources/e1-f26-sol.pdf')).ino);
+    expectIndependentPageImages(['en', 'zh-cn'].map(dir), 'e1-f26-sol', 15);
   });
 });

@@ -5,8 +5,8 @@
 	"type": "module",
 	"packageManager": "bun@1.4.3",
 	"scripts": {
-		"dev": "bun run sources:prepare && bun run papers:prepare && bun --bun astro dev",
-		"build": "bun run sources:prepare && bun run papers:prepare && bun run content:check && bun --bun astro build && bun scripts/check_prerender.ts",
+		"dev": "bun run papers:prepare && bun --bun astro dev",
+		"build": "bun run papers:prepare && bun run content:check && bun --bun astro build && bun scripts/check_prerender.ts",
 		"preview": "bun --bun astro preview --host 127.0.0.1 --port 4173",
 		"prepare": "bun --bun astro sync",
 		"check": "bun --bun astro check && svelte-check --tsconfig ./tsconfig.json --tsgo",
@@ -14,8 +14,6 @@
 		"test": "bun test",
 		"content:check": "bun scripts/check_content.ts",
 		"papers:prepare": "bun scripts/prepare_papers.ts",
-		"sources:prepare": "bun scripts/prepare_source_pdfs.ts",
-		"sources:bundle": "bun scripts/create_source_bundle.ts",
 		"assets:prepare": "python3 scripts/prepare_sources.py --locale en && python3 scripts/prepare_sources.py --locale zh-cn && python3 scripts/render_excerpts.py && python3 scripts/generate_figures.py"
 	},
 	"devDependencies": {
@@ -34,7 +32,6 @@
 		"astro": "^7.4.2",
 		"bits-ui": "^2.20.0",
 		"cn": "^0.5.0",
-		"fflate": "^0.8.2",
 		"mdast-util-from-markdown": "^2.1.0",
 		"mdast-util-math": "^3.0.0",
 		"micromark-extension-math": "^3.1.0",

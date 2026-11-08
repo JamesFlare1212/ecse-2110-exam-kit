@@ -63,6 +63,7 @@ export type ProblemIndex = Pick<Problem, 'id' | 'number' | 'title' | 'topic' | '
 };
 export type ExamIndex = ExamInfo & { problems: ProblemIndex[] };
 export interface SourceDocument {
+  // pdf is an offline provenance path, never a published/download URL.
   id: string; title: string; kind: string; pages: number; pdf: string;
   pageBase: string; sizes: number[][]; original: string; sha256: string;
 }

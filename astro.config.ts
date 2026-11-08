@@ -7,7 +7,7 @@ import { criticalFontInlineLimit } from './scripts/font-assets';
 export default defineConfig({
   output: 'static',
   outDir: './build',
-  publicDir: './static',
+  publicDir: './.public-assets',
   trailingSlash: 'ignore',
   server: { host: '127.0.0.1', port: 5173 },
   integrations: [svelte()],

@@ -23,7 +23,7 @@
   }
 </script>
 <HoverCard.Root bind:open={() => open, (value) => previews.setOpen(previewId, value)} openDelay={180} closeDelay={160}>
-  <HoverCard.Trigger bind:ref={trigger} href={`${documents[formula.source.doc].pdf}#page=${formula.source.page}`} class={cn('formula-link',inline && 'formula-link-inline')} onclick={(e) => {e.preventDefault(); showSource();}} aria-label={`${formula.title[locale]} · ${formula.source.label[locale]}`}>
+  <HoverCard.Trigger bind:ref={trigger} href={`${documents[formula.source.doc].pageBase}/${formula.source.page}.webp`} class={cn('formula-link',inline && 'formula-link-inline')} onclick={(e) => {e.preventDefault(); showSource();}} aria-label={`${formula.title[locale]} · ${formula.source.label[locale]}`}>
     {#if inline}
       {#if children}{@render children()}{:else}{formula.title[locale]}{/if}
     {:else}

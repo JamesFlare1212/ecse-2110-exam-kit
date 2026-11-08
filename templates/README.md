@@ -30,5 +30,6 @@ Read [the migration guide](../docs/template-guide.md) before replacing a course,
 and [the solution style guide](../docs/solution-style.md) before writing solutions.
 The automated template tests parse both example articles, pair stable IDs,
 validate their equations and test a separate, non-ECSE course catalog. An isolated
-build smoke test also generates tiny synthetic test PDFs and checks a real static
-build under another course identity; it does not borrow or modify shipped PDFs.
+build smoke test deliberately provides only rendered page images and synthetic
+source metadata, with no PDFs, and checks a real static build under another
+course identity. It neither requires nor publishes original PDF files.

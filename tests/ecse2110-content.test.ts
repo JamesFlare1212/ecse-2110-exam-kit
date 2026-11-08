@@ -1,12 +1,13 @@
 import {describe, expect, test} from 'bun:test';
 import {createHash} from 'node:crypto';
-import {existsSync, lstatSync, readFileSync, readdirSync} from 'node:fs';
+import {existsSync, readFileSync, readdirSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {exams, examIndex, documents, formulas, papers} from '../content/catalog.server';
 import {course, formulaSheetFor} from '../content/course';
 import {formulasForExam} from '../src/lib/catalog';
-import {assetSource} from '../content/papers.server';
 import {displayEquations, formulaReferences} from '../content/text';
+import {expectIndependentPageImages, expectPaperSourceMetadata} from './fixtures/paper-provenance';
+import type {SourceDocument} from '../content/types';
 
 const expected = {'e1-f26': [6, 100], 'e1-s25': [6, 120], 'e2-s25': [7, 100], 'e2-u00': [4, 95]};
 
@@ -65,13 +66,21 @@ describe('ECSE 2110 delivery and provenance', () => {
     }
   });
 
-  test('preserves independent locale assets and authentic PDF hashes', () => {
+  test('preserves recorded source identities and independently owned locale assets', () => {
     for (const paper of papers) for (const locale of ['en', 'zh'] as const) {
-      for (const document of Object.values(paper.documents[locale])) {
-        const path = assetSource(document.pdf);
-        expect(lstatSync(path).isSymbolicLink()).toBe(false);
-        expect(createHash('sha256').update(readFileSync(path)).digest('hex')).toBe(document.sha256);
-        for (let page = 1; page <= document.pages; page++) expect(existsSync(assetSource(`${document.pageBase}/${page}.webp`))).toBe(true);
+      const local = JSON.parse(readFileSync(resolve(paper.directories[locale], 'documents.json'), 'utf8')) as Record<string, SourceDocument>;
+      expect(Object.keys(paper.documents[locale]).sort()).toEqual(Object.keys(local).sort());
+      expect(Object.keys(local).sort()).toEqual(Object.keys(paper.documents[locale === 'en' ? 'zh' : 'en']).sort());
+      for (const [id, document] of Object.entries(local)) {
+        expectPaperSourceMetadata(document, id);
+        expect(paper.documents[locale][id]).toEqual({
+          ...document,
+          pdf: `${paper.assetBase[locale]}/${document.pdf}`,
+          pageBase: `${paper.assetBase[locale]}/${document.pageBase}`,
+        });
+        const paired = paper.documents[locale === 'en' ? 'zh' : 'en'][id];
+        for (const key of ['id', 'sha256', 'pages', 'sizes', 'original'] as const) expect(document[key]).toEqual(paired[key]);
+        if (locale === 'en') expectIndependentPageImages(Object.values(paper.directories), id, document.pages);
       }
       for (const question of paper.exam.problems) {
         const source = readFileSync(resolve(paper.directories[locale], 'questions', `q${question.number}.md`), 'utf8');

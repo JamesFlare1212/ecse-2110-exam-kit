@@ -3,19 +3,14 @@
 The SVG fonttype stays 'none' to preserve native vector text. Both color themes
 are generated from the same geometry. Original figures are cropped separately.
 """
-from pathlib import Path
-import json
 import math
 import cmath
-import hashlib
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, Rectangle, FancyArrowPatch, Arc
 from matplotlib.text import Text
 import numpy as np
-import pymupdf
-from PIL import Image
 
 matplotlib.rcParams.update({'svg.fonttype':'none','font.family':'DejaVu Sans','font.size':10,'font.weight':'bold',
     'mathtext.fontset':'custom','mathtext.rm':'DejaVu Sans:weight=bold',

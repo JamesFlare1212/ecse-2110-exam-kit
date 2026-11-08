@@ -6,14 +6,15 @@ __pycache__/
 /playwright-report/
 /artifacts/
 /static/papers/
+/.public-assets/
 
 # Local reference archive: never publish the raw Gradescope export.
 /reference/
-# Large original PDFs are provisioned locally before building, not committed.
+# Original PDFs are optional local audit/rendering inputs, never deployment inputs.
 /static/sources/*.pdf
 /content/*/exam*/assets/sources/*.pdf
 /content/*/practice*/assets/sources/*.pdf
-# Small, independently typeset clean documents are deliverables, not raw scans.
+# Keep already tracked clean reconstruction originals for offline provenance only.
 !/content/*/exam2_u00/assets/sources/e2-u00.pdf
 !/content/*/exam2_u00/assets/sources/e2-u00-sol.pdf
 

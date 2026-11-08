@@ -14,7 +14,7 @@
   <div><strong>PDF · {locale==='zh'?`第 ${page} 页`:`Page ${page}`}</strong><Button variant="outline" size="sm" aria-label={label} onclick={onopen}>{locale==='zh'?'放大查看':'Inspect page'}<ArrowUpRight data-icon="inline-end" aria-hidden="true"/></Button></div>
   <div class="original-page-image" style:aspect-ratio={`${size[0]} / ${size[1]}`}>
     {#if failed}
-      <div class="source-page-failed" role="alert"><p>{locale==='zh'?'原卷页图加载失败，可重试或打开 PDF。':'Page image unavailable. Retry or open the PDF.'}</p><Button variant="outline" onclick={()=>{retry++;failed=false;}}>{locale==='zh'?'重试页图':'Retry page image'}</Button><Button href={`${doc.pdf}#page=${page}`} target="_blank" rel="noopener noreferrer">{locale==='zh'?'打开 PDF':'Open PDF'}</Button></div>
+      <div class="source-page-failed" role="alert"><p>{locale==='zh'?'原卷页图加载失败，请重试。':'Page image unavailable. Please retry.'}</p><Button variant="outline" onclick={()=>{retry++;failed=false;}}>{locale==='zh'?'重试页图':'Retry page image'}</Button></div>
     {:else}
       <button class="source-page-preview" onclick={onopen} aria-label={label}><img src={`${doc.pageBase}/${page}.webp${retry?'?retry='+retry:''}`} width={size[0]} height={size[1]} {alt} loading="lazy" onerror={()=>failed=true}/></button>
     {/if}

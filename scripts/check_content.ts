@@ -11,7 +11,6 @@ for (const paper of papers) for (const locale of ['en','zh'] as const) {
   const directory=paper.directories[locale];
   for (const name of ['generate_figures.py', 'figure-sources.json']) required(resolve(directory, name));
   for (const doc of Object.values(paper.documents[locale])) {
-    required(assetSource(doc.pdf));
     required(resolve(directory, 'extracted', `${doc.id}.txt`));
     for (let page = 1; page <= doc.pages; page++) required(assetSource(`${doc.pageBase}/${page}.webp`));
   }
@@ -24,7 +23,6 @@ for (const paper of papers) for (const locale of ['en','zh'] as const) {
 
 // Shared course resources must be complete too, including after replacing the sample course.
 for (const doc of Object.values(documents)) {
-  required(assetSource(doc.pdf));
   for (let page = 1; page <= doc.pages; page++) required(assetSource(`${doc.pageBase}/${page}.webp`));
 }
 for (const formula of formulas) required(assetSource(`/excerpts/${formula.id}.webp`));

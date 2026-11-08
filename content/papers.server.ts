@@ -115,7 +115,7 @@ export function stagePaperAssets(papers: Paper[], destination = resolve('static/
   // prose edit into hundreds of asset changes and browser reloads.
   function sync(source: string, target: string) {
     mkdirSync(target, { recursive: true });
-    const entries = readdirSync(source, { withFileTypes: true });
+    const entries = readdirSync(source, { withFileTypes: true }).filter(entry => !/\.pdf$/i.test(entry.name));
     for (const name of readdirSync(target)) if (!entries.some(entry => entry.name === name))
       rmSync(resolve(target, name), { recursive: true, force: true });
     for (const entry of entries) {

@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test';
-import { createHash } from 'node:crypto';
-import { readFileSync, statSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { expectIndependentPageImages, expectPaperSourceMetadata } from './fixtures/paper-provenance';
 import { readQuestionMarkdown, type ArticleProblem } from '../content/markdown';
 import { displayEquations, formulaReferences } from '../content/text';
 import { joinTranslations } from '../content/localization';
@@ -43,14 +43,13 @@ describe('ECSE 2110 historical Exam 1', () => {
     expect(en.solutionDoc).toBe(en.doc); expect(en.questionsOnly).toBe(false);
     expect(q(1).note).toContain('June 16, 2025'); expect(q(1).note).toContain('Summer 2024');
     expect(q(1).note).toContain('100 points'); expect(q(1, zh).note).toContain('120');
-    const paths = ['en', 'zh-cn'].map(locale => resolve(base(locale), 'assets/sources/e1-s25-sol.pdf'));
-    expect(statSync(paths[0]).ino).not.toBe(statSync(paths[1]).ino);
     for (const locale of ['en', 'zh-cn']) {
       const doc = json(resolve(base(locale), 'documents.json'))['e1-s25-sol'];
       expect(doc.pages).toBe(14); expect(doc.sizes).toEqual(Array.from({ length: 14 }, () => [612, 792]));
-      expect(createHash('sha256').update(readFileSync(resolve(base(locale), 'assets', doc.pdf))).digest('hex')).toBe(doc.sha256);
+      expectPaperSourceMetadata(doc, 'e1-s25-sol');
       expect(doc.sha256).toBe('c73b0b4384f86d048146ec6f74d33824677673b5af89d7b6c068aeccf3634cce');
     }
+    expectIndependentPageImages(['en', 'zh-cn'].map(base), 'e1-s25-sol', 14);
   });
 
   test('pairs complete independent solutions, valid lecture pages, and measured source regions', () => {

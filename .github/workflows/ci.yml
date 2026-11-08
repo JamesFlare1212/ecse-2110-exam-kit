@@ -3,16 +3,12 @@ run-name: CI · ${{ inputs.ref || github.head_ref || github.ref_name }}
 
 on:
   push:
-    branches: [main]
+    branches: [master, main]
   pull_request:
   workflow_dispatch:
     inputs:
       ref:
         description: 'Ref to validate (for an existing PR: refs/pull/123/merge)'
-        type: string
-        required: false
-      sources_url:
-        description: 'HTTPS canonical-PDF ZIP; otherwise use repository variable COURSE_SOURCES_URL'
         type: string
         required: false
 
@@ -41,10 +37,6 @@ jobs:
           bun-version-file: package.json
       - name: Install locked dependencies
         run: bun install --frozen-lockfile
-      - name: Provision and verify separately supplied course PDFs
-        env:
-          COURSE_SOURCES_URL: ${{ inputs.sources_url || vars.COURSE_SOURCES_URL }}
-        run: bun run sources:prepare
       - name: Validate authored Markdown and metadata with Bun
         run: bun run content:check
       - name: Check Astro and Svelte (native TypeScript 7)
@@ -75,8 +67,8 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
-  source-tools:
-    name: Source tools (Python ${{ matrix.python }})
+  figure-tools:
+    name: Figure tools (Python ${{ matrix.python }})
     runs-on: ubuntu-latest
     timeout-minutes: 15
     strategy:
@@ -95,19 +87,11 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
           cache: pip
-          cache-dependency-path: scripts/requirements.txt
-      - name: Install source-tool dependencies
-        run: python -m pip install -r scripts/requirements.txt
+          cache-dependency-path: scripts/requirements-figures.txt
+      - name: Install figure-only dependencies
+        run: python -m pip install -r scripts/requirements-figures.txt
       - name: Check installed dependency compatibility
         run: python -m pip check
-      - name: Provision and verify separately supplied course PDFs
-        env:
-          COURSE_SOURCES_URL: ${{ inputs.sources_url || vars.COURSE_SOURCES_URL }}
-        run: python scripts/provision_sources.py
-      - name: Verify source provenance and PDF/image APIs
-        run: python scripts/check_sources.py
-      - name: Verify clean reconstruction and privacy boundary
-        run: python scripts/check_reconstruction.py
       - name: Check both figure themes and annotation layout
         run: python scripts/check_figures.py
       - name: Upload figure diagnostics on failure
