@@ -1,0 +1,107 @@
+--- Page 1 ---
+Exam 2 · Undated archive
+Clean reconstruction · printed questions only · 95 academic points
+2. (21 points) Single choice questions. 3 points each.
+2-1   Which of the following can change the rotation speed of a synchronous motor:
+A. Altering the frequency of voltage applied to stator winding.
+B. Altering the current magnitude applied to rotor winding.
+C. The sequence of appearance of the three-phase windings on the stator
+2-2   Which of the following can change the rotation direction of a synchronous motor:
+A. Altering the frequency of voltage applied to stator winding.
+B. Altering the current magnitude applied to rotor winding.
+C. The sequence of appearance of the three-phase windings on the stator.
+2-3   Which of the following can change the magnitude of the internal generated voltage EA
+of a synchronous motor:
+A. Altering the frequency of voltage applied to stator winding.
+B. Altering the current magnitude applied to rotor winding.
+C. The sequence of appearance of the three-phase windings on the stator.
+2-4   The same synchronous motor is used in two cases. In case one, a three-phase 100V
+50Hz AC voltage is applied to its stator winding. The angular speed of its rotor is ωm1. The
+motor delivers 10 hp (horse power) to the load. In case two, a three-phase 100V 60Hz AC
+voltage is applied to its stator winding. The angular speed of its rotor is ωm2. The motor also
+delivers 10 hp (horse power) to the load.
+A. ωm1 > ωm2
+B. ωm1 < ωm2
+C. ωm1 = ωm2
+Independent typesetting; original numbering retained. Q1 is not reconstructed.
+1 / 5
+
+
+--- Page 2 ---
+Exam 2 · Undated archive
+Clean reconstruction · printed questions only · 95 academic points
+2. Single choice questions (continued)
+2-5   If we reconnect an ordinary transformer into an auto-transformer, then the rated
+apparent power of the autotransformer can be higher than the rated apparent power of the
+original transformer.
+A. True.
+B. False.
+2-6   A synchronous generator provides power to a RL series circuit. If we increase the
+angular speed of the rotor of the synchronous generator, which of the following is true?
+A. The magnitude of the internal generated voltage EA will increase.
+B. The frequency of the output voltage will not change.
+C. The power factor of the load will increase.
+2-7   A synchronous machine has three-phase stator windings evenly placed on its stator with
+a sequence of a-c’-b-a’-c-b’. Now suppose we supply the windings with AC current with
+frequency of 60Hz and magnitude of 10A, and the current phasors in three sets of windings
+have the same angle. Which of the following can be correct about the generated stator
+magnetic field?
+A. counterclockwise rotating magnetic field with constant magnitude,
+B. clockwise rotating magnetic field with constant magnitude,
+C. The magnetic field has time-varying magnitude but does not rotate.
+Independent typesetting; original numbering retained. Q1 is not reconstructed.
+2 / 5
+
+
+--- Page 3 ---
+Exam 2 · Undated archive
+Clean reconstruction · printed questions only · 95 academic points
+3. (20 points)
+A three-phase Y-connected synchronous generator is driven by a primer mover to produce
+60Hz AC voltage. It has a synchronous reactance of j2 Ω per phase and negligible
+synchronous resistance. When the excitation current is 10A, and no load is connected to
+stator windings, the line-to-line voltage at the output is measured to be 100V. Now we
+increase the excitation current to 20A and connect a three phase Y-connected load with an
+impedance of 10+j10 Ω per phase to the generator. We adjust the mechanical input to the
+generator such that the speed of its rotor is the same as before. Under the new condition,
+(10 points) Draw the single-phase equivalent circuit of the system and label the impedances.
+(10 points) Find the RMS value of the line-to-line voltage at the load side.
+Independent typesetting; original numbering retained. Q1 is not reconstructed.
+3 / 5
+
+
+--- Page 4 ---
+Exam 2 · Undated archive
+Clean reconstruction · printed questions only · 95 academic points
+4. (22 points)
+A three-phase 1.732-kV 2-pole 60-Hz Y-connected synchronous generator has a synchronous
+reactance of j1Ω per phase and negligible armature resistance. The synchronous generator is
+driven by a turbine.
+Suppose under certain load condition, the RMS value of the line-to-line terminal voltage of
+the generator is 1.732kV, and the generator supplies 1.5MW real power to the load. The
+power angle is 30° at this operating condition.
+a) (7 points) How much torque is supplied by the turbine to the generator, assuming that all
+losses are neglected?
+b) (7 points) What is the RMS value of the internal generated voltage in each phase of the
+generator?
+c) (8 points) What is the power factor of the load?
+Independent typesetting; original numbering retained. Q1 is not reconstructed.
+4 / 5
+
+
+--- Page 5 ---
+Exam 2 · Undated archive
+Clean reconstruction · printed questions only · 95 academic points
+5. (32 points)
+A 600V three-phase Δ-connected synchronous motor is connected to a 600V bus. The motor
+has a synchronous reactance of j4 Ω per phase and negligible armature.
+a) (16 points) Under certain load condition, the internal voltage lags the terminal voltage by
+60° in each phase, and the developed power in the motor is 40 kW. Find the RMS value of the
+line current.
+b) (10 points) We increase the field current by 20% and adjust the prime mover such that the
+motor achieves it maximum developed power. Find the new torque angle and the RMS value
+of the new line current.
+c) (6 points) What is the reactive power the motor consumes? What is the RMS value of the
+current in each phase of its stator windings?
+Independent typesetting; original numbering retained. Q1 is not reconstructed.
+5 / 5

@@ -1,0 +1,185 @@
+
+--- PAGE 1 ---
+           ECSE 2110: Electrical Energy Systems
+    Solutions - Midterm Exam 1 – Fall 2026 (25% of overall grade)
+
+Time: 1.30PM to 3:05PM                         Total points: 100
+Date: October 06, 2026
+
+
+Name:                                 _________
+
+
+
+RIN #:                           _____
+
+                            General Instructions
+
+
+
+   1. It is student’s responsibility to make sure that all pages of the exam are intact.
+
+          If any page is missing, then please inform the instructor for replacement.
+
+   2. Please put your name and RIN on the front sheet and any additional sheet you
+
+     may attach. Also include the question number on the additional sheets.
+
+   3. Please return the exam at the end of exam session. Please make sure to return
+
+        all pages.
+
+   4. If you have any questions during the exam, please raise your hand.
+
+   5. No books, notes, laptop/tablet or other electronics can be used during the
+
+     exam.
+
+   6. You are allowed to use your calculator.
+
+   7. You are not allowed to use your phone or other electronics during the exam.
+
+   8. Please show all your work clearly.
+
+--- PAGE 2 ---
+ECSE 2110 Electrical Energy Systems          Page 2 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 3 ---
+                    Short Answer Questions (30 points)
+
+Question 1. (10 points) Why do transformers in operation produce a humming
+noise?
+
+Answer:
+
+Transformers work on AC. The magnetic core experiences continuous magnetic reversals.
+As a result, the core material is expanding and contracting repeatedly due to magnetic
+striction producing vibrations and humming noise.
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems          Page 3 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 4 ---
+ECSE 2110 Electrical Energy Systems          Page 4 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 5 ---
+Question 2. (10 points) Derive and show that single phase AC has a double
+frequency term in the power.
+
+Answer:
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems          Page 5 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 6 ---
+ECSE 2110 Electrical Energy Systems          Page 6 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 7 ---
+Question 3. (10 points) Describe the Aluminum Conductor with Steel
+Reinforcement (ACSR) conductor and justify its structure.
+
+Answer:
+
+Aluminum Conductor with Steel Reinforcement (ACSR) conductor is a high-strength
+stranded conductor primarily used for overhead power transmission and
+distribution lines. Structurally, it consists of a solid or stranded galvanized steel core
+at the center, surrounded by one or more outer layers of high-purity aluminum
+strands.
+
+The outer Aluminum strands provide high conducting path by using skin effect to
+optimize the material. The inner galvanized steel core provides mechanical strength
+to the conductor.
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems          Page 7 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 8 ---
+ECSE 2110 Electrical Energy Systems          Page 8 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 9 ---
+                  Long Answer Questions (70 points)
+
+Question 4. (20 points)
+
+
+
+
+
+Answer:
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems          Page 9 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 10 ---
+New Current:
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems          Page 10 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 11 ---
+Question 5. (25 points)
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems          Page 11 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 12 ---
+Answer:
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems          Page 12 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 13 ---
+ECSE 2110 Electrical Energy Systems          Page 13 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 14 ---
+Question 6. (25 points)
+
+
+
+
+
+Answer:
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems          Page 14 of 14
+Fall 2026                                                             Midterm Exam 1
+
+--- PAGE 15 ---
+ECSE 2110 Electrical Energy Systems          Page 15 of 14
+Fall 2026                                                             Midterm Exam 1

@@ -1,0 +1,194 @@
+
+--- PAGE 1 ---
+  Lecture 6
+
+Transformers
+
+
+                    ECSE 2110
+           Electrical Energy Systems
+                Instructor: Dr. Prabhakar Neti
+
+--- PAGE 2 ---
+
+
+--- PAGE 3 ---
+
+
+--- PAGE 4 ---
+Equivalent Circuit of Power Transformers
+                                                                                                                                           Ideal
+                                                                                                                      Transformer
+
+    • The magnetization current that energizes the core also includes    Primary Side                       Secondary Side
+                                                                  Impedance                        Impedance     Eddy currents and the hysteresis effect.
+         • As these are Ohmic losses, they can be modeled using a resistance in
+            parallel with the magnetization inductance.
+    • This is the final step in developing the equivalent circuit of the
+      transformer.
+    • By referring parameters to the primary side of the transformer,
+    we have the equivalent circuit as shown below.
+                                                                                         Magnetizing                                                                       Core Losses                                                                                        Branch
+
+
+
+
+
+                                                                                                                                                                                             4
+
+--- PAGE 5 ---
+
+
+--- PAGE 6 ---
+Equivalent Circuit of Power Transformers
+
+• The approximate equivalent circuit referred to primary side:
+
+
+
+
+
+from where:
+      V  V   ( R  jX  ) I               1     2        e1        e1   2
+• Neglecting the voltage drop in the primary side:
+                      2                                 2
+           N                       N             S *                                                                  L                  1  R   X   X         1  X      I R  R  e1      1         2          e1      1          2        2         *                      N       N                                        3V                                                                                                    6                                                      2                                                                           2                            2                     
+
+--- PAGE 7 ---
+Calculation (Estimation)
+of Model Parameters
+
+The parameters of the model are determined based
+upon:
+• Nameplate data:
+    • Gives the rated voltages and rated power.
+• Open-circuit test:
+    • Rated voltage is applied to primary with secondary
+      open:
+        1.   Measure the primary current and losses (the test may
+            also be done applying the voltage to the secondary)
+•   Short-circuit test:
+   •   With secondary shorted, apply voltage to primary to
+       get rated current to flow.
+        1.   Measure voltage and losses.
+       2.   Calculate the parameter values,
+       3.   Refer the values to one side, usually the primary side.
+                                                                                                                                                                                                       7
+
+--- PAGE 8 ---
+Equivalent Circuit Parameters
+ Open Circuit Test
+             V                              2        V                             1         R                          1                        c 1               I 
+             P              c                              0        R                                                       c 1
+                         2     2         V 1           I     I  I     X            m        0      c         m 1
+                                           I                                   m
+
+ Short Circuit Test
+
+             V           P
+          Z      sc     R        sc                         e 1                      e 1          2                        I                  ( I  )                                    sc                          sc
+
+            X    Z 2  R 2                                e 1          e 1      e 1
+
+                                                                                                                                                                                        8
+
+--- PAGE 9 ---
+Transformer Performance
+
+• The actual efficiency of a transformer is measured as:
+
+• The efficiency of a transformer at 𝑛, a fraction of the full-load power, can be estimated as:
+
+
+
+• The apparent power 𝑆if the full load rated volt-ampere, and 𝑃𝑐𝑢is the full load copper loss.
+• For a 3-phase transformer,
+
+
+Let 𝑃𝑐be the iron loss at rated voltage, then maximum efficiency occurs when:
+                   P
+                   n       c
+                                                                                                                                                                                        9                   P                                             cu
+
+--- PAGE 10 ---
+Voltage Regulation of Transformers
+
+• If we vary the throughput of power in the transformer, the voltage drop over the impedances in the transformer will
+  vary.
+• A figure of merit is called voltage regulation:
+
+              no-load terminal voltage - full-load terminal voltage
+  VR  100 
+                               full-load terminal voltage
+
+     • When the equivalent circuit is referred to the primary side:
+                               V  V 
+                    VR  100    1       2
+                                 V                                                                         2
+     • When the equivalent circuit is referred to the secondary side:
+                               V  V
+                     VR  100     2       2
+                                 V                                                                        2
+• If we have a capacitive load, the voltage drop will be more reduced for higher loadings.
+
+
+
+                                                                                                                                                                            10
+
+--- PAGE 11 ---
+Load Tap-Changing Transformers
+
+                                                                                                                     Tap
+                                                                                                                   Changer
+• LTC transformers have tap ratios that can be varied                                                                Control
+  to regulate bus voltages.                                                                                                                  Circuit
+• The typical range of variation is 10% from the
+  nominal values, usually in 32 discrete steps (0.0625%
+  per step).
+• Because tap-changing is a mechanical process, LTC
+  transformers usually have a dead-band (typically 30
+  seconds) to avoid repeated changes.
+
+                                                                                                               On-load TC Circuit• Unbalanced tap positions can cause "circulating
+  vars“
+• Two types:                                                                                                         Off-load TC Circuit
+    • On-load tap changing transformers
+    • Off-load tap changing transformers
+
+
+
+                                                                                                                                                                                                                                                                              11
+
+--- PAGE 12 ---
+Basic Three Phase Transformer Connections
+           Y-Y                  Δ-Δ
+
+
+
+
+
+          Y-Δ                    Δ-Y
+
+
+                                                                                                                                                                                     12
+
+--- PAGE 13 ---
+Per-Unit System
+
+• A problem in analyzing power systems is the        Benefits of using the P.U. system:
+  number of components with different voltage                                                     • Makes calculations for systems with several
+  levels.                                                     voltage levels much simpler.
+• It would be very difficult to continually have to                                                     • Factors of 3 and its square root are eliminated in
+  refer to impedances on the different sides of the                                                   the calculations.
+  transformers
+                                                     • Gives an estimation of the relative magnitude of
+                                                       various quantities such as voltage, current,
+• This problem is avoided by a normalization of all     power and impedance.
+  variables.                                                     • Voltage drops are given directly in percentage.
+• This normalization is known as per-unit analysis.
+• The per-unit value of any quantity is defined as:
+
+                                                           actual quantity
+                               quantity in per unit 
+                                                 base value of quantity
+                                                                                                                                                                                     13

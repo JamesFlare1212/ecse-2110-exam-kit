@@ -1,0 +1,115 @@
+{
+  "id": "ecse-2110",
+  "code": "ECSE 2110",
+  "title": {
+    "en": "Electrical Energy Systems",
+    "zh": "电能系统"
+  },
+  "defaultProblemId": "e1-f26-q1",
+  "storageKey": "ecse2110-fieldnotes-v1",
+  "resources": {
+    "formulaSheet": null,
+    "formulaSheets": {
+      "1": "reference-exam1",
+      "2": "reference-exam2"
+    },
+    "lectures": [
+      {
+        "doc": "lecture-01",
+        "label": "01",
+        "title": {
+          "en": "Electrical energy systems",
+          "zh": "电能系统概览"
+        }
+      },
+      {
+        "doc": "lecture-02",
+        "label": "02",
+        "title": {
+          "en": "AC power and power factor",
+          "zh": "交流功率与功率因数"
+        }
+      },
+      {
+        "doc": "lecture-03",
+        "label": "03",
+        "title": {
+          "en": "Three-phase circuits",
+          "zh": "三相电路"
+        }
+      },
+      {
+        "doc": "lecture-04",
+        "label": "04",
+        "title": {
+          "en": "Magnetic circuits and transformers",
+          "zh": "磁路与变压器"
+        }
+      },
+      {
+        "doc": "lecture-06",
+        "label": "06",
+        "title": {
+          "en": "Transformer tests and per-unit analysis",
+          "zh": "变压器试验与标幺值"
+        }
+      },
+      {
+        "doc": "lecture-07",
+        "label": "07",
+        "title": {
+          "en": "Transformer performance and efficiency",
+          "zh": "变压器性能与效率"
+        }
+      },
+      {
+        "doc": "lecture-08",
+        "label": "08",
+        "title": {
+          "en": "Electromechanical conversion and DC machines",
+          "zh": "机电能量转换与直流电机"
+        }
+      },
+      {
+        "doc": "lecture-09",
+        "label": "09",
+        "title": {
+          "en": "DC windings, voltage and torque",
+          "zh": "直流绕组、电压与转矩"
+        }
+      },
+      {
+        "doc": "lecture-10",
+        "label": "10",
+        "title": {
+          "en": "Synchronous machines",
+          "zh": "同步电机"
+        }
+      },
+      {
+        "doc": "lecture-11-12",
+        "label": "11–12",
+        "title": {
+          "en": "Power electronics",
+          "zh": "电力电子"
+        }
+      },
+      {
+        "doc": "lecture-13-14",
+        "label": "13–14",
+        "title": {
+          "en": "Power conversion",
+          "zh": "电能变换"
+        }
+      },
+      {
+        "doc": "lecture-15",
+        "label": "15",
+        "title": {
+          "en": "Renewable energy",
+          "zh": "可再生能源"
+        }
+      }
+    ]
+  }
+}

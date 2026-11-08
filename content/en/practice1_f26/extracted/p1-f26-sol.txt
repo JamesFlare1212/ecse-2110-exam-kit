@@ -1,0 +1,216 @@
+
+--- PAGE 1 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+                  Practice Problems and Solutions - Set # 1
+
+
+
+
+
+Solution:
+
+
+a.)
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 1 of 13                  Department of ECSE
+
+--- PAGE 2 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 2 of 13                  Department of ECSE
+
+--- PAGE 3 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 3 of 13                  Department of ECSE
+
+--- PAGE 4 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 4 of 13                  Department of ECSE
+
+--- PAGE 5 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 5 of 13                  Department of ECSE
+
+--- PAGE 6 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question:
+
+Show that only 1-phase circuits have the double frequency component of power but not the
+balanced 3-phase circuits. Include detailed steps.
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 6 of 13                  Department of ECSE
+
+--- PAGE 7 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 7 of 13                  Department of ECSE
+
+--- PAGE 8 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question:
+
+A 440-V, 3-phase voltage feeds a balanced delta-connected 3-phase load with an impedance of
+(25 + j10) Ω/phase
+
+(a) Calculate the line current and represent in phasor form
+(b) Calculate the power absorbed per phase and
+(c) Calculate the sum of all phase currents. Explain why this sum has such a value
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 8 of 13                  Department of ECSE
+
+--- PAGE 9 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question:
+
+A three-phase, star connected load with a resistance of 30Ω and a reactance of 25Ω per phase, is
+fed by a 230 V, three-phase, 60 Hz source. Calculate
+
+(a) all line currents
+(b) power consumed and
+(c) power factor.
+
+If a delta connected, balanced 3-phase capacitor bank, is added to the same supply in parallel to
+the given load, with the 15 micro Farad capacitance/phase, then calculate the new overall power
+factor of the circuit.
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 9 of 13                  Department of ECSE
+
+--- PAGE 10 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question:
+
+
+
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 10 of 13                  Department of ECSE
+
+--- PAGE 11 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question:
+
+A 1-phase, 25 kVA, 220/440 V, 60 Hz transformer gave the following test results.
+
+Open circuit test (440 V side open): 220 V, 9:5 A, 650W
+Short-circuit test (220 V side shorted): 37:5 V, 55 A, 950W
+
+(a) Determine the rated voltage and rated current for the high-voltage and low-voltage sides.
+(b) Derive an approximate equivalent circuit referred to the HV as well as LV side.
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 11 of 13                  Department of ECSE
+
+--- PAGE 12 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 12 of 13                  Department of ECSE
+
+--- PAGE 13 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question:
+
+
+
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute         Page 13 of 13                  Department of ECSE

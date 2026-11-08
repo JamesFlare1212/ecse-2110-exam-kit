@@ -1,0 +1,244 @@
+
+--- PAGE 1 ---
+ ECSE 2110 · 作业逐项详解
+
+  Electrical Energy Systems | Homework #3（以附件正文标题为准）
+
+
+ 解答约定：使用单重（simplex）绕组；采用约定正电流方向。数值题忽略电阻压降、电刷压降及损耗。
+
+ 1(a) 电动机与发电机的区别
+
+ 步骤 1：先看能量的流向。电动机从电源吸收电能，在轴上输出机械能；发电机由原动机驱动，吸收机械能并输
+ 出电能。
+
+ 步骤 2：再看主导作用。电动机利用载流导体在磁场中受力产生转矩；发电机利用导体相对磁场运动产生感应电
+ 动势。同一台电机在适当条件下可工作在两种状态。
+
+
+    1(a) 最终答案 / Short answer
+
+   A motor converts electrical energy into mechanical energy, whereas a generator converts mechanical energy into
+    electrical energy. A motor develops torque from current-carrying conductors in a magnetic field; a generator
+   develops an emf when conductors move through a magnetic field.
+
+
+ 1(b) 弗莱明右手定则与左手定则
+
+ 步骤 1：把拇指、食指和中指互相垂直伸开。两种定则中，食指均指向磁场方向，即气隙中从 N 极指向 S 极。
+
+ 步骤 2：右手用于发电机。拇指指向导体的运动速度，中指指向感应电动势的正方向；闭合回路中，感应电流沿
+ 该方向流动。
+
+ 步骤 3：左手用于电动机。中指指向约定正电流方向，拇指给出导体所受电磁力方向。其方向关系分别为：
+
+
+
+
+    1(b) 最终答案 / Short answer
+
+    For Fleming's right-hand rule, used for generators, the thumb indicates conductor motion, the forefinger indicates
+   the magnetic field from N to S, and the middle finger indicates the induced emf or conventional current direction.
+    For the left-hand rule, used for motors, the forefinger indicates the field, the middle finger indicates conventional
+    current, and the thumb indicates force. The three fingers are mutually perpendicular.
+
+
+
+
+
+ 图 1 方向核对：右图中的电流指向纸内、磁场向右，因此电磁力向下。图中叉号表示“指向纸内”。
+
+
+
+
+
+ECSE 2110 | Step-by-step solutions                                                                             01
+
+--- PAGE 2 ---
+第 1 题 · 绕组、励磁与换向
+
+ 逐项说明物理原因，并给出英文短答。
+
+
+ 1(c) 叠绕与波绕的区别
+
+ 步骤 1：设磁极数为 P，并联支路数为 A。单重叠绕的 A = P；单重波绕的 A = 2，与极数无关。
+
+ 步骤 2：在总导体数、磁通、转速及每根导体允许电流相同的条件下，支路越多，每支路串联导体越少，电压越
+ 低，但可提供的总电流越大。
+
+
+ 比较项        单重叠绕 Lap                 单重波绕 Wave
+
+
+ 连接特点       线圈连接相邻换向片，绕组逐次叠接       线圈跨越各磁极，呈波形连接
+
+
+ 并联支路数 A         P                                        2
+
+
+ 每支路串联导体数      Z / P                                      Z / 2
+
+
+ 多极机的典型用途   较低电压、较大电流              较高电压、较小电流
+
+
+    1(c) 最终答案 / Short answer
+
+    In simplex lap winding, coils connect to adjacent commutator segments and the number of parallel paths equals
+   the number of poles, A = P. In simplex wave winding, the winding progresses around the poles and has two
+    parallel paths, A = 2. For otherwise comparable multipole machines, lap winding suits lower voltage and higher
+    current, while wave winding suits higher voltage and lower current.
+
+
+ 1(d) 励磁线圈为什么通常彼此串联？
+
+ 步骤 1：串联使各磁极线圈流过完全相同的励磁电流，避免并联时因线圈电阻差异导致电流分配不均。
+
+ 步骤 2：磁动势为安匝数 NfIf。若各极匝数相同且磁路相近，相同电流就能产生近似相等的磁动势和每极磁通。
+
+ 步骤 3：正确选择各线圈的绕向和接线方向，使相邻磁极依次形成 N、S 极。这里说的是各励磁线圈彼此串联；它
+ 们与电枢之间仍可采用并励、他励或串励连接。
+
+
+    1(d) 最终答案 / Short answer
+
+   The field coils are usually connected in series so that every pole carries the same excitation current. With equal
+    turns and similar magnetic paths, this gives approximately equal pole mmfs and fluxes. Their winding senses and
+   connections are chosen to produce alternating N and S poles. Series connection among the field coils does not
+    require series connection with the armature.
+
+
+ 1(e) 直流电机中换向器的作用
+
+ 步骤 1：在发电机中，转动线圈内部的感应电动势随位置改变而交替反向。换向器与固定电刷配合，在适当位置
+ 切换线圈与电刷的连接，使电刷端得到单向电压。
+
+ 步骤 2：在电动机中，线圈经过中性区域时，换向器切换其连接，使该线圈电流适时反向，从而使产生的电磁转
+ 矩保持同一转向。
+
+
+    1(e) 最终答案 / Short answer
+
+   The commutator is a mechanical switching device that connects the rotating armature to stationary brushes. In a
+   DC generator, it rectifies the alternating emf in the armature coils into a unidirectional brush voltage. In a DC
+   motor, it reverses each coil's current at the proper rotor position so that the electromagnetic torque continues in
+   the same rotational direction.
+
+
+
+
+
+ECSE 2110 | Step-by-step solutions                                                                             02
+
+--- PAGE 3 ---
+第 2 题 · 两台直流电机的绕组设计
+
+ 要求：两台使用相同数量的额定线圈，求 (a) 绕组类型、(b) 线圈数、(c) kW 额定值。
+
+ 已知：机器 1 为 120 V，机器 2 为 240 V；两台均为 1500 rpm、4 极。每个线圈额定电压 ec = 4 V，额定电流 ic =
+ 5 A。设每台总线圈数为 C。
+
+步骤 1 · 建立“串联升压、并联增流”的关系
+
+ A 条相同支路并联时，每支路有 C/A 个线圈串联。各支路电压相同，各支路电流相加，因此：
+
+
+
+步骤 2 · 求 (a)：用相同线圈数确定绕组类型
+
+ 两台的 C 和每线圈电压相同，故端电压与并联支路数成反比：
+
+
+ 4 极单重叠绕有 4 条支路，单重波绕有 2 条支路。只有 A1 = 4、A2 = 2 满足上述比值。
+
+步骤 3 · 求 (b)：计算并核对每台线圈数
+
+
+
+ 机器 1 每支路有 120/4 = 30 个线圈；机器 2 每支路有 120/2 = 60 个线圈。相应支路电压为 30×4 = 120 V 和 60×4
+ = 240 V。
+
+步骤 4 · 求 (c)：先求电枢总电流，再求额定功率
+
+
+
+
+
+  第 2 题最终答案 · (a)、(b)、(c)
+
+  机器 1：(a) 单重叠绕；(b) 120 个线圈；(c) 2.4 kW（120 V，20 A）。
+  机器 2：(a) 单重波绕；(b) 120 个线圈；(c) 2.4 kW（240 V，10 A）。
+
+
+
+
+
+ 图 2 等效支路连接。方框代表串联线圈组；本图说明电压、电流关系，并非实际槽位或换向片排布图。
+
+ 独立核对：每台总功率 = C ec ic = 120×4×5 = 2400 W。1500 rpm 已包含在线圈的题设额定工况中，无需再乘入功率。
+
+
+
+
+
+ECSE 2110 | Step-by-step solutions                                                                             03
+
+--- PAGE 4 ---
+第 3 题 · 感应电压与额定功率
+
+ 已知：4 极，单重波绕，总计 300 匝；每极磁通 0.025 Wb；转速 1000 rpm；每匝额定电流 25 A。
+
+
+ 3(a) 求感应电动势
+
+ 步骤 1：把匝数换成有效导体数。每匝有两个有效导体边，所以总导体数是 600，而不是 300；单重波绕有两条并
+ 联支路。
+
+
+
+ 步骤 2：一个导体每转切割 PΦ 的磁通，每秒转 n/60 圈，故每个导体的平均感应电动势为 PΦn/60；每支路有
+ Z/A 个导体串联。因此：
+
+
+
+ 步骤 3：代入题设值，注意转速单位为 rpm，公式中已包含除以 60 的换算。
+
+
+
+
+    3(a) 最终答案
+
+
+
+ 3(b) 每匝电流为 25 A 时，求 kW 额定值
+
+ 步骤 4：同一支路内的各匝串联，所以每匝电流就是支路电流 25 A；两条支路在电刷处汇合，电枢总电流为：
+
+
+
+ 步骤 5：由生成电压乘以电枢总电流，得到理想电气额定功率：
+
+
+
+
+    3(b) 最终答案
+
+
+
+
+ 独立核对：每导体电动势为 1.6667 V，每支路有 300 个导体，得到约 500 V；总功率也可写为 600×(5/3)×25 = 25000 W。不能直接用
+ 500×25，因为 25 A 只是支路电流。
+
+
+
+
+
+ 图 3 其余参数固定时，E 与 n 成正比：E = 0.5n（n 以 rpm 计）。标记点就是本题的 1000 rpm、500 V 工况。题目未给损耗，上述 kW
+ 按理想模型计算。
+
+
+
+
+
+ECSE 2110 | Step-by-step solutions                                                                             04

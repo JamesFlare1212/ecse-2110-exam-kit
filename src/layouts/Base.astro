@@ -1,0 +1,63 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import { course, pageTitle } from '../../content/course';
+import '../styles/layout.css';
+import favicon from '#lib/assets/favicon.svg';
+import inter from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+interface Props { title: string; description: string }
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="zh-CN" transition:animate="none">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="text-scale" content="scale" />
+    <meta name="theme-color" content="#ad5030" />
+    <title>{pageTitle(title)}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href={favicon.src} />
+    <link rel="preload" href={inter} as="font" type="font/woff2" crossorigin />
+    <script is:inline data-astro-rerun define:vars={{ storageKey: course.storageKey }}>
+      try {
+        const p = JSON.parse(localStorage.getItem(storageKey) || '{}');
+        const dark = p.theme === 'dark' || ((!p.theme || p.theme === 'system') && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+        // Keep the authored static content readable while the island loads.
+        document.documentElement.dataset.navigation = p.sidebars?.navigation === false ? 'closed' : 'open';
+        document.documentElement.dataset.references = p.sidebars?.references === false ? 'closed' : 'open';
+      } catch {}
+    </script>
+    <script>
+      document.addEventListener('astro:before-swap', (event) => {
+        // Astro replaces root attributes. Carry the live theme into the incoming
+        // document before the swap and view-transition snapshot can show light mode.
+        const next = event.newDocument.documentElement;
+        next.classList.toggle('dark', document.documentElement.classList.contains('dark'));
+        next.style.colorScheme = document.documentElement.style.colorScheme;
+      });
+    </script>
+    <ClientRouter fallback="swap" />
+  </head>
+  <body>
+    <div id="startup-status" class="startup-status" role="status" hidden>
+      <span lang="zh-CN">交互功能尚未就绪。可继续阅读题目，或重新加载后重试。</span>
+      <span lang="en">Study controls are not ready. Keep reading or reload to retry.</span>
+      <a href="" lang="zh-CN">重新加载 / Reload</a>
+    </div>
+    <noscript><style>#startup-status { display:none; }</style><p class="startup-status">交互需要 JavaScript，仍可阅读静态题目。 / Enable JavaScript for study controls; static questions remain readable.</p></noscript>
+    <!-- Keep native Svelte portals attached when ClientRouter replaces the body. -->
+    <div id="fieldnotes-overlays" transition:persist="study-overlays"></div>
+    <slot />
+    <script is:inline data-astro-rerun>
+      window.setTimeout(() => {
+        const status = document.getElementById('startup-status');
+        if (status && !document.querySelector('[data-study-ready="true"], [data-error-ready="true"]')) {
+          status.setAttribute('role','alert');
+          status.hidden = false;
+        }
+      }, 5000);
+    </script>
+  </body>
+</html>

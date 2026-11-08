@@ -1,0 +1,653 @@
+
+--- PAGE 1 ---
+               Lecture 1
+
+         Course Overview &
+Introduction to Electrical Energy Systems
+                           ECSE 2110
+                     Electrical Energy Systems
+
+                            Instructor: Dr. Prabhakar Neti
+
+--- PAGE 2 ---
+               Course Information
+➢Instructor : Dr. Prabhakar Neti
+   ❑Email: netip@rpi.edu
+
+➢Course Lecture Time: TF 12:30 PM to 1:50 PM
+   ❑Location: JEC 4201
+
+➢Instructor’s Office Hours: Tuesdays 8 AM – 9 AM
+  ❑(Or By Appointment)
+   ❑JEC 6038 (OR)
+  ❑Webex: https://rensselaer.webex.com/meet/netip
+
+
+
+
+  ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    2
+
+--- PAGE 3 ---
+                 Teaching Assistant
+
+➢TA : James Onyejizu
+➢Email: onyejj@rpi.edu
+
+
+➢TA’s Office Hours:
+  ❑TBD
+
+
+
+
+
+  ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026     3
+
+--- PAGE 4 ---
+                 Teaching Assistant
+
+➢TA : Torraca, Cheyenne
+➢Email: torrac3@rpi.edu
+
+
+➢TA’s Office Hours:
+  ❑TBD
+
+
+
+
+
+  ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    4
+
+--- PAGE 5 ---
+              Exam Schedule
+
+➢Midterm Exam 1: October 6, 2026 (Tuesday)
+
+
+➢ Midterm Exam 2: November 10, 2026 (Tuesday)
+
+
+➢ Final Exam: TBD
+
+
+➢ Exams Details:
+   ❑All exams will be closed book exams
+   ❑All other details will be communicated close to the exam time
+
+
+
+
+
+ ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026     5
+
+--- PAGE 6 ---
+        Homework and MATLAB exercises
+
+➢Assignment submission and grading through Gradescope
+  ❑We will try to return graded work within a week
+➢Assignments every Monday, due in one week (Following Monday)
+   ❑Example: HW 1 assigned on Monday, due at 11:59 pm the following Monday
+➢Late assignments will not be accepted
+   ❑Gradescope submission automatically closes at 11:59:00 pm
+   ❑Plan to submit ahead of time – don’t wait until last minute
+➢All HW grades will be considered for final grading
+   ❑sickness, interviews, emergencies, personal problems and other such exigencies need
+        official request with proper documentation
+
+
+
+  ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    6
+
+--- PAGE 7 ---
+        Course Piazza and Gradescope Links
+
+➢Piazza – Lecture Notes, HW, HW-Solutions, Practice Problems, logistics, Exams
+  etc.
+    ❑https://piazza.com/rpi/fall2026/ecse2110/resources
+
+
+
+
+➢Gradescope – All HW assignments to be submitted in Gradescope
+   ❑https://www.gradescope.com/courses/1316726
+
+
+
+
+
+  ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026     7
+
+--- PAGE 8 ---
+                 Regrade Policy
+
+
+➢Homework Regrade Appeal:
+  ❑To appeal an assignment grade, you should submit an email request to the professor
+      within two days after receiving your graded assignment. In your request you must clearly
+      specify why you believe you deserve a higher credit for the solutions you are appealing.
+
+➢Exam Grade Appeal:
+  ❑To appeal an exam grade, you should submit an email request to the professor within a
+     week after receiving your graded exam. In your request you must clearly specify why you
+      believe you deserve a higher credit for the solutions you are appealing.
+
+
+
+
+
+  ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    8
+
+--- PAGE 9 ---
+          Academic Integrity (RPI Policy)
+
+➢ALL of us consider it very important!
+➢Read all the details of this policy for our class in the syllabus document
+➢If you have any question concerning this policy before submitting an
+  assignment, please ask for clarification.
+➢Any violation of this policy will result in a 0 score for the related evaluation.
+➢Repeated violation will result in F grade.
+➢We have a zero-tolerance policy in exams, and any violation of the policies
+  result in an F grade.
+➢For any case of academic dishonesty, a report will be filed to the Dean of
+  Students.
+
+
+
+  ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    9
+
+--- PAGE 10 ---
+  ECSE 2110 Electrical Energy Systems - Syllabus
+
+
+➢This course introduces the major aspects of today’s electrical energy
+  system including
+  ❑AC circuit analysis
+   ❑Transformers
+   ❑electric machines, and
+   ❑Solid-State power converters.
+
+➢Renewable energy sources and systems are discussed, including
+  ❑wind and solar energy
+   ❑Integration of energy sources with the grid is addressed
+
+
+
+
+  ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    10
+
+--- PAGE 11 ---
+                 Grading Criterion
+
+
+                 Assessment           Weight
+
+                  Assignments              20%
+
+                Midterm Exam 1            25%
+
+                Midterm Exam 2            25%
+
+                       Final Exam               25%
+
+              Attendance & In-class
+                                           5%                      Participation
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    11
+
+--- PAGE 12 ---
+           Recommended Textbooks
+
+
+
+➢Textbook-1: Hadi Saadat, Power System Analysis, 3rd Ed., PSA Publishing, 2011.
+➢
+➢Textbook-2: P.C. Sen, Principles of Electric Machines and Power Electronics, 2nd
+  Ed., John Wiley & Sons, 1997.
+➢
+➢Textbook-3: Gilbert M. Masters, Renewable and Efficient Electric Power
+  Systems, Wiley Interscience, a John Wiley & Sons, Inc., Publication, USA, 2004.
+
+
+
+
+
+  ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    12
+
+--- PAGE 13 ---
+                      Lecture-1
+        Introduction to Electrical Energy Systems
+➢The Electrical Power System
+
+
+   ❑Introduction
+
+
+    ❑Electrical Power Generation from Various Energy Sources
+
+
+    ❑Electric Industry in USA
+
+
+   ❑Modern Power System
+
+
+
+
+
+  ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    13
+
+--- PAGE 14 ---
+         Why We Need Energy/Power?
+
+➢To get any work done, we need energy and power
+
+
+   ❑Energy can neither be created nor be destroyed………..but can be converted from one form
+      to another!
+
+
+  ❑We get work done by converting energy from one form to another!!
+
+
+   ❑Various forms of energy can be converted from one to another, mechanical, electrical,
+      chemical, thermal etc.
+
+
+  ❑E = MC2
+
+
+
+
+  ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    14
+
+--- PAGE 15 ---
+                Types of Energy
+
+
+  ➢We get energy from two major sources
+
+
+      ❑Earth
+
+
+     ❑Sun
+
+
+     ❑Only a few examples are listed here!
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    15
+
+--- PAGE 16 ---
+           Why Electrical Energy?
+
+   ➢Electrical energy brings the following advantages
+
+
+      ❑Very fast to transmit
+
+
+      ❑Easier to control
+
+
+      ❑Higher efficiency and reliability
+
+
+       ❑Overall a cleaner system
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    16
+
+--- PAGE 17 ---
+        Introduction to Electrical Power Systems
+
+
+  ➢Three major components of a power system
+
+
+       ❑Generation:
+
+
+       ❑Transmission/Distribution:
+
+
+       ❑Utilization/Load:
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    17
+
+--- PAGE 18 ---
+        Introduction to Electrical Power System
+
+
+
+    Gen. Station
+                                                       Tr. Substation                          Distribution
+                                         Tr. Lines                                         Substation
+               GSU
+
+
+
+
+       Global Electricity Consumption       Role of electrical rotating
+                                   machines:
+                                     Power generation > 90%       ~53          ~47%
+    % All              Motors
+                                     Power consumption ~47%         other
+        Loads
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    18
+
+--- PAGE 19 ---
+        Introduction to Electrical Power System
+
+                                                      Power Transmission    Power Generation
+                                      ACSR
+
+
+
+
+
+                                GSU
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    19
+
+--- PAGE 20 ---
+        Introduction to Electrical Power System
+
+Power Transmission
+
+                                                       Power Distribution
+
+
+                                     Substations
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026   20
+
+--- PAGE 21 ---
+A sub-station with different power system components
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    21
+
+--- PAGE 22 ---
+                 Electrical Power System
+  ➢Few Examples
+       ❑Electric utility
+       ❑Airplanes and Space ships/stations
+       ❑Naval/Cruise Ships and submarines
+      ❑Automobiles
+      ❑Battery operated portable systems
+     ❑EV Charging Stations
+       ❑Industrial/Commercial Systems
+     ❑Data Centers (highly reliable power, ~ 0.9999999!!)
+      ❑Micro grids – Islanded?
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    22
+
+--- PAGE 23 ---
+              Electric Power – Brief History
+
+ ➢1800 - First electric battery invented by Alessandro Volta. The “volt” is
+   named in his honor.
+ ➢1820 -Hans Christian Oersted and André-Marie Ampère discovered the
+    relationship between electricity and magnetism.
+ ➢1821 -The first electric motor was invented by Michael Faraday.
+ ➢1826 -Georg Ohm defined the relationship between power, voltage,
+   current and resistance in “Ohm’s Law.”
+ ➢1860′s -Mathematical theory of electromagnetic fields published by
+   James Clerk Maxwell. Maxwell’s four laws of electrodynamics unified
+   magnetism, electricity and light.
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    23
+
+--- PAGE 24 ---
+              Electric Power – Brief History
+
+ ➢1870’s -Commercial use of electricity with the development of arc lamps
+    for street lighting and lighthouse illumination
+ ➢1880’s – Edison introduced Pearl Street dc system in Manhattan
+   supplying 59 customers
+ ➢1884 – Frank Sprague developed practical dc motor
+ ➢1885 – Gaulard and Gibbs developed transformer.
+ ➢Mid 1880’s – Westinghouse/Tesla introduced rival ac system
+ ➢Late 1880’s – Tesla invented ac induction motor
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026   24
+
+--- PAGE 25 ---
+              Electric Power – Brief History
+
+ ➢1889 - the first AC transmission line in North America was put into
+    operation, single phase
+ ➢1893 – First 3 phase transmission line operating at 2.3 kV was put into
+   operation in Southern California.
+ ➢1896 – ac lines deliver electricity from hydro generation at Niagara Falls
+    to Buffalo, 20 miles away
+ ➢Early 1900’s – Private utilities supply all customers in area (city);
+   recognized as a natural monopoly; states step in to begin regulation
+ ➢By 1920’s – Large interstate holding companies control most electricity
+   systems
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    25
+
+--- PAGE 26 ---
+              Electric Power – Brief History
+
+ ➢1935 – Congress passes Public Utility Holding Company Act to establish
+    national regulation, breaking up large interstate utilities (repealed 2005)
+ ➢1935/6 – Rural Electrification Act brought electricity to rural areas
+ ➢1930’s – Electric utilities established as vertical monopolies
+ ➢1970’s brought inflation, increased fossil-fuel prices, calls for
+   conservation and growing environmental concerns
+ ➢As a result, U.S. Congress passed Public Utilities Regulatory Policies Act
+   (PURPA) in 1978, which mandated utilities must purchase power from
+   independent generators located in their service territory (modified 2005)
+ ➢PURPA introduced some competition
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026   26
+
+--- PAGE 27 ---
+              Electric Power – Brief History
+
+ ➢Major opening of industry to competition occurred as a result of National
+   Energy Policy Act of 1992
+ ➢This act mandated that utilities provide “nondiscriminatory” access to the
+   high voltage transmission
+ ➢Goal was to set up true competition in generation
+ ➢Result over the last few years has been a dramatic restructuring of
+    electric utility industry.
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    27
+
+--- PAGE 28 ---
+                       Utility Restructuring
+
+
+
+            ➢Driven by significant regional variations in electric
+                 rates
+
+
+           ➢Goal of competition is to reduce rates through the
+                 introduction of competition
+
+
+             ➢Eventual goal is to allow consumers to choose their
+                    electricity supplier
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026   28
+
+--- PAGE 29 ---
+           Electricity Rates
+
+                                     State              cents/kWh State          cents/kWh
+                               Alabama               9.83   Montana           8.92
+                                    Alaska                 19.1    Nebraska          9.08
+                                    Arizona               10.64   Nevada            8.76
+                                   Arkansas              8.26   New Hampshire    16.17
+                                        California             16.06  New Jersey        13.32
+                                 Colorado              9.99   New Mexico       9.59
+                                   Connecticut           17.55  New York         14.74
+                                Delaware             10.91   North Carolina     9.04
+                                           District of Columbia     11.8    North Dakota      8.78
+                                        Florida               10.42   Ohio               9.84
+                                   Georgia                9.83   Oklahoma          8.2
+                                  Hawaii               26.05   Oregon            8.81
+                                  Idaho                 8.26    Pennsylvania      10.13
+                                                Illinois                 9.49   Rhode Island      16.42
+                                     Indiana                9.77    South Carolina      9.97
+                               Iowa                  8.73    South Dakota      10.05
+                                  Kansas                10.6    Tennessee         9.45
+                                  Kentucky              8.57    Texas              8.38
+                                     Louisiana              7.79   Utah               8.6
+                               Maine                13.02   Vermont           14.6
+                                Maryland             11.98    Virginia            9.18
+                                  Massachusetts        17.12   Washington        7.94
+                                  Michigan             11.28   West Virginia       9
+                                 Minnesota            10.27   Wisconsin         10.76
+                                        Mississippi             9.09   Wyoming          8.28
+                                    Missouri              10.03    U.S. Total         10.48
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026   29
+
+--- PAGE 30 ---
+         Electric Power – Where are we Today?
+
+
+
+
+
+         Power System that is Highly Flexible, Resilient and
+         Connected and Optimizes Energy Resources                               30
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    30
+
+--- PAGE 31 ---
+               What about DC?
+
+
+
+        ➢Is there a role for DC in the AC world?
+        ➢Is there (still) a role for AC in the DC world?
+       ➢Last DC residential system in NY city
+        ➢Back-to-back DC
+        ➢Long-distance
+       ➢Low/High voltage
+         ➢Protection/Safety
+      ➢HVDC in Brazil (+/- 600kV, 3150 x 2 MW, ~1500 miles!)
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    31
+
+--- PAGE 32 ---
+                  Notation - Power
+
+         ➢Power: Consumption of energy per second
+        ➢Power Units
+             Watts (W) = voltage x current for dc
+                 = rms voltage x rms current for ac
+                kW(kilo)103 Watt    PW(Peta)1015 Watt
+            MW(Mega)106 Watt  EW(Exa)1018 Watt
+              GW(Giga)109 Watt   ZW(Zetta)1021 Watt
+               TW(Tera)1012 Watt   YW(Yotta)1024 Watt
+            Installed U.S. generation capacity is about 900 GW
+            (about 3 kW per person)
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    32
+
+--- PAGE 33 ---
+                  Notation - Energy
+
+          ➢Energy: Integral of power over time:
+
+           Energy =  Power  dt                      
+         ➢Energy is what people really
+           want from a power system
+         ➢Energy Units
+               Joule =  1 Watt-second (J)
+          kWh  –  Kilo-watt-hour (3.6 x 106 J = 3.6 MJ)
+             Btu   –  1055 J; 1 MBtu=0.292 MWh
+          ➢U.S. electric energy consumption: about 3600 billion
+         kWh (about 13,333 kWh per person, which means on
+            average we each use 1.5 kW of power continuously)
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    33
+
+--- PAGE 34 ---
+ The
+Future
+… at
+ least
+in NY!
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    34
+
+--- PAGE 35 ---
+              Inventors – Electric Power
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                                    9/1/2026    35

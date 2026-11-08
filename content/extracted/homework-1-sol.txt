@@ -1,0 +1,116 @@
+
+--- PAGE 1 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+                       Homework # 1
+
+
+
+
+Question 1. (40 points) Write a short paragraph to answer.
+
+    a.  (8 points) What are the advantages of electrical energy over other forms of energy?
+      Answer:
+
+      The advantages of electrical energy over other forms of energy are as follows:
+           - Long distance and very fast transmission
+           - Easy to control
+           - High efficiency and reliability
+           - Very clean system
+           - Used in numerous applications
+
+    b.  (8 points) Why AC is preferred over DC power systems?
+
+      Answer:
+
+
+      AC is preferred over DC for the following reasons:
+           - It is easy to step up or step down the generated voltage using transformers. Higher voltages
+       help reduce transmission stage electrical losses.
+           - 3-phase AC can transmit more power for the given amount of material.
+           - AC generation, repair, and maintenance are generally cheaper than DC systems.
+           - AC motors, particularly induction motors, are robust and cheaper.
+
+    c.  (8 points) Why is the tolerance on power system frequency relatively very small?
+
+      Answer:
+
+      The tolerance on power system frequency is relatively small for the following reasons:
+           - Keep AC machines in AC synchrony
+           - Machines are designed to be their most efficient at synchronous frequency, large deviations
+        increase wear and can cause damage
+           - Power output is directly proportional to this frequency
+
+    d.  (8 points) Why is electrical power transmission carried out at higher voltages?
+
+      Answer:
+
+        Electric power is a function of product of voltage and current. For a given amount of
+       power, higher the voltage, lower will be the current. Low currents cause less transmission
+       stage losses. Thus, to minimize transmission stage losses, higher voltage is preferred at
+       transmission stage.
+
+Rensselaer Polytechnic Institute          Page 1 of 5                   Department of ECSE
+
+--- PAGE 2 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+    e.  (8 points) What are the advantages of interconnected power systems?
+
+      Answer:
+
+      The interconnected power systems are more reliable and flexible to cater changing load
+      demand over a wide rage. This is carried out with the help of different generation plants
+       sharing the loads as needed.
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 2 of 5                   Department of ECSE
+
+--- PAGE 3 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question 2. (30 points)
+
+
+
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 3 of 5                   Department of ECSE
+
+--- PAGE 4 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question 3. (30 points)
+
+
+
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 4 of 5                   Department of ECSE
+
+--- PAGE 5 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 5 of 5                   Department of ECSE

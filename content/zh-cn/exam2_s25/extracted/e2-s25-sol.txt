@@ -1,0 +1,427 @@
+
+--- PAGE 1 ---
+   Rensselaer
+
+
+               ECSE  2110:  Electrical  Energy  Systems
+           Solutions      - Midterm  Exam   2 (25%   of overall  grade)
+
+
+Time:  1:30  pm   to  3:05  pm  eastern                     Total  points:  100
+Date:  July 15,  2025
+
+
+
+
+Name;
+
+
+
+
+RIN   #:
+
+
+                                General  Instructions
+
+
+
+
+     1.   Itis student's  responsibility  to make  sure  that   all pages   of the exam  are  intact.
+
+                If any  page    is missing,  then  please  inform  the  instructor  for replacement.
+
+     2.  Please  put your name  and  RIN  on  the  front  sheet  and  any  additional  sheet  you
+
+      may  attach.  Also  include  the  question  number  on  the  additional  sheets.
+
+      3.  Please  return  the exam   at the  end  of exam  session.  Please  make  sure  to  return
+
+             all  pages.
+
+     4.     If you  have  any  questions  during  the  exam,  please  raise  your  hand.
+
+      5.  This exam    is  a closed-book,  closed-notes  exam.  Laptop/tablet  cannot  be  used.
+
+       No  internet  connection    is allowed.
+
+     6.  You  are  allowed   to  use  your  calculator.
+
+     7.  You  are  not  allowed   to  use  your  phone   or  other  electronics  during  the  exam.
+
+     8.  Please show   all your work  clearly.
+
+--- PAGE 2 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   2  of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 3 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+                        Short Answer  Questions  (40  points)
+
+Question    1.  (10  points) Why  the  field winding  coils  in   a synchronous  machine  are  usually
+
+connected   in  series.
+
+
+
+
+
+Answer:
+
+Connecting  field winding  coils  in  series  ensures  that  the  same  magnitude  of current  flows
+through   all  the  coils.  This  maintains  symmetry   in  the magnetic  field  created  by   all  the  poles.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   3  of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 4 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   4  of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 5 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+Question   2.  (10  points) What    is synchronous  speed  and  why  synchronous
+
+machines  can  operate   at synchronous  speed  only?
+
+
+Answer:
+
+When    a three-phase  winding   is supplied  by  3-phase  balanced  currents,  then   a rotating  magnetic
+field   is established  which  rotates   at  a speed  equal  to  120    *   £ /P.  this  speed   is  called  the
+synchronous  speed.  Here   f  is frequency  of 3-phase  currents  and  P   is  the number  of poles  of the
+winding.
+
+In   a synchronous  machine,  there   is  a magnetic  locking  between  stator  and  rotor magnetic  poles.
+Since  stator  speed   is  fixed   at synchronous  speed,  the  rotor   is  also   at  the  same  speed.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   5  of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 6 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   6  of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 7 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+Question   3.  (10  points) What    is the  role  of           a commutator   in        a DC  machine?
+
+
+Answer:
+
+
+A commutator    in        a DC  Machine  has  alternate  bands   of Copper  and  mica.  Now  when  the
+armature  starts  to  rotate  by  an  external  force   (in DC  Generator),  the  coils  situated    in  the
+armature  also  rotate.  The  coils  are  shorted   via  brush  segment  with  alternate  change    in
+influence   of  poles.  This  alternate  change   via  the commutator  produces  unidirectional
+current  flow.      A commutator    in         a DC  Machine  has  alternate  bands   of Copper  and  mica.
+Now  when  the  armature  starts  to  rotate  by  an  external  force   (in DC  Generator),  the  coils
+situated    in  the  armature  also  rotate.  The  coils  are  shorted  via  brush  segment  with
+alternate  change    in  influence   of  poles.  This  alternate  change  via  the commutator
+produces  unidirectional  current  flow.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   7  of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 8 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   8  of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 9 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+Question   4.  (10  points)  Explain  about  the  loss  of synchronization    in synchronous
+machines.
+
+
+
+
+
+Answer:
+
+
+In synchronous  machines,  the  stator  and  rotor  poles  are  locked  to  maintain  synchronization.  Due  any
+
+reasons,  such  as overloading  etc.    if the  machine   lost  the  pole  lock  then  machine  goes  out  of
+
+synchronization.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   9  of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 10 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page  10  of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 11 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+                       Long Answer  Questions  (60  points)
+
+
+Problem   5.  (20  Points)
+ Two   dc  machines   of  the  following  rating  are  required:
+
+   DC  machine     1:  120V,  1500  rpm,  four  poles
+
+   DC  machine    2:  240  V,  1500  rpm,  four  poles
+
+    Coils  are  available  that  are  rated   at   4  volts  and    5 amperes.  For  the  same  number   of  coils   to  be
+ used  for  both  machines,  determine  the
+
+ (a)   Type   of armature  winding   for  each  machine.
+
+ (b)   Number   of  coils  required   for  each  machine.
+
+ (¢)   kW  rating  of  each  machine.
+Solution:
+
+
+(a    )   20      V    machine   —»    lafa      L\\li:lO(l"hj
+
+       24p     v   machne   —>   wave  w'mdinj
+
+
+
+
+  (b)        /1220   V   -machine
+          pParatlel.    paths           ,  a=p      =   4
+           Coils     im    Senies      im   each   path      =    %‘_’-    =  35
+        TetaQ     Coils        =    3BoxY4     =  120
+
+        240      V'     machine
+      a=2            ,     ecoils    in   each  path     = -       =  60
+
+         Total    Coils      =  dpx2      =  120
+
+
+
+ )    120V   mackine
+     Io=   4x   Ic     =  4x§5 =  20A
+
+         KEw    =   (20    X   .J.OXID-s      =   2.4
+
+      240V     -machine
+
+     Iao =  2xT.     =  2x§    =   (oA
+       Kw    =   24D    x  (0x/5>     =   24
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   11   of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 12 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page  12  of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 13 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+Problem   6.  (20  points)
+  A   19,  100 kVA,  1000/100V  transformer  gave  the  following   test  results:
+
+    open-circuit   test  (HV  side  open)
+
+     100V,6.0A,400  W
+
+    short-circuit   test
+
+     50V,100A, 1800 W
+
+
+ (a)   Determine   the  rated  voltage  and  rated  current   for  the  high-voltage  and  low-voltage  sides.
+
+ (b)    Derive  an  approximate  equivalent  circuit  referred   to  the  HV   side.
+
+ (c)   Determine   the  voltage  regulation   at  full  load,  0.6  PF  leading.
+
+
+Solution:
+
+
+                        |                                                                     |6O   %I  0  4       j0O   A         A
+  a                   (booOV       5                          B    akemece       T
+ ()\/;4(»%)        -                             »   ‘LH(WEA)         (00O
+                                                                                                                                                     3
+                                                                                                                             ~    [oox(o       =  [000A
+   VL.(\«JGJ)      =   ooV,    IL_(Y-J&A)          )                   [  oo
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page  13  of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 14 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+ ()   Fyvrma   J)M    Eks Bk         -]-‘/,L»("
+
+                                     =
+            'RC             (00           &    B    b,
+                         -          Goo
+
+         Icl,            =   loo              s R
+                                2
+
+         I\ML_    :J’z"'__q"          = 4”7A
+
+     Xl           =  %,    2237
+
+
+   Twrans   Vit      o  =    /000       =   |o
+
+
+     Q““%"\          -l"p        /L\A.«       r(ﬁ--sz     ﬂ"\-&{/
+            R       %           G                         M                      e                                                                                                                                                       i
+            CH       =  EER  e     LTE0               5  e
+
+
+
+       R                  o    (&0       .    O: |8~
+        “4    H        loo
+                   S                  5~ 65
+    2“?‘"            -        (oD
+                                            0.4 665
+   ogu             = Jos o  os>       7
+
+
+    E                                              L  A Rk       Q.  %  Casak W            do  v,  rle
+
+    o—                                                                                                |                                                                                                '          U e                            ¥    B Ly          —p
+                                                   O  |§g-n-        ) 04465                   /
+    \/“                             > wn          Y22T~                                      v L
+
+
+
+
+
+                  0.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page  14  of  16
+
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 15 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+Problem   7:  (20  Points)
+
+
+  A  1y,    5kVA,  240/120V,   60 Hz  transformer  has   a  core  loss  of  100     W   at  rated  voltage  and  copper
+  loss  of  120 W   at  rated  current.  Calculate  the  efficiency  for  the  following  load  condition:
+
+  (a)    Itis  delivering    5 kVA   at  rated  voltage  and   a power  factor  of  0.8.
+
+  (b)      It   is delivering   2 kVA   at  rated  voltage  and   a power  factor  of  0.8.
+
+
+
+
+Solution:
+
+
+  (1)        Pyur   = 4000W
+
+        coreloss   = 100W
+        copperloss   = 120W
+          P,   =  4220  W
+                        __  4000   __
+            Eff  = o      94.79  %
+
+  (i)       Pout   =  1600  W
+
+          core  loss   =  100  W
+        copperloss   =   (2)”  2 x120  W  =  0.16x  120  =  192  W
+          P,   =  1719.2W
+                    1600
+            Eff  =       x100  %   =  93.07  %                    1719.2
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page  15  of  16
+Summer  2023                                                                     Midterm  Exam  2
+
+--- PAGE 16 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page  16  of  16
+Summer  2023                                                                     Midterm  Exam  2

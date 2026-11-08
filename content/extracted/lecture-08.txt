@@ -1,0 +1,132 @@
+
+--- PAGE 1 ---
+        Lecture 8
+
+Electric Rotating Machines
+
+                     ECSE 2110
+             Electrical energy Systems
+
+                   Instructor: Dr. Prabhakar Neti
+
+--- PAGE 2 ---
+Electro-mechanical Energy Conversion
+
+
+
+
+
+                                                                                                                                      2
+
+--- PAGE 3 ---
+Rotating Machines
+
+
+
+
+
+                                                                                                               3
+
+--- PAGE 4 ---
+             Motional Voltage
+
+
+
+
+e = Motional Voltage
+
+B = Magnetic Flux Density
+
+V = Linear Speed of the conductor
+
+l = Length of the conductor
+
+
+
+
+
+                                                                                                                                               4
+
+--- PAGE 5 ---
+           Electromagnetic Force
+
+
+
+
+
+f = Electromagnetic force
+
+B = Magnetic Flux Density
+
+l = Length of the conductor
+
+i = Current in the conductor
+
+
+
+
+
+                                                                                                                                                              5
+
+--- PAGE 6 ---
+6
+
+--- PAGE 7 ---
+7
+
+--- PAGE 8 ---
+DC Generator
+
+
+
+
+
+                                                                                          8
+
+--- PAGE 9 ---
+DC Motor
+
+
+
+
+
+                                                                                 9
+
+--- PAGE 10 ---
+DC Motor
+
+
+
+
+
+                                                                                        10
+
+--- PAGE 11 ---
+11
+
+--- PAGE 12 ---
+DC Generator – Armature Voltage
+
+
+
+
+
+                                                                                                                                      12
+
+--- PAGE 13 ---
+DC Generator – Armature Voltage
+
+
+
+
+
+                                                                                                                                              13
+
+--- PAGE 14 ---
+DC Motor – Torque Developed
+
+
+
+
+
+                                                                                                                              14

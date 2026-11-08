@@ -1,0 +1,127 @@
+--- Page 1 ---
+Exam 2 · Undated archive
+Independent worked solutions · not an official answer key
+Question 2 · parts 2-1 to 2-4
+2-1. Lecture 10 p. 9: ns = 120f/p. For the same pole count, n′/n = f′/f. Field current changes flux
+and spatial phase sequence changes direction. Choice A.
+2-2. Lecture 10 p. 8 constructs the rotating field. Write B(t) = B0[cos(ωt)x̂ + sin(ωt)ŷ].
+Interchanging two spatial phase assignments gives Brev(t) = B0[cos(ωt)x̂ − sin(ωt)ŷ]. The field
+rotates in reverse. Choice C.
+2-3. Lecture 10 p. 14: |EA| = 4.44fNΦ. At fixed f, field current changes Φ; in a linear magnetic
+circuit Φ = kfIf, hence |E′|/|E| = I′f/If. Intended choice B at fixed frequency.
+Source ambiguity: fixed frequency is not printed. Changing f with unchanged flux also changes
+internal voltage, so A is possible under a literal reading. Saturation prevents assuming exact
+field-current proportionality in general.
+2-4. Lecture 10 p. 9: ωm = (2π/60)(120f/p) = 4πf/p. The pole count is unchanged; ωm2/ωm1 =
+60/50 = 1.2. Equal output horsepower changes torque, not synchronous speed. ωm1 < ωm2;
+choice B.
+Independent typesetting; original numbering retained. Q1 is not reconstructed.
+1 / 5
+
+
+--- Page 2 ---
+Exam 2 · Undated archive
+Independent worked solutions · not an official answer key
+Question 2 · parts 2-5 to 2-7
+2-5. Lecture 4 p. 26: Stwo = V1I1 = V2I2. Connect winding 1 as common winding and winding 2 in
+series-aiding. Output voltage is V1 + V2; series current is limited to I2. Therefore Sauto = (V1 +
+V2)I2 = (1 + V1/V2)Stwo > Stwo, subject to insulation and connection ratings. Choice A, True.
+2-6. Lecture 10 pp. 9, 14: f = pn/120 and |EA| = 4.44fNΦ. A fixed RL series load has pf = R/√[R² +
+(2πfL)²]. At fixed flux, increasing n increases f and |EA|, while power factor decreases. Choice A
+under fixed excitation. The question does not specify a regulator; an isolated generator is
+assumed, not an infinite-bus-constrained machine.
+2-7. Use spatial MMF superposition (Lecture 10 pp. 8, 14). All three currents are i(t) = Ipkcos(120πt
++ α). With winding axes 0, 2π/3, 4π/3, the fundamental is
+F1(θ,t) = N1i(t)[cos θ + cos(θ − 2π/3) + cos(θ − 4π/3)] = 0.
+The cosine coefficients sum to 1 − 1/2 − 1/2 = 0, and the sine coefficients sum to 0 + √3/2 − √3/2
+= 0. A third spatial harmonic instead gives
+F3(θ,t) = 3N3Ipkcos(3θ)cos(120πt + α).
+Its nodes are fixed and its amplitude pulsates. C can occur with spatial harmonics; the ideal
+fundamental is zero. Under the lecture’s purely sinusoidal winding model none of the printed
+choices describes a nonzero fundamental. Equal phase currents require independent supplies or a
+neutral/return path; a three-wire star circuit cannot support them. The unspecified RMS/peak
+current convention does not affect cancellation.
+Independent typesetting; original numbering retained. Q1 is not reconstructed.
+2 / 5
+
+
+--- Page 3 ---
+Exam 2 · Undated archive
+Independent worked solutions · not an official answer key
+Question 3 · loaded Y-connected generator
+(a) Lecture 10 p. 18: EA = Vφ + jXsIA, with current flowing out of the generator; Vφ = ZLIA. The
+single-phase circuit below has a common neutral return. The source is in series with Zs = j2 Ω and
+the phase load ZL = 10+j10 Ω. Total series impedance is 10+j12 Ω. Both Y connections give IL =
+IA.
+(b) Lecture 10 p. 14 gives |EA| proportional to fΦ. At no load the phase current is zero, so |EA0| =
+VLL0/√3 = 100/√3 = 57.7350 V.
+At unchanged speed and assuming an unsaturated linear magnetic circuit, |EA1| = (20/10)(100/√3)
+= 115.4701 V.
+From the series circuit, Vφ = EA1ZL/(ZL + jXs) = (200/√3)(10+j10)/(10+j12) V.
+|Vφ| = (200/√3)√(10²+10²)/√(10²+12²) = 104.5417 V.
+VLL = √3(104.5417) = 200√(200/244) = 181.0715 V RMS.
+Source correction: “primer mover” is printed. The printed j2 Ω is impedance; Xs = 2 Ω. Doubling
+field current does not guarantee doubled flux with saturation (Lecture 10 p. 15). Without the
+assumed linear magnetization and unchanged reactance, no unique numerical loaded voltage
+follows from the supplied data.
+E_A
+j2 Ω
+10+j10 Ω
++
+−
+I_A →
+neutral return
+Independent typesetting; original numbering retained. Q1 is not reconstructed.
+3 / 5
+
+
+--- Page 4 ---
+Exam 2 · Undated archive
+Independent worked solutions · not an official answer key
+Question 4 · turbine-driven generator
+(a) Lecture 10 p. 9 gives ns = 120f/p; mechanical power is P = Tωm. Substituting f = 60 Hz and p
+= 2 gives ns = 3600 rpm and ωm = 2π(3600)/60 = 120π rad/s. With all losses neglected, Pmech =
+1.5×10⁶ W. T = 1.5×10⁶/(120π) = 3978.87 N m.
+(b) Lecture 10 p. 24: P = 3|EA|Vφsin δ/Xs. For Y connection, Vφ = 1732/√3 = 999.970666 V.
+Therefore
+|EA| = PXs/(3Vφsin δ) = (1.5×10⁶)(1)/[3(1732/√3)sin 30°] = 1000.029335 V RMS per phase.
+(c) Lecture 10 pp. 18, 20 give IA = (EA − Vφ)/(jXs) and Sload = 3VφIA*. Choose Vφ as the zero-angle
+reference and use the result of (b):
+IA = [1000.029335(cos 30° + j sin 30°) − 999.970666]/j = 500.014667 + j133.919858 A.
+Current angle = arctan(133.919858/500.014667) = +14.993727°. The load current leads its
+voltage, and its received reactive power is negative.
+pf = 500.014667/√(500.014667² + 133.919858²) = 0.965954 leading.
+Source convention: j1 Ω is the synchronous impedance, so Xs = 1 Ω. The printed 1.732 kV is
+retained exactly rather than replaced by 1000√3 V.
+Independent typesetting; original numbering retained. Q1 is not reconstructed.
+4 / 5
+
+
+--- Page 5 ---
+Exam 2 · Undated archive
+Independent worked solutions · not an official answer key
+Question 5 · delta-connected motor
+(a) Reverse the generator-current convention of Lecture 10 pp. 18, 24. With motor current inward
+and δ a positive lag, Pdev = 3Vφ|EA|sin δ/Xs; Iφ = [Vφ − |EA|∠(−δ)]/(jXs). Delta gives Vφ = 600 V and
+IL = √3|Iφ|.
+|EA,a| = 40000(4)/[3(600)sin 60°] = 102.640048 V.
+Iφ,a = [600 − 102.640048(0.5 − j0.8660254)]/(j4) = 22.222222 − j137.169994 A. Its magnitude is
+√(22.222222² + 137.169994²) = 138.958391 A. IL,a = √3(138.958391) = 240.682993 A RMS.
+(b) Differentiate Pdev with respect to δ: dP/dδ = (3Vφ|EA|/Xs)cos δ. Its positive maximum is at δ =
+90°, where the second derivative is negative. Linear excitation gives |EA,b| = 1.2(102.640048) =
+123.168057 V.
+Iφ,b = [600 − 123.168057∠(−90°)]/(j4) = 30.792014 − j150 A. |Iφ,b| = √(30.792014² + 150²) =
+153.127882 A.
+New torque angle = 90° lag (signed internal-voltage angle −90°); IL,b = √3(153.127882)
+= 265.225271 A RMS.
+(c) Lecture 10 p. 20: Sin = 3VφIφ*. Continuing (b), Sin,b = 3(600)(30.792014 + j150) = 55425.626
++ j270000 VA. Positive Q means motor absorption. Qin,b = 270.000 kvar and winding current
+= 265.225271/√3 = 153.127882 A RMS.
+Source ambiguities: “negligible armature” is incomplete; negligible armature resistance is
+assumed. “Adjust the prime mover” is interpreted as adjusting mechanical shaft loading. Exact
+maximum power is the ideal stability boundary. Field-current scaling assumes no saturation. Part
+(c) does not identify its operating condition: if it instead refers to (a), Qin,a = 3(600)(137.169994)
+= 246.905989 kvar and winding current = 138.958391 A. The printed data alone do not resolve
+that wording.
+Independent typesetting; original numbering retained. Q1 is not reconstructed.
+5 / 5

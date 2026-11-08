@@ -1,0 +1,449 @@
+
+--- PAGE 1 ---
+   Rensselaer
+
+
+               ECSE  2110:  Electrical  Energy  Systems
+  Solutions      - Midterm  Exam      1  — Summer  2024  (25%  of  overall  grade)
+
+
+Time:  1.30PM   to 3:05PM                                Total  points:  100
+Date:  June  16%,  2025
+
+
+
+Name:
+
+
+
+
+RIN   #:
+
+
+                                General  Instructions
+
+
+
+
+     1.   Itis student's  responsibility  to make  sure  that   all pages   of the exam  are  intact.
+
+                If any  page    is missing,  then  please  inform  the  instructor  for replacement.
+
+                         .  Please  put your name  and  RIN  on  the  front  sheet  and  any  additional  sheet  you
+
+      may  attach.  Also  include  the  question  number  on  the  additional  sheets.
+
+                         .  Please  return  the exam   at the  end  of exam  session.  Please  make  sure  to  return
+
+             all  pages.
+
+                         .    If you  have  any  questions  during  the  exam,  please  raise  your  hand.
+
+                         .  No  books,  notes,  laptop/tablet  other  such  electronics  can  be  used  during  the
+
+
+       exam.
+
+                         .  You  are  allowed   to  use  your  calculator.
+
+                         .  You  are  not  allowed   to  use  your  phone   or  other  electronics  during  the  exam.
+
+                         .  Please show   all your work  clearly.
+
+--- PAGE 2 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   2  of  14
+Summer  2024                                                                     Midterm  Exam   1
+
+--- PAGE 3 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+                        Short Answer  Questions  (30  points)
+
+
+Question    1.  (10  points)  Describe  magnetic  losses   in   a transformer.
+
+
+Answer:
+
+
+There  are  two  types  of magnetic  losses   in   a transformer,  hysteresis  and  eddy  current
+
+losses.
+
+
+ Hysteresis   loss    in    a  transformer  occurs  due   to  magnetization  saturation    in  the  core   of  the
+
+ transformer.  Magnetic  materials   in the  core  will eventually become  magnetically  saturated when
+
+ they  are  placed   in   a strong  magnetic  field,  such   as  the  magnetic  field generated   by  an  AC  current
+
+ Eddy  currents  are  loops  of electrical  current  induced  within  conductors  by   a changing  magnetic
+
+ field   in the conductor  according  to Faraday's  law  of induction.  Eddy  currents  flow   in closed  loops
+
+ within  conductors,   in planes  perpendicular  to  the  magnetic  field.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   3  of  14
+
+Summer  2024                                                                     Midterm  Exam   1
+
+--- PAGE 4 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   4  of  14
+Summer  2024                                                                     Midterm  Exam   1
+
+--- PAGE 5 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+Question   2.  (20  points)  Derive  and  show  that  single  phase  AC  has   a double
+
+frequency  term   in  the  power.
+
+Answer:
+
+  Phasor  Analysis:  Single-Phase  Alternating  Voltage
+
+
+
+                       v(t)=V,k  cos(ax  +6,)
+
+                     i(t)=1,  cos(ax  +0.)
+
+
+
+
+
+  Power   in single-phase  AC  circuits:
+      p@)=v@)i@)=VI,  cos(ax +8  )cos(ax  +6,)=
+
+
+         %lem  [cos(6     —  8, )+cos2(axt  +6,  )cos(6, —0.)+
+
+               sin2(at  +6,)sin(6,  ~6,)]
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   5  of  14
+
+Summer  2024                                                                     Midterm  Exam   1
+
+--- PAGE 6 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   6  of  14
+
+Summer  2024                                                                     Midterm  Exam   1
+
+--- PAGE 7 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+Question   3.  (20  points)   In  the  figure  below,  the  delta  connected  load    is the
+
+equivalent  of the  star connected  load.  Derive  the  relationship  between  Zy   and  Z,             :
+
+
+                                                                                                       a
+
+
+
+
+
+Answer:
+
+
+                                          A-Y Transformation
+
+
+
+
+
+                                                     Vo Vo =3V0|  £30° +B| £-30° =¥,
+
+
+
+
+
+                                              Vanz_AIa       Van_Z)Ia
+
+                                                                    z,  =42
+            3
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems               Page   7  of  14
+
+Summer  2024                                                                     Midterm  Exam   1
+
+--- PAGE 8 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   8  of  14
+
+Summer  2024                                                                     Midterm  Exam   1
+
+--- PAGE 9 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+                       Long Answer  Questions  (70  points)
+
+
+Question   4.  (20  points)  A  440-V,  3-phase  voltage  feeds   a balanced  delta-connected  3-phase  load
+
+with  an impedance  of  (2  + j15)  Q/phase
+
+(a)  Calculate  the  line  current  and  represent  in phasor  form
+(b)  Calculate  the power  absorbed  per phase  and
+(c)  Calculate  the  sum  of  all phase  currents.  Explain why  this sum  has  such   a value
+
+
+Answer:
+
+                                                               V,  = 44040°
+
+                                                          V,  = 4404120°
+
+                                                                  V.  = 4404—120°
+
+(a)
+
+In   a  delta  connection,  phase  current   is  as  follows
+
+I        _   Vi   _ (440 +  jO)
+ ph=a  =    7z    n      2+j15   =3.8428      - j28.8210  A  = 29.07604—82.4054°
+
+
+Lyp_p=  16.344120°—-21.79°   = 23.0383  +17.7384   = 29.0760437.5946°
+
+
+Lyp_c=  16.344240°—-21.79°   = —26.8811    + j11.0825   = 29.07604157.5946°
+
+
+Line  current  in  delta
+
+             Line  =   Ipn—q   —  Lyn—p   =  (3.8428   —  j28.8210)   —  (23.0383   +  j17.7384)
+                                 =  —19.1955   — j46.5594   = 50.36114—112.4054°
+
+(b)
+
+Real  power  per  phase  =Re(V,,    * complex  conjugate  (I,,_,))
+
+= Re((440  +  jO)    = (3.8428  +  j28.8210))
+
+Real  power  per  phase   = 1690.8  W
+
+(©)
+
+Sum  of three balanced  3-phase  currents   is  zero.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   9  of  14
+
+Summer  2024                                                                     Midterm  Exam   1
+
+--- PAGE 10 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page  10  of  14
+Summer  2024                                                                     Midterm  Exam   1
+
+--- PAGE 11 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+Question    5.  (20  points)  Three  loads  are  connected    in  parallel  across    a  1400   V  (rms),
+
+60Hz,  single  phase  supply  as shown    in figure  below.
+
+
+                                                       ¥        YL              Y1,             VI,
+
+                         1400  V (f)                                1                      2                        3
+
+
+
+
+
+Load    1:  Inductive  load,  125  kVA  and  0.28  power  factor.
+Load   2: Capacitive  load,  10  kW  and  40  kVAR.
+Load   3:  Resistive  load  of  15  kW.
+
+
+      (a)  Find  the  total  kW,  kVAR,  kVA  and  the  supply  power  factor.
+     (b)  A capacitor  of  negligible  resistance    is connected    in  parallel  with  the  above
+        loads  to improve  the  power  factor  to  0.8  lagging.  Determine  the  capacitance
+       (micro  Farad)  and  the  kVAR  rating  of  this  capacitor.
+
+Answer:
+
+
+       An  inductive  load  has   a lagging  power  factor,  the  capacitive  load  has   a  lead-
+  ing power  factor,  and  the  resistive  load  has   a unity power  factor.                -
+
+ For Load    1:
+
+                                61  =  cos™1(0.28)  =  73.74°  lagging
+
+ The  load complex  powers  are
+
+                          S1  =  125/73.74  kVA  =  35 kW   +  7120  kvar
+                S   =  10 kW   —  3540  kvar
+                        S3  =  15 kW   +  30  kvar
+
+ The  total  apparent  power   is
+
+
+            S=P+3jQ=814+S2+S3
+
+                         =  (35  + 7120)  +  (10  —  740)  +  (15  +  ;0)
+
+                          =  60 kW  +  580  kvar  =  100/53.13  kVA
+
+ The  total  current   is
+                      S*     100,000/  —53.13°
+           I= —                             =  71.43/-53.13°   A
+                    Ve          1400£0°
+
+ The  supply  power  factor   is
+
+                   PF  =  cos(53.13)  =  0.6  lagging
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page   11  of  14
+
+Summer  2024                                                                     Midterm  Exam   1
+
+--- PAGE 12 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+ (b) A capacitor  of negligible  resistance   is connected   in parallel  with  the above  loads
+ to improve  the  power  factor   to  0.8  lagging.  Determine   the  kvar  rating  of  this  ca-
+ pacitor  and  the capacitance   in uF.
+
+
+
+  Total  real  power   IP  =  60 kW   at  the  new  power  factor  of  0.8  lagging  results  in  the
+ new  reactive  power  Q’.
+
+                               ¢  =  cos~1(0.8)  =  36.87°
+                                Q'  =  60tan(36.87°)   =  45  kvar
+
+ Therefore,  the  required  capacitor  kvar   is
+
+                             Qe    =  80    —  45   =  35   kvar
+
+ and
+                              V)2       14002                                                   )
+                       X  " . =   Sx   =  735,  000  =  — 756  1
+                                            10%
+      B0
+
+ and  the new  current   is
+
+                  S’       60,   000  —  745,  000
+         Y=   Ve           1400  70°        =  53.57£—36.87°   A
+
+ Note  the  reduction   in  the  supply  current  from  71.43  A  to  53.57  A.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page  12  of  14
+Summer  2024                                                                     Midterm  Exam   1
+
+--- PAGE 13 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+Question   6.  (30  points)  In  the  3-phase  circuit shown  below,  the  line  voltage magnitude   is  173  kV.
+
+The  phase  voltages  are:  Eqn  =  100/90°,  Epn  =  100/-30°,  and  Ecn  =  100/210°.  Load  impedances
+areZ, =5  +jO ohm,Zp   =   0   —  j5  ohm  and   Z.   =   3   + j4 ohm
+
+       a)   Calculate  the  neutral  voltage   Eo»
+      b)   Calculate  I,  Iy  and   I.
+
+
+
+
+
+Answer:
+
+  »Voltage    is  173  kV,  so  L-n
+     voltages  are:   E,_,,  = 100/90°,
+      E,, =100/-30°   E_,   = 100/210°
+
+
+
+
+  »Node  equation:    I, +1,  +1_=   0
+
+   o             Ean  _Eon   +  Ebn  _Eon   +  Ecn  _Eon
+                   5+   0       0+  j5   3+j4
+
+    »  Substituting  for voltages  and  solving,  we  get:
+      E,,   = 142.5/93.4°   V.  This  neutral  shift   is significant.
+    »  The  source  and  load  currents  are:                                                                           B
+    I,=8.61/-78.69%    I,  = 42.8926.31%    I_  = 41.5/-165.26°                                                                                  ;
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems               Page  13  of  14
+
+Summer  2024                                                                     Midterm  Exam   1
+
+--- PAGE 14 ---
+Please  use  separate  blank  sheets  of paper  to answer  questions.  Not enough  space  here.
+
+
+
+
+
+ECSE  2110  Electrical  Energy  Systems              Page  14  of  14
+Summer  2024                                                                     Midterm  Exam   1

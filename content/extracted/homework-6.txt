@@ -1,0 +1,44 @@
+
+--- PAGE 1 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+                       Homework # 6
+
+                      Due: Friday, October 30
+
+Question 1. a. (10 points) How salient-pole and round-rotor synchronous machines are
+different?
+
+
+
+
+Question 2. (10 points) Explain the function of damper bars in a synchronous machine.
+
+
+
+
+Question 3. (40point) A 3-phase, 318.75 kVA, 2300 V
+ Synchronous generator (alternator) has an armature resistance of .35 ohm/phase and a
+synchronous reactance of 1.2 ohm/phase. Determine the no-load generated voltage and the
+voltage regulation at
+
+    a)  Full-load kVA, 0.8 pf lagging and rated voltage
+    b)  Full-load kVA, 0.6 pf leading and rated voltage
+
+
+
+
+Question 4. (40point) A 60 MVA, 69.3kV, 3-phase synchronous generator has a synchronous
+reactance of a 15 ohm/phase and negligible armature reactance.
+
+    a) The generator is delivering rated power at 0.8 pf lagging at the rated terminal voltage to
+      an infinite bus bar. Determine the magnitude of the generated emf per phase and the
+      power angle delta.
+    b)  If the generated emf is 36kV per phase, what is the maximum 3-phase power that the
+       generator can deliver before losing its synchronism.
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 1 of 1                   Department of ECSE

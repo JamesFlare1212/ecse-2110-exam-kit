@@ -1,0 +1,34 @@
+
+--- PAGE 1 ---
+ECSE 2110 – Electrical energy Systems                                       Fall 2026
+
+                       Homework # 3
+
+                      Due: Friday, October 16
+
+Question 1. (30 points) Write a short paragraph to answer.
+
+    a. (4 points) What is the difference between a motor and a generator?
+
+    b. (4 points) State and explain Fleming’s right-hand rule and left-hand rule.
+
+    c. (4 points) What are the differences between Lap winding and wave winding.
+
+    d. (4 points) Why the field winding coils are usually connected in series.
+
+    e. (4 points) Explain the role of a commutator in a DC machine.
+
+
+Question 2. (35 points)
+
+
+
+
+
+Question 3. (35 points)
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 1 of 1                   Department of ECSE

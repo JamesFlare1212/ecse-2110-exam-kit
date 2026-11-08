@@ -1,0 +1,172 @@
+{
+  "review": "Source pages rendered with PyMuPDF and visually inspected by the implementation agent; independent human scientific and translation review remains required.",
+  "extraction": "The question PDF is an image scan with handwritten student work; native text extraction is blank. Authored question text was transcribed visually from the printed regions, not from the handwriting. The separate official solution PDF contains rasterized derivations and has 15 actual pages despite its “of 14” footer.",
+  "questionPdfPages": {
+    "q1": 3,
+    "q2": 5,
+    "q3": 7,
+    "q4": 9,
+    "q5": 11,
+    "q6": 13
+  },
+  "officialSolutionPdfPages": {
+    "q1": [
+      3
+    ],
+    "q2": [
+      5
+    ],
+    "q3": [
+      7
+    ],
+    "q4": [
+      9,
+      10
+    ],
+    "q5": [
+      11,
+      12,
+      13
+    ],
+    "q6": [
+      14,
+      15
+    ]
+  },
+  "preservedSources": [
+    {
+      "id": "e1-f26",
+      "original": "Exams/Exam1/ECSE2110Test1-F26.pdf",
+      "bytes": 130541,
+      "sha256": "52d824775e6bf29f16382963782f713c95bc912792c45b48ea37d8c72cc7a2a2",
+      "pages": 14,
+      "pageSizes": [
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ]
+      ]
+    },
+    {
+      "id": "e1-f26-sol",
+      "original": "Exams/Exam1/ECSE2110Test1Sol-F26.pdf",
+      "bytes": 920404,
+      "sha256": "c26bdf7805fa6eee8d7c1e41fb32a7d2f7a72c141f854e2f780cbf5eb3e7d3d3",
+      "pages": 15,
+      "pageSizes": [
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ],
+        [
+          612.0,
+          792.0
+        ]
+      ]
+    }
+  ]
+}

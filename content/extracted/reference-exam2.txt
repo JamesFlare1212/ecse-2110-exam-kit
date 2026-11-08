@@ -1,0 +1,70 @@
+
+--- PAGE 1 ---
+                        Reference Sheet
+
+
+DC Machines
+
+
+
+
+
+Synchronous Machines
+
+
+
+
+
+RMS Voltage Generated
+
+
+
+
+Synchronous Generator Connected to an Infinite Bus
+
+
+
+
+
+3-Phase Real and Reactive Power
+
+--- PAGE 2 ---
+Power Electronics
+
+Average Output Voltage of 1-phase Uncontrolled Diode Half-Wave Rectifier
+
+
+
+
+
+Average Output Voltage of 1-phase Controlled Half-Wave Rectifier
+
+
+
+
+
+Average Output Voltage of 1-phase Controlled Full-Wave Rectifier
+
+
+
+
+
+Average Output Voltage of 3-Phase, Half-Wave Diode Rectifiers (Uncontrolled)
+
+
+
+
+
+Average Output Voltage of 3-Phase, Half-Wave Diode Rectifiers (Controlled)
+
+
+
+
+
+Average Output Voltage of DC-DC Step Down Chopper (Buck Converter)
+
+
+
+
+
+Average Output Voltage of DC-DC Step Up Chopper (Boost Converter)

@@ -1,0 +1,57 @@
+
+--- PAGE 1 ---
+                        Reference Sheet
+
+Energy power relationship                  𝐓𝐫𝐢𝐠𝐨𝐧𝐨𝐦𝐞𝐭𝐫𝐢𝐜 Identities
+
+                                                                  1
+                                            cos( 𝐴) cos( 𝐵) =  [cos( 𝐴+ 𝐵) + 𝑐𝑜𝑠( 𝐴−𝐵)
+                                                                  2
+
+                                          𝑐𝑜𝑠( 𝐴−𝐵) = cos(A).cos(B) + sin(A). Sin(B)
+
+Synchronous impedance                      𝑐𝑜𝑠( 𝐴+ 𝐵) = cos(A).cos(B) - sin(A). Sin(B)
+
+
+
+
+
+Three phase power in terms of phase current and phase voltage
+
+
+
+
+
+Star connected loads
+
+ILine = IPhase
+
+
+Line Voltage =
+
+
+
+
+
+Delta connected loads
+
+VLine = VPhase
+
+
+Line Current =
+
+
+
+
+
+Delta to Star Conversion (Impedance)
+
+
+
+
+
+RMS and peak Values
+
+Vrms = Vm / sqrt(2)
+
+--- PAGE 2 ---

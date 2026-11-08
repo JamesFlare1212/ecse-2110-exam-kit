@@ -1,0 +1,511 @@
+
+--- PAGE 1 ---
+            Lecture 4
+
+Magnetic Circuits and Transformers
+
+                          ECSE 2110
+                   Electrical Energy Systems
+
+                           Instructor: Dr. Prabhakar Neti
+
+--- PAGE 2 ---
+        Power Transformers
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                      2
+                                                                                                       9/11/2026
+
+--- PAGE 3 ---
+            Why transformers?
+
+
+
+➢Generators operate at a few kV
+
+
+
+➢Loads operated a few hundred volts
+
+
+➢We transmit power from generation to load at hundreds of kV
+
+
+➢We have to step-up the voltage from the generator to the line, then step-down
+  the voltage from the line to the load
+
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                         3
+                                                                                                                            9/11/2026
+
+--- PAGE 4 ---
+       Useful apparatus symbols
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                      4
+                                                                                                       9/11/2026
+
+--- PAGE 5 ---
+          Various types of power transformers
+
+➢Single-phase, Three-phase
+➢Bank of three single-phase
+➢Small, Large
+➢Air-core
+➢Laminated core
+➢Autotransformer
+➢Isolation transformer
+➢Water-proof (underground)
+➢Oil-filled, dry-type
+
+
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                       5
+                                                                                                                            9/11/2026
+
+--- PAGE 6 ---
+Transmission to Distribution Transformer
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                     6
+                                                                                                       9/11/2026
+
+--- PAGE 7 ---
+        Substation Transformer
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                          7
+                                                                                                       9/11/2026
+
+--- PAGE 8 ---
+                Transformer Mounting
+
+
+➢Pad-mount
+
+
+➢Pole mounted
+
+
+➢Solid foundation
+
+
+➢Spill catch basin
+
+
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                      8
+                                                                                                                            9/11/2026
+
+--- PAGE 9 ---
+             Transformers sometimes fail
+
+
+
+
+
+➢Fail spectacularly
+
+
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                     9
+                                                                                                                            9/11/2026
+
+--- PAGE 10 ---
+             Parts of a Power transformer
+➢Input winding (primary)
+
+➢Output winding (secondary)
+
+➢Core of magnetic material
+
+➢Insulation (turn, winding, ground)
+
+➢Bushings (outside) for connections
+
+➢Nameplate
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                      10
+                                                                                                                            9/11/2026
+
+--- PAGE 11 ---
+Magnetic circuit
+
+--- PAGE 12 ---
+            Transformer - magnetic circuit
+
+➢Notations and symbols:
+   ➢A- area (m2)
+   ➢l – length (m)
+  ➢B – magnetic flux density (T or Wb/m2 or Vs/m2
+  ➢φ – flux (Wb or Vs)
+  ➢λ – flux linkage (Wb-turn)
+  ➢F - Force (N)
+  ➢H – magnetic field strength (A/m); B = μH
+
+   ➢I – current (A)
+
+   ➢f - frequency (Hz or cycles/s)
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                      12
+                                                                                                                            9/11/2026
+
+--- PAGE 13 ---
+            Transformer - magnetic circuit
+
+➢Notations and symbols:
+  ➢L – inductance (H)
+  ➢N – number of turns of a winding
+➢μ – permeability (H/m); μ0 = 4π·10-7 H/m
+                                 MMF = NI = Flux * Reluctance
+➢F, mmf – magnetomotive force (At)
+➢P  - permeance (H)
+➢R  - reluctance (1/H)
+➢Magnetic circuit – is a path for magnetic flux
+➢The magnetic core may include an air gap
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                         13
+                                                                                                                            9/11/2026
+
+--- PAGE 14 ---
+Analogy between Electric (DC) and magnetic circuits
+
+                         DC circuit                                      Magnetic circuit
+
+          Current: I                                  Flux: φ
+
+         Voltage (emf): V                    mmf: F
+
+          Conductivity: σ                          Permeability: μ
+
+          Resistance: R                           Reluctance: R= l/(μA)
+
+         Conductance: G = 1/R                 Permeance: P= 1/R
+
+           Circuit equation: I = V/R              Mag. circuit eq.: φ = F/R
+
+           Field strength: E                          Field strength: H
+
+          Current density: J                       Flux density: B
+
+          Potential difference: ϕ = IR               Potential difference: Hl = F
+
+            ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                      14
+                                                                                                                      9/11/2026
+
+--- PAGE 15 ---
+                  Hysteresis Losses
+
+
+➢Hysteresis - core
+   is made of
+  magnetic
+  material
+
+
+➢Total energy loss
+  per cycle of
+  current:
+
+
+
+
+
+                                                              𝑊ℎ𝑦𝑠𝑡.𝑙𝑜𝑠𝑠𝑝𝑒𝑟𝑐𝑦𝑐𝑙𝑒= (𝑣𝑜𝑙𝑢𝑚𝑒𝑜𝑓𝑚𝑎𝑡𝑒𝑟𝑖𝑎𝑙) ⋅ර𝐻• 𝑑𝐵
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                       15
+                                                                                                                            9/11/2026
+
+--- PAGE 16 ---
+              Eddy Current losses
+➢Ideally, flux produced by one winding should flow through the core of the
+  transformer and link all turns of the other winding, but:
+   ❑Some flux fails to link winding turns
+   ❑Flux can fringe at core edges and gaps, causing the field to be non-uniform
+
+
+➢Eddy currents: time-varying magnetic flux induces eddy currents in
+  conductors (Lentz’s law) that oppose the change in flux that causes the eddy
+   currents
+
+
+➢Core is composed of sheets insulated from each other to confine eddy
+   currents to individual sheets
+
+
+
+
+                                                                                                                    2
+                                                                           𝑃𝑒𝑑𝑑𝑦= 𝑘𝑒𝑓2𝐵max➢Power loss due to eddy currents, (W/kg):
+      (ke is proportional to sheet material resistivity and thickness, τ)
+
+
+               ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                      16
+                                                                                                                           9/11/2026
+
+--- PAGE 17 ---
+                     Core
+➢Stacking factor:
+  (area of magnetic material)/(area of core) < 1
+
+➢Flux linkage: λ = Nφ
+
+➢Inductance: L = λ/I = Nφ/I
+
+➢Energy stored in inductance: WL = ½LI2
+
+➢Energy stored in air gap:
+                          of gap)  Wg = ½(Bg2/μ0)·(volume
+
+➢Energy stored in the core:   =   –                     Wc  WL  Wg
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                         17
+                                                                                                                            9/11/2026
+
+--- PAGE 18 ---
+               Example 1
+
+
+
+➢Iron ring has cross-section
+  A = 4000 mm2, mean length
+ l = 2400 mm, and B-H curve for iron:
+  H = 1000 A/m at B = 1 T. Find the number of ampere-turns, NI, to
+  produce B = 1 T.
+
+
+➢Solution 1: NI = Hl = 1000 * 2400/1000 = 2400 At
+
+
+
+
+
+        ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                      18
+                                                                                                                  9/11/2026
+
+--- PAGE 19 ---
+           Returning to power transformers
+
+➢Transformer has two windings on a common core
+
+
+➢Windings can be wound in various ways
+
+
+➢Therefore, it is important to indicate direction of winding – “winding polarity” – dot convention
+
+
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                      19
+                                                                                                                            9/11/2026
+
+--- PAGE 20 ---
+Dot convention
+
+➢Consider sinusoidal voltage, v(t) = cosωt
+   is applied to the top terminal of the primary (left) winding
+
+
+➢Dot indicates voltage rise along the transformer coil, i.e., that the voltage on
+  the top terminal of the secondary winding rises when the voltage on the top
+  terminal of the primary winding rises.
+
+➢The primary winding has N1 turns, and the secondary winding has N2 turns
+
+➢TURNS RATIO, a, is a = N1/N2
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                     20
+                                                                                                                            9/11/2026
+
+--- PAGE 21 ---
+Turns ratio – ideal
+transformer
+
+
+➢TURNS RATIO, a, is a = N1/N2
+➢Assume an ideal transformer:
+   ▪Winding resistance is zero, i.e., I2R loss is zero
+   ▪Core permeability,                             μc is infinite, i.e., Rc = 0
+   ▪There is no leakage flux, i.e., the entire flux, Φc is confined to the core and then entire flux links both
+      windings
+
+   ▪Core loss is zero
+
+
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                      21
+                                                                                                                            9/11/2026
+
+--- PAGE 22 ---
+                Using Ampere’s law
+
+
+
+                                          ර𝐻tangential 𝑑𝑙= 𝐼enclosed
+
+➢Ampere’s law:
+➢Current I1 flows into the positive (dotted) terminal of the primary winding, and
+  current I2 flows out of the positive (dotted) terminal of the secondary winding
+➢Assume Hc along path in the core is constant
+➢Then, we have:
+  Hclc = N1I1 – N2I2
+
+
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                      22
+                                                                                                                            9/11/2026
+
+--- PAGE 23 ---
+                Using Ampere’s law
+
+
+
+➢If the primary winding has N1 turns, then current I1 is enclosed N1 times (once
+  for each turn of the winding), and I2 is enclosed N2 times.
+➢Using the right-hand rule, I1 contributes to clockwise flux, and I2 to the
+  counterclockwise flux.
+➢Therefore, the NET current enclosed is:
+  N1I1 – N2I2
+
+
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                       23
+                                                                                                                            9/11/2026
+
+--- PAGE 24 ---
+                Using Ampere’s law
+
+➢Now, the magnetic flux density, Bc, in the core is constant:
+          Wb/m2 , or Hc = Bc/μc    Bc = μcHc
+
+➢ Substituting, we have:
+    N1I1 – N2I2 = (Bc/μc)lc
+
+
+                    ∞➢But, for an ideal transformer, μc =
+
+➢we have: N1I1 – N2I2 = 0  or  N1I1 = N2I2
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                     24
+                                                                                                                            9/11/2026
+
+--- PAGE 25 ---
+                Using Faraday’s law
+
+
+➢Voltage v(t) induced across a winding of N turns by a time-varying flux ϕ(t) is:
+   v(t) = Ndϕ(t)/dt or, in sinusoidal steady-state, V = NjωΦ
+
+➢Ideal transformer: entire flux, Φ, is confined to the core, i.e., Φc fully links both the
+  primary and secondary windings
+
+➢Therefore V1 = N1jωΦc and V2 = N2jωΦc
+
+➢From this, we have: V1/N1 = V2/N2
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                      25
+                                                                                                                            9/11/2026
+
+--- PAGE 26 ---
+                    Turns ratio
+
+
+➢Define the ratio of the number of turns of the primary winding to the number
+  of turns of the secondary winding as: at = N1/N2
+
+➢Then: V1 = atV2 and I1 = I2/at
+
+➢Also, S1 = V1I1* = (atV2)(I2/at)* = V2I2* = S2
+
+➢Power completely passes through the ideal transformer
+
+
+
+
+                ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                     26
+                                                                                                                            9/11/2026
+
+--- PAGE 27 ---
+Reflecting impedances through an ideal transformer
+
+
+      ➢An ideal transformer supplies a load impedance ZL, i.e., V2 = ZLI2  or ZL = V2/I2
+
+      ➢In the primary side, V1 = ZL’I1
+
+         ➢Substituting for V2 = V1/at and I2 = atI1, we have:
+                ZL = (V1/at)/(atI1) = V1/I1)(1/at2) = ZL’(1/at2)
+
+       ➢Or: ZL’ (load impedance viewed from primary) = a2ZL
+
+       ➢That is, a load impedance connected to the secondary of the transformer,
+           appears as the load impedance multiplied by turn ratio squared when viewed
+           from the primary side
+
+       ➢This way, we can simplify calculations that involve transformers. We will
+            develop an even simpler method.
+
+
+           ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                       27
+                                                                                                                     9/11/2026
+
+--- PAGE 28 ---
+          Real Transformers
+
+
+ ➢Real transformers
+    ➢have losses: winding resistance, R, and core losses (core loss
+        includes active and reactive components)
+
+    ➢have leakage flux, represented by inductive reactance, Xleak
+
+
+    ➢have finite permeability of magnetic core
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                     28
+                                                                                                       9/11/2026

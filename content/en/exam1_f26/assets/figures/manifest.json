@@ -1,0 +1,22 @@
+{
+  "paper": "exam1_f26",
+  "matplotlib": "3.11.0",
+  "generator": "content/en/exam1_f26/generate_figures.py",
+  "sourceSha256": {
+    "content/en/exam1_f26/generate_figures.py": "af63ed3955e8864e19381ef0898b94e397e4044337eba11dd7255cf4f89ee039",
+    "content/en/exam1_f26/figure-sources.json": "b68a8f1b8cc055b07bfe701f05be629350f4192b011ce03a444dc48001d05b34",
+    "scripts/plotting.py": "a8c56077b7b51856b11055baa940257463bfb762d9b8773086197dd02f9e7e74",
+    "scripts/question_primitives.py": "ff01131c66a2fc665cc4fecfc24e6fcced4f49eaeb86e7c922884b55cf978969"
+  },
+  "svgFonttype": "none",
+  "textScale": 1.3,
+  "textWeight": "bold",
+  "questionFigures": [
+    "e1-f26-q5"
+  ],
+  "figures": [
+    "e1-f26-q5",
+    "e1-f26-q6-equivalent",
+    "e1-f26-q6-phasor"
+  ]
+}

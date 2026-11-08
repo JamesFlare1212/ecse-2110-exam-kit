@@ -1,0 +1,50 @@
+
+--- PAGE 1 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+                       Homework # 4
+
+                      Due: Friday, October 02
+
+Question 1. (20 points)
+
+    a. (5 points) Explain about the losses in a transformer in detail.
+
+    b. (5 points) How to minimize hysteresis and eddy current losses in a transformer?
+
+    c. (5 points) What are in-rush currents in a transformer?
+
+    d. (5 points) Why calculate all-day efficiency of a transformer?
+
+
+Question 2. (20 points)
+
+
+
+
+
+Question 3. (20 points)
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 1 of 2                   Department of ECSE
+
+--- PAGE 2 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question 4. (20 points)
+
+
+
+
+
+Question 5. (20 points)
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 2 of 2                   Department of ECSE

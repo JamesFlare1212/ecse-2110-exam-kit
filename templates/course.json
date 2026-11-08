@@ -1,0 +1,13 @@
+{
+  "id": "new-course",
+  "code": "COURSE 101",
+  "title": { "zh": "示例课程", "en": "Example Subject" },
+  "defaultProblemId": null,
+  "storageKey": "new-course-fieldnotes-v1",
+  "resources": {
+    "formulaSheet": null,
+    "lectures": [
+      { "doc": "course-notes", "label": "A", "title": { "zh": "课程基础", "en": "Course foundations" } }
+    ]
+  }
+}

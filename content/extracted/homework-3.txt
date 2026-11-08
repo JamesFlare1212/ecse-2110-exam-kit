@@ -1,0 +1,58 @@
+
+--- PAGE 1 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+                       Homework # 3
+
+                     Due: Friday, September 25
+
+Question 1. (10 points) Explain about magnetic saturation, magnetic inertia, hysteresis and
+eddy currents.
+
+
+Question 2. (10 points) How to mitigate Hysteresis and eddy current losses in a
+transformer?
+
+
+Question 3. (10 Points) Describe about three-phase balanced voltages and three-phase
+balanced loads.
+
+
+Question 4. (20 points)
+
+
+
+
+
+Question 5. (20 points)
+
+A 3-phase, 4-wire, 480V (line-to-line), 60Hz supply is connected to an unbalanced star-
+connected load. The phase impedances at this frequency are:
+
+                       𝒁𝑨= 𝟏𝟎∠𝟎∘𝜴
+
+                      𝒁𝑩= 𝟓∠𝟒𝟓∘𝜴
+
+                      𝒁𝑪= 𝟏𝟎∠−𝟑𝟎∘𝜴
+
+Calculate the neutral shift voltage (𝑽𝑵𝑵ᇲ) when the neutral wire is disconnected. Here N is
+the neutral point of the 3-phase voltage source and N’ is the neutral point of the 3-phase
+load.
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 1 of 2                   Department of ECSE
+
+--- PAGE 2 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question 6. (30 points)
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 2 of 2                   Department of ECSE

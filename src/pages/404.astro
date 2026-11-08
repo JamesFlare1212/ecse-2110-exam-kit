@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+import ErrorPage from '#lib/components/ErrorPage.svelte';
+---
+<Base title="找不到这道题" description="返回习题室继续学习。">
+  <ErrorPage client:load />
+</Base>

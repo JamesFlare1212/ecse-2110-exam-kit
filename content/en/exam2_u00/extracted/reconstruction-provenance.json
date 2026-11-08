@@ -1,0 +1,43 @@
+{
+  "source": "reference/Exams/Exam2/submission_369646790(1).pdf",
+  "sourceSha256": "835d89bf996ba7fa0f8f92c6ffa835bc79f2ca626386c26feba001891743f792",
+  "sourceIsPublished": false,
+  "sourcePageMap": {
+    "q2": 4,
+    "q3": 5,
+    "q4": 6,
+    "q5": 7
+  },
+  "cleanPageMap": {
+    "q2": [
+      1,
+      2
+    ],
+    "q3": [
+      3
+    ],
+    "q4": [
+      4
+    ],
+    "q5": [
+      5
+    ]
+  },
+  "excludedPages": {
+    "1-2": "Grading summary; not printed question text",
+    "3": "Handwritten reference notes; no recoverable printed Q1 prompt",
+    "8": "Blank"
+  },
+  "generator": "scripts/reconstruct_exam2.py",
+  "generatorSha256": "20997d65849dfb80c06bdd20a6a650246d70d861bdc8674e0681c8e40830551e",
+  "documents": {
+    "e2-u00": "b690d52f25b1e897f0f76616938248da905577a6983248300b54eaf12c5bc85d",
+    "e2-u00-sol": "2fb2d6d6f2660082e30f8df9931d78cdd93e0cb17a6d40668970108167f03f03"
+  },
+  "toolchain": {
+    "python": "3.14.6",
+    "reportlab": "5.1.0",
+    "pymupdf": "2.1",
+    "matplotlib": "3.11.0"
+  }
+}

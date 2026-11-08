@@ -1,0 +1,123 @@
+
+--- PAGE 1 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+                       Homework # 3
+
+                     Due: Friday, September 25
+
+Question 1. (10 points) Explain about magnetic saturation, magnetic inertia, hysteresis and
+eddy currents.
+
+Answer:
+
+Magnetic Saturation: When a magnetic core (material) is subjected to an external magnetic
+field that is increasing, then at one point the magnetization of the core is not proportional to the
+increasing external field. This state is called magnetic saturation. Magnetic saturation occurs due
+to the fact that most of the magnetic dipoles inside the core material are already aligned to the
+external field.
+
+Magnetic Inertia: When a magnetic core (material) is subjected to an external magnetic field
+that is increasing, the initial magnetization of the core is a little sluggish due to magnetic inertia
+meaning that the magnetic dipoles in the core initially resist to orient in the direction of external
+field.
+
+Hysteresis: If the external magnetic field is removed then a small portion of magnetic field is
+retained by the core. This needs to be overcome for every magnetic reversal when AC magnetic
+flux is setup in the core called hysteresis.
+
+Eddy currents: When a AC voltage is applied across an electromagnet or to the primary
+winding of a transformer, then the currents are induced in the core material called Eddy currents.
+This is due to Faraday’s law.
+
+
+Question 2. (10 points) How to mitigate Hysteresis and eddy current losses in a
+transformer?
+
+Answer:
+
+Hysteresis losses can be minimized by choosing a material with low magnetic remanence and
+Eddy current losses can be minimized using a laminated core.
+
+
+Question 3. (10 Points) Describe about three-phase balanced voltages and three-phase
+balanced loads.
+
+Answer:
+
+A 3-phase voltage is called balanced when all three phase voltage magnitudes are equal and they
+are 1200 apart in phase from each other. A 3-phase load is called balance load if same
+impedances are present in all three phases.
+
+
+
+Rensselaer Polytechnic Institute          Page 1 of 5                   Department of ECSE
+
+--- PAGE 2 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question 4. (20 points)
+
+
+
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 2 of 5                   Department of ECSE
+
+--- PAGE 3 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question 5. (20 points)
+
+A 3-phase, 4-wire, 480V (line-to-line), 60Hz supply is connected to an unbalanced star-
+connected load. The phase impedances at this frequency are:
+
+                       𝒁𝑨= 𝟏𝟎∠𝟎∘𝜴
+
+                      𝒁𝑩= 𝟓∠𝟒𝟓∘𝜴
+
+                      𝒁𝑪= 𝟏𝟎∠−𝟑𝟎∘𝜴
+
+Calculate the neutral shift voltage (𝑽𝑵𝑵′) when the neutral wire is disconnected. Here N is
+the neutral point of the 3-phase voltage source and N’ is the neutral point of the 3-phase
+load.
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 3 of 5                   Department of ECSE
+
+--- PAGE 4 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question 6. (30 points)
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 4 of 5                   Department of ECSE
+
+--- PAGE 5 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 5 of 5                   Department of ECSE

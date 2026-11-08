@@ -1,0 +1,38 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import Base from '../../layouts/Base.astro';
+import StudyDesk from '#lib/components/StudyDesk.svelte';
+import { loadAstroContent } from '../../../content/astro.server';
+import type { StudyPageData } from '#lib/types';
+import { studyDescription } from '../../../content/course';
+
+export const getStaticPaths = (async () => {
+  const { papers, examIndex, documentsByLocale } = await loadAstroContent();
+  return papers.flatMap(paper => {
+    const { problems, ...exam } = paper.exam;
+    return problems.map(problem => {
+      const names = new Set([problem.figure, ...problem.parts.flatMap(part => [part.figure, part.questionFigure?.name])].filter((name): name is string => !!name));
+      const figureSizes = Object.fromEntries((['zh','en'] as const).map(locale => [locale, Object.fromEntries([...names].map(name => {
+        const svg = readFileSync(resolve(paper.directories[locale], 'assets/figures', name+'.svg'), 'utf8');
+        const viewBox = /viewBox="([^"]+)"/.exec(svg)?.[1].trim().split(/\s+/).map(Number);
+        if (!viewBox || viewBox.length !== 4 || !viewBox[2] || !viewBox[3]) throw new Error(`Missing figure dimensions: ${name}`);
+        const fonts = [...svg.matchAll(/font-size:\s*([\d.]+)px/g)].map(match=>Number(match[1]));
+        const readableWidth = Math.ceil(viewBox[2] * 10 / Math.min(...fonts));
+        return [name, [viewBox[2], viewBox[3], readableWidth]];
+      }))]));
+      return {
+      params: { problem: problem.id },
+      props: { data: { examIndex, documents: documentsByLocale, exam, problem, assetBase: paper.assetBase, figureSizes } },
+    };});
+  });
+}) satisfies GetStaticPaths;
+
+interface Props { data: StudyPageData }
+const { data } = Astro.props;
+const parts = data.examIndex.reduce((sum, exam) => sum + exam.problems.reduce((n, problem) => n + problem.parts.length, 0), 0);
+---
+<Base title={data.problem.title.zh} description={studyDescription('zh', data.examIndex.length, parts)}>
+  <StudyDesk data={data} client:load transition:persist="study-desk" />
+</Base>

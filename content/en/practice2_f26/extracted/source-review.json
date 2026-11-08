@@ -1,0 +1,96 @@
+{
+  "sourceSha256": "5b823f8d4fdeaf2b421e58825cc58194def4fb49e68e50d4ec978af7081f5c36",
+  "sourceBytes": 932119,
+  "actualPdfPages": 10,
+  "printedFooterTotal": 13,
+  "inspection": "All ten actual PDF pages rendered and visually inspected; prompts are raster image content, so native PDF extraction alone is incomplete.",
+  "questions": [
+    {
+      "id": "p2-f26-q1",
+      "promptPage": 1,
+      "solutionPages": [
+        1
+      ],
+      "printedLabel": "4.30",
+      "hasPromptDiagram": false
+    },
+    {
+      "id": "p2-f26-q2",
+      "promptPage": 2,
+      "solutionPages": [
+        2,
+        3
+      ],
+      "printedLabel": null,
+      "hasPromptDiagram": false
+    },
+    {
+      "id": "p2-f26-q3",
+      "promptPage": 4,
+      "solutionPages": [
+        4
+      ],
+      "printedLabel": null,
+      "hasPromptDiagram": false,
+      "missingReferencedFigure": "10.21"
+    },
+    {
+      "id": "p2-f26-q4",
+      "promptPage": 5,
+      "solutionPages": [
+        5,
+        6
+      ],
+      "printedLabel": null,
+      "hasPromptDiagram": true,
+      "printedFigure": "P10.4"
+    },
+    {
+      "id": "p2-f26-q5",
+      "promptPage": 7,
+      "solutionPages": [
+        7,
+        8
+      ],
+      "printedLabel": null,
+      "hasPromptDiagram": false,
+      "circuitDrawingRequestedInSolution": true
+    },
+    {
+      "id": "p2-f26-q6",
+      "promptPage": 9,
+      "solutionPages": [
+        9,
+        10
+      ],
+      "printedLabel": null,
+      "hasPromptDiagram": true,
+      "printedFigure": "10.21"
+    }
+  ],
+  "lecturePagesChecked": {
+    "lecture-09": [
+      8,
+      9
+    ],
+    "lecture-10": [
+      18,
+      24
+    ],
+    "lecture-11-12": [
+      11,
+      23,
+      24
+    ],
+    "lecture-02": [
+      13
+    ]
+  },
+  "declaredPoints": 0,
+  "numbering": "Sequential editorial q1–q6; q1 single unlettered request assigned a; q5 grouped roman requests retained as b(i)–b(iv).",
+  "figureBoundary": "Only q4 and q6 have prompt SVGs/original-view crops. Other figure-sources entries locate printed prompts for source links. Four other SVGs are solution-only.",
+  "solutionFigureAssumptions": {
+    "q6-waveforms": "Representative ideal RL plus constant-emf periodic solution, with illustrative L chosen to match mean20 A and ripple RMS4 A; L approximately31.173 mH. This inferred modeling choice is not an extra printed given."
+  },
+  "remainingReview": "Independent human scientific and translation review remains required; automated tests do not establish that review."
+}

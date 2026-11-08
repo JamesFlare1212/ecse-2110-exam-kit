@@ -1,0 +1,120 @@
+name: CI
+run-name: CI · ${{ inputs.ref || github.head_ref || github.ref_name }}
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Ref to validate (for an existing PR: refs/pull/123/merge)'
+        type: string
+        required: false
+      sources_url:
+        description: 'HTTPS canonical-PDF ZIP; otherwise use repository variable COURSE_SOURCES_URL'
+        type: string
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ inputs.ref || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  app:
+    name: App checks, tests and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version-file: package.json
+      - name: Install locked dependencies
+        run: bun install --frozen-lockfile
+      - name: Provision and verify separately supplied course PDFs
+        env:
+          COURSE_SOURCES_URL: ${{ inputs.sources_url || vars.COURSE_SOURCES_URL }}
+        run: python3 scripts/provision_sources.py
+      - name: Validate authored Markdown and metadata with Bun
+        run: bun run content:check
+      - name: Check Astro and Svelte (native TypeScript 7)
+        run: bun run check
+      - name: Test content and geometry
+        run: bun test
+      - name: Build static app
+        run: bun run build
+      - name: Install isolated startup-test browser
+        run: |
+          mkdir -p "$RUNNER_TEMP/fieldnotes-browser"
+          bun add --cwd "$RUNNER_TEMP/fieldnotes-browser" playwright@1.64.1
+          bun "$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Check cold reading, delayed fonts and font budgets
+        run: |
+          trap 'bun --bun astro preview stop' EXIT
+          bun run preview --background
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-startup-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-course-qa.mjs
+      - name: Upload browser diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: app-browser-diagnostics
+          path: artifacts/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  source-tools:
+    name: Source tools (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.12', '3.14']
+    env:
+      MPLBACKEND: Agg
+      MPLCONFIGDIR: /tmp/fieldnotes-matplotlib
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+      - name: Install source-tool dependencies
+        run: python -m pip install -r scripts/requirements.txt
+      - name: Check installed dependency compatibility
+        run: python -m pip check
+      - name: Provision and verify separately supplied course PDFs
+        env:
+          COURSE_SOURCES_URL: ${{ inputs.sources_url || vars.COURSE_SOURCES_URL }}
+        run: python scripts/provision_sources.py
+      - name: Verify source provenance and PDF/image APIs
+        run: python scripts/check_sources.py
+      - name: Verify clean reconstruction and privacy boundary
+        run: python scripts/check_reconstruction.py
+      - name: Check both figure themes and annotation layout
+        run: python scripts/check_figures.py
+      - name: Upload figure diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: figure-review-python-${{ matrix.python }}
+          path: artifacts/figure-review/
+          if-no-files-found: ignore
+          retention-days: 7

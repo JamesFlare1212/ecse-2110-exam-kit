@@ -1,0 +1,402 @@
+
+--- PAGE 1 ---
+            Lecture 2
+
+AC Steady-state Analysis, Single-phase
+    Networks, and Complex Power
+
+                          ECSE 2110
+                    Electrical Energy Systems
+
+                           Instructor: Dr. Prabhakar Neti
+
+--- PAGE 2 ---
+            The “system’s frequency”
+
+
+➢ The electrical frequency is related to the generator speed, which can
+   measured at the shaft of the generator.
+➢  Keeping the frequency constant (or nearly constant) at a 50 or 60 Hz
+   reference is needed because:
+   ❑  AC machines (generators and motors) rotate in AC synchrony
+   ❑  Machines are designed at operating frequency, where they have maximum
+           efficiency, and large deviations can lead to unnecessary wear and/or
+        damage.
+   ❑  The electrical power output is a function of the machines’ speeds
+
+
+➢ The frequency is thus kept within specific limits (or regulation bands).
+➢ However, it can not be measured at the substations.
+➢  Frequency estimates at any node/bus/substation in the network can be
+   obtained using PMUs and other devices.
+   ❑  The instantaneous frequency is different at different power system locations
+                                                                                         Note! The frequency
+   ❑  However, the average of frequencies at different locations preserve – system-
+                                                                                                                                     is actually never         wide – properties.
+                                                                                            constant (50/60 Hz)!➢ Power system controls, such as a speed governor and Automatic
+   Generation Controls (AGC) are used to minimize deviations in the
+   system’s frequency.
+                                                                                                                           9/1/2026    2
+
+--- PAGE 3 ---
+       A “power system” – a balancing act!
+
+➢A simple power system puts together all the components
+  above in an ensemble that:
+   ❑Operates in AC synchrony (rotating machinery at the same
+       speed)
+    ❑Continuously attempts to meet all consumption (loads + losses)
+       with electrical power supply (generators)
+    ❑Electrical energy produce goes through transformers,
+       transmission lines. …
+   ❑Generation = load + losses
+➢And an interconnected power system differs in that
+   ❑Attempts to meet meet consumption + losses + exchanges =
+      generation
+➢Exchanges are imports or exports from another power
+  network outside the “operational boundary”
+➢The system’s synchrony reflects to what extent the above
+  relationships are met.
+    ❑Deviations in the machines’ speed reflects a change
+        in generated/consumed power.
+
+                                                                                                                            9/1/2026     3
+
+--- PAGE 4 ---
+Sinusoids and Rotating Vectors
+
+
+
+
+
+                                                                                            9/1/2026    4
+
+--- PAGE 5 ---
+Advantages of Phasor Representation
+
+
+
+
+
+                                                                                                     9/1/2026     5
+
+--- PAGE 6 ---
+  Phasor Analysis: Single-Phase Alternating Voltage
+
+
+                     v (t ) =V  cos(t + )                              m                v
+                               i (t ) = I  cos(t + )                            m                          i
+
+
+ The RMS value of a signal: (Root Mean Square)
+
+                                   T
+                     1        V                                              2       mT           V   =     v (t ) dt =                    RMS                                                          T                     2           2                                       0
+
+
+                                                                                                                                                     9/1/2026            6
+
+--- PAGE 7 ---
+       For a sinusoidal voltage and current:
+
+
+              T
+        1      2     2         V m           1 T     2     2                 I mV   =   V   cos (t +  )dt =  RMS         m                    v                 I   =       I   cos (t +  )dt =                                           RMS         m                                i                                                             2T                              2                                          2T                0                                                               2                                                                           0
+
+
+
+ Power in single-phase AC circuits:
+        p (t ) = v (t )i (t ) =V  I  cos(t + )cos(t + ) =                           m m                v                            i
+          1
+         V  I  [cos( − ) + cos2(t +  )cos( − ) +               m m          v          i                       v           v          i
+          2
+             sin2(t + )sin( − )]                                      v          v         i
+
+
+
+
+                                                                                                                                                                  9/1/2026            7
+
+--- PAGE 8 ---
+Power in single-phase AC circuits:                                                                  1
+                                                                                         cos( 𝐴) cos( 𝐵) =   cos( 𝐴+ 𝐵+ cos( 𝐴−𝐵)
+                                                                                                                  2
+  p (t ) = v (t )i (t ) =V  I  cos(t + )cos(t + ) =                   m m                v                            i                                                                                         cos( 𝐴−𝐵) = cos(A).cos(B) + sin(A). Sin(B)
+
+
+
+
+
+    1
+    V  I  [cos( − ) + cos2(t +  )cos( − ) +        m m          v          i                       v           v          i
+    2
+     sin2(t + )sin( − )]                          v          v         i                                                                                                              9/1/2026            8
+
+--- PAGE 9 ---
+                            Let θ = (θv – θi) and let |V| and |I| be the RMS values:
+
+p (t ) = V  I cos 1 + cos2(t +  ) + V  I sinsin 2(t +  )                                            v                                       v
+
+
+                     pR(t): Energy flow into the circuit     pX(t): Energy borrowed and returned by
+                                                   the circuit
+
+
+                  Instantaneous power has a frequency twice that of the voltage:
+
+
+
+
+
+                  0
+
+
+                                                                                                                                                      9/1/2026            9
+
+--- PAGE 10 ---
+The time-average (not rms!) value of pR(t) is:
+ P = V  I cos [W]
+
+✓This power is called active power, and is equal to:
+   ✓1. the power absorbed by the resistive part of the load.
+   ✓2. the mean value of the instantaneous power p(t).
+✓The phase angle θ =   –     is the angle between voltage and current, is the                        (θv   θi)
+ impedance angle.
+    ✓Positive for inductive loads.
+   ✓Negative for capacitive loads.
+✓cos(θ) is called the Power Factor (PF):
+   ✓If θ negative, then current leads voltage, PF is leading.
+   ✓If θ positive, then current lags voltage, PF is lagging.
+                                                                                                                                                             9/1/2026           10
+
+--- PAGE 11 ---
+               The amplitude of PX(t) is called reactive power:
+
+                Q = V  I sin 
+        ✓ Both P and Q have the same dimension, however to distinguish
+                between them the unit Watt [W] is used for P, while Volt-Ampere
+Q = V  I sin                    reactive [var] is used for Q.
+θ = +90
+
+        ✓ For an inductive load, current is lagging the voltage, θ>0 and Q is
+Q = V  I sin                    positive (reactive consumption).
+θ = -90
+
+        ✓ For a capacitive load, current is leading the voltage, θ<0 and Q is
+                   negative (reactive generation).
+
+
+                                                                                                                                                                    9/1/2026           11
+
+--- PAGE 12 ---
+                   ▪ For a purely resistive circuit, the impedance angle θ is equal
+                          to zero, and only real power is consumed.
+                                                     2                    P     = I     R                                          Resistor      ResistorP = V  I cos
+                   ▪ For a purely inductive circuit, the current lags the voltage by θ = 0 °
+                            90o. Only reactive power is consumed.
+
+
+                                                     2Q = V  I sin      Q     = I     X                                         Inductor      Inductor    L
+θ = +90°
+                   ▪ For a purely capacitive circuit, the current lead the voltage by
+                            90o. Only reactive power is generated.
+                                                        2
+               Q      = − I      X                                      Capacitor        Capacitor   CQ = V  I sin
+θ = -90 °
+                                                                                                                                                               9/1/2026           12
+
+--- PAGE 13 ---
+Complex power:           V = V                                            v
+                      I = I                                                                      i
+
+The complex power is defined as:
+
+
+        S = VI * = V  I  = V  I cos+ j V  I sin
+
+
+                        S =VI * = P + jQ
+
+✓ The magnitude of S is apparent power, which gives a direct indication of heating
+ and is used as a rating unit of power equipment. Its unit is Volt-Ampere [VA].
+
+
+                                                                                                                                                           9/1/2026           13
+
+--- PAGE 14 ---
+Conservation of Power
+
+✓At every node (bus) in the system
+    • Sum of real power injected into node must equal zero.
+    • Sum of reactive power injected into node must equal zero.
+
+✓This is a direct consequence of Kirchhoff’s current law, which states that the
+  total current into each node must equal zero.
+    • Conservation of power follows since S = VI*
+
+
+
+
+
+                                                                                                                                                 9/1/2026           14
+
+--- PAGE 15 ---
+The complex power balance in a circuit:
+
+                        V = 12000 o V
+                           Z = 60 + j 0                                                       1
+                           Z = 6 + j12                                                       2
+                           Z = 30 − j 30                                                       3
+
+
+
+ Note that this is not a three phase circuit, since we only have
+ one common voltage source, and not three phase-shifted
+ voltage sources.
+                                                                                                                                            9/1/2026           15
+
+--- PAGE 16 ---
+Example:
+
+Find the total complex power.
+
+                         V = 12000 o V
+                            Z = 60 + j 0                                                        1
+                            Z = 6 + j12                                                        2
+                            Z = 30 − j 30                                                        3
+
+
+
+
+
+                                                                                                                                                  9/1/2026           16
+
+--- PAGE 17 ---
+      Example:
+
+       Find the total complex power.
+                                             V = 12000 o V
+                                                 Z = 60 + j 0                                                                                                  1
+                                                 Z = 6 + j12                                                                                                  2
+                                                 Z = 30 − j 30                                                                                                  3
+
+
+      12000 o V
+     I =         = 20 + j 0 A                                                                    1                                                                                                                  I1         60                                             
+                                                                           o
+                       o                             S = VI = 12000 (20 − j 0) = 24000 W + j 0 var       12000 V                           1       1
+     I =         = 40 − j 80 A       2                                                                    o       6 + j12                S = VI = 12000 (40 + j 80) = 48000 W + j 96000 var                               𝑆21       2
+                                                                           o       12000 o V                             S = VI = 12000 (20 − j 20) = 24000 W − j 24000 var     I =         = 20 + j 20 A           3       3       3
+       30 − j 30 
+S =P + jQ = S + S + S = ( 96 + j 72 ) VA = 96kW + j 72kvar                   1     2     3                   
+                               P [W]    Q [var]
+                                                                                                                                                               9/1/2026           17                            𝑃(𝑘𝑊)   𝑄(𝑘𝑉𝐴𝑅)
+
+--- PAGE 18 ---
+Power factor correction:
+  ✓The larger current supplied in a circuit will be larger for PF<1 than it would be
+     for PF=1.
+   ✓It is suitable that major loads on the system have power factor as close to 1
+     as possible.
+   ✓This is done by installing local banks of capacitors throughout the network
+    because majority of industrial loads are inductive.
+   ✓Reactive compensation decreases the line flow. This has some advantages:
+        • Less losses in lines.
+        • Decreased current, allowing the use of thinner conductors, or, capability to supply
+       more load over the same conductors.
+        • Less voltage drop over the line.
+
+
+                                                                                                                                                                  9/1/2026           18
+
+--- PAGE 19 ---
+Example:
+
+Find the capacitance of the capacitor connected across the loads to improve the overall power factor to 0.8 lagging.
+                       Z = 100 + j 0                                               1
+                       Z = 10 + j 20                                               2
+                    V = 2000 0 V, f = 60 Hz
+
+
+
+
+
+                                                                                                                                                       9/1/2026           19
+
+--- PAGE 20 ---
+Example:
+
+Find the capacitance connected across the loads to improve the overall power factor to 0.8 lagging.
+
+                          Z = 100 + j 0                                                     1
+                          Z = 10 + j 20                                                     2
+                       V = 2000 0 V,  f = 60 Hz
+
+       I = I + I               1     2
+                        o                                                                o        2000                        S = VI = 2000 (2 − j 0) = 400 + j 0        I =       = 2 + j 0 A       1       1          1
+          100                                                                  o                         o           S = VI = 12000 (4 + j 8) = 800 + j1600                                            2       2         2000
+       I =       = 4 − j 8 A          2
+        10 + j 20                        S = P + jQ = 1200 W + j1600 var
+
+
+
+
+                                                                                                                                                         9/1/2026           20
+
+--- PAGE 21 ---
+                                    Z = 100 + j 0                                                                       1
+                                    Z = 10 + j 20                                                                        2
+                                V = 2000 0 V,  f = 60 Hz
+
+
+                             Q  = P tan() = 900var
+                     Q = 1600 − 900 = 700var                                                                                    c
+                                                                                                      2                                                                                             *S = P + jQ = 1200 + j1600 VA                                                                                   *  VV   V                                           S = VI =    =
+        *                                          Z *   Z *   S   1200 − j1600                    o
+                                                                                        2I =   =           = 10− 53.13 A                                              2        *                 0                                        V    (200)  V     2000                                        Z =    =      = − j 57.14                                                                                          c       *                                                 S        j 700                                                                                                  c  PF = cos( −53.13°) = 0.6​ lagging
+                                                     10 6
+                                            −1                  o   C =            = 46.42FPF of 0.8 lagging requires = cos  (0.8) = 36.87                                                2(60)(57.14)
+                                                                                                                                                              9/1/2026           21
+
+--- PAGE 22 ---
+                 Complex power flow:
+
+
+    V  − V   V         V
+ I  =   1      1      2      2 =   1 ( − ) −   2 ( − )  12                                          1                    2
+         Z       Z          Z
+
+                      2
+        V      V V
+S  = V I * =   1 −     1    2  + −   12     1 12                                1          2
+          Z       Z
+
+                                            2
+                   V       V V
+               P =   1  cos  −   1    2 cos( + −  )                                  12                                     1          2
+                     Z        Z
+
+                                            2
+                   V       V V
+             Q  =   1  sin  −   1    2 sin( + −  )                                  12                                    1          2
+                      Z        Z
+                                                                                                                                                                 9/1/2026           22
+
+--- PAGE 23 ---
+Power system transmission lines have small resistance compared to reactance.
+ Assuming R=0:
+                    V V
+                P =   1   2 sin( −  )                                    12                    1     2
+                     X
+                    V
+              Q =   1  V − V  cos( −  )                                     12            1      2         1     2                                                                            X
+
+
+✓ The flow of real power in transmission lines is governed mainly by the angle
+  difference of terminal voltages.
+
+
+✓ The reactive power flow is determined by the magnitude difference of terminal
+  voltages.
+
+                                                                                                                                                               9/1/2026           23

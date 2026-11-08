@@ -1,0 +1,483 @@
+
+--- PAGE 1 ---
+   Lecture 3
+3-Phase Circuits
+
+                ECSE 2110
+     Electrical Energy Systems
+
+          Instructor: Dr. Prabhakar Neti
+
+--- PAGE 2 ---
+                 Complex power flow:
+
+
+    V  − V   V         V
+ I  =   1      1      2      2 =   1 ( − ) −   2 ( − )  12                                          1                    2
+         Z       Z          Z
+
+                      2
+        V      V V
+S  = V I * =   1 −     1    2  + −   12     1 12                                1          2
+          Z       Z
+
+                                            2
+                   V       V V
+               P =   1  cos  −   1    2 cos( + −  )                                  12                                     1          2
+                     Z        Z
+
+                                            2
+                   V       V V
+             Q  =   1  sin  −   1    2 sin( + −  )                                  12                                    1          2
+                      Z        Z
+             ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026            2
+
+--- PAGE 3 ---
+Power system transmission lines have small resistance compared to reactance.
+ Assuming R=0:
+                    V V
+                P =   1   2 sin( −  )                                    12                    1     2
+                     X
+                    V
+              Q =   1  V − V  cos( −  )                                     12            1      2         1     2                                                                            X
+
+
+✓ The flow of real power in transmission lines is governed mainly by the angle
+  difference of terminal voltages.
+
+
+✓ The reactive power flow is determined by the magnitude difference of terminal
+  voltages.
+
+           ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026            3
+
+--- PAGE 4 ---
+Balanced Three-Phase Circuits
+
+
+
+✓Voltages in each phase have the same magnitude.
+✓Each phase have a ±120o phase shift compared to the other.
+✓Phase shift can be either in positive sequence (a) or negative sequence (b). For
+  example, in case (a):
+               E  = E 0o                             An       p
+               E  = E − 120o                              Bn       p
+               E  = E 120o                             Cn       p
+
+
+ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026            4
+
+--- PAGE 5 ---
+       Advantages of Three-Phase Power
+
+✓Can transmit more power for same amount of wire
+
+
+✓Three phase machines use less material for same power rating
+
+
+✓Constant torque produced by three phase machines
+
+
+✓Three phase machines start more easily than single phase machines
+
+
+
+
+
+ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026            5
+
+--- PAGE 6 ---
+Y-Connected loads:
+
+      V  = V 0 o              an      p
+      V  = V − 120 o              bn      p
+      V  = V 120 o               cn      p
+
+Line-to-line voltages:
+
+
+V  = V  −V  = V  10o −−1   120o =  3 V 30o   ab      an     bn       p (                     )           p
+V  = V  −V  = V  1− 120o −1 120o =  3 V − 90o   bc      bn      cn       p (                       )           p
+V  = V  −V  = V  1120o −1 0o =  3 V 150o   ca      cn      an       p (                  )           p
+
+
+
+           ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026            6
+
+--- PAGE 7 ---
+     Line currents:
+         V
+          I =   an = I −               a               p
+          Z                     p
+         V
+          I =   bn = I − 120o −              b               p
+          Z                      p
+         V
+          I =   cn = I − 240o −                c               p
+          Z                     p
+
+Theta is the phase angle of the impedance Zp.
+✓ In the case of Y-connected load, the magnitude of line voltage is    times the magnitude
+  of phase voltage, and for a positive sequence, the set of line voltages leads the set of phase
+  voltages by 30o.
+
+
+✓ The line currents are equal to phase currents.
+
+          ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026            7
+
+--- PAGE 8 ---
+     Δ-Connected loads:
+
+  I  = I 0o    ab      p
+  I  = I − 120o    bc      p
+  I  = I 120o    ca      p
+
+  I = I  − I  = I  10o −1 120o =  3 I − 30o    a      ab     ca      p (                  )          p
+  I = I  − I  = I  1− 120o −1 0o =  3 I − 150o    b      bc      ab      p (                     )          p
+  I = I  − I  = I  1120o −−1   120o =  3 I 90o    c      ca     bc      p (                       )          p
+
+✓In the case of Δ-connected load, the magnitude of line current is   times the magnitude of phase
+  current, and for a positive sequence, the set of line voltages lags the set of phase voltages by 30o.
+✓The line voltages are the same as phase voltages.
+           ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026            8
+
+--- PAGE 9 ---
+                          Δ-Y Transformation
+
+                               V   V   V  +V                                                                         ab                                                                                      ac                                                                                          ab      ac                                                   I =                                     +                                         =                                                             a
+                                  Z   Z     Z                                                                      
+
+                          V  +V  =  3 V 30o +  3 V  − 30o = 3V                                                             ab      ac            an                    an                    an
+
+                                       Z                                                                                                          V  = Z  I                               V  =     I              an     Y  a                                                                          an           a
+                                            3
+                         Z
+                     Z  =                                         Y
+                             3
+
+
+ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026            9
+
+--- PAGE 10 ---
+Per-Phase Analysis
+
+✓Per-phase analysis allows analysis of balanced 3 systems with the same
+  effort as for a single-phase system
+✓Balanced 3 Theorem: For a balanced 3 system with
+   – All loads and sources Y-connected
+                                                    All of these assumptions need to
+   – No mutual inductance between phases
+                                          be kept in mind!
+Then:
+                                     They are likely not to be valid in   – All neutrals are at the same potential
+                                      many scenarios…   – All phases are COMPLETELY decoupled
+   – All system values are the same sequence as sources. The sequence order we’ve
+     been using is “positive” sequence.
+
+
+ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026           10
+
+--- PAGE 11 ---
+Per-Phase Analysis Procedure
+
+To do per-phase analysis
+1.    Convert all -load/-sources to equivalent Y-’s
+
+
+2.   Solve for phase “a” independent of the other phases
+
+3.     If desired, phase “b” and “c” values can be determined by rotations (i.e.,
+     ±120° degree phase shifts)
+
+
+4.     If necessary, go back to original circuit to determine line-line values or
+      internal -values.
+
+
+
+ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026           11
+
+--- PAGE 12 ---
+Single-Phase Equivalent
+
+
+
+
+
+   ✓Each balanced three-phase circuit can be express by it’s single-phase equivalent based on
+      the fact that the sum of currents at the neutral point is equal to zero!
+
+   ✓The other phases carry identical currents except for the phase shift!
+
+
+
+ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                                9/4/2026           12
+
+--- PAGE 13 ---
+Balanced Three-Phase Power
+                                                               i  =  2 V  cos(t +  )                                                                  an           p                            i    v  =  2 V  cos(t +  )        an           p                 v
+                                                                                                     o                                               o             i  =  2 V  cos(t +  − 120 )                                                              bn           p                            i    v  =  2 V  cos(t +  − 120 )        bn           p                 v
+                                                                                                     o                                               o             i  =  2 V  cos(t +  + 120 )                                                        𝑖𝑐bn           p                            i    v  =  2 V  cos(t +  + 120 )        bn           p                 v
+               p    v   i + v   i + v   i                           3=  an a     bn b     vn  c
+
+      p  = V   I   cos( −  ) + cos(2t +  +  ) +             3      p    p         v          i                       v          i  
+     V   I   cos( −  ) + cos(2t +  +  − 240o )  +             p    p           v          i                       v          i                                                        
+     V   I   cos( −  ) + cos(2t +  +  − 480o )              p    p           v          i                       v          i                                                        
+ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026           13
+
+--- PAGE 14 ---
+                 p  = V   I   cos( −  ) + cos(2t +  +  ) +                               3      p    p         v          i                       v          i  
+              V   I   cos( −  ) + cos(2t +  +  − 240o )  +                                p    p           v          i                       v          i                                                                      
+              V   I   cos( −  ) + cos(2t +  +  − 480o )                                 p    p           v          i                       v          i                                                                      
+
+The sum of the three double-frequency cosine terms is zero:
+               P  = 3 V   I  cos                                 3        p    p
+
+    • The instantaneous power in each phase is pulsating, but …
+    • The three-phase instantaneous power is CONSTANT, and equal to three times the real power in
+     each phase.
+
+
+
+
+
+          ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026           14
+
+--- PAGE 15 ---
+     P = 3 V   I  cos            3        p    p
+                         S  = P + jQ  = 3V I *                                              3     3       3       p P
+    Q  = 3 V   I  sin              3        p    p
+
+ In the Y-connection, phase and line current are the same, and the magnitude of line voltage is
+  times the magnitude of phase voltage.3
+
+ In The Δ-connection, phase and line voltages are the same, while the magnitude of line current
+   is     times the magnitude of phase current.    3
+
+
+
+ Therefore:
+       P =  3 V   I  cos                3         L   L
+      Q  =  3 V   I  sin                 3         L   L
+
+
+
+
+
+           ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026           15
+
+--- PAGE 16 ---
+Example
+
+What is
+
+     (a) The supplied active and reactive power?
+
+    (b) Line voltage at the combined loads?
+
+     (c) Phase current at each load?
+
+    (d) Total active and reactive power for
+
+      each load and for the line?
+
+
+
+
+
+ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026           16
+
+--- PAGE 17 ---
+Solution: (a) The supplied active and reactive power
+
+Compute the per-phase equivalent.
+
+The Δ-connected load is transformed into the equivalent Y. Calculate the phase voltage from                                                                                   VL:
+                                 V    207.85             60 − j 45                                    L                              V =   =      = 120 V        Z =       = 20 − j15                1                 2               3                          3     3
+The single phase equivalent is then given as:
+
+
+                                                      Z Z                                                                                                          1  2                                   Z = Z  + Z  Z = Z  +                                                                                                   line     1     2        line
+                                                     Z + Z                                                                                                        1     2
+                                   = 2 + j 4 + 22 − j 4 = 24 
+
+     V   1200 o
+    I =   1 =       = 5 A
+     Z     24
+             S = 3V I * = 1800 W                               1
+          ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026           17
+
+--- PAGE 18 ---
+(b) The phase and line voltages at the load terminal are:
+     V = V − Z   I = 1200 o − (2 + j 4)(50 o ) = 118− 10.3o V            2     1       line
+
+     V  = V  330 o =  3(111.8) 19.7 o = 193.6419.7 o V            2 L      2
+
+
+(c) The phase current through each load is:
+
+           V                  110 − j 20                                  o                          2               I =   =        = 1 − j 2 = 2.236− 63.4 A                   1
+            Z   30 + j 40                          1
+           V                  110 − j 20                                  o                          2               I =   =        = 4 + j 2 = 4.472 26.56 A                   2
+             Z    20 − j15                          2
+ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026           18
+
+--- PAGE 19 ---
+                                                                             I                                                                                          2                            oThe phase current in the original Δ connected load is then: I ab =         = 2.58256.56 A
+                                                 3− 30 o
+
+(d) Three phase power (active and reactive) of each load:
+
+        S = 3V I * = 3(111.8− 10.3o )(2.23663.4 o ) = 450 W + j 600var               1       2 1
+        S = 3V I * = 3(111.8− 10.3o )(4.472− 26.56 o ) = 1200 W − j 900var               2       2  2
+
+
+ Three phase power absorbed by the line:
+
+
+
+                                               2
+            S = 3( R + jX  ) I  = 3(2 + j 4)(5) 2 = 150 W + j 300var                    L        L       L
+
+
+ The sum of the power absorbed by the line and loads is equal to the power delivered
+  from the supply!
+
+            ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026           19
+
+--- PAGE 20 ---
+Neutral shift – unbalanced 3-φ system
+
+➢Neutral shift – shift between the neutral voltage of a Y-connected
+  voltage source and a Y-connected load – may occur due to unbalanced
+  currents when the two neutrals are not connected.
+
+
+➢If the two neutrals are connected, the voltage between the neutral
+  points is (nearly) zero and unbalanced (neutral) current flows through
+  the connection.
+
+
+
+
+
+ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026          20
+
+--- PAGE 21 ---
+ Neutral shift – unbalanced 3-φ system
+➢No neutral shift – star points connected
+➢Consider a 3-φ load as shown
+➢Impedances are equal in
+  magnitudes, but not in
+  phase angles
+➢Voltage is 173 kV, so L-n
+  voltages are: Ean = 100/90o,
+  Ebn = 100/-30o, Ecn = 100/210o
+➢Calculate source and
+  load currents, and neutral
+  current
+
+
+
+
+
+  ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026             21
+
+--- PAGE 22 ---
+    No Neutral shift–unbalanced 3-φ system
+
+
+    = 100/90o/(5+j0)=j20 A➢Ia
+  Ib = 100/-30o/(0-j50)=20/60o A
+   Ic = 100/210o/(3+j4)=20/156.9o A
+➢The currents are equal in
+  magnitude, but not in phase
+➢Therefore, we have a neutral
+  current (KCL), In:
+  In = Ia + Ib + Ic = -8.4 +j45.2 = 45.9/100.5o A
+➢Note that the neutral current is much greater than source
+  (and load) currents. This is significant.
+
+
+
+         ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026            22
+
+--- PAGE 23 ---
+No Neutral shift–unbalanced 3-φ system
+
+
+                                         *        *        *➢Total complex power, S =     +     +     =                                 EanIa   EbnIb    EcnIc
+  100/90o·(-j20) + 100/-30o·20/-60o + 100/210o·
+  20/-156.9o = 2000 -j2000 + 2000/53.1o =
+ 2000 – j2000 + 1200 + j1600 = 3200 – j400 =
+  3225/-7.13o VA
+
+➢The neutral current does not contribute directly to S (why???). However,
+  the neutral connection must be rated for this current, which is
+  significantly greater than winding currents.
+
+
+
+
+
+ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026           23
+
+--- PAGE 24 ---
+    With Neutral shift–unbalanced 3-φ system
+
+
+➢No connection between
+  source and load start points
+➢Therefore, there is a voltage,
+  Eon, between the start
+  point n of the source
+ and star point o of the load
+➢Calculate the source and load currents and the neutral shift
+  voltage Eon .
+
+
+
+
+
+      ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026           24
+
+--- PAGE 25 ---
+      With Neutral shift–unbalanced 3-φ system
+
+➢Node equation:  +  +  = 0                         Ia   Ib   Ic
+  or:      E  − E   E  − E   E  − E
+                    an      on +   bn      on +   cn      on = 0
+            5 + j 0     0 + j 5    3 + j 4
+➢Substituting for voltages and solving, we get:
+  Eon = 142.5/93.4o V. This neutral shift is significant.
+➢The source and load currents are:
+   Ia = 8.61/-78.69o; Ib = 42.8926.31o; Ic = 41.5/-165.26o
+➢ As a check, calculate  +  +  = 0 OK                                 Ia   Ib   Ic
+➢But, the source, loads and cables must be rated for the increased
+  currents
+➢Also, electrocution hazard exists when contacting the star point
+
+
+           ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026           25
+
+--- PAGE 26 ---
+      With Neutral shift– unbalanced 3-φ system
+
+
+
+
+                                                *        *        *➢Complex power to the load, S =     +     +                                        EaoIa   EboIb    EcoIc
+➢Note, however, that now   ≠   because thre is no connection                              Eao  Ean
+ between point o and point n
+➢We first have to calculate       and                                 Eao, Ebo,      Eco:
+  Eao = 43.07/-78.69o; Ebo = 214.45/-63.69o;
+  Eco = 207.51/-112.13o
+➢Then,  = 8.61/-78.69o;            Ia
+  Ib = 42.89/26.31o; Ic = 41.5/-165.26o
+➢Then, S = 5537 – j2309 VA, much
+  greater than in the balanced case
+
+
+           ECSE 2110 ELECTRICAL ENERGY SYSTEMS                                                                                                   9/4/2026          26

@@ -1,0 +1,534 @@
+
+--- PAGE 1 ---
+       Lecture 10
+
+Synchronous Generators
+
+                    ECSE 2110
+            Electrical Energy Systems
+
+                 Instructor: Dr. Prabhakar Neti
+
+                  Date: Friday, July 10, 2026
+
+--- PAGE 2 ---
+           The Synchronous Machine:
+                        Main Electrical Component of a
+                             Power Generator
+   ➢A power plant will have many
+      components that transform
+        different energy sources to
+        rotate the shaft of a
+      synchronous machine.
+     ➢Kinetic energy →electrical
+       energy
+     ➢Electrical power components
+        include:
+   ➢A Synchronous Machine:
+      ❑The stator (or armature) is AC
+             while the rotor is DC
+   ➢An Excitation System:
+      ❑DC generator, AC or static
+             converter
+       ❑Also includes a voltage
+             regulator & stabilizers
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                               10/9/2026    2
+
+--- PAGE 3 ---
+  Synchronous Generators Main Components
+
+
+
+
+      • Rotor                               • Stator                                                                                • Casing
+
+
+
+                                            • Exciter                                                                                         • Cooling
+                                                                              System
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                               10/9/2026     3
+
+--- PAGE 4 ---
+Synchronous Generators Main Components
+
+
+  ❑Most of the generators in a power system are of this type.
+  ❑The armature windings are placed on the stationary part called the
+     stator, where the armature windings are placed.
+
+
+  ❑The field winding is placed on the rotating part, the rotor, and is
+     excited by Idc, a direct current (dc) by
+     ❑Slip rings and brushes
+     ❑Rotating rectifier bridge
+
+
+  ❑Balanced three-phase voltage is generated at (induced over) the
+     armature windings.
+  ❑In generator mode, the rotor is driven by a prime mover regulated
+     to rotate at a constant speed 𝜔𝑚𝑒𝑐ℎ
+
+ ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                               10/9/2026    4
+
+--- PAGE 5 ---
+Main Types of Synchronous Generators:
+
+There are two types of synchronous generators (machines):
+➢Round-rotor:
+   ❑They have a cylindrical rotor, a uniform air gap and one distributed
+       winding.
+   ❑These generators are driven by steam turbines and are designed for high
+      speed performance.
+    ❑Roughly 70 percent of large synchronous generators are cylindrical rotor
+        type. (In USA)
+➢Salient pole:
+   ❑These kind of generators have concentrated windings on the poles and
+       non-uniform air gaps.
+   ❑They have a relatively large number of poles, short axial length, and large
+       diameter.
+   ❑They are designed for lower speed performances, such a hydraulic
+        turbines.
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                               10/9/2026     5
+
+--- PAGE 6 ---
+   Round Rotor and Salient Pole Synchronous Machines
+
+
+
+
+
+                                 Salient Pole
+
+
+
+
+
+                                                                    Round Rotor
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                               10/9/2026    6
+
+--- PAGE 7 ---
+    Magnetic Circuits and Magnetic Flux
+
+
+  • Whenever an electric current flows,
+      it will induce a magnetic flux B.
+
+  • The behavior of the magnetic flux depends on
+     • The magnitude and distribution of current
+     • The geometry & physical nature of the surrounding medium
+
+  • The magnetic flux density can be derived and explained in a variety of
+    ways, but it is useful to visualize a physical 3-step process.
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                          10/9/2026     7
+
+--- PAGE 8 ---
+Rotating Magnetic Field in 3-Phase AC Machines
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                               10/9/2026    8
+
+--- PAGE 9 ---
+             Generator Flux Linkage and RMS Voltage
+
+
+
+
+    ➢The frequency of the induced armature voltage
+        depends on the speed of the rotor, and the
+       number of poles.
+    ➢The frequency (in Hz) of the armature voltage is
+          (n is the rotor/mechanical speed in rpm) and p is
+         the number of poles
+                           p n
+                                          f =
+                           2 60
+    ➢When  f  is equal to the nominal value of the
+           electrical network to which is connected, we call
+               it the synchronous speed  fs
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                               10/9/2026    9
+
+--- PAGE 10 ---
+               Example -1
+
+
+
+           ➢At what speed must a six-pole synchronous generator run to
+               generate 50 Hz voltage?
+
+
+
+              ➢Solution:
+               ns = 120f/P = 120 · 50 / 6 = 6000 / 6 = 1000 rpm
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                                10/9/2026     10
+
+--- PAGE 11 ---
+         Armature Slots and Windings
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                               10/9/2026     11
+
+--- PAGE 12 ---
+            Rotor Damper Windings
+
+
+
+➢Damping windings (amortisseurs) are used in salient pole machines to improve dynamic performance:
+   ❑The windings function as squirrel cage–type windings which are located in the slots of the poles.
+    ❑Unlike the field winding there is no DC excitation and they are short-circuited.
+   ❑The short-circuiting can be separately around each pole-piece or connected around the rotor (see above).
+
+
+➢During steady state operation, the effect of damper windings is typically negligible because they are rotating with
+   synchronous speed.
+   ❑The induced currents in the damper windings are only due to spatial harmonics of the rotating field with frequencies 1/5, 1/7,
+        …, of the synchronous frequency.
+   ❑The currents that float through them helps to eliminate these small-amplitude harmonics.
+➢During faults or non-synchronous speed operation (oscillations) the EMF from these windings opposes that of the
+   source (fault or oscillations).
+   ❑The result is a damping torque, which allows the current flow to return to steady state quicker.
+
+
+
+
+  ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                               10/9/2026     12
+
+--- PAGE 13 ---
+        Practical
+      example of a
+       stator winding
+       that is distributed
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                               10/9/2026     13
+
+--- PAGE 14 ---
+                       Generator Flux Linkages
+        and RMS Voltage: Developing the Basic Generator Model
+
+      ➢Stator: coils are placed in slots 𝑎𝑎’, 𝑏𝑏’, and 𝑐𝑐’.
+    ➢The coils are assumed to be completely distributed, producing a sinusoidal
+      MMF centered on the magnetic axis of each phase.
+    ➢The air gap flux is produced via rotor excitation and rotating the rotor
+        windingwm   at    [rad/s], with flux phi [Wb] per pole.
+    ➢The flux linkage for coil 𝑎, 𝜆𝑎, is time-varying proportionally to the cosine
+         of ω𝑡 with maximum at ω𝑡=0 and minimum (=0) at ω𝑡= 𝜋2.
+
+
+
+     ➢Using Faraday’s law:
+
+
+    ➢The RMS value of the voltage is then given by:
+
+
+
+ECSE 2110 Electrical Energy Systems       Rensselaer Polytechnic Institute                                               10/9/2026    14
+
+--- PAGE 15 ---
+                                                                                                                 Ideal (Linear)              Saturation
+                                                                                      No Load
+
+      ➢Flux paths reluctance
+        ❑Not infinite
+        ❑Not constant (linear)
+        ❑B-H characteristics need to be                                                                   Short Circuit
+            considered
+      ➢This leads to saturation of the voltage output with
+          increase in the field current
+     ➢What this implies is that there is a change in the
+         synchronous reactance that depends on the
+          operating point (P and Q output) which is directly
+           related to the field current.
+    ➢To determine the value of the synchronous
+          reactance we need to perform no-load tests and
+          short circuit tests.                                                              Turbine
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                                10/9/2026     15
+
+--- PAGE 16 ---
+     Determining the Synchronous Impedance and Internal Voltage Drop
+
+
+
+
+
+                                                                                                                                                                                                                                                        Ideal (Linear)
+
+                                                                                                                                                                                        No Load
+      ➢  Short-Circuit Test:
+      ➢  Vary the excitation voltage 𝐸𝑓(or field current 𝐼𝑓) and record the current 𝐼in
+             the stator winding.                                                                                                                                                                                         Short Circuit
+      ➢   If the magnetic core is not saturated, we operate on the linear curve (𝐵)
+      ➢  Determine the (unsaturated) synchronous reactance when the excitation
+             voltage 𝐸𝑓(𝑐) is equal to rated stator voltage 𝑈𝑛in the no-load test.
+      ➢  For the same excitation level in the short-circuit test we then get a current
+                  𝐼𝑓0(𝑐).
+      ➢  From the above, we can compute the short circuit (or unsaturated)
+            impedance:
+
+
+
+      ➢  Assuming that Ra<<<Xsc we can solve for Xsc from:
+
+
+
+                            Z =  R 2 + X 2                                                                        sc         a         sc
+
+
+
+ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                                10/9/2026    16
+
+--- PAGE 17 ---
+     Determining the Synchronous Impedance and Internal Voltage Drop
+
+    ➢Open circuit test:
+    ➢The (unsaturated) synchronous impedance                                             Ideal (Linear)
+
+                                                                                                                                                                                  No Load         consist of the armature resistance (often
+         neglected) and the synchronous reactance.
+    ➢When the magnetic core starts to get
+                                                                                                                                                                                                                                                        Short Circuit
+        saturated for high fluxes the synchronous                                              Short-Circuit
+        reactance is reduced.
+    ➢The saturated synchronous reactance can be
+         calculated by connecting the machine to an
+          infinite bus of rated voltage 𝑈𝑛and varying
+        the field voltage, we are then on the curve 𝐵’.
+   ➢We determine the saturated synchronous
+        reactance for an excitation giving rated
+         voltage under saturated conditions:
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                                10/9/2026     17
+
+--- PAGE 18 ---
+         Synchronous Machine Model
+
+The armature resistance is smaller than the synchronous reactance
+  and is often neglected:
+
+   ❑In steady state, Xs is assumed to be constant:
+
+   ❑Here E is called excitation voltage while V is called terminal voltage.
+
+   ❑  Usually V is considered to be constant in magnitude, frequency and phase angle.
+   ❑The assumption is that most of synchronous machines are connected to large interconnected networks (infinite bus).
+
+
+
+
+
+                                                     E = V + jX I                                                                                                                                                                       s  a
+
+
+
+
+              Note that in practice the generator’s voltage should always be controlled!
+
+
+  ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                                10/9/2026     18
+
+--- PAGE 19 ---
+     Loading and voltage control principles
+
+  ✓In (a), there is an inductive load, E is greater than V.
+
+
+  ✓In (b), there is a resistive load, E is greater than V.
+
+
+  ✓In (c), there is a capacitive load, V can be greater than E (but not necessarily).
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                                10/9/2026    19
+
+--- PAGE 20 ---
+           Power Factor
+
+  • One of the important features of the synchronous machine is the ability to change its rotor excitation.
+  •  For a generator with constant mechanical input, the output power is:
+
+                P = Re 3VI *  = 3 V  I  cos                                    3             a              a                                        
+
+  •  The output voltage is typically controlled to a constant value.
+  •  Hence, to have a constant power, 𝐼𝑎 cos(𝜃) should be modified.
+  •  The armature current phase and magnitude can be controlled by
+     means of excitation voltage:
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                          10/9/2026    20
+
+--- PAGE 21 ---
+                Generator V-curve
+
+
+     ➢Shows the variation of the armature current resulting from the change in field voltage Ef. The Field current If
+         can be measured.
+     ➢Note that the variation of a few Amperes in field current results in a large variation in Armature current
+         which is of several kA.
+     ➢Both  and  must be limited in order to avoid damage to the field- or armature windings.                              If       Ia
+     ➢These limits can be exceeded (an overload) for short periods of time to support the system in the case of
+            faults, etc.
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                                10/9/2026     21
+
+--- PAGE 22 ---
+     Voltage Control – Excitation System
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                          10/9/2026    22
+
+--- PAGE 23 ---
+               Generator Protections
+
+
+
+
+
+ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                                 10/9/2026     23
+
+--- PAGE 24 ---
+   Power-Angle Characteristics in Round Rotor
+           Synchronous Generators
+
+            E − V 0°
+                I =                   a
+              X 90°                                         s
+
+
+                                                                                                  2
+                                E V           V
+            S    3VI *          S 3 = 3   (90° − ) − 3   90 °                      3=      a                                X            X                                                                      S                          S
+
+
+               E V                     V
+                            Q  = 3    E cos − V         P             = 3       sin                         3           (                )                      3
+               X                      X S                                   S
+
+
+
+
+ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                          10/9/2026    24
+
+--- PAGE 25 ---
+                 Example: 2
+
+
+
+
+A 50 MVA, 30 kV, three phase synchronous generator has a synchronous reactance of 9 Ω per phase. The
+  generator is delivering rated power at a power factor of 0.8 lagging at rated terminal voltage to an
+   infinite bus.
+(a) Determine the excitation voltage E and power angle δ
+(b) With the excitation held constant at the value found in (a), the driving torque is reduced until the
+    generator is delivering 25 MW. Determine the armature current.
+(c) What is the steady state maximum power machine can deliver.
+
+
+
+
+
+  ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                                10/9/2026    25
+
+--- PAGE 26 ---
+Solution:
+(a)    S  = 50 cos −1 0.8 = 40 MW + j 30 Mvar           3
+          30                   S 3*     V =   = 17.320 °        I =    = 962.25− 36.87° A                                               a        *           3                  3V
+    𝐸= 17320.5 + (𝑗9)(962.25∠−36.87°) = 23558∠17.1° V
+
+So the excitation voltage E is 23.56 kV and the power angle is 17.1.
+
+(b)                                                                                                    E V
+                                                                                                  P3 = 3       sin           −1       (25)(9)                                                                     X S     = sin                = 10.591 °                                     
+                   (3)(23.56)(17.32) 
+                                                                                                   E − V 0°             (23.55810.591° − 17.3200 °)                                                                                                                                                                                                           a =            aI =                        = 807.485− 53.43° A                                             I                                                                                                     X s 90°
+                                          j 9
+(c) Maximum power occurs at δ=90°:
+
+             E V     (23.56)(17.32)
+     P      3     = 3           = 136 MW             max(3=)
+             X           9                               S
+
+
+
+   ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                          10/9/2026    26
+
+--- PAGE 27 ---
+        Salient Rotor Gen. Power Output
+
+
+
+              110
+               90
+               70                     (pu)
+               50
+               30                          Power               10
+                -10
+                -30
+        0 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 160 170 180 190 200
+                               Torque Angle (degrees)
+
+
+
+            Power from Field Current   Power from Saliency    Total Power
+
+
+
+
+ECSE 2110 Electrical Energy Systems      Rensselaer Polytechnic Institute                                                10/9/2026     27

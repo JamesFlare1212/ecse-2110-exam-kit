@@ -1,0 +1,147 @@
+
+--- PAGE 1 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+                       Homework # 4
+
+                      Due: Friday, October 02
+
+Question 1. (20 points)
+
+    a.  (5 points) Explain about the losses in a transformer in detail.
+      Answer:
+    A transformer has electrical losses and magnetic losses. Electrical losses occur in primary
+       as well as in secondary windings due to their electrical resistance. These are the ohmic
+        losses that depend on the load current of the transformer. The magnetic losses are of two
+        types, Hysteresis and eddy current losses that are independent of load current. Hysteresis
+        losses occur due to the power loss to overcome the magnetic remanence during magnetic
+        reversals. Eddy current losses are the ohmic losses in the magnetic core due to induction
+       of eddy currents in the core. The core material also satisfies Faraday’s law during the
+       regular operation of a transformer.
+
+
+    b.  (5 points) How to minimize hysteresis and eddy current losses in a transformer?
+      Answer:
+       Hysteresis loss can be minimized by selecting the core material with less retentivity (low
+      remanence) whereas the eddy current loss can be minimized by using a laminated core as
+      opposed to a solid core.
+
+
+    c.  (5 points) What are in-rush currents in a transformer?
+      Answer:
+     When a transformer is energized from a power supply, then a large current can flow into
+       the transformer, called in-rush current, since there is no opposition to the applied voltage.
+      The magnitude of this current is a function of the point on wave when voltage is applied.
+
+
+    d. (5 points) Why calculate all-day efficiency of a transformer?
+
+   Answer:
+
+   All-day efficiency of a transfer represents more accurate efficiency of a transformer that
+    takes into account of the daily load cycle on the transformer.
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 1 of 8                   Department of ECSE
+
+--- PAGE 2 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question 2. (20 points)
+
+
+
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 2 of 8                   Department of ECSE
+
+--- PAGE 3 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 3 of 8                   Department of ECSE
+
+--- PAGE 4 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question 3. (20 points)
+
+
+
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 4 of 8                   Department of ECSE
+
+--- PAGE 5 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question 4. (20 points)
+
+
+
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 5 of 8                   Department of ECSE
+
+--- PAGE 6 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 6 of 8                   Department of ECSE
+
+--- PAGE 7 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+Question 5. (20 points)
+
+
+
+
+
+Solution:
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 7 of 8                   Department of ECSE
+
+--- PAGE 8 ---
+ECSE 2110 – Electrical Energy Systems                                      Fall 2026
+
+
+
+
+
+Rensselaer Polytechnic Institute          Page 8 of 8                   Department of ECSE

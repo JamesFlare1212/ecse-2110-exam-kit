@@ -1,0 +1,13 @@
+{
+	"extends": "astro/tsconfigs/strict",
+	"compilerOptions": {
+		"strict": true,
+		"types": ["astro/client", "bun"],
+		"paths": {
+			"#lib": ["./src/lib"],
+			"#lib/*": ["./src/lib/*"]
+		}
+	},
+	"include": [".astro/types.d.ts", "src", "content/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts", "astro.config.ts"],
+	"exclude": ["build", "node_modules", ".svelte-kit", ".svelte-check"]
+}

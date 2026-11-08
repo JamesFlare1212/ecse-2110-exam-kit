@@ -1,0 +1,1882 @@
+{
+  "lecture-01": {
+    "id": "lecture-01",
+    "title": "Lecture 01",
+    "kind": "lecture",
+    "pages": 35,
+    "pdf": "/sources/lecture-01.pdf",
+    "pageBase": "/pages/lecture-01",
+    "sizes": [
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Lecture1-EES-ECSE_2110-Fall_2026-PN.pdf",
+    "sha256": "6f005438e1b1480c41729d20ab9bc9ed97a4bfe7eda89c3ebc2e8ef12fef37a1"
+  },
+  "lecture-02": {
+    "id": "lecture-02",
+    "title": "Lecture 02",
+    "kind": "lecture",
+    "pages": 23,
+    "pdf": "/sources/lecture-02.pdf",
+    "pageBase": "/pages/lecture-02",
+    "sizes": [
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Lecture2-EES-ECSE_2110-Fall_2026-PN.pdf",
+    "sha256": "689cd7500caa79b2a0dc1f01fc8ea21eca40939b7583b5d72a63f7f82b228116"
+  },
+  "lecture-03": {
+    "id": "lecture-03",
+    "title": "Lecture 03",
+    "kind": "lecture",
+    "pages": 26,
+    "pdf": "/sources/lecture-03.pdf",
+    "pageBase": "/pages/lecture-03",
+    "sizes": [
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Lecture3-EES-ECSE_2110-Fall_2026-PN.pdf",
+    "sha256": "8440068a3817d32d095959b6a0bfd5ce03217f135c0dc19e8f80d4bf422cff2a"
+  },
+  "lecture-04": {
+    "id": "lecture-04",
+    "title": "Lecture 04",
+    "kind": "lecture",
+    "pages": 28,
+    "pdf": "/sources/lecture-04.pdf",
+    "pageBase": "/pages/lecture-04",
+    "sizes": [
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Lecture4-EES-ECSE_2110-Fall_2026-PN.pdf",
+    "sha256": "2b03d49221576991122904228ba0f23d1317a11f3bcfe5fa73e211c4eb971788"
+  },
+  "lecture-06": {
+    "id": "lecture-06",
+    "title": "Lecture 06",
+    "kind": "lecture",
+    "pages": 13,
+    "pdf": "/sources/lecture-06.pdf",
+    "pageBase": "/pages/lecture-06",
+    "sizes": [
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Lecture6-EES-ECSE_2110-Fall_2026.pdf",
+    "sha256": "d7aa4e65c10be3941591c47276bb4de622de1b7413a30368b9414ef31cce51a1"
+  },
+  "lecture-07": {
+    "id": "lecture-07",
+    "title": "Lecture 07",
+    "kind": "lecture",
+    "pages": 19,
+    "pdf": "/sources/lecture-07.pdf",
+    "pageBase": "/pages/lecture-07",
+    "sizes": [
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Lecture7-EES-ECSE_2110-Fall_2026.pdf",
+    "sha256": "2c4df7678c762916a7b1d9ee3214b07cfd417837b228b03f7003812a9e44714c"
+  },
+  "lecture-08": {
+    "id": "lecture-08",
+    "title": "Lecture 08",
+    "kind": "lecture",
+    "pages": 14,
+    "pdf": "/sources/lecture-08.pdf",
+    "pageBase": "/pages/lecture-08",
+    "sizes": [
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Lecture8-Electrical_Energy_Systems-ECSE_2110-Fall_2026.pdf",
+    "sha256": "9c2420fbda6f7fa7bbd0b1fe640c68fbae36d22de1267a67200045d6266bd49b"
+  },
+  "lecture-09": {
+    "id": "lecture-09",
+    "title": "Lecture 09",
+    "kind": "lecture",
+    "pages": 15,
+    "pdf": "/sources/lecture-09.pdf",
+    "pageBase": "/pages/lecture-09",
+    "sizes": [
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Lecture9-Electrical_Energy_Systems-ECSE_2110-Fall_2026.pdf",
+    "sha256": "3b742c2bc0c844a58e525b3868f16dac4a0fdf4595640d67e2aa28745dd3caa7"
+  },
+  "lecture-10": {
+    "id": "lecture-10",
+    "title": "Lecture 10",
+    "kind": "lecture",
+    "pages": 27,
+    "pdf": "/sources/lecture-10.pdf",
+    "pageBase": "/pages/lecture-10",
+    "sizes": [
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Lecture10-EES-ECSE_2110-Fall_2026.pdf",
+    "sha256": "29ce44a8b292ea2570de6cbf600b3ed92d2446a16f670275219a8fa1d09807f5"
+  },
+  "lecture-11-12": {
+    "id": "lecture-11-12",
+    "title": "Lecture 11–12",
+    "kind": "lecture",
+    "pages": 27,
+    "pdf": "/sources/lecture-11-12.pdf",
+    "pageBase": "/pages/lecture-11-12",
+    "sizes": [
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Lecture11-12-EES-ECSE_2110-Fall_2026-PN.pdf",
+    "sha256": "9c0782488862f6b93231b211340799abcad650b2386a4d6f6acc4f9201c541e5"
+  },
+  "lecture-13-14": {
+    "id": "lecture-13-14",
+    "title": "Lecture 13–14",
+    "kind": "lecture",
+    "pages": 11,
+    "pdf": "/sources/lecture-13-14.pdf",
+    "pageBase": "/pages/lecture-13-14",
+    "sizes": [
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Lecture13-14-EES-ECSE_2110-Fall_2026.pdf",
+    "sha256": "4ea6f3c328175ace9d6600fccb65c2da48d085f02955157706bc06093cba2448"
+  },
+  "lecture-15": {
+    "id": "lecture-15",
+    "title": "Lecture 15",
+    "kind": "lecture",
+    "pages": 19,
+    "pdf": "/sources/lecture-15.pdf",
+    "pageBase": "/pages/lecture-15",
+    "sizes": [
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Lecture15-EES-ECSE_2110-Fall_2026.pdf",
+    "sha256": "a498a570eea48b3ae4060a0f9bbf585078b4ab463fe31c5f5c60b09066bae42c"
+  },
+  "post-lecture-02": {
+    "id": "post-lecture-02",
+    "title": "Lecture 02 · Post-lecture edition",
+    "kind": "notes",
+    "pages": 23,
+    "pdf": "/sources/post-lecture-02.pdf",
+    "pageBase": "/pages/post-lecture-02",
+    "sizes": [
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Post_Lecture-EES-Lecture-2.pdf",
+    "sha256": "4143dfbcd1cfafcff4117953258d55e6abe26cc7a341aff94aaa339f5c56ea68"
+  },
+  "post-lecture-03": {
+    "id": "post-lecture-03",
+    "title": "Lecture 03 · Post-lecture edition",
+    "kind": "notes",
+    "pages": 26,
+    "pdf": "/sources/post-lecture-03.pdf",
+    "pageBase": "/pages/post-lecture-03",
+    "sizes": [
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ],
+      [
+        960.0,
+        540.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Post_Lecture-EES-Lecture_3.pdf",
+    "sha256": "af3cd46eb0efc239f5be6658daa24421ef1ff473baba68b4489448d5862bc345"
+  },
+  "post-lecture-07": {
+    "id": "post-lecture-07",
+    "title": "Lecture 07 · Post-lecture edition",
+    "kind": "notes",
+    "pages": 19,
+    "pdf": "/sources/post-lecture-07.pdf",
+    "pageBase": "/pages/post-lecture-07",
+    "sizes": [
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ]
+    ],
+    "original": "reference/Lecture Notes/Post_Lecture-EES-Lecture_7.pdf",
+    "sha256": "1dd7529da2d590a1cacc353616f87f3b586e89efb367a5bb913e5d5aa12b5333"
+  },
+  "reference-exam1": {
+    "id": "reference-exam1",
+    "title": "Reference Sheet · Exam 1 · Fall 2026",
+    "kind": "crib",
+    "pages": 2,
+    "pdf": "/sources/reference-exam1.pdf",
+    "pageBase": "/pages/reference-exam1",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Exams/Exam1/Reference_Sheet_-_Fall_2026.pdf",
+    "sha256": "1b8574e3fe0a51e337577b932ddfef56826172708bee1f7f409a248ba2350063"
+  },
+  "reference-exam2": {
+    "id": "reference-exam2",
+    "title": "Reference Sheet · Exam 2 · Fall 2026",
+    "kind": "crib",
+    "pages": 2,
+    "pdf": "/sources/reference-exam2.pdf",
+    "pageBase": "/pages/reference-exam2",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Exams/Exam2/Reference_Sheet_Midterm_Exam-2-_Fall_2026.pdf",
+    "sha256": "34464d93f6e4127387e30381d966ade37a686d296273c7c5395c181bac6b19ef"
+  },
+  "syllabus": {
+    "id": "syllabus",
+    "title": "Course syllabus · Fall 2026",
+    "kind": "notes",
+    "pages": 6,
+    "pdf": "/sources/syllabus.pdf",
+    "pageBase": "/pages/syllabus",
+    "sizes": [
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ],
+      [
+        792.0,
+        612.0
+      ]
+    ],
+    "original": "reference/Course Syllabus.pdf",
+    "sha256": "4cbdd8677df06dcb4fd76655c50cbcb1d823dd9faa351c7820fe954799673603"
+  },
+  "homework-1": {
+    "id": "homework-1",
+    "title": "Homework 1",
+    "kind": "homework",
+    "pages": 2,
+    "pdf": "/sources/homework-1.pdf",
+    "pageBase": "/pages/homework-1",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Homework/Homework-1_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "ba88e7b80176eb9b2c39307289edb4f4d1841da207ba31d498544e41ac5afebd"
+  },
+  "homework-1-sol": {
+    "id": "homework-1-sol",
+    "title": "Homework 1 · Solutions",
+    "kind": "solution",
+    "pages": 5,
+    "pdf": "/sources/homework-1-sol.pdf",
+    "pageBase": "/pages/homework-1-sol",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Homework/Homework Solutions/Solutions_-_Homework-1_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "45ba2906f02f2ab9a85ae7e0b2ddb85722b89ab118dfbf4783a62ed5c812435c"
+  },
+  "homework-2": {
+    "id": "homework-2",
+    "title": "Homework 2",
+    "kind": "homework",
+    "pages": 2,
+    "pdf": "/sources/homework-2.pdf",
+    "pageBase": "/pages/homework-2",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Homework/Homework-2_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "e7ed57b40b0164eb6fc781e3d79974826268a0ea335880693b68b7fa96e5a2c6"
+  },
+  "homework-2-sol": {
+    "id": "homework-2-sol",
+    "title": "Homework 2 · Solutions",
+    "kind": "solution",
+    "pages": 4,
+    "pdf": "/sources/homework-2-sol.pdf",
+    "pageBase": "/pages/homework-2-sol",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Homework/Homework Solutions/Solutions_-_Homework-2_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "5bcd72013b4a2161d2942a8dc42655d9414d6872a314a921aeceb7a39267c71d"
+  },
+  "homework-3": {
+    "id": "homework-3",
+    "title": "Homework 3",
+    "kind": "homework",
+    "pages": 2,
+    "pdf": "/sources/homework-3.pdf",
+    "pageBase": "/pages/homework-3",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Homework/Homework-3_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "cb4b72c857964e23c9b5b165a9a66d2eb133db88874aa2b56fcf5be0cadd5110"
+  },
+  "homework-3-sol": {
+    "id": "homework-3-sol",
+    "title": "Homework 3 · Solutions",
+    "kind": "solution",
+    "pages": 5,
+    "pdf": "/sources/homework-3-sol.pdf",
+    "pageBase": "/pages/homework-3-sol",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Homework/Homework Solutions/Solutions_-_Homework-3_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "d0c855ebb847fe5310f930022605a2bbc646dc8ba30f28fd147922c4fbc7e8ea"
+  },
+  "homework-4": {
+    "id": "homework-4",
+    "title": "Homework 4",
+    "kind": "homework",
+    "pages": 2,
+    "pdf": "/sources/homework-4.pdf",
+    "pageBase": "/pages/homework-4",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Homework/Homework-4_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "9cc9f2e3d93f23ed13949bb009a17a22854009e5ee6ce561f6451adf0e957823"
+  },
+  "homework-4-sol": {
+    "id": "homework-4-sol",
+    "title": "Homework 4 · Solutions",
+    "kind": "solution",
+    "pages": 8,
+    "pdf": "/sources/homework-4-sol.pdf",
+    "pageBase": "/pages/homework-4-sol",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Homework/Homework Solutions/Soltions_-_Homework-4_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "8836f6afe67c0d52e4c880c97ef65c738d57278baa2f285f32e987f432186dd6"
+  },
+  "homework-5": {
+    "id": "homework-5",
+    "title": "Homework 5",
+    "kind": "homework",
+    "pages": 1,
+    "pdf": "/sources/homework-5.pdf",
+    "pageBase": "/pages/homework-5",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Homework/Homework-5_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "2167c7f1a9f92d57db59fc4f8df1ba5890d1070de2f7b54d4d65800e56c809e9"
+  },
+  "homework-5-sol": {
+    "id": "homework-5-sol",
+    "title": "Homework 5 · Solutions",
+    "kind": "solution",
+    "pages": 4,
+    "pdf": "/sources/homework-5-sol.pdf",
+    "pageBase": "/pages/homework-5-sol",
+    "sizes": [
+      [
+        595.28,
+        841.89
+      ],
+      [
+        595.28,
+        841.89
+      ],
+      [
+        595.28,
+        841.89
+      ],
+      [
+        595.28,
+        841.89
+      ]
+    ],
+    "original": "reference/Homework/Homework Solutions/Solutions_-_Homework-5_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "b5670249b1abf52324ddbff73c7611b6a0357ecfcde61e5748f9edaf3357b26a"
+  },
+  "homework-6": {
+    "id": "homework-6",
+    "title": "Homework 6",
+    "kind": "homework",
+    "pages": 1,
+    "pdf": "/sources/homework-6.pdf",
+    "pageBase": "/pages/homework-6",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Homework/Homework_-_6_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "ad509daeb593b5ad03b772b74dd10395ed8f37b16d1c2126a6ad962973d7e4a3"
+  },
+  "homework-6-sol": {
+    "id": "homework-6-sol",
+    "title": "Homework 6 · Solutions",
+    "kind": "solution",
+    "pages": 4,
+    "pdf": "/sources/homework-6-sol.pdf",
+    "pageBase": "/pages/homework-6-sol",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Homework/Homework Solutions/Solutions-Homework-6_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "d3e195a9a9d9fd7408358dc6f91d4f500e54978ffaad574dc75bf7227b7a672f"
+  },
+  "homework-7": {
+    "id": "homework-7",
+    "title": "Homework 7",
+    "kind": "homework",
+    "pages": 2,
+    "pdf": "/sources/homework-7.pdf",
+    "pageBase": "/pages/homework-7",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "reference/Homework/Homework-7_-_ECSE_2110_-_Electrical_Energy_Systems_-_Power_Electronics.pdf",
+    "sha256": "17c03c4438a90205cc9c7863e16545d55d13341741bb889b348722529a64bab5"
+  }
+}

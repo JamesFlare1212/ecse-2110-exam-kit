@@ -1,0 +1,343 @@
+
+--- PAGE 1 ---
+         Lecture 11-12
+
+Introduction to Power Electronics
+
+                         ECSE 2110
+                 Electrical Energy Systems
+
+                        Instructor: Dr. Prabhakar Neti
+
+--- PAGE 2 ---
+Popular Power Electronic Converters
+        - Industrial Motor Drives
+
+
+
+
+
+                                                                    2
+
+--- PAGE 3 ---
+Popular Power Electronic Converters
+            - HVDC Converters
+
+
+
+
+
+                                                                             3
+
+--- PAGE 4 ---
+Popular Power Electronic Converters
+               - EV Chargers
+
+
+
+
+
+                                                                   4
+
+--- PAGE 5 ---
+      Popular Power Electronic Converters
+- Power Supplies for Phones, Tablets and Laptops
+
+
+
+
+
+                                                                                  5
+
+--- PAGE 6 ---
+Popular Power Electronic Converters
+ - Renewable Energies Applications
+
+
+
+
+
+                                                                   6
+
+--- PAGE 7 ---
+Popular Power Electronic Converters
+          - Subsea Applications
+
+
+
+
+
+                                                                                  7
+
+--- PAGE 8 ---
+              Intro To Power Electronics –
+Popular Semiconductor materials and Switching devices
+
+
+          In power electronics, the following
+         semiconductor materials are popular
+             -  Silicon (Si)
+             -  Silicon carbide (SiC) and
+             - Gallium nitride (GaN)
+
+
+         Popular Switching devices
+            - Diode (Uncontrolled)
+            - SCR
+            - BJT
+            - MOSFET
+            - IGBT
+                                                                                    8
+            - GTO
+
+--- PAGE 9 ---
+Intro To Power Electronics –
+    A Basic Switch
+
+
+
+
+
+                                                                9
+
+--- PAGE 10 ---
+              Popular Switching devices
+
+
+
+-  Diode (Uncontrolled)
+
+
+
+
+
+                                                                                           10
+
+--- PAGE 11 ---
+                    Popular Switching devices
+
+
+
+            -  Silicon Controlled Rectifier (SCR)
+
+                                    iA
+
+                                                                                                                                                             iA
+                                               Forward
+                                                       blocking
+                                                         region         ig3>ig2>ig1                Anode (A)                                   Forward current
+                                                                                   ON                                                                                                                                           carrying(ON)
+                                                                                        ig5  ig4  ig3  ig2  ig1 ig=0                           iA
+                                                                     Latching current                                   Reverse voltage     Max reverse
+                                                                                                                             Forward voltage
+−vAK    voltage                                                    Holding current                                         blocking                     blocking(OFF)
+                                                       Forward    vAK  Reverse                      Reverse                               breakover
+ avalanche                                                                                                                                     vAK                       blocking                                    voltage                                ig  region                        region
+                                                               Cathode (K)
+
+
+
+
+
+                                                                                                           11
+
+--- PAGE 12 ---
+              Popular Switching devices
+
+
+
+-  Bipolar Junction Transistor (BJT)
+
+
+
+
+
+                                                                                            12
+
+--- PAGE 13 ---
+              Popular Switching devices
+
+
+
+-  Metal Oxide Field Effect Transistor (MOSFET)
+
+
+
+
+
+                                                                                                  13
+
+--- PAGE 14 ---
+              Popular Switching devices
+
+
+
+-  Insulated Gate Bipolar Transistor (IGBT)
+
+
+
+
+
+                                                                                           14
+
+--- PAGE 15 ---
+              Popular Switching devices
+
+-  Volt-Amps Vs Frequency
+
+
+
+
+
+                                                                                               15
+                                                                   (Hz)
+
+--- PAGE 16 ---
+       Popular Semiconductor Materials
+
+Silicon (Si):
+Pros: Mature technology, low cost, and easily available
+Cons: Relatively low switching frequencies, higher losses, and
+relatively limited voltage and temperature capabilities
+compared to SiC and GaN.
+
+                      Gallium Nitride (GaN):
+                       Pros:
+                      Very high switching frequencies, high power density (smaller size for a given
+                       power), and lower losses. Applicable for high-frequency applications like
+                    consumer electronics and fast chargers.
+                     Cons:
+                          Relatively low voltage ratings and higher cost (than silicon)
+
+Silicon Carbide (SiC):
+Pros:
+Very high breakdown voltage, high thermal conductivity, and high switching
+frequencies. Applicable for high-power, high-temperature, and high-voltage
+applications like electric vehicles and industrial power supplies.
+Cons:
+                                                                                    16More expensive than silicon or gallium nitride.
+
+--- PAGE 17 ---
+ Popular Semiconductor Materials
+
+
+
+Summary:
+ - Silicon is more suitable for a cost-effective solution for lower-
+power, lower-voltage applications.
+
+SiC is more suitable for high power, high voltage, and high
+temperature applications.
+
+GaN is more suitable for high switching frequencies, high
+power density.
+
+
+
+
+**SiC and GaN are considered "wide bandgap" materials. Better for higher voltage operation,
+wider temperature ranges, and increased switching frequencies.
+
+
+
+
+                                                                                      17
+
+--- PAGE 18 ---
+Popular Power Electronic Converters
+
+
+
+
+
+                                                                             18
+
+--- PAGE 19 ---
+  Popular Power Electronic Converters
+- Uncontrolled Diode Half-Wave Rectifier
+
+
+
+
+
+                                                                         19
+
+--- PAGE 20 ---
+  Popular Power Electronic Converters
+- Uncontrolled Diode Half-Wave Rectifier
+
+
+
+
+
+                                                                      20
+
+--- PAGE 21 ---
+     Popular Power Electronic Converters
+- Controlled Thyristor Based Half-Wave Rectifier
+
+
+
+
+
+                                                                                21
+
+--- PAGE 22 ---
+     Popular Power Electronic Converters
+- Controlled Thyristor Based Half-Wave Rectifier
+
+
+
+
+
+                                                                           22
+
+--- PAGE 23 ---
+     Popular Power Electronic Converters
+- Controlled Thyristor Based Full-Wave Rectifier
+
+
+
+
+
+                                                                                  23
+
+--- PAGE 24 ---
+     Popular Power Electronic Converters
+- Controlled Thyristor Based Full-Wave Rectifier
+
+
+
+
+
+                                                                           24
+
+--- PAGE 25 ---
+    Popular Power Electronic Converters
+- DC-DC Step Down Chopper (Buck Converter)
+
+
+
+
+
+                                                                            25
+
+--- PAGE 26 ---
+   Popular Power Electronic Converters
+- DC-DC Step UP Chopper (Boost Converter)
+
+
+
+
+
+                                                                        26
+
+--- PAGE 27 ---
+   Popular Power Electronic Converters
+- DC-DC Step UP Chopper (Boost Converter)
+
+
+
+
+
+                                                                                 27

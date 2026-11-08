@@ -1,0 +1,15 @@
+{
+  "referenceSheets": [
+    {
+      "doc": "reference-exam1",
+      "original": "reference/Exams/Exam1/Reference_Sheet_-_Fall_2026.pdf",
+      "sha256": "1b8574e3fe0a51e337577b932ddfef56826172708bee1f7f409a248ba2350063"
+    },
+    {
+      "doc": "reference-exam2",
+      "original": "reference/Exams/Exam2/Reference_Sheet_Midterm_Exam-2-_Fall_2026.pdf",
+      "sha256": "34464d93f6e4127387e30381d966ade37a686d296273c7c5395c181bac6b19ef"
+    }
+  ],
+  "method": "Separate byte-preserved official Reference_Sheet PDFs; never combined or supplemented from lectures"
+}

@@ -1,0 +1,140 @@
+import {describe, expect, test} from 'bun:test';
+import {createHash} from 'node:crypto';
+import {existsSync, lstatSync, readFileSync, readdirSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {exams, examIndex, documents, formulas, papers} from '../content/catalog.server';
+import {course, formulaSheetFor} from '../content/course';
+import {formulasForExam} from '../src/lib/catalog';
+import {assetSource} from '../content/papers.server';
+import {displayEquations, formulaReferences} from '../content/text';
+
+const expected = {'e1-f26': [6, 100], 'e1-s25': [6, 120], 'e2-s25': [7, 100], 'e2-u00': [4, 95]};
+
+describe('ECSE 2110 delivery and provenance', () => {
+  test('retains the exact upstream Fieldnotes stylesheet', () => {
+    // Template b75e950: migration changes course data, not its visual system.
+    const css = readFileSync(resolve('src/styles/layout.css'));
+    expect(createHash('sha256').update(css).digest('hex')).toBe('68118e771d01790f2d0082ddc181a23a0c062e5460dbd84a92b0f44552b473bd');
+  });
+  test('uses its own course and browser namespace, with all source exams', () => {
+    expect(course.id).toBe('ecse-2110');
+    expect(course.code).toBe('ECSE 2110');
+    expect(course.storageKey).toBe('ecse2110-fieldnotes-v1');
+    const originals = exams.filter(exam => exam.kind !== 'practice');
+    expect(originals).toHaveLength(4);
+    expect(originals.reduce((count, exam) => count + exam.problems.length, 0)).toBe(23);
+    expect(exams.filter(exam => exam.kind === 'practice').map(exam => exam.id).sort()).toEqual(['p1-f26', 'p2-f26']);
+    for (const exam of originals) {
+      expect([exam.problems.length, exam.points]).toEqual(expected[exam.id as keyof typeof expected]);
+      expect(exam.problems.reduce((sum, problem) => sum + problem.points, 0)).toBe(exam.points);
+    }
+    expect(exams.find(exam => exam.id === 'e2-u00')?.year).toBeNull();
+    expect(exams.find(exam => exam.id === 'e2-u00')?.problems.map(q => q.number)).toEqual([2, 3, 4, 5]);
+  });
+
+  test('all original parts have independent full solutions, not generated answer copies', () => {
+    for (const exam of exams) for (const problem of exam.problems) {
+      expect(problem.wording).toBe('original');
+      expect(problem.guide.en).toBeTruthy();
+      expect(problem.guide.zh).toMatch(/[\u4e00-\u9fff]/);
+      expect(problem.guide.en).not.toContain('\\boxed');
+      expect(problem.guide.zh).not.toContain('\\boxed');
+      for (const part of problem.parts) for (const locale of ['en', 'zh'] as const) {
+        const math = displayEquations(part.solution[locale]);
+        expect(math.length).toBeGreaterThanOrEqual(2);
+        expect(math[0]).not.toContain('\\boxed');
+        expect(math.at(-1)).toContain('\\boxed');
+        expect(math.slice(0, -1).join('\n')).not.toContain('\\boxed');
+        expect(part).not.toHaveProperty('answer');
+        expect(part.solution[locale]).not.toMatch(/### (?:Step|Answer|Explanation|Equation)/);
+        for (const id of formulaReferences(part.solution[locale])) expect(formulas.some(f => f.id === id)).toBe(true);
+      }
+    }
+  });
+
+  test('search/navigation projects every part without shipping the other answers', () => {
+    for (const exam of exams) {
+      const index = examIndex.find(item => item.id === exam.id)!;
+      expect(index.problems.map(q => q.id)).toEqual(exam.problems.map(q => q.id));
+      for (const problem of exam.problems) {
+        const entry = index.problems.find(q => q.id === problem.id)!;
+        expect(entry.parts).toEqual(problem.parts.map(({id, label, prompt}) => ({id, label, prompt})));
+        expect(entry).not.toHaveProperty('guide');
+        for (const part of entry.parts) expect(part).not.toHaveProperty('solution');
+      }
+    }
+  });
+
+  test('preserves independent locale assets and authentic PDF hashes', () => {
+    for (const paper of papers) for (const locale of ['en', 'zh'] as const) {
+      for (const document of Object.values(paper.documents[locale])) {
+        const path = assetSource(document.pdf);
+        expect(lstatSync(path).isSymbolicLink()).toBe(false);
+        expect(createHash('sha256').update(readFileSync(path)).digest('hex')).toBe(document.sha256);
+        for (let page = 1; page <= document.pages; page++) expect(existsSync(assetSource(`${document.pageBase}/${page}.webp`))).toBe(true);
+      }
+      for (const question of paper.exam.problems) {
+        const source = readFileSync(resolve(paper.directories[locale], 'questions', `q${question.number}.md`), 'utf8');
+        expect(source).not.toMatch(/## (?:English|中文)/);
+        for (const figure of [question.figure, ...question.parts.flatMap(p => [p.figure, p.questionFigure?.name])].filter(Boolean)) {
+          for (const suffix of ['', '-dark']) expect(existsSync(resolve(paper.directories[locale], 'assets/figures', `${figure}${suffix}.svg`))).toBe(true);
+        }
+      }
+    }
+  });
+
+  test('shared resources reflect the supplied course rather than the template', () => {
+    expect(course.resources.lectures.map(l => l.label)).toEqual(['01', '02', '03', '04', '06', '07', '08', '09', '10', '11–12', '13–14', '15']);
+    expect(documents['crib']).toBeUndefined();
+    expect(formulas).toHaveLength(22);
+    for (const number of [1, 2]) {
+      const id = `reference-exam${number}`;
+      expect(formulaSheetFor(number)).toBe(id);
+      expect(documents[id].pages).toBe(2);
+      expect(documents[id].original).toContain('Reference_Sheet');
+      expect(formulasForExam(number).every(formula => formula.source.doc === id)).toBe(true);
+    }
+    expect(new Set(formulas.map(formula => formula.source.doc))).toEqual(new Set(['reference-exam1', 'reference-exam2']));
+    expect(documents['homework-7']).toBeDefined();
+    expect(documents['homework-7-sol']).toBeUndefined();
+    for (const id of ['02', '03', '07']) {
+      expect(documents[`post-lecture-${id}`]).toBeDefined();
+      expect(documents[`post-lecture-${id}`].sha256).not.toBe(documents[`lecture-${id}`].sha256);
+    }
+    expect(JSON.stringify(documents)).not.toMatch(/ECSE.?2100|Fields and Waves|submission_369646790/);
+  });
+
+  test('only authentic printed diagrams appear in original exam prompts', () => {
+    const originals = exams.filter(exam => exam.kind !== 'practice');
+    expect(originals.flatMap(exam => exam.problems.filter(q => q.figure).map(q => q.id)).sort()).toEqual(['e1-f26-q5','e1-s25-q3','e1-s25-q5','e1-s25-q6']);
+    const clean = originals.find(exam => exam.id === 'e1-f26')!;
+    expect(clean.doc).toBe('e1-f26-sol');
+    expect(clean.problems.every(q => q.originalFigure.doc === 'e1-f26-sol')).toBe(true);
+    expect(clean.problems.find(q => q.number === 4)?.figure).toBeUndefined();
+    expect(clean.problems.find(q => q.number === 5)?.originalFigure.page).toBe(12);
+    expect(clean.problems.find(q => q.number === 6)?.originalFigure.page).toBe(14);
+  });
+
+  test('every formula link belongs to the reference sheet for its exam group', () => {
+    for (const exam of exams) for (const q of exam.problems) for (const part of q.parts) for (const locale of ['en','zh'] as const) {
+      for (const id of formulaReferences(part.solution[locale])) {
+        expect(formulas.find(f => f.id === id)?.source.doc).toBe(formulaSheetFor(exam.number) ?? undefined);
+      }
+    }
+  });
+
+  test('no student export or private submission text is part of public resources', () => {
+    const visit = (directory: string) => {
+      for (const entry of readdirSync(directory, {withFileTypes: true})) {
+        const path = resolve(directory, entry.name);
+        expect(entry.name).not.toMatch(/submission_369646790|gradescope.*\.pdf/i);
+        if (entry.isDirectory()) visit(path);
+        else if (/\.(?:svg|txt|html)$/i.test(entry.name)) {
+          expect(readFileSync(path, 'utf8')).not.toMatch(/Peter Chen|66057490|97\s*\/\s*100\s*pts/);
+        }
+      }
+    };
+    visit(resolve('static'));
+    for (const paper of papers) for (const directory of Object.values(paper.directories)) visit(resolve(directory, 'assets'));
+  });
+});

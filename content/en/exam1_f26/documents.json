@@ -1,0 +1,13 @@
+{
+  "e1-f26-sol": {
+    "id": "e1-f26-sol",
+    "title": "Exam 1 · Fall 2026 · Clean questions and official solutions",
+    "kind": "solution",
+    "pages": 15,
+    "pdf": "sources/e1-f26-sol.pdf",
+    "pageBase": "pages/e1-f26-sol",
+    "sizes": [[612,792],[612,792],[612,792],[612,792],[612,792],[612,792],[612,792],[612,792],[612,792],[612,792],[612,792],[612,792],[612,792],[612,792],[612,792]],
+    "original": "Exams/Exam1/ECSE2110Test1Sol-F26.pdf",
+    "sha256": "c26bdf7805fa6eee8d7c1e41fb32a7d2f7a72c141f854e2f780cbf5eb3e7d3d3"
+  }
+}

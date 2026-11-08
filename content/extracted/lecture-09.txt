@@ -1,0 +1,147 @@
+
+--- PAGE 1 ---
+        Lecture 9
+
+Electric Rotating Machines
+
+                     ECSE 2110
+             Electrical energy Systems
+
+                   Instructor: Dr. Prabhakar Neti
+
+--- PAGE 2 ---
+             Motional Voltage
+
+
+
+
+e = Motional Voltage
+
+B = Magnetic Flux Density
+
+V = Linear Speed of the conductor
+
+l = Length of the conductor
+
+
+
+
+
+                                                                                                                                                 2
+
+--- PAGE 3 ---
+           Electromagnetic Force
+
+
+
+
+
+f = Electromagnetic force
+
+B = Magnetic Flux Density
+
+l = Length of the conductor
+
+i = Current in the conductor
+
+
+
+
+
+                                                                                                                                                                       3
+
+--- PAGE 4 ---
+4
+
+--- PAGE 5 ---
+DC Generators Armature Winding – Lap Winding
+
+
+
+
+
+                                                                                                                                                                 55
+
+--- PAGE 6 ---
+DC Generators Armature Winding – Wave Winding
+
+
+
+
+
+                                                                                                                                                       6
+
+--- PAGE 7 ---
+DC Generator – Armature Voltage
+
+
+
+
+
+                                                                                                                                                     7
+
+--- PAGE 8 ---
+DC Generator – Armature Voltage
+
+
+
+
+
+                                                                                                                            8
+
+--- PAGE 9 ---
+DC Motor – Torque Developed
+
+
+
+
+
+                                                                                                                    9
+
+--- PAGE 10 ---
+DC Generators
+
+
+
+
+
+                                                                                                   1010
+
+--- PAGE 11 ---
+DC Generators
+
+
+
+
+
+                                                                                                          1111
+
+--- PAGE 12 ---
+DC Generators
+
+
+
+
+
+                                                                                                   1212
+
+--- PAGE 13 ---
+DC Generators
+
+
+
+
+
+                                                                                                         1313
+
+--- PAGE 14 ---
+Types of DC Machines
+
+
+
+
+
+                                                                                                                1414
+
+--- PAGE 15 ---
+15

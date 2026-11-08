@@ -1,0 +1,13 @@
+[
+  {
+    "id": "fundamental-theorem",
+    "title": { "zh": "微积分基本定理", "en": "Fundamental theorem of calculus" },
+    "math": "\\int_a^b f(x)\\,dx=F(b)-F(a),\\qquad F'(x)=f(x)",
+    "source": {
+      "doc": "course-notes",
+      "page": 1,
+      "label": { "zh": "课程笔记中的定积分公式", "en": "Definite-integral formula in the course notes" },
+      "region": [0.1, 0.1, 0.8, 0.2]
+    }
+  }
+]

@@ -1,0 +1,211 @@
+
+--- PAGE 1 ---
+                       Course Syllabus
+
+Course Information
+
+     Electrical Energy Systems                  ECSE 2110                     Fall 2026
+
+     Credit Hours: 3                 TF          12:30PM-1:50PM            JEC 4201/Webex
+
+
+   Course Websites:
+
+   Piazza – one-stop source for class notes, HW, solutions, announcements, and discussions.
+   The platform is highly catered to getting you help quickly and efficiently from classmates, the TAs, and the professor. Rather
+   than emailing questions to the teaching staff, please post your questions on Piazza.
+
+    https://piazza.com/rpi/fall2026/ecse2110/resources
+
+
+   Gradescope for grading and HW submission
+
+    https://www.gradescope.com/courses/1378500
+
+    Prerequisites:
+     ● ECSE 2010 Electric Circuits or permission of instructor.
+     ● PHYS 1200 Physics II, or
+     ●  Permission of the instructor
+
+
+
+
+
+    Syllabus                                                    1 of 6                                                                      Fall 2026
+
+--- PAGE 2 ---
+Course Description
+
+   This course introduces basic concepts of power systems. Core topics covered in the course include electromechanical and
+    electromagnetic energy conversion, solid-state power conversion, and AC circuits. This course also provides an overview of
+   power generation from conventional and renewable sources, AC and DC power transmission and distribution, as well as the use
+    of electricity in various forms.
+
+
+Course Text(s)
+
+   Textbook-1: Hadi Saadat, Power System Analysis, 3rd Ed., PSA Publishing, 2011.
+
+   Textbook-2: P.C. Sen, Principles of Electric Machines and Power Electronics, 2nd Ed., John Wiley & Sons, 1997.
+
+   Textbook-3: Gilbert M. Masters, Renewable and Efficient Electric Power Systems, Wiley Interscience, a John Wiley & Sons,
+    Inc., Publication, USA, 2004.
+
+Instructor
+     Dr. Prabhakar Neti                             Email: netip@rpi.edu
+     Office Hours: Tuesday 8AM – 9AM Eastern (Or by Appointment)
+     Location: JEC 6038 or WebEx: https://rensselaer.webex.com/meet/netip
+
+Teaching Assistant(s)
+   Name               Location                 Hours & Location              Email
+    James Onyejizu           CII 7217                             •  Wed 1PM - 3PM             onyejj@rpi.edu
+
+     Torraca, Cheyenne     JEC 6314                             •  Mon 2PM – 4PM              torrac3@rpi.edu
+
+
+
+
+
+    Syllabus                                                    2 of 6                                                                      Fall 2026
+
+--- PAGE 3 ---
+  Homework, Midterm Exam, and Final Exam Submission Schedules
+
+      There will be approximately 10 homework assignments in this course. Homework will be assigned on specified dates. Keep track
+       of dates on piazza and course schedule. All Homework grades will be considered for course final grade evaluation. Both midterm
+      exam and the final exam will be closed book exams.
+
+      Exam                    Date
+       Homework                  Every Week
+        Midterm 1                   October 6, 2026 (Tuesday)
+        Midterm 2                November 10, 2026 (Tuesday)
+         Final Exam                    Final Exam Week
+
+Course Intended Learning Outcomes (ILOs)
+       After completing the course, the students should be able to:
+              After completing the course, the students should be able to:
+                1.     Using first principles derive the equations to model electrical components used for energy system analysis.
+                2.     Describe, derive, and compare models of the most common equipment used in power network models.
+                3.     Construct mathematical models for computing the steady state performance of EES.
+                4.     Compute, analyze, and reflect on the performance of a power system under steady state.
+                5.    Apply a power system and general-purpose software tools to analyze the performance of a power system, and
+              evaluate it for different operating conditions.
+                6.     Reflect and analyze broader factors related to electrical power grids, as for example, policy, regulation, etc.
+                7.     Conceive and analyze a technical solution for a specific EES case study by applying their knowledge of the course
+              using software tools.
+
+  Grading Criteria
+     Two midterm exams: 50% (25%, 25%)
+       Final exam: 25 %
+     Homework assignments: 20 %
+       Attendance and in-class participation: 5 %
+       Submitting all Homework Assignments is mandatory.
+
+
+
+
+        Syllabus                                                    3 of 6                                                                      Fall 2026
+
+--- PAGE 4 ---
+Other Course Policies
+   Homework Policy: All assignments have to be submitted via LMS on or before the deadline. Copied homework will receive a
+   grade of zero. Repeated violations will lead to failing the course.
+
+   Assignment Grade Appeal: To appeal an assignment grade, you should submit a written email request to the professor within
+   two days after receiving your graded assignment. In your request you must clearly specify why you believe you deserve a higher
+    credit for the solutions you are appealing.
+
+  Exam Grade Appeal: To appeal an exam grade, you should submit a written email request to the professor within a week after
+    receiving your graded exam. In your request you must clearly specify why you believe you deserve a higher credit for the solutions
+   you are appealing.
+
+
+   Important Note: The only circumstance under which an appeal in the assignment or exam grades will be considered is a
+   demonstrable factual error in grading, meaning either that scores were incorrectly totaled, or a correct answer was marked incorrect.
+   Uniform standards for partial credit are applied for the class, so we will not revisit the amount of points awarded for an incorrect or
+   incomplete solution.
+
+  Exam Policy: If you require extra time on exams or another form of accommodation, please contact the Dean of Students Office.
+    Please do this early in the term so that we have plenty of time to plan.
+
+   Midterm and final exams: All students are expected to take all midterm and final exams given during the semester.
+
+Academic Integrity
+    Student-Professor relationships are built on trust. Students must trust that professor has made appropriate decisions about the
+    structure and content of the courses they teach, and professor must trust that the assignments that students turn in represent their
+   own work. Acts that violate this trust undermine the educational process. The Rensselaer Handbook of Student Rights and
+    Responsibilities defines various forms of Academic Dishonesty and you should make yourself familiar with these. In this class,
+     all assignments that are turned in for a grade must represent the student’s own work. In cases where unofficial help was received,
+    or significant teamwork was involved, a notation on the assignment should indicate your collaboration.
+     If you have any question concerning this policy before submitting an assignment, please ask for clarification.
+
+
+
+
+    Syllabus                                                    4 of 6                                                                      Fall 2026
+
+--- PAGE 5 ---
+   •  Any violation of this policy will result in a 0 score for the related evaluation.
+   •  Repeated violation will result in F grade.
+   •  We have a zero-tolerance policy in exams, and any violation of the policies result in an F grade.
+   •  For any case of academic dishonesty, a report will be filed to the Dean of Students.
+
+
+
+
+
+Syllabus                                                    5 of 6                                                                      Fall 2026
+
+--- PAGE 6 ---
+Course Schedule
+
+
+     Course Number                 ECSE 2110
+     Course Name                         Electrical Energy Sytems
+      Teaching Semester                    Fall 2026
+       Instructor                          Dr. Prabhakar Neti       netip@rpi.edu
+       Instructor's WebEx Personal Room                         https://rensselaer.webex.com/meet/netip
+       Instructor's Office Hours           Tue: 8:00AM to 9:00AM   JEC 6038          Or WebEx           https://rensselaer.webex.com/meet/netip
+      TA's Name                        TA's Office Hours         TA's Email          Location
+      James Onyejizu               TBD                    onyejj@rpi.edu     Union First Floor
+      Torraca, Cheyenne             TBD                    torrac3@rpi.edu    Union First Floor
+      Text Book 1                       H. Saadat, Power System Analysis, 3rd ed., PSA Publishing, 2010.
+      ISBN: 978-0-9845438-0-9
+      Text Book 2                          P.C. Sen, Principles of Electric Machines and Power Electronics, 2nd Ed., John Wiley & Sons, 1997.
+      ISBN: 0-471-02295-0
+      Text Book 3                         Gilbert M. Masters, Renewable and Efficient Electric Power Systems, Wiley Interscience, a John Wiley & Sons, Inc., Publication, USA, 2004.
+          Date           Day               Time                Location              Activity                                        Details                               Book Refrences
+        8/28/2026         Friday        12:30 PM to 13:50 PM        JEC 4201            Lecture 1      Course Overview and Introcution to Electrical Energy Systems               Sadaat, Chapter-1
+        9/1/2026        Tuesday       12:30 PM to 13:50 PM        JEC 4201            Lecture 2     Power Systems and Power Generation                                     Sadaat, Chapter-1
+        9/4/2026          Friday        12:30 PM to 13:50 PM        JEC 4201            Lecture 3     AC steady-state analysis, single-phase networks, and complex power        Sadaat, Chapter-2
+        9/8/2026        Tuesday       12:30 PM to 13:50 PM        JEC 4201            Lecture 4     AC steady-state analysis, single-phase networks, and complex power        Sadaat, Chapter-2
+        9/11/2026         Friday        12:30 PM to 13:50 PM        JEC 4201            Lecture 5     AC steady-state analysis, three-phase networks, and complex power         Sadaat, Chapter-2
+        9/15/2026       Tuesday       12:30 PM to 13:50 PM        JEC 4201            Lecture 6     AC steady-state analysis, three-phase networks, and complex power         Sadaat, Chapter-2
+        9/18/2026         Friday        12:30 PM to 13:50 PM        JEC 4201            Lecture 7     Power Quality and Harmonics                                               Lecture Notes
+        9/22/2026       Tuesday       12:30 PM to 13:50 PM        JEC 4201            Lecture 8      Magnetic Circuits/Transformers                                             Lecture Notes
+        9/25/2026         Friday        12:30 PM to 13:50 PM        JEC 4201            Lecture 9      Transformers                                                              Sen, Chapter-2
+        9/29/2026       Tuesday       12:30 PM to 13:50 PM        JEC 4201           Lecture 10      Transformers                                                              Sen, Chapter-2
+        10/2/2026         Friday        12:30 PM to 13:50 PM        JEC 4201           Lecture 11      Transformers                                                              Sen, Chapter-2
+        10/6/2026       Tuesday       12:30 PM to 13:50 PM        JEC 4201     Midterm Exam 1    Midterm Exam 1
+        10/9/2026         Friday        12:30 PM to 13:50 PM        JEC 4201           Lecture 12     Motors/Generators                                                        Sen, Chapter-4
+       10/13/2026       Tuesday       12:30 PM to 13:50 PM        JEC 4201           Lecture 13     Motors/Generators                                                        Sen, Chapter-4
+       10/20/2026       Tuesday       12:30 PM to 13:50 PM        JEC 4201           Lecture 14     Motors/Generators                                                        Sen, Chapter-4
+       10/23/2026         Friday        12:30 PM to 13:50 PM        JEC 4201           Lecture 15     Motors/Generators                                                        Sen, Chapter-4
+       10/27/2026       Tuesday       12:30 PM to 13:50 PM        JEC 4201           Lecture 16       Solid State Power Conversion                                              Sen, Chapter-10
+       10/30/2026         Friday        12:30 PM to 13:50 PM        JEC 4201           Lecture 17       Solid State Power Conversion                                              Sen, Chapter-10
+        11/3/2026       Tuesday       12:30 PM to 13:50 PM        JEC 4201           Lecture 18       Solid State Power Conversion                                              Sen, Chapter-10
+        11/6/2026         Friday        12:30 PM to 13:50 PM        JEC 4201           Lecture 19       Solid State Power Conversion                                              Sen, Chapter-10
+       11/10/2026       Tuesday       12:30 PM to 13:50 PM        JEC 4201       Midterm Exam 2                        Midterm Exam 2
+       11/13/2026         Friday        12:30 PM to 13:50 PM        JEC 4201           Lecture 20     Renewable Energy                                                          Lecture Notes
+       11/17/2026       Tuesday       12:30 PM to 13:50 PM        JEC 4201           Lecture 21     Renewable Energy                                                          Lecture Notes
+       11/20/2026         Friday        12:30 PM to 13:50 PM        JEC 4201           Lecture 22     Renewable Energy                                                          Lecture Notes
+        12/1/2026       Tuesday       12:30 PM to 13:50 PM        JEC 4201           Lecture 23     Renewable Energy                                                          Lecture Notes
+        12/4/2026         Friday        12:30 PM to 13:50 PM        JEC 4201           Lecture 24     Renewable Energy                                                          Lecture Notes
+        12/8/2026       Tuesday       12:30 PM to 13:50 PM        JEC 4201           Lecture 25     Renewable Energy                                                          Lecture Notes
+       12/11/2026         Friday        12:30 PM to 13:50 PM        JEC 4201           Lecture 26     Review
+         TBD          TBD              TBD               TBD              FinalL Exam                                    FinalL Exam                                Cummulative
+
+
+
+
+    Syllabus                                                    6 of 6                                                                      Fall 2026

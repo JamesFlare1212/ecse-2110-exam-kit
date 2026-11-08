@@ -1,0 +1,42 @@
+node_modules
+.venv/
+__pycache__/
+*.pyc
+/test-results/
+/playwright-report/
+/artifacts/
+/static/papers/
+
+# Local reference archive: never publish the raw Gradescope export.
+/reference/
+# Large original PDFs are provisioned locally before building, not committed.
+/static/sources/*.pdf
+/content/*/exam*/assets/sources/*.pdf
+/content/*/practice*/assets/sources/*.pdf
+# Small, independently typeset clean documents are deliverables, not raw scans.
+!/content/*/exam2_u00/assets/sources/e2-u00.pdf
+!/content/*/exam2_u00/assets/sources/e2-u00-sol.pdf
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/.svelte-check
+/.astro
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

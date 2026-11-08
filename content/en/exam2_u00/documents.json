@@ -1,0 +1,66 @@
+{
+  "e2-u00": {
+    "id": "e2-u00",
+    "title": "Exam 2 · Clean reconstructed questions · Undated archive",
+    "kind": "exam",
+    "pages": 5,
+    "pdf": "sources/e2-u00.pdf",
+    "pageBase": "pages/e2-u00",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "scripts/reconstruct_exam2.py#printed-questions",
+    "sha256": "b690d52f25b1e897f0f76616938248da905577a6983248300b54eaf12c5bc85d"
+  },
+  "e2-u00-sol": {
+    "id": "e2-u00-sol",
+    "title": "Exam 2 · Independent worked solutions · Not official",
+    "kind": "solution",
+    "pages": 5,
+    "pdf": "sources/e2-u00-sol.pdf",
+    "pageBase": "pages/e2-u00-sol",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "scripts/reconstruct_exam2.py#independent-solutions",
+    "sha256": "2fb2d6d6f2660082e30f8df9931d78cdd93e0cb17a6d40668970108167f03f03"
+  }
+}

@@ -1,0 +1,110 @@
+
+--- PAGE 1 ---
+         Lecture 13-14
+
+Introduction to Power Electronics
+
+                         ECSE 2110
+                 Electrical Energy Systems
+
+                        Instructor: Dr. Prabhakar Neti
+
+--- PAGE 2 ---
+Popular Power Electronic Converters
+             - DC-DC Chopper
+
+
+
+
+
+                                                                    2
+
+--- PAGE 3 ---
+Popular Power Electronic Converters
+             - DC-DC Chopper
+
+
+
+
+
+                                                                             3
+
+--- PAGE 4 ---
+Popular Power Electronic Converters
+             - DC-DC Chopper
+
+
+
+
+
+                                                                   4
+
+--- PAGE 5 ---
+Popular Power Electronic Converters
+         - Half-Bridge Inverters
+
+
+
+
+
+                                                                         5
+
+--- PAGE 6 ---
+        Popular Power Electronic Converters
+- 3-Phase, Half-Wave Diode Rectifiers (Uncontrolled)
+
+
+
+
+
+                                                                             6
+
+--- PAGE 7 ---
+       Popular Power Electronic Converters
+- 3-Phase, Half-Wave Diode Rectifiers (Uncontrolled)
+
+
+
+
+
+                                                                                              7
+
+--- PAGE 8 ---
+   Popular Power Electronic Converters
+- 3-Phase, Half-Wave Controlled Rectifiers
+
+
+
+
+
+                                                                       8
+
+--- PAGE 9 ---
+   Popular Power Electronic Converters
+- 3-Phase, Half-Wave Controlled Rectifiers
+
+
+
+
+
+                                                                      9
+
+--- PAGE 10 ---
+   Popular Power Electronic Converters
+- 3-Phase, Half-Wave Controlled Rectifiers
+
+
+
+
+
+                                                                            10
+
+--- PAGE 11 ---
+   Popular Power Electronic Converters
+- 3-Phase, Half-Wave Controlled Rectifiers
+
+
+
+
+
+                                                                                  11

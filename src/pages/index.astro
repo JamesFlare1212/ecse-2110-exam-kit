@@ -1,0 +1,7 @@
+---
+import { loadAstroContent } from '../../content/astro.server';
+import { DEFAULT_PROBLEM_ID, problemPath } from '#lib/problem-navigation';
+const { exams } = await loadAstroContent();
+const problems = exams.flatMap(exam => exam.problems);
+return Astro.redirect(problemPath((problems.find(problem => problem.id === DEFAULT_PROBLEM_ID) ?? problems[0]).id));
+---

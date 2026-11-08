@@ -1,0 +1,54 @@
+{
+  "p2-f26-sol": {
+    "id": "p2-f26-sol",
+    "title": "练习题及解答 · 题组 2 · 2026 秋季",
+    "kind": "solution",
+    "pages": 10,
+    "pdf": "sources/p2-f26-sol.pdf",
+    "pageBase": "pages/p2-f26-sol",
+    "sizes": [
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ],
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "original": "Exams/Exam2/Practice_Problems_-_Set2_-_ECSE_2110_-_Electrical_Energy_Systems.pdf",
+    "sha256": "5b823f8d4fdeaf2b421e58825cc58194def4fb49e68e50d4ec978af7081f5c36"
+  }
+}
