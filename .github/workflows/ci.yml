@@ -44,7 +44,7 @@ jobs:
       - name: Provision and verify separately supplied course PDFs
         env:
           COURSE_SOURCES_URL: ${{ inputs.sources_url || vars.COURSE_SOURCES_URL }}
-        run: python3 scripts/provision_sources.py
+        run: bun run sources:prepare
       - name: Validate authored Markdown and metadata with Bun
         run: bun run content:check
       - name: Check Astro and Svelte (native TypeScript 7)

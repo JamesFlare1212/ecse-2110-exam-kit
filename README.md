@@ -18,16 +18,14 @@ Fall 2026 Exam 1 的来源选用官方答案内干净的题面；不再使用带
 
 前端使用 Astro 7、Svelte 5、TypeScript 7、Tailwind 4、原生 shadcn-svelte / Bits UI、KaTeX。界面、字体、PDF 和图片均本地提供，运行时不依赖外部服务。
 
-环境：Bun（版本见 `package.json`），完整检查使用 Node 24。Python 仅用于原始资源供给、PDF 重制、离线绘图与来源核验。
+环境：Bun（版本见 `package.json`），完整检查使用 Node 24。构建前的 PDF 恢复只使用 Bun；PDF 重制、离线绘图与深度来源核验才需要 Python。
 
 ```bash
 bun install --frozen-lockfile
-# 当前工作目录已供给原始 PDF 时：
-python3 scripts/provision_sources.py --verify-only
 bun run dev
 ```
 
-开发地址以终端输出为准。`bun run build` 输出可静态托管的 `build/`；`bun run preview` 预览构建。
+`dev` 和 `build` 都先运行 `sources:prepare`：已齐备的 PDF 逐一核验后离线构建，缺少时从本地 `reference/` 或配置的资源 ZIP 恢复，然后才暂存、校验和构建。开发地址以终端输出为准。`bun run build` 输出可静态托管的 `build/`；`bun run preview` 预览构建。
 
 ### 从新克隆恢复原始 PDF
 
@@ -36,11 +34,12 @@ bun run dev
 将授课资料放回本地 `reference/`（目录与本次提供的资料一致），然后：
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python3 -m pip install -r scripts/requirements.txt
-python3 scripts/provision_sources.py --reference-dir reference
+bun run sources:prepare
+# 资料位于其它目录时：
+COURSE_REFERENCE_DIR=/absolute/path/to/reference bun run sources:prepare
 ```
+
+这一步不需要 Python。原来的 `python3 scripts/provision_sources.py --reference-dir reference` 仍可用于维护；需要离线绘图时再安装 `scripts/requirements.txt`。
 
 恢复工具只读取已登记且 SHA-256 匹配的文件，不改写来源记录，不导入学生导出。两张公式表分别逐字节恢复，绝不合并。干净重制卷若需要更新，按 [重制记录](docs/exam2-reconstruction.md) 使用其独立生成脚本，不重新引入扫描件。
 
@@ -48,13 +47,33 @@ python3 scripts/provision_sources.py --reference-dir reference
 
 ### CI / 部署资源
 
-可从已核验的本地副本创建**私有**部署 ZIP：
+**从 Git 克隆并不包含被忽略的大型 PDF。** 如果部署日志出现 `Missing paper resource: .../assets/sources/*.pdf`，不能靠重新提交代码、跳过检查或只配置运行时变量解决，必须在构建期供给原始资源。
+
+在已齐备、已核验的本地工作目录创建部署 ZIP：
 
 ```bash
-python3 scripts/provision_sources.py --verify-only --create-bundle /outside/repo/ecse2110-sources.zip
+bun run sources:bundle
+# 默认输出：artifacts/deployment/ecse2110-sources.zip（Git 忽略）
+# 也可指定项目外的输出路径：
+bun run sources:bundle /outside/repo/ecse2110-sources.zip
 ```
 
-ZIP 仅包含登记的规范 PDF，不含本地原始 Gradescope 导出。部署环境设置 `COURSE_SOURCES_URL` 为其 HTTPS 地址，运行 `python3 scripts/provision_sources.py`；工具只取预期路径并核验散列，不任意解压 ZIP。GitHub Actions 使用同名 repository variable，也支持手动输入 `sources_url`。未配置资源时会明确失败，不跳过内容/来源检查。
+然后任选一种供给方式，构建命令仍是 `bun run build`：
+
+| 构建变量 | 用法 |
+|---|---|
+| `COURSE_SOURCES_URL` | 设置为该 ZIP 的可下载 HTTPS 地址；Nixpacks / Coolify 等平台必须设为**构建期可用**，不能只设运行时环境变量 |
+| `COURSE_SOURCES_FILE` | ZIP 已被复制或挂载到构建容器时，设置为容器内可读路径（宿主机路径不会自动进入 Docker 构建） |
+| `COURSE_REFERENCE_DIR` | 构建环境已提供原始授课目录时，设置为该目录；默认也会检查项目下的 `reference/` |
+
+```bash
+# 无 Python 的本地/容器构建示例（ZIP 必须在该环境中真实存在）：
+COURSE_SOURCES_FILE=/run/course-sources.zip bun run build
+```
+
+ZIP 只包含来源登记中的规范 PDF，不含本地原始 Gradescope 导出；没有上传到新远程服务，也不会被提交到 Git。工具仅恢复预期路径，逐一校验 SHA-256，保持中英独立文件，不改写来源记录。既有文件散列错误会失败，不静默覆盖。资源 URL 只在构建时使用，不进入浏览器代码或构建日志；若是签名链接，请使用平台的私密构建变量，而不是 `PUBLIC_*` 变量。
+
+GitHub Actions 的 `COURSE_SOURCES_URL` repository variable 与部署平台的变量相互独立，需分别配置；Actions 也支持手动输入 `sources_url`。Bun 与原 Python 工具生成的 ZIP 格式兼容。缺少资源、资源包不全或散列不匹配时均明确失败，不跳过内容/来源检查。
 
 ## 学习界面
 
