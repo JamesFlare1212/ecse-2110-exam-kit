@@ -143,6 +143,24 @@ describe('ECSE 2110 Practice Set 2', () => {
     }
   });
 
+  test('derives the lagging generator current angle and the 0.6 imaginary factor before substitution', () => {
+    const theta = Math.acos(.8);
+    expect(theta * 180 / Math.PI).toBeCloseTo(36.869898, 6);
+    expect(Math.sqrt(1 - .8 ** 2)).toBeCloseTo(.6, 12);
+    expect(Math.cos(-theta)).toBeCloseTo(.8, 12);
+    expect(Math.sin(-theta)).toBeCloseTo(-.6, 12);
+    for (const locale of locales) {
+      const working = displayEquations(article(locale, 2).parts[0].solution)[1];
+      expect(working).toContain('\\mathrm V,\\qquad |I_a|=');
+      expect(working).toContain('\\theta&=\\cos^{-1}(0.8)\\approx36.869898^\\circ');
+      expect(working).toContain('\\sin\\theta=\\sqrt{1-0.8^2}=0.6');
+      const trigonometric = working.indexOf('499.870363[\\cos(-\\theta)+j\\sin(-\\theta)]');
+      const rectangular = working.indexOf('499.870363(0.8-j0.6)');
+      expect(trigonometric).toBeGreaterThan(working.indexOf('\\sqrt{1-0.8^2}=0.6'));
+      expect(rectangular).toBeGreaterThan(trigonometric);
+    }
+  });
+
   test('PM motor calibration and unrounded generator phasors satisfy their governing equations', () => {
     const coupling = 10 / 10;
     const current = 25 / coupling;
