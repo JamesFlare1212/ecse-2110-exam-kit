@@ -1,12 +1,44 @@
 {
   "paper": "practice1_f26",
   "matplotlib": "3.11.0",
+  "schemdraw": "0.23",
+  "figureEngines": {
+    "p1-f26-q2": {
+      "engine": "Schemdraw + Matplotlib",
+      "symbols": [
+        "Dot",
+        "Inductor2",
+        "ResistorIEEE"
+      ],
+      "elementCount": 4
+    },
+    "p1-f26-q3": {
+      "engine": "Schemdraw + Matplotlib",
+      "symbols": [
+        "Dot",
+        "Inductor2",
+        "ResistorIEEE"
+      ],
+      "elementCount": 4
+    },
+    "p1-f26-q9-b-solution": {
+      "engine": "Schemdraw + Matplotlib",
+      "symbols": [
+        "Dot",
+        "Inductor2",
+        "ResistorIEEE"
+      ],
+      "elementCount": 24
+    }
+  },
   "generator": "content/zh-cn/practice1_f26/generate_figures.py",
   "sourceSha256": {
-    "content/zh-cn/practice1_f26/generate_figures.py": "7c712883fa4df691ca68e9d68e7a7e9f46a00ad6d44e8d0957faa966b6b48ca8",
+    "content/zh-cn/practice1_f26/generate_figures.py": "0d7da5cca472c31694963d74c7c2e5d0f7089e4e817b5058d701e6e4d9a88396",
     "content/zh-cn/practice1_f26/figure-sources.json": "2b86677ceaac78bd3b60eca857a2afddec0557f72b5f00060b8475c53eb599fe",
-    "scripts/plotting.py": "884ac5b709f524d419764f481fb5ddde18f814b41a7c7d6fce6c0b6cce73a613",
-    "scripts/question_primitives.py": "ff01131c66a2fc665cc4fecfc24e6fcced4f49eaeb86e7c922884b55cf978969"
+    "scripts/plotting.py": "16c038f6c67c0e580c17c196b20ba5b5f4e874405cdf495f43cbfdf318e2c526",
+    "scripts/question_primitives.py": "ff01131c66a2fc665cc4fecfc24e6fcced4f49eaeb86e7c922884b55cf978969",
+    "scripts/circuit_drawing.py": "092e6b8538a7c3e48a5baff61f27592375c13691b1fc0e74c1e9bf35ab058776",
+    "scripts/requirements-figures.txt": "3613bdcbf80a5ecde8b2fdae8fb5b6eeccc2ece50e83e686b7c74fe75c11faa7"
   },
   "svgFonttype": "none",
   "textScale": 1.3,

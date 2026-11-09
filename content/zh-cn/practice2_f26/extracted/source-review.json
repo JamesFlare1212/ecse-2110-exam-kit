@@ -87,9 +87,10 @@
     ]
   },
   "declaredPoints": 0,
-  "numbering": "Sequential editorial q1–q6; q1 single unlettered request assigned a; q5 grouped roman requests retained as b(i)–b(iv).",
-  "figureBoundary": "Only q4 and q6 have prompt SVGs/original-view crops. Other figure-sources entries locate printed prompts for source links. Four other SVGs are solution-only.",
+  "numbering": "Sequential editorial q1–q6; textbook question labels are retained in source-review metadata, not article titles, prompts or numbering notes; q1 single unlettered request assigned a; q5 grouped roman requests retained as b(i)–b(iv). Sequence, stable IDs and source pages are unchanged.",
+  "figureBoundary": "Only q4 and q6 have prompt SVGs/original-view crops. Other figure-sources entries locate printed prompts for source links. Five other SVGs are solution-only, including the explanatory q1 armature KVL circuit.",
   "solutionFigureAssumptions": {
+    "q1-armature": "Steady-state PM DC motor armature: a single series loop with the applied 200 V source, resistance 0.2 ohm and internal motor back emf. Current 25 A, resistive drop 5 V and back emf 195 V are derived solution values, not extra givens. No inductive drop at constant current; voltage polarities use current entering the motor's positive terminal.",
     "q6-waveforms": "Representative ideal RL plus constant-emf periodic solution, with illustrative L chosen to match mean20 A and ripple RMS4 A; L approximately31.173 mH. This inferred modeling choice is not an extra printed given."
   },
   "remainingReview": "Independent human scientific and translation review remains required; automated tests do not establish that review."

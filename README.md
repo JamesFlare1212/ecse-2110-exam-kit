@@ -75,8 +75,13 @@ python3 scripts/prepare_sources.py --locale en
 python3 scripts/prepare_sources.py --locale zh-cn
 python3 scripts/render_excerpts.py
 python3 scripts/generate_figures.py
+python3 -m unittest discover -s scripts -p 'test_*.py'
 python3 scripts/check_figures.py
 ```
+
+电路图使用固定版本的 Schemdraw 0.23，经 Matplotlib 输出保留文字的 SVG；波形、功角和相量采用 Matplotlib，并保持物理量与比例约定。此依赖只属于离线绘图环境，前端构建不运行 Python。解答图的位置由 Markdown 的 `![说明](figure:图名)` 段落指定，靠近对应的模型或推导，而不是统一放到结尾；图名仍由小问的 `figure` 元数据登记。
+
+图形检查会核验最终显示变换中的圆形电源、端点与节点，防止横纵比例不同把圆画成椭圆；有意绘制的椭圆绕行箭头和三维投影不受此限制。
 
 `requirements.txt` 是完整离线工具；只做图形检查时使用 `requirements-figures.txt`，无需 PyMuPDF 或 ReportLab。两份 Reference Sheet 独立核验，绝不合并。重制流程见 [docs/exam2-reconstruction.md](docs/exam2-reconstruction.md)。
 

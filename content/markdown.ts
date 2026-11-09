@@ -1,5 +1,5 @@
 import { parseDocument } from 'yaml';
-import { parseText, formulaReferences, displayEquations } from './text';
+import { parseText, formulaReferences, displayEquations, solutionFigures } from './text';
 import { questionMetadataSchema } from './metadata';
 import type { InOneLanguage, OriginalFigure, Part, Problem, Region } from './types';
 
@@ -47,6 +47,18 @@ export function parseQuestionBody(rawMetadata: unknown, body: string, file = 'qu
     if (!value) fail(section, 'expected nonempty content');
     return value;
   }
+  function noFigurePlacements(section: Section, value: string) {
+    let placed: string[];
+    try { placed = solutionFigures(value); } catch (error) { fail(section, String(error)); }
+    if (placed.length) fail(section, 'figure: placements belong only in Solution');
+  }
+  function sourceCorrection(section: Section): string | undefined {
+    const note = section.children.find(child => child.name === 'Source correction');
+    if (!note) return undefined;
+    const value = nonempty(note);
+    noFigurePlacements(note, value);
+    return value;
+  }
   function figureSource(name: string): OriginalFigure {
     const source = resources?.figures[name];
     if (!source) fail(root, `missing figure source ${name} in figure-sources.json`);
@@ -67,8 +79,10 @@ export function parseQuestionBody(rawMetadata: unknown, body: string, file = 'qu
   const parts: ArticlePart[] = sections.map(section => {
     const label = section.name.slice('Part '.length);
     const attributes = metadata.parts[label] ?? {};
+    if (attributes.interaction && !attributes.figure) fail(section, 'interaction requires a solution figure as a complete static fallback');
     for (const child of section.children) if (child.depth !== 3 || !['Solution', 'Source correction'].includes(child.name)) fail(child, 'unknown section');
     const prompt = nonempty(section, prose(section));
+    noFigurePlacements(section, prompt);
     const solutionSection = child(section, 'Solution');
     const solution = nonempty(solutionSection);
     const equations = displayEquations(solution);
@@ -78,25 +92,37 @@ export function parseQuestionBody(rawMetadata: unknown, body: string, file = 'qu
     const finalEquation = parseText(solution).children.findLast(node => node.type === 'math');
     if (finalEquation?.type !== 'math' || !/\\boxed\s*\{/.test(finalEquation.value))
       fail(solutionSection, 'put the final result in a displayed boxed formula');
-    try { formulaReferences(solution); } catch (error) { fail(solutionSection, String(error)); }
+    try {
+      formulaReferences(solution);
+      const placed = solutionFigures(solution);
+      if (placed.length && (placed.length !== 1 || placed[0] !== attributes.figure))
+        fail(solutionSection, 'figure: placement must match this part\'s declared figure');
+    } catch (error) { fail(solutionSection, String(error)); }
     const sourcePage = attributes.page ?? originalFigure.page;
     const questionFigure = attributes.questionFigure;
     const name = typeof questionFigure === 'string' ? questionFigure : questionFigure?.name;
+    const note = sourceCorrection(section);
     return {
       id: attributes.id ?? `${metadata.id}-${label.replace(/[^a-z0-9]/gi, '').toLowerCase()}`,
       label, points: attributes.points ?? 0, sourcePage, solutionPage: attributes.solutionPage ?? sourcePage,
       prompt, solution,
       ...(attributes.figure ? { figure: attributes.figure, figureCaption: attributes.figureCaption ?? prompt } : {}),
+      ...(attributes.interaction ? { interaction: attributes.interaction } : {}),
       ...(name ? { questionFigure: { name, source: figureSource(name), caption: typeof questionFigure === 'object' ? questionFigure.caption ?? prompt : prompt } } : {}),
-      ...(section.children.some(child => child.name === 'Source correction') ? { note: nonempty(child(section, 'Source correction')) } : {}),
+      ...(note ? { note } : {}),
     };
   });
+  const statement = nonempty(child(root, 'Question'));
+  const guide = nonempty(child(root, 'Guide'));
+  noFigurePlacements(child(root, 'Question'), statement);
+  noFigurePlacements(child(root, 'Guide'), guide);
+  const note = sourceCorrection(root);
   return {
     id: metadata.id, number: Number(/-q(\d+)$/.exec(metadata.id)![1]), wording: 'original',
     title: metadata.title, topic: metadata.topic, points: metadata.points, givens: metadata.givens,
     ...(figure ? { figure, figureCaption: metadata.figureCaption ?? metadata.title } : {}), originalFigure,
     ...(metadata.figureAtParts ? { figureAtParts: true } : {}), lectures: metadata.lectures,
-    statement: nonempty(child(root, 'Question')), guide: nonempty(child(root, 'Guide')), parts,
-    ...(root.children.some(section => section.name === 'Source correction') ? { note: nonempty(child(root, 'Source correction')) } : {}),
+    statement, guide, parts,
+    ...(note ? { note } : {}),
   };
 }

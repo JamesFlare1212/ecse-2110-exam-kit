@@ -20,53 +20,99 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 311.178493 
-L 692.64 311.178493 
-L 692.64 0 
-L 0 0 
-L 0 311.178493 
+   <path d="M 0 311.178493
+L 692.64 311.178493
+L 692.64 0
+L 0 0
+L 0 311.178493
 z
 " style="fill: none"/>
   </g>
   <g id="axes_1">
-   <g id="patch_2">
-    <path d="M 32.110134 140.656411 
-Q 146.278024 140.656411 258.880667 140.656411 
-" clip-path="url(#p7f0b30ebc8)" style="fill: none; stroke: #70c9bb; stroke-width: 1.4; stroke-linecap: round"/>
-    <path d="M 254.480667 138.456411 
-L 258.880667 140.656411 
-L 254.480667 142.856411 
-z
-" clip-path="url(#p7f0b30ebc8)" style="fill: #70c9bb; stroke: #70c9bb; stroke-width: 1.4; stroke-linecap: round"/>
-   </g>
-   <g id="patch_3">
-    <path d="M 32.108329 140.585607 
-Q 155.492813 136.220267 277.313027 131.910271 
-" clip-path="url(#p7f0b30ebc8)" style="fill: none; stroke: #f0a075; stroke-width: 1.4; stroke-linecap: round"/>
-    <path d="M 272.837991 129.867221 
-L 277.313027 131.910271 
-L 272.993566 134.26447 
-z
-" clip-path="url(#p7f0b30ebc8)" style="fill: #f0a075; stroke: #f0a075; stroke-width: 1.4; stroke-linecap: round"/>
-   </g>
-   <g id="patch_4">
-    <path d="M 31.710093 141.858661 
-Q 85.869826 182.478462 138.777362 222.159113 
-" clip-path="url(#p7f0b30ebc8)" style="fill: none; stroke: #dbe5e9; stroke-width: 1.4; stroke-linecap: round"/>
-    <path d="M 136.577362 217.759113 
-L 138.777362 222.159113 
-L 133.937362 221.279113 
-z
-" clip-path="url(#p7f0b30ebc8)" style="fill: #dbe5e9; stroke: #dbe5e9; stroke-width: 1.4; stroke-linecap: round"/>
-   </g>
    <g id="line2d_1">
-    <path d="M 30.107092 140.656411 
-L 299.619931 140.656411 
-" clip-path="url(#p7f0b30ebc8)" style="fill: none; stroke: #36464d; stroke-width: 1.5; stroke-linecap: square"/>
+    <path d="M 30.107092 109.440589
+L 299.619931 109.440589
+" clip-path="url(#pf549295267)" style="fill: none; stroke: #36464d; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 262.445746 109.440589
+L 269.983541 115.093935
+L 280.877746 100.568329
+" clip-path="url(#pf549295267)" style="fill: none; stroke: #9baeb8; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 57.987731 141.968
+L 99.808688 141.968
+" clip-path="url(#pf549295267)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #36464d"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 219.463095 204.699437
+L 277.547759 204.699437
+" clip-path="url(#pf549295267)" style="fill: none; stroke: #dbe5e9; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 219.463095 209.34621
+L 219.463095 200.052664
+" clip-path="url(#pf549295267)" style="fill: none; stroke: #dbe5e9; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 277.547759 209.34621
+L 277.547759 200.052664
+" clip-path="url(#pf549295267)" style="fill: none; stroke: #dbe5e9; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="phasor-v2">
+    <path d="M 30.107092 109.440589
+Q 146.276419 109.440589 260.656892 109.440589
+" clip-path="url(#pf549295267)" style="fill: none; stroke: #70c9bb; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 256.256892 107.240589
+L 260.656892 109.440589
+L 256.256892 111.640589
+z
+" clip-path="url(#pf549295267)" style="fill: #70c9bb; stroke: #70c9bb; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="phasor-v1">
+    <path d="M 30.107092 109.440589
+Q 155.492419 105.004459 279.09001 100.631579
+" clip-path="url(#pf549295267)" style="fill: none; stroke: #f0a075; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 274.614974 98.588529
+L 279.09001 100.631579
+L 274.770549 102.985778
+z
+" clip-path="url(#pf549295267)" style="fill: #f0a075; stroke: #f0a075; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="phasor-current">
+    <path d="M 57.987731 141.968
+Q 104.455461 176.818798 149.492109 210.596284
+" clip-path="url(#pf549295267)" style="fill: none; stroke: #dbe5e9; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 147.292109 206.196284
+L 149.492109 210.596284
+L 144.652109 209.716284
+z
+" clip-path="url(#pf549295267)" style="fill: #dbe5e9; stroke: #dbe5e9; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_7">
+    <defs>
+     <path id="m5973fbcb47" d="M 0 1.5
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066
+C 1.341951 0.77937 1.5 0.397805 1.5 0
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066
+C -0.77937 1.341951 -0.397805 1.5 0 1.5
+z
+" style="stroke: #dbe5e9"/>
+    </defs>
+    <g clip-path="url(#pf549295267)">
+     <use xlink:href="#m5973fbcb47" x="262.445746" y="109.440589" style="fill: #dbe5e9; stroke: #dbe5e9"/>
+     <use xlink:href="#m5973fbcb47" x="269.983541" y="115.093935" style="fill: #dbe5e9; stroke: #dbe5e9"/>
+     <use xlink:href="#m5973fbcb47" x="280.877746" y="100.568329" style="fill: #dbe5e9; stroke: #dbe5e9"/>
+    </g>
    </g>
    <g id="text_1">
     <!-- $v_1=1.08001\angle2.026^\circ$ -->
-    <g style="fill: #f0a075" transform="translate(64.864646 98.835453)">
+    <g style="fill: #f0a075" transform="translate(64.864646 67.619631)">
      <text>
       <tspan x="0" y="-0.34375" style="font-style: oblique; font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; fill: #f0a075">v</tspan>
       <tspan x="8.474121" y="1.789062" style="font-weight: 700; font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #f0a075">1</tspan>
@@ -90,7 +136,7 @@ L 299.619931 140.656411
    </g>
    <g id="text_2">
     <!-- $v_2'=1\angle0^\circ$ -->
-    <g style="fill: #70c9bb" transform="translate(157.12415 168.537049)">
+    <g style="fill: #70c9bb" transform="translate(157.12415 137.321227)">
      <text>
       <tspan x="0" y="-0.673437" style="font-style: oblique; font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; fill: #70c9bb">v</tspan>
       <tspan x="8.474121" y="3.648438" style="font-weight: 700; font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #70c9bb">2</tspan>
@@ -105,7 +151,7 @@ L 299.619931 140.656411
    </g>
    <g id="text_3">
     <!-- $i_2'=1\angle-36.87^\circ$ -->
-    <g style="fill: #dbe5e9" transform="translate(37.376915 252.178965)">
+    <g style="fill: #dbe5e9" transform="translate(37.376915 230.256689)">
      <text>
       <tspan x="0" y="-0.673437" style="font-style: oblique; font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; fill: #dbe5e9">i</tspan>
       <tspan x="4.456055" y="3.648438" style="font-weight: 700; font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #dbe5e9">2</tspan>
@@ -124,46 +170,68 @@ L 299.619931 140.656411
     </g>
    </g>
    <g id="text_4">
-    <text style="font-weight: 700; font-size: 14.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #dbe5e9" x="163.701818" y="53.601588" transform="rotate(-0 163.701818 53.601588)">Voltage and current phasors</text>
+    <text style="font-weight: 700; font-size: 11.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #dbe5e9" x="248.505427" y="179.142185" transform="rotate(-0 248.505427 179.142185)">Current scale</text>
+   </g>
+   <g id="text_5">
+    <!-- $0.5\ \mathrm{pu}$ -->
+    <g style="fill: #dbe5e9" transform="translate(227.737927 230.256689)">
+     <text>
+      <tspan x="0" y="-0.328125" style="font-weight: 700; font-size: 11.7px; font-family: 'DejaVu Sans'; fill: #dbe5e9">0</tspan>
+      <tspan x="8.132172" y="-0.328125" style="font-weight: 700; font-size: 11.7px; font-family: 'DejaVu Sans'; fill: #dbe5e9">.</tspan>
+      <tspan x="12.572052" y="-0.328125" style="font-weight: 700; font-size: 11.7px; font-family: 'DejaVu Sans'; fill: #dbe5e9">5</tspan>
+      <tspan x="24.763611" y="-0.328125" style="font-weight: 700; font-size: 11.7px; font-family: 'DejaVu Sans'; fill: #dbe5e9">p</tspan>
+      <tspan x="33.129761" y="-0.328125" style="font-weight: 700; font-size: 11.7px; font-family: 'DejaVu Sans'; fill: #dbe5e9">u</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 14.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #dbe5e9" x="163.701818" y="22.385766" transform="rotate(-0 163.701818 22.385766)">Voltage and current phasors</text>
    </g>
   </g>
   <g id="axes_2">
-   <g id="patch_5">
-    <path d="M 427.44538 192.857073 
-Q 457.697836 215.546416 486.698095 237.29661 
-" clip-path="url(#p26d37a25fb)" style="fill: none; stroke: #dbe5e9; stroke-width: 1.4; stroke-linecap: round"/>
-    <path d="M 484.498095 232.89661 
-L 486.698095 237.29661 
-L 481.858095 236.41661 
-z
-" clip-path="url(#p26d37a25fb)" style="fill: #dbe5e9; stroke: #dbe5e9; stroke-width: 1.4; stroke-linecap: round"/>
-   </g>
-   <g id="patch_6">
-    <path d="M 490.753612 237.83864 
-Q 535.590099 178.056658 579.487437 119.526873 
-" clip-path="url(#p26d37a25fb)" style="fill: none; stroke: #70c9bb; stroke-width: 1.4; stroke-linecap: round"/>
-    <path d="M 575.087437 121.726873 
-L 579.487437 119.526873 
-L 578.607437 124.366873 
-z
-" clip-path="url(#p26d37a25fb)" style="fill: #70c9bb; stroke: #70c9bb; stroke-width: 1.4; stroke-linecap: round"/>
-   </g>
-   <g id="patch_7">
-    <path d="M 427.651428 190.790061 
-Q 503.738387 154.165535 578.414983 118.219888 
-" clip-path="url(#p26d37a25fb)" style="fill: none; stroke: #f0a075; stroke-width: 1.4; stroke-linecap: round"/>
-    <path d="M 573.496189 118.145951 
-L 578.414983 118.219888 
-L 575.404557 122.110561 
-z
-" clip-path="url(#p26d37a25fb)" style="fill: #f0a075; stroke: #f0a075; stroke-width: 1.4; stroke-linecap: round"/>
-   </g>
-   <g id="line2d_2">
-    <path d="M 406.210909 191.658493 
-L 651.665455 191.658493 
+   <g id="line2d_8">
+    <path d="M 406.210909 191.658493
+L 651.665455 191.658493
 " clip-path="url(#p26d37a25fb)" style="fill: none; stroke: #36464d; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
-   <g id="text_5">
+   <g id="phasor-drop-r">
+    <path d="M 425.847273 191.658493
+Q 457.700537 215.548441 488.122717 238.365076
+" clip-path="url(#p26d37a25fb)" style="fill: none; stroke: #dbe5e9; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 485.922717 233.965076
+L 488.122717 238.365076
+L 483.282717 237.485076
+z
+" clip-path="url(#p26d37a25fb)" style="fill: #dbe5e9; stroke: #dbe5e9; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="phasor-drop-x">
+    <path d="M 489.5538 239.438389
+Q 535.590601 178.055988 580.554089 118.10467
+" clip-path="url(#p26d37a25fb)" style="fill: none; stroke: #70c9bb; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 576.154089 120.30467
+L 580.554089 118.10467
+L 579.674089 122.94467
+z
+" clip-path="url(#p26d37a25fb)" style="fill: #70c9bb; stroke: #70c9bb; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="phasor-drop-sum">
+    <path d="M 425.847273 191.658493
+Q 503.737337 154.16604 580.015559 117.449449
+" clip-path="url(#p26d37a25fb)" style="fill: none; stroke: #f0a075; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 575.096765 117.375513
+L 580.015559 117.449449
+L 577.005133 121.340122
+z
+" clip-path="url(#p26d37a25fb)" style="fill: #f0a075; stroke: #f0a075; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_9">
+    <g clip-path="url(#p26d37a25fb)">
+     <use xlink:href="#m5973fbcb47" x="425.847273" y="191.658493" style="fill: #dbe5e9; stroke: #dbe5e9"/>
+     <use xlink:href="#m5973fbcb47" x="489.5538" y="239.438389" style="fill: #dbe5e9; stroke: #dbe5e9"/>
+     <use xlink:href="#m5973fbcb47" x="581.627402" y="116.673587" style="fill: #dbe5e9; stroke: #dbe5e9"/>
+    </g>
+   </g>
+   <g id="text_7">
     <!-- $i_2'r_{\mathrm{eq}}$ -->
     <g style="fill: #dbe5e9" transform="translate(429.774545 280.022129)">
      <text>
@@ -176,9 +244,9 @@ L 651.665455 191.658493
      </text>
     </g>
    </g>
-   <g id="text_6">
+   <g id="text_8">
     <!-- $ji_2'x_{\mathrm{eq}}$ -->
-    <g style="fill: #dbe5e9" transform="translate(602.574545 195.585766)">
+    <g style="fill: #dbe5e9" transform="translate(602.574545 168.094857)">
      <text>
       <tspan x="0" y="-0.673437" style="font-style: oblique; font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; fill: #dbe5e9">j</tspan>
       <tspan x="4.456055" y="-0.673437" style="font-style: oblique; font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; fill: #dbe5e9">i</tspan>
@@ -190,7 +258,7 @@ L 651.665455 191.658493
      </text>
     </g>
    </g>
-   <g id="text_7">
+   <g id="text_9">
     <!-- $v_1-v_2'$ -->
     <g style="fill: #f0a075" transform="translate(465.12 73.840311)">
      <text>
@@ -203,14 +271,14 @@ L 651.665455 191.658493
      </text>
     </g>
    </g>
-   <g id="text_8">
+   <g id="text_10">
     <text style="font-weight: 700; font-size: 14.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #dbe5e9" x="528.938182" y="22.385766" transform="rotate(-0 528.938182 22.385766)">Enlarged voltage-drop construction</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p7f0b30ebc8">
-   <rect x="11.52" y="75.601588" width="304.363636" height="192.841083"/>
+  <clipPath id="pf549295267">
+   <rect x="11.52" y="44.385766" width="304.363636" height="192.841083"/>
   </clipPath>
   <clipPath id="p26d37a25fb">
    <rect x="376.756364" y="44.385766" width="304.363636" height="255.272727"/>

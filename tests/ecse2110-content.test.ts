@@ -1,5 +1,4 @@
 import {describe, expect, test} from 'bun:test';
-import {createHash} from 'node:crypto';
 import {existsSync, readFileSync, readdirSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {exams, examIndex, documents, formulas, papers} from '../content/catalog.server';
@@ -12,10 +11,17 @@ import type {SourceDocument} from '../content/types';
 const expected = {'e1-f26': [6, 100], 'e1-s25': [6, 120], 'e2-s25': [7, 100], 'e2-u00': [4, 95]};
 
 describe('ECSE 2110 delivery and provenance', () => {
-  test('retains the exact upstream Fieldnotes stylesheet', () => {
-    // Template b75e950: migration changes course data, not its visual system.
-    const css = readFileSync(resolve('src/styles/layout.css'));
-    expect(createHash('sha256').update(css).digest('hex')).toBe('68118e771d01790f2d0082ddc181a23a0c062e5460dbd84a92b0f44552b473bd');
+  test('retains the Fieldnotes visual system while allowing responsive figure improvements', () => {
+    // The upstream stylesheet is no longer byte-frozen: image layout now adapts
+    // to the article. Preserve the shared themes and reading workspace instead.
+    const css = readFileSync(resolve('src/styles/layout.css'), 'utf8');
+    expect(css).toMatch(/--background:\s*#faf9f6\b/);
+    expect(css).toMatch(/--background:\s*#172025\b/);
+    for (const token of ['formula', 'diagram', 'interactive-hover', 'reader-text'])
+      expect(css).toContain(`var(--${token})`);
+    for (const selector of ['.app-shell', '.reading-layout', '.reference-rail', '.desktop-navigation'])
+      expect(css).toContain(selector);
+    expect(css).toContain('@media(prefers-reduced-motion:reduce)');
   });
   test('uses its own course and browser namespace, with all source exams', () => {
     expect(course.id).toBe('ecse-2110');

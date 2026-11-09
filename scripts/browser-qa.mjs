@@ -9,7 +9,7 @@ import {checkThemeNavigation} from './browser-theme-qa.mjs';
 import {checkContentLocales} from './browser-content-locales-qa.mjs';
 import {loadContent} from '../content/papers.server.ts';
 import {renderText} from '../src/lib/math.ts';
-import {parseText,displayEquations,formulaReference} from '../content/text.ts';
+import {parseText,displayEquations,formulaReference,solutionFigure} from '../content/text.ts';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE??'playwright');
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const destination=process.env.QA_ARTIFACTS??resolve(root,'artifacts');
@@ -31,7 +31,7 @@ async function noOverflow(){const metrics=await page.evaluate(()=>({width:innerW
 async function annotationText(question,locale){
   const html=question.parts.flatMap(part=>{
     const body=part.solution[locale];
-    return parseText(body).children.filter(node=>node.type!=='math').map(node=>renderText(body.slice(node.position.start.offset,node.position.end.offset)));
+    return parseText(body).children.filter(node=>node.type!=='math'&&!solutionFigure(node)).map(node=>renderText(body.slice(node.position.start.offset,node.position.end.offset)));
   });
   const actual=await page.locator('[data-authored-annotation]').evaluateAll((nodes,html)=>{
     const normalize=text=>text.replace(/\s+/g,' ').trim();

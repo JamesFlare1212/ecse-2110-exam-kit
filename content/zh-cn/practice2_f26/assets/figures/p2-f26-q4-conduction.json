@@ -1,0 +1,484 @@
+{
+  "version": 1,
+  "viewBox": [
+    0.0,
+    0.0,
+    576.0,
+    374.679612
+  ],
+  "parts": [
+    {
+      "id": "p2-f26-q4-conduction-S1-stroke-2",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-S2-stroke-2",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-D1-stroke-1",
+      "key": "D1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-D2-stroke-1",
+      "key": "D2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-S2-stroke-7",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-stroke-4",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-stroke-5",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-S1-stroke-0",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-S1-stroke-1",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-S2-stroke-0",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-S2-stroke-1",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-D1-stroke-0",
+      "key": "D1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-D2-stroke-0",
+      "key": "D2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-S1-stroke-4",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-S1-stroke-5",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-S2-stroke-4",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-S2-stroke-5",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-S2-stroke-6",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-D1-stroke-3",
+      "key": "D1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-D1-stroke-4",
+      "key": "D1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-D2-stroke-3",
+      "key": "D2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-D2-stroke-4",
+      "key": "D2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-top-left-stroke-0",
+      "key": "top-left",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-bottom-left-stroke-0",
+      "key": "bottom-left",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-stroke-0",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-stroke-1",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-stroke-2",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-stroke-3",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-stroke-4",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-stroke-5",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-stroke-6",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-stroke-12",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-stroke-13",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-stroke-0",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-stroke-1",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-stroke-2",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-stroke-3",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-stroke-6",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-stroke-7",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-stroke-12",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-stroke-15",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-stroke-16",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-stroke-17",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q4-conduction-S1-label-3",
+      "key": "S1",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-S2-label-3",
+      "key": "S2",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-D1-label-2",
+      "key": "D1",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-D2-label-2",
+      "key": "D2",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-label-7",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-label-8",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-label-9",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-label-10",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-label-11",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-load-label-14",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-label-8",
+      "key": "source",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-label-9",
+      "key": "source",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-label-10",
+      "key": "source",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q4-conduction-source-label-11",
+      "key": "source",
+      "label": true
+    }
+  ],
+  "routes": {
+    "freewheel": [
+      [
+        328.264078,
+        227.603883
+      ],
+      [
+        328.264078,
+        50.441942
+      ],
+      [
+        478.583301,
+        50.441942
+      ],
+      [
+        478.583301,
+        329.606214
+      ],
+      [
+        328.264078,
+        329.606214
+      ],
+      [
+        328.264078,
+        227.603883
+      ]
+    ],
+    "positive": [
+      [
+        70.573981,
+        152.444272
+      ],
+      [
+        220.893204,
+        152.444272
+      ],
+      [
+        220.893204,
+        50.441942
+      ],
+      [
+        478.583301,
+        50.441942
+      ],
+      [
+        478.583301,
+        329.606214
+      ],
+      [
+        328.264078,
+        329.606214
+      ],
+      [
+        328.264078,
+        227.603883
+      ],
+      [
+        70.573981,
+        227.603883
+      ],
+      [
+        70.573981,
+        152.444272
+      ]
+    ],
+    "negative": [
+      [
+        70.573981,
+        227.603883
+      ],
+      [
+        328.264078,
+        227.603883
+      ],
+      [
+        328.264078,
+        50.441942
+      ],
+      [
+        478.583301,
+        50.441942
+      ],
+      [
+        478.583301,
+        329.606214
+      ],
+      [
+        220.893204,
+        329.606214
+      ],
+      [
+        220.893204,
+        236.730408
+      ],
+      [
+        222.320907,
+        236.618045
+      ],
+      [
+        223.713455,
+        236.283724
+      ],
+      [
+        225.036559,
+        235.735676
+      ],
+      [
+        226.25764,
+        234.987397
+      ],
+      [
+        227.346631,
+        234.057311
+      ],
+      [
+        228.276717,
+        232.96832
+      ],
+      [
+        229.024997,
+        231.747239
+      ],
+      [
+        229.573044,
+        230.424135
+      ],
+      [
+        229.907365,
+        229.031586
+      ],
+      [
+        230.019728,
+        227.603883
+      ],
+      [
+        229.907365,
+        226.176181
+      ],
+      [
+        229.573044,
+        224.783632
+      ],
+      [
+        229.024997,
+        223.460528
+      ],
+      [
+        228.276717,
+        222.239447
+      ],
+      [
+        227.346631,
+        221.150456
+      ],
+      [
+        226.25764,
+        220.22037
+      ],
+      [
+        225.036559,
+        219.472091
+      ],
+      [
+        223.713455,
+        218.924043
+      ],
+      [
+        222.320907,
+        218.589722
+      ],
+      [
+        220.893204,
+        218.477359
+      ],
+      [
+        220.893204,
+        152.444272
+      ],
+      [
+        70.573981,
+        152.444272
+      ],
+      [
+        70.573981,
+        227.603883
+      ]
+    ]
+  }
+}

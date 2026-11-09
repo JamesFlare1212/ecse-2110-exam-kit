@@ -1,12 +1,47 @@
 {
   "paper": "exam1_s25",
   "matplotlib": "3.11.0",
+  "schemdraw": "0.23",
+  "figureEngines": {
+    "e1-s25-q3": {
+      "engine": "Schemdraw + Matplotlib",
+      "symbols": [
+        "Dot",
+        "Line",
+        "ResistorIEC"
+      ],
+      "elementCount": 31
+    },
+    "e1-s25-q5": {
+      "engine": "Schemdraw + Matplotlib",
+      "symbols": [
+        "Line",
+        "ResistorIEC",
+        "SourceV"
+      ],
+      "elementCount": 16
+    },
+    "e1-s25-q6": {
+      "engine": "Schemdraw + Matplotlib",
+      "symbols": [
+        "Capacitor",
+        "Dot",
+        "Inductor2",
+        "Line",
+        "ResistorIEEE",
+        "Source"
+      ],
+      "elementCount": 27
+    }
+  },
   "generator": "content/en/exam1_s25/generate_figures.py",
   "sourceSha256": {
-    "content/en/exam1_s25/generate_figures.py": "52166770a2b425067b70554225ffbbc1a41dbf3cf1851d6af0cff9103d812f5f",
+    "content/en/exam1_s25/generate_figures.py": "ff2ba7671a110ee337a2e6b451f5baae0d3085c05c46e4374d3bbb1c45501508",
     "content/en/exam1_s25/figure-sources.json": "a7ee73a20230c0795c9f72a9225d04be1996a1098172476949c47f221ee61d48",
-    "scripts/plotting.py": "884ac5b709f524d419764f481fb5ddde18f814b41a7c7d6fce6c0b6cce73a613",
-    "scripts/question_primitives.py": "ff01131c66a2fc665cc4fecfc24e6fcced4f49eaeb86e7c922884b55cf978969"
+    "scripts/plotting.py": "16c038f6c67c0e580c17c196b20ba5b5f4e874405cdf495f43cbfdf318e2c526",
+    "scripts/question_primitives.py": "ff01131c66a2fc665cc4fecfc24e6fcced4f49eaeb86e7c922884b55cf978969",
+    "scripts/circuit_drawing.py": "092e6b8538a7c3e48a5baff61f27592375c13691b1fc0e74c1e9bf35ab058776",
+    "scripts/requirements-figures.txt": "3613bdcbf80a5ecde8b2fdae8fb5b6eeccc2ece50e83e686b7c74fe75c11faa7"
   },
   "svgFonttype": "none",
   "textScale": 1.3,

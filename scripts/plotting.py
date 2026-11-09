@@ -28,12 +28,18 @@ def setup(dark):
     PAPER='#18252c' if dark else '#ffffff'; FILL='#213e3c' if dark else '#e8f2ef'
     matplotlib.rcParams.update({'text.color':INK,'axes.labelcolor':MUTED,'xtick.color':MUTED,'ytick.color':MUTED,'axes.edgecolor':GRID,'grid.color':GRID,'axes.titlecolor':INK})
 def prepare_figure(fig):
-    # Apply to every label, tick and legend; mathtext uses matching bold fonts.
+    # Native circuit symbols must exist before typography/geometry inspection.
+    for ax in fig.axes:
+        pending = getattr(ax, '_fieldnotes_circuit', None)
+        if pending:
+            pending.finish()
+    # Apply once to every label, tick and legend; mathtext uses matching bold fonts.
     for artist in fig.findobj(match=Text):
-        if artist.get_text():
+        if artist.get_text() and not getattr(artist, '_fieldnotes_prepared', False):
             artist.set_fontsize(max(10.4,artist.get_fontsize()*FIGURE_TEXT_SCALE))
             artist.set_fontweight('bold')
             artist.set_zorder(max(20,artist.get_zorder()))
+            artist._fieldnotes_prepared = True
     if len(fig.axes)>1 and any(ax.axison for ax in fig.axes):
         fig.tight_layout()
 def label(ax,x,y,text,**kw): ax.text(x,y,text,color=kw.pop('color',INK),**kw)
@@ -43,6 +49,22 @@ def arrow(ax,a,b,text='',color=None,offset=(0,0)):
     if text: label(ax,(a[0]+b[0])/2+offset[0],(a[1]+b[1])/2+offset[1],text,color=color or ORANGE,fontsize=10,ha='center')
 def canvas(ax,xlim=(-.2,9),ylim=(-.6,3)):
     ax.set_xlim(*xlim); ax.set_ylim(*ylim); ax.axis('off')
+def equal_units(ax):
+    """Keep 2D circuit geometry isotropic without squeezing its label spacing.
+
+    On a single-panel drawing, derive the physical figure height from the data
+    bounds and subplot margins, retaining its authored width. Multi-panel figures
+    keep their shared canvas and let Matplotlib fit the individual axes instead.
+    This is opt-in: waveform axes and deliberate perspective projections are not
+    required to use the same scale for unlike physical quantities.
+    """
+    ax.set_aspect('equal', adjustable='box')
+    fig = ax.figure
+    if len(fig.axes) == 1:
+        bounds = ax.get_position(original=True)
+        xspan = abs(ax.get_xlim()[1] - ax.get_xlim()[0])
+        yspan = abs(ax.get_ylim()[1] - ax.get_ylim()[0])
+        fig.set_figheight(fig.get_figwidth() * bounds.width / bounds.height * yspan / xspan)
 def resistor(ax,a,b,text):
     a=np.array(a); b=np.array(b); direction=(b-a); normal=np.array([-direction[1],direction[0]])/np.linalg.norm(direction)
     points=[a]

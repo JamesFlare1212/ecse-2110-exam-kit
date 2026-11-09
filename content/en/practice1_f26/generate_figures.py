@@ -6,12 +6,11 @@ labels are the source's mathematical symbols; captions are authored Markdown.
 """
 from pathlib import Path
 import sys
-import numpy as np
-from matplotlib.patches import Circle
 
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import plotting as p
+import circuit_drawing as C
 
 SVG_LABELS = {}
 
@@ -21,37 +20,25 @@ def wire(ax, a, b):
 
 
 def terminal(ax, point):
-    ax.add_patch(Circle(point, .055, fc=p.PAPER, ec=p.INK, lw=1.8))
+    C.terminal(ax, point, radius=.055)
 
 
 def label(ax, x, y, text, **kwargs):
-    p.label(ax, x, y, text, fontsize=15, **kwargs)
+    p.label(ax, x, y, text, fontsize=kwargs.pop('fontsize', 15), **kwargs)
 
 
 def resistor(ax, a, b):
-    a, b = np.array(a), np.array(b)
-    delta = b-a
-    normal = np.array([-delta[1], delta[0]]) / np.linalg.norm(delta)
-    points = [a]
-    for index in range(1, 12):
-        points.append(a + delta*index/12 + normal*(.10 if index % 2 else -.10))
-    points.append(b)
-    points = np.array(points)
-    p.line(ax, points[:, 0], points[:, 1], lw=2)
+    C.resistor(ax, a, b)
 
 
 def coil(ax, a, b):
-    a, b = np.array(a), np.array(b)
-    delta = b-a
-    normal = np.array([-delta[1], delta[0]]) / np.linalg.norm(delta)
-    t = np.linspace(0, 1, 240)
-    points = a + t[:, None]*delta + (.15*np.abs(np.sin(5*np.pi*t)))[:, None]*normal
-    p.line(ax, points[:, 0], points[:, 1], lw=2)
+    C.inductor(ax, a, b)
 
 
 def base(height=5.4):
     fig, ax = p.plt.subplots(figsize=(11, height))
     p.canvas(ax, (0, 12), (0, height))
+    p.equal_units(ax)
     return fig, ax
 
 
@@ -102,10 +89,11 @@ def render_figures(save, dark):
     save(fig, 'p1-f26-q3', dark)
 
     # Pedagogical circuit requested by Q9(b), visible only in its solution.
-    fig, ax = base(7.5)
-    for top, name in [(5.7, 'H'), (2.8, 'L')]:
-        bottom = top-1.5
-        label(ax, .9, top+.75, rf'${name}\quad(\Omega)$')
+    fig, ax = base(9.0)
+    # Two reference frames of the same transformer, not two separate devices.
+    for top, name, side in [(7.1, 'H', 'HV-referred'), (3.55, 'L', 'LV-referred')]:
+        bottom = top-1.85
+        label(ax, .9, top+.6, side, fontsize=13)
         wire(ax, (.9, top), (7.1, top))
         resistor(ax, (7.1, top), (8.3, top))
         wire(ax, (8.3, top), (8.8, top))
@@ -116,13 +104,17 @@ def render_figures(save, dark):
             terminal(ax, (x, top))
             terminal(ax, (x, bottom))
         for x, shape in [(3.1, resistor), (5.3, coil)]:
+            C.terminal(ax, (x, top), open=False)
+            C.terminal(ax, (x, bottom), open=False)
             wire(ax, (x, top), (x, top-.3))
             shape(ax, (x, top-.3), (x, bottom+.3))
             wire(ax, (x, bottom+.3), (x, bottom))
-        label(ax, 2.05, top-.75, rf'$R_{{c,{name}}}$', ha='center')
-        label(ax, 6.25, top-.75, rf'$jX_{{m,{name}}}$', ha='center')
+        label(ax, 2.05, top-.925, rf'$R_{{c,{name}}}$', ha='center')
+        label(ax, 6.7, top-.925, rf'$jX_{{m,{name}}}$', ha='center')
         label(ax, 7.65, top+.6, rf'$R_{{eq,{name}}}$', ha='center')
         label(ax, 9.65, top+.6, rf'$jX_{{eq,{name}}}$', ha='center')
+    label(ax, 6, 4.65, r'$a=V_H/V_L=2,\qquad Z_H=a^2Z_L=4Z_L$', ha='center', fontsize=13)
+    label(ax, 6, .7, 'OC (LV): shunt parameters · SC (HV): series parameters', ha='center', fontsize=11)
     save(fig, 'p1-f26-q9-b-solution', dark)
 
 

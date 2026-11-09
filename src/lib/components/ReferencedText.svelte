@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { parseText, formulaReference, hasFormulaReference, mathClosingPunctuation, type TextNode } from '../../../content/text';
+  import { parseText, formulaReference, hasFormulaReference, pageReference, hasPageReference, mathClosingPunctuation, type TextNode } from '../../../content/text';
   import FormulaLink from './FormulaLink.svelte';
+  import PageLink from './PageLink.svelte';
   import RichText from './RichText.svelte';
   import { formulaById } from '#lib/catalog';
   import type { Locale, SourceDocument, SourceRef } from '#lib/types';
@@ -24,13 +25,16 @@
 
 {#snippet render(node:TextNode)}
   {@const id = formulaReference(node)}
+  {@const page = pageReference(node,documents)}
   {#if node.type === 'text'}
     {#each node.value.split('\n') as line,i}{#if i}<br/>{/if}{line}{/each}
   {:else if id && formulaById[id]}
     <FormulaLink formula={formulaById[id]} {locale} {documents} {onsource} inline>
       {#if 'children' in node}{@render renderChildren(node.children)}{/if}
     </FormulaLink>
-  {:else if !hasFormulaReference(node)}
+  {:else if page}
+    <PageLink reference={page} {locale} {documents} {onsource}>{#if 'children' in node}{@render renderChildren(node.children)}{/if}</PageLink>
+  {:else if !hasFormulaReference(node)&&!hasPageReference(node,documents)}
     <RichText text={source(node)}/>
   {:else if node.type === 'emphasis'}
     <em>{@render renderChildren(node.children)}</em>

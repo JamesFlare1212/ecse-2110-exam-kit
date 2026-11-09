@@ -11,6 +11,7 @@ import xml.etree.ElementTree as ET
 
 import numpy as np
 from matplotlib.text import Text
+from matplotlib.patches import Circle
 from fontTools.ttLib import TTFont
 import generate_figures as figures
 
@@ -39,6 +40,28 @@ def check_embedded_fonts():
     print(f'Checked {count} SVGs with embedded fonts: all Chinese labels covered; no unused characters; each below 32 KiB.')
 
 
+def circle_geometry(fig):
+    """Inspect the final display transform, not just a Circle's data-space radius.
+
+    Singular values also catch a squeezed circle rotated by 45 degrees, whose
+    axis-aligned bounding box can misleadingly have equal width and height.
+    Deliberate Ellipse/Arc shapes and projected 3D paths are not Circle patches.
+    Call after canvas.draw(), when aspect and layout transforms are finalized.
+    """
+    circles = []
+    for axis_index, ax in enumerate(fig.axes):
+        for patch in ax.patches:
+            if not isinstance(patch, Circle) or not patch.get_visible() or patch.radius <= 0:
+                continue
+            matrix = patch.get_transform().get_matrix()[:2, :2]
+            scales = np.linalg.svd(matrix, compute_uv=False)
+            ratio = float(scales[0] / scales[1]) if scales[1] > 0 else None
+            circles.append({'axis': axis_index, 'center': list(patch.center),
+                            'radius': patch.radius, 'axisRatio': ratio,
+                            'round': ratio is not None and math.isclose(ratio, 1, rel_tol=1e-6)})
+    return circles
+
+
 def review(output):
     check_embedded_fonts()
     output.mkdir(parents=True, exist_ok=True)
@@ -48,6 +71,8 @@ def review(output):
         figures.prepare_figure(fig)
         fig.canvas.draw()
         renderer = fig.canvas.get_renderer()
+        circles = circle_geometry(fig)
+        native_symbols = [symbol for ax in fig.axes for symbol in getattr(ax, '_schemdraw_elements', [])]
         collisions, strokes = [], []
         for ax in fig.axes:
             labels = [text for text in ax.texts if text.get_text() and text.get_visible()]
@@ -110,17 +135,19 @@ def review(output):
         key = paper['locale'] + '/' + paper['name'] + '/' + name + ('-dark' if dark else '')
         (output/paper['locale']/paper['name']).mkdir(parents=True, exist_ok=True)
         fig.savefig(output/(key+'.png'), bbox_inches='tight', pad_inches=.16, dpi=140)
-        results.append({'name': key, 'textCollisions': collisions, 'strokeCollisions': strokes})
+        results.append({'name': key, 'nativeSymbols': native_symbols, 'textCollisions': collisions, 'strokeCollisions': strokes,
+                        'circles': circles, 'distortedCircles': [circle for circle in circles if not circle['round']]})
         figures.plt.close(fig)
 
     for dark in [False, True]:
         figures.render_figures(inspect, dark)
     (output/'report.json').write_text(json.dumps(results, ensure_ascii=False, indent=2)+'\n')
-    failures = [item for item in results if item['textCollisions'] or item['strokeCollisions']]
+    failures = [item for item in results if item['textCollisions'] or item['strokeCollisions'] or item['distortedCircles']]
     for item in failures:
         print(json.dumps(item, ensure_ascii=False))
-    assert not failures, f'{len(failures)} figure/theme pairs have overlapping annotations'
-    print(f'Checked {len(results)} figure/theme pairs: no text overlaps; applicable geometric constraints verified.')
+    assert not failures, f'{len(failures)} figure/theme pairs have annotation or circle-geometry defects'
+    circle_count = sum(len(item['circles']) for item in results)
+    print(f'Checked {len(results)} figure/theme pairs: no text overlaps; {circle_count} circular symbols remain round; applicable geometric constraints verified.')
 
 
 if __name__ == '__main__':

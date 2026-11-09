@@ -46,7 +46,20 @@ const { title, description } = Astro.props;
       <span lang="en">Study controls are not ready. Keep reading or reload to retry.</span>
       <a href="" lang="zh-CN">重新加载 / Reload</a>
     </div>
-    <noscript><style>#startup-status { display:none; }</style><p class="startup-status">交互需要 JavaScript，仍可阅读静态题目。 / Enable JavaScript for study controls; static questions remain readable.</p></noscript>
+    <noscript>
+      <style>
+        #startup-status { display:none; }
+        /* Reuse the single authored solution tree: no duplicate answers or JS needed. */
+        /* Match Tailwind's base layer: its important [hidden] reset wins over unlayered rules. */
+        @layer base {
+          #worked-parts [data-slot="accordion-content"] { display:block !important; height:auto !important; animation:none !important; overflow:visible !important; }
+        }
+        #worked-parts .part-trigger { cursor:default; pointer-events:none; }
+        #worked-parts .part-trigger>svg,.solution-section-heading button,.part-actions,.figure-toolbar button,.figure-version,.figure-source { display:none !important; }
+        .no-js-reading-note { margin:12px; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); background:var(--muted); font-size:14px; }
+      </style>
+      <p class="no-js-reading-note">交互控件需要 JavaScript；下方已展开完整静态题目、解答与图示。 / Study controls require JavaScript; complete static questions, solutions and diagrams are expanded below.</p>
+    </noscript>
     <!-- Keep native Svelte portals attached when ClientRouter replaces the body. -->
     <div id="fieldnotes-overlays" transition:persist="study-overlays"></div>
     <slot />

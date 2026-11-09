@@ -1,6 +1,7 @@
 import { exams, formulas, documents, papers } from '../content/catalog.server';
 import { assetSource } from '../content/papers.server';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { parseConductionGeometry, validateConductionSprite } from '../src/lib/visualizations/conduction-geometry';
 import { resolve } from 'node:path';
 import { displayEquations } from '../content/text';
 
@@ -17,6 +18,12 @@ for (const paper of papers) for (const locale of ['en','zh'] as const) {
   for (const question of paper.exam.problems) {
     const names = [question.figure, ...question.parts.flatMap(part => [part.figure, part.questionFigure?.name])].filter((name): name is string => Boolean(name));
     for (const name of new Set(names)) for (const theme of ['', '-dark']) required(resolve(directory, 'assets/figures', `${name}${theme}.svg`));
+    for (const part of question.parts) if (part.interaction) {
+      const base=resolve(directory,'assets/figures',part.interaction.asset);
+      required(`${base}.json`);
+      const geometry=parseConductionGeometry(JSON.parse(readFileSync(`${base}.json`,'utf8')));
+      for (const theme of ['','-dark']) {required(`${base}${theme}.svg`);validateConductionSprite(readFileSync(`${base}${theme}.svg`,'utf8'),geometry);}
+    }
     for (const name of [question.figure, ...question.parts.flatMap(part => part.questionFigure ? [part.questionFigure.name] : [])].filter(Boolean)) required(resolve(directory, 'assets/original-figures', `${name}.webp`));
   }
 }

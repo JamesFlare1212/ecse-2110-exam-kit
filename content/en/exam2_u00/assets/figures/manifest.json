@@ -1,12 +1,28 @@
 {
   "paper": "exam2_u00",
   "matplotlib": "3.11.0",
+  "schemdraw": "0.23",
+  "figureEngines": {
+    "e2-u00-q3-circuit": {
+      "engine": "Schemdraw + Matplotlib",
+      "symbols": [
+        "Dot",
+        "Inductor2",
+        "Line",
+        "ResistorIEC",
+        "SourceSin"
+      ],
+      "elementCount": 8
+    }
+  },
   "generator": "content/en/exam2_u00/generate_figures.py",
   "sourceSha256": {
-    "content/en/exam2_u00/generate_figures.py": "1b20248654dbac90bee2b2fd87e4fd84f1aa2969d67fa3d4cc271bb49f9e2e43",
+    "content/en/exam2_u00/generate_figures.py": "75ce247bd6c08bbe44cec3af744808db0bdc9f4ab105e23953b7e1580044fa93",
     "content/en/exam2_u00/figure-sources.json": "02c7d7dca7a498bd3b13fdb48721816aa0eebd5c82bd14536cc1ad5d2df62def",
-    "scripts/plotting.py": "884ac5b709f524d419764f481fb5ddde18f814b41a7c7d6fce6c0b6cce73a613",
-    "scripts/question_primitives.py": "ff01131c66a2fc665cc4fecfc24e6fcced4f49eaeb86e7c922884b55cf978969"
+    "scripts/plotting.py": "16c038f6c67c0e580c17c196b20ba5b5f4e874405cdf495f43cbfdf318e2c526",
+    "scripts/question_primitives.py": "ff01131c66a2fc665cc4fecfc24e6fcced4f49eaeb86e7c922884b55cf978969",
+    "scripts/circuit_drawing.py": "092e6b8538a7c3e48a5baff61f27592375c13691b1fc0e74c1e9bf35ab058776",
+    "scripts/requirements-figures.txt": "3613bdcbf80a5ecde8b2fdae8fb5b6eeccc2ece50e83e686b7c74fe75c11faa7"
   },
   "svgFonttype": "none",
   "textScale": 1.3,

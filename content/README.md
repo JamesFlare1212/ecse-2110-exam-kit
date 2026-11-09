@@ -94,9 +94,26 @@ Avoid repeating defaults:
 - A part defaults to zero declared points, the main crop's PDF page, and the same
   solution page. Override `points`, `page` or `solutionPage` when the source differs.
   Zero means the source declares no individual score; do not invent one.
-- Optional `figure` names a solution SVG. `questionFigure` names a part-specific
-  question SVG, either as a string or `{name, caption}`. Its original crop also
-  resolves from `figure-sources.json`. Part captions default to the prompt.
+- Optional `figure` names a solution SVG. Position it inside that part's Solution
+  with a standalone Markdown paragraph such as `![Armature circuit](figure:p2-f26-q1-armature)`.
+  The URI must match the owning part's registered `figure`, may occur only once,
+  and cannot be nested in a list/quote or mixed into a prose paragraph. It is a
+  local placement marker, not an external image URL or a second asset registry.
+  Keep it out of Question, Guide, part prompts and all Source correction notes. Existing plug-in articles
+  without a marker retain their historical end-of-solution placement for compatibility;
+  all current course solution figures have explicit authored placements.
+  An explicitly approved solution may additionally set
+  `interaction: {kind: semi-converter, asset: p2-f26-q4-conduction}`.
+  This currently supports only the reviewed ideal half-controlled bridge at
+  alpha = 30 degrees. It enhances that same placement; it does not introduce
+  another question figure or replace the complete static `figure` fallback.
+  Both languages must declare the same interaction metadata and separately own
+  its light/dark SVG sprites and geometry-only JSON sidecar. The sidecar is an
+  illustration asset, never a generated question-bank or answer source. Build
+  validation checks its bounded geometry and inert SVG fragment contract.
+  `questionFigure` names a part-specific question SVG, either as a string or
+  `{name, caption}`. Its original crop also resolves from `figure-sources.json`.
+  Part captions default to the prompt.
 
 Use these exact structural headings in both languages, with direct prose only in
 the file's own language. Do not add `English` or `中文` subsections:
@@ -294,8 +311,10 @@ an explicit `id` as described above.
 
 Each language also owns `generate_figures.py`, exporting
 `render_figures(save, dark)` and, when needed, its own `SVG_LABELS` translations.
-Use existing renderers with the shared Matplotlib primitives as structural
-examples, but draw the new source's actual topology, symbols and perspective.
+Use existing renderers and `scripts/circuit_drawing.py` (Schemdraw 0.23 on
+Matplotlib coordinates) for standard circuit symbols, plus the shared Matplotlib
+primitives for scientific plots. Preserve the new source's actual topology,
+symbols and perspective.
 Save each SVG under the names used by the articles and crop registry.
 
 ### 4. Generate and verify

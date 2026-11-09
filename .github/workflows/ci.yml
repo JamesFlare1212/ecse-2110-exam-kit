@@ -62,6 +62,14 @@ jobs:
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-startup-qa.mjs
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-course-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-conduction-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-conduction-compact-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-page-links-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-content-typography-qa.mjs
       - name: Upload browser diagnostics on failure
         if: failure()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
@@ -96,7 +104,9 @@ jobs:
         run: python -m pip install -r scripts/requirements-figures.txt
       - name: Check installed dependency compatibility
         run: python -m pip check
-      - name: Check both figure themes and annotation layout
+      - name: Test native circuit rendering and circle geometry
+        run: python -m unittest discover -s scripts -p 'test_*.py'
+      - name: Check both figure themes, circular symbols and annotation layout
         run: python scripts/check_figures.py
       - name: Upload figure diagnostics on failure
         if: failure()

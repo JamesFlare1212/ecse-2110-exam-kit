@@ -1,4 +1,5 @@
 import {describe, expect, test} from 'bun:test';
+import {semanticMarkdown} from './fixtures/semantic-markdown';
 import {readFileSync, readdirSync, statSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {expectIndependentPageImages, expectPaperSourceMetadata} from './fixtures/paper-provenance';
@@ -42,12 +43,14 @@ describe('ECSE 2110 Practice Set 2', () => {
       const questions = [1, 2, 3, 4, 5, 6].map(n => article(locale, n));
       expect(questions.filter(q => q.figure).map(q => q.id)).toEqual(['p2-f26-q4', 'p2-f26-q6']);
       expect(questions.every(q => q.parts.every(p => !p.questionFigure))).toBe(true);
+      expect(questions[0].parts[0].figure).toBe('p2-f26-q1-armature');
       expect(questions[3].parts[0].figure).toBe('p2-f26-q4-waveforms');
       expect(questions[4].parts[0].figure).toBe('p2-f26-q5-circuit');
       expect(questions[4].parts[4].figure).toBe('p2-f26-q5-waveforms');
       expect(questions[5].parts[0].figure).toBe('p2-f26-q6-waveforms');
-      const svgs = readdirSync(resolve(directory(locale), 'assets/figures')).filter(n => n.endsWith('.svg'));
-      expect(svgs.length).toBe(12); // six figures, two themes
+      const manifest = json(resolve(directory(locale), 'assets/figures/manifest.json'));
+      const svgs = readdirSync(resolve(directory(locale), 'assets/figures')).filter(n => n.endsWith('.svg') && !(manifest.auxiliaryAssets ?? []).includes(n));
+      expect(svgs.length).toBe(14); // seven mounted static figures, two themes; auxiliary sprites are separate
       for (const n of [1, 2, 3, 5]) expect(svgs).not.toContain(`p2-f26-q${n}.svg`);
       const sources = json(resolve(directory(locale), 'figure-sources.json')).figures;
       expect(Object.keys(sources).length).toBe(6); // prompt references survive figure:null
@@ -78,7 +81,7 @@ describe('ECSE 2110 Practice Set 2', () => {
   });
 
   test('preserves source givens, editorial numbering, ambiguities and complete independent solutions', () => {
-    expect(article('en', 1).statement).toStartWith('4.30 A permanent magnet dc motor');
+    expect(article('en', 1).statement).toStartWith('A permanent magnet dc motor');
     expect(article('en', 3).statement).toContain('as shown in Fig. 10.21');
     expect(article('en', 6).statement).toContain('ripple current is $20\\%$');
     const allowed = new Set(['synchronous-speed', 'generated-voltage', 'generator-current', 'power-angle',
@@ -92,6 +95,9 @@ describe('ECSE 2110 Practice Set 2', () => {
       expect(en.guide).not.toBe(zh.guide);
       for (const q of [en, zh]) {
         expect(q.note).toBeTruthy();
+        expect(q.title).not.toMatch(/^\d+\.\d+/);
+        expect(q.statement).not.toMatch(/^\d+\.\d+/);
+        expect(q.note).not.toContain('4.30');
         for (const part of q.parts) {
           const equations = displayEquations(part.solution);
           expect(equations.length).toBeGreaterThanOrEqual(2);
@@ -102,10 +108,38 @@ describe('ECSE 2110 Practice Set 2', () => {
       }
     }
     for (const locale of locales) {
-      expect(article(locale, 2).note).toContain('60 kVA');
+      expect(semanticMarkdown(article(locale, 2).note!)).toContain(semanticMarkdown('60 kVA'));
       expect(article(locale, 4).parts[0].note).toBeTruthy();
       expect(article(locale, 5).parts[3].note).toContain('0.458333');
       expect(article(locale, 6).parts[3].note).toContain('1084.379579');
+    }
+  });
+
+  test('explains armature KVL with motor polarities and a solution-only circuit in both languages', () => {
+    const voltage = 200, resistance = .2, current = 25;
+    const drop = current * resistance, backEmf = voltage - drop;
+    expect(drop).toBe(5);
+    expect(backEmf).toBe(195);
+    // Clockwise: source rise, resistive drop, internal-emf drop, ideal return.
+    expect(voltage - drop - backEmf).toBe(0);
+    expect(voltage * current).toBe(current ** 2 * resistance + backEmf * current);
+    for (const locale of locales) {
+      const question = article(locale, 1), part = question.parts[0];
+      expect(question.figure).toBeUndefined();
+      expect(part.figure).toBe('p2-f26-q1-armature');
+      expect(part.questionFigure).toBeUndefined();
+      expect(formulaReferences(part.solution)).toEqual(['dc-torque', 'dc-emf']);
+      expect(part.solution).toContain('+V-I_aR_a-E_a=0');
+      expect(part.solution).toContain('I_aR_a&=25(0.2)=5');
+      expect(part.solution).toContain('E_a&=200-5=195');
+      expect(question.note).toContain(locale === 'en' ? 'no prompt diagram' : '原题没有图');
+      for (const suffix of ['', '-dark']) {
+        const svg = readFileSync(resolve(directory(locale), `assets/figures/${part.figure}${suffix}.svg`), 'utf8');
+        for (const label of locale === 'en' ? ['DC supply', 'Back emf', 'Clockwise'] : ['直流电源', '反电动势', '顺时针'])
+          expect(svg).toContain(`>${label}</text>`);
+      }
+      const review = json(resolve(directory(locale), 'extracted/source-review.json'));
+      expect(review.questions[0].printedLabel).toBe('4.30'); // source provenance is not rewritten
     }
   });
 

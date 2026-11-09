@@ -3,6 +3,7 @@ import {readFileSync, readdirSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {expectIndependentPageImages, expectPaperSourceMetadata} from './fixtures/paper-provenance';
 import {readQuestionMarkdown} from '../content/markdown';
+import {semanticMarkdown} from './fixtures/semantic-markdown';
 import {displayEquations, formulaReferences} from '../content/text';
 import {joinTranslations} from '../content/localization';
 import {parseContent} from '../content/schema';
@@ -52,6 +53,8 @@ describe('Practice set 1 package, original prompts and diagram boundary', () => 
       expect(questions[locale].map(q => q.originalFigure.page)).toEqual(sourcePages);
       for (const [index, q] of questions[locale].entries()) {
         expect(q.id).toBe(`p1-f26-q${index+1}`);
+        expect(q.title).not.toMatch(/^\d+\.\d+/);
+        expect(q.statement).not.toMatch(/^\d+\.\d+/);
         expect(q.points).toBe(0);
         expect(q.guide).not.toContain('\\boxed');
         expect(q.parts.every(p => p.points === 0)).toBe(true);
@@ -70,12 +73,12 @@ describe('Practice set 1 package, original prompts and diagram boundary', () => 
     expect(questions.en[6].parts.map(p => p.label)).toEqual(['a', 'b', 'c', 'd']);
   });
 
-  test('preserves the visually read original English statements and every original request', () => {
+  test('preserves original English wording and requests while omitting textbook numbering', () => {
     const expectedStatements = [
-      ['2.2. A single-phase load is supplied with a sinusoidal voltage', 'v(t)=200\\cos(377t)', 'The resulting instantaneous power is', 'p(t)=800+1000\\cos(754t-36.87^\\circ)'],
-      ['2.3. An inductive load consisting of $R$ and $X$ in series feeding from a 2400-V rms supply absorbs 288 kW at a lagging power factor of 0.8. Determine $R$ and $X$.'],
-      ['2.4. An inductive load consisting of $R$ and $X$ in parallel feeding from a 2400-V rms supply absorbs 288 kW at a lagging power factor of 0.8. Determine $R$ and $X$.'],
-      ['2.5. Two loads connected in parallel are supplied from a single-phase 240-V rms source. The two loads draw a total real power of 400 kW at a power factor of 0.8 lagging. One of the loads draws 120 kW at a power factor of 0.96 leading. Find the complex power of the other load.'],
+      ['A single-phase load is supplied with a sinusoidal voltage', '$v(t)=200\\cos(377t)$', 'The resulting instantaneous power is', '$p(t)=800+1000\\cos(754t-36.87^\\circ)$'],
+      ['An inductive load consisting of $R$ and $X$ in series feeding from a 2400-V rms supply absorbs 288 kW at a lagging power factor of 0.8. Determine $R$ and $X$.'],
+      ['An inductive load consisting of $R$ and $X$ in parallel feeding from a 2400-V rms supply absorbs 288 kW at a lagging power factor of 0.8. Determine $R$ and $X$.'],
+      ['Two loads connected in parallel are supplied from a single-phase 240-V rms source. The two loads draw a total real power of 400 kW at a power factor of 0.8 lagging. One of the loads draws 120 kW at a power factor of 0.96 leading. Find the complex power of the other load.'],
       ['Show that only 1-phase circuits have the double frequency component of power but not the balanced 3-phase circuits. Include detailed steps.'],
       ['A 440-V, 3-phase voltage feeds a balanced delta-connected 3-phase load with an impedance of $(25+j10)\\,\\Omega$/phase'],
       ['A three-phase, star connected load with a resistance of $30\\Omega$ and a reactance of $25\\Omega$ per phase, is fed by a 230 V, three-phase, 60 Hz source. Calculate'],
@@ -83,7 +86,7 @@ describe('Practice set 1 package, original prompts and diagram boundary', () => 
       ['A 1-phase, 25 kVA, 220/440 V, 60 Hz transformer gave the following test results.', 'Open circuit test (440 V side open): 220 V, 9:5 A, 650W', 'Short-circuit test (220 V side shorted): 37:5 V, 55 A, 950W'],
       ['10 kVA, 2400/240 V, 60 Hz distribution transformer has the following characteristics:', 'Core loss at full voltage $=100\\,\\mathrm W$', 'Copper loss at half load $=60\\,\\mathrm W$'],
     ];
-    expectedStatements.forEach((phrases, i) => phrases.forEach(phrase => expect(questions.en[i].statement).toContain(phrase)));
+    expectedStatements.forEach((phrases, i) => phrases.forEach(phrase => expect(semanticMarkdown(questions.en[i].statement)).toContain(semanticMarkdown(phrase))));
     const prompts = [
       ['Find the complex power supplied to the load.', 'Find the instantaneous current $i(t)$ and the rms value of the current supplied to the load.', 'Find the load impedance.'],
       ['Determine $R$ and $X$.'], ['Determine $R$ and $X$.'], ['Find the complex power of the other load.'],
@@ -94,7 +97,7 @@ describe('Practice set 1 package, original prompts and diagram boundary', () => 
       ['Determine the rated voltage and rated current for the high-voltage and low-voltage sides.', 'Derive an approximate equivalent circuit referred to the HV as well as LV side.'],
       ['Determine the efficiency of the transformer when it delivers full load at 0.8 power factor lagging.', 'Determine the per-unit rating at which the transformer efficiency is a maximum. Determine this efficiency if the load power factor is 0.9.', 'The transformer has the following load cycle:\n\nNo load for 6 hours\n\n$70\\%$ full load for 10 hours at 0.8 PF\n\n$90\\%$ full load for 8 hours at 0.9 PF\n\nDetermine the all-day efficiency of the transformer.'],
     ];
-    prompts.forEach((expected, i) => expect(questions.en[i].parts.map(p => p.prompt)).toEqual(expected));
+    prompts.forEach((expected, i) => expect(questions.en[i].parts.map(p => semanticMarkdown(p.prompt))).toEqual(expected.map(semanticMarkdown)));
   });
 
   test('only original series and parallel diagrams appear as prompt SVGs; circuit is solution-only', () => {

@@ -3,7 +3,7 @@ import { fromMarkdown } from 'mdast-util-from-markdown';
 import { math } from 'micromark-extension-math';
 import { mathFromMarkdown } from 'mdast-util-math';
 import type { Exam, Formula, SourceDocument } from './types.ts';
-import { formulaReferences, displayEquations } from './text';
+import { formulaReferences, displayEquations, solutionFigures, pageReferences } from './text';
 
 type Rule = (value: unknown, path: string) => void;
 function fail(path: string, message: string): never {
@@ -74,6 +74,8 @@ const part = object({
   sourcePage: positive, solutionPage: positive,
 }, {
   note: optionalLocalized, figure: text, figureCaption: localized,
+  interaction: object({kind: (value, path) => { if (value !== 'semi-converter') fail(path, 'unknown interaction kind'); },
+    asset: (value, path) => { if (typeof value !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value)) fail(path, 'expected a safe paper-local interaction asset name'); }}),
   questionFigure: object({ name: text, source: originalFigure, caption: localized }),
 });
 const problem = object({
@@ -137,20 +139,33 @@ export function parseContent(rawExams: unknown, rawFormulas: unknown, rawDocumen
       if (q.id !== `${e.id}-q${q.number}`) fail(q.id, 'must match its exam ID and problem number');
       if (q.figure && !q.figureCaption) fail(`${q.id}.figureCaption`, 'question figures need bilingual captions');
       for (const ref of [q.originalFigure, ...q.lectures]) page(ref.doc, ref.page, `${q.id}.sources`);
+      for (const locale of ['en', 'zh'] as const) for (const [field, body] of Object.entries({statement: q.statement[locale], guide: q.guide[locale], note: q.note?.[locale]})) {
+        if(body)try{pageReferences(body,documents);}catch(error){fail(`${q.id}.${field}.${locale}`,String(error));}
+        if (body && solutionFigures(body).length) fail(`${q.id}.${field}.${locale}`, 'figure: placements belong only in Solution');
+      }
       for (const p of q.parts) {
         unique(p.id, `${q.id}.parts`);
         if (!p.id.startsWith(`${q.id}-`)) fail(p.id, 'must belong to its problem');
         page(e.doc, p.sourcePage, `${p.id}.sourcePage`); page(e.solutionDoc, p.solutionPage, `${p.id}.solutionPage`);
         if (p.questionFigure) page(p.questionFigure.source.doc, p.questionFigure.source.page, `${p.id}.questionFigure`);
         if (p.figure && !p.figureCaption) fail(`${p.id}.figureCaption`, 'solution figures need bilingual captions');
+        if (p.interaction && !p.figure) fail(`${p.id}.interaction`, 'requires a complete static solution figure');
         for (const locale of ['en','zh'] as const) {
+          for (const [field, body] of Object.entries({prompt: p.prompt[locale], note: p.note?.[locale]}))
+            if (body && solutionFigures(body).length) fail(`${p.id}.${field}.${locale}`, 'figure: placements belong only in Solution');
           const equations = displayEquations(p.solution[locale]);
           if (!/\\boxed\s*\{/.test(equations.at(-1) ?? ''))
             fail(`${p.id}.solution.${locale}`, 'expected a displayed boxed result');
           if (equations.slice(0, -1).some(tex => /\\boxed\s*\{/.test(tex)))
             fail(`${p.id}.solution.${locale}`, 'boxed results belong only in the final displayed calculation');
           let refs: string[];
-          try { refs = formulaReferences(p.solution[locale]); } catch (error) { fail(`${p.id}.solution.${locale}`, String(error)); }
+          try {
+            for(const body of [p.solution[locale],p.prompt[locale],p.note?.[locale]])if(body)pageReferences(body,documents);
+            refs = formulaReferences(p.solution[locale]);
+            const placed = solutionFigures(p.solution[locale]);
+            if (placed.length && (placed.length !== 1 || placed[0] !== p.figure))
+              fail(`${p.id}.solution.${locale}`, 'figure: placement must match the owning part figure');
+          } catch (error) { fail(`${p.id}.solution.${locale}`, String(error)); }
           for (const ref of refs) if (!formulaIds.has(ref)) fail(`${p.id}.solution.${locale}`, `unknown formula ${ref}`);
         }
       }

@@ -78,8 +78,15 @@ export function validateCourseDocuments(config: CourseConfig, documents: Record<
   const ids = [config.resources.formulaSheet, ...Object.values(config.resources.formulaSheets ?? {}), ...config.resources.lectures.map(entry => entry.doc)].filter((id): id is string => id !== null);
   for (const id of ids) if (!documents[id]) throw new Error(`course.json: unknown resource document ${id}`);
 }
-/** Resource names never infer a lecture number from a document ID. */
-export function sourceName(id: string, documents: Record<string, SourceDocument>, config = course) {
+/** Compact resource names come from course configuration, never ID/title parsing.
+ * Full document titles and provenance remain available in the source viewer.
+ */
+export function sourceName(id: string, documents: Record<string, SourceDocument>, config = course, locale: Locale = 'en') {
   const lecture = config.resources.lectures.find(entry => entry.doc === id);
-  return lecture ? `Lecture ${lecture.label}` : id === config.resources.formulaSheet ? 'Crib sheet' : documents[id]?.title ?? id;
+  if (lecture) return `Lecture ${lecture.label}`;
+  const exams = Object.entries(config.resources.formulaSheets ?? {})
+    .filter(([, doc]) => doc === id).map(([number]) => number).sort((a, b) => Number(a) - Number(b));
+  if (exams.length) return `Exam ${exams.join('/')} ${locale === 'zh' ? '公式表' : 'sheet'}`;
+  if (id === config.resources.formulaSheet) return locale === 'zh' ? '公式表' : 'Crib sheet';
+  return documents[id]?.title ?? id;
 }

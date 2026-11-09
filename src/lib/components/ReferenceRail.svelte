@@ -24,7 +24,7 @@
       <div class="rail-formulas">
         {#each formulas as formula,i(formula.id)}
           <section class="rail-formula">
-            <div class="rail-formula-number">{String(i+1).padStart(2,'0')} <span>{sourceName(formula.source.doc,documents).toUpperCase()} · P.{formula.source.page}</span></div>
+            <div class="rail-formula-number">{String(i+1).padStart(2,'0')} <span class="formula-source-meta"><span class="formula-source-name" title={documents[formula.source.doc].title}>{sourceName(formula.source.doc,documents,course,locale)}</span><span class="formula-source-page">p.{formula.source.page}</span></span></div>
             <FormulaLink {documents} {formula} {locale} {onsource}/>
             <div class="rail-equation"><Math {locale} tex={formula.math} display/></div>
           </section>

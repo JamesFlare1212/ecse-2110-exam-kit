@@ -1,0 +1,5572 @@
+{
+  "content/en/exam1_f26/questions/q1.md": {
+    "id": "e1-f26-q1",
+    "number": 1,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e1-f26-sol",
+      "page": 3,
+      "region": [
+        0.113,
+        0.122,
+        0.764,
+        0.054
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-04",
+        "page": 25,
+        "label": "Faraday’s law and alternating core flux"
+      }
+    ],
+    "statement": "9b98f637a3404f985fb3017e86cb582c41891b6cd4e57159dab35ea25f3e6abe",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-f26-q1-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 3,
+        "solutionPage": 3,
+        "prompt": "9b98f637a3404f985fb3017e86cb582c41891b6cd4e57159dab35ea25f3e6abe",
+        "displayed": "bd07356cc4f8ecefb3b3d32b020aef4a3b3b42d093631b16d71df0f53a8f1120",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "f16cf9f94f8e1edf7671773699a302f6fc7b9fd1c25b80d733f4cc14a6d6ef9c",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "26bab25ea6901f6eff9810e2f16ce0ba3e2a6b8920e0459553d0eaf4bf476a16",
+    "note": null,
+    "caption": null
+  },
+  "content/en/exam1_f26/questions/q2.md": {
+    "id": "e1-f26-q2",
+    "number": 2,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e1-f26-sol",
+      "page": 5,
+      "region": [
+        0.113,
+        0.118,
+        0.764,
+        0.054
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 7,
+        "label": "Product of sinusoidal voltage and current"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 9,
+        "label": "Double-frequency instantaneous power"
+      }
+    ],
+    "statement": "f87a8cd5c816a6a1feada941ec4d3f53c9c6651886c98e787618ebe2d137afce",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-f26-q2-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "f87a8cd5c816a6a1feada941ec4d3f53c9c6651886c98e787618ebe2d137afce",
+        "displayed": "2d6abe90e6b33bac1f14fb59fe2ea1d34bc767b252f4e91eaa69891bf44097fd",
+        "formulas": [
+          "product-to-sum"
+        ],
+        "figures": [],
+        "solutionText": "ee5f2a1df8fb649b617c37443c5f8209b50886a6379a3af51ebd944f6a475305",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "07750d04a79da58cf21be826915198836283091af762deaa3e6179e5a569b4ea",
+    "note": null,
+    "caption": null
+  },
+  "content/en/exam1_f26/questions/q3.md": {
+    "id": "e1-f26-q3",
+    "number": 3,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e1-f26-sol",
+      "page": 7,
+      "region": [
+        0.113,
+        0.118,
+        0.764,
+        0.054
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-01",
+        "page": 19,
+        "label": "ACSR conductor photograph in the transmission system"
+      }
+    ],
+    "statement": "ca371d30faa3c104ae2faf62a343acd510137de278035b641c8ef671d6399b3b",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-f26-q3-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "prompt": "ca371d30faa3c104ae2faf62a343acd510137de278035b641c8ef671d6399b3b",
+        "displayed": "4abbe4a1e984e06c427cf57edf06dbe58b873f1bbdb81082f66e336414db069d",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "9204d9f3ac2556580c3231d1d13d4d0bc6a05707c30e609ea6bd98b28ad851e1",
+        "note": "e856a339fb3970295c6d4ae379244917630fdf0867080b827148d17b9e4234b8",
+        "caption": null
+      }
+    ],
+    "guide": "dd16d81c8490f94230b684de1b4890341397031afc4f803ded356aedf11f98ff",
+    "note": null,
+    "caption": null
+  },
+  "content/en/exam1_f26/questions/q4.md": {
+    "id": "e1-f26-q4",
+    "number": 4,
+    "points": 20,
+    "givens": [
+      "V_L=12.47\\,\\mathrm{kV}",
+      "P_1=60\\,\\mathrm{kW},\\quad Q_1=660\\,\\mathrm{kvar}",
+      "P_2=240\\,\\mathrm{kW},\\quad \\mathrm{PF}_2=0.8\\text{ leading}",
+      "P_3=60\\,\\mathrm{kW}"
+    ],
+    "originalFigure": {
+      "doc": "e1-f26-sol",
+      "page": 9,
+      "region": [
+        0.113,
+        0.155,
+        0.774,
+        0.234
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "Complex power and power triangle"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 18,
+        "label": "Power-factor correction"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 15,
+        "label": "Total balanced three-phase power"
+      }
+    ],
+    "statement": "f028e4e9d554b1f258a44d2c1ee07ddcd7fcc406754c02a60b43ae51cc6748c5",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-f26-q4-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 10,
+        "prompt": "f7c9eb0295e90d73efe5729e908968fdab088b7bb149d78f8854eb64d799458a",
+        "displayed": "d120f33f76cdf200838514026610f842a67d18b8ecf6d6894a70bbe53d6b46a5",
+        "formulas": [
+          "three-phase-power"
+        ],
+        "figures": [],
+        "solutionText": "c02badbbeb5951bc5d591c4ae44b39151ca815d05af24b7cfc8835acc0b5c72c",
+        "note": "dcdf63a3440d3dbb1e71c4101738d85824d66a98066c0bbd596262f779e5f48a",
+        "caption": null
+      },
+      {
+        "id": "e1-f26-q4-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 10,
+        "prompt": "39ec23da0f96aa0f78154dfbe336077ac47d5c77c4d5ff412580931d3084edd4",
+        "displayed": "01f65aa1fbb2506aa3b67f6601ff75cdcd3f530d309421442ada1f6c36ad8293",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "84ee9fc79f6f565303de41ea1eb30331863d5152f627456f8d75d8107786f8b1",
+        "note": "43f64e6049645d5f04167524e710a1b41edbab33aee569acb10f85006ef3e1a1",
+        "caption": null
+      }
+    ],
+    "guide": "b0fc7bbd7e1422f78914276dcaced4278b828a7a95ccb81a48edbcbe7626a389",
+    "note": null,
+    "caption": null
+  },
+  "content/en/exam1_f26/questions/q5.md": {
+    "id": "e1-f26-q5",
+    "number": 5,
+    "points": 25,
+    "givens": [
+      "R_\\Delta=18\\,\\Omega,\\quad R_Y=12\\,\\Omega",
+      "V_L=346.41\\,\\mathrm V\\text{ rms}",
+      "Z_{\\mathrm{line}}=j3\\,\\Omega\\text{ per phase}"
+    ],
+    "originalFigure": {
+      "doc": "e1-f26-sol",
+      "page": 12,
+      "region": [
+        0.258,
+        0.098,
+        0.484,
+        0.224
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-03",
+        "page": 9,
+        "label": "Balanced delta-to-Y transformation"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 17,
+        "label": "Per-phase parallel-load analysis"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 18,
+        "label": "Load phase and line voltages"
+      }
+    ],
+    "statement": "eb28e162daf4046b8fa1609af84e68aadaa53185c6604c5775c3d247b3546aff",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-f26-q5-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 13,
+        "prompt": "4cf47e75014ad13f7f949e6e70960d726f15dd4365072079a5bdf3557039d63e",
+        "displayed": "7a08e08b04a08120c3c1bbd7f6e8ecfde90dbe626249c293c11837acaa2fe3db",
+        "formulas": [
+          "delta-star"
+        ],
+        "figures": [],
+        "solutionText": "46ea98224b6915247f378ffa6c87613a1f4295aeb9b302a89b9da15258941f5e",
+        "note": "b328cccb6f178a0c54d8c86bd42cda114ecf8b39c4c013282d1e471fb1375826",
+        "caption": null
+      },
+      {
+        "id": "e1-f26-q5-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 13,
+        "prompt": "164377462f3928b80b712f2ae14e43b4baa11852e272f31bab0a8d5ee913d537",
+        "displayed": "de4a9fff1bc13bf61c3f018162af24409abe003a9f5e686fcdc5177032b810ae",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "a6e862d0b7e3eed0952652703fce2a9f354d5535cc3ecd99b658bccc7303f8ee",
+        "note": "62280089a17679bd98a7102ac17ede896bddb25c8a437d49aba47ec3796dc0e4",
+        "caption": null
+      }
+    ],
+    "guide": "2f3c24ca9509216d78492d83330300e4322b16ccdb58bffe2281085d89b45e71",
+    "note": null,
+    "caption": "fa752f28bd1e5b70fca87d7fd29f33bcf707b9747cd048607a4d9a2a859ee135"
+  },
+  "content/en/exam1_f26/questions/q6.md": {
+    "id": "e1-f26-q6",
+    "number": 6,
+    "points": 25,
+    "givens": [
+      "S_b=25\\,\\mathrm{kVA},\\quad V_L/V_H=220/440\\,\\mathrm V,\\quad f=60\\,\\mathrm{Hz}",
+      "V_{\\mathrm{oc}}=220\\,\\mathrm V,\\quad I_{\\mathrm{oc}}=9.5\\,\\mathrm A,\\quad P_{\\mathrm{oc}}=650\\,\\mathrm W",
+      "V_{\\mathrm{sc}}=37.5\\,\\mathrm V,\\quad I_{\\mathrm{sc}}=55\\,\\mathrm A,\\quad P_{\\mathrm{sc}}=950\\,\\mathrm W"
+    ],
+    "originalFigure": {
+      "doc": "e1-f26-sol",
+      "page": 14,
+      "region": [
+        0.113,
+        0.088,
+        0.774,
+        0.174
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-06",
+        "page": 8,
+        "label": "Open- and short-circuit parameter extraction"
+      },
+      {
+        "doc": "lecture-06",
+        "page": 10,
+        "label": "Transformer voltage regulation"
+      },
+      {
+        "doc": "lecture-06",
+        "page": 13,
+        "label": "Per-unit normalization"
+      }
+    ],
+    "statement": "3962f5c19b3c7f61b7c6ee8bbb93c6d07a8a5f2d0d4c662d160a3de981ad66d1",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-f26-q6-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 14,
+        "solutionPage": 14,
+        "figure": "e1-f26-q6-equivalent",
+        "prompt": "81d386818549d87318fb5e72383899e1951ba78c75cf484091b5e53cc71b9d30",
+        "displayed": "28ded85d793216b3bab8f453f05540b8180cd09bab3abb70ebb45ccaa16d2941",
+        "formulas": [],
+        "figures": [
+          "e1-f26-q6-equivalent"
+        ],
+        "solutionText": "4afb5a4f2824228052612b3c281960cb6d449efbefd51678cb7326368d7d4c99",
+        "note": "6460d9c11cd4da1cd8d6d701de2c959be9b5238188f07c197038db7ffed113ec",
+        "caption": "908b5823f21bbd006bf2a6634ccb692c8a8322c41e4fbbbf92d6842c7aaacd6f"
+      },
+      {
+        "id": "e1-f26-q6-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 14,
+        "solutionPage": 15,
+        "prompt": "a3d51aa44d70fa5641f1e79e2e4df292632a3d3d89bcededd0f851e79c9b5878",
+        "displayed": "44a8f5177d05120e7865231c1ad28320a9f10843dc2ea01ca41829f4c9ced7ee",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "bcba19ba4cda6eb3d35fb0bb3bca8aea0f16d673cd2140561f06cf76a8f24c19",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e1-f26-q6-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 14,
+        "solutionPage": 15,
+        "figure": "e1-f26-q6-phasor",
+        "prompt": "4474ecae193d7d26a125347990af51197cf8287e76e86eab44c72a230272523b",
+        "displayed": "39e57160e7bd7ea431480ac978e754d834647a5aa692426fa5a9a9624d47f167",
+        "formulas": [],
+        "figures": [
+          "e1-f26-q6-phasor"
+        ],
+        "solutionText": "cfce80105147053f2a2f05d605581ebfb99bfb81675c29da16a6105633b83842",
+        "note": null,
+        "caption": "b3068b2cb085134608e2fe25a2ca19e3dac1eb7e76978725bcfb44c6bec76a41"
+      }
+    ],
+    "guide": "509e5b3dd1d3c621cbb016a6707412fccf13092c7e998238b3b952706542ac0d",
+    "note": null,
+    "caption": null
+  },
+  "content/en/exam1_s25/questions/q1.md": {
+    "id": "e1-s25-q1",
+    "number": 1,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e1-s25-sol",
+      "page": 3,
+      "region": [
+        0.1124,
+        0.1243,
+        0.6331,
+        0.0267
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-04",
+        "page": 15,
+        "label": "Hysteresis energy per cycle"
+      },
+      {
+        "doc": "lecture-04",
+        "page": 16,
+        "label": "Eddy-current loss and laminations"
+      }
+    ],
+    "statement": "6aeac2cb918fe7917b9a2e374a2847c033454e76556accb466f0efde5742e0c6",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-s25-q1-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 3,
+        "solutionPage": 3,
+        "prompt": "6aeac2cb918fe7917b9a2e374a2847c033454e76556accb466f0efde5742e0c6",
+        "displayed": "e0eca9bef85fefa0dadba7c434e9c6da62f7f0fb7791c24b48431a6556e57d8b",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "2701f6fa13e5cab320f992e0c2c7dc8db3e07026c9f6ad6621ffdafbe8f73465",
+        "note": "374f5fa5f11b247e3e08480d5c07fcd6aad4a884fea069ee9afe44651108b957",
+        "caption": null
+      }
+    ],
+    "guide": "5e3685bb6951921593818d45441d5a015eeaa66bde600014d2dbaa7e9c4740ba",
+    "note": "a82ee8c244dad2a1e7aa01cecdd1e978cd202cba1551f59c27393a083ee83d3a",
+    "caption": null
+  },
+  "content/en/exam1_s25/questions/q2.md": {
+    "id": "e1-s25-q2",
+    "number": 2,
+    "points": 20,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e1-s25-sol",
+      "page": 5,
+      "region": [
+        0.1124,
+        0.0864,
+        0.7148,
+        0.052
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 7,
+        "label": "Sinusoidal voltage and current"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 9,
+        "label": "Double-frequency instantaneous power"
+      }
+    ],
+    "statement": "f87a8cd5c816a6a1feada941ec4d3f53c9c6651886c98e787618ebe2d137afce",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-s25-q2-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "f87a8cd5c816a6a1feada941ec4d3f53c9c6651886c98e787618ebe2d137afce",
+        "displayed": "9aba132988074d9ca1bb712ab017d56c19f2bff6d160977ab4f9b950ace93ffc",
+        "formulas": [
+          "product-to-sum"
+        ],
+        "figures": [],
+        "solutionText": "1cb8ae23d032a42ee14fb37a4c0af8d3c65bc5c4e506bba2bc668dc4d2aab2ef",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "16b056d97ab7de08ed739df0b39537e3459c7a601678a2c86f48cff8a54132ab",
+    "note": null,
+    "caption": null
+  },
+  "content/en/exam1_s25/questions/q3.md": {
+    "id": "e1-s25-q3",
+    "number": 3,
+    "points": 20,
+    "givens": [
+      "Z_Y,\\ Z_\\Delta"
+    ],
+    "originalFigure": {
+      "doc": "e1-s25-sol",
+      "page": 7,
+      "region": [
+        0.1336,
+        0.1533,
+        0.7475,
+        0.2363
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-03",
+        "page": 9,
+        "label": "Balanced delta–Y transformation"
+      }
+    ],
+    "statement": "bb82ff04592d9ae5771d286454c8519a18d6c557e5ac01a3641581050acc64db",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-s25-q3-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "prompt": "a11c21448db5c59010b8e1e9514c1c7704fce06018b8b969ffbc45043082a798",
+        "displayed": "d5533249b6e6160b7da9636a30eecc0a3432740feb9aad00eba649176076a48d",
+        "formulas": [
+          "delta-star"
+        ],
+        "figures": [],
+        "solutionText": "598aa16cda406b40d255be2f07b8952b6fb6b16bcb19e7c36af9165ec7f30d56",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "f9e6b6080ce03782cbfbb889183436558d4f11ee9f7d0b1871aa7c66829d8751",
+    "note": null,
+    "caption": "109e56d0ce9adc07f0a2a350f713f10aa6e25443b5a95a5c2d0a21c06106eb9c"
+  },
+  "content/en/exam1_s25/questions/q4.md": {
+    "id": "e1-s25-q4",
+    "number": 4,
+    "points": 20,
+    "givens": [
+      "V_L=440\\,\\mathrm{V}",
+      "Z_\\Delta=(2+j15)\\,\\Omega"
+    ],
+    "originalFigure": {
+      "doc": "e1-s25-sol",
+      "page": 9,
+      "region": [
+        0.1124,
+        0.1243,
+        0.7752,
+        0.1151
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-03",
+        "page": 8,
+        "label": "Delta branch and line currents"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "Complex power with rms phasors"
+      }
+    ],
+    "statement": "9df180ffced115c3ca92daeaa01d3df12627c3b711cb1c5659d507d7af06c7e7",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-s25-q4-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "0d1dd5689aa4ebfcba89a99e579ab16030e7a02a3c001f051a1313787f5f2221",
+        "displayed": "40e15feabca31f1430954cabb27f2c1b36b1ab52689dec2f636bb869b3afccfc",
+        "formulas": [
+          "delta"
+        ],
+        "figures": [],
+        "solutionText": "77167c250eb636b90fecc5c9330edb1f9b842d86d564849858b799483d236101",
+        "note": "8407be484cf107b1ed9b11f95743f89776dd2443a5d31352d49106246c38a946",
+        "caption": null
+      },
+      {
+        "id": "e1-s25-q4-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "87efb08fbdc2793aa655cc95b4d80ea1d93fc87918ab567eaa283b58156d61d4",
+        "displayed": "ad7f7d3b8eb61730f317a2dd4b3a6f1557b1156ab597614416cd0768951dd9f5",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "c99336d46fba9a52a86593a5618a9c8d4bb85a02a638d7bb264d40106fbd7676",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e1-s25-q4-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "99a28224a494a8dae49fc90065415df537159cfdc5d24f57dd118ca85f06b438",
+        "displayed": "c42880d83b12123019087d050dd0c40480644ce75cf4fb8ca4c83fb646d08f5f",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "b4c5bb9ce72cda6ef4dcb1bbab5a99ef7febd71a40314dc8a57eb943f24d9f66",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "b3d4cc5b008ad71f16fefe2a7dddabd28cc285681e6f037834808ba15ef5e45e",
+    "note": null,
+    "caption": null
+  },
+  "content/en/exam1_s25/questions/q5.md": {
+    "id": "e1-s25-q5",
+    "number": 5,
+    "points": 20,
+    "givens": [
+      "V=1400\\,\\mathrm{V_{rms}},\\quad f=60\\,\\mathrm{Hz}",
+      "|S_1|=125\\,\\mathrm{kVA},\\quad \\mathrm{PF}_1=0.28",
+      "P_2=10\\,\\mathrm{kW},\\quad |Q_2|=40\\,\\mathrm{kvar}",
+      "P_3=15\\,\\mathrm{kW},\\quad \\mathrm{PF}_{\\mathrm{target}}=0.8"
+    ],
+    "originalFigure": {
+      "doc": "e1-s25-sol",
+      "page": 11,
+      "region": [
+        0.2856,
+        0.1533,
+        0.4288,
+        0.1151
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "Complex power"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 18,
+        "label": "Power-factor correction"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 21,
+        "label": "Shunt-capacitor sizing"
+      }
+    ],
+    "statement": "0c2dbad1c3802ce95c1dc5f1a94f4eda4aad2d04516daf5541b8e7f516910e82",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-s25-q5-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 11,
+        "prompt": "c3c20aa9f5c1d1a4115edfecf515c4380145f8371d84e6ef7e6c663b759ee2f1",
+        "displayed": "686f36743119a1f7e63c45da1a254980e19768da5562aa1f34de29b42b406e72",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "b3784e06ed6ba476e8c3fc43e05b0027e41c8fec0e82388f0bceb8a0f815854c",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e1-s25-q5-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 12,
+        "prompt": "44d683cff9158094b5df6c02c6376101897050c2d6f57499f1b727ff6346073a",
+        "displayed": "e6fd66d0aa74ce20b357b7fded496c81dc3eaba8df5fe2cf1ded8ffce103b023",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "ff066c1bd21e4b05f44d80c98e17ef1d8084602ea46e0d3d5a53aecd66c1bee5",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "039252aad145ebeac7e88d4f8de5f6b8bade55c54010deb8a7b2f10af98d4066",
+    "note": null,
+    "caption": "c9d8f7f99e57bf1b368eb7a1f4bf75c4015001b5b1a654b6247a8781b16d6ed7"
+  },
+  "content/en/exam1_s25/questions/q6.md": {
+    "id": "e1-s25-q6",
+    "number": 6,
+    "points": 30,
+    "givens": [
+      "|E_L|=173\\,\\mathrm{kV}",
+      "E_{an}=100\\angle90^\\circ,\\quad E_{bn}=100\\angle-30^\\circ,\\quad E_{cn}=100\\angle210^\\circ",
+      "Z_a=(5+j0)\\,\\Omega,\\quad Z_b=-j5\\,\\Omega,\\quad Z_c=(3+j4)\\,\\Omega"
+    ],
+    "originalFigure": {
+      "doc": "e1-s25-sol",
+      "page": 13,
+      "region": [
+        0.1107,
+        0.2366,
+        0.4615,
+        0.1984
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-03",
+        "page": 24,
+        "label": "Unconnected source and load neutrals"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 25,
+        "label": "Floating-neutral node equation"
+      }
+    ],
+    "statement": "0c712def7d59da09154b546b7c91a9f31bf05cd5f7f97fc4c818fbc1bd642cd8",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-s25-q6-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 13,
+        "prompt": "4532afbb491a82b649742e39f040bcda9e8e162e5bb3269afba623a6b4ecdac1",
+        "displayed": "e749398b28d30fc041e06591f45240d6d79054bb97ebdd953cdee4e7cf1e578b",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "5e09ba68f8effdba6c676d5ea6964f81ee5ccab2e70bc32f2b8feeebe06f1a33",
+        "note": "95f6110a6244ed24cbbda0b390585268c50ecbb65807f3125dd438846b6f1092",
+        "caption": null
+      },
+      {
+        "id": "e1-s25-q6-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 13,
+        "prompt": "fdd2d109a63b1d52d430e5728f07efef47e8ecbcfcbc24e52d8ad616dd8b794c",
+        "displayed": "e8e10d2d6ee4f60c7c79be88c514287f92ccd30f388d7e67a7c862e4068254bf",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "81a5ef155e0355b41bb0d7f6b028e4a5d9d77dd387185e289681a85b2b97ff7a",
+        "note": "6efe1325a84bce0155128ac64b308e5a8d5c30a57f2c51644fddc4eb92450649",
+        "caption": null
+      }
+    ],
+    "guide": "75d109366f6393d8c039ffd6d93411b9b219ff35fcb0802de47b4272bf56fa3d",
+    "note": null,
+    "caption": "d8a2088a8cb4135ce4b2f5159b93cb2eec82f2cd5b8846cf552083e14a0234c1"
+  },
+  "content/en/exam2_s25/questions/q1.md": {
+    "id": "e2-s25-q1",
+    "number": 1,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 3,
+      "region": [
+        0.1124,
+        0.123,
+        0.7589,
+        0.0495
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 4,
+        "label": "Rotor field winding and DC excitation"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 7,
+        "label": "Current, magnetic flux and magnetic-circuit geometry"
+      }
+    ],
+    "statement": "d8494e40ff73d8dd84907ecfec8845810997e6b1912e64b9287229371d6bc5ca",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q1-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 3,
+        "solutionPage": 3,
+        "prompt": "d8494e40ff73d8dd84907ecfec8845810997e6b1912e64b9287229371d6bc5ca",
+        "displayed": "b8463a265bbf378ce4b1b840fc5ddc0ab86c43e1d88c98da0cd28c0d75427dd6",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "924a965aa5d48f5aa75a0927563a1ff015fb217dc5cd5c3826bffe489ab36de0",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "1de1ece66578710c3f8ef82d2c0fa8d550e8382b414e19b14bc30e416a517d02",
+    "note": "78febe4275346055a198ee1e91a00eb5d37a6e22d9affd3a00c125b920bdec51",
+    "caption": null
+  },
+  "content/en/exam2_s25/questions/q2.md": {
+    "id": "e2-s25-q2",
+    "number": 2,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 5,
+      "region": [
+        0.1124,
+        0.0864,
+        0.6903,
+        0.052
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 8,
+        "label": "Three-phase rotating magnetic field"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 9,
+        "label": "Electrical frequency, pole count and mechanical speed"
+      }
+    ],
+    "statement": "31af87c09f00e2cbcfce434fd099af19520c7d64901c37748fa983e6b7fa4505",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q2-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "31af87c09f00e2cbcfce434fd099af19520c7d64901c37748fa983e6b7fa4505",
+        "displayed": "646fab836c26b9bfa09a1e7aeb32710b793213da96ff801f5e8a6402e7568b85",
+        "formulas": [
+          "synchronous-speed"
+        ],
+        "figures": [],
+        "solutionText": "9c902fcd22887c818486902e4bcff0eacbb01fa7125b4a3b955cddef2676a092",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "0fcb10a9c36acfec0a8836a811090599c1f0d508cbd6b995f262fc1b085b7dbd",
+    "note": "36ab06fc64d8f47dd7f1c06b1a96454b3cf02815a8a58048c14172da4db5a150",
+    "caption": null
+  },
+  "content/en/exam2_s25/questions/q3.md": {
+    "id": "e2-s25-q3",
+    "number": 3,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 7,
+      "region": [
+        0.1124,
+        0.0876,
+        0.7066,
+        0.028
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-08",
+        "page": 8,
+        "label": "DC generator, brushes and rotating coil"
+      },
+      {
+        "doc": "lecture-08",
+        "page": 9,
+        "label": "DC motor and commutator segments"
+      }
+    ],
+    "statement": "f4a2389343964f78bfe937e5d1a8a84650a73a5e7b43e9800d3458ead3469fdd",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q3-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "prompt": "f4a2389343964f78bfe937e5d1a8a84650a73a5e7b43e9800d3458ead3469fdd",
+        "displayed": "9a716ba4bd806b02b45b5c0d7a30e7b0d7143b2bdbc8894934012efdcb53bdff",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "7759d79d4069ae66fe1b0f97f8ba7e1271eb2517f38a60c05358cd2d83442319",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "21f5e5151864b3808a51a0dd2965a035b669fba6a9f3463a871760ad79b0ba3b",
+    "note": "e3949579f687fb1cb3352972228556739cc31dfd6243a33551685ff38c1dc638",
+    "caption": null
+  },
+  "content/en/exam2_s25/questions/q4.md": {
+    "id": "e2-s25-q4",
+    "number": 4,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 9,
+      "region": [
+        0.1124,
+        0.0864,
+        0.7589,
+        0.0495
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 24,
+        "label": "Round-rotor synchronous power–angle characteristic"
+      }
+    ],
+    "statement": "d8ada1e612b22b08076d901369772e06f90470678e49c075ffd42f7459e9c70c",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q4-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "figure": "e2-s25-q4-power-angle",
+        "prompt": "d8ada1e612b22b08076d901369772e06f90470678e49c075ffd42f7459e9c70c",
+        "displayed": "e8eef04f18a9dd70029328d43098279e5cd5b415aa621b162dd7d16775625d63",
+        "formulas": [
+          "power-angle"
+        ],
+        "figures": [
+          "e2-s25-q4-power-angle"
+        ],
+        "solutionText": "c910ebb70279388e74421ccc3c0ac7837c713806c1f831f96d7a94a0a6571b18",
+        "note": null,
+        "caption": "7163a175170f323a45c408a48a8e3f4a37530e665e8a69914faf59bbcc17c781"
+      }
+    ],
+    "guide": "2df804b0c2411af93a7b93aa31c5e3a215eeaf1170a7e4f4ab417201308cb639",
+    "note": "662e880fc484e79f415212cc8ddced97613cfa7a531c74a12c523be505383df6",
+    "caption": null
+  },
+  "content/en/exam2_s25/questions/q5.md": {
+    "id": "e2-s25-q5",
+    "number": 5,
+    "points": 20,
+    "givens": [
+      "V_1=120\\,\\mathrm V,\\quad V_2=240\\,\\mathrm V",
+      "n=1500\\,\\mathrm{rpm},\\quad P=4",
+      "E_c=4\\,\\mathrm V,\\quad I_c=5\\,\\mathrm A"
+    ],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 11,
+      "region": [
+        0.1124,
+        0.1243,
+        0.7638,
+        0.1921
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-09",
+        "page": 5,
+        "label": "Simplex lap winding and parallel paths"
+      },
+      {
+        "doc": "lecture-09",
+        "page": 6,
+        "label": "Simplex wave winding and parallel paths"
+      }
+    ],
+    "statement": "a35c952363da1da3a1cfb9b4e6ffa2681ed80aadeded7565a7013b46ca5f6871",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q5-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 11,
+        "prompt": "62c6aa051fabca32ce4e0b79890a027b5c3b26f3c03cb970ae44c5d0636df5fc",
+        "displayed": "9d7a8a6dba78a0bad2c72f6970daa75e25e261fe2d4252328b56e2df2d3914f0",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "630c0a51746e08ed2d2d27a55e406e8e0bc88e26fed80231292cbb9f1c015d20",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-s25-q5-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 11,
+        "prompt": "20dfd6aa67d1acbb326d2070a8d3e50cc5541fa59526b6a28ae00c48d1be5b9c",
+        "displayed": "b69b973b9ed3fae6abb7e140b7f4261e33e09540432d6c1992382444e86c701e",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "f3c4f9b9efb1858c17bd12ea5e120ee76d302e2ea697cfb369d0c79cc58c035d",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-s25-q5-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 11,
+        "prompt": "671d572a5ad723235e22b6d3d366b2afd9cda3843b24f6cdda868b5a47778197",
+        "displayed": "a4ef518ac82ba2c296652173988528c5e699b1cd7635afd7229afb978a2baffc",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "f6e32d05d1200a6d9c8b5b7ce345d6c2ab7611ce8c8cc715f85d7bbddefb0902",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "0d61a33c56535f7f22b2124d3d47c1e0ff1065575d137e4ebbe628356e0ee721",
+    "note": "be82a6b5f29e93a48c71ec7fae8fb665692b495298e08ad4d303186b5270fe12",
+    "caption": null
+  },
+  "content/en/exam2_s25/questions/q6.md": {
+    "id": "e2-s25-q6",
+    "number": 6,
+    "points": 20,
+    "givens": [
+      "S_N=100\\,\\mathrm{kVA},\\quad V_{HN}/V_{LN}=1000/100\\,\\mathrm V",
+      "V_{oc}=100\\,\\mathrm V,\\quad I_{oc}=6.0\\,\\mathrm A,\\quad P_{oc}=400\\,\\mathrm W",
+      "V_{sc}=50\\,\\mathrm V,\\quad I_{sc}=100\\,\\mathrm A,\\quad P_{sc}=1800\\,\\mathrm W",
+      "\\mathrm{PF}=0.6\\ \\text{leading}"
+    ],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 13,
+      "region": [
+        0.1124,
+        0.0876,
+        0.7801,
+        0.2186
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-06",
+        "page": 8,
+        "label": "Open-circuit and short-circuit parameter calculations"
+      },
+      {
+        "doc": "lecture-06",
+        "page": 6,
+        "label": "Approximate equivalent circuit and impedance referral"
+      },
+      {
+        "doc": "lecture-06",
+        "page": 10,
+        "label": "Voltage regulation definition"
+      }
+    ],
+    "statement": "9137d059b121b3a044f5fb0023e997621fe31116324043c6e1967a6147a830ab",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q6-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 13,
+        "prompt": "77ac3390a690c14b2cc7a475eb9153a9126d5e3817d90c8b1a82f9152d5dfaaf",
+        "displayed": "21f2b20ea1b1e6581d005cce40eb66bc22229e20e98981aa9cab71159a89f0d3",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "a1faa5765040116cf1155ed227498f0ff2d21d1601058f240d2ad23a1d4aa1d9",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-s25-q6-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 14,
+        "figure": "e2-s25-q6-equivalent",
+        "prompt": "c77dcfee271c3f951c3b9b26ca907a6c835c30aed739f208416d3ae88c7890f4",
+        "displayed": "4e02a0cb330f221210b0730d8047f323564270cc172909c3c64e0ef0b9e4a33e",
+        "formulas": [],
+        "figures": [
+          "e2-s25-q6-equivalent"
+        ],
+        "solutionText": "8fb71ec6d684a09351bb53456afd210da1ad05668353fe1b43ce0cf0b829c542",
+        "note": "26e47c09ce4c39fb35433a5cca86da6ed4617ca9f9cd68bfa18e0b3c2da152ee",
+        "caption": "f62e38710ea707c7bad9ead04d96dae3c6737267a501cc63cf084e46db957908"
+      },
+      {
+        "id": "e2-s25-q6-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 14,
+        "prompt": "ac38e0d525fbadf673271b4be8e24d04c8e1fd59037bb5471be0424655e49746",
+        "displayed": "84dc83a87fb507f7a3e9935e6c4b3d99fb8d154900c188d3f69c8d71b8feb78a",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "9bc8d019612e1146757080877c0afad8dfc6fc55a9d5092e97abd75e50f1942d",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "37c605563d257c4d6535d0cb97276e2ea64c131e70fec3ea50d47f0528d23c4f",
+    "note": "b364167838a0f3e8c12344ddc7eddd310276d865e1d9ac0613a53a8d8e7614f3",
+    "caption": null
+  },
+  "content/en/exam2_s25/questions/q7.md": {
+    "id": "e2-s25-q7",
+    "number": 7,
+    "points": 20,
+    "givens": [
+      "S_N=5\\,\\mathrm{kVA},\\quad V_{HN}/V_{LN}=240/120\\,\\mathrm V,\\quad f=60\\,\\mathrm{Hz}",
+      "P_{core}=100\\,\\mathrm W,\\quad P_{cu,N}=120\\,\\mathrm W",
+      "\\mathrm{PF}=0.8"
+    ],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 15,
+      "region": [
+        0.1124,
+        0.0876,
+        0.7785,
+        0.1214
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-06",
+        "page": 9,
+        "label": "Efficiency and load-squared copper losses"
+      }
+    ],
+    "statement": "03c6b19bab9ac922aef51583a39c717793fdc0b33f3d52b45e6b41798f3b7a9f",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q7-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 15,
+        "solutionPage": 15,
+        "prompt": "38346ff15950c12a563dbb0a97487b59e5b0364764a0b4825d4647528b2445db",
+        "displayed": "2491f0e037b9c25db12abf8732917d28043df1d6b4328d3d727da9ae4c5c478b",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "9b4b53d1140fb05d623889f5341300e4efc01141246248e7bbb6cb6eb1c873bd",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-s25-q7-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 15,
+        "solutionPage": 15,
+        "prompt": "8b17b17c8ce80d9b959df6d30e863fb74afb1835932d65cf40df0b1de9ea8a7a",
+        "displayed": "ab58cea8d8cd632de4b307304c25ffd8427f4f77e8bc3da7d4bd8f654e339ea6",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "611120ff8c1d67412d49311248af73316fa5420ec490845c9c2a59876f8f2804",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "b6869287f8f78e17f1bae50bf98f0d33921f22f9971d30dd923cc07e58d4400c",
+    "note": "ea380dd51b9b955950d62fd86d051a8f11156476859db144132178192e41ff23",
+    "caption": null
+  },
+  "content/en/exam2_u00/questions/q2.md": {
+    "id": "e2-u00-q2",
+    "number": 2,
+    "points": 21,
+    "givens": [
+      "f_1=50\\,\\mathrm{Hz},\\quad f_2=60\\,\\mathrm{Hz}",
+      "I_a=I_b=I_c"
+    ],
+    "originalFigure": {
+      "doc": "e2-u00",
+      "page": 1,
+      "region": [
+        0.0764,
+        0.1217,
+        0.8471,
+        0.565
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 9,
+        "label": "Frequency and synchronous speed"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 14,
+        "label": "Distributed windings and generated voltage"
+      },
+      {
+        "doc": "lecture-04",
+        "page": 26,
+        "label": "Ideal-transformer voltage, current and apparent power"
+      }
+    ],
+    "statement": "b803f016f2e62376016d3ea1e59029e63aac819df4c3d64416b25b29a731a046",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-u00-q2-21",
+        "label": "2-1",
+        "points": 3,
+        "sourcePage": 1,
+        "solutionPage": 1,
+        "prompt": "50d36987ba979c7eb06b27f224d9d081a6735da710a28ef25351476e1f1fa052",
+        "displayed": "9968f0a545917bd22371637fff5d58ae5a532a4c0932926d676c4cb8643dcf99",
+        "formulas": [
+          "synchronous-speed"
+        ],
+        "figures": [],
+        "solutionText": "3ad6a955c20c5c29d52046c3b6e04beebd066d5700cb05394a012962c81a594f",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q2-22",
+        "label": "2-2",
+        "points": 3,
+        "sourcePage": 1,
+        "solutionPage": 1,
+        "prompt": "b6986b161436f942b4f3aaf7e7cd782916aa3f0be58502727b89b68e05f63725",
+        "displayed": "e00b4649de4c08a09c2fdb0d8c8d3a23c075bb031dd282400b3b86593c26bb86",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "d77a1144aaaf159e2e3c83b22bef4e4d76768d4761a839c919eb108850972009",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q2-23",
+        "label": "2-3",
+        "points": 3,
+        "sourcePage": 1,
+        "solutionPage": 1,
+        "prompt": "4ecdd6acd1fc1493d59f68847c15042b66376f97e6fa493388e4a7ff86004d94",
+        "displayed": "f7f51ee8a20595ee870c20fdb461aa393862dfa5fd149b0d5c27de08b4b69215",
+        "formulas": [
+          "generated-voltage"
+        ],
+        "figures": [],
+        "solutionText": "714510a9dc840e8f0af5d06f3c8f089a568b13dc58015c5343d55fbf0aa526af",
+        "note": "625d9d5857e75354c140ce189044c82244d3d1e6bc6bf21e6d69e8b4e36d9ab8",
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q2-24",
+        "label": "2-4",
+        "points": 3,
+        "sourcePage": 1,
+        "solutionPage": 1,
+        "prompt": "0178d3667c7597be32e32f24553515187cc655c73effd2bc0cf0453e96294136",
+        "displayed": "c2818ac60724f24c659a54ad862feab2be525c7dc7b63cbf18b65d2a6bdde772",
+        "formulas": [
+          "synchronous-speed"
+        ],
+        "figures": [],
+        "solutionText": "3c03ebb763de189ecfa42c8b44703fc3c2c35fe6cbdde456fa4de26d65d040a6",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q2-25",
+        "label": "2-5",
+        "points": 3,
+        "sourcePage": 2,
+        "solutionPage": 2,
+        "prompt": "efddfcfceec39fbb08101502545f4930bd05d3280f1d25e9a39b42f1360ae8fb",
+        "displayed": "eb8297c37c7e16e2e0ce34afa68cbab327e4663bc360a46201602014680713bb",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "8a22b2bbb9d73c2087a7fa9c2192d5cf09d0200ca8e8d4dab27157e34fb05aac",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q2-26",
+        "label": "2-6",
+        "points": 3,
+        "sourcePage": 2,
+        "solutionPage": 2,
+        "prompt": "fb3d105f76fa7babca1da433b656ff0a5c5fba1bef2b4f1e35a7023d9326ba6e",
+        "displayed": "df3723c9902b1189eeacb23c34423840b516a50ce09f7b4e8c43729375e18d3e",
+        "formulas": [
+          "synchronous-speed",
+          "generated-voltage"
+        ],
+        "figures": [],
+        "solutionText": "47b89fb2728b9da88b3c78e25d03dca3e0efea5726822ec94cdbf8406efb0cef",
+        "note": "23c7baad50ed355b8fc57daffe7056fabbf165581fc2ad285a70092a0d8f66c2",
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q2-27",
+        "label": "2-7",
+        "points": 3,
+        "sourcePage": 2,
+        "solutionPage": 2,
+        "prompt": "f7571f9226712be7d116e29364a9449ea52d44040166b3404822fb9528a2e546",
+        "displayed": "c6ee87b57f7b7601260a7e94a04265c4648fe5290e7fb041ecdd9167d5805b2f",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "08329c6cea50a9eb75b86d72ffe33510c227c5c40cf8ff074e9c198ebc32dd24",
+        "note": "966ef9f6a7752fe2228e8accf51455ac22546c1ba301ed735799e9878ed33131",
+        "caption": null
+      }
+    ],
+    "guide": "62692df63fa69e924e70f97ee0764ca1b56b7ec8be96d613bd05a3d7cf3d3a87",
+    "note": null,
+    "caption": null
+  },
+  "content/en/exam2_u00/questions/q3.md": {
+    "id": "e2-u00-q3",
+    "number": 3,
+    "points": 20,
+    "givens": [
+      "f=60\\,\\mathrm{Hz},\\quad X_s=2\\,\\Omega,\\quad R_a\\simeq0",
+      "I_{f0}=10\\,\\mathrm{A},\\quad V_{LL0}=100\\,\\mathrm{V},\\quad I_{f1}=20\\,\\mathrm{A}",
+      "Z_L=(10+j10)\\,\\Omega\\quad\\text{per phase}"
+    ],
+    "originalFigure": {
+      "doc": "e2-u00",
+      "page": 3,
+      "region": [
+        0.0764,
+        0.1217,
+        0.8471,
+        0.2612
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 14,
+        "label": "Generated RMS voltage and rotor flux"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 18,
+        "label": "Per-phase synchronous-generator circuit"
+      }
+    ],
+    "statement": "e8cf20ecb6e95d07c5be6166fc16e487eec900918cda77e5e683f0d6b988c8b5",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-u00-q3-a",
+        "label": "a",
+        "points": 10,
+        "sourcePage": 3,
+        "solutionPage": 3,
+        "figure": "e2-u00-q3-circuit",
+        "prompt": "27cf22652e2ea49f8b2012fe42cc5fc707f636abd9f45143f7e292935f5ea9c0",
+        "displayed": "cd94e9feeb7e235961b31979f8832d8ed3e2245ec924c1c4c6752d47c43fa031",
+        "formulas": [],
+        "figures": [
+          "e2-u00-q3-circuit"
+        ],
+        "solutionText": "40c55bb440758cdd5928ad5ac9a11409482ead3346efddd5e37d5a74fc57c5ae",
+        "note": null,
+        "caption": "c97986416ba266af3e27aba4b2b59f0e0870c29d89b41c448705e19e4df33dab"
+      },
+      {
+        "id": "e2-u00-q3-b",
+        "label": "b",
+        "points": 10,
+        "sourcePage": 3,
+        "solutionPage": 3,
+        "prompt": "e5cb170751d2e595f7c704180a14ee4fb53826a0c4b449e62761b738454f4ddb",
+        "displayed": "4989b15b73b8f7e258f544a40cbf8566e2253ecbbb79abada25bd176b70b80f7",
+        "formulas": [
+          "generated-voltage"
+        ],
+        "figures": [],
+        "solutionText": "2300214a46830de0edb0bce09d39a9aa494ba3c5435883a736b276e54a03f647",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "9a8f7ced823633846ef44e89d6fa5ec026513659f2e1bf9d7b8a6fbc5ee811c3",
+    "note": "cae405f1c0208ffbbd8bd33605fce65b451baf8763ab4c93b7e6c98b4decca28",
+    "caption": null
+  },
+  "content/en/exam2_u00/questions/q4.md": {
+    "id": "e2-u00-q4",
+    "number": 4,
+    "points": 22,
+    "givens": [
+      "V_{LL}=1.732\\,\\mathrm{kV},\\quad p=2,\\quad f=60\\,\\mathrm{Hz}",
+      "X_s=1\\,\\Omega,\\quad R_a\\simeq0,\\quad P=1.5\\,\\mathrm{MW},\\quad\\delta=30^\\circ"
+    ],
+    "originalFigure": {
+      "doc": "e2-u00",
+      "page": 4,
+      "region": [
+        0.0764,
+        0.1217,
+        0.8471,
+        0.3251
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 9,
+        "label": "Synchronous mechanical speed"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 24,
+        "label": "Generator power-angle and reactive-power relations"
+      }
+    ],
+    "statement": "d93e8a664ae9b308d6f959a1ef79b6c6a93981aa04cabfdd8c4c78616bd6597d",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-u00-q4-a",
+        "label": "a",
+        "points": 7,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "bc6f0f9273fa242b5b8612e5dc811610b9076c3ed5427f7933f5ed8ca7e984d6",
+        "displayed": "3bf6883d5a5b73ffecc2573eb064e4c5a97f2ee8ef971b2179a984719b4070ee",
+        "formulas": [
+          "synchronous-speed"
+        ],
+        "figures": [],
+        "solutionText": "3da3accd36e10646c22220f5f1c19a34f4ede63725420d813f105bc6a27aa7ed",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q4-b",
+        "label": "b",
+        "points": 7,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "6846833fa1c362297e56a75ff7d1bd98e10b586a27b1aa071bc8aec41a3dd324",
+        "displayed": "90f60aef480e8a82206573b01ef739ea5adfcf0907d86b790fe261443e911c30",
+        "formulas": [
+          "power-angle"
+        ],
+        "figures": [],
+        "solutionText": "ac560123d703035af3b5967f37468d3d43f69d780bbf3c60082896cf7913163c",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q4-c",
+        "label": "c",
+        "points": 8,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "05dbf7e5944f20dad01e86662c7b52da1d5b0f9ed58c6d4af2bd91dcf45ddabc",
+        "displayed": "750aa91d72c6b12ea64c0bd8f5bb90b0faf1193f6a628a5e98d53fab19b8c12c",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "110eccb93414e6aec6d8f1ad080bbcda48bfeb62b79fc2d1c643e13902f23704",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "7f70fc65061c36b8ab432ee578947008cb679cdd3f45ec892aef36f0e65a4f25",
+    "note": "a86468f5d5f0ed929ab45c946ade333575ec768f5f5bd4bd527d5a758f64826d",
+    "caption": null
+  },
+  "content/en/exam2_u00/questions/q5.md": {
+    "id": "e2-u00-q5",
+    "number": 5,
+    "points": 32,
+    "givens": [
+      "V_{LL}=600\\,\\mathrm{V},\\quad X_s=4\\,\\Omega,\\quad R_a\\simeq0",
+      "P_{\\mathrm{dev},a}=40\\,\\mathrm{kW},\\quad\\delta_a=60^\\circ,\\quad I_{f,b}=1.2I_{f,a}"
+    ],
+    "originalFigure": {
+      "doc": "e2-u00",
+      "page": 5,
+      "region": [
+        0.0764,
+        0.1217,
+        0.8471,
+        0.2931
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 18,
+        "label": "Synchronous-machine impedance model and current convention"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 24,
+        "label": "Power-angle relation and complex power"
+      }
+    ],
+    "statement": "0d1de9e4660f4b783c5a5dbc48217c5e7f817437719577fbfa02a201fe5a89ec",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-u00-q5-a",
+        "label": "a",
+        "points": 16,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "afe46aa1e494b2206ecc93af67d677933453e4163168e9e1004610b0f2b69947",
+        "displayed": "70bc90b5933af41ca39005275e18d3f1baa54bed2486c37238c7d9b3a509ea98",
+        "formulas": [
+          "generator-current",
+          "power-angle"
+        ],
+        "figures": [],
+        "solutionText": "923aebc9ccce48204db8d999e0dc5dc7a76d26b6c13755d659dab54e3e6a0656",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q5-b",
+        "label": "b",
+        "points": 10,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "819dee5e74e61fe4d3cfd643717cd90611a7a1dc9c2a7279b8f2bd47bb292860",
+        "displayed": "ca4b4e41615bbf1873d5ad677c6f3821f1ffc3011479dff95ffb3fe1fbb0b5cb",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "8ca537604e61fd29378468a21f745d18c2f3e11592f0938bdb8c8bbf1164b927",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q5-c",
+        "label": "c",
+        "points": 6,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "df8f28b46cc906216a66fec3945cc367a875ee0bf4f8ae0cda040e5ed82c32f7",
+        "displayed": "e01e39a76c2bcf72030ac87acfa5d202cd13c449a2c17ea8739c09ac21a7bc76",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "10be417d265573393240939ebc495d182cb05c228a0808431e7ce02335ce6e51",
+        "note": "ce41341aa15e05664315cb1b1e80da91456d21a30f79c4a50dbfe1e8aa03d3a2",
+        "caption": null
+      }
+    ],
+    "guide": "22668fa8549855a2195ab248cb6ebad5aba63edc5e97e197da10b0f261bbb95a",
+    "note": "5628fa78d906dc540c372a48321fc7b341654603d70e8153f4c75a734ee0d946",
+    "caption": null
+  },
+  "content/en/practice1_f26/questions/q1.md": {
+    "id": "p1-f26-q1",
+    "number": 1,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 1,
+      "region": [
+        0.114,
+        0.151,
+        0.774,
+        0.248
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 7,
+        "label": "Instantaneous sinusoidal power and RMS values"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "Complex power"
+      }
+    ],
+    "statement": "6bbe839dfccc6cac2c6a11cb8a49525255588fd961dcbb0df1f06edbd9da2c31",
+    "questionEquations": "9023e82e8ad3796e88960497f2007b444d9c0f318ed9c5da45ffb65afcc88e32",
+    "parts": [
+      {
+        "id": "p1-f26-q1-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 1,
+        "solutionPage": 1,
+        "prompt": "6f9c6fce1934acadc0edc847b9b3b0dd867eb146a371f18ce67ca9f9dd7d78ba",
+        "displayed": "49c303d03e8412c8af9a2cc8d97b650bd20d4c8d6e398fb29122a6eb31bc9519",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "33d534b0a1428f9e3e2cc10f58b92dba6c6d17d4c072362e62adeabe6f12e21f",
+        "note": "248c037bc581421a05c5c85fbd0ad1298938cae2abefa3e9b4a55d6d6686de9e",
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q1-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 1,
+        "solutionPage": 2,
+        "prompt": "1d7b9de3f200da16b3673a96c555f5cb08624a18fd9f83752f931484fa783f00",
+        "displayed": "a3baf915b46d459bcae1ec065b453af10f5fe73eca5a05126af37645a6b6c9b8",
+        "formulas": [
+          "rms-peak"
+        ],
+        "figures": [],
+        "solutionText": "fd0122daec13ceeaf0e9fcc8527540dd506d0c99d770e30b87e9485fc0344535",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q1-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 1,
+        "solutionPage": 2,
+        "prompt": "b483d465c72ae75311ffa7ec51c565a011f1949eed7385d33602b66871e3a3ce",
+        "displayed": "5b5f88cd1b87199ac4ade93f645b39033d85794c460e0c25716a750203fcf044",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "93824fa49681387200ff4281df1a3db089dff9a82d4890280afab11e021d7dce",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "d21b06a0076543fbaae2a88842aa2ebfa07e416310ff968dca72d2d8e727f807",
+    "note": null,
+    "caption": null
+  },
+  "content/en/practice1_f26/questions/q10.md": {
+    "id": "p1-f26-q10",
+    "number": 10,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 13,
+      "region": [
+        0.113,
+        0.116,
+        0.769,
+        0.279
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-07",
+        "page": 9,
+        "label": "Maximum-efficiency loading"
+      },
+      {
+        "doc": "lecture-07",
+        "page": 17,
+        "label": "All-day efficiency"
+      }
+    ],
+    "statement": "6519bba497f4db39474211280c7a23d4ed3ce72fb246c7504e051d6d08357d00",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q10-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 13,
+        "prompt": "6e793ef3385d588a04051c604ff0fc9e1ba365aa09828afe0bf13b4db9f26a0a",
+        "displayed": "e8641ab43ce10a2c98d4f65d2437ac6568052bf2e6c9db686cd0375e787b7cc8",
+        "formulas": [
+          "transformer-efficiency"
+        ],
+        "figures": [],
+        "solutionText": "55b536e334c2cae150d2a6bb0d2be9cf82a29875e2ca7a149c8059651558549b",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q10-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 13,
+        "prompt": "31496b56213fb46124e54cd59bc5e178bd64214fc67c2cd5c6089f926a216268",
+        "displayed": "edfb5d6a7cc8750de7b3de905f12ee22304fc6facd52b332a1f7c86ab832fd24",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "d604c0df4259abccafce5bf5b3eb1bad8213847cf4ee718760d55819cf7eb52b",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q10-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 13,
+        "prompt": "b4eda242dc6ea773299b7b124d2f3118d661f39e51a8e6774f7de5740bf2d17d",
+        "displayed": "5b2901fb716cd4d674280d32bcc49eab2114588793595a6a1539fa7480e43723",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "e2c6ca82b8b78cdd750c87044daabbe1021df6e5393eb5b60243338eb66c236b",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "acf1e1453ec205ae7052ff9f5b714fe6e2066a2f33a8c230ffa154de19be9786",
+    "note": null,
+    "caption": null
+  },
+  "content/en/practice1_f26/questions/q2.md": {
+    "id": "p1-f26-q2",
+    "number": 2,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 3,
+      "region": [
+        0.116,
+        0.094,
+        0.77,
+        0.122
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "Complex power"
+      }
+    ],
+    "statement": "c76bbb38e22ab925ed2bf189052cb646e3e74419217bf0fdc984d7153ea86155",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q2-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 3,
+        "solutionPage": 3,
+        "prompt": "0ee2ebefa9b5c2eaaf65fde3b322e42207f4ed271d9b3bcfd9fdc0b2cb005d15",
+        "displayed": "0b2106ff0926747f200e4cfcdda5d690ebfdab0ec3a3816233ddaa31f99c3983",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "5cac6fca944095894b06e1f3f3240be25e1660e025a2af53b5af0dbb7d521cfe",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "a18b9d8cb1700e35618d41f8d22bd40513202ff9e75fdeee1fce72aff8389956",
+    "note": "59cef8ceb51bfec2eeeee6faf9ecc21cb52aa90ba4d3a8ad572eb1eb2737c223",
+    "caption": "da7aa74df2ce0325b8887edc8db247be32a0113ee721fed6d285f78f5d9a1549"
+  },
+  "content/en/practice1_f26/questions/q3.md": {
+    "id": "p1-f26-q3",
+    "number": 3,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 4,
+      "region": [
+        0.116,
+        0.094,
+        0.77,
+        0.215
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "Complex power"
+      }
+    ],
+    "statement": "3d106ca2169bf3024b9fe3b8ddffd40218010ac20ce52acf2a59951e7be92436",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q3-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "0ee2ebefa9b5c2eaaf65fde3b322e42207f4ed271d9b3bcfd9fdc0b2cb005d15",
+        "displayed": "87417fbc34a5ede89db02ce2a5adc4784789451a38d2b304e196ab0a6a1a2579",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "f044d85b5fafc6d2ee1e3d0b0272d2e5aaa1a1ebfafdb3479c22775c762439a1",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "cffbe90b6fb9f27f526468edbfd5025acc0f3cdeeb9c63de69efb18932f0243a",
+    "note": "d49a62512a5dff648981143e4d9f9a8f07283fc11f8f2939a9a3c49b89b864da",
+    "caption": "22f1668c03d9ad71d359dca8ff2ae4616768b347ae0120c48cf671b7c8546239"
+  },
+  "content/en/practice1_f26/questions/q4.md": {
+    "id": "p1-f26-q4",
+    "number": 4,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 5,
+      "region": [
+        0.116,
+        0.094,
+        0.77,
+        0.09
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "Complex power"
+      }
+    ],
+    "statement": "aa4831ecb1a3d653f620fa95002b25b3f71046499465db7512ed70392f032753",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q4-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "c7e6aa5c98dadb70b50e815c207aace79786031cf4fdba43523071dbf4ce028d",
+        "displayed": "88a3c338b60a8073257271b71101a2de39a5ebfa5dc3341d19bd630407a670e3",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "a04f3e95bced95b77afa82c0507b7e9ebe0955417c8b3baa76a5224cd6a17240",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "eb72731e6873fc93ebd52c14f550bb80c0c8c49d388d2fac5e782da70e0ce523",
+    "note": "501fb4912f5f413ed7b2ce79942bc54f6315f27ac31e90811aea9dfbd1f38bf1",
+    "caption": null
+  },
+  "content/en/practice1_f26/questions/q5.md": {
+    "id": "p1-f26-q5",
+    "number": 5,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 6,
+      "region": [
+        0.113,
+        0.116,
+        0.759,
+        0.043
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 7,
+        "label": "Single-phase instantaneous power"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 14,
+        "label": "Cancellation of balanced three-phase power ripple"
+      }
+    ],
+    "statement": "b0eff1ead6627c330c567c5d4d2818d46172926642f61986e58a2921e3f7fe72",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q5-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 6,
+        "solutionPage": 6,
+        "prompt": "b0eff1ead6627c330c567c5d4d2818d46172926642f61986e58a2921e3f7fe72",
+        "displayed": "0a696e2b85b76b2415a7dbe1c72ce957af9050a9aab3d1a96a529e9e9a096e8b",
+        "formulas": [
+          "product-to-sum",
+          "three-phase-power"
+        ],
+        "figures": [],
+        "solutionText": "d0051c2ec927a059ad54b2445461569696f85ab4089641e547c53ee734c14821",
+        "note": "aaaf3bdd0c905934f32aa14f09f5d20d3feaba475d66d1402d670f5edaf523aa",
+        "caption": null
+      }
+    ],
+    "guide": "2afecc4eada2bb44adadb42986a1138271ee67604a8c5ef01707c3ca96975f3c",
+    "note": null,
+    "caption": null
+  },
+  "content/en/practice1_f26/questions/q6.md": {
+    "id": "p1-f26-q6",
+    "number": 6,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 8,
+      "region": [
+        0.113,
+        0.116,
+        0.759,
+        0.104
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-03",
+        "page": 9,
+        "label": "Delta and star impedance relations"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 14,
+        "label": "Balanced three-phase power"
+      }
+    ],
+    "statement": "8d3a1c6e2b65ac8f69068e70960e39e9615f7c3a3951af3155ef5b664791e6cd",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q6-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 8,
+        "solutionPage": 8,
+        "prompt": "f9157f1e0ca719fb5590899cfb78eb25aa91643dbf534d01d93719fdcafbdebc",
+        "displayed": "67ffe04744d91538277cfca1be3c6ab6ed1f1efdaf583e05b6ebe99806836b1a",
+        "formulas": [
+          "delta"
+        ],
+        "figures": [],
+        "solutionText": "e3b1aad121ab8c8f958da589e4676fefb77a66e887fd04ca53e56581089cb343",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q6-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 8,
+        "solutionPage": 8,
+        "prompt": "87efb08fbdc2793aa655cc95b4d80ea1d93fc87918ab567eaa283b58156d61d4",
+        "displayed": "3d6c007294e5c43138012df597001c2523cd37df331be9d097e298c7acb34e5b",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "b28484a113fa12c46af80d6ede4f7f2ccc8fd951b380cfc3b198c0c69761bcb6",
+        "note": "b5ccbbb7483ad6eba8a4c0ac9aae42c3adfb79c9e248b54a62df25dedbd3fa05",
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q6-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 8,
+        "solutionPage": 8,
+        "prompt": "05549397f4ae1a38d341a844d6a2fc6fe3a7c9ed66dd0b394c0f7357fcf99a13",
+        "displayed": "be6832f850e81756d64cc8f910f67fdd134fbb5803920aeb669bcb05f89eea94",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "bed94eec10e746931bd3dbec2f406e57147c55bee5c879f98e285a34e8bd66ba",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "7722f8895556d9d7164676327357cea3c9260f94d1faf2db5b45e19aec3d5361",
+    "note": "fbe8c7fa3004ef82e2a866743c5953116db66aa001692e566bc2d1fe75fc907d",
+    "caption": null
+  },
+  "content/en/practice1_f26/questions/q7.md": {
+    "id": "p1-f26-q7",
+    "number": 7,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 9,
+      "region": [
+        0.113,
+        0.116,
+        0.759,
+        0.175
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-03",
+        "page": 6,
+        "label": "Star line and phase voltages"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 14,
+        "label": "Balanced three-phase power"
+      }
+    ],
+    "statement": "a84182a082abc80b3cd880791e55c25edb5180eedaee4051bf312b3cee054d1b",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q7-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "5fff39e0508d55c3060651bacfbf7b6765dfd32d2ae30329cabb5c16828e13cf",
+        "displayed": "3973804c05c4bda1679ef955165acf92070f11c3b0a83e1311142a633430415f",
+        "formulas": [
+          "star"
+        ],
+        "figures": [],
+        "solutionText": "9558c9f6df325e62b393c5dfaf045dc4c5b3b9d1f5d37b82675d98f4cead0c3c",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q7-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "33901f0359e1fe562d444b0742354dbcd0bcf4baae9d59f76b53ee77b6273d42",
+        "displayed": "100004c35b46868653a6088b1e2e3c3893ebda48ca20978d2b09d5826187da54",
+        "formulas": [
+          "three-phase-power"
+        ],
+        "figures": [],
+        "solutionText": "b43334cbf32de1cc8172a9fa9b126238767bbf4a1492bd9bbb6c33e26139ee1a",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q7-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "5de1b5adf064f2a9d89e829cf3ee3a115b3db592c7f6dbc36fe3deb31f2c22c6",
+        "displayed": "e4e9fc449fa2654aebb73b3808118b598cb1c98f13f188c645e8e2388ad303d2",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "9255f6179fdce34db7b4506174d9cb10c842bb15536d2656f05173bba73081c1",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q7-d",
+        "label": "d",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "506e98eae4ae577dc827ab2550b0500f37778374ac0bd983e8ebcfd561db5b8a",
+        "displayed": "f7de632c9adbf10a2d3344a32319f3d935ae8af6ef9369a2e729a240e2e1e2eb",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "f176e682abe0e8787e4aac82878c9ac59fe2dfaac482f391ea26d12f1473dcaf",
+        "note": "be5ab4ceb790841d8ceccc31f7a365062f6878da7cd0e6254fc4b5772e50f801",
+        "caption": null
+      }
+    ],
+    "guide": "0d4e97b16d2e08066c48775844f908510c086814ad43c31955b0cc5adcd179b4",
+    "note": null,
+    "caption": null
+  },
+  "content/en/practice1_f26/questions/q8.md": {
+    "id": "p1-f26-q8",
+    "number": 8,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 10,
+      "region": [
+        0.113,
+        0.116,
+        0.769,
+        0.085
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-07",
+        "page": 8,
+        "label": "Transformer efficiency and load-dependent losses"
+      }
+    ],
+    "statement": "45a8e79abd6ad9559a3d0661d0c315d456d8aa35fd2fc9efba530737e94ca748",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q8-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 10,
+        "solutionPage": 10,
+        "prompt": "38346ff15950c12a563dbb0a97487b59e5b0364764a0b4825d4647528b2445db",
+        "displayed": "257ea1209109f490e3bd1d3c3b0c76083713d9e1dcfe5b9358a613b12e8815f8",
+        "formulas": [
+          "transformer-efficiency"
+        ],
+        "figures": [],
+        "solutionText": "071aad12a54934763b4ceed36166c1a12a9e0a66f1fd986a472098065778ba2c",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q8-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 10,
+        "solutionPage": 10,
+        "prompt": "8b17b17c8ce80d9b959df6d30e863fb74afb1835932d65cf40df0b1de9ea8a7a",
+        "displayed": "c67fe3003e7ecb3c05977f73b256fd59bc273aa693da3abddcfba655dd606003",
+        "formulas": [
+          "transformer-efficiency"
+        ],
+        "figures": [],
+        "solutionText": "35d94084229310195fc61bb7026e7be7bbcd2901d9a62bcfd4229cb55b2793a8",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "864977802544e2725fe51ad5ba9d1b34e97e0221acd3e48c63dc832a83e61020",
+    "note": null,
+    "caption": null
+  },
+  "content/en/practice1_f26/questions/q9.md": {
+    "id": "p1-f26-q9",
+    "number": 9,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 11,
+      "region": [
+        0.113,
+        0.116,
+        0.769,
+        0.117
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-06",
+        "page": 6,
+        "label": "Approximate transformer equivalent circuit"
+      },
+      {
+        "doc": "lecture-06",
+        "page": 8,
+        "label": "Open-circuit and short-circuit test parameters"
+      }
+    ],
+    "statement": "e33f1622749c23735cdc8bc8c2a9e5e8d62177c4795aa9183d65600e3f2b3f51",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q9-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 11,
+        "prompt": "77ac3390a690c14b2cc7a475eb9153a9126d5e3817d90c8b1a82f9152d5dfaaf",
+        "displayed": "127a5710c4f4c05dae474ba09b1f5ae3e2e4b662439e419d53e26a76e19d34fa",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "5f6e88d3e7f1d20cdb6d0f3113d753961ab2c14922fa89d0dc885ca45006dc3c",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q9-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 11,
+        "figure": "p1-f26-q9-b-solution",
+        "prompt": "493acb66bc08fd0dd16bcc21c81ec20673fe1916b6cc27fa071f78a937347091",
+        "displayed": "4434d3edb6fc45b074885644f8c677ac80e843ef34bfcac839709ee1eed2c1e3",
+        "formulas": [
+          "turns-ratio"
+        ],
+        "figures": [
+          "p1-f26-q9-b-solution"
+        ],
+        "solutionText": "8e0a76f7aed365b3dea213c3f2b36eacbc0c8e444f7afe38cc1cfcf820011929",
+        "note": "46c356a9a130d25129466f0b221409d5595da342caaeb03740175e185947f549",
+        "caption": "faab7b037dcd027362a66a3114cf3926198a5b0439271ddae0a180af94d39122"
+      }
+    ],
+    "guide": "45ad09ae28216d69f8cbccdd4ae9c56cca2afa71cb91acd7bef6e48916046f30",
+    "note": null,
+    "caption": null
+  },
+  "content/en/practice2_f26/questions/q1.md": {
+    "id": "p2-f26-q1",
+    "number": 1,
+    "points": 0,
+    "givens": [
+      "T_L=25\\,\\mathrm{N\\,m},\\quad T=10\\,\\mathrm{N\\,m}\\quad(I_a=10\\,\\mathrm A)",
+      "R_a=0.2\\,\\Omega,\\quad V=200\\,\\mathrm V"
+    ],
+    "originalFigure": {
+      "doc": "p2-f26-sol",
+      "page": 1,
+      "region": [
+        0.116,
+        0.19,
+        0.769,
+        0.066
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-09",
+        "page": 8,
+        "label": "DC generated voltage and machine constant"
+      },
+      {
+        "doc": "lecture-09",
+        "page": 9,
+        "label": "Developed DC motor torque"
+      }
+    ],
+    "statement": "bf0303d166443b19672c7da4cef16a4818f947403802a02823846fb176de2180",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p2-f26-q1-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 1,
+        "solutionPage": 1,
+        "figure": "p2-f26-q1-armature",
+        "prompt": "e40312f789d69a82ba91f50536ea3cd3796d0ab40828ef8d0199be2ef8731156",
+        "displayed": "a9235de98b067a9bcb7019229ba5725e5d70489c00f2deac0be152e7bc9d0972",
+        "formulas": [
+          "dc-torque",
+          "dc-emf"
+        ],
+        "figures": [
+          "p2-f26-q1-armature"
+        ],
+        "solutionText": "d638890527c2ed5d92193ae65a3b6f79c34e6bd84b0477dce913d222475ce3f2",
+        "note": null,
+        "caption": "692d6287389472ebbee2d920a6fe545ed70209d593fb7c4b8008466bc56e9d0d"
+      }
+    ],
+    "guide": "f53061f4fc4eba06d5dbd35ac46787e99740deabb1888c0fe6f1eaa9167af29f",
+    "note": "68800f10d9da22386aff890a1e138d48a5723f2959d7737d9d99760ebd4d25dc",
+    "caption": null
+  },
+  "content/en/practice2_f26/questions/q2.md": {
+    "id": "p2-f26-q2",
+    "number": 2,
+    "points": 0,
+    "givens": [
+      "S_N=60\\,\\mathrm{MVA},\\quad V_L=69.3\\,\\mathrm{kV},\\quad X_s=15\\,\\Omega"
+    ],
+    "originalFigure": {
+      "doc": "p2-f26-sol",
+      "page": 2,
+      "region": [
+        0.148,
+        0.123,
+        0.734,
+        0.314
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 18,
+        "label": "Generator equivalent circuit"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 24,
+        "label": "Real and reactive power versus load angle"
+      }
+    ],
+    "statement": "26ef24e8bb3117680b16dc43a3dc595ed26a8b22fd63df114953093163d8bcf4",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p2-f26-q2-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 2,
+        "solutionPage": 2,
+        "prompt": "32310642fe74290e225e492eb709cb689244a7423a2dcdcf87d927be54ac3a38",
+        "displayed": "039d7cb7c28044fba96a6d3e9114530e0918199b4661fed4b6ec44043eb00971",
+        "formulas": [
+          "generator-current"
+        ],
+        "figures": [],
+        "solutionText": "aa44c304cac6c06925e513049dab75b35769690d6465e7bf5a408249ae8a50ba",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q2-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 2,
+        "solutionPage": 2,
+        "prompt": "16b4bce24ea0757a02ba9b7a97524dabe97531695bc6f2f6831f835f16766b11",
+        "displayed": "aadc2e5b935913efe77a43ec135a71f1bb9c2454002652bc3b82284cc4b1dea3",
+        "formulas": [
+          "power-angle"
+        ],
+        "figures": [],
+        "solutionText": "7b34bab400f641e4621152bf0908ec5ba889558be378557a7076a856adc08c60",
+        "note": "7033622047a6fabd23e0acbe105c62bb7e29d12a32a5043209fd9937d65142f9",
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q2-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 2,
+        "solutionPage": 3,
+        "prompt": "592451889c25bbd738b7b0835bf3403528dae2ee92934a98fc1a8caf91320d44",
+        "displayed": "a3e7a72bf863c88b28cf16ec81896bf278925e200930944cb61e5c4c22a0cd5a",
+        "formulas": [
+          "power-angle",
+          "generator-current"
+        ],
+        "figures": [],
+        "solutionText": "4f3f05f2afd09f921a7765d4452bbfa4678d3043f6ef290c0a7288ae36889a64",
+        "note": "952cf3d559653b8cc7b5f1a49c2b2f97f8b7569a6d2bf8857c972b3af30a95f3",
+        "caption": null
+      }
+    ],
+    "guide": "463ccfdd06cc64876105532019647c494919d0457591719df01ffd222db24a7b",
+    "note": "21776af3e291bfe8e56e4e8cef1d1e46c3d423d1a945bcfef46cfef6c2089e07",
+    "caption": null
+  },
+  "content/en/practice2_f26/questions/q3.md": {
+    "id": "p2-f26-q3",
+    "number": 3,
+    "points": 0,
+    "givens": [
+      "V_s=120\\,\\mathrm V,\\quad f=60\\,\\mathrm{Hz},\\quad R_a=1\\,\\Omega,\\quad L_a=25\\,\\mathrm{mH}",
+      "k_n=0.055\\,\\mathrm{V/rpm},\\quad n=200\\,\\mathrm{rpm},\\quad\\alpha=60^\\circ"
+    ],
+    "originalFigure": {
+      "doc": "p2-f26-sol",
+      "page": 4,
+      "region": [
+        0.115,
+        0.126,
+        0.771,
+        0.188
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-11-12",
+        "page": 24,
+        "label": "Continuous-current full-converter average voltage"
+      },
+      {
+        "doc": "lecture-09",
+        "page": 8,
+        "label": "Machine emf and speed"
+      }
+    ],
+    "statement": "22dd024dad5c609baabce93df415ebc008518e7607e4ff3a79d2164277e2ac92",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p2-f26-q3-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "653f5e1fee579d61e3744a8cdcfbd9c939fcf28e531c3ea3e179f42c0e08a4b6",
+        "displayed": "538a2930093f2f22ba98ab576b62776af1dfd488b7d2803f785ead9bedb3a2af",
+        "formulas": [
+          "rectifier-full"
+        ],
+        "figures": [],
+        "solutionText": "cd3497f899985ce5025d4afde064e54e31cf2687326265f2dbc49dc15acba0d5",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q3-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "17d41599c1dadcbfb61950268b513a5e17b8ac203451739ae2b1c9915f3f2323",
+        "displayed": "b957e99439784b6d485abfd41dd87f51f7287689074cdfb6dbcd864ddce2f57f",
+        "formulas": [
+          "mechanical-power"
+        ],
+        "figures": [],
+        "solutionText": "10588e59c66d1f217ff13b203c7d2b924712a744f0295b5c0d94acfa89360225",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q3-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "eea9c310b9cf9d04c065b021bd3dea627c547338792431ee8d2cbe0c9721cae9",
+        "displayed": "7a6357de6a16f7fa72beada6d12372e9e496a05110b1be2c7c6f4a482558766f",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "43869d1145878dc491a5ecb5d9b533ef3d520d28f99a7d3fcab0f75d412d31df",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q3-d",
+        "label": "d",
+        "points": 0,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "31920510f50615fc90da50098ef4d1146c995e0e4ff3acf04e09db94a1c5b192",
+        "displayed": "3dd8757f27fc7bb693e0831ab8f07c9a2e3f04623f31274fa9653681fa5d346f",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "2931a62270f89e1570a32a4ab433645127d33f3ea7b5b68bd5a3b17d390690dd",
+        "note": "134e6a517d62e5a7dea328665ea0c3d9bbea12659771bb76908bede990eb6100",
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q3-e",
+        "label": "e",
+        "points": 0,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "344ad9a2ecc05633c59a2b7402b562eff43d4de22ca4926a5ebb330b1d2db66c",
+        "displayed": "a1db51aed046123d76dfe6737e97b80449c503762912640b9937c10ed4b3f735",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "e7cc6c532ae500566f5d194bf87eb0d56e6ca77d16989f4404667d10838a38ea",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "500f3f020e2c0754b75ee2bb614f7a719f0858facf4ce8823a04fc78fa1e5354",
+    "note": "dc5b7b6ce52861f60c6f805ae97b48048ee4c0c1b8c9bf977262a616a3e19fe9",
+    "caption": null
+  },
+  "content/en/practice2_f26/questions/q4.md": {
+    "id": "p2-f26-q4",
+    "number": 4,
+    "points": 0,
+    "givens": [
+      "\\alpha_a=30^\\circ,\\quad V_b=208\\,\\mathrm V,\\quad R=10\\,\\Omega,\\quad L\\to\\infty,\\quad\\alpha_b=90^\\circ"
+    ],
+    "originalFigure": {
+      "doc": "p2-f26-sol",
+      "page": 5,
+      "region": [
+        0.115,
+        0.127,
+        0.771,
+        0.3
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-11-12",
+        "page": 11,
+        "label": "Thyristor conduction and blocking"
+      },
+      {
+        "doc": "lecture-11-12",
+        "page": 24,
+        "label": "Full-converter comparison; semi-converter result derived here"
+      }
+    ],
+    "statement": "572923fb6e1bcddd30e8435b752e86eadc83d906e27c5e218a448970d4446c0a",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p2-f26-q4-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "figure": "p2-f26-q4-waveforms",
+        "prompt": "2376b675f93c7ca2bd9ad7280329153e7d41414690f3e78695c5e06d33cee107",
+        "displayed": "bb636df863eac4d52caf67ecb89feac44de38b4a0dc1c0271c5fcaf9c2130221",
+        "formulas": [],
+        "figures": [
+          "p2-f26-q4-waveforms"
+        ],
+        "solutionText": "76a50cbca85d8d8331545ef5fb49f0313a173d33279b8048c3942936373dad10",
+        "note": "b0e75995a011f18698d8d09288c3f7e92ec336ea974c3cb29151a0c13db9b4e5",
+        "caption": "2376b675f93c7ca2bd9ad7280329153e7d41414690f3e78695c5e06d33cee107"
+      },
+      {
+        "id": "p2-f26-q4-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 6,
+        "prompt": "04c9d4533c2cdb78fc4ee57f51d089bf6c07c5f32b6ec990382287013bbb9de9",
+        "displayed": "4e570e02a5b8d54ec47b63b05ae71bb3c2d5b0766a1ef41769587b4672a8e17a",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "396f672c3b895b837146b50dca8a9c23a9cdbc7121440ff19f26e33ac9da3506",
+        "note": "03aeca990b7f08cbc58380dd94163b04fb6bbac3913bc21ff01f72fff8d63eee",
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q4-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 6,
+        "prompt": "f3ca037d6075d59216c2d0ec197e2938cfcf2bcaf8d038810a5aa41133250220",
+        "displayed": "da68233585c9012a2fcefd62d3de4cd3797db50393fb046a3341cdadc8f8fc9a",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "8f8c6236631f676f1f094b44252f155653617c28bd491223b37a5e3ae1437f16",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q4-d",
+        "label": "d",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 6,
+        "prompt": "ba4df1e29e28409c900f75be6590115383690c44dc14ccabd2d29595b9977f71",
+        "displayed": "94a6a038dc5764aba1387c702be207b2dbe3260d89dd951654adc9aac66d8b81",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "ab724650e4ff4726d2cb91a2996149aa5ca5262c68936144ce3c59b80f9284a8",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "7230da585d0423531b135252acaa49aa78cf2187dd5e2d64f19e61a805dd96b1",
+    "note": "1322679aa58162a1263b94c3865429b0b045161570229819cb701cbffd02e554",
+    "caption": "025180d9c0ca7c5c75c56f9af64765fa8bee3f527d7ca7732dacfe02caa6caef"
+  },
+  "content/en/practice2_f26/questions/q5.md": {
+    "id": "p2-f26-q5",
+    "number": 5,
+    "points": 0,
+    "givens": [
+      "V_N=110\\,\\mathrm V,\\quad P_N=5\\,\\mathrm{hp},\\quad V_s=120\\,\\mathrm V,\\quad f=60\\,\\mathrm{Hz}",
+      "k_n=0.055\\,\\mathrm{V/rpm},\\quad n=1000\\,\\mathrm{rpm}"
+    ],
+    "originalFigure": {
+      "doc": "p2-f26-sol",
+      "page": 7,
+      "region": [
+        0.115,
+        0.128,
+        0.771,
+        0.228
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-11-12",
+        "page": 23,
+        "label": "Four-thyristor full bridge"
+      },
+      {
+        "doc": "lecture-11-12",
+        "page": 24,
+        "label": "Full-converter average voltage"
+      }
+    ],
+    "statement": "dbbd7a772ea1cf6fee3463a025cd3a6ab05474f2d503363ec60de8a2d4c624d6",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p2-f26-q5-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "figure": "p2-f26-q5-circuit",
+        "prompt": "78bd5415b1e6f987b02f7e339b6beb507033d0135a8a1a673feff54302dffa91",
+        "displayed": "4caeabe4f21e899d3f4013986ea2ac491daf5a7580c4cc70c8921539cd846548",
+        "formulas": [],
+        "figures": [
+          "p2-f26-q5-circuit"
+        ],
+        "solutionText": "0fedece4649e3acad6a193cbb3b870ee66bce5725d8932aa306ea67bef041beb",
+        "note": null,
+        "caption": "78bd5415b1e6f987b02f7e339b6beb507033d0135a8a1a673feff54302dffa91"
+      },
+      {
+        "id": "p2-f26-q5-bi",
+        "label": "b(i)",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "prompt": "09130eafd4caef307e4b633f99a501e1f4cd08da81e009b6ab8b688a18d57a62",
+        "displayed": "d2a4d8b8fdd82911acf119563d6b9b1b503069647e401112455cb68e4c371f49",
+        "formulas": [
+          "rectifier-full"
+        ],
+        "figures": [],
+        "solutionText": "3a9fcda444459b9c6ccafba2b737f88b4fe1b5466702b74508be195de91e71b4",
+        "note": "d5cd3b2bd8773cd1e5a51ea91f55e49970cc24067fab9e831dc7d230bb371d51",
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q5-bii",
+        "label": "b(ii)",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "prompt": "5b707bb85ab0f98deef06c2757bf3949ed3f1516a2fe7182a3af1f7787834500",
+        "displayed": "f7da0fb3b672713764f102435befd6e11d4731131185ff3825da397ba2aab50d",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "284d4bac880c4b84b5ec6ee82f279dd0a058e1da7c88a4d6440080add0bfd89d",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q5-biii",
+        "label": "b(iii)",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "prompt": "e38b7cd3f4c7ec7abea22d962cf27be0d6d1e31951fc6906e825a632c392a20b",
+        "displayed": "66e28a0bfe1009a39aefacb824a0ccbecd36a978f1c1b0a7fb17c517ed692309",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "94ac2a18ecd7a724a37be300624d0036d850ae44e9fc585798173524e3e96fae",
+        "note": "aef4f04657317bf93b092fe95fd7296eb8fffdc12a5748160e4bb4ad03300ec1",
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q5-biv",
+        "label": "b(iv)",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 8,
+        "figure": "p2-f26-q5-waveforms",
+        "prompt": "0dc759915d3dcd5e8af0901c3d57a97ae04de04d9f165b02fa4fcfbc7d954b52",
+        "displayed": "1addb26a40520b5451bb0bdd5fcac4880ea55eb3cf3a486902bb6969b7d6f1f8",
+        "formulas": [],
+        "figures": [
+          "p2-f26-q5-waveforms"
+        ],
+        "solutionText": "8d90266cd3b5a879a58551f2d2e1c8ece0a5b4d646552f8d2e6f224056f8f041",
+        "note": null,
+        "caption": "0dc759915d3dcd5e8af0901c3d57a97ae04de04d9f165b02fa4fcfbc7d954b52"
+      }
+    ],
+    "guide": "98ae09f25c061719b23e169b5f956b6692e5458f1d984f5638ac69b2d4827850",
+    "note": "e95cbf8041145213d758f79b82d6f76d0f71387d3baeb55880c8379c11cb9fb6",
+    "caption": null
+  },
+  "content/en/practice2_f26/questions/q6.md": {
+    "id": "p2-f26-q6",
+    "number": 6,
+    "points": 0,
+    "givens": [
+      "R_a=0.25\\,\\Omega,\\quad k_n=0.1\\,\\mathrm{V/rpm},\\quad V_s=120\\,\\mathrm V,\\quad f=60\\,\\mathrm{Hz}",
+      "\\alpha=60^\\circ,\\quad I_0=20\\,\\mathrm A,\\quad r=20\\%"
+    ],
+    "originalFigure": {
+      "doc": "p2-f26-sol",
+      "page": 9,
+      "region": [
+        0.103,
+        0.12,
+        0.783,
+        0.384
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-11-12",
+        "page": 23,
+        "label": "Full bridge and current paths"
+      },
+      {
+        "doc": "lecture-11-12",
+        "page": 24,
+        "label": "Average converter voltage"
+      }
+    ],
+    "statement": "3f809b77626f118d8a9a965a106fcef30bbd6294b50b49afc673bc8789ac2dfe",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p2-f26-q6-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "figure": "p2-f26-q6-waveforms",
+        "prompt": "51179a143ae64ebfd8446729ab120fd068dfbc75ad8be3d5beac2a6cbf7298be",
+        "displayed": "0ee9f3ae01edc879bc5cc3bd5c48af7c7be31dc16dde8f9b4adfacf52e27ee21",
+        "formulas": [],
+        "figures": [
+          "p2-f26-q6-waveforms"
+        ],
+        "solutionText": "306c405fcc21c2e067a0346a2fc4de88cf106c10e8ab295320811be5fc8238e6",
+        "note": "45805adecf0f0cc6cb464bbb9732ad7c935cfde12a68f755f57f0a94afcc718b",
+        "caption": "51179a143ae64ebfd8446729ab120fd068dfbc75ad8be3d5beac2a6cbf7298be"
+      },
+      {
+        "id": "p2-f26-q6-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 10,
+        "prompt": "157e3386ddd061f7023999b1a2950cf3d9231fe7a47a3cc01fc8d6bf14e72964",
+        "displayed": "2e19c0f3a6228939b41def5dff3764ac992c6d202f95cfbe6732e2ea23caf034",
+        "formulas": [
+          "rectifier-full"
+        ],
+        "figures": [],
+        "solutionText": "d43c55d33c30e4a3ac8f146dec0aa3de99b47d634d0905c24874a1520d4ffc01",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q6-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 10,
+        "prompt": "f75584969f31f96af58386c077c748ba50f3ba5547b23d4896fa3557fa798e54",
+        "displayed": "4d011172180c6f166765acdb9bc915ce763311cdba75fbd14a210f565e58f409",
+        "formulas": [
+          "mechanical-power"
+        ],
+        "figures": [],
+        "solutionText": "bc58322315e0d9ce2ecf05e14d4ba4fa95a409377355e5ae7ecc4617873beeb6",
+        "note": "c128fadf50887794d667ebd658380c7bdc333750ca1dc60d3228b435dc9ed165",
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q6-d",
+        "label": "d",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 10,
+        "prompt": "344ad9a2ecc05633c59a2b7402b562eff43d4de22ca4926a5ebb330b1d2db66c",
+        "displayed": "54a653108db08e4268e0cea8b4dc777a26b949cb64302c9c41d2b29caaa84d08",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "ab3fae830115dcfd4a35b31dc585330be845a26ebc839f551ade309793e990ba",
+        "note": "67922f80fa2392ac3642bc08053079768eb9730d85ef07de303d24cf718edd2c",
+        "caption": null
+      }
+    ],
+    "guide": "e0356258a2c12837ece6f09e5488d48a6c162d982cd3d6a1024d7c51a9b9cad9",
+    "note": "abb38ea3fc988bd322d74b2565655468b2f50adf3233a5c8baf68e07935d941f",
+    "caption": "b842c7d71b0129395f18ceb02caa44f530f562b3da83bf9fffc960ad03853caf"
+  },
+  "content/zh-cn/exam1_f26/questions/q1.md": {
+    "id": "e1-f26-q1",
+    "number": 1,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e1-f26-sol",
+      "page": 3,
+      "region": [
+        0.113,
+        0.122,
+        0.764,
+        0.054
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-04",
+        "page": 25,
+        "label": "法拉第定律与交变铁芯磁通"
+      }
+    ],
+    "statement": "ffbfb9d615aee7909609cbbb282acb0fcbf51f2ef0d9c87f644d03f5dbc24227",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-f26-q1-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 3,
+        "solutionPage": 3,
+        "prompt": "ffbfb9d615aee7909609cbbb282acb0fcbf51f2ef0d9c87f644d03f5dbc24227",
+        "displayed": "03761afc5471275e589780520cd17d82d81a424a0f4cd3cab6eb52b6f57b2880",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "661590223e4ab9e2679173b0bc381a0b251a711a1fe69d72aa2e78086d781b6a",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "f8a75ba84f4334f95a03b1b23d5fef7b77f28d85df4e09e363640a63791999ce",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/exam1_f26/questions/q2.md": {
+    "id": "e1-f26-q2",
+    "number": 2,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e1-f26-sol",
+      "page": 5,
+      "region": [
+        0.113,
+        0.118,
+        0.764,
+        0.054
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 7,
+        "label": "正弦电压与电流的乘积"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 9,
+        "label": "瞬时功率的倍频分量"
+      }
+    ],
+    "statement": "ab0cde8325f7fa4b5242888f5f6cc4c1380992a28d11752974e99fe2d04abb46",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-f26-q2-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "ab0cde8325f7fa4b5242888f5f6cc4c1380992a28d11752974e99fe2d04abb46",
+        "displayed": "cd3559df6aa00b9aa89cb22196b96ee9dbe391b12f9dbbee1e01115f4c1c285d",
+        "formulas": [
+          "product-to-sum"
+        ],
+        "figures": [],
+        "solutionText": "4a721a9cb8e279728f252ccb1e2b2104bb12fc9dd33c1d96451ad691c4dcf6e0",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "355193e3d376ee2c6e1c2957013f6290864f67d85f7f81465e459490127985fe",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/exam1_f26/questions/q3.md": {
+    "id": "e1-f26-q3",
+    "number": 3,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e1-f26-sol",
+      "page": 7,
+      "region": [
+        0.113,
+        0.118,
+        0.764,
+        0.054
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-01",
+        "page": 19,
+        "label": "输电系统中的钢芯铝绞线照片"
+      }
+    ],
+    "statement": "eccd489e3611f3436bb6582d547363d696039083977a7f677f59a1cf43d3cc96",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-f26-q3-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "prompt": "eccd489e3611f3436bb6582d547363d696039083977a7f677f59a1cf43d3cc96",
+        "displayed": "5b599e04709ce4d19f380a2365840a2b4f6eb0fa27d38fa5196db5d74e8d8901",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "87ecbe32e211b9bbc43e924951a079bf287b71b7e247af87005ecdafacc7c7f0",
+        "note": "f7609f134fece1bb9c9c00d6f4ffb0c2b34c48e2ece8e0442c74107e71cfb3b8",
+        "caption": null
+      }
+    ],
+    "guide": "e9c5bccbbcc376f252faa40003923e7695bb6fb618254744d8f86a73d6eef166",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/exam1_f26/questions/q4.md": {
+    "id": "e1-f26-q4",
+    "number": 4,
+    "points": 20,
+    "givens": [
+      "V_L=12.47\\,\\mathrm{kV}",
+      "P_1=60\\,\\mathrm{kW},\\quad Q_1=660\\,\\mathrm{kvar}",
+      "P_2=240\\,\\mathrm{kW},\\quad \\mathrm{PF}_2=0.8\\text{ leading}",
+      "P_3=60\\,\\mathrm{kW}"
+    ],
+    "originalFigure": {
+      "doc": "e1-f26-sol",
+      "page": 9,
+      "region": [
+        0.113,
+        0.155,
+        0.774,
+        0.234
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "复功率与功率三角形"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 18,
+        "label": "功率因数补偿"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 15,
+        "label": "平衡三相总功率"
+      }
+    ],
+    "statement": "ec7109198105ef9a46bcc7b33f19abe67b768b621f976d33c9929dbfa45b5b1f",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-f26-q4-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 10,
+        "prompt": "dd5ea098ef37f2ad09060537fc65fae14f335cd0453ded4a7ae097350332747c",
+        "displayed": "9b6c66c6b0a17d7e3c178e4f96f57361357ca3adae25ea50d3219ad027a194ca",
+        "formulas": [
+          "three-phase-power"
+        ],
+        "figures": [],
+        "solutionText": "e1a65097f67ce7c6a7c01d0202f85d12d8796ef4aa95fbf405c60fd1af4de338",
+        "note": "bf65ff6f20b85f22d9a4aedc153c7bd2bd7b2916d78a4a37589555383b49008a",
+        "caption": null
+      },
+      {
+        "id": "e1-f26-q4-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 10,
+        "prompt": "4839a98b82207fb6cab06687820454fc4f186135b7e4cbcf1658442045550fea",
+        "displayed": "281f4dc8bd07642d5355afe8fc57f30b7e87789521ca6259aa0560c0ef928e59",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "17d15ed50efbc594b09f1bb1c7bf328d9ac202617a03647c49da85a347951ebc",
+        "note": "b14d74cf65944e06ae1153182bceb86ba173f6d6e7783b289491396b7f7e326c",
+        "caption": null
+      }
+    ],
+    "guide": "4b4a8338155ae3e862ef67b5b65cf517610ac1e702fb778937ccb0de4bfc8f7e",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/exam1_f26/questions/q5.md": {
+    "id": "e1-f26-q5",
+    "number": 5,
+    "points": 25,
+    "givens": [
+      "R_\\Delta=18\\,\\Omega,\\quad R_Y=12\\,\\Omega",
+      "V_L=346.41\\,\\mathrm V\\text{ rms}",
+      "Z_{\\mathrm{line}}=j3\\,\\Omega\\text{ per phase}"
+    ],
+    "originalFigure": {
+      "doc": "e1-f26-sol",
+      "page": 12,
+      "region": [
+        0.258,
+        0.098,
+        0.484,
+        0.224
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-03",
+        "page": 9,
+        "label": "平衡三角形到星形的变换"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 17,
+        "label": "并联负载的每相分析"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 18,
+        "label": "负载相电压与线电压"
+      }
+    ],
+    "statement": "eaa3c76a7b1b4585387557f5224577f10a299889997807deabdfb77c733f4848",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-f26-q5-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 13,
+        "prompt": "c84d69dd191284c5bc4181cc124e1f8ed71f52e2dd3b2b5ebf5eb2bec63de539",
+        "displayed": "7a08e08b04a08120c3c1bbd7f6e8ecfde90dbe626249c293c11837acaa2fe3db",
+        "formulas": [
+          "delta-star"
+        ],
+        "figures": [],
+        "solutionText": "af368ad95372ec038f6a999ceb87988b409c9d0d50333a6afad92c29173c4f01",
+        "note": "2ada70f0f44ecf31080fb34b08b1591ca75b6e8759192c43a70cc8956e07e98f",
+        "caption": null
+      },
+      {
+        "id": "e1-f26-q5-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 13,
+        "prompt": "e9cd349251567f7580859efa970ce91bb06bf8ffee2b917df41c36c77420533c",
+        "displayed": "243368e88b8442f50bc13f74c7f99656d1098454d58fc50da472a2aaa1edd862",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "4e30291a95e2b849a02b0a33377ebad44e59a3aef529a7ae26573742c26c1978",
+        "note": "f7fe62a090e164118ecf2f08825d3e257ca0ce66f267281d5014b87a58b00a59",
+        "caption": null
+      }
+    ],
+    "guide": "20f00f305b1701dca3410a20e34ba5464ea4f9033bd1d65cdcd9c94f619d125f",
+    "note": null,
+    "caption": "ff1b54c550e7c702c57af0e16186f49a010186fa17147ec8ab07020c732b5f42"
+  },
+  "content/zh-cn/exam1_f26/questions/q6.md": {
+    "id": "e1-f26-q6",
+    "number": 6,
+    "points": 25,
+    "givens": [
+      "S_b=25\\,\\mathrm{kVA},\\quad V_L/V_H=220/440\\,\\mathrm V,\\quad f=60\\,\\mathrm{Hz}",
+      "V_{\\mathrm{oc}}=220\\,\\mathrm V,\\quad I_{\\mathrm{oc}}=9.5\\,\\mathrm A,\\quad P_{\\mathrm{oc}}=650\\,\\mathrm W",
+      "V_{\\mathrm{sc}}=37.5\\,\\mathrm V,\\quad I_{\\mathrm{sc}}=55\\,\\mathrm A,\\quad P_{\\mathrm{sc}}=950\\,\\mathrm W"
+    ],
+    "originalFigure": {
+      "doc": "e1-f26-sol",
+      "page": 14,
+      "region": [
+        0.113,
+        0.088,
+        0.774,
+        0.174
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-06",
+        "page": 8,
+        "label": "空载及短路试验参数计算"
+      },
+      {
+        "doc": "lecture-06",
+        "page": 10,
+        "label": "变压器电压调整率"
+      },
+      {
+        "doc": "lecture-06",
+        "page": 13,
+        "label": "标幺值归一化"
+      }
+    ],
+    "statement": "d59ca928668529f712952b498d0fa2cbb5013b305ad9043c60a70353e74b61b6",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-f26-q6-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 14,
+        "solutionPage": 14,
+        "figure": "e1-f26-q6-equivalent",
+        "prompt": "513728ba3573182b1e86775b48bcfda93dd444392caaaff95099f296852092f2",
+        "displayed": "28ded85d793216b3bab8f453f05540b8180cd09bab3abb70ebb45ccaa16d2941",
+        "formulas": [],
+        "figures": [
+          "e1-f26-q6-equivalent"
+        ],
+        "solutionText": "4b1a911531295dab64d366f9e1e05b0e35418d48eb333e7aa8a1309cad0fd61b",
+        "note": "7287925f6fb95a995cca0da3bb2315d50fe9d586aafe439a89366d8ab07d3051",
+        "caption": "3f144f0d61af40b7f59aa269d7152df2ec2ecded1f6ba69798589da4f3b94af1"
+      },
+      {
+        "id": "e1-f26-q6-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 14,
+        "solutionPage": 15,
+        "prompt": "6fd6b30dce97859ee3495726452632804fb1a212d4dfec93178fe9c5a3aa062e",
+        "displayed": "44a8f5177d05120e7865231c1ad28320a9f10843dc2ea01ca41829f4c9ced7ee",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "14434cd14eae1363a09daf16133d2b22aef185142c50778e3d4c8d9f07b2471a",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e1-f26-q6-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 14,
+        "solutionPage": 15,
+        "figure": "e1-f26-q6-phasor",
+        "prompt": "84ea6499db9be154c892c78ae3977b22d16470a2abca9f6bc8d3fa9dbf823bb9",
+        "displayed": "39e57160e7bd7ea431480ac978e754d834647a5aa692426fa5a9a9624d47f167",
+        "formulas": [],
+        "figures": [
+          "e1-f26-q6-phasor"
+        ],
+        "solutionText": "13b847ae26fe66ad0672e86f96f48a3f1caf2b4a9446b265d2aab56c39583033",
+        "note": null,
+        "caption": "26d6dc7aaea2d4a1dc91a51757011e31456b4f76dcd99772de75629b69ba9f9f"
+      }
+    ],
+    "guide": "a27d1550ebba9f4852ec3051808f06df7bfac9fb7acef83007a14285e8cc7bcb",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/exam1_s25/questions/q1.md": {
+    "id": "e1-s25-q1",
+    "number": 1,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e1-s25-sol",
+      "page": 3,
+      "region": [
+        0.1124,
+        0.1243,
+        0.6331,
+        0.0267
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-04",
+        "page": 15,
+        "label": "每周期磁滞损耗能量"
+      },
+      {
+        "doc": "lecture-04",
+        "page": 16,
+        "label": "涡流损耗与叠片"
+      }
+    ],
+    "statement": "19ce1721abdae6dd4d5035a2cdd08299f1d7fd0a751c8772dd2f2c8997c9c30e",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-s25-q1-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 3,
+        "solutionPage": 3,
+        "prompt": "19ce1721abdae6dd4d5035a2cdd08299f1d7fd0a751c8772dd2f2c8997c9c30e",
+        "displayed": "e0eca9bef85fefa0dadba7c434e9c6da62f7f0fb7791c24b48431a6556e57d8b",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "75dcf18e4beddaa2a057692e9f91f6d0dcc2d408c18ec192987d9211cd4d0132",
+        "note": "960fc4b6c10dbf8f15b5c2ac02d2a65830659eeeaaaa4e507886bcdade8b83b1",
+        "caption": null
+      }
+    ],
+    "guide": "c8a877229c7d604ea277f8c0cda7b2267dd68e6c883062282393c7b72b5adb39",
+    "note": "5d9bd5f62e4119230e9f081fd4f650401ea77dec2ad1c1b2e288c952a3224c7f",
+    "caption": null
+  },
+  "content/zh-cn/exam1_s25/questions/q2.md": {
+    "id": "e1-s25-q2",
+    "number": 2,
+    "points": 20,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e1-s25-sol",
+      "page": 5,
+      "region": [
+        0.1124,
+        0.0864,
+        0.7148,
+        0.052
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 7,
+        "label": "正弦电压与电流"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 9,
+        "label": "瞬时功率的二倍频分量"
+      }
+    ],
+    "statement": "ef5bb0dd6388c3cd35a7c56abd109f6856dab06cbd6fb84a697b6e59f1f54954",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-s25-q2-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "ef5bb0dd6388c3cd35a7c56abd109f6856dab06cbd6fb84a697b6e59f1f54954",
+        "displayed": "9aba132988074d9ca1bb712ab017d56c19f2bff6d160977ab4f9b950ace93ffc",
+        "formulas": [
+          "product-to-sum"
+        ],
+        "figures": [],
+        "solutionText": "af5079419b768a4157c67b1a37681d21ccbbc3a693b8f256db65af443829cffd",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "126e57cecd8013400c487b39d31cb1bda6fe307779114a335fdbe7c7f8ac1c45",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/exam1_s25/questions/q3.md": {
+    "id": "e1-s25-q3",
+    "number": 3,
+    "points": 20,
+    "givens": [
+      "Z_Y,\\ Z_\\Delta"
+    ],
+    "originalFigure": {
+      "doc": "e1-s25-sol",
+      "page": 7,
+      "region": [
+        0.1336,
+        0.1533,
+        0.7475,
+        0.2363
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-03",
+        "page": 9,
+        "label": "平衡三角形—星形变换"
+      }
+    ],
+    "statement": "1d0a4252af1624f53d365489b7b09159954c4d45791ef1e81a7b2d2a43d8d296",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-s25-q3-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "prompt": "2e2a24c0a2ff35dfdead5074675334026b44532320d56893a84a8f3b73698760",
+        "displayed": "d5533249b6e6160b7da9636a30eecc0a3432740feb9aad00eba649176076a48d",
+        "formulas": [
+          "delta-star"
+        ],
+        "figures": [],
+        "solutionText": "d680f4e8144ca80ec1414c21daf1aba8fd32c4136aea8d18292665e78553c53b",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "6f947e8b3dbe6f94df7e34a8e9153d848cb27a097477474146f81009af780c23",
+    "note": null,
+    "caption": "d3ab181f34f7819fc1c89493b57e8c07eec9bd6e9879b87f9351bfb61636e75b"
+  },
+  "content/zh-cn/exam1_s25/questions/q4.md": {
+    "id": "e1-s25-q4",
+    "number": 4,
+    "points": 20,
+    "givens": [
+      "V_L=440\\,\\mathrm{V}",
+      "Z_\\Delta=(2+j15)\\,\\Omega"
+    ],
+    "originalFigure": {
+      "doc": "e1-s25-sol",
+      "page": 9,
+      "region": [
+        0.1124,
+        0.1243,
+        0.7752,
+        0.1151
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-03",
+        "page": 8,
+        "label": "三角形支路电流与线电流"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "有效值相量的复功率"
+      }
+    ],
+    "statement": "2e9962f45afa50925a94ade8c8eaf4504c33b17e5606c933abed2d5c17648509",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-s25-q4-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "15a70ae7953c753461fb8698fb74ded14666406b619f71a346d6071db4e7ca94",
+        "displayed": "40e15feabca31f1430954cabb27f2c1b36b1ab52689dec2f636bb869b3afccfc",
+        "formulas": [
+          "delta"
+        ],
+        "figures": [],
+        "solutionText": "83fd7839b9035b1983f82664d9572c162a24746d66bb1b8c8152800ff257c121",
+        "note": "8dc705ebee285c227e8d404acc03d538d06dbcb36d674cbd14d53b1b12443f5a",
+        "caption": null
+      },
+      {
+        "id": "e1-s25-q4-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "d23637c1459be2e77137bb096d34e62a6be2ea7f3e5fb6e25322849f524adc7b",
+        "displayed": "ad7f7d3b8eb61730f317a2dd4b3a6f1557b1156ab597614416cd0768951dd9f5",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "27916240f3d6cdfe92ab0e6bb35ae01bbb9fa3cbac7344a9dc5ed846e6e99006",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e1-s25-q4-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "094daf856aba0f1d16203583a707a69f8231e22cbd8f1eed2e47ac38885b0a81",
+        "displayed": "c42880d83b12123019087d050dd0c40480644ce75cf4fb8ca4c83fb646d08f5f",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "fd6e97e9feaee72362575c3fa36fd012d57571265e2514b06fbf03e1db24115b",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "034139bb5b7be94f5a0df4d1be13897006522d585b5bcc6e7e7ba74e635c9d55",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/exam1_s25/questions/q5.md": {
+    "id": "e1-s25-q5",
+    "number": 5,
+    "points": 20,
+    "givens": [
+      "V=1400\\,\\mathrm{V_{rms}},\\quad f=60\\,\\mathrm{Hz}",
+      "|S_1|=125\\,\\mathrm{kVA},\\quad \\mathrm{PF}_1=0.28",
+      "P_2=10\\,\\mathrm{kW},\\quad |Q_2|=40\\,\\mathrm{kvar}",
+      "P_3=15\\,\\mathrm{kW},\\quad \\mathrm{PF}_{\\mathrm{target}}=0.8"
+    ],
+    "originalFigure": {
+      "doc": "e1-s25-sol",
+      "page": 11,
+      "region": [
+        0.2856,
+        0.1533,
+        0.4288,
+        0.1151
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "复功率"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 18,
+        "label": "功率因数校正"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 21,
+        "label": "并联电容的选取"
+      }
+    ],
+    "statement": "4aa0d2df673b9d3cb2e221d5057a4cba11ff8e34d3dbbfddf1a5b34ac78dae71",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-s25-q5-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 11,
+        "prompt": "53aaaee76cad5f189cec7738766789cb280a2c3f47ce8981a2cf1cc546f435e3",
+        "displayed": "2bc4e4b9b6f61b245c0de487343b59eb20843dd28949a12b6e9b483a437703c9",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "04996d0f60b24479899610dd82e98de4ee89916407ac000f21b91fd71546b79a",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e1-s25-q5-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 12,
+        "prompt": "248a215a4feda2313301dd921a84c40c4dfc033716f884587a2fc7a4608babd5",
+        "displayed": "c46147160683cd4448ad4ee8570d8876fb6559f2fab4375a512b4fd72a53798a",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "d6cd9bdddcb02f1b1d41ae2574aa0624e4f71fbea46f784adf5d91124b8ca4e2",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "e83dbc70cea2d4be18bf956c653f3d0b28485344225f1624c57b3e5ab6bc05a5",
+    "note": null,
+    "caption": "0a76f51e3b47a7e19a99d36073d726192b792c89a4eb6c5cf12fe2c2267831f6"
+  },
+  "content/zh-cn/exam1_s25/questions/q6.md": {
+    "id": "e1-s25-q6",
+    "number": 6,
+    "points": 30,
+    "givens": [
+      "|E_L|=173\\,\\mathrm{kV}",
+      "E_{an}=100\\angle90^\\circ,\\quad E_{bn}=100\\angle-30^\\circ,\\quad E_{cn}=100\\angle210^\\circ",
+      "Z_a=(5+j0)\\,\\Omega,\\quad Z_b=-j5\\,\\Omega,\\quad Z_c=(3+j4)\\,\\Omega"
+    ],
+    "originalFigure": {
+      "doc": "e1-s25-sol",
+      "page": 13,
+      "region": [
+        0.1107,
+        0.2366,
+        0.4615,
+        0.1984
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-03",
+        "page": 24,
+        "label": "电源与负载中性点不连接"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 25,
+        "label": "悬浮中性点的节点方程"
+      }
+    ],
+    "statement": "88a187566bd7636b3357a4e082645338d4c87890e13720fe7e663f314fb9025d",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e1-s25-q6-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 13,
+        "prompt": "509f6c0e403da4de65ef828453a42a11a180a0e73dc2f67477d74634dc609217",
+        "displayed": "e749398b28d30fc041e06591f45240d6d79054bb97ebdd953cdee4e7cf1e578b",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "faf412d8f1be310bdcdeaf1b05ab475e306b56c55999245eec44a48c01db223f",
+        "note": "6703aa52b6da56b36c6ad5238e64c6c32ae236a9babe685e6e78fc31116e854a",
+        "caption": null
+      },
+      {
+        "id": "e1-s25-q6-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 13,
+        "prompt": "789b84b7759aa1a2d2214690131faff7147818908cd96ccf354d361f36c95bf2",
+        "displayed": "e8e10d2d6ee4f60c7c79be88c514287f92ccd30f388d7e67a7c862e4068254bf",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "d66d7f69ea87a776c81a1bec59c6f5dd49183966bb05cfdb527e74912ab459e5",
+        "note": "d656a1d660349b2b2db92cfc80bd6b03bc39d9101856eac89685791026ee6eb5",
+        "caption": null
+      }
+    ],
+    "guide": "1464200ec0436a674cf0bfcbf003c37c86b9450b7121899ab41169650f139753",
+    "note": null,
+    "caption": "e7a5f50a0d4e1cf437486cc87d66029c14ead18bef7cc2badf5ecdb2d0a66106"
+  },
+  "content/zh-cn/exam2_s25/questions/q1.md": {
+    "id": "e2-s25-q1",
+    "number": 1,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 3,
+      "region": [
+        0.1124,
+        0.123,
+        0.7589,
+        0.0495
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 4,
+        "label": "转子励磁绕组与直流励磁"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 7,
+        "label": "电流、磁通与磁路几何"
+      }
+    ],
+    "statement": "dfe7415c29c8d526aba0b2b3081106221ef0b7b6acd4195588d085e2621fa880",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q1-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 3,
+        "solutionPage": 3,
+        "prompt": "dfe7415c29c8d526aba0b2b3081106221ef0b7b6acd4195588d085e2621fa880",
+        "displayed": "b8463a265bbf378ce4b1b840fc5ddc0ab86c43e1d88c98da0cd28c0d75427dd6",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "d46fedb057a6525141c8cde425c7359bddd051a1955aa5a505538f2abc426215",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "d39ad39edfab275b5edf3b94fc529040a44fceb354d0973dbb43f7493bb47b66",
+    "note": "3305787cddbd52e666c2aa5860dfa64c4dcfa8248ee194257ced9bf9b9153ec5",
+    "caption": null
+  },
+  "content/zh-cn/exam2_s25/questions/q2.md": {
+    "id": "e2-s25-q2",
+    "number": 2,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 5,
+      "region": [
+        0.1124,
+        0.0864,
+        0.6903,
+        0.052
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 8,
+        "label": "三相旋转磁场"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 9,
+        "label": "电频率、极数与机械转速"
+      }
+    ],
+    "statement": "177e1bfddc4bf989d1fb9e51729cc1d72e5537744a77363b3e79d7741afb6125",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q2-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "177e1bfddc4bf989d1fb9e51729cc1d72e5537744a77363b3e79d7741afb6125",
+        "displayed": "8c790b868d870d855fa7e3c266129e8b845ee7bc98075c4f05cf58e3d0746075",
+        "formulas": [
+          "synchronous-speed"
+        ],
+        "figures": [],
+        "solutionText": "672948f6396cfe6798c1163702111c746fc082dbdf3c00085ad36828d1e8bc67",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "02e284dfee7c64f8c8cd3b018b28b10eb3ee8b6f5ca3191292c3b247bc1dc3d6",
+    "note": "eb3fdc0dc301bda79bd5f45db3c997356213279b41468acc2bbfe0cc578da645",
+    "caption": null
+  },
+  "content/zh-cn/exam2_s25/questions/q3.md": {
+    "id": "e2-s25-q3",
+    "number": 3,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 7,
+      "region": [
+        0.1124,
+        0.0876,
+        0.7066,
+        0.028
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-08",
+        "page": 8,
+        "label": "直流发电机、电刷与旋转线圈"
+      },
+      {
+        "doc": "lecture-08",
+        "page": 9,
+        "label": "直流电动机与换向片"
+      }
+    ],
+    "statement": "1d7a8e008c9c867bef11d6b4e75f1d34bff6dd71a8f16d8acad94bd780a20300",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q3-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "prompt": "1d7a8e008c9c867bef11d6b4e75f1d34bff6dd71a8f16d8acad94bd780a20300",
+        "displayed": "5f0ae9a92893d7641597f815de538c708e7408ca3e378b672d2874cdb2bb1ce9",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "c8b3c2a4fc3f9bb0a9146b27a0470cc5e13358a870b85df1a181704d63f05a40",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "7d09b0d736cddd8ba08438740a3745a0e3e43109303d000b8d4c1e719ad00b25",
+    "note": "59cca8933f22a95f85261dd074945d9f4a88d9fcb34cfcc52d221db898c73871",
+    "caption": null
+  },
+  "content/zh-cn/exam2_s25/questions/q4.md": {
+    "id": "e2-s25-q4",
+    "number": 4,
+    "points": 10,
+    "givens": [],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 9,
+      "region": [
+        0.1124,
+        0.0864,
+        0.7589,
+        0.0495
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 24,
+        "label": "隐极同步电机功角特性"
+      }
+    ],
+    "statement": "a859abe4111646e13e8969cc1e128370af62ad3f50d0a1ce3676ede573e94327",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q4-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "figure": "e2-s25-q4-power-angle",
+        "prompt": "a859abe4111646e13e8969cc1e128370af62ad3f50d0a1ce3676ede573e94327",
+        "displayed": "94e0ecda8e5da50a52f553d6dc38fccb8deadafeb5b517ad2fb383de16043808",
+        "formulas": [
+          "power-angle"
+        ],
+        "figures": [
+          "e2-s25-q4-power-angle"
+        ],
+        "solutionText": "577e9df0a771662491dc33f09e6dcd47f695787fb4be14ecb2ea9b32911b8c70",
+        "note": null,
+        "caption": "936fe356c2252e56d0923352a6544799ec7fc2c2ed069d765f1b1fde8288034a"
+      }
+    ],
+    "guide": "0752f2974281f689c22af9617b335763d4ad108c7cfaa4e107cf714ce86f8bc1",
+    "note": "f4217772bcb95fd801ac438fd504d065daa00bc852326e3c2672a8cf8300179b",
+    "caption": null
+  },
+  "content/zh-cn/exam2_s25/questions/q5.md": {
+    "id": "e2-s25-q5",
+    "number": 5,
+    "points": 20,
+    "givens": [
+      "V_1=120\\,\\mathrm V,\\quad V_2=240\\,\\mathrm V",
+      "n=1500\\,\\mathrm{rpm},\\quad P=4",
+      "E_c=4\\,\\mathrm V,\\quad I_c=5\\,\\mathrm A"
+    ],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 11,
+      "region": [
+        0.1124,
+        0.1243,
+        0.7638,
+        0.1921
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-09",
+        "page": 5,
+        "label": "单叠绕组及并联支路数"
+      },
+      {
+        "doc": "lecture-09",
+        "page": 6,
+        "label": "单波绕组及并联支路数"
+      }
+    ],
+    "statement": "a85765dfa15526f45a39be2093b9745d168498c459511fe3b5ec7b04a871e375",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q5-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 11,
+        "prompt": "deecf6c72468cac03961dc8b363251f993ce535a98ba0f61fc6b75a6932cbbc0",
+        "displayed": "5497c9879d7f95208dd558491381f95beda99286cfe8da1aa2128248ead4da2a",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "1e69b2c3afb62288ab6e354b50072a94c5394c12b0f74c2b464152550ee1e4e9",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-s25-q5-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 11,
+        "prompt": "e3ccad7654af314a47993ef2ef96172b62c3e07cde018ecb3e0508f00be14857",
+        "displayed": "4c82886d5cf06d6d8ee475dd486dd21a031fc3791e990328b4506ea71aef0a65",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "5dcac9a2fca7b17cd4a43c3712b88809192934be872e3ac7ff2694a6c6fc7118",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-s25-q5-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 11,
+        "prompt": "7c03cc178dd298e853e0b751d90ebb87af4a1a91cedd313831d8a7c57afeb941",
+        "displayed": "a4ef518ac82ba2c296652173988528c5e699b1cd7635afd7229afb978a2baffc",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "b7c213e3d6b758ce9ef2377d2198f5d52fdc9f19703ebdb423b1c23d52431a16",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "610f4339e0703a0ed5abb6c9589254838284a86b8725b86aa86c52b468274861",
+    "note": "9640ab3dd16591b9711832e7c018aa51df230afe8cd44907556b7a23027c03d9",
+    "caption": null
+  },
+  "content/zh-cn/exam2_s25/questions/q6.md": {
+    "id": "e2-s25-q6",
+    "number": 6,
+    "points": 20,
+    "givens": [
+      "S_N=100\\,\\mathrm{kVA},\\quad V_{HN}/V_{LN}=1000/100\\,\\mathrm V",
+      "V_{oc}=100\\,\\mathrm V,\\quad I_{oc}=6.0\\,\\mathrm A,\\quad P_{oc}=400\\,\\mathrm W",
+      "V_{sc}=50\\,\\mathrm V,\\quad I_{sc}=100\\,\\mathrm A,\\quad P_{sc}=1800\\,\\mathrm W",
+      "\\mathrm{PF}=0.6\\ \\text{leading}"
+    ],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 13,
+      "region": [
+        0.1124,
+        0.0876,
+        0.7801,
+        0.2186
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-06",
+        "page": 8,
+        "label": "开路与短路试验参数计算"
+      },
+      {
+        "doc": "lecture-06",
+        "page": 6,
+        "label": "近似等效电路与阻抗折算"
+      },
+      {
+        "doc": "lecture-06",
+        "page": 10,
+        "label": "电压调整率定义"
+      }
+    ],
+    "statement": "94d2fb5900d31919025bc8517c4c7b90b3e58f1411c80ae97823b0f0c122535f",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q6-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 13,
+        "prompt": "2fe488d80845de86b4c054e9b215ad06075b3b383bf7fa455fedb983cb76068b",
+        "displayed": "21f2b20ea1b1e6581d005cce40eb66bc22229e20e98981aa9cab71159a89f0d3",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "10f0577d9019b91302942a53dbcac69d506da3d4ec9e28c2de6acb852e706e58",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-s25-q6-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 14,
+        "figure": "e2-s25-q6-equivalent",
+        "prompt": "c7c21cc00f016a469ae0282b6c8f4e30bd3be2e299c7697a010c3e86d1138e10",
+        "displayed": "4e02a0cb330f221210b0730d8047f323564270cc172909c3c64e0ef0b9e4a33e",
+        "formulas": [],
+        "figures": [
+          "e2-s25-q6-equivalent"
+        ],
+        "solutionText": "43eef5b19084bea6be793ca6581afbcf59b827646ddcdb120adecfef5fc273a2",
+        "note": "e718bdbe700e4256cce65886ad372b8b70da0e7e3e50ec163799fbf9d2f0dcb9",
+        "caption": "af1147f7bfa21c3c397e336b062beb813fdfefd04b9d3ffa1cefd5a7ebd1f8e0"
+      },
+      {
+        "id": "e2-s25-q6-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 14,
+        "prompt": "e4a06e482b63bab528bba80e77d2c29817f6f6558fc16a2f39d0cbedede67644",
+        "displayed": "659ebc47efb77b4fb82172402ea34e9669562954663e4cc3174cde4a6bf80310",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "4929050c9238eed6338ad3ca582c50ab895fc0a7edd08cb0ede408c44e225974",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "756bf2d77990865632f2869b015dfb984e7acb1f46f78e586de121b563658fe5",
+    "note": "17214669ff6dc808a228b0d37344c119a48ab05b5ce66b0712a54708f79800cc",
+    "caption": null
+  },
+  "content/zh-cn/exam2_s25/questions/q7.md": {
+    "id": "e2-s25-q7",
+    "number": 7,
+    "points": 20,
+    "givens": [
+      "S_N=5\\,\\mathrm{kVA},\\quad V_{HN}/V_{LN}=240/120\\,\\mathrm V,\\quad f=60\\,\\mathrm{Hz}",
+      "P_{core}=100\\,\\mathrm W,\\quad P_{cu,N}=120\\,\\mathrm W",
+      "\\mathrm{PF}=0.8"
+    ],
+    "originalFigure": {
+      "doc": "e2-s25-sol",
+      "page": 15,
+      "region": [
+        0.1124,
+        0.0876,
+        0.7785,
+        0.1214
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-06",
+        "page": 9,
+        "label": "效率与随负载平方变化的铜耗"
+      }
+    ],
+    "statement": "b4cba15c5b9c1c44ea91b2252cf14944d1fb7844b3dc760803d1a057442432de",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-s25-q7-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 15,
+        "solutionPage": 15,
+        "prompt": "ea5c5e95899b334fe32b9ac7803fa6c0488aad39d45954df2af4a1358a0d1645",
+        "displayed": "2491f0e037b9c25db12abf8732917d28043df1d6b4328d3d727da9ae4c5c478b",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "6e34fa6209e1ea4c2b523698b51c3fc201bc39760529bf4656c18aea2fe2392b",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-s25-q7-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 15,
+        "solutionPage": 15,
+        "prompt": "d98b2000b253b1d52525e7e77eb1621df0de4356f78d3750533d4968fb4ac273",
+        "displayed": "ab58cea8d8cd632de4b307304c25ffd8427f4f77e8bc3da7d4bd8f654e339ea6",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "b747afef9e16ffd3e09c75fd05fd8e3542cb8953673b6f4e558c5064d004f1b5",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "75216c27b7350e825b35e49b90c02e91ce9eda36db5530fad93e6dc5f0a332b4",
+    "note": "1fa62ce93f0aec8323dffdc3bd8c142f831b170bb196f45491aa09283730fb72",
+    "caption": null
+  },
+  "content/zh-cn/exam2_u00/questions/q2.md": {
+    "id": "e2-u00-q2",
+    "number": 2,
+    "points": 21,
+    "givens": [
+      "f_1=50\\,\\mathrm{Hz},\\quad f_2=60\\,\\mathrm{Hz}",
+      "I_a=I_b=I_c"
+    ],
+    "originalFigure": {
+      "doc": "e2-u00",
+      "page": 1,
+      "region": [
+        0.0764,
+        0.1217,
+        0.8471,
+        0.565
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 9,
+        "label": "频率与同步转速"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 14,
+        "label": "分布绕组与感应电压"
+      },
+      {
+        "doc": "lecture-04",
+        "page": 26,
+        "label": "理想变压器的电压、电流及视在功率"
+      }
+    ],
+    "statement": "de34827f7e34d49ec14bf78a299762e1ab5211b2883bce5c337ecbceaedc261c",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-u00-q2-21",
+        "label": "2-1",
+        "points": 3,
+        "sourcePage": 1,
+        "solutionPage": 1,
+        "prompt": "d092c8efc168a653333e0a78dac813cdd08d876e6d5fa514939783135779afcc",
+        "displayed": "7ef623fd4cc0777d81f77627ba29420c4cfd1713b05b099ebbb79b648e8e6c06",
+        "formulas": [
+          "synchronous-speed"
+        ],
+        "figures": [],
+        "solutionText": "d5635fa1ea4efa438a283bdee35d95b03252ff36701c434c3fc33ca65870e24f",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q2-22",
+        "label": "2-2",
+        "points": 3,
+        "sourcePage": 1,
+        "solutionPage": 1,
+        "prompt": "64ae3c06dfdb9c94760056da0d8ac9f763ff35809c026e91375ebaac4a9467f7",
+        "displayed": "9f1598219688426e1d59612efb67436f116b48df905f561d1ee490970a4f061a",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "cac62b04bc4a9354af2af2d21fce6d209e8eb589ecdd023be644a29e90a7f21f",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q2-23",
+        "label": "2-3",
+        "points": 3,
+        "sourcePage": 1,
+        "solutionPage": 1,
+        "prompt": "24ee9c2e4a65ea7532f0b37458697f76426aae02df41c282a645d9da6e8f39b0",
+        "displayed": "86c7743a17f452940791c118e128ccf1b04bcc6aad2cc67befa53db6d6b0633a",
+        "formulas": [
+          "generated-voltage"
+        ],
+        "figures": [],
+        "solutionText": "5ad87344f807625ed361f8d707b7012b0c9400ae1bcaa144d9087e832f5743f7",
+        "note": "ca741c4026799009efb3e55414ede2cbcdef721acd8446ba5e6bbc8734e3ad1f",
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q2-24",
+        "label": "2-4",
+        "points": 3,
+        "sourcePage": 1,
+        "solutionPage": 1,
+        "prompt": "2600554ac273608833443d4555143885e40f1cb7ade0ee23cab0f7f3e3f1f163",
+        "displayed": "5bbee7755d86231c247ab951461bcfd46907222a7c392261c166b218acb9ded0",
+        "formulas": [
+          "synchronous-speed"
+        ],
+        "figures": [],
+        "solutionText": "ea387713afe3ed296c1467fce4e44ae315b6e5c5aa9567e69d978160eee1575c",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q2-25",
+        "label": "2-5",
+        "points": 3,
+        "sourcePage": 2,
+        "solutionPage": 2,
+        "prompt": "ad257c9e8fdfddc4a029632c53e6780c1b309f264878101c81c585ee68755e99",
+        "displayed": "0924c7a7ad685293a429cedae955448f9e5c92a66b474e6f6bce9be3f3a60fb9",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "4d12e980e4ef5dc855b3fc90f852f26646792d6a48a4148cce44fd35ba87bd78",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q2-26",
+        "label": "2-6",
+        "points": 3,
+        "sourcePage": 2,
+        "solutionPage": 2,
+        "prompt": "4eb2b602d41a43103dfbe8ccbdc958aed7ac16633f900610a71e632091de8e62",
+        "displayed": "4e12a1e87f8d64a5c8392c7f489b34b6f78369903ae76a2e8dd1d3d5ef2dff82",
+        "formulas": [
+          "synchronous-speed",
+          "generated-voltage"
+        ],
+        "figures": [],
+        "solutionText": "ec5372568a46c7a8a1cb2eb82a38089481c62615eb805de3afbea15bf5f6cb51",
+        "note": "bc4cde59a421325014718ee8d42b79b6b86265dd7ff479c4f4a0da7f3a5a9654",
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q2-27",
+        "label": "2-7",
+        "points": 3,
+        "sourcePage": 2,
+        "solutionPage": 2,
+        "prompt": "7a845579f8a59cdbfd9a0ce0e038f2e969de945e4bf3a319df4684def837b0b6",
+        "displayed": "55f7d62b96d8cf8db705ce7ca5ea588b1249bd5281c56246c7175ed7cc212c89",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "b53ed52db13ad3a5af3f07dd29a73398f9a15cf817c76429b53a8fb472b648d4",
+        "note": "bdf4656d037aa4acd57ea781ea9d7f42f7a80e221b42ec68e43289ac206c77a6",
+        "caption": null
+      }
+    ],
+    "guide": "1c8dbbcb14493e2e6206c86ee62a6f73f44b5fab16363fc9a4e11cbe07ea5d5c",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/exam2_u00/questions/q3.md": {
+    "id": "e2-u00-q3",
+    "number": 3,
+    "points": 20,
+    "givens": [
+      "f=60\\,\\mathrm{Hz},\\quad X_s=2\\,\\Omega,\\quad R_a\\simeq0",
+      "I_{f0}=10\\,\\mathrm{A},\\quad V_{LL0}=100\\,\\mathrm{V},\\quad I_{f1}=20\\,\\mathrm{A}",
+      "Z_L=(10+j10)\\,\\Omega\\quad\\text{per phase}"
+    ],
+    "originalFigure": {
+      "doc": "e2-u00",
+      "page": 3,
+      "region": [
+        0.0764,
+        0.1217,
+        0.8471,
+        0.2612
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 14,
+        "label": "感应电压有效值与转子磁通"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 18,
+        "label": "同步发电机每相等效电路"
+      }
+    ],
+    "statement": "2e114913f26abb55d3def2d839bb25151350906350474d97b6e2363b95d86877",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-u00-q3-a",
+        "label": "a",
+        "points": 10,
+        "sourcePage": 3,
+        "solutionPage": 3,
+        "figure": "e2-u00-q3-circuit",
+        "prompt": "0df9e690b054a8c80ff728fc8016c6701a34748e68f5960746a0939f5be47d68",
+        "displayed": "cd94e9feeb7e235961b31979f8832d8ed3e2245ec924c1c4c6752d47c43fa031",
+        "formulas": [],
+        "figures": [
+          "e2-u00-q3-circuit"
+        ],
+        "solutionText": "377968b76f8edf7637286aff3d401967861cb32eee91fd8583c97efa89268257",
+        "note": null,
+        "caption": "4bdb1cc758a37bda87d1c170881dd12c40e59388a9f42e2f2769e4ce164afe27"
+      },
+      {
+        "id": "e2-u00-q3-b",
+        "label": "b",
+        "points": 10,
+        "sourcePage": 3,
+        "solutionPage": 3,
+        "prompt": "bfff2024058ddb6952f151331966d508766a666dd4e751bdc94c5ec1dbf534cd",
+        "displayed": "4989b15b73b8f7e258f544a40cbf8566e2253ecbbb79abada25bd176b70b80f7",
+        "formulas": [
+          "generated-voltage"
+        ],
+        "figures": [],
+        "solutionText": "f0a9288abd9de128a1f4dce8c3009cd347044526825a8fdfa8a0f080cd057b33",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "e6fb43966bb706541c65ecf77b3e51fafc643a66694fe2a75ac3631a032bd3c8",
+    "note": "55ea3d62138ae332e51eabfa3c2160dbe97d7a2def986baeb06421bb1e3d1446",
+    "caption": null
+  },
+  "content/zh-cn/exam2_u00/questions/q4.md": {
+    "id": "e2-u00-q4",
+    "number": 4,
+    "points": 22,
+    "givens": [
+      "V_{LL}=1.732\\,\\mathrm{kV},\\quad p=2,\\quad f=60\\,\\mathrm{Hz}",
+      "X_s=1\\,\\Omega,\\quad R_a\\simeq0,\\quad P=1.5\\,\\mathrm{MW},\\quad\\delta=30^\\circ"
+    ],
+    "originalFigure": {
+      "doc": "e2-u00",
+      "page": 4,
+      "region": [
+        0.0764,
+        0.1217,
+        0.8471,
+        0.3251
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 9,
+        "label": "同步机械转速"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 24,
+        "label": "发电机功角与无功功率关系"
+      }
+    ],
+    "statement": "bcec335f668622448f9bf83041f8c618abc57d60272f222e37007793ac77a2fa",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-u00-q4-a",
+        "label": "a",
+        "points": 7,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "891e476c48b443f5da4951abebc8cc51a897504af93d8f5aa8fb99a14b980003",
+        "displayed": "3bf6883d5a5b73ffecc2573eb064e4c5a97f2ee8ef971b2179a984719b4070ee",
+        "formulas": [
+          "synchronous-speed"
+        ],
+        "figures": [],
+        "solutionText": "4bff3c4df044b280d5d77a196dbac7b054fb9598d7d78aa592f238d9f2d810e1",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q4-b",
+        "label": "b",
+        "points": 7,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "7efd3b2c41000ad5b436eab32eda59b9c0c101427fc954c5aa2786cb5c31ac8e",
+        "displayed": "6844450644db9647fd98815dcc9ddbc36d2e76cce10c7863afb0a04dc4f55d4a",
+        "formulas": [
+          "power-angle"
+        ],
+        "figures": [],
+        "solutionText": "b1f5e18ea2eee77b638e9f889ac8eb932c5f705e04e75bc4b693932a4fa40b1c",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q4-c",
+        "label": "c",
+        "points": 8,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "f737e8ffdbab0022d83a432ffa565c728199a1833ee5f4563a3d64dac4d0ede3",
+        "displayed": "8d5c79f2ecd7276202d6c35cb51a79a0607921be21a7fa17fac6a0c5b8d10b77",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "1f569a3f734d7faeaadc4869821bd4bcfcf6145dbf037dbb7245b398a057f45a",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "5b449389282fbee5b06989eccc064582d85f005b86d42967bc792352707b0e7f",
+    "note": "05a7ffa3574ed5ac4b616e2e639b0526dfc4fbdc6822e92ba8460efd59df79fa",
+    "caption": null
+  },
+  "content/zh-cn/exam2_u00/questions/q5.md": {
+    "id": "e2-u00-q5",
+    "number": 5,
+    "points": 32,
+    "givens": [
+      "V_{LL}=600\\,\\mathrm{V},\\quad X_s=4\\,\\Omega,\\quad R_a\\simeq0",
+      "P_{\\mathrm{dev},a}=40\\,\\mathrm{kW},\\quad\\delta_a=60^\\circ,\\quad I_{f,b}=1.2I_{f,a}"
+    ],
+    "originalFigure": {
+      "doc": "e2-u00",
+      "page": 5,
+      "region": [
+        0.0764,
+        0.1217,
+        0.8471,
+        0.2931
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 18,
+        "label": "同步电机阻抗模型与电流方向约定"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 24,
+        "label": "功角关系与复功率"
+      }
+    ],
+    "statement": "9edd1d1b1b4d0c0a2dcf045571c67b4ffeb77c853d8b4f429018d592d85cda88",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "e2-u00-q5-a",
+        "label": "a",
+        "points": 16,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "3631859041f44ef208ba42bb54176dfc1a576d96ad2b8db630389a2bcc8c259f",
+        "displayed": "9dc9da8390767eb959679a3bfc78d3423d0434c30cee042d92c472336da14b94",
+        "formulas": [
+          "generator-current",
+          "power-angle"
+        ],
+        "figures": [],
+        "solutionText": "2507f4c6a888bbf34c0f9b55ada0fc729e5202b400048d083f92bc7773ef72bd",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q5-b",
+        "label": "b",
+        "points": 10,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "1d450de82ac43dfe099a0296cf91a6a102e4df24239f5aa25d3fb048e9ab32fa",
+        "displayed": "aebd481d1961db0e8eb0a0bd1ca9035a40a0434b3a4ab0bd5640dfdd90543280",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "a724b1986022d12d4892ccc76f3f18c45544efacf594cde5201bd13675cdbb05",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "e2-u00-q5-c",
+        "label": "c",
+        "points": 6,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "7fa8adb037ea6840654fc960d2094b3f1c656fd12898c7860829bd5cd8da01d3",
+        "displayed": "fe7dd4f2280f01e659158dbfc808463db7c821d0b78817013baa9f0f1d3aa9d1",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "2c0e1344803aac56cf9dcde9299129874b03bf797c8be0f34da5532b167778c4",
+        "note": "5df02dbcd22b04de1dc4932937d37318f5586cd9c0e296a8be3271fc66f7c4ce",
+        "caption": null
+      }
+    ],
+    "guide": "7c59856eb7223c9a91947e8f701404d3f6cb9dee73133b120ecc013751592dcd",
+    "note": "d0d4242d2db5b291bd86f0276cbf79c6a9b21f81d743206bf77eab30239f3f2f",
+    "caption": null
+  },
+  "content/zh-cn/practice1_f26/questions/q1.md": {
+    "id": "p1-f26-q1",
+    "number": 1,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 1,
+      "region": [
+        0.114,
+        0.151,
+        0.774,
+        0.248
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 7,
+        "label": "正弦瞬时功率与有效值"
+      },
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "复功率"
+      }
+    ],
+    "statement": "7a6e8d6fd4a5eb155448a54c4f6c1d2fd096f301e50839ac6f2559a6fe95ef26",
+    "questionEquations": "9023e82e8ad3796e88960497f2007b444d9c0f318ed9c5da45ffb65afcc88e32",
+    "parts": [
+      {
+        "id": "p1-f26-q1-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 1,
+        "solutionPage": 1,
+        "prompt": "6091c376db511be4e606d4495164d196953da752cc0b01789188ae01186a67dd",
+        "displayed": "49c303d03e8412c8af9a2cc8d97b650bd20d4c8d6e398fb29122a6eb31bc9519",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "c232e00eedbafd62ed2976e785f7624065e4e1acdc9518309ee296595de879b5",
+        "note": "1c664ac55ebb5e78988a58251e3a8b69c9b9b922c733adbc113c186127d41576",
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q1-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 1,
+        "solutionPage": 2,
+        "prompt": "0ea5750dd4415a150ef59d6f59dcf1c9dc4e0fd3c0aee1fd23ff3b722371ad94",
+        "displayed": "d8aac6149332f162a86d3f90773e66da2e750ed97e9cb41cf783aad955048015",
+        "formulas": [
+          "rms-peak"
+        ],
+        "figures": [],
+        "solutionText": "48bac55fd4d1b73264fa8aedd6514bff595ff0b0787db5ee2a78871c36cad704",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q1-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 1,
+        "solutionPage": 2,
+        "prompt": "36b168ab13751f1dde9860ace64a15754d37af2407765ac430f56c0e7f184b31",
+        "displayed": "c56cf3bad23f827a6afc6a4faf3bc1a080266439839ddf680ea528a020d0423f",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "5b4d89044f2029a27c60addf49ba8c9e655a41f5431341421a49f8b28c73c5d0",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "6971c857e145373ba60b27095009417c2f6ea9d893237b844934e9497e3f7b17",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/practice1_f26/questions/q10.md": {
+    "id": "p1-f26-q10",
+    "number": 10,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 13,
+      "region": [
+        0.113,
+        0.116,
+        0.769,
+        0.279
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-07",
+        "page": 9,
+        "label": "最大效率负载率"
+      },
+      {
+        "doc": "lecture-07",
+        "page": 17,
+        "label": "全天效率"
+      }
+    ],
+    "statement": "af354be7d517de7c142cc73a7b326e23dab1a7a179934100594fa3f0a1794fb7",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q10-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 13,
+        "prompt": "5bc0d3acce1cc6e81670c4124556a683d5e0a7ace14ce4b38f997a80b53fa1fd",
+        "displayed": "e8641ab43ce10a2c98d4f65d2437ac6568052bf2e6c9db686cd0375e787b7cc8",
+        "formulas": [
+          "transformer-efficiency"
+        ],
+        "figures": [],
+        "solutionText": "69957ab722d4aac959e038e1e8d2945fc2c5f6a04639bf0cdd71fc80225c1d3b",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q10-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 13,
+        "prompt": "617fc0017e850feaa071dd1e6a8f6a73a97d62933dc659d8363138da5a747479",
+        "displayed": "edfb5d6a7cc8750de7b3de905f12ee22304fc6facd52b332a1f7c86ab832fd24",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "af5c8499169a713fa4efbf851e7329cc1c1182503012db708abb8f6fac820e7e",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q10-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 13,
+        "solutionPage": 13,
+        "prompt": "01e8a5a394432f4f6aecbffea33a9ab1baa65d1e7f04519e654b7e4feb2f25e7",
+        "displayed": "5b2901fb716cd4d674280d32bcc49eab2114588793595a6a1539fa7480e43723",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "ea53fa4196be61e2eb51d4cbdaec0118e2d2ecfaaeed503e2e807af3aeae1fd4",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "a9761298a26b84e3603b328d10ca3c4162d52c68073c9d8fd59114676c3a5849",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/practice1_f26/questions/q2.md": {
+    "id": "p1-f26-q2",
+    "number": 2,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 3,
+      "region": [
+        0.116,
+        0.094,
+        0.77,
+        0.122
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "复功率"
+      }
+    ],
+    "statement": "2522858c373179d7755b362a89bd0d7559dd16da5fcc7a0a9294b5a6f48e39fd",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q2-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 3,
+        "solutionPage": 3,
+        "prompt": "7b68a0f77282809fedbe60ad730feb8bdcf7f00e75b056562d2e95e7c8adcd39",
+        "displayed": "0b2106ff0926747f200e4cfcdda5d690ebfdab0ec3a3816233ddaa31f99c3983",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "248924384b57bc0e0a8d501940d8092986ba54e536cd41e3ebc595d5518cf824",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "20c46c22d7a4eb76b712e6eb270ce52b2d530e54da372aaeff94a43a98fdbe10",
+    "note": "23cbf0bdc0168ad4c76b015c7de07a69a032b0d4c5fefef43eec0c64887d96bd",
+    "caption": "a696d46a0878f43da6a8aa9ae499197f6a5e2889a2cf47647e70baa070a737dd"
+  },
+  "content/zh-cn/practice1_f26/questions/q3.md": {
+    "id": "p1-f26-q3",
+    "number": 3,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 4,
+      "region": [
+        0.116,
+        0.094,
+        0.77,
+        0.215
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "复功率"
+      }
+    ],
+    "statement": "b94c4f039d8ed646c00d3f6367191da3ad50cbc42fb1b4b1dfc55a467303efcd",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q3-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "7b68a0f77282809fedbe60ad730feb8bdcf7f00e75b056562d2e95e7c8adcd39",
+        "displayed": "87417fbc34a5ede89db02ce2a5adc4784789451a38d2b304e196ab0a6a1a2579",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "913b5e8df466628e24d5b8491ea88dfa7ec0ce2e1cfe488fbea8295b18029dcb",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "a1456439286ab8b9d611ebb6bc3e148004f4dda708bd45097408a0eaa1d0aa26",
+    "note": "40cdaa7937cf7558c966234a0f50fb2b283abab8b6397bf167812d5f7c62fc89",
+    "caption": "a26fa8b6414f3188b2c948b45e8857d93481c45ed34168d34e4dfbeaed11b726"
+  },
+  "content/zh-cn/practice1_f26/questions/q4.md": {
+    "id": "p1-f26-q4",
+    "number": 4,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 5,
+      "region": [
+        0.116,
+        0.094,
+        0.77,
+        0.09
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 13,
+        "label": "复功率"
+      }
+    ],
+    "statement": "15bd7f2adb55b4ce822ff53a6bc9ab6bd3826f7b0103c87efb0fb0ec56e986d7",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q4-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "prompt": "0d3b8839ae72c9097a360ff820727685589f56c36f7cfe13f5d684231f884f96",
+        "displayed": "88a3c338b60a8073257271b71101a2de39a5ebfa5dc3341d19bd630407a670e3",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "0237a4aa1ed82d99d4e9573b6ef68983ac70757d0f43ccafbc6de1b7ed668c8a",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "433987843c1003c286da3527e49f14abc3ac8379c8c9aa9b4a6b62dfa99b370e",
+    "note": "565592e938dd0c09a9ea78278c16a3910696c20dfdb04e62a470877371732c77",
+    "caption": null
+  },
+  "content/zh-cn/practice1_f26/questions/q5.md": {
+    "id": "p1-f26-q5",
+    "number": 5,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 6,
+      "region": [
+        0.113,
+        0.116,
+        0.759,
+        0.043
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-02",
+        "page": 7,
+        "label": "单相瞬时功率"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 14,
+        "label": "平衡三相功率脉动的抵消"
+      }
+    ],
+    "statement": "7d12a92b7e06b87c8ee8a162e48bb7453ed314f98c6a36fa8a763c67dd50b1b2",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q5-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 6,
+        "solutionPage": 6,
+        "prompt": "7d12a92b7e06b87c8ee8a162e48bb7453ed314f98c6a36fa8a763c67dd50b1b2",
+        "displayed": "0a696e2b85b76b2415a7dbe1c72ce957af9050a9aab3d1a96a529e9e9a096e8b",
+        "formulas": [
+          "product-to-sum",
+          "three-phase-power"
+        ],
+        "figures": [],
+        "solutionText": "4bdfcbbc5fc63f6fd197c5a5257bc2355977d4070a74bc6c330efa28ad355c94",
+        "note": "14e3a1698ffcbc2e5cedf724aabf543f2e88c61bb6054c8a35723b92f742b0d8",
+        "caption": null
+      }
+    ],
+    "guide": "0c5848a34f567aa824b55617cbeefdd85dd906ed2037151927875b9ea1d1d6ce",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/practice1_f26/questions/q6.md": {
+    "id": "p1-f26-q6",
+    "number": 6,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 8,
+      "region": [
+        0.113,
+        0.116,
+        0.759,
+        0.104
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-03",
+        "page": 9,
+        "label": "三角形与星形阻抗关系"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 14,
+        "label": "平衡三相功率"
+      }
+    ],
+    "statement": "85b173d63aa42122200e6b633b927f54af14d5f0d4b30bdd664e7288d7e14bb2",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q6-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 8,
+        "solutionPage": 8,
+        "prompt": "15a70ae7953c753461fb8698fb74ded14666406b619f71a346d6071db4e7ca94",
+        "displayed": "67ffe04744d91538277cfca1be3c6ab6ed1f1efdaf583e05b6ebe99806836b1a",
+        "formulas": [
+          "delta"
+        ],
+        "figures": [],
+        "solutionText": "baf1f15b39d22db2853dcbb9acf4a411279942ae93dcfa0ad731d9c403c2061d",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q6-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 8,
+        "solutionPage": 8,
+        "prompt": "d23637c1459be2e77137bb096d34e62a6be2ea7f3e5fb6e25322849f524adc7b",
+        "displayed": "3d6c007294e5c43138012df597001c2523cd37df331be9d097e298c7acb34e5b",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "78f02d9ca8a1c21be0a272c2120461fef29814093a9181ae5eaa4cfe0b77e423",
+        "note": "ff6ff15eef302b3bc9eee32a93de55852dab0efd0be623a2d9eebc65cf9d2c6f",
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q6-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 8,
+        "solutionPage": 8,
+        "prompt": "9903e6deb5a209cb550ad986361f253a775b3016be52c2715158374ef70b91ac",
+        "displayed": "be6832f850e81756d64cc8f910f67fdd134fbb5803920aeb669bcb05f89eea94",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "452ea238e59decfdc8fe4cdfef1d77529192957bee4cea326c3e34adc63e4391",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "8764e2467d41f8f590b7fd78e75d26167dff2cdd4925cfad71ff17f0da561ef6",
+    "note": "fdb9fbd20002ddf4454fdf2996fd66079ef412b21408ff316bd2f2858c649927",
+    "caption": null
+  },
+  "content/zh-cn/practice1_f26/questions/q7.md": {
+    "id": "p1-f26-q7",
+    "number": 7,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 9,
+      "region": [
+        0.113,
+        0.116,
+        0.759,
+        0.175
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-03",
+        "page": 6,
+        "label": "星形线电压与相电压"
+      },
+      {
+        "doc": "lecture-03",
+        "page": 14,
+        "label": "平衡三相功率"
+      }
+    ],
+    "statement": "8c8f3e8d37929ec13be3111329192a96641db5285211c015aab23eecbb3bf356",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q7-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "9ac1a612c2e3f8bfc9b7f22ece1ff9e264775bf6afc7f8646f449e8591a0164b",
+        "displayed": "3973804c05c4bda1679ef955165acf92070f11c3b0a83e1311142a633430415f",
+        "formulas": [
+          "star"
+        ],
+        "figures": [],
+        "solutionText": "2d11312b8b36b095e8eac427b26c82f39ac336bc6b3b3a8fc5109fb0893fd9f4",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q7-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "73a03694b8cf0638145dea9aa5ecef32d14ec62209fb4d2a56a065a69a2798e8",
+        "displayed": "100004c35b46868653a6088b1e2e3c3893ebda48ca20978d2b09d5826187da54",
+        "formulas": [
+          "three-phase-power"
+        ],
+        "figures": [],
+        "solutionText": "b18753562640ecfa835dfe7a74e725b36673fb29307803eb9e0849bab98f8509",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q7-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "d35cb9d55de05d585650039fad3fc09434ed70f3bc1a8c316f1ee2f7c31d6af5",
+        "displayed": "00bbf510ea98dce56e8f80901b0debacf1b647756529e6fe8e0b8c8a3c9c50f6",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "4d89241f25a05285a8a43a26a1a666b43af46f83d26d47bd76e926c5455edff3",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q7-d",
+        "label": "d",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "prompt": "7625a4119f67f4bfcc4577ab54d4a3b4617ae29b89ea050a87e41583cf45fd40",
+        "displayed": "3b14f6673d4e3a1297543f666bce1fbe44bf8ef1f42e9c271429822ef3b16c3d",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "49045d711e726f357924660ea597625d46f8f1ebf3080601d2b7a8404f6403d3",
+        "note": "cab89158b7c367d780305fd9d003ba2768ac897a704cbef10dd376cd94dea95f",
+        "caption": null
+      }
+    ],
+    "guide": "b3becb9ddba2aa389d8bc6bb1c6db96110b813aa84912ab1fe25a193b7a4e841",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/practice1_f26/questions/q8.md": {
+    "id": "p1-f26-q8",
+    "number": 8,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 10,
+      "region": [
+        0.113,
+        0.116,
+        0.769,
+        0.085
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-07",
+        "page": 8,
+        "label": "变压器效率与负载相关损耗"
+      }
+    ],
+    "statement": "239772ce9033304d09d6468d39a318d9a12f0dba4a11b22adc5fe9e4e07e4f30",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q8-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 10,
+        "solutionPage": 10,
+        "prompt": "96693a6fe1a47434276496937339e4c12a6023918796bfd837f4a18bc22f8947",
+        "displayed": "257ea1209109f490e3bd1d3c3b0c76083713d9e1dcfe5b9358a613b12e8815f8",
+        "formulas": [
+          "transformer-efficiency"
+        ],
+        "figures": [],
+        "solutionText": "92674c166a6a5c9f565dc98dbf2f556ad7793a5e8ace4743c878befcbd4aeeee",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q8-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 10,
+        "solutionPage": 10,
+        "prompt": "fd930038f9ab1840be49c7ae8af7b48f2bb97537adbc185e4994cadbcbd7a27c",
+        "displayed": "c67fe3003e7ecb3c05977f73b256fd59bc273aa693da3abddcfba655dd606003",
+        "formulas": [
+          "transformer-efficiency"
+        ],
+        "figures": [],
+        "solutionText": "7dbe1e8d8e5453ff15a1ef8e0799ad360512de56a83e85b982c72d6cbedb7e39",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "3a45b113ad0c32a44f0db951df6a18d26caf039f5938125664488389923a7ede",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/practice1_f26/questions/q9.md": {
+    "id": "p1-f26-q9",
+    "number": 9,
+    "points": 0,
+    "givens": [],
+    "originalFigure": {
+      "doc": "p1-f26-sol",
+      "page": 11,
+      "region": [
+        0.113,
+        0.116,
+        0.769,
+        0.117
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-06",
+        "page": 6,
+        "label": "变压器近似等效电路"
+      },
+      {
+        "doc": "lecture-06",
+        "page": 8,
+        "label": "空载和短路试验参数"
+      }
+    ],
+    "statement": "a43d7d7bb241c7860fea14b33b17349f0fe6ac01f75a39f5e74ea8e4eed02ffb",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p1-f26-q9-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 11,
+        "prompt": "c89b17c2ad3116298ff3b6e0a4ee7b24871dd3dcdddef03c83bfff8ee30deb95",
+        "displayed": "127a5710c4f4c05dae474ba09b1f5ae3e2e4b662439e419d53e26a76e19d34fa",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "f7f5e1913ab6971fe559fc711eca3b4e0e68b3910a2105abd75e4144ae3f6677",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p1-f26-q9-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 11,
+        "solutionPage": 11,
+        "figure": "p1-f26-q9-b-solution",
+        "prompt": "e8c9cd67a2f006bbb234e8a780ce3179fdc1d86c57a82e0e68797ae097b76401",
+        "displayed": "cece89066a4da5897853ab65aa091a758b353bde07d225c0892a3a5fb322be45",
+        "formulas": [
+          "turns-ratio"
+        ],
+        "figures": [
+          "p1-f26-q9-b-solution"
+        ],
+        "solutionText": "52db4c8e2fedcad9057d1f48dddb4d7a194a65678ec5afa61e9646c8c2be3522",
+        "note": "27cb13140854217c069b6909b9a4be574cc70cfffb0e3cb7c3f80abeb73cad4a",
+        "caption": "8d6ec6dd048521a99cbced664416606a5b514226efe906abf509b7bffa10a5ec"
+      }
+    ],
+    "guide": "e57b3664ec65e94dcad821d83447f8aa9aef7426d474e5f9f56df6d491d5e530",
+    "note": null,
+    "caption": null
+  },
+  "content/zh-cn/practice2_f26/questions/q1.md": {
+    "id": "p2-f26-q1",
+    "number": 1,
+    "points": 0,
+    "givens": [
+      "T_L=25\\,\\mathrm{N\\,m},\\quad T=10\\,\\mathrm{N\\,m}\\quad(I_a=10\\,\\mathrm A)",
+      "R_a=0.2\\,\\Omega,\\quad V=200\\,\\mathrm V"
+    ],
+    "originalFigure": {
+      "doc": "p2-f26-sol",
+      "page": 1,
+      "region": [
+        0.116,
+        0.19,
+        0.769,
+        0.066
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-09",
+        "page": 8,
+        "label": "直流感应电压与电机常数"
+      },
+      {
+        "doc": "lecture-09",
+        "page": 9,
+        "label": "直流电动机的电磁转矩"
+      }
+    ],
+    "statement": "25eccb4b9147f60d287b982a8ebfaf803aaebaf207416c630aaaa561321d7747",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p2-f26-q1-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 1,
+        "solutionPage": 1,
+        "figure": "p2-f26-q1-armature",
+        "prompt": "504483bfc8a18c18074ef21ffac5ae2bf04294bc7b504f2fecbd20b729df444f",
+        "displayed": "a9235de98b067a9bcb7019229ba5725e5d70489c00f2deac0be152e7bc9d0972",
+        "formulas": [
+          "dc-torque",
+          "dc-emf"
+        ],
+        "figures": [
+          "p2-f26-q1-armature"
+        ],
+        "solutionText": "bb121ce14e3a8f7a8dd8a0b00c245d177ddc14eb90b8ddaf273108263e8b4dec",
+        "note": null,
+        "caption": "118cb1028c8a32b8f880f979cd84a74c2776c106800ba2f56139ddf2335f2d6a"
+      }
+    ],
+    "guide": "20aacab15a344459f314e4f733b7469d80c7ca678f7c8e215988157d6ae5a6be",
+    "note": "67ad5278940eb7686dcd32a273553c0b07b295494105184e3b39341e5dc912c4",
+    "caption": null
+  },
+  "content/zh-cn/practice2_f26/questions/q2.md": {
+    "id": "p2-f26-q2",
+    "number": 2,
+    "points": 0,
+    "givens": [
+      "S_N=60\\,\\mathrm{MVA},\\quad V_L=69.3\\,\\mathrm{kV},\\quad X_s=15\\,\\Omega"
+    ],
+    "originalFigure": {
+      "doc": "p2-f26-sol",
+      "page": 2,
+      "region": [
+        0.148,
+        0.123,
+        0.734,
+        0.314
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-10",
+        "page": 18,
+        "label": "发电机每相等效电路"
+      },
+      {
+        "doc": "lecture-10",
+        "page": 24,
+        "label": "有功、无功与功角的关系"
+      }
+    ],
+    "statement": "e77d83e1ec0de7947bd8e96281eaa9708c20344824946121f42e88e07d448fab",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p2-f26-q2-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 2,
+        "solutionPage": 2,
+        "prompt": "7c42cf124b10d54782d2f893878b7e972599d948f1f85b1eb1446f46ee7a5d49",
+        "displayed": "92ed6b44bc126f48b889754747f01d74cc79b104b9c1a3871e5c42ddbc1dc402",
+        "formulas": [
+          "generator-current"
+        ],
+        "figures": [],
+        "solutionText": "d541e381a775814abc8d8f33db8d2915e18c197f181824e7d897127861567a18",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q2-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 2,
+        "solutionPage": 2,
+        "prompt": "3296fc46cfc5a33caab7b9f7b5c10f6cbe53e1457820e045cc6657765ec1b2d9",
+        "displayed": "aadc2e5b935913efe77a43ec135a71f1bb9c2454002652bc3b82284cc4b1dea3",
+        "formulas": [
+          "power-angle"
+        ],
+        "figures": [],
+        "solutionText": "0ecb8034f1ac7be6818233c536ea6152cec54ac33854d4a6e4d970d34ceb5c2a",
+        "note": "8a320ef85784294289b7123ace71c084ec16865a68cd6f2e879fd725d88853f5",
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q2-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 2,
+        "solutionPage": 3,
+        "prompt": "ef06ab9d329b8954e964a1d5a96d416416def41dfd888a887193e2c7530efa8e",
+        "displayed": "d7ff9cfe73a037337df288711c5b99a6787fc5000a322e6137baba5dbc92cb7d",
+        "formulas": [
+          "power-angle",
+          "generator-current"
+        ],
+        "figures": [],
+        "solutionText": "bf225fcb2ad9af5f72e7e98ff161f04c17e80fd468fdb455af8938e4342a301f",
+        "note": "d352a09fd16f369f1e15407c04c05cb4eb888198869226aff26eb8abb69ebb3c",
+        "caption": null
+      }
+    ],
+    "guide": "0710cf3aea521bf30ff8b74e8cefa1d99dbabfa3b92e79a6a6614858c90b382e",
+    "note": "5ede831413c3625acba5ed706a8cc3771527f4f649e98ff93cfbf749e4c39c14",
+    "caption": null
+  },
+  "content/zh-cn/practice2_f26/questions/q3.md": {
+    "id": "p2-f26-q3",
+    "number": 3,
+    "points": 0,
+    "givens": [
+      "V_s=120\\,\\mathrm V,\\quad f=60\\,\\mathrm{Hz},\\quad R_a=1\\,\\Omega,\\quad L_a=25\\,\\mathrm{mH}",
+      "k_n=0.055\\,\\mathrm{V/rpm},\\quad n=200\\,\\mathrm{rpm},\\quad\\alpha=60^\\circ"
+    ],
+    "originalFigure": {
+      "doc": "p2-f26-sol",
+      "page": 4,
+      "region": [
+        0.115,
+        0.126,
+        0.771,
+        0.188
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-11-12",
+        "page": 24,
+        "label": "连续电流全控桥平均电压"
+      },
+      {
+        "doc": "lecture-09",
+        "page": 8,
+        "label": "电机感应电压与转速"
+      }
+    ],
+    "statement": "8c2e54bc9ba4b8937eeff1e9afa161989ae7881e1e06ac0ef35012a02427ae5b",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p2-f26-q3-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "5d70c404d27c328b7ceaa2681e32fd7f70a3df4baed8b83e5b625689f4f11110",
+        "displayed": "538a2930093f2f22ba98ab576b62776af1dfd488b7d2803f785ead9bedb3a2af",
+        "formulas": [
+          "rectifier-full"
+        ],
+        "figures": [],
+        "solutionText": "59c280b66340eb4a4a794e6c036e7384c41064a13a6b639213ab0cb005262b81",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q3-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "b88f7e7c8f049cae3aa97f818b3a5fb73a72c359276d298fa6f4277648fffcdd",
+        "displayed": "288bd86efd5b5ae20e125ae23bd6823dc31cc35eac7a140100ee6326c9b67f6e",
+        "formulas": [
+          "mechanical-power"
+        ],
+        "figures": [],
+        "solutionText": "d37128235f46f2c9634df401174d24ddd7123e8bacc725d1566dcad9124fde73",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q3-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "1736f1796aa440532406dcce77554bffb944e212bd77d9c788b8bb79c5b6105b",
+        "displayed": "481823fcd3db0887fa2042f70947fb9a5b527d4eeb8ab5f8a9b28930467d85f6",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "606e50081a3c578be6947b6e1c6dccfc67c243719037b955146e23151a855c99",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q3-d",
+        "label": "d",
+        "points": 0,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "8dbaed71ac310af04bf5156b20c1ec747eb47714661548f9deaf7643a89e47f4",
+        "displayed": "e3fe202996bab3179fe82282e79483b434e917e0ae91b75ac748c8ee8771e232",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "38329d2dfdddba25fff735411da34279cf6f765a707bdfa0d5ff035c61100d0b",
+        "note": "31fe4090dfe27941ce824d5d37383d3e3ef674291b8c45a9334e0696bc8a2d52",
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q3-e",
+        "label": "e",
+        "points": 0,
+        "sourcePage": 4,
+        "solutionPage": 4,
+        "prompt": "f8f1c11478ed37c9e68ec472b7e26e9ee4a52a3a169bf6b0700a26eecc77fc60",
+        "displayed": "bcbc67df54db4904b561494904744f57467c5aea012374461e4597b9d73f0b2e",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "c5b7801b33bcd6cb448bc5a81b4239a75b569306e9de6034abd9e0195fd6db33",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "10534433853115c51dd6a024e6deea93a9b9a879b41f975b74d2a24d1b5d5093",
+    "note": "756c53b1dfa7b0e031d10d5fa2e3fe56914621b043ccb29633a1c69be6b7a75e",
+    "caption": null
+  },
+  "content/zh-cn/practice2_f26/questions/q4.md": {
+    "id": "p2-f26-q4",
+    "number": 4,
+    "points": 0,
+    "givens": [
+      "\\alpha_a=30^\\circ,\\quad V_b=208\\,\\mathrm V,\\quad R=10\\,\\Omega,\\quad L\\to\\infty,\\quad\\alpha_b=90^\\circ"
+    ],
+    "originalFigure": {
+      "doc": "p2-f26-sol",
+      "page": 5,
+      "region": [
+        0.115,
+        0.127,
+        0.771,
+        0.3
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-11-12",
+        "page": 11,
+        "label": "晶闸管的导通与阻断"
+      },
+      {
+        "doc": "lecture-11-12",
+        "page": 24,
+        "label": "与全控桥比较；本题自行推导半控桥关系"
+      }
+    ],
+    "statement": "0ae6aa83c4af19f019689af5af8da2cee7f7546857d590f11d806337d89dcb8f",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p2-f26-q4-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 5,
+        "figure": "p2-f26-q4-waveforms",
+        "prompt": "14dc18f363248b65776a8959ef6c022840529200fdcaf888f8e9b6c7caadec42",
+        "displayed": "b5ae7497f8c8c898d3a32e1e9740117b15e158a4ddddf03ceb38a82828699b81",
+        "formulas": [],
+        "figures": [
+          "p2-f26-q4-waveforms"
+        ],
+        "solutionText": "7ddeeb03a35a9936c8994693f17471b29be0553cf1d3f1ad2d1d0027cf46638c",
+        "note": "66082d4a77ead7e2a269b60089a1f27234fe30046eea8bb8c6f7850219e9fc40",
+        "caption": "14dc18f363248b65776a8959ef6c022840529200fdcaf888f8e9b6c7caadec42"
+      },
+      {
+        "id": "p2-f26-q4-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 6,
+        "prompt": "1c82f8620373469ed6b551e5af5fe61e5580e76137da6620fb75359416e0727f",
+        "displayed": "4e570e02a5b8d54ec47b63b05ae71bb3c2d5b0766a1ef41769587b4672a8e17a",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "09d5857ba879b2b6d15155850e57cb169a0c7f41207750caccdde796576f58fe",
+        "note": "5a828525aa9d5796433b9ba220e461db8dfe7c7517a9cfad5404b6b34533bbf3",
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q4-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 6,
+        "prompt": "19a31cc74a5cea948b7b3e339e559a34f62540548a8cd977ffbb719e26787c35",
+        "displayed": "54449507d62ca329c1fb2e92b3e0a2bb85247c9fe3769d87cdbf820a0a2b9471",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "959123ac388237132213dc36c6a0e308cd6cf37485f09fc26180782dcd7b981c",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q4-d",
+        "label": "d",
+        "points": 0,
+        "sourcePage": 5,
+        "solutionPage": 6,
+        "prompt": "0f0f05072287f90e1ac5cb63cf1cce1939eea261c862cfcb558822c82aa33a49",
+        "displayed": "98606d7dfba7773e9689d75508325c4597a268d919176219dc627f5c25b961a8",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "da41d9b1380cb430b1e9a603d0ce4410adff2a39c709040b880c50fc6a04f1d6",
+        "note": null,
+        "caption": null
+      }
+    ],
+    "guide": "4f28efdfad78bf77598c0118c044d3a50a9dd0ad3119bc80488bbbb8577d30eb",
+    "note": "349c5ce740a680f24c2b1a0ce1b3343f87c06369f75efd345b168a0a32cdfb6a",
+    "caption": "b1403e433bfa0a4b4c2e8c334c9d0ff7d58afe83c93e18c7a5de92439ae0a267"
+  },
+  "content/zh-cn/practice2_f26/questions/q5.md": {
+    "id": "p2-f26-q5",
+    "number": 5,
+    "points": 0,
+    "givens": [
+      "V_N=110\\,\\mathrm V,\\quad P_N=5\\,\\mathrm{hp},\\quad V_s=120\\,\\mathrm V,\\quad f=60\\,\\mathrm{Hz}",
+      "k_n=0.055\\,\\mathrm{V/rpm},\\quad n=1000\\,\\mathrm{rpm}"
+    ],
+    "originalFigure": {
+      "doc": "p2-f26-sol",
+      "page": 7,
+      "region": [
+        0.115,
+        0.128,
+        0.771,
+        0.228
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-11-12",
+        "page": 23,
+        "label": "四晶闸管全控桥"
+      },
+      {
+        "doc": "lecture-11-12",
+        "page": 24,
+        "label": "全控桥平均电压"
+      }
+    ],
+    "statement": "e6b073eee6a3fe31e714b20df3595edd1c764ed21f0f2e941e8f8e20d7f882ec",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p2-f26-q5-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "figure": "p2-f26-q5-circuit",
+        "prompt": "c03100346473c3a27c638fcdb65e3753750db6161fe1a532a1a5a727c136f681",
+        "displayed": "40301cef0fa1e9c9037dd6413bbd4c0a27019501a21d194918864fa4650ac6d5",
+        "formulas": [],
+        "figures": [
+          "p2-f26-q5-circuit"
+        ],
+        "solutionText": "830f7c666706ca6e962c965de376003aa6f095e3e1607a6019d4ad37cca114c8",
+        "note": null,
+        "caption": "c03100346473c3a27c638fcdb65e3753750db6161fe1a532a1a5a727c136f681"
+      },
+      {
+        "id": "p2-f26-q5-bi",
+        "label": "b(i)",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "prompt": "a3d4b3364585b21fea15bde7b41e96e69defc86e02290e3742a5b3c74327134b",
+        "displayed": "d2a4d8b8fdd82911acf119563d6b9b1b503069647e401112455cb68e4c371f49",
+        "formulas": [
+          "rectifier-full"
+        ],
+        "figures": [],
+        "solutionText": "3c5cd8af5a8ab9b73904c569539ff25adc655841edebfc7650b4554d06648cb0",
+        "note": "605fce558efb10815170df1989ce4bcc2541ac46c8ed048042ed66d4c7c7c0e3",
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q5-bii",
+        "label": "b(ii)",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "prompt": "0706ea410e19882c887ac7803839a40b62e40ec4218d004d3e5d673bd5fc9666",
+        "displayed": "ddad0693fd08c7e3788df64ac0c2315e05ea4fe40e8844266d71a88f1fe24004",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "cb4fbf5d8e0376a33013c33bf25674b4a4d97ea74e8a03bfe37db10e92a8f542",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q5-biii",
+        "label": "b(iii)",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 7,
+        "prompt": "1d65c5fc12cb6aad545c3fa4d39ac275a28880f3983901a357433c8d2ba34e5e",
+        "displayed": "ac20a49e936d9c34cc5038d7ae25083df1de18996a2c7b203189ed8c8dce9a2c",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "0f49958ce361829d1e0b435422f1e475e9d7f5b31d6ef91823455a3981274585",
+        "note": "d62d46158c497fcc0e3d1f1cfc33a17ff33b3a666c785fbb620cc22e84589d64",
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q5-biv",
+        "label": "b(iv)",
+        "points": 0,
+        "sourcePage": 7,
+        "solutionPage": 8,
+        "figure": "p2-f26-q5-waveforms",
+        "prompt": "e2eed8a0338156bb3cb1c27cc00f0319a9bfb9120cc480448c7c989f2259d6a9",
+        "displayed": "1addb26a40520b5451bb0bdd5fcac4880ea55eb3cf3a486902bb6969b7d6f1f8",
+        "formulas": [],
+        "figures": [
+          "p2-f26-q5-waveforms"
+        ],
+        "solutionText": "b681a5fee2ae435f49bbc5564594df279d339425106b31b1458df799842d103c",
+        "note": null,
+        "caption": "e2eed8a0338156bb3cb1c27cc00f0319a9bfb9120cc480448c7c989f2259d6a9"
+      }
+    ],
+    "guide": "5780f137d189da10427eb644d90112ed0e3335eeb1a1944ea1165d767a895a96",
+    "note": "aaec6dc25f0e343f92377c411241afd64e30de55aaebbfb772f9fc49cd0a69b0",
+    "caption": null
+  },
+  "content/zh-cn/practice2_f26/questions/q6.md": {
+    "id": "p2-f26-q6",
+    "number": 6,
+    "points": 0,
+    "givens": [
+      "R_a=0.25\\,\\Omega,\\quad k_n=0.1\\,\\mathrm{V/rpm},\\quad V_s=120\\,\\mathrm V,\\quad f=60\\,\\mathrm{Hz}",
+      "\\alpha=60^\\circ,\\quad I_0=20\\,\\mathrm A,\\quad r=20\\%"
+    ],
+    "originalFigure": {
+      "doc": "p2-f26-sol",
+      "page": 9,
+      "region": [
+        0.103,
+        0.12,
+        0.783,
+        0.384
+      ]
+    },
+    "lectures": [
+      {
+        "doc": "lecture-11-12",
+        "page": 23,
+        "label": "全桥结构与导通路径"
+      },
+      {
+        "doc": "lecture-11-12",
+        "page": 24,
+        "label": "变流器平均电压"
+      }
+    ],
+    "statement": "2bc7b7d527e792b309f46ef6999d87d29b751612daadf9ec13a5cf625ed98f17",
+    "questionEquations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parts": [
+      {
+        "id": "p2-f26-q6-a",
+        "label": "a",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 9,
+        "figure": "p2-f26-q6-waveforms",
+        "prompt": "998d89a267e71acf52a4ef0f80c8a271d0553380ab6ae88ee3743cbb18c5bb70",
+        "displayed": "0ee9f3ae01edc879bc5cc3bd5c48af7c7be31dc16dde8f9b4adfacf52e27ee21",
+        "formulas": [],
+        "figures": [
+          "p2-f26-q6-waveforms"
+        ],
+        "solutionText": "2835b749a75dd2d905a27041bd546125c761a5eb353dc061b1cd89294b2d051f",
+        "note": "0ba8d18c1a40c69d402e423805b4eed084a5e710f840cddd77c3e556bd3fca52",
+        "caption": "998d89a267e71acf52a4ef0f80c8a271d0553380ab6ae88ee3743cbb18c5bb70"
+      },
+      {
+        "id": "p2-f26-q6-b",
+        "label": "b",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 10,
+        "prompt": "457d845cde5b493503ea10ae81e2ed491a5b717540999b5266989c08a67652d4",
+        "displayed": "2e19c0f3a6228939b41def5dff3764ac992c6d202f95cfbe6732e2ea23caf034",
+        "formulas": [
+          "rectifier-full"
+        ],
+        "figures": [],
+        "solutionText": "a7b3368633676ef0ce33136b7db1f1a99bbbcc1d4408651633c6ce35dcdcd8e2",
+        "note": null,
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q6-c",
+        "label": "c",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 10,
+        "prompt": "54955517a680181d943fcdbf8f90b6e37db093d290c34a588e9f3d122f5d6952",
+        "displayed": "4d011172180c6f166765acdb9bc915ce763311cdba75fbd14a210f565e58f409",
+        "formulas": [
+          "mechanical-power"
+        ],
+        "figures": [],
+        "solutionText": "d2e129c7a3554ee485c3c9fc9b336e0db28240852a2c13615e9f510ea4bd2319",
+        "note": "4daeb5780f02a678bc9bdff188e4273bed512cf5559c97bac1a6de3ca3fbd323",
+        "caption": null
+      },
+      {
+        "id": "p2-f26-q6-d",
+        "label": "d",
+        "points": 0,
+        "sourcePage": 9,
+        "solutionPage": 10,
+        "prompt": "f8f1c11478ed37c9e68ec472b7e26e9ee4a52a3a169bf6b0700a26eecc77fc60",
+        "displayed": "54a653108db08e4268e0cea8b4dc777a26b949cb64302c9c41d2b29caaa84d08",
+        "formulas": [],
+        "figures": [],
+        "solutionText": "edf452faaec8cfe17b9720522eb33fd3329de82d48341fe2973de5132b352924",
+        "note": "0820c1eae8649360959d9216f59eb49bacc62d839057e895c6ce8c524084797d",
+        "caption": null
+      }
+    ],
+    "guide": "70ab2f7166a4c0fbaad7175cea27886ac7b7fd449b497e42acf7b90e65f33b1c",
+    "note": "d92d269c9ee00e14eb08a158f8edfb1e273ad135f53ac28960b5b3158f36eae8",
+    "caption": "f4f1f8912e133f47c2f536507b83bd11e1c8c93482976f32c6bafa8a33ddd88a"
+  }
+}

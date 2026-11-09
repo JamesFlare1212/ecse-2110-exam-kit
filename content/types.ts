@@ -22,6 +22,7 @@ export interface Part {
   note?: Partial<Localized>;
   figure?: string;
   figureCaption?: Localized;
+  interaction?: { kind: 'semi-converter'; asset: string };
   questionFigure?: { name:string; source:OriginalFigure; caption:Localized };
   sourcePage: number;
   solutionPage: number;

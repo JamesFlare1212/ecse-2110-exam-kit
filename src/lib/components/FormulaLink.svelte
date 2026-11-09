@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onDestroy } from 'svelte';
-  import { sourceName } from '../../../content/course';
+  import { course, sourceName } from '../../../content/course';
   import type { Snippet } from 'svelte';
   import * as HoverCard from '#lib/components/ui/hover-card';
   import { Button } from '#lib/components/ui/button';
@@ -32,7 +32,7 @@
       {#if !compact}<span class="reference-page">p.{formula.source.page}</span>{/if}
     {/if}
   </HoverCard.Trigger><HoverCard.Content collisionPadding={12} hidden={!open} class="w-80 max-w-[calc(100vw-2rem)]">
-    <div class="excerpt-heading"><strong>{formula.title[locale]}</strong><span>{sourceName(formula.source.doc,documents).toUpperCase()} / {formula.source.page}</span></div>
+    <div class="excerpt-heading"><strong>{formula.title[locale]}</strong><span class="formula-source-meta"><span class="formula-source-name" title={documents[formula.source.doc].title}>{sourceName(formula.source.doc,documents,course,locale)}</span><span class="formula-source-page">p.{formula.source.page}</span></span></div>
     <div class="excerpt-equation"><Math {locale} tex={formula.math} display /></div>
     <div class="original-excerpt"><img src={`/excerpts/${formula.id}.webp`} alt={formula.source.label[locale]} loading="lazy" /></div>
     <p class="excerpt-description">{locale === 'zh' ? '来自原始 PDF 的公式区域' : 'Excerpt from the original PDF'}</p>

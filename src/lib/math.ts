@@ -30,7 +30,14 @@ function renderMarkdownNode(node: Root | RootContent | PhrasingContent | ListIte
     }).join('');
   };
   switch (node.type) {
-    case 'root': return node.children.map(render).join('<br><br>');
+    case 'root': {
+      const blocks=node.children.filter(child=>child.type!=='definition');
+      // Keep single paragraphs phrasing-safe for inline fragments and buttons.
+      if(blocks.length===1&&blocks[0].type==='paragraph')return render(blocks[0]);
+      return `<span class="markdown-flow">${blocks.map(child=>
+        `<span class="markdown-block${child.type==='math'?' markdown-math':''}">${render(child)}</span>`,
+      ).join('')}</span>`;
+    }
     case 'paragraph': case 'listItem': return children();
     case 'text': return escape(node.value).replaceAll('\n', '<br>');
     case 'inlineMath': return renderMath(node.value, source.slice(node.position?.start.offset ?? 0).startsWith('$$'));

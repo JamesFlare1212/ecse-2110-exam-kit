@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 import plotting
+import circuit_drawing
 from plotting import prepare_figure, plt
 from paper_assets import ROOT, papers, documents, asset_source
 from svg_labels import localize
@@ -54,21 +55,40 @@ def generate_paper(directory):
     output = directory / 'assets/figures'
     output.mkdir(parents=True, exist_ok=True)
     generated = set()
+    engines = {}
+    module = renderer(paper)
 
     def save(fig, name, dark, owner):
         if Path(name).name != name:
             raise ValueError(f'Invalid figure name: {name}')
         prepare_figure(fig)
         target = output / f'{name}{"-dark" if dark else ""}.svg'
+        symbols = [symbol for ax in fig.axes for symbol in getattr(ax, '_schemdraw_elements', [])]
+        engine = 'Schemdraw + Matplotlib' if symbols else 'Matplotlib'
         fig.savefig(target,
                     bbox_inches='tight', pad_inches=.16,
-                    metadata={'Date': None, 'Creator': 'Matplotlib · ECSE 2110 Fieldnotes'})
+                    metadata={'Date': None, 'Creator': f'{engine} · ECSE 2110 Fieldnotes'})
         localize(target, getattr(renderer(owner), 'SVG_LABELS', {}))
+        target.write_text('\n'.join(line.rstrip() for line in target.read_text().splitlines())+'\n')
+        engines[name] = {'engine': engine, 'symbols': sorted(set(symbols)), 'elementCount': len(symbols)}
         plt.close(fig)
         generated.add(name)
 
     for dark in [False, True]:
         render_figures(save, dark, paper['directory'])
+
+    # Optional paper-owned sprites/geometry are auxiliary interaction assets,
+    # never question/solution figures and never counted in the main inventory.
+    auxiliary = set()
+    hook = getattr(module, 'generate_auxiliary_assets', None)
+    if hook:
+        for name in hook(output):
+            if (Path(name).name != name or Path(name).suffix not in ('.svg', '.json')
+                    or not (output/name).is_file()):
+                raise ValueError(f'Invalid auxiliary asset: {name}')
+            if Path(name).stem.removesuffix('-dark') in generated:
+                raise ValueError(f'Auxiliary asset overlaps a main figure: {name}')
+            auxiliary.add(name)
 
     source_path = directory / 'figure-sources.json'
     sources = json.loads(source_path.read_text())
@@ -103,20 +123,26 @@ def generate_paper(directory):
     # Removing a prompt diagram must also remove its previously staged artwork.
     for path in output.glob('*.svg'):
         name = path.stem.removesuffix('-dark')
-        if name not in generated:
+        if name not in generated and path.name not in auxiliary:
             path.unlink()
     for path in crops.glob('*.webp'):
         if path.stem not in question_names:
             path.unlink()
-    hashes = {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
-              for path in [directory/'generate_figures.py', source_path,
-                           ROOT/'scripts/plotting.py', ROOT/'scripts/question_primitives.py']}
+    inputs = [directory/'generate_figures.py', source_path,
+              ROOT/'scripts/plotting.py', ROOT/'scripts/question_primitives.py',
+              ROOT/'scripts/circuit_drawing.py', ROOT/'scripts/requirements-figures.txt']
+    if hook:
+        inputs.extend([ROOT/'scripts/generate_figures.py', *getattr(module, 'AUXILIARY_INPUTS', ())])
+    hashes = {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest() for path in inputs}
     (output/'manifest.json').write_text(json.dumps({
         'paper': paper['name'], 'matplotlib': plotting.matplotlib.__version__,
+        'schemdraw': circuit_drawing.VERSION,
+        'figureEngines': {name: engines[name] for name in sorted(engines)},
         'generator': str((directory/'generate_figures.py').relative_to(ROOT)),
         'sourceSha256': hashes, 'svgFonttype': 'none',
         'textScale': plotting.FIGURE_TEXT_SCALE, 'textWeight': 'bold',
         'questionFigures': sorted(question_names), 'figures': sorted(generated),
+        **({'auxiliaryAssets': sorted(auxiliary)} if auxiliary else {}),
     }, indent=2)+'\n')
     print(f'{paper["name"]}: generated {len(generated)} figures in both themes and {len(question_names)} question crops.')
 

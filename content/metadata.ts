@@ -13,6 +13,7 @@ export const questionMetadataSchema = z.object({
   parts: z.record(text, z.object({
     id: text.optional(), points: points.optional(), page: positive.optional(), solutionPage: positive.optional(),
     figure: text.optional(), figureCaption: text.optional(), questionFigure: questionFigure.optional(),
+    interaction: z.object({ kind: z.literal('semi-converter'), asset: text.regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/) }).strict().optional(),
   }).strict()).default({}),
 }).strict();
 export type ProblemMetadata = z.infer<typeof questionMetadataSchema>;
