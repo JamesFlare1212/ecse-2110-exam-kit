@@ -63,9 +63,9 @@ export interface Exam {
   problems: Problem[];
 }
 export type ExamInfo = Omit<Exam, 'problems'>;
-/** Search/navigation data deliberately excludes guides, worked steps and answers. */
-export type ProblemIndex = Pick<Problem, 'id' | 'number' | 'title' | 'topic' | 'statement'> & {
-  parts: Pick<Part, 'id' | 'label' | 'prompt'>[];
+/** Navigation data contains only question identity and progress IDs, never article text. */
+export type ProblemIndex = Pick<Problem, 'id' | 'number' | 'title'> & {
+  parts: Pick<Part, 'id'>[];
 };
 export type ExamIndex = ExamInfo & { problems: ProblemIndex[] };
 export interface SourceDocument {

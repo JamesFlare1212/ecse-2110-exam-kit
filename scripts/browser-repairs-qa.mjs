@@ -73,14 +73,11 @@ try {
     pass('I3/I4/I12/I16/I31: source transitions, empty input, actual scaling, labels and short viewport',{viewport});
   }
   await p.setViewportSize({width:375,height:812});await goto(p,'e2-s26-q3');
-  await p.getByRole('button',{name:'Search problems and formulas',exact:true}).click();
-  assert.equal(await p.locator('.search-result').count(),20);
-  await p.locator('#global-search').fill('reflection');assert.ok(await p.locator('.search-result[href*="#"]').count()>1);
-  const results=p.locator('.search-results');await results.evaluate(e=>e.scrollTop=e.scrollHeight);await p.locator('#global-search').fill('Gauss');await p.waitForTimeout(80);assert.equal(await results.evaluate(e=>e.scrollTop),0);
-  await p.locator('#global-search').fill('50 Ω');assert.ok(await p.locator('.search-result').count()>0);
-  await p.locator('#global-search').fill('发生器端反射系数');const result=p.locator('.search-result[href*="#"]').first();const href=await result.getAttribute('href');assert.ok(href.includes('#'));await result.click();await p.waitForURL('**'+href);await p.waitForTimeout(100);assert.ok(await p.locator('.part-trigger:focus').count());
-  const target=await p.locator('.part-trigger:focus').evaluate(e=>e.closest('[data-part]').dataset.part);assert.equal('#'+target,new URL(p.url()).hash);await p.reload();await ready(p);await p.waitForSelector('.part-trigger:focus');
-  pass('I2/I5/I14/I20/I25/I26: complete search, visible mathematics, per-part links, reset, focus and deep reload');
+  const target='e2-s26-q3-a',href=`/problems/e2-s26-q3/#${target}`;
+  await p.goto(`${base}${href}`);await ready(p);await p.waitForSelector('.part-trigger:focus');
+  assert.equal(await p.locator('.part-trigger:focus').evaluate(e=>e.closest('[data-part]').dataset.part),target);
+  await p.reload();await ready(p);await p.waitForSelector('.part-trigger:focus');
+  pass('I26: direct part links retain focus after reload');
   for(const locale of ['zh','en'])for(const reducedMotion of ['reduce','no-preference']){
     const context=await newContext({viewport:{width:375,height:812},reducedMotion});
     await context.addInitScript(({key,locale})=>{if(location.protocol==='http:')localStorage.setItem(key,JSON.stringify({version:1,locale}));},{key,locale});
@@ -89,7 +86,6 @@ try {
     await context.close();
   }
   pass('I26/C5: direct part links focus correctly in both languages and motion preferences');
-  await p.setViewportSize({width:667,height:375});await p.getByRole('button',{name:'Search problems and formulas',exact:true}).click();assert.ok(await within(p.locator('.search-hint'),{width:667,height:375}));await p.keyboard.press('Escape');
   await p.setViewportSize({width:375,height:812});await goto(p,'e2-s26-q3');
   await p.locator('[data-sidebar-toggle="navigation"]').click();await p.locator('#mobile-exam-navigation').getByRole('button',{name:/Crib sheet/}).first().click();await p.waitForSelector('.library-dialog');await p.waitForTimeout(250);assert.ok(await p.locator('.library-dialog').evaluate(e=>e.contains(document.activeElement)));
   await p.keyboard.press('Control+b');assert.equal(await p.locator('#mobile-exam-navigation').isVisible(),false);assert.ok(await p.locator('.library-dialog').evaluate(e=>e.contains(document.activeElement)));await p.keyboard.press('Escape');

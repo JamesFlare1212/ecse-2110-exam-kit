@@ -1,11 +1,8 @@
 <script lang="ts">
-  import { tick } from 'svelte';
-  import { includesSearch } from '#lib/search';
   import * as Dialog from '#lib/components/ui/dialog';
   import * as Tabs from '#lib/components/ui/tabs';
   import * as Empty from '#lib/components/ui/empty';
   import { Button } from '#lib/components/ui/button';
-  import { Input } from '#lib/components/ui/input';
   import BookOpen from '@lucide/svelte/icons/book-open';
   import Bookmark from '@lucide/svelte/icons/bookmark';
   import FileText from '@lucide/svelte/icons/file-text';
@@ -21,11 +18,8 @@
   let {open=$bindable(false),kind=$bindable('crib'),study,onsource,onselect,onCloseAutoFocus}: {open?:boolean;kind?:string;study:StudyState;onsource:(s:SourceRef)=>void;onselect:(id:string)=>void;onCloseAutoFocus?:(event:Event)=>void}=$props();
   let navigating=false;
   $effect(()=>{if(open)navigating=false;});
-  let query=$state('');
-  let scroller=$state<HTMLDivElement>();
-  $effect(()=>{query;void tick().then(()=>{if(scroller)scroller.scrollTop=0;});});
   const examNumber=$derived(study.catalog.findProblem(study.selected).exam.number);
-  const filtered=$derived(formulasForExam(examNumber).filter(f=>includesSearch(f.title.zh+' '+f.title.en+' $'+f.math+'$',query)));
+  const formulas=$derived(formulasForExam(examNumber));
   const bookmarks=$derived(study.catalog.problemEntries.filter(({problem})=>study.bookmarks[problem.id]));
   const lectures=course.resources.lectures;
   const sheetId=$derived(formulaSheetFor(examNumber));
@@ -37,9 +31,9 @@
     <Tabs.Root bind:value={kind}>
       <Tabs.List><Tabs.Trigger value="crib"><FileText aria-hidden="true"/>{study.locale==='zh'?`公式表 · Exam ${examNumber}`:`Crib sheet · Exam ${examNumber}`}</Tabs.Trigger><Tabs.Trigger value="lectures"><BookOpen aria-hidden="true"/>{study.locale==='zh'?'课件':'Lecture notes'}</Tabs.Trigger><Tabs.Trigger value="bookmarks"><Bookmark aria-hidden="true"/>{study.locale==='zh'?'收藏':'Saved'}</Tabs.Trigger></Tabs.List>
       <Tabs.Content value="crib">
-        <div class="library-formula-toolbar"><label for="formula-search" class="sr-only">{study.locale==='zh'?'搜索公式':'Search formulas'}</label><Input id="formula-search" bind:value={query} placeholder={study.locale==='zh'?'搜索公式名称或符号…':'Search formula names or symbols…'}/>{#if sheet}<Button variant="outline" onclick={()=>onsource({doc:sheet!.id,page:1,label:{zh:'完整公式表',en:'Full crib sheet'}})}>{study.locale==='zh'?`完整 ${sheet.pages} 页`:`All ${sheet.pages} pages`}<ArrowUpRight data-icon="inline-end" aria-hidden="true"/></Button>{/if}</div>
-        <div class="library-scroll" bind:this={scroller}>
-          {#each filtered as formula(formula.id)}
+        {#if sheet}<div class="library-formula-toolbar"><Button variant="outline" onclick={()=>onsource({doc:sheet!.id,page:1,label:{zh:'完整公式表',en:'Full crib sheet'}})}>{study.locale==='zh'?`完整 ${sheet.pages} 页`:`All ${sheet.pages} pages`}<ArrowUpRight data-icon="inline-end" aria-hidden="true"/></Button></div>{/if}
+        <div class="library-scroll">
+          {#each formulas as formula(formula.id)}
             <div class="library-formula">
               <FormulaLink documents={study.catalog.documents} {formula} locale={study.locale} {onsource}/>
               <div class="library-formula-body">
@@ -47,7 +41,7 @@
                 {#if formula.note}<p><RichText text={formula.note[study.locale]}/></p>{/if}
               </div>
             </div>
-          {:else}<Empty.Root><Empty.Header><Empty.Title>{study.locale==='zh'?'未找到公式':'No formulas found'}</Empty.Title><Empty.Description>{study.locale==='zh'?'试试中文或英文的物理量名称。':'Try a physical quantity in English or Chinese.'}</Empty.Description></Empty.Header></Empty.Root>{/each}
+          {:else}<Empty.Root><Empty.Header><Empty.Title>{study.locale==='zh'?'尚未配置公式':'No formulas configured'}</Empty.Title><Empty.Description>{study.locale==='zh'?'题目引用的资料仍可从对应来源链接打开。':'Cited sources remain available through their source links.'}</Empty.Description></Empty.Header></Empty.Root>{/each}
         </div>
       </Tabs.Content>
       <Tabs.Content value="lectures"><div class="library-scroll lecture-library">

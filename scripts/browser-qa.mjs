@@ -422,11 +422,11 @@ try {
   await page.getByRole('button',{name:'Switch to light mode',exact:true}).click();
   await page.getByRole('button',{name:'切换为中文',exact:true}).click();
   await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:resolve(destination,'desktop-light-zh.png')});
-  await page.keyboard.press('Control+k');await page.locator('#global-search').fill('镜像');
-  await page.getByRole('dialog').getByRole('link',{name:/导体平面上方的点电荷/}).click();
+  await page.locator('#exam-navigation a.question-link[href="/problems/e2-s26-q4/"]').focus();
+  await page.keyboard.press('Enter');
   await page.waitForURL(url=>url.pathname==='/problems/e2-s26-q4/');
   await selected('e2-s26-q4');
-  assert.equal((await stored()).selected,'e2-s26-q4');record('Keyboard search navigates across the bilingual question bank');
+  assert.equal((await stored()).selected,'e2-s26-q4');record('Keyboard sidebar navigation selects a problem in the bilingual question bank');
   await revealAll();
   for(const viewport of [{width:375,height:812},{width:390,height:844},{width:768,height:1024},{width:667,height:375}]){
     await page.setViewportSize(viewport);await noOverflow();record(`No page overflow at ${viewport.width}×${viewport.height}`);

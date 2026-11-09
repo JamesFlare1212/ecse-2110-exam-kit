@@ -9,15 +9,12 @@
   import * as Tooltip from '#lib/components/ui/tooltip';
   import * as Alert from '#lib/components/ui/alert';
   import {Button,buttonVariants} from '#lib/components/ui/button';
-  import {Badge} from '#lib/components/ui/badge';
   import {Separator} from '#lib/components/ui/separator';
   import FileText from '@lucide/svelte/icons/file-text';
   import Moon from '@lucide/svelte/icons/moon';
   import Sun from '@lucide/svelte/icons/sun';
-  import SearchIcon from '@lucide/svelte/icons/search';
   import Bookmark from '@lucide/svelte/icons/bookmark';
   import BookmarkCheck from '@lucide/svelte/icons/bookmark-check';
-  import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
   import CircleCheck from '@lucide/svelte/icons/circle-check';
   import PanelRight from '@lucide/svelte/icons/panel-right';
   import PanelLeft from '@lucide/svelte/icons/panel-left';
@@ -30,7 +27,6 @@
   import ReferenceRail from '#lib/components/ReferenceRail.svelte';
   import SourceViewer from '#lib/components/SourceViewer.svelte';
   import SourcePage from '#lib/components/SourcePage.svelte';
-  import Search from '#lib/components/Search.svelte';
   import Library from '#lib/components/Library.svelte';
   import Figure from '#lib/components/Figure.svelte';
   import RichText from '#lib/components/RichText.svelte';
@@ -58,7 +54,6 @@
   let view=$state('learn');
   let openParts=$state<string[]>([]);
   let source=$state<SourceRef|null>(null);
-  let searchOpen=$state(false);
   let navOpen=$state(false);
   let railOpen=$state(false);
   let compactNavigation=$state(false);
@@ -71,7 +66,6 @@
   let libraryTrigger: HTMLElement | null = null;
   let libraryOrigin: 'navigation' | 'references' = 'navigation';
   let libraryFromSheet = false;
-  let macKeys=$state(false);
   let restoreTraversalFocus=$state<(()=>void)|undefined>();
   const t=(zh:string,en:string)=>study.locale==='zh'?zh:en;
   const navigationLabel=$derived(compactNavigation?t('打开试卷导航','Open exam navigation'):t(study.navigationOpen?'收起试卷导航':'展开试卷导航',study.navigationOpen?'Collapse exam navigation':'Expand exam navigation'));
@@ -106,15 +100,14 @@
     if(sourceTrigger?.isConnected&&!sourceTrigger.closest('[inert], [hidden]')){event.preventDefault();sourceTrigger.focus({preventScroll:true});}
     else{event.preventDefault();document.querySelector<HTMLElement>('[data-sidebar-toggle="references"]')?.focus({preventScroll:true});}
   }
-  function panelCloseFocus(event: Event){if(source||libraryOpen||searchOpen)event.preventDefault();}
-  async function select(id:string,part?:string){
+  function panelCloseFocus(event: Event){if(source||libraryOpen)event.preventDefault();}
+  async function select(id:string){
     if(!catalog.problemIds.has(id))return;
     navOpen=false;view='learn';
-    await navigate(problemPath(id,part));await tick();
+    await navigate(problemPath(id));await tick();
     // A newer navigation (including Back) owns scrolling and focus now.
     if(problem.id!==id||location.pathname!==problemPath(id))return;
-    if(part){openParts=[part];await tick();const target=document.querySelector<HTMLElement>(`[data-part="${part}"] .part-trigger`);target?.focus({preventScroll:true});target?.scrollIntoView({block:'start',behavior:'instant'});}
-    else{window.scrollTo({top:0,behavior:'instant'});document.getElementById('problem-title')?.focus({preventScroll:true});}
+    window.scrollTo({top:0,behavior:'instant'});document.getElementById('problem-title')?.focus({preventScroll:true});
   }
   function toggleSolutions(){
     if(openParts.length){openParts=[];return;}
@@ -169,7 +162,6 @@
     const onRefLayout=(event:MediaQueryListEvent)=>{if(event.matches)focusOutsidePanel('reference-sidebar','references');compactReferences=event.matches;if(!event.matches)railOpen=false;};
     navLayout.addEventListener('change',onNavLayout);refLayout.addEventListener('change',onRefLayout);
     study.restore();study.selected=problem.id;study.ready=true;
-    macKeys=/Mac|iPhone|iPad/.test(navigator.platform);
     const stored=(event:StorageEvent)=>{if(event.key===STORAGE_KEY)untrack(()=>study.sync(event.newValue));};
     window.addEventListener('storage',stored);
     const hashPart=()=>{
@@ -187,8 +179,7 @@
     hashPart();document.addEventListener('astro:page-load',hashPart);
     const keydown=(event:KeyboardEvent)=>{
       if([...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].some(node=>node.getClientRects().length))return;
-      if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='k'){event.preventDefault();searchOpen=!searchOpen;}
-      else if((event.metaKey||event.ctrlKey)&&!event.altKey&&!event.shiftKey&&event.key.toLowerCase()==='b'){event.preventDefault();toggleNavigation();}
+      if((event.metaKey||event.ctrlKey)&&!event.altKey&&!event.shiftKey&&event.key.toLowerCase()==='b'){event.preventDefault();toggleNavigation();}
     };
     window.addEventListener('keydown',keydown);
     return()=>{preference.removeEventListener('change',onAppearance);navLayout.removeEventListener('change',onNavLayout);refLayout.removeEventListener('change',onRefLayout);window.removeEventListener('keydown',keydown);window.removeEventListener('storage',stored);document.removeEventListener('astro:page-load',hashPart);document.removeEventListener('astro:before-preparation',beforeNavigation);document.removeEventListener('astro:before-swap',beforeSwap);document.removeEventListener('astro:page-load',restoreReadingFocus);};
@@ -208,8 +199,6 @@
           <StudyBreadcrumb {catalog} {exam} {problem} locale={study.locale} onselect={select}/>
         </div>
         <div class="toolbar-actions">
-          <Button variant="ghost" class="search-button" onclick={()=>searchOpen=true} aria-label={t('搜索题目与公式','Search problems and formulas')}><SearchIcon data-icon="inline-start" aria-hidden="true"/><span class="search-button-label">{t('搜索','Search')}</span><kbd>{macKeys?'⌘':'Ctrl'} K</kbd></Button>
-          <Separator orientation="vertical" class="h-5 data-vertical:self-center"/>
           <Tooltip.Root><Tooltip.Trigger class={buttonVariants({variant:'ghost',size:'sm'})} onclick={()=>study.locale=study.locale==='zh'?'en':'zh'} aria-label={t('Switch to English','切换为中文')}><span class="language-switch">{study.locale==='zh'?'EN':'中文'}</span></Tooltip.Trigger><Tooltip.Content>{t('切换为英文','Switch to Chinese')}</Tooltip.Content></Tooltip.Root>
           <Tooltip.Root><Tooltip.Trigger class={buttonVariants({variant:'ghost',size:'icon'})} onclick={()=>study.theme=dark?'light':'dark'} aria-label={t(dark?'切换浅色主题':'切换深色主题',dark?'Switch to light mode':'Switch to dark mode')}>{#if dark}<Sun aria-hidden="true"/>{:else}<Moon aria-hidden="true"/>{/if}</Tooltip.Trigger><Tooltip.Content>{t(dark?'浅色主题':'深色主题',dark?'Light mode':'Dark mode')}</Tooltip.Content></Tooltip.Root>
           <Tooltip.Root><Tooltip.Trigger class={buttonVariants({variant:'ghost',size:'icon',highlightExpanded:false})} data-sidebar-toggle="references" onclick={toggleReferences} aria-label={referencesLabel} aria-controls={compactReferences?'mobile-reference-sidebar':'reference-sidebar'} aria-expanded={compactReferences?railOpen:study.referencesOpen}><PanelRight aria-hidden="true"/></Tooltip.Trigger><Tooltip.Content>{referencesLabel}</Tooltip.Content></Tooltip.Root>
@@ -217,7 +206,6 @@
       </header>
       <div class="reading-layout" data-references={study.referencesOpen?'open':'closed'}>
         <main id="main-content" class="main-content" data-problem={problem.id} data-study-ready={study.ready}>
-          <div class="problem-meta"><Badge variant="outline">Exam {exam.number}</Badge><span>{exam.term[study.locale]} {exam.year}</span><span class="metadata-dot">·</span><span>{exam.kind==='practice'?t('未标分','Unscored'):`${problem.points} ${t('分','points')}`}</span><span class="metadata-dot">·</span><span>{problem.parts.length} {t('小问','parts')}</span></div>
           <div class="problem-title-row"><div><p class="problem-kicker">{t('题目','PROBLEM')} {String(problem.number).padStart(2,'0')}</p><h1 id="problem-title" lang={study.locale==='zh'?'zh-CN':'en'} tabindex="-1">{problem.title[study.locale]}</h1></div><Tooltip.Root><Tooltip.Trigger class={buttonVariants({variant:'outline',size:'icon'})} onclick={()=>study.bookmarks[problem.id]=!study.bookmarks[problem.id]} aria-label={t(study.bookmarks[problem.id]?'取消收藏':'收藏此题',study.bookmarks[problem.id]?'Remove bookmark':'Bookmark problem')} aria-pressed={Boolean(study.bookmarks[problem.id])}>{#if study.bookmarks[problem.id]}<BookmarkCheck aria-hidden="true"/>{:else}<Bookmark aria-hidden="true"/>{/if}</Tooltip.Trigger><Tooltip.Content>{t(study.bookmarks[problem.id]?'已收藏':'留待再次练习',study.bookmarks[problem.id]?'Saved':'Save for another attempt')}</Tooltip.Content></Tooltip.Root></div>
           <p class="problem-subtitle">{problem.topic[study.locale]}<span>·</span>{t('先写方程，再代入数值。','Start with the equation. Then work through the numbers.')}</p>
           <div class="problem-lectures lecture-badges"><GraduationCap aria-hidden="true"/>{#each [...new Set(problem.lectures.map(l=>l.doc))] as doc(doc)}<Button variant="ghost" size="sm" onclick={()=>openSource(problem.lectures.find(l=>l.doc===doc)!)}>{sourceName(doc,documents)}</Button>{/each}</div>
@@ -229,7 +217,7 @@
               {#if problem.figure && !problem.figureAtParts}<Figure {assetBase} size={data.figureSizes[study.locale][problem.figure]} name={problem.figure} locale={study.locale} {dark} caption={problem.figureCaption} original={problem.figureOriginal===false?undefined:problem.originalFigure}/>{/if}
               <section class="worked-solution" aria-label={t('分步解答','Worked solution')}><div class="solution-section-heading"><div class="section-label"><span>02</span>{t('一步一步推导','WORK IT THROUGH')}</div><Button variant="ghost" size="sm" onclick={toggleSolutions} aria-controls="worked-parts" aria-expanded={openParts.length>0}>{#if openParts.length}{t('收起全部推导','Collapse all steps')}<ChevronsUp data-icon="inline-end" aria-hidden="true"/>{:else}{t('展开全部推导','Reveal all steps')}<Layers data-icon="inline-end" aria-hidden="true"/>{/if}</Button></div>
                 <ProblemOverview {problem} {documents} locale={study.locale} onsource={openSource}/>
-                <Accordion.Root id="worked-parts" type="multiple" bind:value={openParts}>{#each problem.parts as part(part.id)}<ProblemPart {assetBase} sizes={data.figureSizes[study.locale]} {part} {study} {exam} {dark} active={openParts.includes(part.id)&&!source&&!libraryOpen&&!searchOpen&&!navOpen&&!railOpen} onsource={openSource}/>{/each}</Accordion.Root>
+                <Accordion.Root id="worked-parts" type="multiple" bind:value={openParts}>{#each problem.parts as part(part.id)}<ProblemPart {assetBase} sizes={data.figureSizes[study.locale]} {part} {study} {exam} {dark} active={openParts.includes(part.id)&&!source&&!libraryOpen&&!navOpen&&!railOpen} onsource={openSource}/>{/each}</Accordion.Root>
               </section>
               {#if problem.note?.[study.locale]}<Alert.Root class="problem-model-note"><Info aria-hidden="true"/><Alert.Title>{t('模型与原题说明','Model & source note')}</Alert.Title><Alert.Description><RichText text={problem.note[study.locale]!}/></Alert.Description></Alert.Root>{/if}
               <div class="problem-completion"><div><CircleCheck aria-hidden="true"/><span>{completed}/{problem.parts.length} {t('小问已掌握','parts mastered')}</span></div><span>{t('掌握后自行标记，进度自动保存。','Mark your understanding; progress saves automatically.')}</span></div>
@@ -246,7 +234,6 @@
   </div>
   <Sheet.Root bind:open={navOpen}><Sheet.Content onCloseAutoFocus={panelCloseFocus} id="mobile-exam-navigation" closeLabel={t('关闭','Close')} side="left" class="mobile-nav-sheet"><Sheet.Header class="sr-only"><Sheet.Title>{t('试卷与资料导航','Exams and resources')}</Sheet.Title><Sheet.Description>{t('选择试卷、题目或学习资料。','Choose an exam, problem or course resource.')}</Sheet.Description></Sheet.Header><Navigation bind:openExam={mobileNavExam} {study} onselect={select} onlibrary={library}/></Sheet.Content></Sheet.Root>
   <Sheet.Root bind:open={railOpen}><Sheet.Content onCloseAutoFocus={panelCloseFocus} id="mobile-reference-sidebar" closeLabel={t('关闭','Close')} side="right" class="reference-sheet"><Sheet.Header><Sheet.Title>{t('公式与课程连接','Formulas and lectures')}</Sheet.Title><Sheet.Description>{t('查看本题使用的公式与对应讲义。','The equations and lecture pages used in this problem.')}</Sheet.Description></Sheet.Header><ReferenceRail bind:tab={mobileRailTab} {documents} {problem} locale={study.locale} onsource={openSource} onlibrary={(kind)=>library(kind,'references')}/></Sheet.Content></Sheet.Root>
-  <Search bind:open={searchOpen} {catalog} examNumber={exam.number} locale={study.locale} onselect={select} onsource={openSource}/>
   <Library bind:open={libraryOpen} bind:kind={libraryKind} {study} onsource={openSource} onselect={select} onCloseAutoFocus={returnFromLibrary}/>
   <SourceViewer {source} {documents} locale={study.locale} onCloseAutoFocus={returnFromSource} onclose={()=>source=null}/>
 </Tooltip.Provider>

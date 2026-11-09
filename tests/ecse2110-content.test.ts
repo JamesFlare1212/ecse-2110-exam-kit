@@ -59,15 +59,13 @@ describe('ECSE 2110 delivery and provenance', () => {
     }
   });
 
-  test('search/navigation projects every part without shipping the other answers', () => {
+  test('navigation projects question identity and progress IDs without shipping article text', () => {
     for (const exam of exams) {
       const index = examIndex.find(item => item.id === exam.id)!;
       expect(index.problems.map(q => q.id)).toEqual(exam.problems.map(q => q.id));
       for (const problem of exam.problems) {
         const entry = index.problems.find(q => q.id === problem.id)!;
-        expect(entry.parts).toEqual(problem.parts.map(({id, label, prompt}) => ({id, label, prompt})));
-        expect(entry).not.toHaveProperty('guide');
-        for (const part of entry.parts) expect(part).not.toHaveProperty('solution');
+        expect(entry).toEqual({id: problem.id, number: problem.number, title: problem.title, parts: problem.parts.map(({id}) => ({id}))});
       }
     }
   });

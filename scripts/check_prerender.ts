@@ -35,6 +35,7 @@ for (const { problem } of problemEntries) {
   const document = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
   assert.ok(!/<a\b[^>]*\bdownload(?:\s|=|>)/i.test(document), `${problem.id}: no download action`);
   assert.ok(!/<a\b[^>]*href=["'][^"']*\.pdf(?:[?#"'])/i.test(document), `${problem.id}: no original-PDF links`);
+  assert.ok(!/search-button|global-search|formula-search|search-dialog/.test(document), `${problem.id}: no search UI`);
   assert.ok(document.includes(`data-problem="${problem.id}"`), `${problem.id}: page identity`);
   assert.ok(document.includes(`>${problem.title.zh}</h1>`), `${problem.id}: prerendered title`);
   assert.ok(document.includes(renderText(problem.statement.zh)), `${problem.id}: prerendered statement`);
@@ -62,8 +63,8 @@ for (const { problem } of problemEntries) {
   assert.deepEqual(data.problem, problem, `${problem.id}: lossless hydration data`);
   assert.ok(!('problems' in data.exam), `${problem.id}: exam metadata excludes other solutions`);
   for (const exam of data.examIndex) for (const question of exam.problems) {
-    assert.ok(!('guide' in question), `${problem.id}: index excludes guides`);
-    for (const part of question.parts) assert.ok(!('solution' in part), `${problem.id}: index excludes solutions`);
+    assert.deepEqual(Object.keys(question).sort(), ['id', 'number', 'parts', 'title'], `${problem.id}: index contains only navigation metadata`);
+    for (const part of question.parts) assert.deepEqual(Object.keys(part), ['id'], `${problem.id}: index contains only progress IDs`);
   }
 }
 console.log(`Prerender verified: ${ids.length} problem HTML pages, ${parts} question parts, isolated page data.`);

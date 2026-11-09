@@ -9,8 +9,9 @@ const ready=p=>p.waitForFunction(()=>document.querySelector('[data-study-ready=t
 const go=async(p,id)=>{await p.goto(`${base}/problems/${id}/`);await ready(p);await p.evaluate(()=>document.fonts.ready);};
 try{
  const c=await b.newContext({viewport:{width:1280,height:800},reducedMotion:'reduce'}),p=await c.newPage();p.setDefaultTimeout(10000);
- await go(p,'e2-s26-q3');assert.ok((await p.locator('.search-button kbd').innerText()).includes(await p.evaluate(()=>/Mac|iPhone|iPad/.test(navigator.platform)?'⌘':'Ctrl')));
- await p.keyboard.press('Control+k');await p.locator('.search-dialog').waitFor();await p.keyboard.press('Escape');pass('I35: platform hint matches the working keyboard shortcut');
+ await go(p,'e2-s26-q3');
+ const intercepted=await p.evaluate(()=>['ctrlKey','metaKey'].map(modifier=>{const event=new KeyboardEvent('keydown',{key:'k',[modifier]:true,bubbles:true,cancelable:true});window.dispatchEvent(event);return event.defaultPrevented;}));
+ assert.deepEqual(intercepted,[false,false]);assert.equal(await p.locator('.search-button,.search-dialog').count(),0);pass('Retired search has no controls or keyboard interception');
  await p.locator('.solution-section-heading button').click();const part=p.locator('[data-part="e2-s26-q3-a"]');
  await part.locator('.part-actions button').first().click();assert.ok((await part.locator('.part-letter').innerText()).includes('a'));
  const names=await p.locator('.part-actions button').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label')));assert.ok(names.every(n=>n&&n.includes('小问')));assert.equal(names.length,new Set(names).size);pass('I37/I38: completion retains part letters; action names identify their parts');

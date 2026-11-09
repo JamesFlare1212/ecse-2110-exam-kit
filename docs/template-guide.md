@@ -84,7 +84,7 @@ Fieldnotes 的可复用单位是 **工作台 + 课程配置 + Markdown 试卷包
 
 - `tests/template.test.ts`：独立的非 ECSE 课程夹具、双语模板、配置验证与风格示例，完全不需要现有课的试卷包。
 - `tests/template-build.test.ts`：在临时目录中为另一科生成微型测试来源并构建真实静态页面，验证课程标识、存储命名空间、非数字资料标签、没有独立公式表和默认题目回退；不改写现有课程资源。
-- `tests/content-schema.test.ts`、存储/语言/搜索/类型检查测试：对当前内容和通用工作台继续运行。
+- `tests/content-schema.test.ts`、存储/语言/导航/类型检查测试：对当前内容和通用工作台继续运行。
 - `tests/content.test.ts`、`tests/markdown.test.ts`、`tests/papers.test.ts`：保留已交付 ECSE 数据的措辞、物理数值和纸张夹具回归，以 `course.id` 限定；不会强迫新课具有 Smith 图或特定电荷密度。迁移不是删掉这些已验证事实，而是另加新课自己的数值、原文与模型测试。
 - CI 使用的 `scripts/browser-startup-qa.mjs` 从课程配置和构建页面发现存储键与测试题目，适用于迁移后的课程；它调用通用 `browser-hover-qa.mjs` 与 `browser-study-ux-qa.mjs`，验证两主题的悬浮/焦点可见度、常态文字对比度、Sheet/资料库/来源之间的焦点返回，以及窄屏来源的可读放大、局部平移和页宽重置。
 - `browser-qa.mjs` 及 reading/interactions/repairs/theme/i18n/content-locales 补充脚本包含当前 ECSE 的特定题目、图示与操作流程，是示例课程的补充回归，不是可直接套给所有课程的通用验收。新课程应按其内容补充对应交互用例。

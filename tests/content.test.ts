@@ -16,20 +16,14 @@ const checkTex=(tex:string)=>katex.renderToString(tex,{throwOnError:true,strict:
 const equations=(part:Part,locale:Locale='en')=>displayEquations(part.solution[locale]);
 // This shipped course's scientific/source regressions are not requirements for other subjects.
 describe.skipIf(course.id!=='ecse-2100')('Complete, bilingual and source-addressable content',()=>{
-  test('the client index preserves all searchable questions without shipping solutions',()=>{
+  test('the client index preserves question identity and progress IDs without shipping article text',()=>{
     expect(examIndex.map(e=>e.id)).toEqual(exams.map(e=>e.id));
     for(const exam of exams){
       const indexed=examIndex.find(e=>e.id===exam.id)!;
       expect(indexed.problems.map(p=>p.id)).toEqual(exam.problems.map(p=>p.id));
       for(const question of exam.problems){
         const summary=indexed.problems.find(p=>p.id===question.id)!;
-        expect(summary.title).toEqual(question.title);
-        expect(summary.topic).toEqual(question.topic);
-        expect(summary.statement).toEqual(question.statement);
-        expect(summary.parts).toEqual(question.parts.map(({id,label,prompt})=>({id,label,prompt})));
-        expect(summary).not.toHaveProperty('guide');
-        expect(summary).not.toHaveProperty('givens');
-        for(const part of summary.parts)expect(part).not.toHaveProperty('solution');
+        expect(summary).toEqual({id:question.id,number:question.number,title:question.title,parts:question.parts.map(({id})=>({id}))});
       }
     }
   });

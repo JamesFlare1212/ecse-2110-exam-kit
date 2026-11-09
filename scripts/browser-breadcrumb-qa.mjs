@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {loadContent} from '../content/papers.server.ts';
+import {breadcrumbLayout} from '../src/lib/breadcrumb-layout.ts';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE??'playwright');
 const {course,exams}=loadContent();
 const base=process.env.QA_URL??'http://127.0.0.1:4173';
@@ -31,7 +32,8 @@ try {
     };
     const focused=()=>page.waitForFunction(()=>document.activeElement?.id==='problem-title');
     async function openMenu(kind,keyboard=false){
-      const trigger=await pathTrigger.isVisible()?pathTrigger:crumb.locator(`[data-breadcrumb-menu=${kind}]`);
+      const requested=crumb.locator(`[data-breadcrumb-menu=${kind}]`);
+      const trigger=await requested.isVisible()?requested:pathTrigger;
       if(keyboard){await trigger.focus();await page.keyboard.press('Enter');}else await trigger.click();
       await menu.waitFor();
       assert.equal(await menu.locator('[data-slot=dropdown-menu-group-heading]').count(),0,'Top-bar menus show choices without redundant headings');
@@ -39,20 +41,25 @@ try {
       return trigger;
     }
     async function layout(){
+      await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'No page-wide overflow');
       const bounds=await page.locator('.topbar').evaluate(node=>{
         const rect=el=>{const r=el.getBoundingClientRect();return {x:r.x,right:r.right,y:r.y,bottom:r.bottom,width:r.width,height:r.height,center:r.y+r.height/2};};
-        return {viewport:innerWidth,bar:rect(node),crumb:rect(node.querySelector('.study-breadcrumb')),actions:rect(node.querySelector('.toolbar-actions')),toggle:rect(node.querySelector('[data-sidebar-toggle=navigation]')),items:[...node.querySelectorAll('[data-slot=breadcrumb-item]')].map(rect).filter(item=>item.width>0),compact:getComputedStyle(node.querySelector('.study-breadcrumb')).getPropertyValue('--collapsed-path').trim()==='1'};
+        const root=node.querySelector('.study-breadcrumb');
+        const widths=Object.fromEntries([...root.querySelectorAll('[data-measure]')].map(sample=>[sample.dataset.measure,sample.getBoundingClientRect().width]));
+        widths.separator=root.querySelector('.breadcrumb-current-separator').getBoundingClientRect().width;
+        widths.gap=parseFloat(getComputedStyle(root.querySelector('[data-slot=breadcrumb-list]')).columnGap)||0;
+        return {viewport:innerWidth,bar:rect(node),crumb:rect(root),actions:rect(node.querySelector('.toolbar-actions')),toggle:rect(node.querySelector('[data-sidebar-toggle=navigation]')),items:[...node.querySelectorAll('[data-slot=breadcrumb-item]')].map(rect).filter(item=>item.width>0),mode:root.dataset.layout,widths};
       });
       assert.ok(bounds.bar.height<=70,'Top bar must never expand into a second row');
       assert.ok(Math.abs(bounds.crumb.center-bounds.actions.center)<1&&Math.abs(bounds.crumb.center-bounds.toggle.center)<1,'Navigation, path and actions stay on the same row');
       assert.ok(bounds.crumb.x>=bounds.toggle.right&&bounds.crumb.right<=bounds.actions.x,'Breadcrumb must not overlap toolbar controls');
       assert.ok(bounds.actions.right<=bounds.bar.right);
       assert.ok(bounds.items.every(item=>item.right<=bounds.crumb.right+1));
-      assert.equal(bounds.compact,bounds.bar.width<=600,'Compact mode follows workspace width, not viewport width');
-      if(!bounds.compact){
-        const name=await crumb.locator('[data-breadcrumb-menu=questions] .truncate').boundingBox();
-        assert.ok(name.width>=30,'Expanded path must retain a readable paper label');
+      assert.equal(bounds.mode,breadcrumbLayout(bounds.crumb.width,bounds.widths),'Use the richest path that fits measured labels and the actual remaining toolbar space');
+      if(bounds.mode!=='compact'){
+        const name=await crumb.locator('[data-breadcrumb-menu=questions]').boundingBox();
+        assert.ok(name.width>=Math.min(bounds.widths.paper,80)-1,`Retain readable paper text: ${JSON.stringify({bounds,name})}`);
       }
       layouts.push(bounds);
     }
@@ -72,14 +79,15 @@ try {
         await tooltip.waitFor();
         assert.equal(await tooltip.innerText(),`${course.code} / Exam ${paper.number} / ${label(paper,locale)}`);
         await page.keyboard.press('Escape');
-        assert.equal(await crumb.locator('[aria-current=page]').innerText(),`Q${question.number}`);
+        const short=await crumb.getAttribute('data-layout')==='compact';
+        assert.equal(await crumb.locator('[aria-current=page]').innerText(),short||locale==='en'?`Q${question.number}`:`第 ${question.number} 题`);
       }
       assert.equal(await crumb.locator('[aria-current=page]').count(),1);
       assert.equal(await crumb.locator('[data-breadcrumb-menu=course]').getAttribute('href'),`/problems/${home.id}/`);
       // Include the three annotated workspace widths and both sides of every transition.
-      for(const w of width===1440?[834,879,1045,1099,1100,1101,1180,1440]:[320,375,450,451,550,600,601,800,801,375]){
+      for(const w of width===1440?[817,834,879,1045,1099,1100,1101,1180,1440]:[320,375,450,451,550,587,600,601,800,801,375]){
         await resize(w);
-        if([834,879,1045].includes(w))await page.locator('.topbar').screenshot({path:`${output}/topbar-${locale}-${theme}-${w}.png`});
+        if([817,834,879,1045].includes(w))await page.locator('.topbar').screenshot({path:`${output}/topbar-${locale}-${theme}-${w}.png`});
       }
       await page.screenshot({path:`${output}/${locale}-${theme}-${width}.png`});
       if(width===1440){
@@ -90,19 +98,22 @@ try {
         await page.locator('[data-sidebar-toggle=navigation]').click();
         await page.locator('[data-sidebar-toggle=references]').click();
         await page.waitForTimeout(220);
-        // Open menus cannot stay attached to a hidden trigger after resizing.
-        await openMenu('questions');await resize(550);
-        await menu.waitFor({state:'detached'});
+        // Keep a menu open while its trigger is still visible; transfer focus
+        // only when a genuine lack of room hides that trigger.
+        await openMenu('questions');await resize(587);
+        assert.ok(await menu.isVisible(),'A still-visible paper trigger keeps its open menu');
+        await resize(320);await menu.waitFor({state:'detached'});
         await page.waitForFunction(()=>document.activeElement?.getAttribute('data-breadcrumb-menu')==='path');
         await openMenu('questions');await resize(1440);
         await menu.waitFor({state:'detached'});
         await page.waitForFunction(()=>document.activeElement?.getAttribute('data-breadcrumb-menu')==='questions');
-        // Opening/closing the desktop sidebar also changes the container width.
+        // Opening/closing the desktop sidebar changes the actual free space,
+        // without needlessly closing a menu whose anchor still fits.
         await resize(830);await openMenu('papers');
         await page.locator('[data-sidebar-toggle=navigation]').evaluate(node=>node.click());
         await page.waitForTimeout(220);await layout();
-        await menu.waitFor({state:'detached'});
-        await page.waitForFunction(()=>document.activeElement?.getAttribute('data-breadcrumb-menu')==='path');
+        assert.ok(await menu.isVisible());
+        await page.keyboard.press('Escape');await menu.waitFor({state:'detached'});
         await page.locator('[data-sidebar-toggle=navigation]').click();await resize(1440);
       }
       const trigger=await openMenu('papers',true);

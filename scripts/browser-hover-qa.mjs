@@ -44,9 +44,12 @@ export async function checkHoverContrast(browser,base,problemId,record) {
         dialog=page.locator('.library-dialog');
         item=dialog.locator('.library-lecture').first();
       } else {
-        await page.getByRole('button',{name:'搜索题目与公式',exact:true}).click();
-        dialog=page.locator('.search-dialog');
-        item=dialog.locator('.search-result').first();
+        await page.locator('.problem-title-row button').click();
+        if(width<=800)await page.locator('[data-sidebar-toggle=navigation]').click();
+        const navigation=page.locator(width<=800?'#mobile-exam-navigation':'#exam-navigation');
+        await navigation.getByRole('button',{name:/我的收藏/}).click();
+        dialog=page.locator('.library-dialog');
+        item=dialog.locator('.saved-problem').first();
       }
       await item.waitFor({state:'visible'});
       await page.evaluate(()=>document.fonts.ready);

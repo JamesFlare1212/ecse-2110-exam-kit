@@ -17,7 +17,8 @@ try {
     const page = await context.newPage(), errors = [];
     page.setDefaultTimeout(10000);
     page.on('pageerror', error => errors.push(error.message));
-    const tooltip = page.locator('[data-slot=tooltip-content]:visible');
+    // Native exit animations can leave a closed hint visible for a frame.
+    const tooltip = page.locator('[data-slot=tooltip-content]:not([data-state=closed]):visible');
     const menu = page.locator('[data-slot=dropdown-menu-content][data-state=open]');
     async function hint(trigger, expected, keyboard = false) {
       assert.equal(await trigger.getAttribute('title'), null, 'No competing browser tooltip');
@@ -40,10 +41,12 @@ try {
       await page.goto(`${base}/problems/p2-f26-q4/`);
       await page.waitForSelector('[data-study-ready=true]');
       const crumb = page.locator('.study-breadcrumb');
-      const trigger = crumb.locator(`[data-breadcrumb-menu=${width < 500 ? 'path' : 'questions'}]`);
+      const path = crumb.locator('[data-breadcrumb-menu=path]');
+      const collapsed = await path.isVisible();
+      const trigger = collapsed ? path : crumb.locator('[data-breadcrumb-menu=questions]');
       const paper = exams.find(exam => exam.id === 'p2-f26');
       const paperLabel = [paper.term[locale], paper.year].filter(value => value !== null).join(' ');
-      await hint(trigger, width < 500 ? `${course.code} / Exam 2 / ${paperLabel}` : paperLabel);
+      await hint(trigger, collapsed ? `${course.code} / Exam 2 / ${paperLabel}` : paperLabel);
       await hint(crumb.locator('[aria-current=page]'), await page.locator('#problem-title').innerText(), true);
       assert.equal(await crumb.locator('[aria-current=page]').getAttribute('data-slot'), 'breadcrumb-page');
       if (width === 1440) {

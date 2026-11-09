@@ -66,6 +66,7 @@ try{
    try{
     await p.goto(`${base}/problems/${id}/`,{waitUntil:'commit'});
     maxReadingMs=Math.max(maxReadingMs,await readable(p));await ready(p);
+    assert.equal(await p.locator('.search-button, #global-search, #formula-search, .search-dialog').count(),0);
     assert.equal(await p.locator('html').getAttribute('lang'),locale==='zh'?'zh-CN':'en');
     await p.evaluate(()=>document.fonts.ready);
     maxCLS=Math.max(maxCLS,await p.evaluate(()=>window.layoutShifts.reduce((sum,e)=>sum+e.value,0)));
@@ -121,14 +122,20 @@ try{
   for(const id of ids){const response=await p.request.get(`${base}/problems/${id}`);assert.equal(response.status(),200);assert.ok((await response.text()).includes(`data-problem="${id}"`));}
   pass('All discovered no-slash destinations resolve',{pages:ids.length});
   await p.goto(`${base}/problems/${sampleId}/`);await ready(p);
-  await p.getByRole('button',{name:'搜索题目与公式',exact:true}).click();
-  await p.locator('#global-search').fill('');
-  const destinationId=ids.find(id=>id!==sampleId)??ids[0];
-  await p.locator(`.search-result[href="/problems/${destinationId}/"]`).focus();
-  await p.keyboard.press('Enter');await p.waitForURL(`**/problems/${destinationId}/`);
+  const intercepted=await p.evaluate(()=>['ctrlKey','metaKey'].map(modifier=>{
+   const event=new KeyboardEvent('keydown',{key:'k',[modifier]:true,bubbles:true,cancelable:true});
+   window.dispatchEvent(event);return event.defaultPrevented;
+  }));
+  assert.deepEqual(intercepted,[false,false]);
+  assert.equal(await p.locator('[role=dialog]:visible').count(),0);
+  pass('Retired search shortcuts do not intercept browser keys or open dialogs');
+  const destination=p.locator('#exam-navigation a.question-link:visible').last();
+  const href=await destination.getAttribute('href');
+  await destination.focus();
+  await p.keyboard.press('Enter');await p.waitForURL(`**${href}`);
   // URL completion precedes the async selection's tick/focus work; wait for
   // the actual observable outcome rather than racing the navigation promise.
   await p.waitForFunction(()=>{const e=document.getElementById('problem-title');return e===document.activeElement&&e.matches(':focus-visible')&&getComputedStyle(e).outlineStyle!=='none';});
-  pass('Keyboard search destinations retain visible heading focus');
+  pass('Keyboard question navigation retains visible heading focus');
  }finally{await c.close();}
 }finally{await mkdir('artifacts',{recursive:true});await writeFile('artifacts/startup-qa.json',JSON.stringify({checks},null,2));await browser.close();}

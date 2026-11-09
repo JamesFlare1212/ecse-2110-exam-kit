@@ -1,6 +1,17 @@
 import {describe, expect, test} from 'bun:test';
+import {readFileSync} from 'node:fs';
 import {maxSourceZoom, MIN_SOURCE_ZOOM, stepSourceZoom} from '../src/lib/source-zoom';
 import {renderText} from '../src/lib/math';
+
+test('the reader starts with the problem heading, without a separate metadata row or leftover spacing', () => {
+  const desk = readFileSync('src/lib/components/StudyDesk.svelte', 'utf8');
+  const css = readFileSync('src/styles/layout.css', 'utf8');
+  expect(desk).toMatch(/<main\b[^>]*>\s*<div class="problem-title-row">/);
+  expect(desk).not.toContain('problem-meta');
+  expect(css).not.toMatch(/\.(?:problem-meta|metadata-dot)\b/);
+  for (const rule of css.matchAll(/\.problem-title-row\s*\{([^}]*)\}/g))
+    expect(rule[1]).not.toContain('margin-top');
+});
 
 describe('Responsive source reading', () => {
   test('narrow readers can reach native source detail while desktops retain the existing range', () => {

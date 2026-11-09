@@ -10,6 +10,7 @@
   import Ellipsis from '@lucide/svelte/icons/ellipsis';
   import {course} from '../../../content/course';
   import {DEFAULT_PROBLEM_ID,followProblemLink,problemPath} from '#lib/problem-navigation';
+  import {breadcrumbLayout,type BreadcrumbLayout,type BreadcrumbWidths} from '#lib/breadcrumb-layout';
   import type {Catalog} from '#lib/catalog';
   import type {ExamInfo,Locale,ProblemIndex} from '#lib/types';
 
@@ -27,6 +28,8 @@
   const paperLabel=(paper:ExamInfo)=>[paper.term[locale],paper.year].filter(value=>value!==null).join(' ');
   let navigating=false;
   let breadcrumb=$state<HTMLElement|null>(null);
+  let measurements=$state<HTMLDivElement|null>(null);
+  let layout=$state<BreadcrumbLayout|'auto'>('auto');
   let openMenu=$state<'path'|'course'|'papers'|'questions'|null>(null);
   // Touch menus can retain trigger focus; do not leave its hint behind the menu.
   let openTooltip=$state<'path'|'course'|'questions'|'current'|null>(null);
@@ -34,22 +37,39 @@
 
   onMount(()=>{
     const root=breadcrumb!;
-    const workspace=root.closest('.workspace')!;
-    let compact=getComputedStyle(root).getPropertyValue('--collapsed-path').trim()==='1';
-    const observer=new ResizeObserver(()=>{
-      const next=getComputedStyle(root).getPropertyValue('--collapsed-path').trim()==='1';
-      if(next===compact)return;
-      compact=next;
+    let disposed=false;
+    const measure=()=>{
+      const available=root.getBoundingClientRect().width;
+      if(!available)return;
+      const width=(name:string)=>measurements!.querySelector<HTMLElement>(`[data-measure="${name}"]`)!.getBoundingClientRect().width;
+      const list=root.querySelector<HTMLElement>('[data-slot="breadcrumb-list"]')!;
+      const widths:BreadcrumbWidths={
+        course:width('course'),courseIcon:width('courseIcon'),group:width('group'),paper:width('paper'),
+        current:width('current'),path:width('path'),
+        separator:root.querySelector<HTMLElement>('.breadcrumb-current-separator')!.getBoundingClientRect().width,
+        gap:parseFloat(getComputedStyle(list).columnGap)||0,
+      };
+      const next=breadcrumbLayout(available,widths);
+      if(next===layout)return;
       const active=document.activeElement;
-      const hiddenFocus=active instanceof HTMLElement&&root.contains(active)&&!active.getClientRects().length;
-      if(openMenu||hiddenFocus){
-        const destination=root.querySelector<HTMLElement>(`[data-breadcrumb-menu="${next?'path':'questions'}"]`);
-        if(openMenu){layoutFocus=destination;openMenu=null;}
-        void tick().then(()=>destination?.focus({preventScroll:true}));
-      }
-    });
-    observer.observe(workspace);
-    return()=>observer.disconnect();
+      layout=next;openTooltip=null;
+      void tick().then(()=>{
+        if(disposed)return;
+        const trigger=openMenu?root.querySelector<HTMLElement>(`[data-breadcrumb-menu="${openMenu}"]`):null;
+        const hiddenMenu=trigger&&!trigger.getClientRects().length;
+        const hiddenFocus=active instanceof HTMLElement&&root.contains(active)&&!active.getClientRects().length;
+        if(!hiddenMenu&&!hiddenFocus)return;
+        const destination=root.querySelector<HTMLElement>(`[data-breadcrumb-menu="${next==='partial'||next==='compact'?'path':'questions'}"]`);
+        if(hiddenMenu){layoutFocus=destination;openMenu=null;}
+        void tick().then(()=>{if(!disposed)destination?.focus({preventScroll:true});});
+      });
+    };
+    // The root receives only the space left by real controls. The inert natural-
+    // width row also changes on locale, paper, course-code and font updates.
+    const observer=new ResizeObserver(measure);
+    observer.observe(root);observer.observe(measurements!);
+    measure();
+    return()=>{disposed=true;observer.disconnect();};
   });
 
   function select(event:MouseEvent,id:string){
@@ -83,7 +103,7 @@
   </DropdownMenu.Item>
 {/snippet}
 
-<Breadcrumb.Root bind:ref={breadcrumb} class="study-breadcrumb" aria-label={t('面包屑导航','Breadcrumb')}>
+<Breadcrumb.Root bind:ref={breadcrumb} class="study-breadcrumb" data-layout={layout} aria-label={t('面包屑导航','Breadcrumb')}>
   <Breadcrumb.List class="flex-nowrap gap-1 sm:gap-1">
     <Breadcrumb.Item class="breadcrumb-collapsed shrink-0">
       <DropdownMenu.Root open={openMenu==='path'} onOpenChange={open=>openMenu=open?'path':null}>
@@ -119,7 +139,8 @@
         </DropdownMenu.Content>
       </DropdownMenu.Root>
     </Breadcrumb.Item>
-    <Breadcrumb.Item class="breadcrumb-ancestor breadcrumb-course shrink-0">
+    <Breadcrumb.Separator class="breadcrumb-partial shrink-0"/>
+    <Breadcrumb.Item class="breadcrumb-upstream breadcrumb-course shrink-0">
       <DropdownMenu.Root open={openMenu==='course'} onOpenChange={open=>openMenu=open?'course':null}>
         <Tooltip.Root disabled={Boolean(openMenu)} bind:open={()=>!openMenu&&openTooltip==='course',open=>openTooltip=open&&!openMenu?'course':null}>
           <Tooltip.Trigger>
@@ -144,8 +165,8 @@
         </DropdownMenu.Content>
       </DropdownMenu.Root>
     </Breadcrumb.Item>
-    <Breadcrumb.Separator class="breadcrumb-ancestor shrink-0"/>
-    <Breadcrumb.Item class="breadcrumb-ancestor shrink-0">
+    <Breadcrumb.Separator class="breadcrumb-upstream shrink-0"/>
+    <Breadcrumb.Item class="breadcrumb-upstream shrink-0">
       <DropdownMenu.Root open={openMenu==='papers'} onOpenChange={open=>openMenu=open?'papers':null}>
         <DropdownMenu.Trigger class={buttonVariants({variant:'ghost',size:'sm',class:'px-1'})}
           data-breadcrumb-menu="papers" aria-label={t(`Exam ${exam.number} · 选择试卷`,`Exam ${exam.number} · Choose a paper`)}>
@@ -160,8 +181,8 @@
         </DropdownMenu.Content>
       </DropdownMenu.Root>
     </Breadcrumb.Item>
-    <Breadcrumb.Separator class="breadcrumb-ancestor shrink-0"/>
-    <Breadcrumb.Item class="breadcrumb-ancestor min-w-0 shrink">
+    <Breadcrumb.Separator class="breadcrumb-upstream shrink-0"/>
+    <Breadcrumb.Item class="breadcrumb-paper min-w-0 shrink">
       <DropdownMenu.Root open={openMenu==='questions'} onOpenChange={open=>openMenu=open?'questions':null}>
         <Tooltip.Root disabled={Boolean(openMenu)} bind:open={()=>!openMenu&&openTooltip==='questions',open=>openTooltip=open&&!openMenu?'questions':null}>
           <Tooltip.Trigger>
@@ -184,7 +205,7 @@
         </DropdownMenu.Content>
       </DropdownMenu.Root>
     </Breadcrumb.Item>
-    <Breadcrumb.Separator class="shrink-0"/>
+    <Breadcrumb.Separator class="breadcrumb-current-separator shrink-0"/>
     <Breadcrumb.Item class="shrink-0">
       <Tooltip.Root disabled={Boolean(openMenu)} bind:open={()=>!openMenu&&openTooltip==='current',open=>openTooltip=open&&!openMenu?'current':null}>
         <Tooltip.Trigger type={undefined}>
@@ -198,4 +219,15 @@
       </Tooltip.Root>
     </Breadcrumb.Item>
   </Breadcrumb.List>
+  <!-- Non-interactive native-size samples: never duplicate links, IDs or current-page semantics. -->
+  <div class="breadcrumb-measurements" aria-hidden="true" inert>
+    <div bind:this={measurements} class="breadcrumb-measure-row text-sm">
+      <span data-measure="course" data-slot="button" class={buttonVariants({variant:'ghost',size:'sm',class:'px-1'})}><GraduationCap data-icon="inline-start" class="hidden"/>{course.code}<ChevronDown data-icon="inline-end"/></span>
+      <span data-measure="courseIcon" data-slot="button" class={buttonVariants({variant:'ghost',size:'sm',class:'px-1'})}><GraduationCap data-icon="inline-start"/><ChevronDown data-icon="inline-end"/></span>
+      <span data-measure="group" data-slot="button" class={buttonVariants({variant:'ghost',size:'sm',class:'px-1'})}>Exam {exam.number}<ChevronDown data-icon="inline-end"/></span>
+      <span data-measure="paper" data-slot="button" class={buttonVariants({variant:'ghost',size:'sm',class:'px-1'})}>{paperLabel(exam)}<ChevronDown data-icon="inline-end"/></span>
+      <span data-measure="path" data-slot="button" class={buttonVariants({variant:'ghost',size:'icon-sm'})}><Ellipsis/></span>
+      <span data-measure="current">{t(`第 ${problem.number} 题`,`Q${problem.number}`)}</span>
+    </div>
+  </div>
 </Breadcrumb.Root>
