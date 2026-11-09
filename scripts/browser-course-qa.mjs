@@ -25,7 +25,15 @@ try {
       assert.equal(await page.locator('.part-trigger[aria-expanded=true]').count(),question.parts.length);
       assert.equal(await page.locator('.katex-error').count(),0);
       assert.equal(await page.locator('a[download],a[href*=".pdf"]').count(),0);
-      for(const image of await page.locator('.study-figure img').all()) {
+      // Enhanced converter figures replace their static fallback asynchronously.
+      // Wait for every declared interaction, then address remaining figures by
+      // stable identity instead of nth() locators captured before replacement.
+      for(const part of question.parts.filter(part=>part.interaction)) {
+        await page.locator(`[data-part="${part.id}"] [data-interaction="${part.interaction.kind}"][data-ready=true]`).waitFor();
+      }
+      const figures=await page.locator('.study-figure:visible').evaluateAll(nodes=>nodes.map(node=>node.dataset.figure));
+      for(const name of figures) {
+        const image=page.locator(`.study-figure[data-figure="${name}"]:visible .figure-image img`);
         await image.scrollIntoViewIfNeeded();
         await image.evaluate(image=>image.decode());
         const source=await image.getAttribute('src');

@@ -1,4 +1,8 @@
-"""Discover paper-local Matplotlib renderers and generate only their assets."""
+"""Discover paper-local Matplotlib renderers and generate only their assets.
+
+Papers without original-image crops need only requirements-figures.txt.
+PyMuPDF and local source PDFs are required only for actual crop regeneration.
+"""
 import argparse
 import hashlib
 import importlib.util
@@ -55,10 +59,6 @@ def render_figures(save, dark, selected=None):
 
 
 def generate_paper(directory):
-    # PDF rendering is an offline regeneration dependency, not needed by figure QA.
-    import pymupdf
-    from PIL import Image
-
     directory = Path(directory).resolve()
     paper = next(p for p in papers() if p['directory'] == directory)
     output = directory / 'assets/figures'
@@ -109,6 +109,11 @@ def generate_paper(directory):
     for name, source in sources['figures'].items():
         if name not in original_names:
             continue
+        # PDF tooling belongs only to actual original-image crop regeneration,
+        # not SVGs, auxiliary assets, prompt-text citations or stale cleanup.
+        import pymupdf
+        from PIL import Image
+
         x, y, width, height = source['region']
         region = [max(0, x-.002), max(0, y-.002), width+.004, height+.004]
         with pymupdf.open(asset_source(registry[source['doc']]['pdf'])) as doc:

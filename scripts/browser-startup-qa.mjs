@@ -7,13 +7,16 @@ import {checkHoverContrast} from './browser-hover-qa.mjs';
 import {checkStudyUX} from './browser-study-ux-qa.mjs';
 import {checkNavigationStability} from './browser-navigation-qa.mjs';
 import {checkFigureSegments} from './browser-figure-qa.mjs';
+import {originalFigureSample,sourceReadingSample} from './browser-samples.ts';
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE??'playwright');
 const browser=await chromium.launch({headless:true,...(process.env.QA_CHROMIUM?{executablePath:process.env.QA_CHROMIUM}:{}),args:['--no-sandbox']});
 const base=process.env.QA_URL??'http://127.0.0.1:4173',checks=[];
 const ids=(await readdir(new URL('../build/problems/',import.meta.url))).sort();
 const sampleId=ids.includes(course.defaultProblemId)?course.defaultProblemId:ids[0];
 assert.ok(sampleId,'At least one complete paper is required');
-const figureSample=loadContent().exams.flatMap(exam=>exam.problems).find(q=>q.figure)?.id;
+const {exams}=loadContent();
+const figureSample=originalFigureSample(exams);
+const sourceSample=sourceReadingSample(exams)??sampleId;
 const pass=(name,data={})=>{checks.push({name,...data});console.log('PASS',name,JSON.stringify(data));};
 const ready=p=>p.waitForFunction(()=>document.querySelector('[data-study-ready=true]'));
 async function context(locale,width){
@@ -54,7 +57,7 @@ async function screenshotWithoutWaitingForFonts(page,path){
 }
 try{
  await checkHoverContrast(browser,base,sampleId,pass);
- await checkStudyUX(browser,base,figureSample??sampleId,pass);
+ await checkStudyUX(browser,base,sourceSample,pass);
  if(figureSample)await checkFigureSegments(browser,base,figureSample,pass);
  else pass('No printed prompt diagrams in this corpus; figure-version checks are not applicable');
  await checkNavigationStability(browser,base,pass);

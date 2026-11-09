@@ -99,7 +99,7 @@
     "scripts/question_primitives.py": "ff01131c66a2fc665cc4fecfc24e6fcced4f49eaeb86e7c922884b55cf978969",
     "scripts/circuit_drawing.py": "092e6b8538a7c3e48a5baff61f27592375c13691b1fc0e74c1e9bf35ab058776",
     "scripts/requirements-figures.txt": "3613bdcbf80a5ecde8b2fdae8fb5b6eeccc2ece50e83e686b7c74fe75c11faa7",
-    "scripts/generate_figures.py": "7097affd651faf4daba507a9a0b781de349e28d64994b5ce0f89fb59b1905fd5",
+    "scripts/generate_figures.py": "b0142afb47e7c78a7f7e307f7cfea1dd3c3d8dddd343adb52e32677e072ef6fc",
     "scripts/semi_converter_sprite.py": "5b64cb7395b76a8fbd755474c5b683112c941f12781bc1d5a34f53e5880452d2",
     "scripts/full_converter_sprite.py": "8088d20f64cb8e351633fb2b3fe67949afb7e1e3ed4a1d6ba663c2fbc818c61f"
   },

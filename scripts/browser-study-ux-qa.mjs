@@ -17,6 +17,15 @@ async function closeLibrary(page,method) {
   else await page.locator('.library-dialog').getByRole('button',{name:'关闭',exact:true}).click();
   await page.locator('.library-dialog').waitFor({state:'detached'});
 }
+// Source navigation lives in the Source pages tab, not the figure toolbar.
+// This also works for text-only questions and missing-reference supplements.
+export async function openQuestionSource(page) {
+  await page.getByRole('tab',{name:'试卷原页',exact:true}).click();
+  const preview=page.locator('.source-page-preview').first();
+  const source=await preview.locator('img').getAttribute('src');
+  await preview.click();
+  return source;
+}
 export async function checkStudyUX(browser,base,problemId,record) {
   const output=process.env.QA_UX_ARTIFACTS??'artifacts/study-ux-review';
   await mkdir(output,{recursive:true});
@@ -44,13 +53,15 @@ export async function checkStudyUX(browser,base,problemId,record) {
 
         if(width<500) {
           for(const kind of ['question','formula']) {
+            let expectedSource;
             if(kind==='formula') {
               await page.locator('[data-sidebar-toggle=references]').click();
               const link=page.locator('#mobile-reference-sidebar .formula-link').first();
               if(!await link.count()){await page.keyboard.press('Escape');continue;}
               await link.click();
-            } else await page.locator('[data-figure-source]').first().click();
+            } else expectedSource=await openQuestionSource(page);
             await page.locator('.source-dialog').waitFor();
+            if(expectedSource)assert.equal(await page.locator('.source-paper img').getAttribute('src'),expectedSource,'The question source tab opens its actual page image');
             await page.waitForFunction(()=>{const image=document.querySelector('.source-paper img');return image?.complete&&image.naturalWidth>0;});
             const zoomIn=page.locator('.source-dialog').getByRole('button',{name:'放大',exact:true});
             let presses=0;

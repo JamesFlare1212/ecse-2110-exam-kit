@@ -218,7 +218,7 @@ class SemiConverterSpriteTests(unittest.TestCase):
             # Exercise the real generation hook, stale cleanup and manifest
             # writer without redrawing other figures or requiring source PDFs.
             with (patch.object(G, 'papers', return_value=[fake]), patch.object(G, 'renderer', return_value=module),
-                  patch.object(G, 'render_figures')):
+                  patch.object(G, 'render_figures'), patch.dict('sys.modules', {'pymupdf': None})):
                 G.generate_paper(directory)
             self.assertFalse((output/'stale.svg').exists())
             manifest = json.loads((output/'manifest.json').read_text())
