@@ -67,7 +67,7 @@
   },
   "generator": "content/zh-cn/practice2_f26/generate_figures.py",
   "sourceSha256": {
-    "content/zh-cn/practice2_f26/generate_figures.py": "f78c014f12d47ee0b4791426f579cdbb9fa66b7cd1ac9f9f87cc891e268b3f9b",
+    "content/zh-cn/practice2_f26/generate_figures.py": "2251040c8b93fe58e5bbdd7bc587f3d55ccdbc6327a7101c3161889bcaaf0ac9",
     "content/zh-cn/practice2_f26/figure-sources.json": "3282140d7af2908cd319c28bced48ad26b411d81db7f1d9307e1da947d038d58",
     "scripts/plotting.py": "16c038f6c67c0e580c17c196b20ba5b5f4e874405cdf495f43cbfdf318e2c526",
     "scripts/question_primitives.py": "ff01131c66a2fc665cc4fecfc24e6fcced4f49eaeb86e7c922884b55cf978969",

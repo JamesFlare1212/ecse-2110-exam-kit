@@ -49,7 +49,7 @@ export async function checkStudyUX(browser,base,problemId,record) {
               const link=page.locator('#mobile-reference-sidebar .formula-link').first();
               if(!await link.count()){await page.keyboard.press('Escape');continue;}
               await link.click();
-            } else await page.locator('.figure-source button').first().click();
+            } else await page.locator('[data-figure-source]').first().click();
             await page.locator('.source-dialog').waitFor();
             await page.waitForFunction(()=>{const image=document.querySelector('.source-paper img');return image?.complete&&image.naturalWidth>0;});
             const zoomIn=page.locator('.source-dialog').getByRole('button',{name:'放大',exact:true});

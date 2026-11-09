@@ -18,7 +18,6 @@
   import Bookmark from '@lucide/svelte/icons/bookmark';
   import BookmarkCheck from '@lucide/svelte/icons/bookmark-check';
   import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
-  import ChevronRight from '@lucide/svelte/icons/chevron-right';
   import CircleCheck from '@lucide/svelte/icons/circle-check';
   import PanelRight from '@lucide/svelte/icons/panel-right';
   import PanelLeft from '@lucide/svelte/icons/panel-left';
@@ -27,6 +26,7 @@
   import ChevronsUp from '@lucide/svelte/icons/chevrons-up';
   import Info from '@lucide/svelte/icons/info';
   import Navigation from '#lib/components/Navigation.svelte';
+  import StudyBreadcrumb from '#lib/components/StudyBreadcrumb.svelte';
   import ReferenceRail from '#lib/components/ReferenceRail.svelte';
   import SourceViewer from '#lib/components/SourceViewer.svelte';
   import SourcePage from '#lib/components/SourcePage.svelte';
@@ -202,10 +202,10 @@
     <aside id="exam-navigation" class="desktop-navigation" aria-label={t('试卷导航','Exam navigation')} aria-hidden={compactNavigation||!study.navigationOpen} inert={compactNavigation||!study.navigationOpen}><Navigation {study} onselect={select} onlibrary={library}/></aside>
     <div class="workspace">
       <header class="topbar">
-        <div class="toolbar-breadcrumb">
+        <div class="toolbar-navigation">
           <Tooltip.Root><Tooltip.Trigger class={buttonVariants({variant:'ghost',size:'icon',highlightExpanded:false})} data-sidebar-toggle="navigation" onclick={toggleNavigation} aria-label={navigationLabel} aria-controls={compactNavigation?'mobile-exam-navigation':'exam-navigation'} aria-expanded={compactNavigation?navOpen:study.navigationOpen} aria-keyshortcuts="Control+b Meta+b"><PanelLeft aria-hidden="true"/></Tooltip.Trigger><Tooltip.Content>{navigationLabel}{#if !compactNavigation} · Ctrl / ⌘ B{/if}</Tooltip.Content></Tooltip.Root>
           <Separator orientation="vertical" class="h-5 data-vertical:self-center"/>
-          <span class="course-label">{course.code}</span><ChevronRight aria-hidden="true"/><span class="toolbar-problem-context" title={`${exam.term[study.locale]} ${exam.year ?? ''} · Exam ${exam.number} · Q${problem.number}`} aria-label={t(`${exam.year === null ? '' : `${exam.year} 年`}${exam.term.zh}，Exam ${exam.number}，第 ${problem.number} 题`,`${exam.term.en} ${exam.year ?? ''}, Exam ${exam.number}, problem ${problem.number}`)}><span class="toolbar-paper-context">{exam.term[study.locale]} {exam.year} · </span>Exam {exam.number} · Q{problem.number}</span>
+          <StudyBreadcrumb {catalog} {exam} {problem} locale={study.locale} onselect={select}/>
         </div>
         <div class="toolbar-actions">
           <Button variant="ghost" class="search-button" onclick={()=>searchOpen=true} aria-label={t('搜索题目与公式','Search problems and formulas')}><SearchIcon data-icon="inline-start" aria-hidden="true"/><span class="search-button-label">{t('搜索','Search')}</span><kbd>{macKeys?'⌘':'Ctrl'} K</kbd></Button>
@@ -217,7 +217,6 @@
       </header>
       <div class="reading-layout" data-references={study.referencesOpen?'open':'closed'}>
         <main id="main-content" class="main-content" data-problem={problem.id} data-study-ready={study.ready}>
-          <div class="course-eyebrow"><span class="eyebrow-line"></span>{course.title.en.toUpperCase()} <span class="eyebrow-divider">/</span> {t('学习桌','THE STUDY DESK')}</div>
           <div class="problem-meta"><Badge variant="outline">Exam {exam.number}</Badge><span>{exam.term[study.locale]} {exam.year}</span><span class="metadata-dot">·</span><span>{exam.kind==='practice'?t('未标分','Unscored'):`${problem.points} ${t('分','points')}`}</span><span class="metadata-dot">·</span><span>{problem.parts.length} {t('小问','parts')}</span></div>
           <div class="problem-title-row"><div><p class="problem-kicker">{t('题目','PROBLEM')} {String(problem.number).padStart(2,'0')}</p><h1 id="problem-title" lang={study.locale==='zh'?'zh-CN':'en'} tabindex="-1">{problem.title[study.locale]}</h1></div><Tooltip.Root><Tooltip.Trigger class={buttonVariants({variant:'outline',size:'icon'})} onclick={()=>study.bookmarks[problem.id]=!study.bookmarks[problem.id]} aria-label={t(study.bookmarks[problem.id]?'取消收藏':'收藏此题',study.bookmarks[problem.id]?'Remove bookmark':'Bookmark problem')} aria-pressed={Boolean(study.bookmarks[problem.id])}>{#if study.bookmarks[problem.id]}<BookmarkCheck aria-hidden="true"/>{:else}<Bookmark aria-hidden="true"/>{/if}</Tooltip.Trigger><Tooltip.Content>{t(study.bookmarks[problem.id]?'已收藏':'留待再次练习',study.bookmarks[problem.id]?'Saved':'Save for another attempt')}</Tooltip.Content></Tooltip.Root></div>
           <p class="problem-subtitle">{problem.topic[study.locale]}<span>·</span>{t('先写方程，再代入数值。','Start with the equation. Then work through the numbers.')}</p>

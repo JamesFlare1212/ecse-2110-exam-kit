@@ -51,7 +51,8 @@ export async function checkI18n(browser, base, record) {
     await page.goto(`${base}/problems/e1-f26-q1/`);
     await page.waitForFunction(() => document.querySelector('[data-study-ready="true"]'));
     assert.equal(await page.locator('.problem-kicker').textContent(), '题目 01');
-    assert.ok((await page.locator('.course-eyebrow').textContent()).includes('学习桌'));
+    assert.equal(await page.locator('.course-eyebrow').count(), 0);
+    assert.equal(await page.getByRole('navigation', { name: '面包屑导航', exact: true }).count(), 1);
     assert.equal(await page.locator('.resource-label').textContent(), '学习资料');
     assert.ok((await page.locator('meta[name="description"]').getAttribute('content')).includes('份历年试卷'));
     assert.equal(await page.getByText('原题措辞', { exact: true }).count(), 1);

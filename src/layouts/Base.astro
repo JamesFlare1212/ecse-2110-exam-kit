@@ -55,7 +55,11 @@ const { title, description } = Astro.props;
           #worked-parts [data-slot="accordion-content"] { display:block !important; height:auto !important; animation:none !important; overflow:visible !important; }
         }
         #worked-parts .part-trigger { cursor:default; pointer-events:none; }
-        #worked-parts .part-trigger>svg,.solution-section-heading button,.part-actions,.figure-toolbar button,.figure-version,.figure-source { display:none !important; }
+        #worked-parts .part-trigger>svg,.solution-section-heading button,.part-actions,.figure-toolbar button,.figure-version-track { display:none !important; }
+        @container study-workspace (max-width:600px) {
+          .breadcrumb-collapsed { display:none; }
+          .breadcrumb-course { display:inline-flex; }
+        }
         .no-js-reading-note { margin:12px; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius); background:var(--muted); font-size:14px; }
       </style>
       <p class="no-js-reading-note">交互控件需要 JavaScript；下方已展开完整静态题目、解答与图示。 / Study controls require JavaScript; complete static questions, solutions and diagrams are expanded below.</p>

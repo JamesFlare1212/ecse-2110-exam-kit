@@ -17,7 +17,27 @@ export async function checkFigureSegments(browser,base,problemId,record) {
       if(!await figure.count()){record('No visible original/recreated figure selector in this sample; skipped',{problemId});return;}
       await figure.scrollIntoViewIfNeeded();
       const group=figure.getByRole('radiogroup'),items=group.getByRole('radio');
-      const image=figure.locator('.figure-image img');
+      const image=figure.locator('.figure-image img'),sourceAction=figure.locator('[data-figure-source]');
+      assert.equal(await figure.locator('.figure-source').count(),0,'No footer row is reserved for source navigation');
+      assert.equal(await sourceAction.count(),1);
+      assert.equal(await group.locator('[data-figure-source]').count(),0,'The source action must not be nested inside a radio group or a radio button');
+      assert.ok(await sourceAction.evaluate(node=>Boolean(node.closest('.figure-version-track'))));
+      assert.ok(await figure.evaluate(node=>node.lastElementChild.matches('.figure-image')));
+      const pageNumber=Number((await sourceAction.innerText()).replace('p.',''));
+      assert.ok(pageNumber>0);
+      assert.ok((await sourceAction.getAttribute('aria-label')).includes(`p.${pageNumber}`));
+      async function locateSource(keyboard=false){
+        const selected=await image.getAttribute('src');
+        if(keyboard){await sourceAction.focus();await page.keyboard.press('Enter');}else await sourceAction.click();
+        const viewer=page.locator('.source-dialog');await viewer.waitFor();
+        await viewer.locator('.source-paper img').evaluate(image=>image.decode());
+        assert.equal(await viewer.locator('#source-page').inputValue(),String(pageNumber));
+        assert.equal(await viewer.locator('[data-source-highlight]').count(),1,'Source navigation retains the citation marker');
+        assert.ok((await viewer.locator('.source-paper img').getAttribute('src')).includes(`/papers/${locale==='zh'?'zh-cn':'en'}/`));
+        await page.keyboard.press('Escape');await viewer.waitFor({state:'detached'});
+        assert.ok(await sourceAction.evaluate(node=>node===document.activeElement),'Source viewer returns focus to the integrated page button');
+        assert.equal(await image.getAttribute('src'),selected,'Source navigation does not change the selected figure version');
+      }
       await page.waitForFunction(name=>{const image=document.querySelector(`[data-figure="${name}"] .figure-image img`);return image?.complete&&image.naturalWidth>0;},await figure.getAttribute('data-figure'));
       assert.equal(await items.count(),2);
       assert.equal(await group.getAttribute('data-orientation'),'horizontal');
@@ -29,7 +49,7 @@ export async function checkFigureSegments(browser,base,problemId,record) {
         const properties=['backgroundColor','color','borderRadius','borderColor','boxShadow','fontSize','fontWeight'];
         const style=(node,typography=true)=>Object.fromEntries(properties.filter(key=>typography||!key.startsWith('font')).map(key=>[key,getComputedStyle(node)[key]]));
         // The empty track inherits its parent's font; the visible items own typography.
-        return {track:style(group,false),examTrack:style(document.querySelector('#exam-navigation [data-slot=tabs-list]'),false),active:style(group.querySelector('[aria-checked=true]')),examActive:style(document.querySelector('#exam-navigation [role=tab][aria-selected=true]'))};
+        return {track:style(group.closest('.figure-version-track'),false),examTrack:style(document.querySelector('#exam-navigation [data-slot=tabs-list]'),false),active:style(group.querySelector('[aria-checked=true]')),examActive:style(document.querySelector('#exam-navigation [role=tab][aria-selected=true]'))};
       });
       assert.deepEqual(styles.track,styles.examTrack,'Figure track must use the same native styles as Exam tabs');
       assert.deepEqual(styles.active,styles.examActive,'Figure selection must use the same native styles as the active Exam tab');
@@ -37,6 +57,7 @@ export async function checkFigureSegments(browser,base,problemId,record) {
       for(const control of controls)assert.ok(control.left>=before.x&&control.right<=before.x+before.width&&control.top>=before.y&&control.bottom<=before.y+before.height,'Both segments and enlargement must fit inside the figure, including narrow English layouts');
       const key=`${theme}-${locale}-${width}`;
       await figure.screenshot({path:`${output}/${key}-recreated.png`});
+      await locateSource();
       await items.nth(1).click();
       await image.waitFor();
       await page.waitForFunction(name=>{const image=document.querySelector(`[data-figure="${name}"] .figure-image img`);return image?.src.includes('/original-figures/')&&image.complete&&image.naturalWidth>0;},await figure.getAttribute('data-figure'));
@@ -46,6 +67,9 @@ export async function checkFigureSegments(browser,base,problemId,record) {
       assert.ok(Math.abs(after.height-before.height)<.5,'Switching the figure must preserve card height');
       assert.ok(Math.abs(originalDrawing.height-drawing.height)<.5,'Switching the figure must preserve drawing height');
       await figure.screenshot({path:`${output}/${key}-original.png`});
+      await items.nth(1).focus();await page.keyboard.press('Tab');
+      assert.ok(await sourceAction.evaluate(node=>node===document.activeElement),'Tab moves from Original to its source page action');
+      await locateSource(true);
       await items.nth(1).click();assert.equal(await items.nth(1).getAttribute('aria-checked'),'true','The selected segment cannot be unchecked');
       const original=await image.getAttribute('src');
       await figure.getByRole('button',{name:locale==='zh'?'放大图示':'Enlarge figure',exact:true}).click();
@@ -60,7 +84,7 @@ export async function checkFigureSegments(browser,base,problemId,record) {
       await page.waitForFunction(name=>{const image=document.querySelector(`[data-figure="${name}"] .figure-image img`);return image?.src.includes('/figures/')&&image.complete&&image.naturalWidth>0;},await figure.getAttribute('data-figure'));
       assert.deepEqual(errors,[]);
       results.push({theme,locale,width,height:before.height});
-      record('Figure segments match Exam styling, fit the toolbar, switch exclusively by pointer/keyboard and preserve drawing height',{theme,locale,width});
+      record('Figure segments and integrated source page action fit the toolbar, preserve exclusive switching, height and modal return focus',{theme,locale,width});
     } finally {await context.close();}
   }
   await writeFile(`${output}/report.json`,JSON.stringify({passed:true,results},null,2));

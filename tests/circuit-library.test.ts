@@ -37,6 +37,18 @@ describe('Complete existing-diagram migration', () => {
     expect(circuits).toBe(14);
     expect(graphs).toBe(5);
   });
+  test('the compact half-controlled bridge has its own small canvas and body-sized labels in every locale/theme', () => {
+    for (const locale of ['en', 'zh-cn']) for (const suffix of ['', '-dark']) {
+      const svg = readFileSync(resolve(`content/${locale}/practice2_f26/assets/figures/p2-f26-q4${suffix}.svg`), 'utf8');
+      const bounds = /viewBox="0 0 ([\d.]+) ([\d.]+)"/.exec(svg)!;
+      expect(Number(bounds[1])).toBeLessThanOrEqual(380);
+      expect(Number(bounds[2])).toBeLessThanOrEqual(310);
+      const labels = [...svg.matchAll(/<tspan[^>]*font-size: ([\d.]+)px[^>]*>([SDRLiv+−])<\/tspan>/g)];
+      expect(labels).toHaveLength(12);
+      for (const label of labels) expect(Number(label[1])).toBeGreaterThanOrEqual(18);
+      expect(svg).toContain(locale === 'en' ? 'FIGURE P10.4' : '图 P10.4');
+    }
+  });
   test('the renderer dependency is offline-only, pinned and absent from the frontend dependency list', () => {
     expect(readFileSync(resolve('scripts/requirements-figures.txt'), 'utf8')).toContain('schemdraw==0.23');
     expect(readFileSync(resolve('package.json'), 'utf8')).not.toContain('schemdraw');

@@ -3,9 +3,9 @@
   import { tabsListVariants, tabsTriggerVariants } from '#lib/components/ui/tabs';
   import { cn } from '#lib/utils';
   import * as Dialog from '#lib/components/ui/dialog';
-  import { Button } from '#lib/components/ui/button';
+  import * as Tooltip from '#lib/components/ui/tooltip';
+  import { Button,buttonVariants } from '#lib/components/ui/button';
   import Expand from '@lucide/svelte/icons/expand';
-  import FileSearch from '@lucide/svelte/icons/file-search';
   import RichText from './RichText.svelte';
   import { plainText } from '#lib/math';
   import type { Locale, Localized, SourceRef } from '#lib/types';
@@ -21,6 +21,7 @@
   let fitWidth=$state(false);
   const src=$derived(view==='original' ? `${assetBase}/original-figures/${name}.webp` : `${assetBase}/figures/${name}${dark?'-dark':''}.svg`);
   const captionText=$derived(plainText(caption?.[locale]??(locale==='zh'?'解题图示':'Solution diagram')));
+  const sourceLabel=$derived(original?`${locale==='zh'?'在原始试卷中定位':'Locate in the source exam'} · p.${original.page}`:'');
   $effect(()=>{name;view='recreated';});
   $effect(()=>{src;error=false;});
   $effect(()=>{if(zoom){zoomError=false;fitWidth=dialogOnly;}});
@@ -29,12 +30,22 @@
 <figure class="study-figure" data-figure={name} style:--figure-width={`${drawingWidth}px`}>
   <div class="figure-toolbar">
     <span class="figure-label">{locale==='zh'?'图示':'FIGURE'}</span>
-    <div class="ml-auto flex items-center gap-2">
+    <div class="ml-auto flex items-center gap-1">
       {#if original}
-        <RadioGroup.Root class={cn(tabsListVariants(),'figure-version h-9')} data-variant="default" orientation="horizontal" bind:value={view} aria-label={locale==='zh'?'图像版本':'Figure version'}>
-          <RadioGroup.Item class={tabsTriggerVariants()} data-active={view==='recreated'?true:undefined} value="recreated">{locale==='zh'?'矢量复刻':'Recreated SVG'}</RadioGroup.Item>
-          <RadioGroup.Item class={tabsTriggerVariants()} data-active={view==='original'?true:undefined} value="original">{locale==='zh'?'原始插图':'Original'}</RadioGroup.Item>
-        </RadioGroup.Root>
+        <div class={cn(tabsListVariants(),'figure-version-track h-9')} data-variant="default">
+          <RadioGroup.Root class="figure-version flex h-full" orientation="horizontal" bind:value={view} aria-label={locale==='zh'?'图像版本':'Figure version'}>
+            <RadioGroup.Item class={tabsTriggerVariants()} data-active={view==='recreated'?true:undefined} value="recreated">{locale==='zh'?'矢量复刻':'Recreated SVG'}</RadioGroup.Item>
+            <RadioGroup.Item class={tabsTriggerVariants()} data-active={view==='original'?true:undefined} value="original">{locale==='zh'?'原始插图':'Original'}</RadioGroup.Item>
+          </RadioGroup.Root>
+          {#if onsource}
+            <Tooltip.Root>
+              <Tooltip.Trigger class={buttonVariants({variant:'ghost',size:'xs'})} data-figure-source
+                aria-label={sourceLabel} aria-haspopup="dialog"
+                onclick={event=>{event.currentTarget.focus({preventScroll:true});onsource?.({...original,label:{zh:'原始插图',en:'Original figure'}});}}>p.{original.page}</Tooltip.Trigger>
+              <Tooltip.Content>{sourceLabel}</Tooltip.Content>
+            </Tooltip.Root>
+          {/if}
+        </div>
       {/if}
       <Button size="icon-sm" variant="ghost" onclick={()=>{zoomError=false;fitWidth=false;zoom=true;}} disabled={error} aria-label={locale==='zh'?'放大图示':'Enlarge figure'}><Expand aria-hidden="true" /></Button>
     </div>
@@ -48,11 +59,6 @@
       {/if}
     </div>
   </div>
-  {#if original&&onsource}
-    <div class="figure-source">
-      <Button size="xs" variant="ghost" onclick={()=>onsource?.({...original,label:{zh:'原始插图',en:'Original figure'}})}><FileSearch data-icon="inline-start" aria-hidden="true" />{locale==='zh'?'在原始试卷中定位':'Locate in the source exam'} · p.{original.page}</Button>
-    </div>
-  {/if}
 </figure>
 {/if}
 <Dialog.Root bind:open={zoom}>
