@@ -2,6 +2,7 @@ import { exams, formulas, documents, papers } from '../content/catalog.server';
 import { assetSource } from '../content/papers.server';
 import { existsSync, readFileSync } from 'node:fs';
 import { parseConductionGeometry, validateConductionSprite } from '../src/lib/visualizations/conduction-geometry';
+import { validateRippleData } from '../src/lib/visualizations/full-converter-model.mjs';
 import { resolve } from 'node:path';
 import { displayEquations } from '../content/text';
 
@@ -22,6 +23,10 @@ for (const paper of papers) for (const locale of ['en','zh'] as const) {
       const base=resolve(directory,'assets/figures',part.interaction.asset);
       required(`${base}.json`);
       const geometry=parseConductionGeometry(JSON.parse(readFileSync(`${base}.json`,'utf8')));
+      if((part.interaction.kind==='full-converter')!==(geometry.version===2))throw new Error(`Wrong interaction topology: ${part.id}`);
+      if(part.interaction.kind==='full-converter'&&part.interaction.rippleAsset){
+        const path=resolve(directory,'assets/figures',`${part.interaction.rippleAsset}.json`);required(path);validateRippleData(JSON.parse(readFileSync(path,'utf8')));
+      }
       for (const theme of ['','-dark']) {required(`${base}${theme}.svg`);validateConductionSprite(readFileSync(`${base}${theme}.svg`,'utf8'),geometry);}
     }
     for (const name of [question.figure, ...question.parts.flatMap(part => part.questionFigure ? [part.questionFigure.name] : [])].filter(Boolean)) required(resolve(directory, 'assets/original-figures', `${name}.webp`));

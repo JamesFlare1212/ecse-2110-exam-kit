@@ -1,0 +1,662 @@
+{
+  "version": 2,
+  "topology": "full-converter",
+  "viewBox": [
+    0.0,
+    0.0,
+    576.0,
+    392.847926
+  ],
+  "parts": [
+    {
+      "id": "p2-f26-q3-conduction-S1-stroke-2",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S4-stroke-2",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S3-stroke-2",
+      "key": "S3",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S2-stroke-2",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S4-stroke-7",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-11",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-12",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-stroke-4",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-stroke-5",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S1-stroke-0",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S1-stroke-1",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S4-stroke-0",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S4-stroke-1",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S3-stroke-0",
+      "key": "S3",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S3-stroke-1",
+      "key": "S3",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S2-stroke-0",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S2-stroke-1",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S1-stroke-4",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S1-stroke-5",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S4-stroke-4",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S4-stroke-5",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S4-stroke-6",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S3-stroke-4",
+      "key": "S3",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S3-stroke-5",
+      "key": "S3",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S2-stroke-4",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S2-stroke-5",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-top-left-stroke-0",
+      "key": "top-left",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-bottom-left-stroke-0",
+      "key": "bottom-left",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-0",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-1",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-2",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-3",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-detail-4",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-6",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-7",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-8",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-10",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-19",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-20",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-stroke-0",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-stroke-1",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-stroke-2",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-stroke-3",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-stroke-6",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-stroke-7",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-stroke-12",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-stroke-13",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-22",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-stroke-23",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q3-conduction-S1-label-3",
+      "key": "S1",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-S4-label-3",
+      "key": "S4",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-S3-label-3",
+      "key": "S3",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-S2-label-3",
+      "key": "S2",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-label-5",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-label-9",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-label-13",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-label-14",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-label-15",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-label-16",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-label-17",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-label-18",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-load-label-21",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-label-8",
+      "key": "source",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-label-9",
+      "key": "source",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-label-10",
+      "key": "source",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q3-conduction-source-label-11",
+      "key": "source",
+      "label": true
+    }
+  ],
+  "routes": {
+    "positive": [
+      [
+        90.514286,
+        158.200922
+      ],
+      [
+        233.213641,
+        158.200922
+      ],
+      [
+        233.213641,
+        46.08
+      ],
+      [
+        477.841106,
+        46.08
+      ],
+      [
+        477.841106,
+        351.864332
+      ],
+      [
+        335.141751,
+        351.864332
+      ],
+      [
+        335.141751,
+        239.74341
+      ],
+      [
+        90.514286,
+        239.74341
+      ],
+      [
+        90.514286,
+        158.200922
+      ]
+    ],
+    "negative": [
+      [
+        90.514286,
+        239.74341
+      ],
+      [
+        335.141751,
+        239.74341
+      ],
+      [
+        335.141751,
+        46.08
+      ],
+      [
+        477.841106,
+        46.08
+      ],
+      [
+        477.841106,
+        351.864332
+      ],
+      [
+        233.213641,
+        351.864332
+      ],
+      [
+        233.213641,
+        248.4073
+      ],
+      [
+        234.568971,
+        248.300633
+      ],
+      [
+        235.89093,
+        247.983259
+      ],
+      [
+        237.146964,
+        247.462992
+      ],
+      [
+        238.306147,
+        246.752644
+      ],
+      [
+        239.339935,
+        245.869705
+      ],
+      [
+        240.222874,
+        244.835917
+      ],
+      [
+        240.933223,
+        243.676734
+      ],
+      [
+        241.453489,
+        242.420699
+      ],
+      [
+        241.770863,
+        241.098741
+      ],
+      [
+        241.87753,
+        239.74341
+      ],
+      [
+        241.770863,
+        238.388079
+      ],
+      [
+        241.453489,
+        237.066121
+      ],
+      [
+        240.933223,
+        235.810087
+      ],
+      [
+        240.222874,
+        234.650904
+      ],
+      [
+        239.339935,
+        233.617115
+      ],
+      [
+        238.306147,
+        232.734176
+      ],
+      [
+        237.146964,
+        232.023828
+      ],
+      [
+        235.89093,
+        231.503562
+      ],
+      [
+        234.568971,
+        231.186188
+      ],
+      [
+        233.213641,
+        231.079521
+      ],
+      [
+        233.213641,
+        158.200922
+      ],
+      [
+        90.514286,
+        158.200922
+      ],
+      [
+        90.514286,
+        239.74341
+      ]
+    ]
+  },
+  "probes": [
+    {
+      "key": "v",
+      "kind": "voltage",
+      "pins": [
+        [
+          90.514286,
+          158.200922
+        ],
+        [
+          90.514286,
+          239.74341
+        ]
+      ],
+      "ends": [
+        [
+          137.401217,
+          158.200922
+        ],
+        [
+          137.401217,
+          239.74341
+        ]
+      ]
+    },
+    {
+      "key": "i",
+      "kind": "current",
+      "point": [
+        174.604977,
+        158.200922
+      ],
+      "arrow": [
+        [
+          149.122949,
+          173.490138
+        ],
+        [
+          194.990599,
+          173.490138
+        ]
+      ]
+    },
+    {
+      "key": "v0",
+      "kind": "voltage",
+      "pins": [
+        [
+          477.841106,
+          46.08
+        ],
+        [
+          477.841106,
+          351.864332
+        ]
+      ],
+      "ends": [
+        [
+          546.642581,
+          46.08
+        ],
+        [
+          546.642581,
+          351.864332
+        ]
+      ]
+    },
+    {
+      "key": "i0",
+      "kind": "current",
+      "point": [
+        424.328848,
+        46.08
+      ],
+      "arrow": [
+        [
+          401.395023,
+          61.369217
+        ],
+        [
+          449.810876,
+          61.369217
+        ]
+      ]
+    },
+    {
+      "key": "is1",
+      "kind": "current",
+      "point": [
+        233.213641,
+        56.272811
+      ],
+      "arrow": [
+        [
+          205.18341,
+          114.881475
+        ],
+        [
+          205.18341,
+          69.013825
+        ]
+      ]
+    },
+    {
+      "key": "is2",
+      "kind": "current",
+      "point": [
+        335.141751,
+        336.575115
+      ],
+      "arrow": [
+        [
+          363.171982,
+          318.737696
+        ],
+        [
+          363.171982,
+          272.870046
+        ]
+      ]
+    },
+    {
+      "key": "is3",
+      "kind": "current",
+      "point": [
+        335.141751,
+        56.272811
+      ],
+      "arrow": [
+        [
+          363.171982,
+          114.881475
+        ],
+        [
+          363.171982,
+          69.013825
+        ]
+      ]
+    },
+    {
+      "key": "is4",
+      "kind": "current",
+      "point": [
+        233.213641,
+        336.575115
+      ],
+      "arrow": [
+        [
+          205.18341,
+          318.737696
+        ],
+        [
+          205.18341,
+          272.870046
+        ]
+      ]
+    }
+  ]
+}

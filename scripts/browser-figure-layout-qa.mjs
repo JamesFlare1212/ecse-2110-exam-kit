@@ -79,17 +79,27 @@ try {
       for(const problem of problems) {
         await ready(page,problem.id);
         const figures=page.locator('.study-figure');
+        assert.equal(await page.locator('[data-figure-source]').count(),0,'Figure toolbars omit redundant page-number actions');
+        if(problem.id==='e2-s25-q6'){
+          const statement=page.locator('.original-statement');
+          assert.equal(await statement.getByRole('list').count(),1,'Both transformer test conditions form one authored list');
+          assert.equal(await statement.getByRole('listitem').count(),2);
+        }
         assert.deepEqual([...new Set(await figures.evaluateAll(nodes=>nodes.map(node=>node.dataset.figure)))].sort(),names(problem).sort());
         const metrics=await figures.evaluateAll(nodes=>nodes.map(node=>{
           const drawing=node.querySelector('.figure-image'),canvas=node.querySelector('.figure-canvas'),image=canvas.querySelector('img');
           const box=canvas.getBoundingClientRect(),bounds=node.getBoundingClientRect(),picture=image.getBoundingClientRect();
+          const style=getComputedStyle(node),inset=getComputedStyle(drawing);
           return {name:node.dataset.figure,width:bounds.width,height:box.height,ratio:box.width/box.height,expectedRatio:Number(image.getAttribute('width'))/Number(image.getAttribute('height')),
+            padding:[inset.paddingTop,inset.paddingRight,inset.paddingBottom,inset.paddingLeft].map(Number.parseFloat),
+            margins:[style.marginTop,style.marginBottom].map(Number.parseFloat),
             overflowX:drawing.scrollWidth-drawing.clientWidth,overflowY:drawing.scrollHeight-drawing.clientHeight,
             imageFits:Math.abs(picture.width-box.width)<1&&Math.abs(picture.height-box.height)<1,
             controlsFit:[...node.querySelectorAll('button')].every(button=>{const r=button.getBoundingClientRect();return r.left>=bounds.left&&r.right<=bounds.right+.5;}),
             local:image.src.includes(`/papers/${document.documentElement.lang.startsWith('zh')?'zh-cn':'en'}/`)};
         }));
         for(const metric of metrics) {
+          assert.ok(metric.padding.every(value=>value<=8)&&metric.margins.every(value=>value<=12),`${metric.name}: image insets and outer gaps stay compact`);
           assert.ok(metric.overflowX<=1&&metric.overflowY<=1,`${metric.name}: article shows the whole drawing without nested scrolling`);
           assert.ok(Math.abs(metric.ratio-metric.expectedRatio)<.01&&metric.imageFits,`${metric.name}: intrinsic aspect ratio is preserved`);
           assert.ok(metric.controlsFit&&metric.local,`${metric.name}: localized assets and controls remain inside the card`);

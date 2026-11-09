@@ -70,6 +70,6 @@ describe('Authored, context-adjacent solution figures', () => {
         }
       }
     }
-    expect(count).toBe(22); // eleven solution illustrations, independently placed in two languages
+    expect(count).toBe(24); // twelve solution illustrations, including Q3's teaching fallback, independently placed
   });
 });

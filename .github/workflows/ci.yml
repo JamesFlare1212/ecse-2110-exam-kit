@@ -67,6 +67,10 @@ jobs:
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-conduction-compact-qa.mjs
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-conduction-colors-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-full-converter-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-page-links-qa.mjs
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-content-typography-qa.mjs

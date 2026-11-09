@@ -7,12 +7,12 @@
 - 两份文章的 part metadata 同时声明 `interaction: {kind: semi-converter, asset: p2-f26-q4-conduction}`，仍必须保留完整静态 `figure`。
 - `SolutionFigure.svelte` 只在该小问展开后懒加载原生 Svelte 组件；没有 iframe、原型 HTML、eval、远端请求或 Python 运行时依赖。
 - `SemiConverter.svelte` 使用本地 shadcn Button / Slider 与既有图像版本控件同源的原生 RadioGroup。四个区间必须保持唯一选中。连续动画角度与滑杆输入精度分离，避免控件取整反馈停止播放；现支持全程播放与自由角度拖动，后续批注记录见文末。
-- 中英文 UI 随全局语言切换，SVG 使用对应语言独立拥有的明暗资源；切换会暂停，不改变学习记录。播放连续到周期末，不在触发点或过零点暂停；折叠、离开视口、弹窗、导航、减少动态偏好仍停止动画。无自动播放。
+- 中英文 UI 随全局语言切换，SVG 使用对应语言独立拥有的明暗资源；切换会暂停进度，不改变学习记录。播放连续到周期末，不在触发点或过零点暂停；折叠、离开视口、弹窗、导航、减少动态偏好仍停止运动。进度无自动播放；已批准的彩色修订让约定电流方向默认持续示意，独立于角度播放，见 [最新接入记录](conduction-linked-integration.md)。
 - 完整静态图会暂停演示，直接打开共用 Figure 弹窗，不再在正文添加第二张图卡。初始适应窗口显示整张图，可切到可读细节及局部滚动；保留 Esc 关闭与触发点焦点返回。资源或懒加载失败时仍在正文保留完整静态图并提供重试。
 
 ## 图形、模型与数据
 
-`scripts/semi_converter_sprite.py` 将已批准小样的标准 Schemdraw 电路提升为离线资源。各语言的 paper-local renderer 调用辅助资源 hook，生成自己的 `p2-f26-q4-conduction{,-dark}.svg` 以及纯坐标 `.json`。图元以同源外部 SVG `<use>` 引用，未将文件文本注入 DOM。标签与导通线分别着色，inactive 标签仍保持可读的语义文字色。
+`scripts/semi_converter_sprite.py` 将已批准小样的标准 Schemdraw 电路提升为离线资源。各语言的 paper-local renderer 调用辅助资源 hook，生成自己的 `p2-f26-q4-conduction{,-dark}.svg` 以及纯坐标 `.json`。图元以同源外部 SVG `<use>` 引用，未将文件文本注入 DOM。首次接入分别着色标签与导通线；当前彩色修订保留全部中性原线条和可读标签，颜色仅用于测量叠加层，不再把颜色作为导通或节点电位编码。
 
 JSON 仅含 viewBox、57 个原生片段的安全 ID/归属、三条闭合约定电流路线；不是题库或答案来源。构建和客户端均验证版本、有限坐标、边界、闭合路线、唯一片段 ID、合法归属与惰性 SVG；禁止执行性节点、事件处理器与远端资源。完整规范图仍为 19 张，辅助片段不混入题图数量。新增输入与资源清单进入两份 manifest。
 

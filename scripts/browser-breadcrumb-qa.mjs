@@ -25,14 +25,18 @@ try {
     const pathTrigger=crumb.locator('[data-breadcrumb-menu=path]');
     const section=kind=>menu.locator(`[data-breadcrumb-section=${kind}]`);
     const ready=async id=>{
-      await page.waitForFunction(id=>document.querySelector('main[data-study-ready=true]')?.dataset.problem===id,id);
+      try{await page.waitForFunction(id=>document.querySelector('main[data-study-ready=true]')?.dataset.problem===id,id);}
+      catch(error){throw new Error(`Expected ready ${id}; URL ${page.url()}; DOM ${await page.locator('main').getAttribute('data-problem')}`,{cause:error});}
       assert.equal(new URL(page.url()).pathname,`/problems/${id}/`);
     };
     const focused=()=>page.waitForFunction(()=>document.activeElement?.id==='problem-title');
     async function openMenu(kind,keyboard=false){
       const trigger=await pathTrigger.isVisible()?pathTrigger:crumb.locator(`[data-breadcrumb-menu=${kind}]`);
       if(keyboard){await trigger.focus();await page.keyboard.press('Enter');}else await trigger.click();
-      await menu.waitFor();return trigger;
+      await menu.waitFor();
+      assert.equal(await menu.locator('[data-slot=dropdown-menu-group-heading]').count(),0,'Top-bar menus show choices without redundant headings');
+      assert.ok(await menu.locator('[data-slot=dropdown-menu-group]').evaluateAll(groups=>groups.every(group=>Boolean(group.getAttribute('aria-label')))),'Menu groups retain accessible names without visible headings');
+      return trigger;
     }
     async function layout(){
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'No page-wide overflow');
@@ -63,11 +67,15 @@ try {
       if(width===1440){
         assert.deepEqual((await crumb.locator('[data-slot=breadcrumb-item]:visible').allInnerTexts()).map(text=>text.trim()),[course.code,`Exam ${paper.number}`,label(paper,locale),locale==='zh'?`第 ${question.number} 题`:`Q${question.number}`]);
       }else{
-        assert.equal(await pathTrigger.getAttribute('title'),`${course.code} / Exam ${paper.number} / ${label(paper,locale)}`);
+        await pathTrigger.hover();
+        const tooltip=page.locator('[data-slot=tooltip-content]:visible');
+        await tooltip.waitFor();
+        assert.equal(await tooltip.innerText(),`${course.code} / Exam ${paper.number} / ${label(paper,locale)}`);
+        await page.keyboard.press('Escape');
         assert.equal(await crumb.locator('[aria-current=page]').innerText(),`Q${question.number}`);
       }
       assert.equal(await crumb.locator('[aria-current=page]').count(),1);
-      assert.equal(await crumb.locator('[data-slot=breadcrumb-link]').getAttribute('href'),`/problems/${home.id}/`);
+      assert.equal(await crumb.locator('[data-breadcrumb-menu=course]').getAttribute('href'),`/problems/${home.id}/`);
       // Include the three annotated workspace widths and both sides of every transition.
       for(const w of width===1440?[834,879,1045,1099,1100,1101,1180,1440]:[320,375,450,451,550,600,601,800,801,375]){
         await resize(w);
@@ -104,9 +112,9 @@ try {
       if(other){
         await openMenu('papers');await section('papers').locator(`a[href="/problems/${other.problems[0].id}/"]`).click();
         await ready(other.problems[0].id);await focused();
-        assert.equal(await crumb.locator('[data-breadcrumb-menu=questions]').getAttribute('title'),label(other,locale));
+        assert.equal(await crumb.locator('[data-breadcrumb-menu=questions]').getAttribute('aria-label'),`${label(other,locale)} · ${locale==='zh'?'选择题目':'Choose a problem'}`);
         await page.goBack();await ready(question.id);
-        assert.equal(await crumb.locator('[data-breadcrumb-menu=questions]').getAttribute('title'),label(paper,locale));
+        assert.equal(await crumb.locator('[data-breadcrumb-menu=questions]').getAttribute('aria-label'),`${label(paper,locale)} · ${locale==='zh'?'选择题目':'Choose a problem'}`);
       }
       await openMenu('questions');
       assert.equal(await section('questions').locator('[aria-current=page]').getAttribute('href'),`/problems/${question.id}/`);
@@ -127,15 +135,32 @@ try {
       for(const exam of exams.filter(exam=>exam.number===paper.number)){
         await openMenu('papers');await section('papers').locator(`a[href="/problems/${exam.problems[0].id}/"]`).click();
         await ready(exam.problems[0].id);await focused();await layout();
-        assert.equal(await crumb.locator('[data-breadcrumb-menu=questions]').getAttribute('title'),label(exam,locale),'Long and undated paper labels retain their exact metadata');
+        assert.equal(await crumb.locator('[data-breadcrumb-menu=questions]').getAttribute('aria-label'),`${label(exam,locale)} · ${locale==='zh'?'选择题目':'Choose a problem'}`,'Long and undated paper labels retain their exact metadata');
+      }
+      // The course crumb and compact path both expose every discovered Exam group.
+      const groups=[...new Set(exams.map(exam=>exam.number))].map(number=>({number,entry:exams.filter(exam=>exam.number===number).at(-1).problems[0].id}));
+      await openMenu('course',true);
+      assert.deepEqual(await section('groups').locator('a').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('href'))),groups.map(group=>`/problems/${group.entry}/`));
+      if(!await pathTrigger.isVisible()){
+        assert.equal(await menu.locator('[data-slot=dropdown-menu-group-heading],[data-slot=dropdown-menu-separator]').count(),0,'Desktop Exam selection has no redundant headings or separators');
+        assert.equal(await section('course').count(),0,'Desktop Exam selection has no course-home section');
+        assert.equal(await menu.getByRole('menuitem').count(),groups.length,'Desktop menu contains only Exam choices');
+      }
+      await page.keyboard.press('Escape');await menu.waitFor({state:'detached'});
+      for(const group of groups){
+        await openMenu('course');await section('groups').locator(`a[href="/problems/${group.entry}/"]`).click();
+        await ready(group.entry);await focused();await layout();
+        await openMenu('course',true);
+        assert.ok((await section('groups').innerText()).includes(`Exam ${group.number}`));
+        assert.equal(await section('groups').locator('a:has(svg)').getAttribute('href'),`/problems/${group.entry}/`,'Current Exam group is marked');
+        await page.keyboard.press('Escape');await menu.waitFor({state:'detached'});
       }
       await page.getByRole('button',{name:locale==='zh'?'Switch to English':'切换为中文',exact:true}).click();
       assert.equal(await crumb.getAttribute('aria-label'),locale==='zh'?'Breadcrumb':'面包屑导航');
       await layout();
-      if(await pathTrigger.isVisible()){
-        await openMenu('course');await section('course').locator('a').click();
-      }else await crumb.locator('[data-slot=breadcrumb-link]').click();
-      await ready(home.id);await focused();
+      // Course home remains in the compact navigation path, not the Exam picker.
+      await resize(375);await openMenu('course');await section('course').locator('a').click();
+      await ready(home.id);await focused();await resize(width);
       assert.equal(await page.evaluate(()=>window.__breadcrumbDocument),true,'Navigation must use Astro, not replace the document');
       const stored=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),course.storageKey);
       assert.deepEqual(stored.sidebars,{navigation:false,references:false},'Breadcrumbs do not change sidebar preferences');
@@ -148,7 +173,7 @@ try {
   try{
     const page=await context.newPage();await page.goto(`${base}/problems/${paper.problems[0].id}/`);
     assert.equal(await page.locator('.study-breadcrumb [aria-current=page]').count(),1);
-    await page.locator('.study-breadcrumb [data-slot=breadcrumb-link]').click();
+    await page.locator('.study-breadcrumb [data-breadcrumb-menu=course]').click();
     await page.waitForURL(`**/problems/${home.id}/`);
     assert.ok(await page.locator('#problem-title').isVisible());
   }finally{await context.close();}

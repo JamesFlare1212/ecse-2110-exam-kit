@@ -19,7 +19,7 @@
 </script>
 <Accordion.Item value={part.id} class="problem-part" data-part={part.id}>
   <Accordion.Trigger class="part-trigger" level={3}><span class:complete={done} class="part-letter">{part.label}{#if done}<Check aria-label={study.locale==='zh'?'已掌握':'Mastered'}/>{/if}</span><span class="part-prompt" lang={study.locale==='zh'?'zh-CN':'en'} data-original-prompt><RichText text={part.prompt[study.locale]}/></span>{#if part.points>0}<Badge variant="outline">{part.points} {study.locale==='zh'?'分':'pts'}</Badge>{/if}</Accordion.Trigger>
-  {#if part.questionFigure}<div class="part-question-figure"><Figure {assetBase} size={sizes[part.questionFigure.name]} name={part.questionFigure.name} locale={study.locale} {dark} caption={part.questionFigure.caption} original={part.questionFigure.source} {onsource}/></div>{/if}
+  {#if part.questionFigure}<div class="part-question-figure"><Figure {assetBase} size={sizes[part.questionFigure.name]} name={part.questionFigure.name} locale={study.locale} {dark} caption={part.questionFigure.caption} original={part.questionFigure.source}/></div>{/if}
   <Accordion.Content class="part-content">
       <SolutionBody body={part.solution[study.locale]} partId={part.id} locale={study.locale} documents={study.catalog.documents} {onsource} figureName={part.figure}>
         {#snippet illustration()}

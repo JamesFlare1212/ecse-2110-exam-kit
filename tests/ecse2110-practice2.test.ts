@@ -50,7 +50,7 @@ describe('ECSE 2110 Practice Set 2', () => {
       expect(questions[5].parts[0].figure).toBe('p2-f26-q6-waveforms');
       const manifest = json(resolve(directory(locale), 'assets/figures/manifest.json'));
       const svgs = readdirSync(resolve(directory(locale), 'assets/figures')).filter(n => n.endsWith('.svg') && !(manifest.auxiliaryAssets ?? []).includes(n));
-      expect(svgs.length).toBe(14); // seven mounted static figures, two themes; auxiliary sprites are separate
+      expect(svgs.length).toBe(16); // eight mounted static figures, including the solution-only Q3 fallback; auxiliary sprites are separate
       for (const n of [1, 2, 3, 5]) expect(svgs).not.toContain(`p2-f26-q${n}.svg`);
       const sources = json(resolve(directory(locale), 'figure-sources.json')).figures;
       expect(Object.keys(sources).length).toBe(6); // prompt references survive figure:null

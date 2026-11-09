@@ -4,6 +4,7 @@ import type { Locale, Localized, SourceDocument } from './types';
 export interface CourseConfig {
   id: string;
   code: string;
+  brand: string;
   title: Localized;
   defaultProblemId: string | null;
   storageKey: string;
@@ -37,7 +38,12 @@ export function parseCourseConfig(raw: unknown): CourseConfig {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(result)) fail(`${at} must be a lowercase slug`);
     return result;
   };
-  const record = object(raw, ['id', 'code', 'title', 'defaultProblemId', 'storageKey', 'resources'], 'course');
+  // Older course/template configurations retain their original display name.
+  // A visual rename must never change the existing saved-state namespace.
+  const keys = ['id', 'code', 'title', 'defaultProblemId', 'storageKey', 'resources'];
+  if (raw && typeof raw === 'object' && Object.hasOwn(raw, 'brand')) keys.push('brand');
+  const record = object(raw, keys, 'course');
+  const brand = Object.hasOwn(record, 'brand') ? text(record.brand, 'brand') : 'Fieldnotes';
   const resourceKeys = record.resources && typeof record.resources === 'object' && Object.hasOwn(record.resources, 'formulaSheets')
     ? ['formulaSheet', 'formulaSheets', 'lectures'] : ['formulaSheet', 'lectures'];
   const resources = object(record.resources, resourceKeys, 'resources');
@@ -60,7 +66,7 @@ export function parseCourseConfig(raw: unknown): CourseConfig {
   const storageKey = text(record.storageKey, 'storageKey');
   if (!/^[a-z0-9][a-z0-9._:-]*-v\d+$/.test(storageKey)) fail('storageKey must be a versioned lowercase namespace');
   return {
-    id: id(record.id, 'id'), code: text(record.code, 'code'), title: localized(record.title, 'title'),
+    id: id(record.id, 'id'), code: text(record.code, 'code'), brand, title: localized(record.title, 'title'),
     defaultProblemId, storageKey,
     resources: { formulaSheet: resources.formulaSheet === null ? null : id(resources.formulaSheet, 'resources.formulaSheet'), ...(formulaSheets ? {formulaSheets} : {}), lectures },
   };
@@ -68,7 +74,7 @@ export function parseCourseConfig(raw: unknown): CourseConfig {
 
 export const course = parseCourseConfig(data);
 export const formulaSheetFor = (examNumber: number, config = course) => config.resources.formulaSheets?.[String(examNumber)] ?? config.resources.formulaSheet;
-export const pageTitle = (title: string, config = course) => `${title} · Fieldnotes · ${config.code}`;
+export const pageTitle = (title: string, config = course) => `${title} · ${config.brand} · ${config.code}`;
 export function studyDescription(locale: Locale, papers: number, parts: number, config = course) {
   return locale === 'zh'
     ? `${config.code} ${config.title.zh}：${papers} 份试卷与练习、${parts} 个双语详解小问，以及附来源的公式与课程讲义。`

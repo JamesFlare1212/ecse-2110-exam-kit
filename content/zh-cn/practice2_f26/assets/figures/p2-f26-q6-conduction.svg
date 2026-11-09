@@ -1,0 +1,329 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 734.4 399.6" version="1.1"><g id="p2-f26-q6-conduction-S1-stroke-2" data-part="S1" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 248.2272 99.15264  L 240.192 87.90336  L 232.1568 99.15264  L 248.2272 99.15264  z " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S4-stroke-2" data-part="S4" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 248.2272 306.51264  L 240.192 295.26336  L 232.1568 306.51264  L 248.2272 306.51264  z " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S3-stroke-2" data-part="S3" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 351.9072 99.15264  L 343.872 87.90336  L 335.8368 99.15264  L 351.9072 99.15264  z " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S2-stroke-2" data-part="S2" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 351.9072 306.51264  L 343.872 295.26336  L 335.8368 306.51264  L 351.9072 306.51264  z " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S4-stroke-7" data-part="S4" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 252.6768  C 242.528403 252.6768 244.771504 251.747677 246.423591 250.095591  C 248.075677 248.443504 249.0048 246.200403 249.0048 243.864  C 249.0048 241.527597 248.075677 239.284496 246.423591 237.632409  C 244.771504 235.980323 242.528403 235.0512 240.192 235.0512  " style="fill: none; stroke: currentColor; stroke-linejoin: miter; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-11" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 489.024 313.848  L 489.024 313.848  M 489.024 256.824  L 489.024 256.824  L 489.024 256.824  L 489.024 313.848  " style="fill: var(--card); stroke: currentColor; stroke-linejoin: miter; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-12" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 489.024 313.848  C 496.585471 313.848 503.838261 310.843796 509.185029 305.497029  C 514.531796 300.150261 517.536 292.897471 517.536 285.336  C 517.536 277.774529 514.531796 270.521739 509.185029 265.174971  C 503.838261 259.828204 496.585471 256.824 489.024 256.824  C 481.462529 256.824 474.209739 259.828204 468.862971 265.174971  C 463.516204 270.521739 460.512 277.774529 460.512 285.336  C 460.512 292.897471 463.516204 300.150261 468.862971 305.497029  C 474.209739 310.843796 481.462529 313.848 489.024 313.848  z " style="fill: var(--card); stroke: currentColor; stroke-linejoin: miter; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-source-stroke-4" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 95.04 243.864  L 95.04 243.864  M 95.04 160.92  L 95.04 160.92  L 95.04 160.92  L 95.04 243.864  " style="fill: var(--card); stroke: currentColor; stroke-linejoin: miter; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-source-stroke-5" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 95.04 243.864  C 106.038503 243.864 116.588016 239.494248 124.365132 231.717132  C 132.142248 223.940016 136.512 213.390503 136.512 202.392  C 136.512 191.393497 132.142248 180.843984 124.365132 173.066868  C 116.588016 165.289752 106.038503 160.92 95.04 160.92  C 84.041497 160.92 73.491984 165.289752 65.714868 173.066868  C 57.937752 180.843984 53.568 191.393497 53.568 202.392  C 53.568 213.390503 57.937752 223.940016 65.714868 231.717132  C 73.491984 239.494248 84.041497 243.864 95.04 243.864  z " style="fill: var(--card); stroke: currentColor; stroke-linejoin: miter; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S1-stroke-0" data-part="S1" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 119.448  L 240.192 99.15264  M 248.2272 87.90336  L 232.1568 87.90336  M 240.192 87.90336  L 240.192 67.608  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S1-stroke-1" data-part="S1" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 87.90336  L 230.54976 78.26112  L 224.1216 78.26112  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S4-stroke-0" data-part="S4" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 326.808  L 240.192 306.51264  M 248.2272 295.26336  L 232.1568 295.26336  M 240.192 295.26336  L 240.192 274.968  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S4-stroke-1" data-part="S4" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 295.26336  L 230.54976 285.62112  L 224.1216 285.62112  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S3-stroke-0" data-part="S3" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 343.872 119.448  L 343.872 99.15264  M 351.9072 87.90336  L 335.8368 87.90336  M 343.872 87.90336  L 343.872 67.608  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S3-stroke-1" data-part="S3" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 343.872 87.90336  L 334.22976 78.26112  L 327.8016 78.26112  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S2-stroke-0" data-part="S2" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 343.872 326.808  L 343.872 306.51264  M 351.9072 295.26336  L 335.8368 295.26336  M 343.872 295.26336  L 343.872 274.968  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S2-stroke-1" data-part="S2" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 343.872 295.26336  L 334.22976 285.62112  L 327.8016 285.62112  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S1-stroke-4" data-part="S1" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 160.92  L 240.192 140.184  L 240.192 119.448  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S1-stroke-5" data-part="S1" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 67.608  L 240.192 57.24  L 240.192 46.872  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S4-stroke-4" data-part="S4" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 357.912  L 240.192 342.36  L 240.192 326.808  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S4-stroke-5" data-part="S4" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 274.968  L 240.192 263.8224  L 240.192 252.6768  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S4-stroke-6" data-part="S4" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 235.0512  L 240.192 197.9856  L 240.192 160.92  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S3-stroke-4" data-part="S3" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 343.872 243.864  L 343.872 181.656  L 343.872 119.448  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S3-stroke-5" data-part="S3" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 343.872 67.608  L 343.872 57.24  L 343.872 46.872  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S2-stroke-4" data-part="S2" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 343.872 357.912  L 343.872 342.36  L 343.872 326.808  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S2-stroke-5" data-part="S2" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 343.872 274.968  L 343.872 259.416  L 343.872 243.864  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-top-left-stroke-0" data-part="top-left" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 46.872  L 292.032 46.872  L 343.872 46.872  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-bottom-left-stroke-0" data-part="bottom-left" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 357.912  L 292.032 357.912  L 343.872 357.912  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-0" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 343.872 46.872  L 416.448 46.872  L 489.024 46.872  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-1" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 489.024 46.872  L 489.024 57.24  L 489.024 67.608  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-2" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 489.024 313.848  L 489.024 335.88  L 489.024 357.912  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-3" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 489.024 357.912  L 416.448 357.912  L 343.872 357.912  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-detail-4" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 489.024 67.608  L 489.024 75.30624  L 493.518655 75.509532  L 498.053848 76.127721  L 500.217033 76.589452  L 502.249217 77.147054  L 504.107564 77.793563  L 505.752904 78.520138  L 507.150556 79.31625  L 508.271061 80.169908  L 509.090799 81.067903  L 509.592492 81.996096  L 509.765566 82.939708  L 509.606372 83.883638  L 509.118267 84.812776  L 508.311537 85.712324  L 507.203189 86.568109  L 505.816582 87.366879  L 504.180946 88.096586  L 502.330756 88.746635  L 500.305011 89.308111  L 498.146409 89.773968  L 493.614477 90.400812  L 489.115044 90.61269  L 485.025473 90.429928  L 481.688749 89.905949  L 480.39331 89.540696  L 479.384717 89.122792  L 478.684231 88.665833  L 478.306615 88.184237  L 478.259829 87.692942  L 478.544859 87.207092  L 479.155698 86.741714  L 480.07947 86.311404  L 481.296704 85.930021  L 482.781742 85.61039  L 486.425039 85.200937  L 490.703803 85.15548  L 495.259182 85.515927  L 497.521242 85.85219  L 499.709122 86.290143  L 501.776707 86.825341  L 503.680414 87.451291  L 505.380118 88.159585  L 506.839992 88.940082  L 508.029264 89.781117  L 508.922866 90.669749  L 509.501964 91.592036  L 509.75435 92.533323  L 509.674705 93.478558  L 509.264707 94.412604  L 508.532999 95.320559  L 507.495004 96.188073  L 506.172601 97.001648  L 504.593663 97.748922  L 502.791472 98.418931  L 500.804015 99.002338  L 498.673183 99.491636  L 494.163128 100.167893  L 489.63956 100.42908  L 485.481862 100.291388  L 482.038734 99.804459  L 480.678422 99.45372  L 479.598947 99.047227  L 478.823062 98.598335  L 478.367121 98.121294  L 478.240735 97.630946  L 478.446568 97.142413  L 478.980281 96.67078  L 479.830625 96.230776  L 480.979675 95.836461  L 482.403212 95.500935  L 484.071231 95.236057  L 487.995665 94.958018  L 492.42384 95.063758  L 496.984373 95.582503  L 499.194298 95.996423  L 501.294778 96.508843  L 503.24154 97.113751  L 504.993548 97.803183  L 506.513875 98.567393  L 507.770474 99.395062  L 508.736858 100.27353  L 509.392658 101.189068  L 509.72405 102.127165  L 509.72405 103.072835  L 509.392658 104.010932  L 508.736858 104.92647  L 507.770474 105.804938  L 506.513875 106.632607  L 504.993548 107.396817  L 503.24154 108.086249  L 501.294778 108.691157  L 499.194298 109.203577  L 496.984373 109.617497  L 492.42384 110.136242  L 487.995665 110.241982  L 484.071231 109.963943  L 480.979675 109.363539  L 479.830625 108.969224  L 478.980281 108.52922  L 478.446568 108.057587  L 478.240735 107.569054  L 478.367121 107.078706  L 478.823062 106.601665  L 479.598947 106.152773  L 480.678422 105.74628  L 482.038734 105.395541  L 483.65121 105.112736  L 487.492102 104.79226  L 491.878969 104.849828  L 496.443891 105.318704  L 498.673183 105.708364  L 500.804015 106.197662  L 502.791472 106.781069  L 504.593663 107.451078  L 506.172601 108.198352  L 507.495004 109.011927  L 508.532999 109.879441  L 509.264707 110.787396  L 509.674705 111.721442  L 509.75435 112.666677  L 509.501964 113.607964  L 508.922866 114.530251  L 508.029264 115.418883  L 506.839992 116.259918  L 505.380118 117.040415  L 503.680414 117.748709  L 501.776707 118.374659  L 499.709122 118.909857  L 497.521242 119.34781  L 492.970623 119.916346  L 488.506504 120.070681  L 484.503283 119.835965  L 481.296704 119.269979  L 480.07947 118.888596  L 479.155698 118.458286  L 478.544859 117.992908  L 478.259829 117.507058  L 478.306615 117.015763  L 478.684231 116.534167  L 479.384717 116.077208  L 480.39331 115.659304  L 481.688749 115.294051  L 483.243728 114.993936  L 486.996426 114.631963  L 491.33667 114.641839  L 495.900451 115.060829  L 498.146409 115.426032  L 500.305011 115.891889  L 502.330756 116.453365  L 504.180946 117.103414  L 505.816582 117.833121  L 507.203189 118.631891  L 508.311537 119.487676  L 509.118267 120.387224  L 509.606372 121.316362  L 509.765566 122.260292  L 509.592492 123.203904  L 509.090799 124.132097  L 508.271061 125.030092  L 507.150556 125.88375  L 505.752904 126.679862  L 504.107564 127.406437  L 502.249217 128.052946  L 500.217033 128.610548  L 498.053848 129.072279  L 493.518655 129.690468  L 489.024 129.89376  L 489.024 137.592  L 489.024 137.592  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.8" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-6" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 489.024 137.592  L 489.024 149.256  L 489.024 160.92  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-7" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 489.024 212.76  L 489.024 234.792  L 489.024 256.824  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-8" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 489.024 160.92  L 489.024 166.6224  L 499.1328 169.992  L 478.9152 176.7312  L 499.1328 183.4704  L 478.9152 190.2096  L 499.1328 196.9488  L 478.9152 203.688  L 489.024 207.0576  L 489.024 212.76  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-10" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 489.024 313.848  L 489.024 313.848  M 489.024 256.824  L 489.024 256.824  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-19" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 385.344 46.872  L 403.488 46.872  L 408.672 46.872  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-20" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 408.672 42.984  L 421.632 46.872  L 408.672 50.76  z " style="fill: currentColor" />
+   </g>
+   <g id="p2-f26-q6-conduction-source-stroke-0" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 95.04 160.92  L 167.616 160.92  L 240.192 160.92  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-source-stroke-1" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 95.04 243.864  L 219.456 243.864  L 343.872 243.864  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-source-stroke-2" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 95.04 243.864  L 95.04 243.864  M 95.04 160.92  L 95.04 160.92  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-source-stroke-3" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 115.776 202.392  L 114.048 198.098503  L 112.32 194.0976  L 110.592 190.661947  L 108.864 188.025678  L 107.136 186.36845  L 105.408 185.8032  L 103.68 186.36845  L 101.952 188.025678  L 100.224 190.661947  L 98.496 194.0976  L 96.768 198.098503  L 95.04 202.392  L 93.312 206.685497  L 91.584 210.6864  L 89.856 214.122053  L 88.128 216.758322  L 86.4 218.41555  L 84.672 218.9808  L 82.944 218.41555  L 81.216 216.758322  L 79.488 214.122053  L 77.76 210.6864  L 76.032 206.685497  L 74.304 202.392  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-source-stroke-6" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 123.552 160.92  L 142.992 160.92  L 149.472 160.92  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-source-stroke-7" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 149.472 157.032  L 162.432 160.92  L 149.472 164.808  z " style="fill: currentColor" />
+   </g>
+   <g id="p2-f26-q6-conduction-field-stroke-0" data-part="field" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 590.112 344.952  L 590.112 315.144  L 590.112 285.336  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-field-stroke-1" data-part="field" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 590.112 285.336  L 600.48 285.336  L 610.848 285.336  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-field-stroke-2" data-part="field" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 673.056 285.336  L 683.424 285.336  L 693.792 285.336  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-field-stroke-3" data-part="field" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 693.792 285.336  L 693.792 315.144  L 693.792 344.952  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-field-detail-4" data-part="field" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 610.848 285.336  L 617.69088 285.336  L 617.871584 281.340751  L 618.421085 277.309469  L 619.327159 273.580252  L 619.901834 271.928387  L 620.547678 270.465863  L 621.255334 269.223505  L 622.01414 268.227502  L 622.812358 267.498846  L 623.637419 267.052896  L 624.476185 266.899052  L 625.315234 267.040558  L 626.141134 267.47443  L 626.940732 268.191522  L 627.70143 269.176721  L 628.411448 270.40926  L 629.060076 271.863159  L 629.637898 273.507772  L 630.136988 275.308435  L 630.875708 279.223599  L 631.248143 283.280293  L 631.256921 287.138288  L 630.935168 290.474019  L 630.34373 293.007725  L 629.97226 293.904251  L 629.566074 294.526906  L 629.137988 294.862565  L 628.701282 294.904152  L 628.269415 294.650792  L 627.855745 294.107824  L 627.473248 293.286693  L 627.134241 292.204708  L 626.631142 289.354415  L 626.422506 285.795997  L 626.559692 281.827891  L 627.065058 277.782896  L 627.930081 274.000261  L 628.486481 272.308076  L 629.116076 270.797228  L 629.809851 269.499563  L 630.557437 268.442432  L 631.347333 267.648119  L 632.167143 267.133366  L 633.003843 266.909022  L 633.844052 266.979818  L 634.674314 267.34426  L 635.481386 267.994667  L 636.25251 268.91733  L 636.975687 270.092799  L 637.639931 271.4963  L 638.235494 273.098247  L 638.754079 274.864876  L 639.535374 278.740541  L 639.952153 282.798249  L 640.003324 286.697687  L 639.718457 290.111813  L 639.155306 292.754291  L 638.793979 293.713825  L 638.394965 294.403501  L 637.970928 294.808781  L 637.535063 294.921124  L 637.100812 294.738162  L 636.681583 294.26375  L 636.290467 293.507889  L 635.939966 292.486511  L 635.406273 289.738461  L 635.159127 286.250076  L 635.253118 282.31392  L 635.714225 278.260113  L 636.537639 274.428642  L 637.075334 272.698187  L 637.688162 271.140846  L 638.367461 269.789444  L 639.103166 268.672468  L 639.884027 267.813459  L 640.697838 267.230526  L 641.531702 266.935955  L 642.372298 266.935955  L 643.206162 267.230526  L 644.019973 267.813459  L 644.800834 268.672468  L 645.536539 269.789444  L 646.215838 271.140846  L 646.828666 272.698187  L 647.366361 274.428642  L 648.189775 278.260113  L 648.650882 282.31392  L 648.744873 286.250076  L 648.497727 289.738461  L 647.964034 292.486511  L 647.613533 293.507889  L 647.222417 294.26375  L 646.803188 294.738162  L 646.368937 294.921124  L 645.933072 294.808781  L 645.509035 294.403501  L 645.110021 293.713825  L 644.748694 292.754291  L 644.436925 291.545125  L 644.0041 288.484567  L 643.881707 284.788836  L 644.113873 280.767886  L 644.714991 276.758948  L 645.668506 273.098247  L 646.264069 271.4963  L 646.928313 270.092799  L 647.65149 268.91733  L 648.422614 267.994667  L 649.229686 267.34426  L 650.059948 266.979818  L 650.900157 266.909022  L 651.736857 267.133366  L 652.556667 267.648119  L 653.346563 268.442432  L 654.094149 269.499563  L 654.787924 270.797228  L 655.417519 272.308076  L 655.973919 274.000261  L 656.838942 277.782896  L 657.344308 281.827891  L 657.481494 285.795997  L 657.272858 289.354415  L 656.769759 292.204708  L 656.430752 293.286693  L 656.048255 294.107824  L 655.634585 294.650792  L 655.202718 294.904152  L 654.766012 294.862565  L 654.337926 294.526906  L 653.93174 293.904251  L 653.56027 293.007725  L 653.235601 291.856223  L 652.769842 288.890246  L 652.607386 285.255072  L 652.795723 281.255576  L 653.352918 277.227192  L 654.266102 273.507772  L 654.843924 271.863159  L 655.492552 270.40926  L 656.20257 269.176721  L 656.963268 268.191522  L 657.762866 267.47443  L 658.588766 267.040558  L 659.427815 266.899052  L 660.266581 267.052896  L 661.091642 267.498846  L 661.88986 268.227502  L 662.648666 269.223505  L 663.356322 270.465863  L 664.002166 271.928387  L 664.576841 273.580252  L 665.072487 275.386637  L 665.803726 279.308217  L 666.168417 283.364229  L 666.21312 285.336  L 673.056 285.336  L 673.056 285.336  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.8" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-field-stroke-7" data-part="field" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 590.112 334.584  L 590.112 320.328  L 590.112 319.032  " style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-field-stroke-8" data-part="field" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 586.224 319.032  L 590.112 306.072  L 594 319.032  z " style="fill: currentColor" />
+   </g>
+   <g id="p2-f26-q6-conduction-source-stroke-12" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 240.192 163.2528  C 240.810666 163.2528 241.404076 163.007001 241.841539 162.569539  C 242.279001 162.132076 242.5248 161.538666 242.5248 160.92  C 242.5248 160.301334 242.279001 159.707924 241.841539 159.270461  C 241.404076 158.832999 240.810666 158.5872 240.192 158.5872  C 239.573334 158.5872 238.979924 158.832999 238.542461 159.270461  C 238.104999 159.707924 237.8592 160.301334 237.8592 160.92  C 237.8592 161.538666 238.104999 162.132076 238.542461 162.569539  C 238.979924 163.007001 239.573334 163.2528 240.192 163.2528  z " style="fill: currentColor; stroke: currentColor; stroke-linejoin: miter; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-source-stroke-13" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 343.872 246.1968  C 344.490666 246.1968 345.084076 245.951001 345.521539 245.513539  C 345.959001 245.076076 346.2048 244.482666 346.2048 243.864  C 346.2048 243.245334 345.959001 242.651924 345.521539 242.214461  C 345.084076 241.776999 344.490666 241.5312 343.872 241.5312  C 343.253334 241.5312 342.659924 241.776999 342.222461 242.214461  C 341.784999 242.651924 341.5392 243.245334 341.5392 243.864  C 341.5392 244.482666 341.784999 245.076076 342.222461 245.513539  C 342.659924 245.951001 343.253334 246.1968 343.872 246.1968  z " style="fill: currentColor; stroke: currentColor; stroke-linejoin: miter; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-22" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 343.872 49.2048  C 344.490666 49.2048 345.084076 48.959001 345.521539 48.521539  C 345.959001 48.084076 346.2048 47.490666 346.2048 46.872  C 346.2048 46.253334 345.959001 45.659924 345.521539 45.222461  C 345.084076 44.784999 344.490666 44.5392 343.872 44.5392  C 343.253334 44.5392 342.659924 44.784999 342.222461 45.222461  C 341.784999 45.659924 341.5392 46.253334 341.5392 46.872  C 341.5392 47.490666 341.784999 48.084076 342.222461 48.521539  C 342.659924 48.959001 343.253334 49.2048 343.872 49.2048  z " style="fill: currentColor; stroke: currentColor; stroke-linejoin: miter; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-load-stroke-23" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 343.872 360.2448  C 344.490666 360.2448 345.084076 359.999001 345.521539 359.561539  C 345.959001 359.124076 346.2048 358.530666 346.2048 357.912  C 346.2048 357.293334 345.959001 356.699924 345.521539 356.262461  C 345.084076 355.824999 344.490666 355.5792 343.872 355.5792  C 343.253334 355.5792 342.659924 355.824999 342.222461 356.262461  C 341.784999 356.699924 341.5392 357.293334 341.5392 357.912  C 341.5392 358.530666 341.784999 359.124076 342.222461 359.561539  C 342.659924 359.999001 343.253334 360.2448 343.872 360.2448  z " style="fill: currentColor; stroke: currentColor; stroke-linejoin: miter; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-field-stroke-5" data-part="field" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 590.112 347.8032  C 590.868147 347.8032 591.593426 347.50278 592.128103 346.968103  C 592.66278 346.433426 592.9632 345.708147 592.9632 344.952  C 592.9632 344.195853 592.66278 343.470574 592.128103 342.935897  C 591.593426 342.40122 590.868147 342.1008 590.112 342.1008  C 589.355853 342.1008 588.630574 342.40122 588.095897 342.935897  C 587.56122 343.470574 587.2608 344.195853 587.2608 344.952  C 587.2608 345.708147 587.56122 346.433426 588.095897 346.968103  C 588.630574 347.50278 589.355853 347.8032 590.112 347.8032  z " style="fill: var(--card); stroke: currentColor; stroke-linejoin: miter; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-field-stroke-6" data-part="field" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M 693.792 347.8032  C 694.548147 347.8032 695.273426 347.50278 695.808103 346.968103  C 696.34278 346.433426 696.6432 345.708147 696.6432 344.952  C 696.6432 344.195853 696.34278 343.470574 695.808103 342.935897  C 695.273426 342.40122 694.548147 342.1008 693.792 342.1008  C 693.035853 342.1008 692.310574 342.40122 691.775897 342.935897  C 691.24122 343.470574 690.9408 344.195853 690.9408 344.952  C 690.9408 345.708147 691.24122 346.433426 691.775897 346.968103  C 692.310574 347.50278 693.035853 347.8032 693.792 347.8032  z " style="fill: var(--card); stroke: currentColor; stroke-linejoin: miter; stroke-width: var(--conduction-stroke-width, 1.8)" vector-effect="non-scaling-stroke" />
+   </g>
+   <g id="p2-f26-q6-conduction-S1-label-3" data-part="S1" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(249.36 101.632688)">
+     <text>
+      <tspan x="0" y="-0.859375" style="font-style: oblique; font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">S</tspan>
+      <tspan x="22.4617" y="4.259375" style="font-weight: 700; font-size: 21.84px; font-family: 'DejaVu Sans'; fill: currentColor">1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-S4-label-3" data-part="S4" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(249.36 308.992687)">
+     <text>
+      <tspan x="0" y="-0.859375" style="font-style: oblique; font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">S</tspan>
+      <tspan x="22.4617" y="4.259375" style="font-weight: 700; font-size: 21.84px; font-family: 'DejaVu Sans'; fill: currentColor">4</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-S3-label-3" data-part="S3" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(353.04 101.632688)">
+     <text>
+      <tspan x="0" y="-0.859375" style="font-style: oblique; font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">S</tspan>
+      <tspan x="22.4617" y="4.259375" style="font-weight: 700; font-size: 21.84px; font-family: 'DejaVu Sans'; fill: currentColor">3</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-S2-label-3" data-part="S2" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(353.04 308.992687)">
+     <text>
+      <tspan x="0" y="-0.859375" style="font-style: oblique; font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">S</tspan>
+      <tspan x="22.4617" y="4.259375" style="font-weight: 700; font-size: 21.84px; font-family: 'DejaVu Sans'; fill: currentColor">2</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-load-label-5" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(510.12 112.000688)">
+     <text>
+      <tspan x="0" y="-0.265625" style="font-style: oblique; font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">L</tspan>
+      <tspan x="19.872894" y="4.853125" style="font-style: oblique; font-weight: 700; font-size: 21.84px; font-family: 'DejaVu Sans'; fill: currentColor">a</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-load-label-9" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(508.092 194.944688)">
+     <text>
+      <tspan x="0" y="-0.265625" style="font-style: oblique; font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">R</tspan>
+      <tspan x="24.014984" y="4.853125" style="font-style: oblique; font-weight: 700; font-size: 21.84px; font-family: 'DejaVu Sans'; fill: currentColor">a</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-load-label-13" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(470.46 293.440688)">
+     <text>
+      <tspan x="0" y="-0.265625" style="font-style: oblique; font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">E</tspan>
+      <tspan x="21.304352" y="4.853125" style="font-style: oblique; font-weight: 700; font-size: 21.84px; font-family: 'DejaVu Sans'; fill: currentColor">a</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-load-label-14" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(514.8 264.928688)">
+     <text>
+      <tspan x="0" y="-0.453125" style="font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">+</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-load-label-15" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(514.8 321.952688)">
+     <text>
+      <tspan x="0" y="-0.421875" style="font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">−</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-load-label-16" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(426.672 91.264688)">
+     <text>
+      <tspan x="0" y="-0.453125" style="font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">+</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-load-label-17" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(426.672 334.912688)">
+     <text>
+      <tspan x="0" y="-0.421875" style="font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">−</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-load-label-18" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(421.524 210.496688)">
+     <text>
+      <tspan x="0" y="-0.9375" style="font-style: oblique; font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">v</tspan>
+      <tspan x="20.329742" y="4.18125" style="font-weight: 700; font-size: 21.84px; font-family: 'DejaVu Sans'; fill: currentColor">0</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-load-label-21" data-part="load" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(390.072 32.170744)">
+     <text>
+      <tspan x="0" y="-0.3125" style="font-style: oblique; font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">i</tspan>
+      <tspan x="10.690247" y="4.80625" style="font-weight: 700; font-size: 21.84px; font-family: 'DejaVu Sans'; fill: currentColor">0</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-source-label-8" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(138.828 147.255544)">
+     <text>
+      <tspan x="0" y="-0.3125" style="font-style: oblique; font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">i</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-source-label-9" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(37.872 161.248688)">
+     <text>
+      <tspan x="0" y="-0.453125" style="font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">+</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-source-label-10" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(37.872 259.744688)">
+     <text>
+      <tspan x="0" y="-0.421875" style="font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">−</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-source-label-11" data-part="source" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(25.128 210.496688)">
+     <text>
+      <tspan x="0" y="-0.9375" style="font-style: oblique; font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">v</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q6-conduction-field-label-9" data-part="field" fill="currentColor" stroke-linejoin="round" stroke-linecap="butt">
+    
+    <g style="fill: currentColor" transform="translate(608.016 334.916344)">
+     <text>
+      <tspan x="0" y="-0.3125" style="font-style: oblique; font-weight: 700; font-size: 31.2px; font-family: 'DejaVu Sans'; fill: currentColor">i</tspan>
+      <tspan x="10.690247" y="4.80625" style="font-style: oblique; font-weight: 700; font-size: 21.84px; font-family: 'DejaVu Sans'; fill: currentColor">f</tspan>
+     </text>
+    </g>
+   </g>
+  </svg>

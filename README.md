@@ -1,4 +1,6 @@
-# Fieldnotes · ECSE 2110
+# Flux · ECSE 2110
+
+Flux（磁通）是这门课的习题工作台；Φ 标志与浏览器图标共用本地 SVG。显示名称由 `content/course.json` 的 `brand` 配置，课程副标题跟随语言切换。界面更名不改变原有学习记录的存储键。
 
 **Electrical Energy Systems / 电能系统** 双语学习工作台，基于 [ecse-2100-exam-kit](https://github.com/JamesFlare1212/ecse-2100-exam-kit)（模板快照 `b75e950`）。保留模板的暖纸色、三栏阅读界面、完整 worked examples、公式溯源和本地进度；在纸上练习，不增加答题框、笔记模式或答案卡片。
 

@@ -1,0 +1,712 @@
+{
+  "version": 2,
+  "topology": "full-converter",
+  "viewBox": [
+    0.0,
+    0.0,
+    734.4,
+    399.6
+  ],
+  "parts": [
+    {
+      "id": "p2-f26-q6-conduction-S1-stroke-2",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S4-stroke-2",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S3-stroke-2",
+      "key": "S3",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S2-stroke-2",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S4-stroke-7",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-11",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-12",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-stroke-4",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-stroke-5",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S1-stroke-0",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S1-stroke-1",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S4-stroke-0",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S4-stroke-1",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S3-stroke-0",
+      "key": "S3",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S3-stroke-1",
+      "key": "S3",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S2-stroke-0",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S2-stroke-1",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S1-stroke-4",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S1-stroke-5",
+      "key": "S1",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S4-stroke-4",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S4-stroke-5",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S4-stroke-6",
+      "key": "S4",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S3-stroke-4",
+      "key": "S3",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S3-stroke-5",
+      "key": "S3",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S2-stroke-4",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S2-stroke-5",
+      "key": "S2",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-top-left-stroke-0",
+      "key": "top-left",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-bottom-left-stroke-0",
+      "key": "bottom-left",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-0",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-1",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-2",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-3",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-detail-4",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-6",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-7",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-8",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-10",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-19",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-20",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-stroke-0",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-stroke-1",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-stroke-2",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-stroke-3",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-stroke-6",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-stroke-7",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-field-stroke-0",
+      "key": "field",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-field-stroke-1",
+      "key": "field",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-field-stroke-2",
+      "key": "field",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-field-stroke-3",
+      "key": "field",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-field-detail-4",
+      "key": "field",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-field-stroke-7",
+      "key": "field",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-field-stroke-8",
+      "key": "field",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-stroke-12",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-stroke-13",
+      "key": "source",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-22",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-stroke-23",
+      "key": "load",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-field-stroke-5",
+      "key": "field",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-field-stroke-6",
+      "key": "field",
+      "label": false
+    },
+    {
+      "id": "p2-f26-q6-conduction-S1-label-3",
+      "key": "S1",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-S4-label-3",
+      "key": "S4",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-S3-label-3",
+      "key": "S3",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-S2-label-3",
+      "key": "S2",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-label-5",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-label-9",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-label-13",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-label-14",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-label-15",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-label-16",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-label-17",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-label-18",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-load-label-21",
+      "key": "load",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-label-8",
+      "key": "source",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-label-9",
+      "key": "source",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-label-10",
+      "key": "source",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-source-label-11",
+      "key": "source",
+      "label": true
+    },
+    {
+      "id": "p2-f26-q6-conduction-field-label-9",
+      "key": "field",
+      "label": true
+    }
+  ],
+  "routes": {
+    "positive": [
+      [
+        95.04,
+        160.92
+      ],
+      [
+        240.192,
+        160.92
+      ],
+      [
+        240.192,
+        46.872
+      ],
+      [
+        489.024,
+        46.872
+      ],
+      [
+        489.024,
+        357.912
+      ],
+      [
+        343.872,
+        357.912
+      ],
+      [
+        343.872,
+        243.864
+      ],
+      [
+        95.04,
+        243.864
+      ],
+      [
+        95.04,
+        160.92
+      ]
+    ],
+    "negative": [
+      [
+        95.04,
+        243.864
+      ],
+      [
+        343.872,
+        243.864
+      ],
+      [
+        343.872,
+        46.872
+      ],
+      [
+        489.024,
+        46.872
+      ],
+      [
+        489.024,
+        357.912
+      ],
+      [
+        240.192,
+        357.912
+      ],
+      [
+        240.192,
+        252.6768
+      ],
+      [
+        241.570626,
+        252.5683
+      ],
+      [
+        242.915305,
+        252.245471
+      ],
+      [
+        244.192927,
+        251.716262
+      ],
+      [
+        245.372034,
+        250.993705
+      ],
+      [
+        246.423591,
+        250.095591
+      ],
+      [
+        247.321705,
+        249.044034
+      ],
+      [
+        248.044262,
+        247.864927
+      ],
+      [
+        248.573471,
+        246.587305
+      ],
+      [
+        248.8963,
+        245.242626
+      ],
+      [
+        249.0048,
+        243.864
+      ],
+      [
+        248.8963,
+        242.485374
+      ],
+      [
+        248.573471,
+        241.140695
+      ],
+      [
+        248.044262,
+        239.863073
+      ],
+      [
+        247.321705,
+        238.683966
+      ],
+      [
+        246.423591,
+        237.632409
+      ],
+      [
+        245.372034,
+        236.734295
+      ],
+      [
+        244.192927,
+        236.011738
+      ],
+      [
+        242.915305,
+        235.482529
+      ],
+      [
+        241.570626,
+        235.1597
+      ],
+      [
+        240.192,
+        235.0512
+      ],
+      [
+        240.192,
+        160.92
+      ],
+      [
+        95.04,
+        160.92
+      ],
+      [
+        95.04,
+        243.864
+      ]
+    ]
+  },
+  "probes": [
+    {
+      "key": "v",
+      "kind": "voltage",
+      "pins": [
+        [
+          95.04,
+          160.92
+        ],
+        [
+          95.04,
+          243.864
+        ]
+      ],
+      "ends": [
+        [
+          142.7328,
+          160.92
+        ],
+        [
+          142.7328,
+          243.864
+        ]
+      ]
+    },
+    {
+      "key": "i",
+      "kind": "current",
+      "point": [
+        180.576,
+        160.92
+      ],
+      "arrow": [
+        [
+          154.656,
+          176.472
+        ],
+        [
+          201.312,
+          176.472
+        ]
+      ]
+    },
+    {
+      "key": "v0",
+      "kind": "voltage",
+      "pins": [
+        [
+          489.024,
+          46.872
+        ],
+        [
+          489.024,
+          357.912
+        ]
+      ],
+      "ends": [
+        [
+          559.008,
+          46.872
+        ],
+        [
+          559.008,
+          357.912
+        ]
+      ]
+    },
+    {
+      "key": "i0",
+      "kind": "current",
+      "point": [
+        434.592,
+        46.872
+      ],
+      "arrow": [
+        [
+          411.264,
+          62.424
+        ],
+        [
+          460.512,
+          62.424
+        ]
+      ]
+    },
+    {
+      "key": "is1",
+      "kind": "current",
+      "point": [
+        240.192,
+        57.24
+      ],
+      "arrow": [
+        [
+          211.68,
+          116.856
+        ],
+        [
+          211.68,
+          70.2
+        ]
+      ]
+    },
+    {
+      "key": "is2",
+      "kind": "current",
+      "point": [
+        343.872,
+        342.36
+      ],
+      "arrow": [
+        [
+          372.384,
+          324.216
+        ],
+        [
+          372.384,
+          277.56
+        ]
+      ]
+    },
+    {
+      "key": "is3",
+      "kind": "current",
+      "point": [
+        343.872,
+        57.24
+      ],
+      "arrow": [
+        [
+          372.384,
+          116.856
+        ],
+        [
+          372.384,
+          70.2
+        ]
+      ]
+    },
+    {
+      "key": "is4",
+      "kind": "current",
+      "point": [
+        240.192,
+        342.36
+      ],
+      "arrow": [
+        [
+          211.68,
+          324.216
+        ],
+        [
+          211.68,
+          277.56
+        ]
+      ]
+    }
+  ]
+}

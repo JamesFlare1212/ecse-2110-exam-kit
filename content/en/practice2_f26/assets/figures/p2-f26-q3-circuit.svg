@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="576pt" height="400.174009pt" viewBox="0 0 576 400.174009" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Schemdraw + Matplotlib · ECSE 2110 Fieldnotes</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 400.174009
+L 576 400.174009
+L 576 0
+L 0 0
+L 0 400.174009
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="schemdraw-p2-f26-q3-conduction-S1-stroke-2">
+    <path d="M 241.113069 101.140291
+L 233.213641 90.081091
+L 225.314212 101.140291
+L 241.113069 101.140291
+z
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S4-stroke-2">
+    <path d="M 241.113069 304.996512
+L 233.213641 293.937312
+L 225.314212 304.996512
+L 241.113069 304.996512
+z
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S3-stroke-2">
+    <path d="M 343.04118 101.140291
+L 335.141751 90.081091
+L 327.242323 101.140291
+L 343.04118 101.140291
+z
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S2-stroke-2">
+    <path d="M 343.04118 304.996512
+L 335.141751 293.937312
+L 327.242323 304.996512
+L 343.04118 304.996512
+z
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="p2-f26-q3-conduction-S4-stroke-7">
+    <path d="M 233.213641 252.070341
+C 235.510566 252.070341 237.715764 251.156918 239.339935 249.532747
+C 240.964107 247.908575 241.87753 245.703377 241.87753 243.406452
+C 241.87753 241.109527 240.964107 238.904328 239.339935 237.280157
+C 237.715764 235.655985 235.510566 234.742562 233.213641 234.742562
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-11">
+    <path d="M 477.841106 312.207926
+L 477.841106 312.207926
+M 477.841106 256.147465
+L 477.841106 256.147465
+L 477.841106 256.147465
+L 477.841106 312.207926
+" clip-path="url(#pe3d1f144c0)" style="fill: #ffffff; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-12">
+    <path d="M 477.841106 312.207926
+C 485.27481 312.207926 492.405049 309.254484 497.661472 303.998062
+C 502.917895 298.741639 505.871336 291.6114 505.871336 284.177696
+C 505.871336 276.743992 502.917895 269.613752 497.661472 264.35733
+C 492.405049 259.100907 485.27481 256.147465 477.841106 256.147465
+C 470.407402 256.147465 463.277162 259.100907 458.02074 264.35733
+C 452.764317 269.613752 449.810876 276.743992 449.810876 284.177696
+C 449.810876 291.6114 452.764317 298.741639 458.02074 303.998062
+C 463.277162 309.254484 470.407402 312.207926 477.841106 312.207926
+z
+" clip-path="url(#pe3d1f144c0)" style="fill: #ffffff; stroke: #263746; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-source-stroke-4">
+    <path d="M 90.514286 243.406452
+L 90.514286 243.406452
+M 90.514286 161.863963
+L 90.514286 161.863963
+L 90.514286 161.863963
+L 90.514286 243.406452
+" clip-path="url(#pe3d1f144c0)" style="fill: #ffffff; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-source-stroke-5">
+    <path d="M 90.514286 243.406452
+C 101.326946 243.406452 111.698204 239.110536 119.343909 231.464831
+C 126.989614 223.819125 131.28553 213.447868 131.28553 202.635207
+C 131.28553 191.822547 126.989614 181.45129 119.343909 173.805584
+C 111.698204 166.159879 101.326946 161.863963 90.514286 161.863963
+C 79.701625 161.863963 69.330368 166.159879 61.684662 173.805584
+C 54.038957 181.45129 49.743041 191.822547 49.743041 202.635207
+C 49.743041 213.447868 54.038957 223.819125 61.684662 231.464831
+C 69.330368 239.110536 79.701625 243.406452 90.514286 243.406452
+z
+" clip-path="url(#pe3d1f144c0)" style="fill: #ffffff; stroke: #263746; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S1-stroke-0">
+    <path d="M 233.213641 121.092719
+L 233.213641 101.140291
+M 241.113069 90.081091
+L 225.314212 90.081091
+M 233.213641 90.081091
+L 233.213641 70.128664
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S1-stroke-1">
+    <path d="M 233.213641 90.081091
+L 223.734326 80.601777
+L 217.414783 80.601777
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S4-stroke-0">
+    <path d="M 233.213641 324.94894
+L 233.213641 304.996512
+M 241.113069 293.937312
+L 225.314212 293.937312
+M 233.213641 293.937312
+L 233.213641 273.984885
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S4-stroke-1">
+    <path d="M 233.213641 293.937312
+L 223.734326 284.457998
+L 217.414783 284.457998
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S3-stroke-0">
+    <path d="M 335.141751 121.092719
+L 335.141751 101.140291
+M 343.04118 90.081091
+L 327.242323 90.081091
+M 335.141751 90.081091
+L 335.141751 70.128664
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S3-stroke-1">
+    <path d="M 335.141751 90.081091
+L 325.662437 80.601777
+L 319.342894 80.601777
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S2-stroke-0">
+    <path d="M 335.141751 324.94894
+L 335.141751 304.996512
+M 343.04118 293.937312
+L 327.242323 293.937312
+M 335.141751 293.937312
+L 335.141751 273.984885
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S2-stroke-1">
+    <path d="M 335.141751 293.937312
+L 325.662437 284.457998
+L 319.342894 284.457998
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S1-stroke-4">
+    <path d="M 233.213641 161.863963
+L 233.213641 141.478341
+L 233.213641 121.092719
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S1-stroke-5">
+    <path d="M 233.213641 70.128664
+L 233.213641 59.935853
+L 233.213641 49.743041
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S4-stroke-4">
+    <path d="M 233.213641 355.527373
+L 233.213641 340.238157
+L 233.213641 324.94894
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S4-stroke-5">
+    <path d="M 233.213641 273.984885
+L 233.213641 263.027613
+L 233.213641 252.070341
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S4-stroke-6">
+    <path d="M 233.213641 234.742562
+L 233.213641 198.303263
+L 233.213641 161.863963
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S3-stroke-4">
+    <path d="M 335.141751 243.406452
+L 335.141751 182.249585
+L 335.141751 121.092719
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S3-stroke-5">
+    <path d="M 335.141751 70.128664
+L 335.141751 59.935853
+L 335.141751 49.743041
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S2-stroke-4">
+    <path d="M 335.141751 355.527373
+L 335.141751 340.238157
+L 335.141751 324.94894
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-S2-stroke-5">
+    <path d="M 335.141751 273.984885
+L 335.141751 258.695668
+L 335.141751 243.406452
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-top-left-stroke-0">
+    <path d="M 233.213641 49.743041
+L 284.177696 49.743041
+L 335.141751 49.743041
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-bottom-left-stroke-0">
+    <path d="M 233.213641 355.527373
+L 284.177696 355.527373
+L 335.141751 355.527373
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-0">
+    <path d="M 335.141751 49.743041
+L 406.491429 49.743041
+L 477.841106 49.743041
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-1">
+    <path d="M 477.841106 49.743041
+L 477.841106 59.935853
+L 477.841106 70.128664
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-2">
+    <path d="M 477.841106 312.207926
+L 477.841106 333.86765
+L 477.841106 355.527373
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-3">
+    <path d="M 477.841106 355.527373
+L 406.491429 355.527373
+L 335.141751 355.527373
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-detail-4">
+    <path d="M 477.841106 70.128664
+L 477.841106 77.696826
+L 482.259815 77.896683
+L 486.718375 78.504426
+L 488.84501 78.958355
+L 490.842855 79.506536
+L 492.669802 80.14212
+L 494.287341 80.856418
+L 495.661376 81.639079
+L 496.762947 82.478312
+L 497.568834 83.361134
+L 498.062051 84.273643
+L 498.2322 85.201311
+L 498.075696 86.129291
+L 497.595838 87.042729
+L 496.80274 87.927077
+L 495.713119 88.768402
+L 494.349943 89.553676
+L 492.741944 90.271052
+L 490.923017 90.910117
+L 488.931501 91.462106
+L 486.809373 91.920091
+L 482.354017 92.536344
+L 477.930612 92.744642
+L 473.910142 92.564968
+L 470.629799 92.049842
+L 469.356249 91.690761
+L 468.364699 91.279919
+L 467.676049 90.830681
+L 467.304813 90.357222
+L 467.258818 89.874229
+L 467.539032 89.396588
+L 468.13955 88.939073
+L 469.047713 88.516035
+L 470.244379 88.141096
+L 471.704324 87.826866
+L 475.28606 87.424331
+L 479.492526 87.379642
+L 483.970932 87.733999
+L 488.345681 88.495133
+L 490.378329 89.021288
+L 492.24987 89.636661
+L 493.920854 90.332987
+L 495.35606 91.100296
+L 496.525236 91.92712
+L 497.40374 92.800737
+L 497.973052 93.707439
+L 498.221173 94.632822
+L 498.142874 95.562085
+L 497.739804 96.480348
+L 497.02046 97.372961
+L 496.000004 98.225817
+L 494.699945 99.025645
+L 493.147687 99.760292
+L 491.375948 100.418979
+L 489.422073 100.992529
+L 487.327246 101.473559
+L 482.893398 102.138389
+L 478.446265 102.395163
+L 474.35882 102.259797
+L 470.973871 101.781096
+L 469.636544 101.436284
+L 468.575309 101.036659
+L 467.812534 100.595353
+L 467.364297 100.126372
+L 467.240047 99.644309
+L 467.442402 99.164031
+L 467.967097 98.700368
+L 468.803072 98.267798
+L 469.932707 97.880146
+L 471.33219 97.55029
+L 474.817644 97.109134
+L 478.967113 97.018782
+L 483.432588 97.324261
+L 487.839555 98.037405
+L 489.904544 98.541167
+L 491.818411 99.135854
+L 493.540816 99.813636
+L 495.035453 100.564934
+L 496.270819 101.378617
+L 497.220874 102.242241
+L 497.865593 103.142309
+L 498.191386 104.064555
+L 498.191386 104.994246
+L 497.865593 105.916492
+L 497.220874 106.81656
+L 496.270819 107.680185
+L 495.035453 108.493868
+L 493.540816 109.245166
+L 491.818411 109.922948
+L 489.904544 110.517635
+L 487.839555 111.021397
+L 483.432588 111.73454
+L 478.967113 112.04002
+L 474.817644 111.949668
+L 471.33219 111.508512
+L 469.932707 111.178655
+L 468.803072 110.791004
+L 467.967097 110.358434
+L 467.442402 109.894771
+L 467.240047 109.414493
+L 467.364297 108.93243
+L 467.812534 108.463449
+L 468.575309 108.022143
+L 469.636544 107.622518
+L 470.973871 107.277706
+L 472.559101 106.999679
+L 476.335093 106.684619
+L 480.647835 106.741213
+L 485.135623 107.202167
+L 487.327246 107.585243
+L 489.422073 108.066273
+L 491.375948 108.639823
+L 493.147687 109.29851
+L 494.699945 110.033157
+L 496.000004 110.832985
+L 497.02046 111.685841
+L 497.739804 112.578454
+L 498.142874 113.496717
+L 498.221173 114.42598
+L 497.973052 115.351363
+L 497.40374 116.258065
+L 496.525236 117.131682
+L 495.35606 117.958506
+L 493.920854 118.725815
+L 492.24987 119.422141
+L 490.378329 120.037514
+L 488.345681 120.563669
+L 486.194769 120.994222
+L 481.721043 121.553152
+L 477.332354 121.704878
+L 473.396776 121.474128
+L 470.244379 120.917706
+L 469.047713 120.542767
+L 468.13955 120.119729
+L 467.539032 119.662214
+L 467.258818 119.184573
+L 467.304813 118.70158
+L 467.676049 118.228121
+L 468.364699 117.778883
+L 469.356249 117.36804
+L 470.629799 117.00896
+L 472.158504 116.713916
+L 475.847792 116.358059
+L 480.114699 116.367768
+L 484.601365 116.779678
+L 486.809373 117.138711
+L 488.931501 117.596695
+L 490.923017 118.148685
+L 492.741944 118.78775
+L 494.349943 119.505126
+L 495.713119 120.2904
+L 496.80274 121.131725
+L 497.595838 122.016073
+L 498.075696 122.929511
+L 498.2322 123.857491
+L 498.062051 124.785159
+L 497.568834 125.697668
+L 496.762947 126.58049
+L 495.661376 127.419723
+L 494.287341 128.202384
+L 492.669802 128.916682
+L 490.842855 129.552266
+L 488.84501 130.100447
+L 486.718375 130.554376
+L 482.259815 131.162119
+L 477.841106 131.361976
+L 477.841106 138.930138
+L 477.841106 138.930138
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-6">
+    <path d="M 477.841106 138.930138
+L 477.841106 150.397051
+L 477.841106 161.863963
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-7">
+    <path d="M 477.841106 212.828018
+L 477.841106 234.487742
+L 477.841106 256.147465
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-8">
+    <path d="M 477.841106 161.863963
+L 477.841106 167.470009
+L 487.779097 170.782673
+L 467.903115 177.408
+L 487.779097 184.033327
+L 467.903115 190.658654
+L 487.779097 197.283982
+L 467.903115 203.909309
+L 477.841106 207.221972
+L 477.841106 212.828018
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-10">
+    <path d="M 477.841106 312.207926
+L 477.841106 312.207926
+M 477.841106 256.147465
+L 477.841106 256.147465
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-19">
+    <path d="M 375.912995 49.743041
+L 393.750415 49.743041
+L 398.84682 49.743041
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-20">
+    <path d="M 398.84682 45.920737
+L 411.587834 49.743041
+L 398.84682 53.565346
+z
+" clip-path="url(#pe3d1f144c0)" style="fill: #263746"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-source-stroke-0">
+    <path d="M 90.514286 161.863963
+L 161.863963 161.863963
+L 233.213641 161.863963
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-source-stroke-1">
+    <path d="M 90.514286 243.406452
+L 212.828018 243.406452
+L 335.141751 243.406452
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-source-stroke-2">
+    <path d="M 90.514286 243.406452
+L 90.514286 243.406452
+M 90.514286 161.863963
+L 90.514286 161.863963
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-source-stroke-3">
+    <path d="M 110.899908 202.635207
+L 109.201106 198.414258
+L 107.502304 194.480959
+L 105.803502 191.103358
+L 104.1047 188.511634
+L 102.405899 186.882408
+L 100.707097 186.32671
+L 99.008295 186.882408
+L 97.309493 188.511634
+L 95.610691 191.103358
+L 93.911889 194.480959
+L 92.213088 198.414258
+L 90.514286 202.635207
+L 88.815484 206.856157
+L 87.116682 210.789456
+L 85.41788 214.167057
+L 83.719078 216.758781
+L 82.020276 218.388006
+L 80.321475 218.943705
+L 78.622673 218.388006
+L 76.923871 216.758781
+L 75.225069 214.167057
+L 73.526267 210.789456
+L 71.827465 206.856157
+L 70.128664 202.635207
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-source-stroke-6">
+    <path d="M 118.544516 161.863963
+L 137.656037 161.863963
+L 144.026544 161.863963
+" clip-path="url(#pe3d1f144c0)" style="fill: none; stroke: #263746; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-source-stroke-7">
+    <path d="M 144.026544 158.041659
+L 156.767558 161.863963
+L 144.026544 165.686267
+z
+" clip-path="url(#pe3d1f144c0)" style="fill: #263746"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-source-stroke-12">
+    <path d="M 233.213641 164.157346
+C 233.821853 164.157346 234.405236 163.9157 234.835307 163.485629
+C 235.265378 163.055559 235.507023 162.472175 235.507023 161.863963
+C 235.507023 161.255751 235.265378 160.672368 234.835307 160.242297
+C 234.405236 159.812226 233.821853 159.570581 233.213641 159.570581
+C 232.605428 159.570581 232.022045 159.812226 231.591974 160.242297
+C 231.161903 160.672368 230.920258 161.255751 230.920258 161.863963
+C 230.920258 162.472175 231.161903 163.055559 231.591974 163.485629
+C 232.022045 163.9157 232.605428 164.157346 233.213641 164.157346
+z
+" clip-path="url(#pe3d1f144c0)" style="fill: #263746; stroke: #263746; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-source-stroke-13">
+    <path d="M 335.141751 245.699834
+C 335.749963 245.699834 336.333347 245.458189 336.763417 245.028118
+C 337.193488 244.598047 337.435134 244.014664 337.435134 243.406452
+C 337.435134 242.798239 337.193488 242.214856 336.763417 241.784785
+C 336.333347 241.354714 335.749963 241.113069 335.141751 241.113069
+C 334.533539 241.113069 333.950156 241.354714 333.520085 241.784785
+C 333.090014 242.214856 332.848369 242.798239 332.848369 243.406452
+C 332.848369 244.014664 333.090014 244.598047 333.520085 245.028118
+C 333.950156 245.458189 334.533539 245.699834 335.141751 245.699834
+z
+" clip-path="url(#pe3d1f144c0)" style="fill: #263746; stroke: #263746; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-22">
+    <path d="M 335.141751 52.036424
+C 335.749963 52.036424 336.333347 51.794779 336.763417 51.364708
+C 337.193488 50.934637 337.435134 50.351254 337.435134 49.743041
+C 337.435134 49.134829 337.193488 48.551446 336.763417 48.121375
+C 336.333347 47.691304 335.749963 47.449659 335.141751 47.449659
+C 334.533539 47.449659 333.950156 47.691304 333.520085 48.121375
+C 333.090014 48.551446 332.848369 49.134829 332.848369 49.743041
+C 332.848369 50.351254 333.090014 50.934637 333.520085 51.364708
+C 333.950156 51.794779 334.533539 52.036424 335.141751 52.036424
+z
+" clip-path="url(#pe3d1f144c0)" style="fill: #263746; stroke: #263746; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="schemdraw-p2-f26-q3-conduction-load-stroke-23">
+    <path d="M 335.141751 357.820756
+C 335.749963 357.820756 336.333347 357.579111 336.763417 357.14904
+C 337.193488 356.718969 337.435134 356.135585 337.435134 355.527373
+C 337.435134 354.919161 337.193488 354.335778 336.763417 353.905707
+C 336.333347 353.475636 335.749963 353.233991 335.141751 353.233991
+C 334.533539 353.233991 333.950156 353.475636 333.520085 353.905707
+C 333.090014 354.335778 332.848369 354.919161 332.848369 355.527373
+C 332.848369 356.135585 333.090014 356.718969 333.520085 357.14904
+C 333.950156 357.579111 334.533539 357.820756 335.141751 357.820756
+z
+" clip-path="url(#pe3d1f144c0)" style="fill: #263746; stroke: #263746; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="p2-f26-q3-conduction-S1-label-3">
+    <!-- $S_1$ -->
+    <g style="fill: #263746" transform="translate(245.123871 102.364597)">
+     <text>
+      <tspan x="0" y="-0.703125" style="font-style: oblique; font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">S</tspan>
+      <tspan x="18.725586" y="3.5625" style="font-weight: 700; font-size: 18.2px; font-family: 'DejaVu Sans'; fill: #263746">1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-S4-label-3">
+    <!-- $S_4$ -->
+    <g style="fill: #263746" transform="translate(245.123871 306.220819)">
+     <text>
+      <tspan x="0" y="-0.703125" style="font-style: oblique; font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">S</tspan>
+      <tspan x="18.725586" y="3.5625" style="font-weight: 700; font-size: 18.2px; font-family: 'DejaVu Sans'; fill: #263746">4</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-S3-label-3">
+    <!-- $S_3$ -->
+    <g style="fill: #263746" transform="translate(347.051982 102.364597)">
+     <text>
+      <tspan x="0" y="-0.703125" style="font-style: oblique; font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">S</tspan>
+      <tspan x="18.725586" y="3.5625" style="font-weight: 700; font-size: 18.2px; font-family: 'DejaVu Sans'; fill: #263746">3</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-S2-label-3">
+    <!-- $S_2$ -->
+    <g style="fill: #263746" transform="translate(347.051982 306.220819)">
+     <text>
+      <tspan x="0" y="-0.703125" style="font-style: oblique; font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">S</tspan>
+      <tspan x="18.725586" y="3.5625" style="font-weight: 700; font-size: 18.2px; font-family: 'DejaVu Sans'; fill: #263746">2</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-load-label-5">
+    <!-- $L_a$ -->
+    <g style="fill: #263746" transform="translate(501.244147 112.557409)">
+     <text>
+      <tspan x="0" y="-0.046875" style="font-style: oblique; font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">L</tspan>
+      <tspan x="16.567383" y="4.21875" style="font-style: oblique; font-weight: 700; font-size: 18.2px; font-family: 'DejaVu Sans'; fill: #263746">a</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-load-label-9">
+    <!-- $R_a$ -->
+    <g style="fill: #263746" transform="translate(499.554147 194.099897)">
+     <text>
+      <tspan x="0" y="-0.046875" style="font-style: oblique; font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">R</tspan>
+      <tspan x="20.020508" y="4.21875" style="font-style: oblique; font-weight: 700; font-size: 18.2px; font-family: 'DejaVu Sans'; fill: #263746">a</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-load-label-13">
+    <!-- $E_a$ -->
+    <g style="fill: #263746" transform="translate(462.371106 290.931602)">
+     <text>
+      <tspan x="0" y="-0.046875" style="font-style: oblique; font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">E</tspan>
+      <tspan x="17.760742" y="4.21875" style="font-style: oblique; font-weight: 700; font-size: 18.2px; font-family: 'DejaVu Sans'; fill: #263746">a</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-load-label-14">
+    <!-- $+$ -->
+    <g style="fill: #263746" transform="translate(505.144147 262.901372)">
+     <text>
+      <tspan x="0" y="-0.703125" style="font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">+</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-load-label-15">
+    <!-- $-$ -->
+    <g style="fill: #263746" transform="translate(505.144147 318.961833)">
+     <text>
+      <tspan x="0" y="-0.34375" style="font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">−</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-load-label-16">
+    <!-- $+$ -->
+    <g style="fill: #263746" transform="translate(418.505253 92.171786)">
+     <text>
+      <tspan x="0" y="-0.703125" style="font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">+</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-load-label-17">
+    <!-- $-$ -->
+    <g style="fill: #263746" transform="translate(418.505253 331.702846)">
+     <text>
+      <tspan x="0" y="-0.34375" style="font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">−</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-load-label-18">
+    <!-- $v_0$ -->
+    <g style="fill: #263746" transform="translate(414.215253 209.389114)">
+     <text>
+      <tspan x="0" y="-0.78125" style="font-style: oblique; font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">v</tspan>
+      <tspan x="16.948242" y="3.484375" style="font-weight: 700; font-size: 18.2px; font-family: 'DejaVu Sans'; fill: #263746">0</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-load-label-21">
+    <!-- $i_0$ -->
+    <g style="fill: #263746" transform="translate(382.570415 34.07581)">
+     <text>
+      <tspan x="0" y="-0.25" style="font-style: oblique; font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">i</tspan>
+      <tspan x="8.912109" y="4.015625" style="font-weight: 700; font-size: 18.2px; font-family: 'DejaVu Sans'; fill: #263746">0</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-source-label-8">
+    <!-- $i$ -->
+    <g style="fill: #263746" transform="translate(134.380138 147.216013)">
+     <text>
+      <tspan x="0" y="-0.25" style="font-style: oblique; font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">i</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-source-label-9">
+    <!-- $+$ -->
+    <g style="fill: #263746" transform="translate(36.274839 160.973261)">
+     <text>
+      <tspan x="0" y="-0.703125" style="font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">+</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-source-label-10">
+    <!-- $-$ -->
+    <g style="fill: #263746" transform="translate(36.274839 257.804966)">
+     <text>
+      <tspan x="0" y="-0.34375" style="font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">−</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="p2-f26-q3-conduction-source-label-11">
+    <!-- $v$ -->
+    <g style="fill: #263746" transform="translate(23.325622 209.389114)">
+     <text>
+      <tspan x="0" y="-0.78125" style="font-style: oblique; font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; fill: #263746">v</tspan>
+     </text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe3d1f144c0">
+   <rect x="11.52" y="11.52" width="552.96" height="377.134009"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -12,6 +12,19 @@
       ],
       "elementCount": 11
     },
+    "p2-f26-q3-circuit": {
+      "engine": "Schemdraw + Matplotlib",
+      "symbols": [
+        "Dot",
+        "Inductor2",
+        "Line",
+        "ResistorIEEE",
+        "SCR",
+        "Source",
+        "SourceSin"
+      ],
+      "elementCount": 33
+    },
     "p2-f26-q4": {
       "engine": "Schemdraw + Matplotlib",
       "symbols": [
@@ -39,7 +52,7 @@
         "Source",
         "SourceSin"
       ],
-      "elementCount": 28
+      "elementCount": 27
     },
     "p2-f26-q5-waveforms": {
       "engine": "Matplotlib",
@@ -67,14 +80,15 @@
   },
   "generator": "content/en/practice2_f26/generate_figures.py",
   "sourceSha256": {
-    "content/en/practice2_f26/generate_figures.py": "62997cde502711d4bd25d77c6516a6af7cd20a2bd23bef16b57a7f0650b41492",
-    "content/en/practice2_f26/figure-sources.json": "3282140d7af2908cd319c28bced48ad26b411d81db7f1d9307e1da947d038d58",
+    "content/en/practice2_f26/generate_figures.py": "cce75fcc9aadd6de0762ed69a28a9550fe86b248124065cdd418774eb7d90dbc",
+    "content/en/practice2_f26/figure-sources.json": "38db2de37dc85ce10272bb496836111b45fc28e687c1f2eb807f9db8c294e2ce",
     "scripts/plotting.py": "16c038f6c67c0e580c17c196b20ba5b5f4e874405cdf495f43cbfdf318e2c526",
     "scripts/question_primitives.py": "ff01131c66a2fc665cc4fecfc24e6fcced4f49eaeb86e7c922884b55cf978969",
     "scripts/circuit_drawing.py": "092e6b8538a7c3e48a5baff61f27592375c13691b1fc0e74c1e9bf35ab058776",
     "scripts/requirements-figures.txt": "3613bdcbf80a5ecde8b2fdae8fb5b6eeccc2ece50e83e686b7c74fe75c11faa7",
     "scripts/generate_figures.py": "fa2fe729b4b7649464b43337c7e0341f8fd5768f3a63530a4d4c279732a7d038",
-    "scripts/semi_converter_sprite.py": "c6beb603973874a3211a5856151be29e4f4ee455a60837903d29a9fc5a2b7b73"
+    "scripts/semi_converter_sprite.py": "5b64cb7395b76a8fbd755474c5b683112c941f12781bc1d5a34f53e5880452d2",
+    "scripts/full_converter_sprite.py": "31a262c454cd7f6502d53f4c46b6500a3a316005b75ba482a44659fd5aa4cdda"
   },
   "svgFonttype": "none",
   "textScale": 1.3,
@@ -85,6 +99,7 @@
   ],
   "figures": [
     "p2-f26-q1-armature",
+    "p2-f26-q3-circuit",
     "p2-f26-q4",
     "p2-f26-q4-waveforms",
     "p2-f26-q5-circuit",
@@ -93,8 +108,18 @@
     "p2-f26-q6-waveforms"
   ],
   "auxiliaryAssets": [
+    "p2-f26-q3-conduction-dark.svg",
+    "p2-f26-q3-conduction.json",
+    "p2-f26-q3-conduction.svg",
     "p2-f26-q4-conduction-dark.svg",
     "p2-f26-q4-conduction.json",
-    "p2-f26-q4-conduction.svg"
+    "p2-f26-q4-conduction.svg",
+    "p2-f26-q5-conduction-dark.svg",
+    "p2-f26-q5-conduction.json",
+    "p2-f26-q5-conduction.svg",
+    "p2-f26-q6-conduction-dark.svg",
+    "p2-f26-q6-conduction.json",
+    "p2-f26-q6-conduction.svg",
+    "p2-f26-q6-ripple.json"
   ]
 }

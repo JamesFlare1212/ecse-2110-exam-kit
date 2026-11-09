@@ -15,7 +15,7 @@ const load=(locale:'en'|'zh')=>JSON.parse(readFileSync(resolve(p2.directories[lo
 
 describe.skipIf(!p2)('production semi-converter progressive enhancement',()=>{
   test('only the opted-in solution figure is enhanced, with a full authored static fallback',()=>{
-    const opted=exams.flatMap(e=>e.problems.flatMap(q=>q.parts)).filter(p=>p.interaction);
+    const opted=exams.flatMap(e=>e.problems.flatMap(q=>q.parts)).filter(p=>p.interaction?.kind==='semi-converter');
     expect(opted.map(p=>p.id)).toEqual(['p2-f26-q4-a']);
     expect(opted[0].interaction).toEqual({kind:'semi-converter',asset:'p2-f26-q4-conduction'});
     for(const locale of ['en','zh'] as const)expect(solutionFigures(opted[0].solution[locale])).toEqual([opted[0].figure!]);

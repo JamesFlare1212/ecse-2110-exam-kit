@@ -1,6 +1,7 @@
 <script lang="ts">
   import { tick } from 'svelte';
   import * as Dialog from '#lib/components/ui/dialog';
+  import * as Tooltip from '#lib/components/ui/tooltip';
   import { Button } from '#lib/components/ui/button';
   import { Input } from '#lib/components/ui/input';
   import { maxSourceZoom, MIN_SOURCE_ZOOM, stepSourceZoom } from '#lib/source-zoom';
@@ -70,7 +71,18 @@
           <span class="source-page-total">/ {doc.pages}</span>
           <Button variant="outline" size="icon" disabled={page>=doc.pages} onclick={()=>go(page+1)} aria-label={locale==='zh'?'下一页':'Next page'}><ChevronRight aria-hidden="true"/></Button>
         </div>
-        <div class="source-zoom-controls"><Button size="icon" variant="outline" onclick={()=>zoom=stepSourceZoom(zoom,-1,maxZoom)} disabled={zoom<=MIN_SOURCE_ZOOM} aria-label={locale==='zh'?'缩小':'Zoom out'}><ZoomOut aria-hidden="true"/></Button><Button size="icon" variant="ghost" class="zoom-label" onclick={()=>zoom=100} title={locale==='zh'?'适合页宽':'Fit page width'} aria-label={locale==='zh'?`当前缩放 ${zoom}%，点击适合页宽`:`Zoom ${zoom}%; reset to fit page width`}>{zoom}%</Button><Button size="icon" variant="outline" onclick={()=>zoom=stepSourceZoom(zoom,1,maxZoom)} disabled={zoom>=maxZoom} aria-label={locale==='zh'?'放大':'Zoom in'}><ZoomIn aria-hidden="true"/></Button></div>
+        <div class="source-zoom-controls">
+          <Button size="icon" variant="outline" onclick={()=>zoom=stepSourceZoom(zoom,-1,maxZoom)} disabled={zoom<=MIN_SOURCE_ZOOM} aria-label={locale==='zh'?'缩小':'Zoom out'}><ZoomOut aria-hidden="true"/></Button>
+          <Tooltip.Root>
+            <Tooltip.Trigger onclick={()=>zoom=100}>
+              {#snippet child({props})}
+                <Button {...props} data-slot="button" size="icon" variant="ghost" class="zoom-label" aria-label={locale==='zh'?`当前缩放 ${zoom}%，点击适合页宽`:`Zoom ${zoom}%; reset to fit page width`}>{zoom}%</Button>
+              {/snippet}
+            </Tooltip.Trigger>
+            <Tooltip.Content>{locale==='zh'?'适合页宽':'Fit page width'}</Tooltip.Content>
+          </Tooltip.Root>
+          <Button size="icon" variant="outline" onclick={()=>zoom=stepSourceZoom(zoom,1,maxZoom)} disabled={zoom>=maxZoom} aria-label={locale==='zh'?'放大':'Zoom in'}><ZoomIn aria-hidden="true"/></Button>
+        </div>
       </div>
       <div class="source-viewer-layout">
       <!-- svelte-ignore a11y_no_noninteractive_tabindex (The source reading region must support keyboard scrolling.) -->

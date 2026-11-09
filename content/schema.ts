@@ -74,8 +74,15 @@ const part = object({
   sourcePage: positive, solutionPage: positive,
 }, {
   note: optionalLocalized, figure: text, figureCaption: localized,
-  interaction: object({kind: (value, path) => { if (value !== 'semi-converter') fail(path, 'unknown interaction kind'); },
-    asset: (value, path) => { if (typeof value !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value)) fail(path, 'expected a safe paper-local interaction asset name'); }}),
+  interaction: (value,path)=>{
+    const asset:Rule=(entry,where)=>{if(typeof entry!=='string'||!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry))fail(where,'expected a safe paper-local interaction asset name');};
+    const kind=(value as {kind?:string})?.kind;
+    if(kind==='semi-converter'){object({kind:text,asset})(value,path);return;}
+    if(kind!=='full-converter')fail(path,'unknown interaction kind');
+    object({kind:text,asset,profile:(entry,where)=>{if(!['reversed-emf','ideal-drive','ripple-drive'].includes(entry as string))fail(where,'unknown full-converter profile');}},{rippleAsset:asset})(value,path);
+    const full=value as {profile:string;rippleAsset?:string};
+    if((full.profile==='ripple-drive')!==Boolean(full.rippleAsset))fail(path,'only the ripple profile requires a representative-current asset');
+  },
   questionFigure: object({ name: text, source: originalFigure, caption: localized }),
 });
 const problem = object({

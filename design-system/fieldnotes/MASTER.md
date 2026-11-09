@@ -1,6 +1,7 @@
-# Fieldnotes design system
+# Flux design system
 
-Fieldnotes / 电能系统习题室 is an engineering reading and study workspace. Its
+Flux / 电能系统习题室 is an engineering reading and study workspace, evolved from
+Fieldnotes (the existing design-system directory name is retained). Its
 visual direction is content-first and academic: clear hierarchy, a warm paper
 surface, restrained color and reproducible scientific illustrations. It is not a
 portfolio, marketing landing page or publication gallery.

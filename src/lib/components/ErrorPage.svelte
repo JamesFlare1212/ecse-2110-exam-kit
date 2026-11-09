@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { pageTitle } from '../../../content/course';
+  import { course, pageTitle } from '../../../content/course';
   import { Button } from '#lib/components/ui/button';
   import * as Empty from '#lib/components/ui/empty';
   import { readSavedLocale, saveLocale } from '#lib/locale';
@@ -30,7 +30,7 @@
 <main class="error-page" data-error-ready={ready}>
   <Empty.Root>
     <Empty.Header>
-      <p>{status} · Fieldnotes</p>
+      <p>{status} · {course.brand}</p>
       <Empty.Title><h1>{title}</h1></Empty.Title>
       <Empty.Description>{status === 404
         ? t('链接可能已失效，或这份试卷暂未收录。', 'The link may be outdated, or this paper may be unavailable.')

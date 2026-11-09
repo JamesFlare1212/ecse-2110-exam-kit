@@ -23,8 +23,10 @@ import plotting as P
 SVG_NS = 'http://www.w3.org/2000/svg'
 SVG = '{' + SVG_NS + '}'
 NAME = 'p2-f26-q4-conduction'
-# Screen-pixel width: article scaling must not reduce wires to hairlines.
+# Screen-pixel fallback; a host <use> can emphasize an active branch without
+# modifying its native geometry, labels or non-scaling behavior.
 STROKE_WIDTH = 1.8
+STROKE_PROPERTY = '--conduction-stroke-width'
 KEYS = frozenset(('load', 'source', 'S1', 'S2', 'D1', 'D2', 'top-left', 'bottom-left'))
 
 
@@ -173,7 +175,7 @@ def sprite(dark=False):
                     style = node.get('style', '')
                     if 'stroke: currentColor' in style:
                         style = re.sub(r';?\s*stroke-width:[^;]+', '', style)
-                        node.set('style', style+f'; stroke-width: {STROKE_WIDTH}')
+                        node.set('style', style+f'; stroke-width: var({STROKE_PROPERTY}, {STROKE_WIDTH})')
                         node.set('vector-effect', 'non-scaling-stroke')
             group.set('data-part', ownership[identity]['key'])
             root.append(group)

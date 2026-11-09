@@ -2,6 +2,7 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
+import {pointOnRoute} from '../../src/lib/visualizations/conduction-geometry.ts';
 const out=resolve('artifacts/conduction-color-sample');await mkdir(out,{recursive:true});
 const asset='content/en/practice2_f26/assets/figures/p2-f26-q4-conduction';
 const geometryText=await readFile(asset+'.json','utf8'),geometry=JSON.parse(geometryText);
@@ -12,7 +13,7 @@ const template=await readFile('scripts/samples/conduction_colors.template.html',
 const [origin,terminal]=geometry.routes.positive,scale=(terminal[0]-origin[0])/2.8;
 const p=(x,y)=>[+(origin[0]+(x+1)*scale).toFixed(4),+(origin[1]-(y-3.7)*scale).toFixed(4)];
 const current=(key,symbol,name,point,arrow,reference,pattern='')=>({key,symbol,name,kind:'current',unit:'I₀',point:p(...point),arrow:arrow.map(a=>p(...a)),anchor:p(...point),reference,pattern,dash:pattern==='dashed'?'5 3':''});
-const voltage=(key,symbol,name,pins,ends,reference,pattern='')=>({key,symbol,name,kind:'voltage',unit:'Vₘ',pins:pins.map(a=>p(...a)),ends:ends.map(a=>p(...a)),anchor:p(...ends[0]),reference,pattern,dash:pattern==='dotted'?'2 3':''});
+const voltage=(key,symbol,name,pins,ends,reference,pattern='')=>({key,symbol,name,kind:'voltage',unit:'Vₘ',pins:pins.map(a=>p(...a)),ends:ends.map(a=>p(...a)),anchor:p(...ends[0]),reference,pattern,dash:pattern==='dashdot'?'8 2 2 2':pattern==='dotted'?'2 3':''});
 const signals=[
  voltage('v','v','电源电压',[[-1,3.7],[-1,2.3]],[[-.08,3.7],[-.08,2.3]],'电源上端为 +，下端为 −。'),
  current('i','i','源电流',[.65,3.7],[[.15,3.4],[1.05,3.4]],'固定正参考沿上输入导线向右。'),
@@ -23,13 +24,15 @@ const signals=[
  current('id1','iᴅ₁','D₁ 电流',[3.8,5.4],[[4.25,4.25],[4.25,5.15]],'D₁ 的正电流沿右上支路向上。'),
  current('id2','iᴅ₂','D₂ 电流',[3.8,.65],[[4.25,.95],[4.25,1.85]],'D₂ 的正电流沿右下支路向上。','dashed'),
  // Crucial: v_s1 is anode minus cathode, NOT top minus bottom.
- voltage('vs1','vₛ₁','S₁ 电压',[[1.8,4.2],[1.8,5.2]],[[.92,4.2],[.92,5.2]],'S₁ 下端阳极 A 为 +，上端阴极 K 为 −。','dotted'),
+ voltage('vs1','vₛ₁','S₁ 电压',[[1.8,4.2],[1.8,5.2]],[[.92,4.2],[.92,5.2]],'S₁ 下端阳极 A 为 +，上端阴极 K 为 −。','dashdot'),
 ];
 const base=sourceSVG.replace('<svg ',`<svg width="${geometry.viewBox[2]}" height="${geometry.viewBox[3]}" style="color:CanvasText;color-scheme:light" `).replaceAll('var(--card)','Canvas');
 await writeFile(resolve(out,'bridge.svg'),base);
 const escapeScript=s=>s.replaceAll('</script','<\\/script');
 let html=template.replace('__MODEL_JS__',escapeScript(model.replaceAll('export ','')))
  .replace('__SIGNALS_JSON__',JSON.stringify(signals))
+ .replace('__ROUTES_JSON__',JSON.stringify(geometry.routes))
+ .replace('__ROUTE_FUNCTION__',pointOnRoute.toString())
  .replace('__BASE_IMAGE__',resolve(out,'bridge.svg'));
 const fonts=process.argv.indexOf('--font-css');if(fonts!==-1)html=html.replace('</style>',await readFile(process.argv[fonts+1],'utf8')+'\n</style>');
 await writeFile(resolve(out,'preview.zh.html'),html);
@@ -45,6 +48,15 @@ const phrases={
  '点波形开关；灰色为关闭，保留位置便于再次开启。':'Click any waveform to toggle it. Gray is off; every row stays available.',
  '点任意波形即可开启。':'Click any waveform to turn it on.',
  '开启':'On','关闭':'Off',
+ '点击仅去色，读数与位置不变。':'Click to remove color only. Values and positions stay.',
+ '点击去色，并隐藏对应电路标记。':'Click to gray a wave and hide its circuit probe.',
+ '电路与电流':'Circuit & flow','● 约定电流':'▶ Conventional current',
+ '灰波保留读数，电路探针隐藏。移动箭头表示约定电流。':'Gray waves keep values; off probes hide. Moving arrows show conventional current.',
+ '中性移动箭头沿实际闭合回路流动，不表示电子运动或真实速度。测量筛选不切断电路；暂停时箭头冻结，减少动态时不播放动画。':'Neutral moving arrows follow the actual closed current loop, not electron motion or real speed. Filters do not cut the circuit. Pause freezes arrows; reduced motion never animates.',
+ '电流箭头与角度播放独立：固定角度、暂停进度或到达周期末时，仍循环示意该状态下的约定电流方向，不是另一条时间波形，也不表示电子运动或真实速度。电路标题旁可单独暂停流动；减少动态、离屏或页面隐藏时停止运动。测量筛选不切断电路。':'Current arrows run independently of angle playback, including at a fixed angle, while angle playback is paused, and at the endpoint. This repeats the current direction of the frozen state, not a second time waveform, electron motion or real speed. Pause flow independently in the circuit heading. Reduced motion, offscreen reading or a hidden page stops motion. Filters do not cut the circuit.',
+ '暂停电流流动':'Pause current flow','继续电流流动':'Resume current flow','暂停进度':'Pause angle','播放进度':'Play angle','减少动态':'Reduced motion','约定电流':'Conventional current',
+ '颜色标识测量量，不表示导通；灰色保留全部读数。':'Colors identify measurements, not conduction. Gray retains live values.',
+ '极性与假设':'Polarity & assumptions','彩色':'Color','灰色':'Gray',
  '勾选筛选；点波形标题，定位电路中的同色探针与迷你示波器。':'Filter with checkboxes. Click a waveform title to locate its probe and in-circuit mini scope.',
  '选择导通区间':'Select conduction interval','上一边界':'Previous boundary','下一边界':'Next boundary','电角度':'Electrical angle',
  '可连续拖动；播放从当前位置到 360 度，不在触发点暂停。':'Scrub freely. Play continues to 360° without stopping at firing points.',
@@ -87,6 +99,11 @@ html=html.replace('lang="zh-CN"','lang="en"');
 // The English inline preview needs no large CJK font asset.
 if(fonts!==-1){const css=await readFile(process.argv[fonts+1],'utf8');html=html.replace(css,'');}
 await writeFile(resolve(out,'preview.html'),html);
-const provenance={purpose:'Isolated color/probe/filter prototype; not a registered page or authored question',files:Object.fromEntries([[asset+'.svg',sourceSVG],[asset+'.json',geometryText],[ 'src/lib/visualizations/semi-converter-model.mjs',model]].map(([file,value])=>[file,createHash('sha256').update(value).digest('hex')])),signals:signals.map(s=>({key:s.key,kind:s.kind,reference:s.reference})),transform:{origin,scale}};
+// Review-only starting state matches the user's all-nine visibility screenshot.
+const review=html.replace('</script>',"document.querySelectorAll('.wave-row[aria-pressed=false]').forEach(e=>e.click());\n</script>");
+await writeFile(resolve(out,'review-visibility.html'),review);
+const comparison=await readFile('scripts/samples/conduction_visibility.template.html','utf8');
+await writeFile(resolve(out,'visibility-comparison.html'),comparison.replace('__MODEL_JS__',escapeScript(model.replaceAll('export ',''))));
+const provenance={purpose:'Isolated color/probe/filter prototype; not a registered page or authored question',files:Object.fromEntries([[asset+'.svg',sourceSVG],[asset+'.json',geometryText],[ 'src/lib/visualizations/semi-converter-model.mjs',model],['src/lib/visualizations/conduction-geometry.ts',await readFile('src/lib/visualizations/conduction-geometry.ts','utf8')]].map(([file,value])=>[file,createHash('sha256').update(value).digest('hex')])),signals:signals.map(s=>({key:s.key,kind:s.kind,reference:s.reference})),transform:{origin,scale}};
 await writeFile(resolve(out,'provenance.json'),JSON.stringify(provenance,null,2)+'\n');
 console.log(`Created ${out}/preview.html and preview.zh.html (${Buffer.byteLength(html)} English HTML bytes)`);

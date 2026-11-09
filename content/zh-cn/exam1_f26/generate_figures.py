@@ -6,7 +6,6 @@ revealed-solution figures; no illustrative question diagrams are emitted.
 from pathlib import Path
 import sys
 import math
-import numpy as np
 from matplotlib.patches import FancyArrowPatch
 import schemdraw.elements as E
 
@@ -54,42 +53,42 @@ def phasor(ax, a, b, color, gid):
 def render_figures(save, dark):
     p.setup(dark)
 
-    fig, ax = base(6.4)
-    for y, name, end in [(5.1, 'a', 9), (3.85, 'b', 7.05), (2.6, 'c', 9)]:
-        text(ax, .25, y, '$'+name+'$', ha='center', va='center')
-        wire(ax, (.55, y), (2.0, y))
-        C.inductor(ax, (2.0, y), (2.8, y))
-        wire(ax, (2.8, y), (end, y))
-        C.terminal(ax, (.55, y), radius=.04)
-    text(ax, 2.4, 5.67, r'$j3\ \Omega$', ha='center')
-    text(ax, .7, 4.4, r'$|V_L|=346.41\ \mathrm{V}$', fontsize=10)
+    # Compact prompt-only canvas; leave the solution figures' scale unchanged.
+    fig, ax = p.plt.subplots(figsize=(6, 3.5))
+    fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
+    p.canvas(ax, (-.3, 8.9), (-.35, 4.55))
+    p.equal_units(ax)
+    for y, name, end in [(3.7, 'a', 7.65), (2.8, 'b', 6.2), (1.9, 'c', 7.65)]:
+        text(ax, 0, y, '$'+name+'$', ha='center', va='center', fontsize=13)
+        wire(ax, (.3, y), (1.2, y))
+        C.inductor(ax, (1.2, y), (2.15, y))
+        wire(ax, (2.15, y), (end, y))
+        C.terminal(ax, (.3, y), radius=.04)
+    text(ax, 1.675, 4.15, r'$j3\ \Omega$', ha='center', fontsize=13)
+    text(ax, .35, 3.26, r'$|V_L|=346.41\ \mathrm{V}$', fontsize=12)
     # Retain the printed left-middle/right-top/right-bottom delta perspective.
-    a, b, c = np.array([9, 5.1]), np.array([7.05, 3.85]), np.array([9, 2.6])
+    a, b, c = (7.65, 3.7), (6.2, 2.8), (7.65, 1.9)
     for start, end in [(a, b), (b, c), (a, c)]:
-        d = end-start
-        wire(ax, start, start+.35*d)
-        C.resistor(ax, start+.35*d, start+.65*d)
-        wire(ax, start+.65*d, end)
+        C.place(ax, E.ResistorIEEE(), start, end, scale=.85)
     for at, name in [(a, 'a'), (b, 'b'), (c, 'c')]:
         node(ax, at)
-        text(ax, at[0]-.35 if name == 'b' else at[0]+.25,
-             at[1]+.28 if name == 'b' else at[1]+.15, '$'+name+'$')
-    text(ax, 9.25, 3.82, r'$18\ \Omega$', va='center', fontsize=10)
-    # Crossings are NOT nodes. Only the three printed phase taps are joined.
-    for at in [(5.8, 5.1), (4.2, 3.85), (8.1, 2.6)]:
+        text(ax, at[0]-.25 if name == 'b' else at[0]+.25,
+             at[1]+.3 if name == 'b' else at[1]+.1, '$'+name+'$', fontsize=13)
+    text(ax, 8.0, 2.8, r'$18\ \Omega$', va='center', fontsize=12)
+    # Crossings remain unjoined; dots mark only the printed phase taps.
+    # Mirror the two lower Y arms exactly about the upright a--n branch.
+    neutral = (4.55, .6)
+    for at in [(4.55, 3.7), (3.1, 2.8), (6.0, 1.9)]:
         node(ax, at)
-    wire(ax, (5.8, 5.1), (5.8, 2.3))
-    C.resistor(ax, (5.8, 2.3), (5.8, 1.5))
-    wire(ax, (5.8, 1.5), (5.8, 1.1))
-    text(ax, 6.05, 1.95, r'$12\ \Omega$', va='center', fontsize=10)
-    wire(ax, (4.2, 3.85), (4.2, .35))
-    C.place(ax, E.ResistorIEEE(), (4.2, .35), (5.2, .9), scale=.624)
-    wire(ax, (5.2, .9), (5.8, 1.1))
-    wire(ax, (8.1, 2.6), (8.1, .35))
-    C.place(ax, E.ResistorIEEE(), (8.1, .35), (6.6, .9), scale=.624)
-    wire(ax, (6.6, .9), (5.8, 1.1))
-    node(ax, (5.8, 1.1))
-    text(ax, 5.8, .6, r'$n$', ha='center')
+    wire(ax, (4.55, 3.7), (4.55, 1.65))
+    C.place(ax, E.ResistorIEEE(), (4.55, 1.65), (4.55, .75), scale=.8)
+    wire(ax, (4.55, .75), neutral)
+    text(ax, 4.95, 1.2, r'$12\ \Omega$', va='center', fontsize=12)
+    for x, y in [(3.1, 2.8), (6.0, 1.9)]:
+        wire(ax, (x, y), (x, -.05))
+        C.place(ax, E.ResistorIEEE(), (x, -.05), neutral, scale=.8)
+    node(ax, neutral)
+    text(ax, 4.55, .1, r'$n$', ha='center', fontsize=13)
     save(fig, 'e1-f26-q5', dark)
 
     fig, ax = base()

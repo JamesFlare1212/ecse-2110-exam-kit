@@ -2398,15 +2398,16 @@
         "points": 0,
         "sourcePage": 4,
         "solutionPage": 4,
+        "figure": "p2-f26-q3-circuit",
         "prompt": "653f5e1fee579d61e3744a8cdcfbd9c939fcf28e531c3ea3e179f42c0e08a4b6",
         "displayed": "538a2930093f2f22ba98ab576b62776af1dfd488b7d2803f785ead9bedb3a2af",
         "formulas": [
           "rectifier-full"
         ],
-        "figures": [],
-        "solutionText": "cd3497f899985ce5025d4afde064e54e31cf2687326265f2dbc49dc15acba0d5",
+        "figures": ["p2-f26-q3-circuit"],
+        "solutionText": "cdfc596f8165ce15c4b4cd3628c8e35c34b94283235d64ddb8774e54d133f292",
         "note": null,
-        "caption": null
+        "caption": "6958573a0dfe281651632bf47086cdb61a66ecb0dc330c274633191f0446b0bc"
       },
       {
         "id": "p2-f26-q3-b",
@@ -5183,15 +5184,16 @@
         "points": 0,
         "sourcePage": 4,
         "solutionPage": 4,
+        "figure": "p2-f26-q3-circuit",
         "prompt": "5d70c404d27c328b7ceaa2681e32fd7f70a3df4baed8b83e5b625689f4f11110",
         "displayed": "538a2930093f2f22ba98ab576b62776af1dfd488b7d2803f785ead9bedb3a2af",
         "formulas": [
           "rectifier-full"
         ],
-        "figures": [],
-        "solutionText": "59c280b66340eb4a4a794e6c036e7384c41064a13a6b639213ab0cb005262b81",
+        "figures": ["p2-f26-q3-circuit"],
+        "solutionText": "a0aaa6f8b5becc0c8dd2d6f56e6eaf89cf6f641df4db93027605691a7251a08e",
         "note": null,
-        "caption": null
+        "caption": "cc82f09a4458cfc8a54dca39ea42ea58ae08808e47f096f27659e3155a5fbd99"
       },
       {
         "id": "p2-f26-q3-b",

@@ -22,7 +22,7 @@ try{
   const box=await card.boundingBox();assert(box.height<=(box.width>=700?650:980),JSON.stringify({locale,theme,width,box}));
   assert.equal(await widget.locator('.wave-row-label').count(),9);assert.equal(await widget.locator('[role=radio]').count(),4);
   const radioRows=await widget.getByRole('radio').evaluateAll(nodes=>new Set(nodes.map(n=>Math.round(n.getBoundingClientRect().top))).size);assert.equal(radioRows,1,'Four compact phases must share one row');
-  const labels=await widget.locator('.conduction-waves').evaluate(svg=>[...svg.querySelectorAll('text,tspan')].map(e=>({size:parseFloat(getComputedStyle(e).fontSize),box:e.getBoundingClientRect().toJSON()})));assert(labels.every(l=>l.size>=10),'Compactness must not shrink scientific labels');
+  const labels=await widget.locator('.wave-row-label,.wave-value').evaluateAll(nodes=>nodes.map(e=>({size:parseFloat(getComputedStyle(e).fontSize),box:e.getBoundingClientRect().toJSON()})));assert.equal(labels.length,18);assert(labels.every(l=>l.size>=12),'Compactness must not shrink scientific labels');
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   await card.screenshot({path:`${out}/final-${locale}-${theme}-${width}.png`});
   const trigger=widget.locator('[data-static-diagram]');await trigger.click();const dialog=page.locator('.figure-dialog');await dialog.waitFor();

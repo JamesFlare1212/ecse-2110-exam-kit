@@ -225,8 +225,8 @@
           <Tabs.Root bind:value={view} class="problem-tabs">
             <Tabs.List variant="line" class="problem-tab-list"><Tabs.Trigger value="learn"><Layers aria-hidden="true"/>{t('题目与推导','Problem & solution')}</Tabs.Trigger><Tabs.Trigger value="source"><FileText aria-hidden="true"/>{t('试卷原页','Source pages')}</Tabs.Trigger></Tabs.List>
             <Tabs.Content value="learn">
-              <section class="problem-statement" aria-label={t('题目条件','Problem statement')}><div class="section-label"><span>01</span>{t('试卷原题','THE ORIGINAL QUESTION')}<Badge variant="secondary">{t('原题措辞','Original wording')}</Badge></div><div class="original-statement" lang={study.locale==='zh'?'zh-CN':'en'} data-original-statement><RichText text={problem.statement[study.locale]}/></div></section>
-              {#if problem.figure && !problem.figureAtParts}<Figure {assetBase} size={data.figureSizes[study.locale][problem.figure]} name={problem.figure} locale={study.locale} {dark} caption={problem.figureCaption} original={problem.originalFigure} onsource={openSource}/>{/if}
+              <section class="problem-statement" aria-label={t('题目条件','Problem statement')}><div class="section-label"><span>01</span>{t('试卷原题','THE ORIGINAL QUESTION')}</div><div class="original-statement" lang={study.locale==='zh'?'zh-CN':'en'} data-original-statement><RichText text={problem.statement[study.locale]}/></div></section>
+              {#if problem.figure && !problem.figureAtParts}<Figure {assetBase} size={data.figureSizes[study.locale][problem.figure]} name={problem.figure} locale={study.locale} {dark} caption={problem.figureCaption} original={problem.originalFigure}/>{/if}
               <section class="worked-solution" aria-label={t('分步解答','Worked solution')}><div class="solution-section-heading"><div class="section-label"><span>02</span>{t('一步一步推导','WORK IT THROUGH')}</div><Button variant="ghost" size="sm" onclick={toggleSolutions} aria-controls="worked-parts" aria-expanded={openParts.length>0}>{#if openParts.length}{t('收起全部推导','Collapse all steps')}<ChevronsUp data-icon="inline-end" aria-hidden="true"/>{:else}{t('展开全部推导','Reveal all steps')}<Layers data-icon="inline-end" aria-hidden="true"/>{/if}</Button></div>
                 <ProblemOverview {problem} {documents} locale={study.locale} onsource={openSource}/>
                 <Accordion.Root id="worked-parts" type="multiple" bind:value={openParts}>{#each problem.parts as part(part.id)}<ProblemPart {assetBase} sizes={data.figureSizes[study.locale]} {part} {study} {exam} {dark} active={openParts.includes(part.id)&&!source&&!libraryOpen&&!searchOpen&&!navOpen&&!railOpen} onsource={openSource}/>{/each}</Accordion.Root>
@@ -238,7 +238,7 @@
               {#each originalPages as page(page)}<SourcePage doc={documents[exam.doc]} {page} locale={study.locale} alt={t(`Exam ${exam.number} · ${exam.term.zh} ${exam.year ?? ''} · 第 ${page} 页`,`Exam ${exam.number}, ${exam.term.en} ${exam.year ?? ''}, page ${page}`)} onopen={()=>openSource({doc:exam.doc,page,label:{zh:'原始试题',en:'Original exam'}})}/>{/each}
             </Tabs.Content>
           </Tabs.Root>
-          <footer class="reading-footer"><span>fieldnotes<span class="brand-dot">.</span></span><p>{t('把答案连回原理。','Connect the answer to the idea.')}<small>{course.code} · {catalog.totalParts} {t('小问','worked parts')}</small></p></footer>
+          <footer class="reading-footer"><span>{course.brand}</span><p>{t('把答案连回原理。','Connect the answer to the idea.')}<small>{course.code} · {catalog.totalParts} {t('小问','worked parts')}</small></p></footer>
         </main>
         <aside id="reference-sidebar" class="reference-rail" aria-label={t('公式与课件引用','Formula and lecture references')} aria-hidden={compactReferences||!study.referencesOpen} inert={compactReferences||!study.referencesOpen}><ReferenceRail {documents} {problem} locale={study.locale} onsource={openSource} onlibrary={(kind)=>library(kind,'references')}/></aside>
       </div>

@@ -46,7 +46,7 @@ describe.skipIf(!active)('ECSE presentation-only preservation',()=>{
   }
  });
  test('loads, transformer measurements and characteristics use actual authored lists in both locales',()=>{
-  for(const locale of ['en','zh-cn'])for(const [paper,n,count]of [['exam1_f26',4,3],['exam1_f26',6,2],['practice1_f26',9,2],['practice1_f26',10,2]] as const){
+  for(const locale of ['en','zh-cn'])for(const [paper,n,count]of [['exam1_f26',4,3],['exam1_f26',6,2],['exam2_s25',6,2],['practice1_f26',9,2],['practice1_f26',10,2]] as const){
    const file=`content/${locale}/${paper}/questions/q${n}.md`;if(!existsSync(file))continue;
    const q=article(file),list=parseText(q.statement).children.find(node=>node.type==='list');expect(list?.type==='list'?list.children.length:0).toBe(count);
   }

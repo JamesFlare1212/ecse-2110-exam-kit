@@ -11,7 +11,7 @@
         "Line",
         "ResistorIEEE"
       ],
-      "elementCount": 37
+      "elementCount": 29
     },
     "e1-f26-q6-equivalent": {
       "engine": "Schemdraw + Matplotlib",
@@ -31,7 +31,7 @@
   },
   "generator": "content/en/exam1_f26/generate_figures.py",
   "sourceSha256": {
-    "content/en/exam1_f26/generate_figures.py": "49ab5138806da454d8b55a1aba06a8da6c33cd50d2602c781713247b82201483",
+    "content/en/exam1_f26/generate_figures.py": "0c1d2fbf3e96935d4fe79da553126f7f709a111f56692eca6d61fc10676cbdb9",
     "content/en/exam1_f26/figure-sources.json": "b68a8f1b8cc055b07bfe701f05be629350f4192b011ce03a444dc48001d05b34",
     "scripts/plotting.py": "16c038f6c67c0e580c17c196b20ba5b5f4e874405cdf495f43cbfdf318e2c526",
     "scripts/question_primitives.py": "ff01131c66a2fc665cc4fecfc24e6fcced4f49eaeb86e7c922884b55cf978969",

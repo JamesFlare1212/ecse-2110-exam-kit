@@ -6,8 +6,10 @@ writing style; [the migration guide](../docs/template-guide.md) explains how to
 replace the course without changing the workbench. Copyable, tested articles
 live in [templates/](../templates/README.md), outside the active library.
 
-`content/course.json` holds course identity, storage namespace, default problem
-and resource navigation; shared formulas and document provenance remain separate.
+`content/course.json` holds course identity, optional display `brand`, storage
+namespace, default problem and resource navigation; shared formulas and document
+provenance remain separate. Changing the display brand does not rename storage
+keys or migrate saved records.
 English and Simplified Chinese papers are independent files and assets:
 
 ```text
@@ -104,13 +106,20 @@ Avoid repeating defaults:
   all current course solution figures have explicit authored placements.
   An explicitly approved solution may additionally set
   `interaction: {kind: semi-converter, asset: p2-f26-q4-conduction}`.
-  This currently supports only the reviewed ideal half-controlled bridge at
-  alpha = 30 degrees. It enhances that same placement; it does not introduce
-  another question figure or replace the complete static `figure` fallback.
-  Both languages must declare the same interaction metadata and separately own
-  its light/dark SVG sprites and geometry-only JSON sidecar. The sidecar is an
-  illustration asset, never a generated question-bank or answer source. Build
-  validation checks its bounded geometry and inert SVG fragment contract.
+  The reviewed half-controlled bridge retains alpha = 30 degrees. The matching
+  full-controlled questions use `kind: full-converter`, a local `asset` and a
+  reviewed `profile`: `reversed-emf`, `ideal-drive` or `ripple-drive`. Only the
+  ripple profile additionally requires `rippleAsset`, naming its local periodic
+  representative-current samples. Never apply a half-controlled freewheel model
+  to a four-SCR bridge or flatten a stated ripple current.
+  The enhancement owns that same placement; it does not introduce another
+  question figure or replace the complete static `figure` fallback. Both languages
+  declare matching metadata and separately own their light/dark sprites, bounded
+  geometry sidecars and any representative-current samples. These are illustration
+  assets, never a generated question bank or an authored-answer source. Build
+  validation checks topology, finite geometry, inert fragments and ripple statistics.
+  New solution-only illustrations still require an authored marker and a proper
+  static fallback; absent prompt diagrams remain `figure: null`.
   `questionFigure` names a part-specific question SVG, either as a string or
   `{name, caption}`. Its original crop also resolves from `figure-sources.json`.
   Part captions default to the prompt.
@@ -290,8 +299,11 @@ must be replaced with a crop measured on the actual source page:
 Pages are 1-based PDF pages. Regions use top-left-origin fractional
 `[x, y, width, height]` coordinates; leave room for the automatic 0.002 crop
 padding on each edge and keep the padded rectangle inside the page. `panels`
-may map a figure name to multiple measured regions for a vertically assembled
-original crop; otherwise keep it empty.
+may map a figure name to one diagram-only rectangle when its `figures` entry
+locates a broader printed prompt, or to multiple measured regions for a vertically
+assembled original crop. These exact panel rectangles receive no extra padding.
+Keep the complete diagram, including its labels, terminals and polarity marks,
+without surrounding question/solution prose; otherwise keep `panels` empty.
 
 The article's main figure defaults to its problem ID. Part source pages default
 to that main crop's page, and solution pages default to the part source page.

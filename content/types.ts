@@ -13,6 +13,9 @@ export interface Formula {
   note?: Localized;
 }
 export interface OriginalFigure { doc:string; page:number; region:Region }
+export type FullConverterProfile = 'reversed-emf' | 'ideal-drive' | 'ripple-drive';
+export type ConverterInteraction = {kind:'semi-converter';asset:string}
+  | {kind:'full-converter';asset:string;profile:FullConverterProfile;rippleAsset?:string};
 export interface Part {
   id: string;
   label: string;
@@ -22,7 +25,7 @@ export interface Part {
   note?: Partial<Localized>;
   figure?: string;
   figureCaption?: Localized;
-  interaction?: { kind: 'semi-converter'; asset: string };
+  interaction?: ConverterInteraction;
   questionFigure?: { name:string; source:OriginalFigure; caption:Localized };
   sourcePage: number;
   solutionPage: number;

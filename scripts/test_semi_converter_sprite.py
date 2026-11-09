@@ -95,8 +95,8 @@ class SemiConverterSpriteTests(unittest.TestCase):
             self.assertGreater(len(stroked), 35)
             for node in stroked:
                 self.assertEqual(node.get('vector-effect'), 'non-scaling-stroke')
-                widths = re.findall(r'stroke-width:\s*([\d.]+)', node.get('style'))
-                self.assertEqual(widths, [str(S.STROKE_WIDTH)])
+                widths = re.findall(r'stroke-width:\s*([^;]+)', node.get('style'))
+                self.assertEqual(widths, [f'var({S.STROKE_PROPERTY}, {S.STROKE_WIDTH})'])
             for node in root.iter(S.SVG+'text'):
                 self.assertIsNone(node.get('vector-effect'))
 
@@ -192,7 +192,7 @@ class SemiConverterSpriteTests(unittest.TestCase):
                 self.assertIn(ROOT/'scripts/semi_converter_sprite.py', module.AUXILIARY_INPUTS)
                 output = Path(tmp)/paper['locale']
                 names = module.generate_auxiliary_assets(output)
-                self.assertEqual(set(names), expected)
+                self.assertTrue(expected <= set(names))  # The same paper also owns full-converter auxiliaries.
                 first = {name: (output/name).read_bytes() for name in names}
                 module.generate_auxiliary_assets(output)
                 self.assertEqual(first, {name: (output/name).read_bytes() for name in names})
@@ -200,9 +200,9 @@ class SemiConverterSpriteTests(unittest.TestCase):
                 self.assertEqual(json.loads(first[S.NAME+'.json']), self.contract)
                 files.append(output/S.NAME)
             self.assertFalse((files[0].with_suffix('.svg')).samefile(files[1].with_suffix('.svg')))
-        # Sprite ownership must not register additional main figures (19 total).
+        # Auxiliaries stay outside the 20 canonical figures (including Q3's new fallback).
         for locale in ('en', 'zh-cn'):
-            self.assertEqual(sum(len(G.figure_names(paper)) for paper in G.papers(locale)), 19)
+            self.assertEqual(sum(len(G.figure_names(paper)) for paper in G.papers(locale)), 20)
 
     def test_generator_preserves_sprites_during_stale_cleanup_and_tracks_inputs(self):
         paper = next(paper for paper in G.papers('en') if paper['name'] == 'practice2_f26')
@@ -223,7 +223,7 @@ class SemiConverterSpriteTests(unittest.TestCase):
             self.assertFalse((output/'stale.svg').exists())
             manifest = json.loads((output/'manifest.json').read_text())
             self.assertEqual(manifest['figures'], [])
-            self.assertEqual(manifest['auxiliaryAssets'], sorted([S.NAME+'.svg', S.NAME+'-dark.svg', S.NAME+'.json']))
+            self.assertTrue({S.NAME+'.svg', S.NAME+'-dark.svg', S.NAME+'.json'} <= set(manifest['auxiliaryAssets']))
             for name in manifest['auxiliaryAssets']:
                 self.assertTrue((output/name).is_file())
             for name in ('scripts/semi_converter_sprite.py', 'scripts/generate_figures.py'):
@@ -237,7 +237,7 @@ class SemiConverterSpriteTests(unittest.TestCase):
         for locale in ('en', 'zh-cn'):
             output = ROOT/'content'/locale/'practice2_f26/assets/figures'
             manifest = json.loads((output/'manifest.json').read_text())
-            self.assertEqual(len(manifest['figures']), 7)
+            self.assertEqual(len(manifest['figures']), 8)
             self.assertNotIn(S.NAME, manifest['figures'])
             for name, contents in [(S.NAME+'.svg', self.light), (S.NAME+'-dark.svg', self.dark)]:
                 path = output/name

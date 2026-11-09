@@ -55,7 +55,7 @@ export async function checkI18n(browser, base, record) {
     assert.equal(await page.getByRole('navigation', { name: '面包屑导航', exact: true }).count(), 1);
     assert.equal(await page.locator('.resource-label').textContent(), '学习资料');
     assert.ok((await page.locator('meta[name="description"]').getAttribute('content')).includes('份历年试卷'));
-    assert.equal(await page.getByText('原题措辞', { exact: true }).count(), 1);
+    assert.equal(await page.getByText('原题措辞', { exact: true }).count(), 0);
     await page.getByRole('tab', { name: '试卷原页', exact: true }).click();
     const alts = await page.locator('.original-page-card img').evaluateAll(images => images.map(img => img.alt));
     assert.ok(alts.every(alt => /秋季 2026 · 第 \d+ 页$/.test(alt)));
@@ -64,6 +64,7 @@ export async function checkI18n(browser, base, record) {
     await page.keyboard.press('Escape');
     await page.getByRole('button', { name: 'Switch to English', exact: true }).click();
     assert.equal(await page.locator('.problem-kicker').textContent(), 'PROBLEM 01');
+    assert.equal(await page.getByText('Original wording', { exact: true }).count(), 0);
     assert.ok((await page.locator('meta[name="description"]').getAttribute('content')).includes('back exams'));
     const englishAlts = await page.locator('.original-page-card img').evaluateAll(images => images.map(img => img.alt));
     assert.ok(englishAlts.every(alt => /Fall 2026, page \d+$/.test(alt)));

@@ -13,13 +13,15 @@ sys.path.insert(0, str(ROOT/'scripts'))
 import plotting as P
 import circuit_drawing as C
 SVG_LABELS = {}
-AUXILIARY_INPUTS = (ROOT/'scripts/semi_converter_sprite.py',)
+AUXILIARY_INPUTS = (ROOT/'scripts/semi_converter_sprite.py', ROOT/'scripts/full_converter_sprite.py')
 
 
 def generate_auxiliary_assets(output):
-    # Teaching-only interaction assets; deliberately outside the figure inventory.
-    from semi_converter_sprite import generate
-    return generate(output)
+    # Solution-only interaction assets; each locale owns its complete copies.
+    from semi_converter_sprite import generate as generate_semi
+    from full_converter_sprite import generate as generate_full, generate_ripple
+    return [*generate_semi(output), *generate_full(output),
+            *generate_ripple(output, representative_ripple)]
 
 
 def wire(ax, pts, **kw):
@@ -65,11 +67,6 @@ def armature_circuit():
     txt(ax, cx, cy+.2, 'KVL', color=P.TEAL); txt(ax, cx, cy-.2, 'Clockwise', color=P.TEAL)
     txt(ax, 4.25, -.52, r'$+V-I_aR_a-E_a=0$')
     return fig
-
-
-def device(ax, x, y, name, scr=True):
-    C.diode(ax, (x, y-.4), (x, y+.4), scr=scr, gate_left=scr)
-    txt(ax, x+.48, y, name)
 
 
 def coil(ax, x, y0, y1):
@@ -127,51 +124,80 @@ def semi_circuit():
     return fig
 
 
+def full_circuit(*, ideal=False):
+    """Compact full bridge; Q5's ideal motor omits resistance and field winding."""
+    fig, ax = P.plt.subplots(figsize=(5.0 if ideal else 6.6, 3.6))
+    fig.subplots_adjust(left=.015, right=.985, bottom=.025, top=.975)
+    P.canvas(ax, (-.75, 5.7 if ideal else 7.35), (-.3, 4.1)); P.equal_units(ax)
+    source, left, right, load = .2, 1.35, 2.7, 4.5
+    top, bottom, upper, lower = 3.65, .15, 2.95, .85
+    ac_top, ac_bottom, jump = 2.1, 1.5, .12
+
+    def mark(x, y, text, **kw):
+        P.label(ax, x, y, text, fontsize=14, ha=kw.pop('ha', 'center'), va='center', **kw)
+
+    for y in (top, bottom):
+        wire(ax, [(left, y), (load, y)])
+    for x, names in [(left, ('$S_1$', '$S_4$')), (right, ('$S_3$', '$S_2$'))]:
+        for y, name in zip((upper, lower), names):
+            C.place(ax, E.SCR().flip(), (x, y-.45), (x, y+.45), scale=.9)
+            mark(x+.33, y, name, ha='left')
+        wire(ax, [(x, upper+.45), (x, top)])
+        wire(ax, [(x, bottom), (x, lower-.45)])
+        if x == left:
+            wire(ax, [(x, lower+.45), (x, ac_bottom-jump)])
+            ax.add_patch(Arc((x, ac_bottom), 2*jump, 2*jump, theta1=-90,
+                             theta2=90, color=P.INK, lw=1.6))
+            wire(ax, [(x, ac_bottom+jump), (x, upper-.45)])
+        else:
+            wire(ax, [(x, lower+.45), (x, upper-.45)])
+    wire(ax, [(source, ac_top), (left, ac_top)])
+    wire(ax, [(source, ac_bottom), (right, ac_bottom)])
+    C.source(ax, (source, ac_bottom), (source, ac_top), kind='ac', radius=.3)
+    for point in [(left, ac_top), (right, ac_bottom), (right, top), (right, bottom)]:
+        C.terminal(ax, point, radius=.04, open=False)
+    C.wire(ax, (.46, ac_top), (.99, ac_top), arrow='->', color=P.ORANGE)
+    mark(.72, 2.46, '$i$')
+    mark(-.4, 2.3 if ideal else 2.16, '$+$'); mark(-.4, 1.8, '$v$')
+    mark(-.4, 1.3 if ideal else 1.44, '$-$')
+
+    wire(ax, [(load, top), (load, 3.4)])
+    if ideal:
+        coil(ax, load, 2.2, 3.4); mark(5.05, 2.8, '$L$', ha='left')
+        wire(ax, [(load, 2.2), (load, 1.65)])
+        C.source(ax, (load, .65), (load, 1.65), kind='empty', radius=.5)
+        mark(load, 1.15, '$E_a$'); mark(5.15, 1.65, '$+$'); mark(5.15, .65, '$-$')
+        wire(ax, [(load, .65), (load, bottom)])
+    else:
+        coil(ax, load, 2.45, 3.4); mark(5.05, 2.95, '$L_a$', ha='left')
+        wire(ax, [(load, 2.45), (load, 2.2)])
+        C.resistor(ax, (load, 2.2), (load, 1.5)); mark(4.95, 1.85, '$R_a$', ha='left')
+        wire(ax, [(load, 1.5), (load, 1.2)])
+        C.source(ax, (load, .4), (load, 1.2), kind='empty', radius=.4)
+        mark(load, .8, '$E_a$'); mark(5.03, 1.2, '$+$'); mark(5.03, .4, '$-$')
+        wire(ax, [(load, .4), (load, bottom)])
+    C.wire(ax, (3.15, top), (3.82, top), arrow='->', color=P.ORANGE)
+    mark(3.48, 3.98, '$i_0$')
+    mark(3.75, 3.15, '$+$'); mark(3.75, .55, '$-$'); mark(3.75, 1.9, '$v_0$')
+
+    if not ideal:
+        # Q6's independently excited field stays separate, with upward reference i_f.
+        wire(ax, [(5.75, .35), (5.75, 1.15), (6, 1.15)])
+        C.inductor(ax, (6, 1.15), (6.95, 1.15))
+        wire(ax, [(6.95, 1.15), (7.2, 1.15), (7.2, .35)])
+        for x in (5.75, 7.2):
+            C.terminal(ax, (x, .35), radius=.055)
+        C.wire(ax, (5.75, .5), (5.75, .95), arrow='->', color=P.ORANGE)
+        mark(6.1, .55, '$i_f$')
+    return fig
+
+
 def circuit(kind):
     if kind == 'semi':
         return semi_circuit()
-    fig, ax = P.plt.subplots(figsize=(10.8, 5.3))
-    fig.subplots_adjust(left=.015, right=.985, bottom=.025, top=.975)
-    P.canvas(ax, (-.6, 10.6), (-.65, 5.35)); P.equal_units(ax)
-    solution = kind == 'solution'
-    wire(ax, [(2,3.85),(2,4.7),(6,4.7)])
-    wire(ax, [(2,.95),(2,.25),(6,.25)])
-    wire(ax, [(3.8,3.85),(3.8,4.7)]); wire(ax, [(3.8,.95),(3.8,.25)])
-    for x, names, scr in [(2, ('$S_1$', '$S_4$'), True),
-                          (3.8, ('$S_3$', '$S_2$'), True)]:
-        device(ax,x,3.45,names[0],scr); device(ax,x,1.35,names[1],scr)
-        if x == 2:
-            wire(ax,[(x,1.75),(x,1.95)])
-            ax.add_patch(Arc((x,2.13),.36,.36,theta1=-90,theta2=90,color=P.INK,lw=1.5))
-            wire(ax,[(x,2.31),(x,3.05)])
-        else:
-            wire(ax,[(x,1.75),(x,3.05)])
-    wire(ax,[(.5,2.8),(2,2.8)]); wire(ax,[(.5,2.13),(3.8,2.13)])
-    for point in [(2,2.8),(3.8,2.13),(3.8,4.7),(3.8,.25)]:
-        C.terminal(ax,point,radius=.035,open=False)
-    C.wire(ax,(.7,2.8),(1.45,2.8),arrow='->',color=P.ORANGE); txt(ax,1.05,3.15,'$i$')
-    C.source(ax,(.5,2.13),(.5,2.8),kind='ac',radius=.335)
-    txt(ax,-.15,3.05,'$+$'); txt(ax,-.15,1.9,'$-$'); txt(ax,-.15,2.465,'$v$')
-    wire(ax,[(6,4.7),(6,4.35)]); coil(ax,6,3.25,4.35)
-    txt(ax,6.68,3.8,'$L$' if solution else '$L_a$')
-    wire(ax,[(6,3.25),(6,3)])
-    if solution:
-        wire(ax,[(6,3),(6,1.85)])
-    else:
-        C.resistor(ax,(6,3),(6,2.2)); txt(ax,6.55,2.6,'$R_a$')
-        wire(ax,[(6,2.2),(6,1.85)])
-    C.source(ax,(6,.85),(6,1.85),kind='empty',radius=.5)
-    txt(ax,6,1.35,'$E_a$'); txt(ax,6.68,1.85,'$+$'); txt(ax,6.68,.85,'$-$')
-    wire(ax,[(6,.85),(6,.25)])
-    if not solution:
-        wire(ax,[(7.55,.55),(7.55,1.55),(7.8,1.55)])
-        C.inductor(ax,(7.8,1.55),(9,1.55))
-        wire(ax,[(9,1.55),(9.3,1.55),(9.3,.55)])
-        for x in [7.55,9.3]: C.terminal(ax,(x,.55),radius=.055)
-        C.wire(ax,(7.55,.75),(7.55,1.3),arrow='->',color=P.ORANGE); txt(ax,8,.85,'$i_f$')
-    C.wire(ax,(4.5,4.7),(5.3,4.7),arrow='->',color=P.ORANGE); txt(ax,4.9,5.03,'$i_0$')
-    txt(ax,5.15,4.2,'$+$'); txt(ax,5.15,.7,'$-$'); txt(ax,5.15,2.5,'$v_0$')
-    return fig
+    if kind in ('full', 'solution'):
+        return full_circuit(ideal=kind == 'solution')
+    raise ValueError(f'Unknown bridge circuit: {kind}')
 
 
 def switching_band(ax, alpha, semi):
@@ -261,11 +287,14 @@ def full_waveforms(ripple=False):
 
 
 def render_figures(save,dark):
+    # Q3 fallback is solution-only: the referenced source diagram is absent.
+    from full_converter_sprite import circuit_figure
     P.setup(dark)
     for name,maker in [('p2-f26-q1-armature',armature_circuit),('p2-f26-q4',lambda:circuit('semi')),
        ('p2-f26-q6',lambda:circuit('full')),('p2-f26-q4-waveforms',semi_waveforms),
        ('p2-f26-q5-circuit',lambda:circuit('solution')),('p2-f26-q5-waveforms',full_waveforms),
-       ('p2-f26-q6-waveforms',lambda:full_waveforms(True))]:
+       ('p2-f26-q6-waveforms',lambda:full_waveforms(True)),
+       ('p2-f26-q3-circuit',lambda:circuit_figure(dark))]:
         save(maker(),name,dark)
 
 

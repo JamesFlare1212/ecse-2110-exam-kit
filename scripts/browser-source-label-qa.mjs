@@ -33,7 +33,7 @@ try {
           const name=node.querySelector('.formula-source-name'),page=node.querySelector('.formula-source-page');
           const a=name.getBoundingClientRect(),b=page.getBoundingClientRect(),box=node.getBoundingClientRect();
           return {height:box.height,line:parseFloat(getComputedStyle(node).lineHeight),sameLine:Math.abs(a.top-b.top)<1,
-            pageHeight:b.height,pageLine:parseFloat(getComputedStyle(page).lineHeight),fullTitle:name.title};
+            pageHeight:b.height,pageLine:parseFloat(getComputedStyle(page).lineHeight),fullTitle:name.getAttribute('aria-label')};
         });
         assert.ok(metrics.sameLine&&metrics.height<=metrics.line+1,'Configured compact names fit one metadata row');
         assert.ok(metrics.pageHeight<=metrics.pageLine+1,'A page number must never split its digits onto another line');

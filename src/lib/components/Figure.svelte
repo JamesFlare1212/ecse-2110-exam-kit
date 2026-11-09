@@ -3,13 +3,12 @@
   import { tabsListVariants, tabsTriggerVariants } from '#lib/components/ui/tabs';
   import { cn } from '#lib/utils';
   import * as Dialog from '#lib/components/ui/dialog';
-  import * as Tooltip from '#lib/components/ui/tooltip';
-  import { Button,buttonVariants } from '#lib/components/ui/button';
+  import { Button } from '#lib/components/ui/button';
   import Expand from '@lucide/svelte/icons/expand';
   import RichText from './RichText.svelte';
   import { plainText } from '#lib/math';
-  import type { Locale, Localized, SourceRef } from '#lib/types';
-  let {name,assetBase,locale,dark=false,caption,original,onsource,size,dialogOnly=false,zoom=$bindable(false),detailTitle}: {dialogOnly?:boolean;zoom?:boolean;detailTitle?:string;name:string;assetBase:string;size:[number,number,number];locale:Locale;dark?:boolean;caption?:Localized;original?:{doc:string;page:number;region:[number,number,number,number]};onsource?:(s:SourceRef)=>void}=$props();
+  import type { Locale, Localized } from '#lib/types';
+  let {name,assetBase,locale,dark=false,caption,original,size,dialogOnly=false,zoom=$bindable(false),detailTitle}: {dialogOnly?:boolean;zoom?:boolean;detailTitle?:string;name:string;assetBase:string;size:[number,number,number];locale:Locale;dark?:boolean;caption?:Localized;original?:{doc:string;page:number;region:[number,number,number,number]}}=$props();
   let view=$state('recreated');
   let error=$state(false);
   const aspectRatio=$derived(size[0]/size[1]);
@@ -21,7 +20,6 @@
   let fitWidth=$state(false);
   const src=$derived(view==='original' ? `${assetBase}/original-figures/${name}.webp` : `${assetBase}/figures/${name}${dark?'-dark':''}.svg`);
   const captionText=$derived(plainText(caption?.[locale]??(locale==='zh'?'解题图示':'Solution diagram')));
-  const sourceLabel=$derived(original?`${locale==='zh'?'在原始试卷中定位':'Locate in the source exam'} · p.${original.page}`:'');
   $effect(()=>{name;view='recreated';});
   $effect(()=>{src;error=false;});
   $effect(()=>{if(zoom){zoomError=false;fitWidth=dialogOnly;}});
@@ -34,17 +32,9 @@
       {#if original}
         <div class={cn(tabsListVariants(),'figure-version-track h-9')} data-variant="default">
           <RadioGroup.Root class="figure-version flex h-full" orientation="horizontal" bind:value={view} aria-label={locale==='zh'?'图像版本':'Figure version'}>
-            <RadioGroup.Item class={tabsTriggerVariants()} data-active={view==='recreated'?true:undefined} value="recreated">{locale==='zh'?'矢量复刻':'Recreated SVG'}</RadioGroup.Item>
+            <RadioGroup.Item class={tabsTriggerVariants()} data-active={view==='recreated'?true:undefined} value="recreated" aria-label={locale==='zh'?'矢量复刻':'Recreated SVG'}><span class="figure-recreated-label">{locale==='zh'?'矢量复刻':'Recreated SVG'}</span><span class="figure-compact-label" aria-hidden="true">SVG</span></RadioGroup.Item>
             <RadioGroup.Item class={tabsTriggerVariants()} data-active={view==='original'?true:undefined} value="original">{locale==='zh'?'原始插图':'Original'}</RadioGroup.Item>
           </RadioGroup.Root>
-          {#if onsource}
-            <Tooltip.Root>
-              <Tooltip.Trigger class={buttonVariants({variant:'ghost',size:'xs'})} data-figure-source
-                aria-label={sourceLabel} aria-haspopup="dialog"
-                onclick={event=>{event.currentTarget.focus({preventScroll:true});onsource?.({...original,label:{zh:'原始插图',en:'Original figure'}});}}>p.{original.page}</Tooltip.Trigger>
-              <Tooltip.Content>{sourceLabel}</Tooltip.Content>
-            </Tooltip.Root>
-          {/if}
         </div>
       {/if}
       <Button size="icon-sm" variant="ghost" onclick={()=>{zoomError=false;fitWidth=false;zoom=true;}} disabled={error} aria-label={locale==='zh'?'放大图示':'Enlarge figure'}><Expand aria-hidden="true" /></Button>

@@ -42,50 +42,59 @@ def base(height=5.4):
     return fig, ax
 
 
+def compact_base(width, xlim, ylim):
+    """Size prompt circuits to their content, not the solution diagram canvas."""
+    fig, ax = p.plt.subplots(figsize=(width, 2))
+    fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
+    p.canvas(ax, xlim, ylim)
+    p.equal_units(ax)
+    return fig, ax
+
+
 def render_figures(save, dark):
     p.setup(dark)
 
     # Source PDF page 3: horizontal series R and inductive X, I to the right.
-    fig, ax = base()
-    y = 3.1
-    wire(ax, (1.7, y), (4.1, y))
-    resistor(ax, (4.1, y), (5.5, y))
-    wire(ax, (5.5, y), (6.2, y))
-    coil(ax, (6.2, y), (7.7, y))
-    wire(ax, (7.7, y), (10.3, y))
-    terminal(ax, (1.7, y))
-    terminal(ax, (10.3, y))
-    p.arrow(ax, (2.3, y), (3.4, y), color=p.INK)
-    label(ax, 2.8, 2.52, r'$I$', ha='center')
-    label(ax, 4.8, 3.72, r'$R$', ha='center')
-    label(ax, 6.95, 3.72, r'$X$', ha='center')
-    label(ax, 1.7, 2.28, r'$+$', ha='center')
-    label(ax, 6, 2.28, r'$V$', ha='center')
-    label(ax, 10.3, 2.28, r'$-$', ha='center')
+    fig, ax = compact_base(3.8, (-.25, 5.9), (-.85, 1.15))
+    y = .2
+    wire(ax, (0, y), (1.5, y))
+    resistor(ax, (1.5, y), (2.8, y))
+    wire(ax, (2.8, y), (3.0, y))
+    coil(ax, (3.0, y), (4.4, y))
+    wire(ax, (4.4, y), (5.6, y))
+    terminal(ax, (0, y))
+    terminal(ax, (5.6, y))
+    p.arrow(ax, (.15, y), (1.05, y), color=p.INK)
+    label(ax, .65, -.3, r'$I$', ha='center', fontsize=12)
+    label(ax, 2.15, .8, r'$R$', ha='center', fontsize=12)
+    label(ax, 3.7, .8, r'$X$', ha='center', fontsize=12)
+    label(ax, 0, -.6, r'$+$', ha='center', fontsize=12)
+    label(ax, 2.8, -.6, r'$V$', ha='center', fontsize=12)
+    label(ax, 5.6, -.6, r'$-$', ha='center', fontsize=12)
     save(fig, 'p1-f26-q2', dark)
 
     # Source PDF page 4: vertical input, resistor left and inductive X right.
-    fig, ax = base()
-    top, bottom = 3.95, 1.6
-    wire(ax, (6, 4.7), (6, top))
-    p.arrow(ax, (6, 4.55), (6, 4.13), color=p.INK)
-    wire(ax, (6, bottom), (6, 1.08))
-    terminal(ax, (6, 4.7))
-    terminal(ax, (6, 1.08))
+    fig, ax = compact_base(2.2, (-.3, 3.3), (-.2, 3.45))
+    top, bottom = 2.65, .45
+    wire(ax, (1.25, 3.15), (1.25, top))
+    p.arrow(ax, (1.25, 3.1), (1.25, 2.73), color=p.INK)
+    wire(ax, (1.25, bottom), (1.25, 0))
+    terminal(ax, (1.25, 3.15))
+    terminal(ax, (1.25, 0))
     for y in (top, bottom):
-        wire(ax, (4.5, y), (7.5, y))
-    wire(ax, (4.5, top), (4.5, 3.48))
-    resistor(ax, (4.5, 3.48), (4.5, 2.08))
-    wire(ax, (4.5, 2.08), (4.5, bottom))
-    wire(ax, (7.5, top), (7.5, 3.48))
-    coil(ax, (7.5, 3.48), (7.5, 2.08))
-    wire(ax, (7.5, 2.08), (7.5, bottom))
-    label(ax, 6.65, 4.43, r'$I$', ha='center')
-    label(ax, 3.7, 2.78, r'$R$', ha='center')
-    label(ax, 8.3, 2.78, r'$X$', ha='center')
-    label(ax, 6, 3.48, r'$+$', ha='center')
-    label(ax, 6, 2.78, r'$V$', ha='center')
-    label(ax, 6, 2.08, r'$-$', ha='center')
+        wire(ax, (.4, y), (2.1, y))
+    wire(ax, (.4, top), (.4, 2.3))
+    resistor(ax, (.4, 2.3), (.4, .8))
+    wire(ax, (.4, .8), (.4, bottom))
+    wire(ax, (2.1, top), (2.1, 2.3))
+    coil(ax, (2.1, 2.3), (2.1, .8))
+    wire(ax, (2.1, .8), (2.1, bottom))
+    label(ax, 1.7, 2.95, r'$I$', ha='center', fontsize=12)
+    label(ax, -.05, 1.55, r'$R$', ha='center', va='center', fontsize=12)
+    label(ax, 3.1, 1.55, r'$X$', ha='center', va='center', fontsize=12)
+    label(ax, 1.25, 2.15, r'$+$', ha='center', va='center', fontsize=12)
+    label(ax, 1.25, 1.55, r'$V$', ha='center', va='center', fontsize=12)
+    label(ax, 1.25, .95, r'$-$', ha='center', va='center', fontsize=12)
     save(fig, 'p1-f26-q3', dark)
 
     # Pedagogical circuit requested by Q9(b), visible only in its solution.

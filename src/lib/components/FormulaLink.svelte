@@ -3,6 +3,7 @@
   import { course, sourceName } from '../../../content/course';
   import type { Snippet } from 'svelte';
   import * as HoverCard from '#lib/components/ui/hover-card';
+  import * as Tooltip from '#lib/components/ui/tooltip';
   import { Button } from '#lib/components/ui/button';
   import BookOpen from '@lucide/svelte/icons/book-open';
   import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
@@ -32,7 +33,7 @@
       {#if !compact}<span class="reference-page">p.{formula.source.page}</span>{/if}
     {/if}
   </HoverCard.Trigger><HoverCard.Content collisionPadding={12} hidden={!open} class="w-80 max-w-[calc(100vw-2rem)]">
-    <div class="excerpt-heading"><strong>{formula.title[locale]}</strong><span class="formula-source-meta"><span class="formula-source-name" title={documents[formula.source.doc].title}>{sourceName(formula.source.doc,documents,course,locale)}</span><span class="formula-source-page">p.{formula.source.page}</span></span></div>
+    <div class="excerpt-heading"><strong>{formula.title[locale]}</strong><span class="formula-source-meta"><Tooltip.Root><Tooltip.Trigger class="formula-source-name text-left" aria-label={documents[formula.source.doc].title}>{sourceName(formula.source.doc,documents,course,locale)}</Tooltip.Trigger><Tooltip.Content>{documents[formula.source.doc].title}</Tooltip.Content></Tooltip.Root><span class="formula-source-page">p.{formula.source.page}</span></span></div>
     <div class="excerpt-equation"><Math {locale} tex={formula.math} display /></div>
     <div class="original-excerpt"><img src={`/excerpts/${formula.id}.webp`} alt={formula.source.label[locale]} loading="lazy" /></div>
     <p class="excerpt-description">{locale === 'zh' ? '来自原始 PDF 的公式区域' : 'Excerpt from the original PDF'}</p>

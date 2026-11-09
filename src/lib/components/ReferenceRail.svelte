@@ -1,6 +1,7 @@
 <script lang="ts">
   import * as Tabs from '#lib/components/ui/tabs';
   import * as Card from '#lib/components/ui/card';
+  import * as Tooltip from '#lib/components/ui/tooltip';
   import { Button } from '#lib/components/ui/button';
   import { Badge } from '#lib/components/ui/badge';
   import BookOpen from '@lucide/svelte/icons/book-open';
@@ -24,7 +25,7 @@
       <div class="rail-formulas">
         {#each formulas as formula,i(formula.id)}
           <section class="rail-formula">
-            <div class="rail-formula-number">{String(i+1).padStart(2,'0')} <span class="formula-source-meta"><span class="formula-source-name" title={documents[formula.source.doc].title}>{sourceName(formula.source.doc,documents,course,locale)}</span><span class="formula-source-page">p.{formula.source.page}</span></span></div>
+            <div class="rail-formula-number">{String(i+1).padStart(2,'0')} <span class="formula-source-meta"><Tooltip.Root><Tooltip.Trigger class="formula-source-name text-left" aria-label={documents[formula.source.doc].title}>{sourceName(formula.source.doc,documents,course,locale)}</Tooltip.Trigger><Tooltip.Content>{documents[formula.source.doc].title}</Tooltip.Content></Tooltip.Root><span class="formula-source-page">p.{formula.source.page}</span></span></div>
             <FormulaLink {documents} {formula} {locale} {onsource}/>
             <div class="rail-equation"><Math {locale} tex={formula.math} display/></div>
           </section>

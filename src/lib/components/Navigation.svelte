@@ -8,12 +8,11 @@
   import { Badge } from '#lib/components/ui/badge';
   import { Separator } from '#lib/components/ui/separator';
   import { Progress } from '#lib/components/ui/progress';
-  import Waves from '@lucide/svelte/icons/waves';
+  import brandMark from '#lib/assets/favicon.svg?raw';
   import BookOpen from '@lucide/svelte/icons/book-open';
   import FileText from '@lucide/svelte/icons/file-text';
   import Bookmark from '@lucide/svelte/icons/bookmark';
   import Check from '@lucide/svelte/icons/check';
-  import ShieldCheck from '@lucide/svelte/icons/shield-check';
   import { DEFAULT_PROBLEM_ID, problemPath, followProblemLink } from '#lib/problem-navigation';
   import type { StudyState } from '#lib/study.svelte';
   let {study,onselect,onlibrary,openExam=$bindable<string|undefined>()}: {study:StudyState;openExam?:string;onselect:(id:string)=>void;onlibrary:(kind:string)=>void}=$props();
@@ -35,7 +34,14 @@
   $effect(()=>{if(study.selected!==lastSelected){lastSelected=study.selected;openExam=selected.exam.id;}});
 </script>
 <div class="navigation-content">
-  <a href={problemPath(home)} class="brand" aria-label={`Fieldnotes · ${course.code}`} onclick={(event)=>followProblemLink(event,()=>onselect(home))}><span class="brand-mark"><Waves aria-hidden="true"/></span><span><strong>fieldnotes<span class="brand-dot">.</span></strong><small>{course.code} · {course.title.en.toUpperCase()}</small></span></a>
+  <a href={problemPath(home)} class="brand" aria-label={`${course.brand} · ${course.code} · ${course.title[study.locale]}`} onclick={(event)=>followProblemLink(event,()=>onselect(home))}>
+    <!-- Trusted, local SVG: share the exact mark with the browser favicon. -->
+    <span class="brand-mark" aria-hidden="true">{@html brandMark}</span>
+    <span class="brand-copy">
+      <span class="brand-heading"><strong>{course.brand}</strong><span class="brand-course-code">{course.code}</span></span>
+      <small class="brand-course-title" lang={study.locale==='zh'?'zh-CN':'en'}>{course.title[study.locale]}</small>
+    </span>
+  </a>
   <div class="nav-body">
     <div class="nav-section-label">{study.locale==='zh'?'试卷与练习':'EXAMS & PRACTICE'}<Badge variant="outline">{study.catalog.exams.length}</Badge></div>
     <Tabs.Root value={String(selected.exam.number)} onValueChange={(v)=>{if(v&&v!==String(selected.exam.number))onselect(study.catalog.exams.filter(exam=>exam.number===Number(v)).at(-1)!.problems[0].id);}}>
@@ -73,6 +79,5 @@
   <div class="nav-progress">
     <div class="progress-summary"><span>{study.locale==='zh'?'学习进度':'Your progress'}</span><strong>{progress}<span> / {partIds.length}</span></strong></div>
     <Progress value={progress} max={partIds.length} aria-label={`Exam ${selected.exam.number} · ${study.locale==='zh'?'已掌握的小问':'Parts marked mastered'}`}/>
-    <div class="local-status"><ShieldCheck aria-hidden="true"/>{study.storageError?(study.locale==='zh'?'更改尚未保存':'Changes not saved'):(study.locale==='zh'?'学习进度保存在此浏览器':'Progress saved in this browser')}</div>
   </div>
 </div>
