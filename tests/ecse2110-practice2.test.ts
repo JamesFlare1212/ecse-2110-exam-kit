@@ -1,6 +1,6 @@
 import {describe, expect, test} from 'bun:test';
 import {semanticMarkdown} from './fixtures/semantic-markdown';
-import {readFileSync, readdirSync, statSync} from 'node:fs';
+import {existsSync, lstatSync, readFileSync, readdirSync, statSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {expectIndependentPageImages, expectPaperSourceMetadata} from './fixtures/paper-provenance';
 import {readQuestionMarkdown} from '../content/markdown';
@@ -38,10 +38,10 @@ describe('ECSE 2110 Practice Set 2', () => {
     }
   });
 
-  test('uses only the two authentic prompt diagrams; requested drawings stay in solutions', () => {
+  test('uses two attached source diagrams plus the matched missing Fig. 10.21; requested drawings stay in solutions', () => {
     for (const locale of locales) {
       const questions = [1, 2, 3, 4, 5, 6].map(n => article(locale, n));
-      expect(questions.filter(q => q.figure).map(q => q.id)).toEqual(['p2-f26-q4', 'p2-f26-q6']);
+      expect(questions.filter(q => q.figure).map(q => q.id)).toEqual(['p2-f26-q3', 'p2-f26-q4', 'p2-f26-q6']);
       expect(questions.every(q => q.parts.every(p => !p.questionFigure))).toBe(true);
       expect(questions[0].parts[0].figure).toBe('p2-f26-q1-armature');
       expect(questions[3].parts[0].figure).toBe('p2-f26-q4-waveforms');
@@ -50,8 +50,8 @@ describe('ECSE 2110 Practice Set 2', () => {
       expect(questions[5].parts[0].figure).toBe('p2-f26-q6-waveforms');
       const manifest = json(resolve(directory(locale), 'assets/figures/manifest.json'));
       const svgs = readdirSync(resolve(directory(locale), 'assets/figures')).filter(n => n.endsWith('.svg') && !(manifest.auxiliaryAssets ?? []).includes(n));
-      expect(svgs.length).toBe(16); // eight mounted static figures, including the solution-only Q3 fallback; auxiliary sprites are separate
-      for (const n of [1, 2, 3, 5]) expect(svgs).not.toContain(`p2-f26-q${n}.svg`);
+      expect(svgs.length).toBe(18); // nine static figures; Q3's prompt and solution fallback are independent
+      for (const n of [1, 2, 5]) expect(svgs).not.toContain(`p2-f26-q${n}.svg`);
       const sources = json(resolve(directory(locale), 'figure-sources.json')).figures;
       expect(Object.keys(sources).length).toBe(6); // prompt references survive figure:null
       for (const [id, s] of Object.entries(sources) as [string, any][]) {
@@ -140,6 +140,32 @@ describe('ECSE 2110 Practice Set 2', () => {
       }
       const review = json(resolve(directory(locale), 'extracted/source-review.json'));
       expect(review.questions[0].printedLabel).toBe('4.30'); // source provenance is not rewritten
+    }
+  });
+
+  test('matches the omitted Fig. 10.21 to source page 9 without changing the solution interaction or inventing an original crop', () => {
+    for (const locale of locales) {
+      const question = article(locale, 3);
+      expect(question.figure).toBe('p2-f26-q3');
+      expect(question.figureOriginal).toBe(false);
+      expect(question.originalFigure.page).toBe(4); // the prompt citation still points to its own page
+      expect(question.note).toContain(locale === 'en' ? 'source PDF page 9' : 'PDF 第 9 页');
+      expect(question.parts[0].id).toBe('p2-f26-q3-a');
+      expect(question.parts[0].figure).toBe('p2-f26-q3-circuit');
+      expect(question.parts[0].solution).toContain('(figure:p2-f26-q3-circuit)');
+      expect(question.parts[0].interaction).toEqual({kind:'full-converter',asset:'p2-f26-q3-conduction',profile:'reversed-emf'});
+      expect(existsSync(resolve(directory(locale), 'assets/original-figures/p2-f26-q3.webp'))).toBe(false);
+      const review = json(resolve(directory(locale), 'extracted/source-review.json'));
+      expect(review.questions[2].matchedPromptDiagram).toMatchObject({reference:'10.21',sourceQuestion:'p2-f26-q6',sourcePage:9});
+      for (const suffix of ['', '-dark']) {
+        const prompt = resolve(directory(locale), `assets/figures/p2-f26-q3${suffix}.svg`);
+        const matched = resolve(directory(locale), `assets/figures/p2-f26-q6${suffix}.svg`);
+        expect(readFileSync(prompt).equals(readFileSync(matched))).toBe(true);
+        expect(statSync(prompt).ino).not.toBe(statSync(matched).ino);
+        expect(lstatSync(prompt).isSymbolicLink()).toBe(false);
+        const otherLocale = locale === 'en' ? 'zh-cn' : 'en';
+        expect(statSync(prompt).ino).not.toBe(statSync(resolve(directory(otherLocale), `assets/figures/p2-f26-q3${suffix}.svg`)).ino);
+      }
     }
   });
 

@@ -92,7 +92,9 @@ const problem = object({
   originalFigure, lectures: array(source, 1),
   guide: localized,
   parts: array(part, 1),
-}, { figure: text, figureCaption: localized, figureAtParts: boolean, note: optionalLocalized });
+}, { figure: text, figureCaption: localized, figureAtParts: boolean,
+  figureOriginal: (value,path) => { if (value !== false) fail(path, 'only false is allowed; omit for an authentic original'); },
+  note: optionalLocalized });
 const exam = object({
   id: text, number: positive, term: localized,
   year: (value, path) => { if (value !== null) positive(value, path); }, points: natural,
@@ -145,6 +147,10 @@ export function parseContent(rawExams: unknown, rawFormulas: unknown, rawDocumen
       unique(q.id, `${e.id}.problems`);
       if (q.id !== `${e.id}-q${q.number}`) fail(q.id, 'must match its exam ID and problem number');
       if (q.figure && !q.figureCaption) fail(`${q.id}.figureCaption`, 'question figures need bilingual captions');
+      if (q.figureOriginal === false) {
+        if (!q.figure) fail(`${q.id}.figureOriginal`, 'requires a question figure');
+        if (!q.note?.en || !q.note?.zh) fail(`${q.id}.note`, 'a matched question figure requires source-correction provenance in both languages');
+      }
       for (const ref of [q.originalFigure, ...q.lectures]) page(ref.doc, ref.page, `${q.id}.sources`);
       for (const locale of ['en', 'zh'] as const) for (const [field, body] of Object.entries({statement: q.statement[locale], guide: q.guide[locale], note: q.note?.[locale]})) {
         if(body)try{pageReferences(body,documents);}catch(error){fail(`${q.id}.${field}.${locale}`,String(error));}

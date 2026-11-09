@@ -84,7 +84,14 @@ backslash: `\epsilon`, not `\\epsilon`.
 Avoid repeating defaults:
 
 - The question number comes from the ID; the filename is `q{number}.md`.
-- The main figure defaults to the question ID **only when a diagram is actually printed with the question**. Otherwise explicitly set `figure: null`; do not invent a prompt diagram. Pedagogical drawings belong to a part's solution `figure`, never `questionFigure`. The legacy `originalFigure` source rectangle still locates the printed prompt text when no diagram exists and does not create an image card.
+- The main figure defaults to the question ID when a diagram is actually printed with the question. Otherwise use `figure: null`, except for the explicitly referenced-but-omitted figure exception in [AGENTS.md](../AGENTS.md#figures-and-provenance): a verified matching or independently reconstructed supplement may appear in the question area, with its missing-source status and actual origin disclosed. Such a supplement uses the ordinary static Figure card with enlargement only when no authentic original is available; never use a prompt-text crop as an image counterpart. Metadata, validation and rendering must distinguish a supplement from an authentic original rather than fabricate original-image provenance. Other pedagogical drawings belong to a part's solution `figure`, never `questionFigure`. The legacy `originalFigure` source rectangle continues to locate the printed prompt text independently of whether a usable original diagram exists.
+- Set `figureOriginal: false` on a separately matched question figure to omit
+  its original-image counterpart. This override requires a question figure and
+  an authored `Source correction` in both languages explaining the actual match.
+  The source-text rectangle, question source pages and solution interactions stay
+  unchanged. Astro, the CLI and offline crop generation all honor this override;
+  no placeholder original crop is required or published. Omit the field for an
+  ordinary source figure; `true` is not an override.
 - A real question figure's original crop comes from that
   language's `figure-sources.json`, with 0.002 padding on each edge. Keep PDF
   document, page and region provenance there, rather than copying it into articles.
@@ -119,7 +126,10 @@ Avoid repeating defaults:
   assets, never a generated question bank or an authored-answer source. Build
   validation checks topology, finite geometry, inert fragments and ripple statistics.
   New solution-only illustrations still require an authored marker and a proper
-  static fallback; absent prompt diagrams remain `figure: null`.
+  static fallback; an ordinary absent prompt diagram remains `figure: null`.
+  An explicitly referenced-but-omitted figure may instead receive a separately
+  registered supplement under the missing-reference rule above; keep existing
+  solution interactions independent and unchanged.
   `questionFigure` names a part-specific question SVG, either as a string or
   `{name, caption}`. Its original crop also resolves from `figure-sources.json`.
   Part captions default to the prompt.

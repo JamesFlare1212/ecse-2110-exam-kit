@@ -26,6 +26,46 @@ test('text-only questions preserve citations without synthesizing prompt figures
   } finally { rmSync(root, {recursive: true, force: true}); }
 });
 
+test('matched question figures retain prompt citations and carry an explicit no-original override in both locales', () => {
+  const root = templateFixture();
+  try {
+    const original = loadContent(root).exams[0].problems[0];
+    const matched = `${original.id}-matched`;
+    for (const locale of ['en', 'zh-cn']) {
+      const path = resolve(root, locale, 'exam1_f00/questions/q1.md');
+      const note = locale === 'en' ? 'The referenced diagram is missing; matched to verified course material.' : '题干所引图片漏失，补图依据核实过的课程资料匹配。';
+      writeFileSync(path, readFileSync(path, 'utf8').replace('givens:', `figure: ${matched}\nfigureOriginal: false\ngivens:`)
+        .replace('## Part a', `## Source correction\n\n${note}\n\n## Part a`));
+    }
+    const q = loadContent(root).exams[0].problems[0];
+    expect(q.figure).toBe(matched);
+    expect(q.figureOriginal).toBe(false);
+    expect(q.originalFigure).toEqual(original.originalFigure);
+    expect(q.parts).toEqual(original.parts);
+    const path = resolve(root, 'en/exam1_f00/questions/q1.md');
+    const source = readFileSync(path, 'utf8');
+    writeFileSync(path, source.replace(`figure: ${matched}`, 'figure: null'));
+    expect(() => loadContent(root)).toThrow('requires a question figure');
+    writeFileSync(path, source.replace('figureOriginal: false', 'figureOriginal: true'));
+    expect(() => loadContent(root)).toThrow('invalid frontmatter');
+    const registryPath = resolve(root, 'en/exam1_f00/figure-sources.json');
+    const registry = JSON.parse(readFileSync(registryPath, 'utf8'));
+    registry.figures[matched] = registry.figures[original.id];
+    writeFileSync(registryPath, JSON.stringify(registry));
+    writeFileSync(path, source.replace('figureOriginal: false\n', ''));
+    expect(() => loadContent(root)).toThrow('language files must agree');
+  } finally { rmSync(root, {recursive: true, force: true}); }
+});
+
+test('suppressing an original-image counterpart requires an authored source-correction note', () => {
+  const root = templateFixture();
+  try {
+    const path = resolve(root, 'en/exam1_f00/questions/q1.md');
+    writeFileSync(path, readFileSync(path, 'utf8').replace('givens:', 'figureOriginal: false\ngivens:'));
+    expect(() => loadContent(root)).toThrow('requires Source correction provenance');
+  } finally { rmSync(root, {recursive: true, force: true}); }
+});
+
 test('mapped reference sheets reject lecture additions and cross-exam formula links', () => {
   const root = templateFixture();
   try {

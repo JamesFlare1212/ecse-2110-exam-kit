@@ -33,6 +33,15 @@ def figure_names(paper, questions_only=False):
     return names
 
 
+def original_figure_names(paper):
+    """Only actual image counterparts get crops; prompt-text citations stay separate."""
+    names = figure_names(paper, questions_only=True)
+    for question in paper['exam']['problems']:
+        if question.get('figureOriginal') is False:
+            names.discard(question.get('figure'))
+    return names
+
+
 def render_figures(save, dark, selected=None):
     for paper in papers():
         if selected is None or paper['directory'] == selected:
@@ -96,8 +105,9 @@ def generate_paper(directory):
     crops = directory / 'assets/original-figures'
     crops.mkdir(parents=True, exist_ok=True)
     question_names = figure_names(paper, questions_only=True)
+    original_names = original_figure_names(paper)
     for name, source in sources['figures'].items():
-        if name not in question_names:
+        if name not in original_names:
             continue
         x, y, width, height = source['region']
         region = [max(0, x-.002), max(0, y-.002), width+.004, height+.004]
@@ -126,7 +136,7 @@ def generate_paper(directory):
         if name not in generated and path.name not in auxiliary:
             path.unlink()
     for path in crops.glob('*.webp'):
-        if path.stem not in question_names:
+        if path.stem not in original_names:
             path.unlink()
     inputs = [directory/'generate_figures.py', source_path,
               ROOT/'scripts/plotting.py', ROOT/'scripts/question_primitives.py',
@@ -144,7 +154,7 @@ def generate_paper(directory):
         'questionFigures': sorted(question_names), 'figures': sorted(generated),
         **({'auxiliaryAssets': sorted(auxiliary)} if auxiliary else {}),
     }, indent=2)+'\n')
-    print(f'{paper["name"]}: generated {len(generated)} figures in both themes and {len(question_names)} question crops.')
+    print(f'{paper["name"]}: generated {len(generated)} figures in both themes, {len(question_names)} question figures and {len(original_names)} original crops.')
 
 
 if __name__ == '__main__':

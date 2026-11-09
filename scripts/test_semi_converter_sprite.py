@@ -200,9 +200,9 @@ class SemiConverterSpriteTests(unittest.TestCase):
                 self.assertEqual(json.loads(first[S.NAME+'.json']), self.contract)
                 files.append(output/S.NAME)
             self.assertFalse((files[0].with_suffix('.svg')).samefile(files[1].with_suffix('.svg')))
-        # Auxiliaries stay outside the 20 canonical figures (including Q3's new fallback).
+        # Auxiliaries stay outside the 21 canonical figures, including Q3's matched prompt and fallback.
         for locale in ('en', 'zh-cn'):
-            self.assertEqual(sum(len(G.figure_names(paper)) for paper in G.papers(locale)), 20)
+            self.assertEqual(sum(len(G.figure_names(paper)) for paper in G.papers(locale)), 21)
 
     def test_generator_preserves_sprites_during_stale_cleanup_and_tracks_inputs(self):
         paper = next(paper for paper in G.papers('en') if paper['name'] == 'practice2_f26')
@@ -237,7 +237,7 @@ class SemiConverterSpriteTests(unittest.TestCase):
         for locale in ('en', 'zh-cn'):
             output = ROOT/'content'/locale/'practice2_f26/assets/figures'
             manifest = json.loads((output/'manifest.json').read_text())
-            self.assertEqual(len(manifest['figures']), 8)
+            self.assertEqual(len(manifest['figures']), 9)
             self.assertNotIn(S.NAME, manifest['figures'])
             for name, contents in [(S.NAME+'.svg', self.light), (S.NAME+'-dark.svg', self.dark)]:
                 path = output/name

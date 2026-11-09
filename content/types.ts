@@ -41,6 +41,8 @@ export interface Problem {
   points: number;
   figure?: string;
   figureAtParts?: boolean;
+  /** Omit the original-image counterpart for a separately matched prompt figure. */
+  figureOriginal?: false;
   figureCaption?: Localized;
   originalFigure: OriginalFigure;
   lectures: SourceRef[];

@@ -71,7 +71,7 @@ export function parseQuestionBody(rawMetadata: unknown, body: string, file = 'qu
   if (prose(root)) fail(root, 'place the original statement under Question');
   const figure = metadata.figure === null ? undefined : metadata.figure ?? metadata.id;
   // A source rectangle still locates the printed prompt when it has no diagram.
-  const originalFigure = figureSource(figure ?? metadata.id);
+  const originalFigure = figureSource(metadata.figureOriginal === false ? metadata.id : figure ?? metadata.id);
   const sections = root.children.filter(section => /^Part .+/.test(section.name));
   if (!sections.length) fail(root, 'expected at least one Part');
   for (const label of Object.keys(metadata.parts)) if (!sections.some(section => section.name === `Part ${label}`))
@@ -117,10 +117,12 @@ export function parseQuestionBody(rawMetadata: unknown, body: string, file = 'qu
   noFigurePlacements(child(root, 'Question'), statement);
   noFigurePlacements(child(root, 'Guide'), guide);
   const note = sourceCorrection(root);
+  if (metadata.figureOriginal === false && !note) fail(root, 'a question figure without an original requires Source correction provenance');
   return {
     id: metadata.id, number: Number(/-q(\d+)$/.exec(metadata.id)![1]), wording: 'original',
     title: metadata.title, topic: metadata.topic, points: metadata.points, givens: metadata.givens,
     ...(figure ? { figure, figureCaption: metadata.figureCaption ?? metadata.title } : {}), originalFigure,
+    ...(metadata.figureOriginal === false ? { figureOriginal: false as const } : {}),
     ...(metadata.figureAtParts ? { figureAtParts: true } : {}), lectures: metadata.lectures,
     statement, guide, parts,
     ...(note ? { note } : {}),

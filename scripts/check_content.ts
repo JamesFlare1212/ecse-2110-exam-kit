@@ -29,7 +29,7 @@ for (const paper of papers) for (const locale of ['en','zh'] as const) {
       }
       for (const theme of ['','-dark']) {required(`${base}${theme}.svg`);validateConductionSprite(readFileSync(`${base}${theme}.svg`,'utf8'),geometry);}
     }
-    for (const name of [question.figure, ...question.parts.flatMap(part => part.questionFigure ? [part.questionFigure.name] : [])].filter(Boolean)) required(resolve(directory, 'assets/original-figures', `${name}.webp`));
+    for (const name of [question.figureOriginal === false ? undefined : question.figure, ...question.parts.flatMap(part => part.questionFigure ? [part.questionFigure.name] : [])].filter(Boolean)) required(resolve(directory, 'assets/original-figures', `${name}.webp`));
   }
 }
 

@@ -8,7 +8,7 @@ const plots = new Set(['e1-f26-q6-phasor', 'e2-s25-q4-power-angle',
   'p2-f26-q4-waveforms', 'p2-f26-q5-waveforms', 'p2-f26-q6-waveforms']);
 
 describe('Complete existing-diagram migration', () => {
-  test('all fifteen circuits use Schemdraw and all five scientific plots retain a truthful plotting backend', () => {
+  test('all sixteen circuits use Schemdraw and all five scientific plots retain a truthful plotting backend', () => {
     let circuits = 0, graphs = 0;
     for (const paper of papers) for (const locale of ['en', 'zh'] as const) {
       const directory = resolve(paper.directories[locale], 'assets/figures');
@@ -34,7 +34,7 @@ describe('Complete existing-diagram migration', () => {
         expect(createHash('sha256').update(readFileSync(resolve(source))).digest('hex')).toBe(sha);
       expect(manifest.sourceSha256['scripts/circuit_drawing.py']).toMatch(/^[a-f0-9]{64}$/);
     }
-    expect(circuits).toBe(15);
+    expect(circuits).toBe(16);
     expect(graphs).toBe(5);
   });
   test('the compact half-controlled bridge has its own small canvas and body-sized labels in every locale/theme', () => {

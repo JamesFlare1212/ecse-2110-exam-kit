@@ -15,6 +15,7 @@ import re
 import xml.etree.ElementTree as ET
 
 import numpy as np
+import schemdraw.elements as E
 from matplotlib.patches import Arc
 
 import circuit_drawing as C
@@ -37,13 +38,14 @@ def name_for(question):
     return f'p2-f26-q{question}-conduction'
 
 
-def bridge(question=3, dark=False):
+def bridge(question=3, dark=False, *, large_scr=False):
     """Return a native figure and ordered per-artist fragment ownership map.
 
     Flush each Schemdraw piece to keep labels independent of strokes, including
     all circles, gates, nodes and arrows. No invisible browser-drawn circuit is
     substituted for native symbols. Emf polarity is a fixed reference (+ upper)
-    even in Q3, where the signed emf is negative.
+    even in Q3, where the signed emf is negative. The standalone Q3 detail
+    drawing can double SCR bodies without changing terminal or route geometry.
     """
     name = name_for(question)
     P.setup(dark)
@@ -84,9 +86,16 @@ def bridge(question=3, dark=False):
     # Every SCR conducts upwards. Actual diagonal label order, not Q4's order.
     for x, top, bottom in [(LEFT, 'S1', 'S4'), (RIGHT, 'S3', 'S2')]:
         for key, lo, hi in [(top, 5.0, 6.0), (bottom, 1.0, 2.0)]:
-            piece(key, lambda x=x, lo=lo, hi=hi:
-                  C.diode(ax, (x, lo), (x, hi), scr=True, gate_left=True))
-            label(key, x+.55, (lo+hi)/2, f'$S_{key[1]}$')
+            if large_scr:
+                # Default diode scale is .62 on this one-unit terminal span.
+                # Double the native body and gate; exact endpoints shorten the
+                # internal leads instead of stretching the circuit or canvas.
+                piece(key, lambda x=x, lo=lo, hi=hi:
+                      C.place(ax, E.SCR().flip(), (x, lo), (x, hi), scale=1.24))
+            else:
+                piece(key, lambda x=x, lo=lo, hi=hi:
+                      C.diode(ax, (x, lo), (x, hi), scr=True, gate_left=True))
+            label(key, x+(.85 if large_scr else .55), (lo+hi)/2, f'$S_{key[1]}$')
     wires('S1', [(LEFT, AC_TOP), (LEFT, 5.0)], [(LEFT, 6.0), (LEFT, TOP)])
     wires('S4', [(LEFT, BOTTOM), (LEFT, 1.0)], [(LEFT, 2.0), (LEFT, AC_BOTTOM-JUMP)],
           [(LEFT, AC_BOTTOM+JUMP), (LEFT, AC_TOP)])
@@ -146,7 +155,7 @@ def circuit_figure(dark=False):
     Retain the canonical inventory's native Schemdraw artist-ID convention;
     external-use fragment IDs belong only to the auxiliary sprite exports.
     """
-    fig, ownership = bridge(3, dark)
+    fig, ownership = bridge(3, dark, large_scr=True)
     for ax in fig.axes:
         for artist in [*ax.lines, *ax.patches]:
             identity = artist.get_gid()

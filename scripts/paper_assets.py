@@ -32,7 +32,8 @@ def papers(locale=None):
                 figure = metadata.get('figure',metadata['id'])
                 overrides = metadata.get('parts',{})
                 metadata['figure'] = figure
-                metadata['originalFigure'] = source_for(figure or metadata['id'])
+                prompt_source = metadata['id'] if metadata.get('figureOriginal') is False else figure or metadata['id']
+                metadata['originalFigure'] = source_for(prompt_source)
                 metadata['parts'] = []
                 for part in overrides.values():
                     if part.get('figure'):

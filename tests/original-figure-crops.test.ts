@@ -30,9 +30,9 @@ function webpSize(path: string) {
   return [bytes.readUInt16LE(26) & 0x3fff, bytes.readUInt16LE(28) & 0x3fff];
 }
 
-test('the original-crop audit covers every mounted question figure, including part figures', () => {
+test('the original-crop audit covers every mounted original-image counterpart, including part figures', () => {
   const mounted = papers.flatMap(paper => paper.exam.problems.flatMap(q =>
-    [q.figure, ...q.parts.map(p => p.questionFigure?.name)].filter(Boolean)));
+    [q.figureOriginal === false ? undefined : q.figure, ...q.parts.map(p => p.questionFigure?.name)].filter(Boolean)));
   expect(mounted.sort()).toEqual(audited.map(crop => crop.name).sort());
 });
 

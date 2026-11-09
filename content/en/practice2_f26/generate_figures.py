@@ -1,7 +1,8 @@
 """Paper-owned Schemdraw circuits and narrative-aligned converter plots.
 
-Only q4/q6 are printed prompt diagrams. Other diagrams are solution-only;
-representative ripple dynamics remain a stated modeling choice, not a given.
+Q4/Q6 have directly attached printed diagrams; Q3 matches their source's
+Fig. 10.21 circuit separately. Other diagrams are solution-only; representative
+ripple dynamics remain a stated modeling choice, not a given.
 """
 from pathlib import Path
 import sys
@@ -287,10 +288,12 @@ def full_waveforms(ripple=False):
 
 
 def render_figures(save,dark):
-    # Q3 fallback is solution-only: the referenced source diagram is absent.
+    # Q3's own page omits Fig. 10.21; its prompt matches the same printed
+    # circuit on source page 9. Keep the existing solution fallback independent.
     from full_converter_sprite import circuit_figure
     P.setup(dark)
-    for name,maker in [('p2-f26-q1-armature',armature_circuit),('p2-f26-q4',lambda:circuit('semi')),
+    for name,maker in [('p2-f26-q1-armature',armature_circuit),
+       ('p2-f26-q3',lambda:circuit('full')),('p2-f26-q4',lambda:circuit('semi')),
        ('p2-f26-q6',lambda:circuit('full')),('p2-f26-q4-waveforms',semi_waveforms),
        ('p2-f26-q5-circuit',lambda:circuit('solution')),('p2-f26-q5-waveforms',full_waveforms),
        ('p2-f26-q6-waveforms',lambda:full_waveforms(True)),

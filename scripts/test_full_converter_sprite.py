@@ -14,7 +14,7 @@ import unittest
 import xml.etree.ElementTree as ET
 
 import numpy as np
-from matplotlib.patches import Arc, Circle
+from matplotlib.patches import Arc, Circle, Polygon
 from matplotlib.text import Text
 
 from check_figures import circle_geometry
@@ -206,6 +206,31 @@ class FullConverterSpriteTests(unittest.TestCase):
                 collisions = [(a, b) for (a, first), (b, second) in itertools.combinations(boxes, 2) if first.overlaps(second)]
                 self.assertEqual(collisions, [], (q, dark))
                 P.plt.close(fig)
+
+    def test_q3_static_detail_doubles_scr_bodies_without_resizing_labels_or_moving_terminals(self):
+        for dark in (False, True):
+            normal, _ = S.bridge(3, dark)
+            detail = S.circuit_figure(dark)
+            old_ax, new_ax = normal.axes[0], detail.axes[0]
+            np.testing.assert_equal(old_ax.get_xlim(), new_ax.get_xlim())
+            np.testing.assert_equal(old_ax.get_ylim(), new_ax.get_ylim())
+            np.testing.assert_equal(normal.get_size_inches(), detail.get_size_inches())
+            for key, x, y in [('S1', S.LEFT, 5.5), ('S4', S.LEFT, 1.5), ('S3', S.RIGHT, 5.5), ('S2', S.RIGHT, 1.5)]:
+                bodies = [next(p for p in ax.patches if isinstance(p, Polygon) and f'-{key}-' in p.get_gid())
+                          for ax in (old_ax, new_ax)]
+                for axis in (0, 1):
+                    spans = [np.ptp(body.get_xy()[:, axis]) for body in bodies]
+                    self.assertAlmostEqual(spans[1] / spans[0], 2)
+                lines = [next(line for line in ax.lines if line.get_gid().endswith(f'-{key}-stroke-0'))
+                         for ax in (old_ax, new_ax)]
+                np.testing.assert_equal(lines[0].get_xydata()[[0, -1]], lines[1].get_xydata()[[0, -1]])
+                labels = [next(t for t in ax.texts if t.get_text() == f'$S_{key[1]}$') for ax in (old_ax, new_ax)]
+                self.assertEqual(labels[1].get_position(), (x+.85, y))
+                self.assertEqual(labels[0].get_fontsize(), labels[1].get_fontsize())
+                label_box = labels[1].get_window_extent(detail.canvas.get_renderer())
+                body_box = bodies[1].get_window_extent(detail.canvas.get_renderer())
+                self.assertGreater(label_box.x0 - body_box.x1, 4)
+            self.assertTrue(all(circle['round'] for circle in circle_geometry(detail)))
 
     def test_owned_assets_reproducible_manifests_and_preserved_semi_assets(self):
         self.assertEqual({p['locale'] for p in self.papers}, {'en', 'zh-cn'})

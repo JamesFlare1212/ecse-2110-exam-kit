@@ -24,10 +24,12 @@ describe.skipIf(!paper)('all comparable converter problems use the shared intera
    {kind:'full-converter',asset:'p2-f26-q6-conduction',profile:'ripple-drive',rippleAsset:'p2-f26-q6-ripple'},
   ]);
   for(const p of parts)for(const locale of ['en','zh'] as const){expect(p.figure).toBeTruthy();expect(solutionFigures(p.solution[locale])).toEqual([p.figure!]);}
-  for(const n of [3,5])expect(paper!.exam.problems[n-1].figure).toBeUndefined();
+  expect(paper!.exam.problems[2].figure).toBe('p2-f26-q3');
+  expect(paper!.exam.problems[2].figureOriginal).toBe(false);
+  expect(paper!.exam.problems[4].figure).toBeUndefined();
   expect(paper!.exam.problems[5].figure).toBe('p2-f26-q6');
  });
- test('Q3 adds only its explicitly authorized teaching figure, not rewritten prose or equations',()=>{
+ test('Q3 retains its solution-only teaching figure and original solution prose and equations',()=>{
   const p=paper!.exam.problems[2].parts[0];
   const originals={en:'cd3497f899985ce5025d4afde064e54e31cf2687326265f2dbc49dc15acba0d5',zh:'59c280b66340eb4a4a794e6c036e7384c41064a13a6b639213ab0cb005262b81'};
   for(const locale of ['en','zh'] as const)expect(hash(p.solution[locale].replace(/^!\[[^\n]*\]\(figure:p2-f26-q3-circuit\)\s*$/m,''))).toBe(originals[locale]);

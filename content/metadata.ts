@@ -15,10 +15,12 @@ export const questionMetadataSchema = z.object({
   id: text.regex(/^[ep][1-9]\d*-(?:[fs]\d{2}|u00)-q[1-9]\d*$/),
   title: text, topic: text, points, givens: z.array(text), lectures: z.array(source).min(1),
   figure: text.nullable().optional(), figureCaption: text.optional(), figureAtParts: z.boolean().optional(),
+  figureOriginal: z.literal(false).optional(),
   parts: z.record(text, z.object({
     id: text.optional(), points: points.optional(), page: positive.optional(), solutionPage: positive.optional(),
     figure: text.optional(), figureCaption: text.optional(), questionFigure: questionFigure.optional(),
     interaction: interaction.optional(),
   }).strict()).default({}),
-}).strict();
+}).strict().refine(value => value.figureOriginal === undefined || value.figure !== null,
+  'figureOriginal: false requires a question figure');
 export type ProblemMetadata = z.infer<typeof questionMetadataSchema>;
