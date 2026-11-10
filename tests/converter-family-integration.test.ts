@@ -13,6 +13,24 @@ import type {FullConverterProfile} from '../content/types';
 const paper=papers.find(p=>p.exam.id==='p2-f26');
 const json=(file:string)=>JSON.parse(readFileSync(file,'utf8'));
 const hash=(s:string)=>createHash('sha256').update(semanticMarkdown(s)).digest('hex');
+test('converter help localizes fact labels and trims only redundant firing-angle zeros',()=>{
+ for(const locale of ['en','zh'] as const){
+  for(const profile of [undefined,'reversed-emf','ideal-drive','ripple-drive'] as const){
+   const copy=converterCopy(locale,profile);
+   expect(copy.pathHeading).toBe(locale==='zh'?'电流路径':'Current path');
+   expect(copy.relationHeading).toBe(locale==='zh'?'瞬时关系':'Relations');
+   for(const stage of copy.stages){expect(stage.path.split(' → ').length).toBeGreaterThan(2);expect(stage.relation.length).toBeGreaterThan(0);}
+   if(profile){
+    const alpha=FULL_PROFILES[profile].alpha;
+    expect(copy.phaseHelp).toContain(`${Number(alpha.toFixed(6))}°`);
+    expect(copy.phaseHelp).toContain(`${Number((180+alpha).toFixed(6))}°`);
+    expect(copy.phaseHelp).not.toContain('.000000°');
+   }
+  }
+  expect(converterCopy(locale,'ideal-drive').phaseHelp).toContain('59.397409°');
+  expect(converterCopy(locale,'ripple-drive').phaseHelp).toContain('60°');
+ }
+});
 describe.skipIf(!paper)('all comparable converter problems use the shared interaction',()=>{
  test('exactly Q3–Q6 are enhanced, while prompt diagrams, identities and required static fallbacks stay independent',()=>{
   const parts=paper!.exam.problems.flatMap(q=>q.parts).filter(p=>p.interaction);
@@ -29,10 +47,14 @@ describe.skipIf(!paper)('all comparable converter problems use the shared intera
   expect(paper!.exam.problems[4].figure).toBeUndefined();
   expect(paper!.exam.problems[5].figure).toBe('p2-f26-q6');
  });
- test('Q3 retains its solution-only teaching figure and original solution prose and equations',()=>{
+ test('Q3 retains its teaching figure and original numerical working after the sourced KVL expansion',()=>{
   const p=paper!.exam.problems[2].parts[0];
-  const originals={en:'cd3497f899985ce5025d4afde064e54e31cf2687326265f2dbc49dc15acba0d5',zh:'59c280b66340eb4a4a794e6c036e7384c41064a13a6b639213ab0cb005262b81'};
-  for(const locale of ['en','zh'] as const)expect(hash(p.solution[locale].replace(/^!\[[^\n]*\]\(figure:p2-f26-q3-circuit\)\s*$/m,''))).toBe(originals[locale]);
+  const numerical={en:'bd2f2b07a51dc10d8b9540a2bd0e56ea8a08bc5b73914d60bc8c1adcb9d1d665',zh:'05656172cd325c594c21e9768004a6caa46801e314d41fd22b89f94400c9df20'};
+  for(const locale of ['en','zh'] as const){
+   expect(solutionFigures(p.solution[locale])).toEqual(['p2-f26-q3-circuit']);
+   const start=p.solution[locale].indexOf(locale==='en'?'The given voltage constant':'给出的电压常数');
+   expect(start).toBeGreaterThan(0);expect(hash(p.solution[locale].slice(start))).toBe(numerical[locale]);
+  }
  });
  test('new full assets and representative data are local, separately owned, validated and topology-correct',()=>{
   for(const q of [3,5,6])for(const locale of ['en','zh'] as const){

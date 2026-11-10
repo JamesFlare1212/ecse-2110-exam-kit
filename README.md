@@ -6,7 +6,7 @@ Flux（磁通）是这门课的习题工作台；Φ 标志与浏览器图标共�
 
 ## 内容
 
-- 4 套考试与 2 套练习，共 **39 道题、90 个小问**，中英文分别拥有完整原题、导读、逐问解答、纠错和图片。练习不编造分数。
+- 4 套考试与 2 套练习，共 **39 道题、90 个小问**，中英文分别拥有完整原题、逐问解答、纠错和图片；阅读页从原题直接进入各小问，不再显示独立导读块。练习不编造分数。
 - Fall 2026 Exam 1；两份封面日期为 2025、但页脚年份冲突的历史卷；一份年份未知的 Exam 2 重制卷，不把旧卷冒充 Fall 2026。
 - 22 条公式索引**只来自两份原始 `Reference_Sheet`**。Exam／练习组 1、2 分别使用对应表，不合并、不添加讲义公式；完整表通过两页原页图浏览。
 - 原题无图就不显示图卡；只复刻实际印刷题图。辅助电路、功角图和波形只在相应解答中显示。
@@ -106,6 +106,24 @@ PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
   QA_URL=http://127.0.0.1:4173 bun scripts/browser-startup-qa.mjs
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
   QA_URL=http://127.0.0.1:4173 bun scripts/browser-course-qa.mjs
+PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
+  QA_URL=http://127.0.0.1:4173 bun scripts/browser-reader-layout-qa.mjs
+PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
+  QA_URL=http://127.0.0.1:4173 bun scripts/browser-reader-sections-qa.mjs
+PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
+  QA_URL=http://127.0.0.1:4173 bun scripts/browser-course-citations-qa.mjs
+```
+
+阅读区布局回归覆盖 320–2560 px、1180 px 两侧、侧栏开合、中英与深浅主题，检查内容宽度连续变化、手机抽屉及无 JavaScript 的布局。阅读结构回归确认退役导读及其标题不在 DOM 中，验证全局／逐问展开、完整解答和旧记录兼容；历史 `Guide` 源文不再下发到阅读页。课程引用回归逐页核对中英文解答和纠错说明的原页链接、资源可达性、来源查看器与焦点返回；`content:check` 同时拒绝正文中纯文本的讲义引用。核对范围与记录见 [课程资料引用审查](docs/reviews/course-citation-links.md)。
+
+变流器切题回归须分别对生产预览和开发服务器运行，覆盖组件缓存、前进后退、语言/主题切换及加载途中导航。只检查首次打开无法发现开发模式的样式生命周期问题，见 [调查记录](docs/reviews/converter-style-lifecycle.md)。
+
+```bash
+PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
+  QA_URL=http://127.0.0.1:4173 bun scripts/browser-converter-navigation-qa.mjs
+# 对已启动的 bun run dev 再运行一次：
+PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
+  QA_URL=http://127.0.0.1:5173 bun scripts/browser-converter-navigation-qa.mjs
 ```
 
 ECSE 2110 数值和内容测试保持启用；上游 ECSE 2100 专属回归按课程 ID 跳过。自动检查不替代科学推导、原文、翻译和最终图示的人工核对。

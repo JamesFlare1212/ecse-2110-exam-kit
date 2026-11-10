@@ -138,8 +138,10 @@ Use these exact structural headings in both languages, with direct prose only in
 the file's own language. Do not add `English` or `中文` subsections:
 
 - `## Question`: original English wording, or its faithful Chinese translation.
-- `## Guide`: short natural Markdown introducing concepts, givens, goals and the
-  starting approach, without mandatory subsections.
+- `## Guide`: existing source-format/editorial content, retained for compatibility
+  but not rendered or serialized in the study reader. Do not recreate a separate
+  reading-introduction block from it; the reader goes directly from the question
+  to its subparts. Keep the worked explanation inside each part's Solution.
 - `## Part a` (or the exact printed label, e.g. `## Part a(i)`): the subquestion's
   wording directly beneath the heading.
 - `### Solution`: ordinary paragraphs, formula links and displayed TeX blocks.
@@ -152,6 +154,11 @@ guides and worked parts, are in [question.en.md](../templates/question.en.md)
 and [question.zh-cn.md](../templates/question.zh-cn.md). Numerical substitution,
 evaluated multiple integrals, correction prose and anti-patterns are illustrated
 in the canonical [solution style guide](../docs/solution-style.md).
+
+Inline paper-page citations use the owning language's full registered `pageBase`
+plus the 1-based page filename. Validate each article against that language's
+source registry; an English paper URL inside a Chinese article (or the reverse)
+is not a fallback. Shared lecture-page URLs remain language-independent.
 
 Formula IDs refer to the shared formula library. Native Hover Cards preview the
 original excerpt and activate its exact PDF location. Keep formula names in the
@@ -183,8 +190,8 @@ parser in `content/markdown.ts` reads each single-language article;
 `content/localization.ts` pairs it with its counterpart. `content/papers.server.ts`
 validates and assembles page data in memory. No question-bank JSON is generated.
 
-Each page contains its own full bilingual problem plus a solution-free navigation
-index. The persistent Svelte island preserves state across Astro navigation.
+Each page contains its own full bilingual reading problem (excluding the retired
+source-only Guide field) plus a solution-free navigation index. The persistent Svelte island preserves state across Astro navigation.
 Language switching selects that language's figures, original crops, PDF pages and
 downloads at `/papers/en/...` or `/papers/zh-cn/...`. Portals remain attached to
 `#fieldnotes-overlays` across swaps.

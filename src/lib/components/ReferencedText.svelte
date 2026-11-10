@@ -49,4 +49,10 @@
   {/if}
 {/snippet}
 
-<span class="rich-text">{#each tree.children as node,i}{#if i}<br/><br/>{/if}{@render render(node)}{/each}</span>
+<span class="rich-text">
+  {#if tree.children.length>1}
+    <span class="markdown-flow">{#each tree.children as node}<span class="markdown-block">{@render render(node)}</span>{/each}</span>
+  {:else}
+    {#each tree.children as node}{@render render(node)}{/each}
+  {/if}
+</span>

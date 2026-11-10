@@ -30,8 +30,8 @@
   import Library from '#lib/components/Library.svelte';
   import Figure from '#lib/components/Figure.svelte';
   import RichText from '#lib/components/RichText.svelte';
+  import ReferencedText from '#lib/components/ReferencedText.svelte';
   import ProblemPart from '#lib/components/ProblemPart.svelte';
-  import ProblemOverview from '#lib/components/ProblemOverview.svelte';
   import {StudyState,STORAGE_KEY} from '#lib/study.svelte';
   import {course,pageTitle,sourceName,studyDescription} from '../../../content/course';
   import {provideFormulaPreviews} from '#lib/formula-preview.svelte';
@@ -215,11 +215,9 @@
             <Tabs.Content value="learn">
               <section class="problem-statement" aria-label={t('题目条件','Problem statement')}><div class="section-label"><span>01</span>{t('试卷原题','THE ORIGINAL QUESTION')}</div><div class="original-statement" lang={study.locale==='zh'?'zh-CN':'en'} data-original-statement><RichText text={problem.statement[study.locale]}/></div></section>
               {#if problem.figure && !problem.figureAtParts}<Figure {assetBase} size={data.figureSizes[study.locale][problem.figure]} name={problem.figure} locale={study.locale} {dark} caption={problem.figureCaption} original={problem.figureOriginal===false?undefined:problem.originalFigure}/>{/if}
-              <section class="worked-solution" aria-label={t('分步解答','Worked solution')}><div class="solution-section-heading"><div class="section-label"><span>02</span>{t('一步一步推导','WORK IT THROUGH')}</div><Button variant="ghost" size="sm" onclick={toggleSolutions} aria-controls="worked-parts" aria-expanded={openParts.length>0}>{#if openParts.length}{t('收起全部推导','Collapse all steps')}<ChevronsUp data-icon="inline-end" aria-hidden="true"/>{:else}{t('展开全部推导','Reveal all steps')}<Layers data-icon="inline-end" aria-hidden="true"/>{/if}</Button></div>
-                <ProblemOverview {problem} {documents} locale={study.locale} onsource={openSource}/>
-                <Accordion.Root id="worked-parts" type="multiple" bind:value={openParts}>{#each problem.parts as part(part.id)}<ProblemPart {assetBase} sizes={data.figureSizes[study.locale]} {part} {study} {exam} {dark} active={openParts.includes(part.id)&&!source&&!libraryOpen&&!navOpen&&!railOpen} onsource={openSource}/>{/each}</Accordion.Root>
-              </section>
-              {#if problem.note?.[study.locale]}<Alert.Root class="problem-model-note"><Info aria-hidden="true"/><Alert.Title>{t('模型与原题说明','Model & source note')}</Alert.Title><Alert.Description><RichText text={problem.note[study.locale]!}/></Alert.Description></Alert.Root>{/if}
+              <div class="solution-actions"><Button variant="ghost" size="sm" data-solution-toggle onclick={toggleSolutions} aria-controls="worked-parts" aria-expanded={openParts.length>0}>{#if openParts.length}{t('收起全部解答','Collapse all solutions')}<ChevronsUp data-icon="inline-end" aria-hidden="true"/>{:else}{t('展开全部解答','Reveal all solutions')}<Layers data-icon="inline-end" aria-hidden="true"/>{/if}</Button></div>
+              <Accordion.Root id="worked-parts" type="multiple" bind:value={openParts}>{#each problem.parts as part(part.id)}<ProblemPart {assetBase} sizes={data.figureSizes[study.locale]} {part} {study} {exam} {dark} active={openParts.includes(part.id)&&!source&&!libraryOpen&&!navOpen&&!railOpen} onsource={openSource}/>{/each}</Accordion.Root>
+              {#if problem.note?.[study.locale]}<Alert.Root class="problem-model-note"><Info aria-hidden="true"/><Alert.Title>{t('模型与原题说明','Model & source note')}</Alert.Title><Alert.Description><ReferencedText text={problem.note[study.locale]!} locale={study.locale} {documents} onsource={openSource}/></Alert.Description></Alert.Root>{/if}
               <div class="problem-completion"><div><CircleCheck aria-hidden="true"/><span>{completed}/{problem.parts.length} {t('小问已掌握','parts mastered')}</span></div><span>{t('掌握后自行标记，进度自动保存。','Mark your understanding; progress saves automatically.')}</span></div>
             </Tabs.Content>
             <Tabs.Content value="source"><div class="source-tab-heading"><p>{t('查看试卷 PDF、插图与题号。重制卷会在页内注明。点击页面可放大查看。','Exam PDF, figures and numbering. Reconstructed editions are identified on the page. Open any page to inspect it.')}</p>{#if !exam.questionsOnly}<Alert.Root><Info aria-hidden="true"/><Alert.Description>{t('来源 PDF 为题目与解答合并版本，原页会显示答案。练习可使用“题目与推导”中的网页原生题目。','This source PDF combines questions and solutions. Source pages show answers; use the native problem view for practice.')}</Alert.Description></Alert.Root>{/if}</div>

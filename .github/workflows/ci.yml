@@ -63,6 +63,10 @@ jobs:
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-course-qa.mjs
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-reader-layout-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-reader-sections-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-conduction-qa.mjs
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-conduction-compact-qa.mjs
@@ -71,9 +75,20 @@ jobs:
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-full-converter-qa.mjs
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-converter-navigation-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-page-links-qa.mjs
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-course-citations-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-content-typography-qa.mjs
+      - name: Check lazy converter styles across development navigation
+        run: |
+          trap 'bun --bun astro dev stop' EXIT
+          bun run dev --background
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:5173 QA_STYLE_ARTIFACTS=artifacts/converter-navigation-dev \
+            bun scripts/browser-converter-navigation-qa.mjs
       - name: Upload browser diagnostics on failure
         if: failure()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

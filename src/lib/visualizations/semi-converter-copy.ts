@@ -1,6 +1,6 @@
 export const semiConverterCopy = {
   zh: {
-    elapsed:'已走过',future:'参考',compactTitle:'导通与波形',fullPlot:'完整图',fullPlotTitle:'完整静态波形',help:'读图说明',stageHeading:'当前导通区间',
+    elapsed:'已走过',future:'参考',compactTitle:'导通与波形',fullPlot:'完整图',fullPlotTitle:'完整静态波形',help:'读图说明',stageHeading:'当前导通区间',pathHeading:'电流路径',relationHeading:'瞬时关系',
     stageLabels:['续流','正半周','续流','负半周'],
     compactStates:['电感维持负载电流，交流侧电流为零。','正半周供电，源电流为 +I₀。','继续续流，S₁ 电压在过零后转负。','负半周供电，源电流反向，负载电流仍同向。'],
     title:'半控桥导通与波形',previous:'上一边界',next:'下一边界',play:'播放进度',pause:'暂停进度',restart:'从头播放',jump:'跳到周期末',
@@ -33,7 +33,7 @@ export const semiConverterCopy = {
     ],
   },
   en: {
-    elapsed:'Elapsed',future:'Reference',compactTitle:'Conduction',fullPlot:'Full plot',fullPlotTitle:'Complete static waveforms',help:'Reading this diagram',stageHeading:'Current conduction interval',
+    elapsed:'Elapsed',future:'Reference',compactTitle:'Conduction',fullPlot:'Full plot',fullPlotTitle:'Complete static waveforms',help:'Reading this diagram',stageHeading:'Current conduction interval',pathHeading:'Current path',relationHeading:'Relations',
     stageLabels:['Freewheel','+ Supply','Freewheel','− Supply'],
     compactStates:['Freewheeling; source current is zero.','Positive supply; source current is +I₀.','S₁ voltage turns negative after zero crossing.','Supply current reverses; load current does not.'],
     title:'Semi-converter conduction and waveforms',previous:'Previous boundary',next:'Next boundary',play:'Play angle',pause:'Pause angle',restart:'Play from start',jump:'Jump to cycle end',

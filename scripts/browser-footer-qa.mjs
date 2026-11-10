@@ -45,9 +45,9 @@ try {
       await page.waitForSelector('[data-study-ready=true]');
       await page.evaluate(() => document.fonts.ready);
       const collapsed = await checkShort(page);
-      const toggle = page.locator('.solution-section-heading button');
+      const toggle = page.locator('[data-solution-toggle]');
       await toggle.click();
-      await page.waitForFunction(() => document.querySelector('.solution-section-heading button').getAttribute('aria-expanded') === 'true');
+      await page.waitForFunction(() => document.querySelector('[data-solution-toggle]').getAttribute('aria-expanded') === 'true');
       await page.setViewportSize({width, height: 900});
       const expanded = await geometry(page);
       assert.ok(expanded.top > expanded.height, 'Expanded solutions push the footer below the viewport');

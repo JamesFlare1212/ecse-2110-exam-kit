@@ -25,7 +25,7 @@ async function ready(page,id) {
   await page.goto(`${base}/problems/${id}/`,{waitUntil:'domcontentloaded'});
   await page.waitForSelector('[data-study-ready=true]');
   await page.evaluate(()=>document.fonts.ready);
-  const toggle=page.locator('.solution-section-heading button');
+  const toggle=page.locator('[data-solution-toggle]');
   if(id==='p2-f26-q1')assert.equal(await page.locator('.study-figure:visible').count(),0,'The explanatory KVL circuit must not appear in the prompt or collapsed solution');
   if(await toggle.getAttribute('aria-expanded')!=='true')await toggle.click();
   const problem=exams.flatMap(exam=>exam.problems).find(problem=>problem.id===id);

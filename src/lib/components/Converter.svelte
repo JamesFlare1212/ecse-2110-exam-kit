@@ -1,6 +1,8 @@
 <script lang="ts">
   import {onMount,untrack,type Snippet} from 'svelte';
   import {Button,buttonVariants} from '#lib/components/ui/button';
+  import {Badge} from '#lib/components/ui/badge';
+  import {Separator} from '#lib/components/ui/separator';
   import {Slider} from '#lib/components/ui/slider';
   import {RadioGroup} from 'bits-ui';
   import {tabsListVariants,tabsTriggerVariants} from '#lib/components/ui/tabs';
@@ -129,11 +131,19 @@
           <Tooltip.Root><Tooltip.Trigger class={buttonVariants({variant:'ghost',size:'sm'})} data-static-diagram aria-label={copy.showStatic} aria-haspopup="dialog" onclick={()=>{pause();staticOpen=true;}}><Expand data-icon="inline-start" aria-hidden="true"/>{copy.fullPlot}</Tooltip.Trigger><Tooltip.Content>{copy.showStatic}</Tooltip.Content></Tooltip.Root>
           <Popover.Root bind:open={helpOpen}>
             <Popover.Trigger class={buttonVariants({variant:'ghost',size:'icon-sm'})} data-conduction-help aria-label={copy.help}><Info aria-hidden="true"/></Popover.Trigger>
-            <Popover.Content align="end" class="conduction-help-popover w-80 max-w-[calc(100vw-32px)]" style="max-height:min(calc(var(--bits-popover-content-available-height,100dvh) - 8px),calc(100dvh - 24px));overflow:hidden;">
+            <Popover.Content align="end" class="conduction-help-popover w-96 max-w-[calc(100vw-32px)]" style="max-height:min(calc(var(--bits-popover-content-available-height,100dvh) - 8px),calc(100dvh - 24px));overflow:hidden;">
               <Popover.Header class="shrink-0"><Popover.Title>{copy.help}</Popover.Title><Popover.Description>{copy.phaseHelp}</Popover.Description></Popover.Header>
               <!-- svelte-ignore a11y_no_noninteractive_tabindex (Keyboard scrolling of the bounded help region.) -->
               <div class="conduction-help-body" role="region" tabindex="0" aria-label={copy.help}>
-                <h5>{copy.stageHeading} · {copy.pairs[values.index]}</h5><p>{stateCopy.explanation}</p><p>{stateCopy.path}</p><p>{complete?copy.endRelation:stateCopy.relation}</p>
+                <section class="conduction-help-stage" aria-labelledby={`${id}-help-stage`}>
+                  <div class="conduction-help-stage-heading"><h5 id={`${id}-help-stage`}>{copy.stageHeading}</h5><Badge variant="outline">{copy.pairs[values.index]}</Badge></div>
+                  <p>{stateCopy.explanation}</p>
+                  <dl class="conduction-help-facts">
+                    <div><dt>{copy.pathHeading}</dt><dd><ol class="conduction-help-route">{#each stateCopy.path.split(' → ') as node,i}<li>{#if i>0}<ArrowRight aria-hidden="true"/>{/if}<span>{node}</span></li>{/each}</ol></dd></div>
+                    <div><dt>{copy.relationHeading}</dt><dd class="conduction-help-relation">{complete?copy.endRelation:stateCopy.relation}</dd></div>
+                  </dl>
+                </section>
+                <Separator class="my-1 shrink-0"/>
                 <p>{copy.history}</p><p>{copy.measurementHelp}</p><p>{copy.flowHelp}</p><p>{copy.polarityHelp}</p><p>{copy.reverseNote}</p><p>{copy.assumptions}</p>
               </div>
             </Popover.Content>
@@ -207,27 +217,4 @@
   <Figure name={staticFigure.name} size={staticFigure.size} caption={staticFigure.caption} {assetBase} {locale} {dark} dialogOnly bind:zoom={staticOpen} detailTitle={copy.fullPlotTitle}/>
 </div>
 
-<style>
-  .solution-interaction{container:conduction / inline-size;min-width:0;margin:8px 0;--conduction-off:var(--muted-foreground)}
-  .conduction-visualization{display:flex;flex-direction:column;gap:8px;min-width:0;padding:12px;border:1px solid var(--border);border-radius:var(--radius-xl);background:var(--diagram)}
-  h4,h5,p{margin:0}h4{font-size:14px;font-weight:600;line-height:1.5}h5{font-size:12px;font-weight:600;line-height:1.6}
-  .conduction-heading,.conduction-heading-title,.conduction-actions{display:flex;align-items:center;gap:8px;min-width:0}.conduction-heading{justify-content:space-between}.conduction-heading-title{flex-wrap:wrap;gap:4px 10px}.conduction-actions{flex-shrink:0;gap:2px}.conduction-meta{font-size:12px;color:var(--muted-foreground);white-space:nowrap}
-  .conduction-visualization :global(.conduction-stages){display:grid;grid-template-columns:repeat(4,minmax(0,1fr));height:auto;gap:2px;width:100%}.conduction-stage-label{font-size:12px}.conduction-interval{font-size:11px;line-height:1.4;color:var(--muted-foreground);font-variant-numeric:tabular-nums}
-  .conduction-transport{display:grid;grid-template-columns:auto minmax(56px,1fr) auto;align-items:center;gap:10px}.conduction-controls{display:flex;align-items:center;gap:2px}.conduction-visualization :global(.conduction-phase){min-width:0;gap:0}.conduction-angle{font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;width:76px;min-width:76px;text-align:right}
-  .conduction-boundaries{position:relative;pointer-events:none;height:12px;color:var(--muted-foreground);font-size:10px;line-height:12px;font-variant-numeric:tabular-nums}.conduction-boundaries > span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}.conduction-boundaries > span[data-trigger]{color:var(--foreground);font-weight:600}.conduction-boundaries > span:first-child{transform:none}.conduction-boundaries > span:last-child{transform:translateX(-100%)}.conduction-boundaries > span::before{content:'';position:absolute;top:-17px;left:50%;width:2px;height:4px;background:var(--muted-foreground)}.conduction-boundaries > span:first-child::before{left:0}.conduction-boundaries > span:last-child::before{left:auto;right:0}
-  .conduction-state{display:flex;align-items:baseline;gap:10px;padding-block:2px;font-size:14px;line-height:1.65;min-height:26px}.conduction-state strong{white-space:nowrap;font-weight:600}.conduction-state p{min-width:0;color:var(--muted-foreground)}
-  .conduction-panels{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;min-width:0}.conduction-pane{min-width:0;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card)}
-  .conduction-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:4px;min-height:24px;margin-bottom:4px}.conduction-wave-panel .conduction-panel-heading{min-height:20px}.conduction-flow-label,.conduction-count{font-size:11px;color:var(--muted-foreground)}.conduction-wave-help,.conduction-note{font-size:11px;line-height:1.6;color:var(--muted-foreground)}.conduction-wave-help{margin-bottom:6px}
-  .conduction-waves{display:flex;flex-direction:column;gap:2px}.conduction-waves :global(.conduction-wave-row){display:grid;grid-template-columns:72px minmax(0,1fr) 43px;gap:5px;width:100%;height:34px;min-width:0;padding:0 4px;text-align:left}
-  .wave-row-label{display:flex;align-items:center;gap:4px;min-width:0;white-space:nowrap;font-size:12px;font-weight:600;color:var(--paint)}.wave-swatch{width:10px;flex:none;border-top:2px solid var(--paint)}.wave-swatch[data-pattern=dashed]{border-top-style:dashed}.wave-swatch[data-pattern=dashdot]{border:0;height:2px;background:linear-gradient(to right,var(--paint) 0 55%,transparent 55% 65%,var(--paint) 65% 80%,transparent 80%)}
-  .wave-value{font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap;color:var(--paint)}.conduction-wave-plot{display:block;width:100%;height:30px;overflow:visible}
-  .wave-axis{stroke:var(--border);stroke-width:1}.wave-trigger{stroke:var(--conduction-off);stroke-width:.7;stroke-dasharray:2 3;opacity:.5}.wave-reference{fill:none;stroke:var(--paint);stroke-width:1;opacity:.2}.wave-trace{fill:none;stroke:var(--paint);stroke-width:1.7}.wave-dot{fill:var(--paint);stroke:var(--card);stroke-width:1}.wave-cursor{fill:none;stroke:var(--conduction-off);stroke-width:.8;stroke-dasharray:2 3;opacity:.7}.conduction-wave-plot path,.conduction-wave-plot line{vector-effect:non-scaling-stroke}
-  :global(.conduction-wave-row[data-signal=vs1]) .wave-trace{stroke-width:2.4}:global(.conduction-wave-row[data-signal=vs1]) .wave-reference{stroke-width:1.5;opacity:.7}:global(.conduction-wave-row[data-signal=vs1]) .wave-row-label,:global(.conduction-wave-row[data-signal=vs1]) .wave-value{font-weight:700}
-  .conduction-wave-axis{display:flex;justify-content:space-between;margin:3px 48px 0 82px;font-size:10px;color:var(--muted-foreground)}
-  .conduction-help-body{display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.75;min-height:0;overflow:auto;overscroll-behavior:contain;overflow-wrap:anywhere}.conduction-help-body p{margin:0}.solution-interaction :global(.conduction-load-error){margin:8px 0}
-  @container conduction (min-width:620px){.conduction-panels{grid-template-columns:minmax(0,.46fr) minmax(0,.54fr)}}
-  .conduction-help-body:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
-  @container conduction (max-width:600px){.conduction-boundaries{height:24px}.conduction-boundaries > span{top:12px}.conduction-boundaries > span::before{top:-29px}.conduction-boundaries > span[data-trigger]{top:0}.conduction-boundaries > span[data-trigger]::before{top:-17px}}
-  @container conduction (max-width:480px){.conduction-state{min-height:calc(3.3em + 4px)}}
-  @container conduction (max-width:340px){.conduction-boundaries > span:not([data-trigger]){font-size:9px}.conduction-visualization{padding:10px;gap:8px}.conduction-transport{gap:6px}.conduction-heading-title{gap:2px 6px}.conduction-state{font-size:12px;gap:8px}.conduction-stage-label{font-size:11px}.conduction-heading :global([data-static-diagram]){padding-inline:6px}}
-</style>
+<!-- Styles are statically owned by src/styles/converter.css, not this lazy module. -->

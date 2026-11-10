@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { exams, formulas, documents } from '../content/catalog.server';
+import { exams, formulas, documents, documentsByLocale } from '../content/catalog.server';
 import { parseContent } from '../content/schema';
 import type { Exam } from '../content/types';
 
@@ -7,7 +7,7 @@ describe('Authored question and metadata validation', () => {
   test('uses the source objects without rewriting question or solution data', () => {
     const input = structuredClone(exams);
     const before = JSON.stringify(input);
-    expect(parseContent(input, formulas, documents).exams).toBe(input);
+    expect(parseContent(input, formulas, documents, documentsByLocale).exams).toBe(input);
     expect(JSON.stringify(input)).toBe(before);
   });
 
@@ -21,6 +21,10 @@ describe('Authored question and metadata validation', () => {
     ['unclosed math delimiter', e => { e.problems[0].parts[0].solution.en += '\n\n$J'; }, /unmatched math delimiter/],
     ['invalid equation', e => { e.problems[0].parts[0].solution.en += '\n\n$$\n\\boxed{\\frac{}\n$$'; }, /solution\.en.*invalid TeX/],
     ['unknown formula reference', e => { e.problems[0].parts[0].solution.en += '\n\n[Missing](formula:missing-formula)'; }, /unknown formula missing-formula/],
+    ['unlinked lecture in solution', e => { e.problems[0].parts[0].solution.en = 'Use Lecture 9, pages 5–6.\n\n' + e.problems[0].parts[0].solution.en; }, /inline source-page link/],
+    ['unlinked lecture in guide', e => { e.problems[0].guide.zh += '见第 9 讲第 5 页。'; }, /inline source-page link/],
+    ['unlinked lecture in correction', e => { e.problems[0].parts[0].note = {en: 'Compare Lecture 9, page 6.'}; }, /inline source-page link/],
+    ['unlinked lecture in caption', e => { e.problems[0].parts[0].figureCaption = {en: 'Lecture 9, page 5', zh: '图示'}; }, /inline source-page link/],
     ['duplicate part ID', e => { e.problems[0].parts.push(structuredClone(e.problems[0].parts[0])); }, /duplicate ID/],
     ['invalid PDF page', e => { e.problems[0].parts[0].sourcePage = 9999; }, /sourcePage.*exceeds/],
     ['out-of-page citation', e => { e.problems[0].originalFigure.region = [.9, .9, .2, .2]; }, /rectangle must fit/],
@@ -29,18 +33,18 @@ describe('Authored question and metadata validation', () => {
   test.each(cases)('rejects %s before static rendering', (_name, mutate, error) => {
     const input = structuredClone(exams);
     mutate(input[0]);
-    expect(() => parseContent(input, formulas, documents)).toThrow(error);
+    expect(() => parseContent(input, formulas, documents, documentsByLocale)).toThrow(error);
   });
 
   test.skipIf(formulas.length === 0)('validates inline mathematics in shared formula notes too', () => {
     const input = structuredClone(formulas);
     input[0].note = {zh: '关系 $\\frac{$', en: 'Relation $a$'};
-    expect(() => parseContent(exams, input, documents)).toThrow(/formulas\[0\]\.note\.zh.*invalid TeX/);
+    expect(() => parseContent(exams, input, documents, documentsByLocale)).toThrow(/formulas\[0\]\.note\.zh.*invalid TeX/);
   });
 
   test('validates visible Markdown prose without treating syntax or link destinations as equations', () => {
     const input = structuredClone(exams);
     input[0].problems[0].guide.en += '\n\n> **Recall** [the lecture](/sources/lecture.pdf?page=2).\n\n- Check the boundary.';
-    expect(parseContent(input, formulas, documents).exams).toBe(input);
+    expect(parseContent(input, formulas, documents, documentsByLocale).exams).toBe(input);
   });
 });

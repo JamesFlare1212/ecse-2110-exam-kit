@@ -91,7 +91,7 @@ try {
         const source = page.locator('.reference-rail .formula-source-name').first();
         await hint(source, await source.getAttribute('aria-label'), true);
       }
-      await page.locator('.solution-section-heading button').click();
+      await page.locator('[data-solution-toggle]').click();
       const formula = page.locator('.formula-link-inline:visible').first();
       await formula.hover();
       const preview = page.locator('[data-slot=hover-card-content]:visible');

@@ -2400,12 +2400,12 @@
         "solutionPage": 4,
         "figure": "p2-f26-q3-circuit",
         "prompt": "653f5e1fee579d61e3744a8cdcfbd9c939fcf28e531c3ea3e179f42c0e08a4b6",
-        "displayed": "538a2930093f2f22ba98ab576b62776af1dfd488b7d2803f785ead9bedb3a2af",
+        "displayed": "c10bdb9b4ea68863a237498011221a59072e4fcc5903deafc4930738386c9cca",
         "formulas": [
           "rectifier-full"
         ],
         "figures": ["p2-f26-q3-circuit"],
-        "solutionText": "cdfc596f8165ce15c4b4cd3628c8e35c34b94283235d64ddb8774e54d133f292",
+        "solutionText": "4a8bed1b93f10f584a4f50d005191e816d4cbd42c99acab8d72225e6ae060158",
         "note": null,
         "caption": "6958573a0dfe281651632bf47086cdb61a66ecb0dc330c274633191f0446b0bc"
       },
@@ -5186,12 +5186,12 @@
         "solutionPage": 4,
         "figure": "p2-f26-q3-circuit",
         "prompt": "5d70c404d27c328b7ceaa2681e32fd7f70a3df4baed8b83e5b625689f4f11110",
-        "displayed": "538a2930093f2f22ba98ab576b62776af1dfd488b7d2803f785ead9bedb3a2af",
+        "displayed": "c10bdb9b4ea68863a237498011221a59072e4fcc5903deafc4930738386c9cca",
         "formulas": [
           "rectifier-full"
         ],
         "figures": ["p2-f26-q3-circuit"],
-        "solutionText": "a0aaa6f8b5becc0c8dd2d6f56e6eaf89cf6f641df4db93027605691a7251a08e",
+        "solutionText": "8d02310ee4ae0ab85b1a50e5f1df83fab5e6ffc143a3b2d6a78020d732772297",
         "note": null,
         "caption": "cc82f09a4458cfc8a54dca39ea42ea58ae08808e47f096f27659e3155a5fbd99"
       },

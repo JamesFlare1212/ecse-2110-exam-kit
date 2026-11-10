@@ -19,7 +19,7 @@ try {
       for(const [problem,exam] of [['e1-f26-q5',1],['e2-u00-q2',2]]) {
         await page.goto(`${base}/problems/${problem}/`,{waitUntil:'domcontentloaded'});
         await page.waitForSelector('[data-study-ready=true]');await page.evaluate(()=>document.fonts.ready);
-        await page.locator('.solution-section-heading button').click();
+        await page.locator('[data-solution-toggle]').click();
         const link=page.locator('.formula-link-inline:visible').first();
         await link.hover();
         const preview=page.locator('[data-slot=hover-card-content]:visible');

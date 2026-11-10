@@ -73,11 +73,13 @@ export interface SourceDocument {
   id: string; title: string; kind: string; pages: number; pdf: string;
   pageBase: string; sizes: number[][]; original: string; sha256: string;
 }
+/** Reader data excludes the retired question-level Guide, retained only in source articles. */
+export type StudyProblem = Omit<Problem, 'guide'>;
 export interface StudyPageData {
   examIndex: ExamIndex[];
   documents: Record<Locale, Record<string, SourceDocument>>;
   exam: ExamInfo;
-  problem: Problem;
+  problem: StudyProblem;
   assetBase: Localized;
   figureSizes: Record<Locale, Record<string, [number, number, number]>>;
 }

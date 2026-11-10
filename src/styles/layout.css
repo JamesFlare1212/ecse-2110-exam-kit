@@ -4,6 +4,7 @@
 @import "shadcn-svelte/tailwind.css";
 @import "@fontsource-variable/inter";
 @import "katex/dist/katex.min.css";
+@import './converter.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -248,7 +249,10 @@ button,a,[role='tab'],[role='switch'] { cursor:pointer; }button:disabled { curso
 .reading-layout[data-references="closed"],html[data-references="closed"] .reading-layout { --reference-width:0px; }
 .reference-rail>.reference-content { width:var(--reference-expanded-width); transition:transform 180ms ease; }
 .reading-layout[data-references="closed"]>.reference-rail,html[data-references="closed"] .reference-rail { border-left-width:0; }
-.reading-layout[data-references="closed"]>.reference-rail>.reference-content,html[data-references="closed"] .reference-rail>.reference-content { transform:translateX(100%); }.main-content { display:flex; flex-direction:column; flex:1; align-self:stretch; min-width:0; max-width:1000px; width:100%; padding:36px 42px 20px; margin:0 auto; }
+.reading-layout[data-references="closed"]>.reference-rail>.reference-content,html[data-references="closed"] .reference-rail>.reference-content { transform:translateX(100%); }
+/* Percentage gutters follow the reader's own grid area, including space released
+   by either sidebar. A single cap avoids width jumps at viewport breakpoints. */
+.main-content { display:flex; flex-direction:column; flex:1; align-self:stretch; min-width:0; max-width:1200px; width:100%; padding:clamp(26px,3%,36px) clamp(17px,3.5%,42px) 20px; margin:0 auto; }
 .problem-title-row { display:flex; gap:20px; align-items:center; justify-content:space-between; }.problem-kicker { font-size:11px; font-weight:600; letter-spacing:1.2px; color:var(--primary); margin-bottom:8px; }
 h1 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(27px,2.65vw,39px); line-height:1.35; font-weight:500; letter-spacing:-.8px; text-wrap:balance; }#problem-title:focus-visible { outline:2px solid var(--ring); outline-offset:6px; border-radius:3px; }h1:lang(zh) { font-family:'PingFang SC','Noto Sans CJK SC','Microsoft YaHei',system-ui,sans-serif; }
 .katex .cjk_fallback { font-family:'PingFang SC','Noto Sans CJK SC','Microsoft YaHei',sans-serif; }
@@ -270,13 +274,8 @@ h1 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(27px,2.65vw,39
 .figure-enlarged img { display:block; width:100%; min-width:var(--figure-width); max-width:none; height:auto; margin-inline:auto; }
 .figure-enlarged[data-fit-width='true'] img { min-width:0; }
 .figure-dialog-actions { flex-direction:row; flex-wrap:wrap; justify-content:space-between; }
-.solution-section-heading { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }.problem-part { scroll-margin-top:93px; }.part-trigger { display:flex; align-items:flex-start; gap:13px; padding:21px 2px; line-height:1.9; }
+.solution-actions { display:flex; justify-content:flex-end; margin-top:8px; }.problem-part { scroll-margin-top:93px; }.part-trigger { display:flex; align-items:flex-start; gap:13px; padding:21px 2px; line-height:1.9; }
 .part-letter { display:flex; align-items:center; justify-content:center; min-width:29px; height:29px; padding:0 5px; border:1px solid var(--border); border-radius:6px; font-family:Georgia,serif; font-size:14px; background:var(--card); }.part-letter.complete { color:var(--formula); background:var(--answer-surface); border-color:var(--answer-border); }.part-letter svg { width:15px; height:15px; }.part-prompt { min-width:0; flex:1; font-size:var(--supporting-text); }.part-content { padding:0 2px 23px; }
-.problem-overview { margin:22px 0 8px; padding-bottom:22px; border-bottom:1px solid var(--border); }
-.problem-overview h2 { font-size:var(--supporting-text); font-weight:600; line-height:1.7; margin:0 0 12px; }
-.overview-prose { font-size:var(--supporting-text); line-height:1.9; margin-bottom:15px; }
-.overview-references { display:flex; align-items:center; flex-wrap:wrap; gap:6px 12px; margin-top:16px; }
-.overview-references>span { font-size:var(--metadata-text); color:var(--muted-foreground); }
 .solution-body { display:flex; flex-direction:column; gap:8px; margin:8px 0 12px; min-width:0; }
 .solution-body>.study-figure { margin-block:8px; }
 .solution-body>.solution-annotation { font-size:var(--supporting-text); line-height:1.9; color:var(--foreground); margin:0; }
@@ -355,10 +354,9 @@ h1 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(27px,2.65vw,39
 .lecture-library { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-content:start; gap:8px; }.library-lecture { width:100%; height:auto; min-height:90px; display:flex; justify-content:flex-start; text-align:left; white-space:normal; gap:15px; padding:14px 10px; }.library-lecture-number { font-family:Georgia,serif; font-size:27px; color:var(--formula); min-width:30px; }.library-lecture>span:nth-child(2) { flex:1; }.library-lecture strong,.saved-problem strong { display:block; line-height:1.7; font-weight:500; }.library-lecture small,.saved-problem small { display:block; color:var(--muted-foreground); font-size:9px; margin-top:5px; }.saved-problem { width:100%; height:auto; padding:15px; gap:15px; justify-content:flex-start; text-align:left; white-space:normal; }.saved-problem>span { flex:1; }
 .error-page { min-height:100dvh; display:grid; place-items:center; padding:24px; }
 .mobile-nav-sheet { padding:0; gap:0; }.mobile-nav-sheet>.navigation-content { min-height:0; }.reference-sheet { overflow-y:auto; }.reference-sheet>.reference-content { padding-top:7px; }
-@media(min-width:1700px) { .reading-layout { --reference-expanded-width:315px; }.reference-content { padding:35px 28px; }.main-content { padding-left:65px; padding-right:65px; } }
-@media(max-width:1180px) { .reading-layout { display:flex; flex-direction:column; }.reference-rail { display:none; }.main-content { max-width:890px; padding:37px 45px 20px; }.app-shell { --navigation-expanded-width:230px; }.brand { padding-left:17px; } }
-@media(max-width:800px) { .app-shell { grid-template-columns:minmax(0,1fr); }.desktop-navigation { display:none; }.topbar { min-height:64px; }.main-content { padding:28px 27px 15px; }h1 { font-size:34px; }.source-origin { display:none; } }
-@media(max-width:550px) { .main-content { padding:26px 17px 15px; }h1 { font-size:28px; line-height:1.5; }.problem-title-row { gap:12px; }.problem-subtitle { font-size:var(--metadata-text); gap:5px; }.problem-tab-list { gap:15px; }.problem-tab-list>[data-slot='tabs-trigger'] { min-width:0; flex:1 1 0; white-space:normal; line-height:1.5; height:auto; }.problem-tab-list [data-slot='tabs-trigger']>svg { display:none; }.lecture-badges [data-slot='button'] { padding-left:5px; padding-right:5px; }.problem-statement>p { font-size:var(--reader-text); }.section-label { font-size:var(--metadata-text); gap:7px; }.figure-toolbar { padding:8px; }.part-trigger { gap:9px; }.part-prompt { font-size:var(--supporting-text); }.part-trigger>[data-slot='badge'] { flex-shrink:0; height:auto; min-height:20px; white-space:normal; }.solution-body>.solution-annotation { font-size:var(--supporting-text); }.math-display { font-size:var(--supporting-text); }.part-actions { align-items:flex-start; }.problem-completion { align-items:flex-start; flex-direction:column; gap:8px; }.source-dialog { padding:17px; gap:12px; }.source-stage { padding:5px; }.source-footer { flex-direction:row; }.source-toolbar { gap:8px; }.source-page-controls,.source-zoom-controls { gap:6px; }.source-page-controls input { width:48px; }.zoom-label { width:36px; }.lecture-library { grid-template-columns:1fr; }.library-dialog { padding:21px 17px; }.library-formula-toolbar { flex-wrap:wrap; }.source-guide { margin-top:22px; }.reading-footer { gap:10px; } }
+@media(max-width:1180px) { .reading-layout { display:flex; flex-direction:column; }.reference-rail { display:none; }.brand { padding-left:17px; } }
+@media(max-width:800px) { .app-shell { grid-template-columns:minmax(0,1fr); }.desktop-navigation { display:none; }.topbar { min-height:64px; }h1 { font-size:34px; }.source-origin { display:none; } }
+@media(max-width:550px) { h1 { font-size:28px; line-height:1.5; }.problem-title-row { gap:12px; }.problem-subtitle { font-size:var(--metadata-text); gap:5px; }.problem-tab-list { gap:15px; }.problem-tab-list>[data-slot='tabs-trigger'] { min-width:0; flex:1 1 0; white-space:normal; line-height:1.5; height:auto; }.problem-tab-list [data-slot='tabs-trigger']>svg { display:none; }.lecture-badges [data-slot='button'] { padding-left:5px; padding-right:5px; }.problem-statement>p { font-size:var(--reader-text); }.section-label { font-size:var(--metadata-text); gap:7px; }.figure-toolbar { padding:8px; }.part-trigger { gap:9px; }.part-prompt { font-size:var(--supporting-text); }.part-trigger>[data-slot='badge'] { flex-shrink:0; height:auto; min-height:20px; white-space:normal; }.solution-body>.solution-annotation { font-size:var(--supporting-text); }.math-display { font-size:var(--supporting-text); }.part-actions { align-items:flex-start; }.problem-completion { align-items:flex-start; flex-direction:column; gap:8px; }.source-dialog { padding:17px; gap:12px; }.source-stage { padding:5px; }.source-footer { flex-direction:row; }.source-toolbar { gap:8px; }.source-page-controls,.source-zoom-controls { gap:6px; }.source-page-controls input { width:48px; }.zoom-label { width:36px; }.lecture-library { grid-template-columns:1fr; }.library-dialog { padding:21px 17px; }.library-formula-toolbar { flex-wrap:wrap; }.source-guide { margin-top:22px; }.reading-footer { gap:10px; } }
 /* Respond to the reading workspace, not the viewport: collapsing navigation
    can release enough width for the full path without changing the window. */
 @container study-workspace (max-width:800px) {
@@ -381,7 +379,7 @@ h1 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(27px,2.65vw,39
   .toolbar-actions { gap:1px; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }*,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition:none !important; scroll-behavior:auto !important; } }
-@media print { .desktop-navigation,.topbar,.reference-rail,.problem-lectures,.part-actions,.figure-toolbar { display:none !important; }.app-shell,.workspace,.reading-layout,.main-content { display:block; min-height:0; }.main-content { max-width:none; padding:0; }.reading-footer { margin-top:0; }.math-display { overflow:visible; }.solution-body,.study-figure { break-inside:avoid; } }
+@media print { .desktop-navigation,.topbar,.reference-rail,.problem-lectures,.solution-actions,.part-actions,.figure-toolbar { display:none !important; }.app-shell,.workspace,.reading-layout,.main-content { display:block; min-height:0; }.main-content { max-width:none; padding:0; }.reading-footer { margin-top:0; }.math-display { overflow:visible; }.solution-body,.study-figure { break-inside:avoid; } }
 
 /* Loading, errors and scroll affordances remain visible without moving the document. */
 .startup-status { position:fixed; inset:auto 12px 12px; max-width:44rem; margin-inline:auto; padding:10px 14px; background:var(--popover); color:var(--popover-foreground); border:1px solid var(--border); border-radius:var(--radius); z-index:80; font-size:.875rem; }

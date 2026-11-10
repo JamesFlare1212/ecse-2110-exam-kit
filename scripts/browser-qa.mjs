@@ -42,13 +42,6 @@ async function annotationText(question,locale){
   },html);
   assert.deepEqual(actual.actual,actual.expected,`${question.id}: ${locale} prose and spacing`);
 }
-async function guideText(question,locale){
-  const value=await page.locator('.overview-prose').evaluate((node,html)=>{
-    const normalize=text=>text.replace(/\s+/g,' ').trim();
-    return {actual:normalize(node.textContent),expected:normalize(new DOMParser().parseFromString(html,'text/html').body.textContent)};
-  },renderText(question.guide[locale]));
-  assert.equal(value.actual,value.expected,`${question.id}: ${locale} guide`);
-}
 async function solutionMath(question,locale){
   const rendered=await page.locator('[data-part]').evaluateAll(nodes=>nodes.map(node=>({
     id:node.dataset.part,
@@ -57,7 +50,7 @@ async function solutionMath(question,locale){
   assert.deepEqual(rendered,question.parts.map(part=>({id:part.id,equations:displayEquations(part.solution[locale])})),`${question.id}: all ${locale} calculations in authored order`);
 }
 async function revealAll(){
-  const button=page.locator('.solution-section-heading button');
+  const button=page.locator('[data-solution-toggle]');
   assert.equal(await button.count(),1);
   if(await button.getAttribute('aria-expanded')==='true'){
     await button.click();
@@ -206,15 +199,11 @@ try {
   for(const exam of exams)for(const q of exam.problems){
     await goto(q.id);await revealAll();
     assert.equal(await page.locator('#problem-title').innerText(),q.title.zh);
-    assert.equal(await page.locator('[data-problem-guide]').count(),1);
-    await guideText(q,'zh');
-    assert.equal(await page.locator('.overview-references button').count(),q.lectures.length);
-    assert.ok(await page.locator('[data-problem-guide]').evaluate(e=>Boolean(e.compareDocumentPosition(document.querySelector('#worked-parts'))&Node.DOCUMENT_POSITION_FOLLOWING)));
+    assert.equal(await page.locator('[data-problem-guide]').count(),0);
     assert.equal(await page.locator('[data-original-statement][lang="zh-CN"]').count(),1);
     assert.equal(await page.locator('[data-original-prompt][lang="zh-CN"]').count(),q.parts.length);
     await page.getByRole('button',{name:'Switch to English',exact:true}).click();
     assert.equal(await page.locator('#problem-title').innerText(),q.title.en);
-    await guideText(q,'en');
     assert.equal(await page.locator('[data-original-statement][lang="en"]').count(),1);
     assert.equal(await page.locator('[data-original-prompt][lang="en"]').count(),q.parts.length);
     await annotationText(q,'en');
@@ -259,7 +248,7 @@ try {
     await noOverflow();
     assert.equal(await page.locator('.solution-body .math-display').count(),q.parts.reduce((total,part)=>total+displayEquations(part.solution.zh).length,0));
     await page.setViewportSize({width:1440,height:1000});
-    await page.getByRole('button',{name:'收起全部推导',exact:true}).click();
+    await page.getByRole('button',{name:'收起全部解答',exact:true}).click();
     await page.waitForFunction(()=>[...document.querySelectorAll('#worked-parts [data-slot="accordion-content"]')].every(e=>e.hidden||getComputedStyle(e).display==='none'));
     assert.equal(await page.locator('.part-trigger[aria-expanded="true"]').count(),0);
     assert.equal(await page.locator('[data-original-prompt]').count(),q.parts.length);
@@ -385,13 +374,13 @@ try {
   await page.getByRole('radio',{name:'矢量复刻',exact:true}).click();
   assert.ok((await page.locator('.figure-image img').first().getAttribute('src')).endsWith('.svg'));
   record('Original figure / Matplotlib SVG switch');
-  const solutionToggle=page.locator('.solution-section-heading button');
+  const solutionToggle=page.locator('[data-solution-toggle]');
   if(await solutionToggle.getAttribute('aria-expanded')==='true')await solutionToggle.click();
-  await page.waitForFunction(()=>document.querySelector('.solution-section-heading button')?.getAttribute('aria-expanded')==='false'
+  await page.waitForFunction(()=>document.querySelector('[data-solution-toggle]')?.getAttribute('aria-expanded')==='false'
     && [...document.querySelectorAll('.solution-body .math-display')].every(element=>!element.checkVisibility()));
   assert.equal(await page.locator('[data-answer]:visible').count(),0);
   assert.equal(await page.locator('.solution-body .math-display:visible').count(),0);
-  assert.equal(await page.locator('.worked-solution textarea').count(),0);
+  assert.equal(await page.locator('#worked-parts textarea').count(),0);
   assert.equal(await page.locator('[id^="attempt-"]').count(),0);
   record('The unified solution view has no mode switch or per-part text entry');
   const practicePart=page.locator('[data-part="e2-s26-q3-a"]');

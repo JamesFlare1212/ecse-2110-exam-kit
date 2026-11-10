@@ -21,7 +21,7 @@ try {
       assert.equal(await page.locator('html').getAttribute('lang'),locale==='zh'?'zh-CN':'en');
       assert.equal(await page.locator('.part-trigger[aria-expanded=true]').count(),0);
       assert.equal(await page.locator('.study-figure:visible').count(),(question.figure?1:0)+question.parts.filter(p=>p.questionFigure).length,`${question.id}: no invented or leaked solution diagram in the prompt`);
-      await page.locator('.solution-section-heading button').click();
+      await page.locator('[data-solution-toggle]').click();
       assert.equal(await page.locator('.part-trigger[aria-expanded=true]').count(),question.parts.length);
       assert.equal(await page.locator('.katex-error').count(),0);
       assert.equal(await page.locator('a[download],a[href*=".pdf"]').count(),0);
@@ -55,7 +55,7 @@ try {
   await context.addInitScript(key=>localStorage.setItem(key,JSON.stringify({version:1,locale:'en'})),course.storageKey);
   const page=await context.newPage();
   await page.goto(`${base}/problems/e2-u00-q3/`);await page.waitForSelector('main[data-study-ready=true]');
-  await page.locator('.solution-section-heading button').click();
+  await page.locator('[data-solution-toggle]').click();
   assert.equal(await page.getByRole('button',{name:/Official solution/}).count(),0);
   await page.getByRole('button',{name:'Part a: Solution source',exact:true}).click();
   await page.locator('.source-paper img').evaluate(image=>image.decode());
@@ -83,7 +83,7 @@ try {
   }
   await referencePage.goto(`${base}/problems/e1-f26-q4/`);await referencePage.waitForSelector('main[data-study-ready=true]');
   assert.equal(await referencePage.locator('main .study-figure').count(),0);
-  await referencePage.locator('.solution-section-heading button').click();
+  await referencePage.locator('[data-solution-toggle]').click();
   await referencePage.getByRole('button',{name:'Part a: View original question',exact:true}).click();
   assert.ok((await referencePage.locator('.source-paper img').getAttribute('src')).includes('/pages/e1-f26-sol/9.webp'));
   assert.equal(await referencePage.locator('a[download],a[href*=".pdf"]').count(),0);

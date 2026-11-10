@@ -42,7 +42,7 @@ try {
   const q=await c.newPage();await goto(q,'e2-s26-q4');
   await Promise.all([p.locator('.problem-title-row button').click(),q.locator('.problem-title-row button').click()]);
   await p.waitForFunction(key=>{const d=JSON.parse(localStorage.getItem(key));return d.bookmarks?.['e2-s26-q3']&&d.bookmarks?.['e2-s26-q4'];},key);
-  await p.locator('.solution-section-heading button').click();await q.locator('.solution-section-heading button').click();
+  await p.locator('[data-solution-toggle]').click();await q.locator('[data-solution-toggle]').click();
   await Promise.all([p.locator('[data-part="e2-s26-q3-a"] .part-actions button').first().click(),q.locator('[data-part="e2-s26-q4-a"] .part-actions button').first().click()]);
   await p.waitForFunction(key=>{const d=JSON.parse(localStorage.getItem(key));return d.completed?.['e2-s26-q3-a']&&d.completed?.['e2-s26-q4-a'];},key);
   await p.locator('.problem-title-row button').click();await q.getByRole('button',{name:'Switch to English',exact:true}).click();
@@ -57,7 +57,7 @@ try {
   for(const viewport of [{width:1280,height:800},{width:375,height:812},{width:667,height:375}]){
     await p.setViewportSize(viewport);await goto(p,'e2-s26-q3');
     await p.getByRole('button',{name:'Lecture 10',exact:true}).click();await p.locator('.source-paper img').waitFor();await p.keyboard.press('Escape');
-    await p.locator('.solution-section-heading button').click();
+    await p.locator('[data-solution-toggle]').click();
     await p.locator('[data-part="e2-s26-q3-a"] .formula-link').first().click();
     assert.equal(await p.locator('#source-page').inputValue(),'4');
     await p.locator('#source-page').fill('');await p.locator('#source-page').press('Tab');assert.equal(await p.locator('#source-page').inputValue(),'4');

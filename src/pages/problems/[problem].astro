@@ -5,6 +5,7 @@ import { resolve } from 'node:path';
 import Base from '../../layouts/Base.astro';
 import StudyDesk from '#lib/components/StudyDesk.svelte';
 import { loadAstroContent } from '../../../content/astro.server';
+import { createStudyProblem } from '../../../content/navigation';
 import type { StudyPageData } from '#lib/types';
 import { studyDescription } from '../../../content/course';
 
@@ -24,7 +25,7 @@ export const getStaticPaths = (async () => {
       }))]));
       return {
       params: { problem: problem.id },
-      props: { data: { examIndex, documents: documentsByLocale, exam, problem, assetBase: paper.assetBase, figureSizes } },
+      props: { data: { examIndex, documents: documentsByLocale, exam, problem: createStudyProblem(problem), assetBase: paper.assetBase, figureSizes } },
     };});
   });
 }) satisfies GetStaticPaths;

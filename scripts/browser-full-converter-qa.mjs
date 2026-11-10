@@ -4,6 +4,8 @@ import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {course} from '../content/course.ts';
 import {exams} from '../content/catalog.server.ts';
 import {FULL_PROFILES,atFullCycleAngle,validateRippleData} from '../src/lib/visualizations/full-converter-model.mjs';
+import {converterCopy} from '../src/lib/visualizations/converter-presentation.ts';
+import {checkConverterHelp} from './browser-converter-help-qa.mjs';
 const entries=exams.flatMap(e=>e.problems.flatMap(q=>q.parts.filter(p=>p.interaction?.kind==='full-converter').map(p=>({question:q.id,part:p.id,...p.interaction}))));
 if(!entries.length){console.log('SKIP: no full-converter questions mounted');process.exit(0);}
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright'),browser=await chromium.launch({headless:true,args:['--no-sandbox']});
@@ -41,7 +43,12 @@ try{
   const slider=w.getByRole('slider');await slider.focus();await p.keyboard.press('End');assert.equal(await w.getAttribute('data-angle'),'360.00');assert.equal(await w.getByRole('radio').nth(2).getAttribute('aria-checked'),'true');const atEnd=await particles(w);await p.waitForTimeout(100);assert.notDeepEqual(await particles(w),atEnd);assert.equal(await w.getAttribute('data-angle'),'360.00');
   const flow=w.locator('[data-flow-toggle]');await flow.click();const frozen=await particles(w);await p.waitForTimeout(100);assert.deepEqual(await particles(w),frozen);await flow.click();
   await w.locator('[data-static-diagram]').click();const dialog=p.getByRole('dialog');await dialog.waitFor();assert.equal(await w.getAttribute('data-flow-running'),'false');assert.equal(await w.locator('.study-figure').count(),0);await p.keyboard.press('Escape');await dialog.waitFor({state:'detached'});assert.equal(await w.getAttribute('data-playing'),'false');
-  await w.locator('[data-conduction-help]').click();const help=p.locator('.conduction-help-popover');await help.waitFor();assert((await help.textContent()).includes(locale==='zh'?'全控桥':'freewheel'));await p.keyboard.press('Escape');
+  const copy=converterCopy(locale,entry.profile);
+  for(const angle of width===390?[0,90,300,360]:[360]){
+   if(angle===0||angle===360){await slider.focus();await p.keyboard.press(angle===360?'End':'Home');}else await seek(p,w,angle);
+   const actual=Number(await w.getAttribute('data-angle'));assert(Math.abs(actual-angle)<=.5);
+   await checkConverterHelp(p,w,copy,atFullCycleAngle(actual,entry.profile,ripple).index,actual===360,angle===360&&width>=390?`${out}/help-${entry.profile}-${locale}-${theme}-${width}.png`:undefined);
+  }
   await p.emulateMedia({reducedMotion:'reduce'});await w.locator('[data-flow-toggle]:disabled').waitFor({state:'visible'});const staticPoints=await particles(w);await p.waitForTimeout(100);assert.deepEqual(await particles(w),staticPoints);
   const box=await w.boundingBox();assert(box.height<=(box.width>=620?720:1050),JSON.stringify({profile:entry.profile,locale,width,box}));assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));assert.deepEqual(errors,[]);
   const saved=await p.evaluate(key=>JSON.parse(localStorage.getItem(key)),course.storageKey);assert.equal(saved.notes[entry.part],'keep');checks.push({question:entry.question,profile:entry.profile,locale,theme,width,height:box.height,correctTopology:true,liveGrayValues:true,independentFlow:true,rippleRetained:true});await c.close();

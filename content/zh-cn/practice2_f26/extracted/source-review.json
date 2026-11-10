@@ -39,6 +39,14 @@
         "sourcePage": 9,
         "sourcePanel": [0.114379, 0.296717, 0.390523, 0.207071],
         "figureOriginal": false
+      },
+      "armatureRelationOrigin": {
+        "law": "Kirchhoff's voltage law applied to the series inductance, resistance and signed internal-emf branch; not a separate Reference Sheet formula.",
+        "circuitDocument": "p2-f26-sol",
+        "circuitPage": 9,
+        "emfProportionality": {"doc": "lecture-09", "page": 8},
+        "emfSign": "The question explicitly makes the internal emf negative; the drawn voltage reference is not reversed.",
+        "averaging": "Integrate over a period with fixed speed/excitation and equal endpoint currents. The mean inductive drop vanishes without setting the finite inductance to zero. The imposed ripple-free condition remains an averaged-model idealization."
       }
     },
     {

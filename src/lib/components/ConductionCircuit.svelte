@@ -31,17 +31,4 @@
   </g>
 </svg>
 
-<style>
-  .conduction-circuit{display:block;width:100%;max-width:360px;height:auto;margin-inline:auto}
-  /* Neutral width/contrast encodes conduction independently of colored probes.
-     Labels stay fully readable; no route line is drawn through R/L or the source. */
-  .circuit-fragment{color:var(--foreground)}
-  .circuit-fragment[data-label=false]{color:var(--muted-foreground);opacity:.55;--conduction-stroke-width:1.8}
-  .circuit-fragment[data-label=false][data-conducting=true]{color:var(--foreground);opacity:1;--conduction-stroke-width:2.8}
-  .circuit-fragment[data-auxiliary=true][data-label=false]{color:var(--foreground);opacity:.78;--conduction-stroke-width:1.8}
-  .conduction-measurement{pointer-events:none}.conduction-measurement[data-enabled=false]{display:none}
-  .probe-line{fill:none;stroke:var(--paint);stroke-width:1.8;vector-effect:non-scaling-stroke}.probe-lead{stroke-dasharray:3 4}
-  .probe-node{fill:var(--card);stroke:var(--paint);stroke-width:1.8;vector-effect:non-scaling-stroke}
-  .polarity{fill:var(--paint);font-size:19px;font-weight:700}.probe-flow{fill:none;stroke:var(--paint);stroke-width:2;vector-effect:non-scaling-stroke}.probe-flow.zero{stroke-dasharray:3 4}
-  .conduction-carrier{fill:var(--foreground);stroke:var(--card);stroke-width:.9;stroke-linejoin:round;vector-effect:non-scaling-stroke;pointer-events:none}
-</style>
+<!-- The workspace owns circuit styles in src/styles/converter.css across Astro swaps. -->

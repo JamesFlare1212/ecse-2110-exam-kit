@@ -79,8 +79,8 @@ export function loadContent(directory = resolve('content'), articles?: readonly 
     || Number(b.exam.kind === 'practice') - Number(a.exam.kind === 'practice')
     || (a.exam.year ?? 0) - (b.exam.year ?? 0)
     || Number(a.exam.id.includes('-f')) - Number(b.exam.id.includes('-f')) || a.name.localeCompare(b.name));
-  const checked = parseContent(papers.map(paper => paper.exam), formulas, documentsByLocale.en);
-  parseContent(checked.exams, formulas, documentsByLocale.zh);
+  const checked = parseContent(papers.map(paper => paper.exam), formulas, documentsByLocale.en, documentsByLocale);
+  parseContent(checked.exams, formulas, documentsByLocale.zh, documentsByLocale);
   for (const documents of Object.values(documentsByLocale)) validateCourseDocuments(course, documents);
   if (course.resources.formulaSheets) {
     const sheetIds = new Set(Object.values(course.resources.formulaSheets));

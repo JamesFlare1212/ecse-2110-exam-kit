@@ -2,8 +2,9 @@ import katex from 'katex';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { math } from 'micromark-extension-math';
 import { mathFromMarkdown } from 'mdast-util-math';
-import type { Exam, Formula, SourceDocument } from './types.ts';
+import type { Exam, Formula, Locale, SourceDocument } from './types.ts';
 import { formulaReferences, displayEquations, solutionFigures, pageReferences } from './text';
+import { unlinkedCourseCitations } from './course-citations';
 
 type Rule = (value: unknown, path: string) => void;
 function fail(path: string, message: string): never {
@@ -110,8 +111,11 @@ const document = object({
   sha256: (value, path) => { if (typeof value !== 'string' || !/^[a-f0-9]{64}$/.test(value)) fail(path, 'expected SHA-256 provenance'); },
 });
 
-/** Validate authored content in memory, without rewriting Markdown or generating JSON. */
-export function parseContent(rawExams: unknown, rawFormulas: unknown, rawDocuments: unknown) {
+/** Validate authored content in memory, without rewriting Markdown or generating JSON.
+ * Paper-owned inline page links must use their article's own locale registry.
+ */
+export function parseContent(rawExams: unknown, rawFormulas: unknown, rawDocuments: unknown,
+  pageDocumentsByLocale?: Record<Locale, Record<string, SourceDocument>>) {
   array(exam, 1)(rawExams, 'exams');
   array(formula)(rawFormulas, 'formulas');
   if (!rawDocuments || typeof rawDocuments !== 'object' || Array.isArray(rawDocuments)) fail('documents', 'expected a document registry');
@@ -120,6 +124,10 @@ export function parseContent(rawExams: unknown, rawFormulas: unknown, rawDocumen
   const formulas = rawFormulas as Formula[];
   const documents = rawDocuments as Record<string, SourceDocument>;
   const ids = new Set<string>();
+  function linkedCourseSources(body: string, path: string) {
+    const citation = unlinkedCourseCitations(body)[0];
+    if (citation) fail(path, `course-material citation “${citation.text}” must have an inline source-page link`);
+  }
   function unique(id: string, path: string) {
     if (!/^[a-z0-9-]+$/.test(id) || ids.has(id)) fail(path, `invalid or duplicate ID ${id}`);
     ids.add(id);
@@ -152,8 +160,10 @@ export function parseContent(rawExams: unknown, rawFormulas: unknown, rawDocumen
         if (!q.note?.en || !q.note?.zh) fail(`${q.id}.note`, 'a matched question figure requires source-correction provenance in both languages');
       }
       for (const ref of [q.originalFigure, ...q.lectures]) page(ref.doc, ref.page, `${q.id}.sources`);
-      for (const locale of ['en', 'zh'] as const) for (const [field, body] of Object.entries({statement: q.statement[locale], guide: q.guide[locale], note: q.note?.[locale]})) {
-        if(body)try{pageReferences(body,documents);}catch(error){fail(`${q.id}.${field}.${locale}`,String(error));}
+      for (const locale of ['en', 'zh'] as const) for (const [field, body] of Object.entries({statement: q.statement[locale], guide: q.guide[locale], note: q.note?.[locale], caption: q.figureCaption?.[locale]})) {
+        // Original exam wording is not rewritten to satisfy an authoring lint.
+        if (body && field !== 'statement') linkedCourseSources(body, `${q.id}.${field}.${locale}`);
+        if(body)try{pageReferences(body,pageDocumentsByLocale?.[locale]??documents);}catch(error){fail(`${q.id}.${field}.${locale}`,String(error));}
         if (body && solutionFigures(body).length) fail(`${q.id}.${field}.${locale}`, 'figure: placements belong only in Solution');
       }
       for (const p of q.parts) {
@@ -164,6 +174,8 @@ export function parseContent(rawExams: unknown, rawFormulas: unknown, rawDocumen
         if (p.figure && !p.figureCaption) fail(`${p.id}.figureCaption`, 'solution figures need bilingual captions');
         if (p.interaction && !p.figure) fail(`${p.id}.interaction`, 'requires a complete static solution figure');
         for (const locale of ['en','zh'] as const) {
+          for (const [field, body] of Object.entries({solution: p.solution[locale], note: p.note?.[locale], caption: p.figureCaption?.[locale]}))
+            if (body) linkedCourseSources(body, `${p.id}.${field}.${locale}`);
           for (const [field, body] of Object.entries({prompt: p.prompt[locale], note: p.note?.[locale]}))
             if (body && solutionFigures(body).length) fail(`${p.id}.${field}.${locale}`, 'figure: placements belong only in Solution');
           const equations = displayEquations(p.solution[locale]);
@@ -173,7 +185,7 @@ export function parseContent(rawExams: unknown, rawFormulas: unknown, rawDocumen
             fail(`${p.id}.solution.${locale}`, 'boxed results belong only in the final displayed calculation');
           let refs: string[];
           try {
-            for(const body of [p.solution[locale],p.prompt[locale],p.note?.[locale]])if(body)pageReferences(body,documents);
+            for(const body of [p.solution[locale],p.prompt[locale],p.note?.[locale],p.figureCaption?.[locale]])if(body)pageReferences(body,pageDocumentsByLocale?.[locale]??documents);
             refs = formulaReferences(p.solution[locale]);
             const placed = solutionFigures(p.solution[locale]);
             if (placed.length && (placed.length !== 1 || placed[0] !== p.figure))

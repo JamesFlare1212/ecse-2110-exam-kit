@@ -7,6 +7,7 @@
   import Info from '@lucide/svelte/icons/info';
   import FileText from '@lucide/svelte/icons/file-text';
   import RichText from './RichText.svelte';
+  import ReferencedText from './ReferencedText.svelte';
   import SolutionBody from './SolutionBody.svelte';
   import Figure from './Figure.svelte';
   import SolutionFigure from './SolutionFigure.svelte';
@@ -18,7 +19,7 @@
   function source(solution=false){onsource({doc:solution?exam.solutionDoc:exam.doc,page:solution?part.solutionPage:part.sourcePage,label:{zh:solution?'解答来源页':'试题来源页',en:solution?'Solution source page':'Question source page'}});}
 </script>
 <Accordion.Item value={part.id} class="problem-part" data-part={part.id}>
-  <Accordion.Trigger class="part-trigger" level={3}><span class:complete={done} class="part-letter">{part.label}{#if done}<Check aria-label={study.locale==='zh'?'已掌握':'Mastered'}/>{/if}</span><span class="part-prompt" lang={study.locale==='zh'?'zh-CN':'en'} data-original-prompt><RichText text={part.prompt[study.locale]}/></span>{#if part.points>0}<Badge variant="outline">{part.points} {study.locale==='zh'?'分':'pts'}</Badge>{/if}</Accordion.Trigger>
+  <Accordion.Trigger class="part-trigger" level={2}><span class:complete={done} class="part-letter">{part.label}{#if done}<Check aria-label={study.locale==='zh'?'已掌握':'Mastered'}/>{/if}</span><span class="part-prompt" lang={study.locale==='zh'?'zh-CN':'en'} data-original-prompt><RichText text={part.prompt[study.locale]}/></span>{#if part.points>0}<Badge variant="outline">{part.points} {study.locale==='zh'?'分':'pts'}</Badge>{/if}</Accordion.Trigger>
   {#if part.questionFigure}<div class="part-question-figure"><Figure {assetBase} size={sizes[part.questionFigure.name]} name={part.questionFigure.name} locale={study.locale} {dark} caption={part.questionFigure.caption} original={part.questionFigure.source}/></div>{/if}
   <Accordion.Content class="part-content">
       <SolutionBody body={part.solution[study.locale]} partId={part.id} locale={study.locale} documents={study.catalog.documents} {onsource} figureName={part.figure}>
@@ -26,7 +27,7 @@
           {#if part.figure}<SolutionFigure {assetBase} size={sizes[part.figure]} name={part.figure} locale={study.locale} {dark} caption={part.figureCaption} interaction={part.interaction} {active}/>{/if}
         {/snippet}
       </SolutionBody>
-      {#if sourceNote}<Alert.Root class="solution-note"><Info aria-hidden="true"/><Alert.Title>{study.locale==='zh'?'核对说明':'Source check'}</Alert.Title><Alert.Description><RichText text={sourceNote}/></Alert.Description></Alert.Root>{/if}
+      {#if sourceNote}<Alert.Root class="solution-note"><Info aria-hidden="true"/><Alert.Title>{study.locale==='zh'?'核对说明':'Source check'}</Alert.Title><Alert.Description><ReferencedText text={sourceNote} locale={study.locale} documents={study.catalog.documents} {onsource}/></Alert.Description></Alert.Root>{/if}
     <div class="part-actions">
       <div class="flex flex-wrap items-center gap-2">
         <Button variant={done?'secondary':'outline'} size="sm" aria-label={`${study.locale==='zh'?'小问':'Part'} ${part.label}: ${study.locale==='zh'?(done?'已掌握 · 撤销':'标记已掌握'):(done?'Mastered · undo':'Mark as mastered')}`} onclick={()=>study.completed[part.id]=!done}><Check data-icon="inline-start" aria-hidden="true"/>{study.locale==='zh'?(done?'已掌握 · 撤销':'标记已掌握'):(done?'Mastered · undo':'Mark as mastered')}</Button>

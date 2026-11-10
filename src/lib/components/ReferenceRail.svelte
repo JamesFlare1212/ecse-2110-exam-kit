@@ -13,7 +13,7 @@
   import { problemFormulas } from '#lib/catalog';
   import { course, sourceName } from '../../../content/course';
   import type { Problem, Locale, SourceRef, SourceDocument } from '#lib/types';
-  let {problem,locale,documents,onsource,onlibrary,tab=$bindable('formulas')}: {problem:Problem;locale:Locale;tab?:string;documents:Record<string,SourceDocument>;onsource:(s:SourceRef)=>void;onlibrary:(kind:string)=>void}=$props();
+  let {problem,locale,documents,onsource,onlibrary,tab=$bindable('formulas')}: {problem:Pick<Problem,'id'|'parts'|'lectures'>;locale:Locale;tab?:string;documents:Record<string,SourceDocument>;onsource:(s:SourceRef)=>void;onlibrary:(kind:string)=>void}=$props();
   const formulas=$derived(problemFormulas(problem,locale));
 </script>
 <div class="reference-content">

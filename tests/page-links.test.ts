@@ -1,7 +1,7 @@
 import {describe,expect,test} from 'bun:test';
 import {pageReferences,hasPageReference,parseText,formulaReferences} from '../content/text';
 import {renderText} from '../src/lib/math';
-import {exams,formulas,documents} from '../content/catalog.server';
+import {exams,formulas,documents,documentsByLocale} from '../content/catalog.server';
 import {parseContent} from '../content/schema';
 
 const registry={'lecture-02':{pageBase:'/pages/lecture-02',pages:23},paper:{pageBase:'/papers/zh-cn/exam1_f26/pages/paper',pages:3}};
@@ -28,9 +28,25 @@ describe('Inline original-page citations',()=>{
  test('the content validator rejects invalid inline page destinations',()=>{
   const id=Object.keys(documents)[0],doc=documents[id];
   const valid=structuredClone(exams);valid[0].problems[0].parts[0].solution.en=`[Page](${doc.pageBase}/1.webp)\n\n`+valid[0].problems[0].parts[0].solution.en;
-  expect(()=>parseContent(valid,formulas,documents)).not.toThrow();
+  expect(()=>parseContent(valid,formulas,documents,documentsByLocale)).not.toThrow();
   const invalid=structuredClone(valid);invalid[0].problems[0].parts[0].solution.en=invalid[0].problems[0].parts[0].solution.en.replace(`${doc.pageBase}/1.webp`,`${doc.pageBase}/${doc.pages+1}.webp`);
-  expect(()=>parseContent(invalid,formulas,documents)).toThrow('invalid source page');
+  expect(()=>parseContent(invalid,formulas,documents,documentsByLocale)).toThrow('invalid source page');
+ });
+ test.skipIf(!exams.some(e=>e.id==='p2-f26'))('Q3 armature KVL cites each locale’s own circuit page, not a cross-language fallback',()=>{
+  const part=exams.find(e=>e.id==='p2-f26')!.problems.find(q=>q.id==='p2-f26-q3')!.parts[0];
+  for(const locale of ['en','zh'] as const){
+   expect(pageReferences(part.solution[locale],documentsByLocale[locale])).toEqual([
+    {doc:'lecture-11-12',page:24},{doc:'p2-f26-sol',page:9},{doc:'lecture-09',page:8}
+   ]);
+   expect(formulaReferences(part.solution[locale])).toEqual(['rectifier-full']);
+  }
+  expect(()=>parseContent(exams,formulas,documents,documentsByLocale)).not.toThrow();
+  for(const locale of ['en','zh'] as const){
+   const invalid=structuredClone(exams),q=invalid.find(e=>e.id==='p2-f26')!.problems.find(q=>q.id==='p2-f26-q3')!;
+   const own=locale==='en'?'en':'zh-cn',other=locale==='en'?'zh-cn':'en';
+   q.parts[0].solution[locale]=q.parts[0].solution[locale].replace(`/papers/${own}/`,`/papers/${other}/`);
+   expect(()=>parseContent(invalid,formulas,documents,documentsByLocale)).toThrow('unknown source page');
+  }
  });
  test.skipIf(!exams.some(e=>e.id==='p2-f26'))('both Q2(a) articles link the actual complex-power lecture page, without inventing a formula-sheet entry',()=>{
   const part=exams.find(e=>e.id==='p2-f26')!.problems.find(q=>q.id==='p2-f26-q2')!.parts[0];

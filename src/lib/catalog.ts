@@ -19,7 +19,7 @@ export function formulasForExam(examNumber: number) {
   const sheet = formulaSheetFor(examNumber);
   return sheet ? formulas.filter(formula => formula.source.doc === sheet) : course.resources.formulaSheets ? [] : formulas;
 }
-export function problemFormulas(problem: Problem, locale: Locale) {
+export function problemFormulas(problem: Pick<Problem, 'id' | 'parts'>, locale: Locale) {
   const ids = [...new Set(problem.parts.flatMap(p => formulaReferences(p.solution[locale])))];
   const available = new Set(formulasForExam(Number(/^[ep](\d+)/.exec(problem.id)?.[1])).map(formula => formula.id));
   return ids.map(id => formulaById[id]).filter(formula => formula && available.has(formula.id));

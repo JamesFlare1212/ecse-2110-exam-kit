@@ -30,6 +30,7 @@ export function converterMeasurements(geometry:ConductionGeometry,profile?:FullC
 export function converterCopy(locale:Locale,profile?:FullConverterProfile):ConverterCopy{
   const base=semiConverterCopy[locale];if(!profile)return base;
   const zh=locale==='zh',settings=FULL_PROFILES[profile],alpha=settings.alpha;
+  const firing=Number(alpha.toFixed(6)),nextFiring=Number((180+alpha).toFixed(6));
   const pairs=['S₃ + S₄','S₁ + S₂','S₃ + S₄'];
   const positive=zh?'正向电源电流':'Positive source current',negative=zh?'反向电源电流':'Negative source current';
   const stages=[0,1,2].map((index)=>({
@@ -43,7 +44,7 @@ export function converterCopy(locale:Locale,profile?:FullConverterProfile):Conve
   return{...base,fullPlotTitle:profile==='reversed-emf'?(zh?'完整静态电路示意':'Complete static circuit schematic'):base.fullPlotTitle,compactTitle:zh?'全控桥导通与波形':'Full converter',title:zh?'全控桥导通与波形':'Full-converter conduction and waveforms',pairs,stages,
     stageLabels:[zh?'上周期延续':'Previous pair',zh?'S₁ / S₂':'S₁ / S₂',zh?'S₃ / S₄':'S₃ / S₄'],
     compactStates:zh?['S₃、S₄ 延续导通；等待 α 触发。','S₁、S₂ 导通；跨越电源过零点仍保持电流。','S₃、S₄ 导通；负载电流方向不变。']:['S₃/S₄ remain on until firing at α.','S₁/S₂ stay on through the source zero crossing.','S₃/S₄ conduct; load current stays positive.'],
-    phaseHelp:zh?`可连续拖动 0°–360°。只有两组对角器件轮流导通；显示边界把前一组拆成首尾两段，没有二极管续流区间。触发点为 ${alpha.toFixed(6)}° 和 ${(180+alpha).toFixed(6)}°；播放跨越过零点，不自动暂停。`:`Scrub continuously from 0° to 360°. Only two diagonal pairs alternate; the display boundary splits one pair into first/last segments. There is no diode-freewheel interval. Firing: ${alpha.toFixed(6)}° and ${(180+alpha).toFixed(6)}°. Play crosses the zero crossing without pausing.`,
+    phaseHelp:zh?`可连续拖动 0°–360°。只有两组对角器件轮流导通；显示边界把前一组拆成首尾两段，没有二极管续流区间。触发点为 ${firing}° 和 ${nextFiring}°；播放跨越过零点，不自动暂停。`:`Scrub continuously from 0° to 360°. Only two diagonal pairs alternate; the display boundary splits one pair into first/last segments. There is no diode-freewheel interval. Firing: ${firing}° and ${nextFiring}°. Play crosses the zero crossing without pausing.`,
     completed:zh?'本周期结束，保持 S₃、S₄ 的末段左极限；重新播放才归零。':'Cycle complete: holding the final S₃/S₄ left limit. Restart explicitly.',
     endRelation:'360°: S₃ + S₄; v₀ = 0; i = −i₀.',
     diagram:zh?'四晶闸管全控桥；粗亮支路表示导通，中性箭头表示电枢回路约定电流方向':'Four-SCR full bridge; bold branches conduct, neutral arrows show armature-loop conventional current',

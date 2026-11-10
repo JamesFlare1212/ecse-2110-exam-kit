@@ -213,6 +213,32 @@ describe('ECSE 2110 Practice Set 2', () => {
     }
   });
 
+  test('derives Q3 armature voltage from signed KVL and periodic averaging, not a fictitious sheet formula', () => {
+    for (const locale of locales) {
+      const part = article(locale, 3).parts[0], body = part.solution;
+      expect(formulaReferences(body)).toEqual(['rectifier-full']);
+      expect(body).toContain(locale === 'en' ? "Kirchhoff's voltage law (KVL)" : '基尔霍夫电压定律（KVL）');
+      expect(body).toContain(`/papers/${locale}/practice2_f26/pages/p2-f26-sol/9.webp`);
+      expect(body).toContain('/pages/lecture-09/8.webp');
+      expect(body).toContain('+v_0(t)-L_a\\frac{di_0}{dt}-R_ai_0(t)-E_a&=0');
+      expect(body).toContain('i_0(T)=i_0(0)');
+      expect(body).toContain('\\frac{E_a}{T}[t]_0^T');
+      expect(body).toContain('\\frac{L_a}{T}[i_0(t)]_0^T');
+      expect(body).toContain('\\bigl[i_0(T)-i_0(0)\\bigr]');
+      expect(body).toContain('&=E_a+R_aI_0.');
+      expect(body).toContain('E_a=-k_nn');
+      expect(body).toContain(locale === 'en' ? 'not from reversing the drawn voltage reference' : '不是把图中的参考极性翻转');
+      expect(body).toContain(locale === 'en' ? 'has not been set to zero' : '设为零');
+      expect(displayEquations(body).at(-1)).toContain('65.018979');
+    }
+    // A nonzero finite L and periodic ripple can have zero mean inductive drop:
+    // the mean relation follows from endpoint equality, not from L = 0.
+    const L = .025, T = 1 / 60, mean = 20, amplitude = 4;
+    const current = (t: number) => mean + amplitude * Math.sin(2 * Math.PI * t / T);
+    expect(L / T * (current(T) - current(0))).toBeCloseTo(0, 12);
+    expect(L * amplitude * 2 * Math.PI / T).toBeGreaterThan(0);
+  });
+
   test('reversed-emf full converter sends both source powers to armature heating', () => {
     const voltage = 2 * Math.sqrt(2) * 120 / Math.PI * Math.cos(Math.PI / 3);
     const current = voltage + 11;

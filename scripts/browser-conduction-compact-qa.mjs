@@ -3,6 +3,8 @@ import {strict as assert} from 'node:assert';
 import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {course} from '../content/course.ts';
 import {exams} from '../content/catalog.server.ts';
+import {semiConverterCopy} from '../src/lib/visualizations/semi-converter-copy.ts';
+import {checkConverterHelp} from './browser-converter-help-qa.mjs';
 if(!exams.some(exam=>exam.problems.some(problem=>problem.id==='p2-f26-q4'&&problem.parts.some(part=>part.interaction?.kind==='semi-converter')))){
  console.log('SKIP: the approved semi-converter is not mounted');process.exit(0);
 }
@@ -36,9 +38,8 @@ try{
   await fit.click();assert.equal(await dialog.locator('.figure-enlarged').getAttribute('data-fit-width'),'false');await dialog.getByRole('button',{name:locale==='zh'?'适应窗口':'Fit view',exact:true}).click();
   await page.keyboard.press('Escape');await dialog.waitFor({state:'detached'});assert(await trigger.evaluate(e=>document.activeElement===e));
   assert(Math.abs((await card.boundingBox()).height-box.height)<1);
-  await widget.locator('[data-conduction-help]').click();assert(await page.getByText(locale==='zh'?'读图说明':'Reading this diagram',{exact:true}).count());
-  if(width===390||width===1440)await page.screenshot({path:`${out}/help-${locale}-${theme}-${width}.png`});
-  await page.keyboard.press('Escape');assert.equal(await widget.getAttribute('data-playing'),'false');
+  await checkConverterHelp(page,widget,semiConverterCopy[locale],0,false,width===390||width===1440?`${out}/help-${locale}-${theme}-${width}.png`:undefined);
+  assert.equal(await widget.getAttribute('data-playing'),'false');
   // Boundary information remains visible without opening help.
   await widget.getByRole('radio').nth(2).click();assert((await widget.locator('.conduction-state').textContent()).includes(locale==='zh'?'转负':'negative'));
   await card.screenshot({path:`${out}/reverse-${locale}-${theme}-${width}.png`});

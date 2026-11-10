@@ -96,7 +96,7 @@ try{
    assert.ok(await p.locator('#problem-title').isVisible());
    releaseScripts();await ready(p);
    // Study controls work while every independently fetched font stays pending.
-   await p.locator('.solution-section-heading button').click();
+   await p.locator('[data-solution-toggle]').click();
    assert.equal(await p.locator('.part-trigger[aria-expanded=true]').count(),await p.locator('.part-trigger').count());
    await p.waitForTimeout(3100);
    assert.ok(await p.locator('[data-original-statement]').isVisible());

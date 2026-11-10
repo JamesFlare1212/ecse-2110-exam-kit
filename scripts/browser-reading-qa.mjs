@@ -15,7 +15,7 @@ try{
   await c.addInitScript(({key,locale,theme})=>{if(location.protocol==='http:')localStorage.setItem(key,JSON.stringify({version:1,locale,theme}));},{key,locale,theme});
   const p=await c.newPage();p.setDefaultTimeout(10000);let parts=0,figures=0,formulaHints=0;
   for(const id of ids){
-   await go(p,id);await p.locator('.solution-section-heading button').click();
+   await go(p,id);await p.locator('[data-solution-toggle]').click();
    await p.waitForFunction(()=>[...document.querySelectorAll('.part-trigger')].every(e=>e.getAttribute('aria-expanded')==='true'));
    assert.ok(await fit(p),id+' document fits');
    const result=await p.locator('.study-figure').evaluateAll(figs=>figs.filter(e=>e.getClientRects().length).map(e=>({name:e.dataset.figure,alt:e.querySelector('img')?.alt,canvas:e.querySelector('.figure-canvas').getBoundingClientRect().height,imageWidth:e.querySelector('.figure-canvas').getBoundingClientRect().width,viewport:e.querySelector('.figure-image').clientWidth,hint:!!e.querySelector('.figure-scroll-hint')})));
@@ -32,7 +32,7 @@ try{
  let release;const gate=new Promise(r=>release=r);
  await p.route('**/papers/**/figures/*.svg',async route=>{await gate;await route.continue();});
  await go(p,'e2-s26-q3');
- const geometry=()=>p.locator('.study-figure').first().evaluate(e=>({height:e.getBoundingClientRect().height,next:document.querySelector('.worked-solution').getBoundingClientRect().top,loaded:e.querySelector('img').complete}));
+ const geometry=()=>p.locator('.study-figure').first().evaluate(e=>({height:e.getBoundingClientRect().height,next:document.querySelector('[data-solution-toggle]').getBoundingClientRect().top,loaded:e.querySelector('img').complete}));
  const before=await geometry();assert.equal(before.loaded,false);release();await p.waitForFunction(()=>document.querySelector('.study-figure img').naturalWidth>0);const after=await geometry();assert.ok(Math.abs(before.height-after.height)<1);assert.ok(Math.abs(before.next-after.next)<1);
  pass('L2: delayed figure responses do not move the figure frame or subsequent content',{before,after});await p.unroute('**/papers/**/figures/*.svg');
  let releasePages;const pagesGate=new Promise(r=>releasePages=r);
@@ -44,7 +44,7 @@ try{
  await p.route('**/papers/**/figures/e2-s26-q3.svg',r=>r.fulfill({status:404,body:'test failure'}));await go(p,'e2-s26-q3');await p.getByText('图示加载失败，可重试或查看原卷。',{exact:true}).waitFor();assert.ok(await p.locator('.figure-toolbar button[aria-label="放大图示"]').first().isDisabled());await p.unroute('**/papers/**/figures/e2-s26-q3.svg');await p.getByRole('button',{name:'重试图示',exact:true}).click();await p.waitForFunction(()=>document.querySelector('.study-figure img')?.naturalWidth>0);pass('I15: failed figure disables enlargement and has a working retry');
  // Saving error must be in the viewport, retain dirty changes, and recover on retry.
  await p.evaluate(key=>{const original=Storage.prototype.setItem;window.restoreStorage=()=>Storage.prototype.setItem=original;Storage.prototype.setItem=function(k,v){if(k===key)throw new DOMException('test quota','QuotaExceededError');return original.call(this,k,v);};},key);
- await p.locator('.solution-section-heading button').click();await p.locator('.part-actions button').first().click();await p.locator('.storage-status').waitFor();assert.ok(await p.locator('.storage-status').evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight;}));await p.evaluate(()=>window.restoreStorage());await p.getByRole('button',{name:'重试保存',exact:true}).click();await p.waitForFunction(()=>!document.querySelector('.storage-status'));assert.equal(await p.evaluate(key=>JSON.parse(localStorage.getItem(key)).completed['e2-s26-q3-a'],key),true);pass('I13: storage failures are visible where reading continues; retry saves pending progress');
+ await p.locator('[data-solution-toggle]').click();await p.locator('.part-actions button').first().click();await p.locator('.storage-status').waitFor();assert.ok(await p.locator('.storage-status').evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight;}));await p.evaluate(()=>window.restoreStorage());await p.getByRole('button',{name:'重试保存',exact:true}).click();await p.waitForFunction(()=>!document.querySelector('.storage-status'));assert.equal(await p.evaluate(key=>JSON.parse(localStorage.getItem(key)).completed['e2-s26-q3-a'],key),true);pass('I13: storage failures are visible where reading continues; retry saves pending progress');
  // Short dialogs keep their header, controls and close action accessible.
  await p.setViewportSize({width:667,height:375});await p.locator('.figure-toolbar button[aria-label="放大图示"]').first().click();assert.ok(await p.locator('.figure-dialog').evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight;}));await p.keyboard.press('Escape');pass('I7: enlarged figure dialog stays within short landscape viewport');
  await p.setViewportSize({width:320,height:568});await p.locator('[data-sidebar-toggle=navigation]').click();
