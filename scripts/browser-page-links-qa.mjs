@@ -9,6 +9,7 @@ const base=process.env.QA_URL||'http://127.0.0.1:4173',out='artifacts/page-links
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']}),checks=[];
 const fontCSS=process.env.QA_CJK_CSS?await readFile(process.env.QA_CJK_CSS,'utf8'):'';
 const armature=exams.flatMap(exam=>exam.problems).find(question=>question.id==='p2-f26-q3')?.parts[0];
+const semiAverage=exams.flatMap(exam=>exam.problems).find(question=>question.id==='p2-f26-q4')?.parts.find(part=>part.label==='b');
 try{
  for(const locale of ['zh','en'])for(const theme of ['light','dark'])for(const width of [390,1440]){
   const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'});
@@ -41,9 +42,23 @@ try{
    assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
    checks.push({question:'p2-f26-q3',locale,theme,width,circuitPage:9,independentLocalePage:true,completeKVL:true,result:'pass'});
   }
+  if(semiAverage){
+   await p.goto(`${base}/problems/p2-f26-q4/`);await p.waitForSelector('[data-study-ready=true]');
+   if(locale==='zh'&&fontCSS)await p.addStyleTag({content:fontCSS});await p.evaluate(()=>document.fonts.ready);
+   const part=p.locator('[data-part=p2-f26-q4-b]');await part.locator('.part-trigger').click();
+   assert.deepEqual(await part.locator('.solution-body .math-display').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('data-math'))),displayEquations(semiAverage.solution[locale]),'Preserve the sheet formula, factor-of-two adaptation and full current/PF calculation');
+   const formula=part.locator('.formula-link-inline');assert.equal(await formula.count(),1);assert.equal(await formula.getAttribute('href'),'/pages/reference-exam2/2.webp');
+   await part.screenshot({path:`${out}/q4-sheet-${locale}-${theme}-${width}.png`});
+   if(width===1440){await formula.hover();const preview=p.locator('[data-slot=hover-card-content]:visible');await preview.waitFor();assert.equal(await preview.locator('.original-excerpt img').getAttribute('src'),'/excerpts/rectifier-controlled-half.webp');}
+   await formula.focus();await p.keyboard.press('Enter');await dialog.waitFor();
+   assert.equal(await dialog.locator('#source-page').inputValue(),'2');assert.equal(await dialog.locator('.source-paper img').getAttribute('src'),'/pages/reference-exam2/2.webp');assert.equal(await dialog.locator('[data-source-highlight]').count(),1);assert.equal(await dialog.locator('a[href$=".pdf"]').count(),0);
+   await p.keyboard.press('Escape');await dialog.waitFor({state:'detached'});assert(await formula.evaluate(node=>node===document.activeElement));
+   assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));checks.push({question:'p2-f26-q4',locale,theme,width,sheetPage:2,formula:'rectifier-controlled-half',twoPulses:true,result:'pass'});
+  }
   assert.deepEqual(errors,[]);await context.close();
  }
  const c=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}}),p=await c.newPage();await p.goto(`${base}/problems/p2-f26-q2/`);const link=p.locator('[data-page-source-link="lecture-02"]');assert(await link.isVisible());assert.equal(await link.getAttribute('href'),'/pages/lecture-02/13.webp');if(armature){await p.goto(`${base}/problems/p2-f26-q3/`);const source=p.locator('[data-part=p2-f26-q3-a] [data-page-source-link="p2-f26-sol"]');assert(await source.isVisible());assert.equal(await source.getAttribute('href'),'/papers/zh-cn/practice2_f26/pages/p2-f26-sol/9.webp');assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
+ if(semiAverage){await p.goto(`${base}/problems/p2-f26-q4/`);const source=p.locator('[data-part=p2-f26-q4-b] .formula-link-inline');assert(await source.isVisible());assert.equal(await source.getAttribute('href'),'/pages/reference-exam2/2.webp');}
  await c.close();checks.push({noJavaScript:true,result:'pass'});
  await writeFile(`${out}/report.json`,JSON.stringify({checks},null,2));console.log('PASS',JSON.stringify(checks));
 }finally{await browser.close();}

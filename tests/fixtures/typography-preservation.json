@@ -2528,11 +2528,13 @@
         "sourcePage": 5,
         "solutionPage": 6,
         "prompt": "04c9d4533c2cdb78fc4ee57f51d089bf6c07c5f32b6ec990382287013bbb9de9",
-        "displayed": "4e570e02a5b8d54ec47b63b05ae71bb3c2d5b0766a1ef41769587b4672a8e17a",
-        "formulas": [],
+        "displayed": "25dc90aa476ad33020321f312cf3eba714d7ed376c2dfb4cfee9d4c0d3ee8877",
+        "formulas": [
+          "rectifier-controlled-half"
+        ],
         "figures": [],
-        "solutionText": "396f672c3b895b837146b50dca8a9c23a9cdbc7121440ff19f26e33ac9da3506",
-        "note": "03aeca990b7f08cbc58380dd94163b04fb6bbac3913bc21ff01f72fff8d63eee",
+        "solutionText": "fccf81b1fe629f6ec4cc90fd57028a4927728dfa1425bc878d47715690266829",
+        "note": "4b1cedaca9064a35d358adb090bd8c487c3460e72280890df856c6a4f5b9737d",
         "caption": null
       },
       {
@@ -5314,11 +5316,13 @@
         "sourcePage": 5,
         "solutionPage": 6,
         "prompt": "1c82f8620373469ed6b551e5af5fe61e5580e76137da6620fb75359416e0727f",
-        "displayed": "4e570e02a5b8d54ec47b63b05ae71bb3c2d5b0766a1ef41769587b4672a8e17a",
-        "formulas": [],
+        "displayed": "25dc90aa476ad33020321f312cf3eba714d7ed376c2dfb4cfee9d4c0d3ee8877",
+        "formulas": [
+          "rectifier-controlled-half"
+        ],
         "figures": [],
-        "solutionText": "09d5857ba879b2b6d15155850e57cb169a0c7f41207750caccdde796576f58fe",
-        "note": "5a828525aa9d5796433b9ba220e461db8dfe7c7517a9cfad5404b6b34533bbf3",
+        "solutionText": "7d71ef1e06bda025e1232b2b60e715a785e6f25fb67855b926b2faa9ac43cd97",
+        "note": "6cd9051b6cf882d5cd1be8fc0d328619f4f22bcb74527dd78a18995a2135bb43",
         "caption": null
       },
       {

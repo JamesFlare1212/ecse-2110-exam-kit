@@ -255,6 +255,40 @@ describe('ECSE 2110 Practice Set 2', () => {
     }
   });
 
+  test('Q4(b) adapts the supplied half-wave voltage with two pulses, without changing the current or PF calculation', () => {
+    const sheet = json(resolve(root, 'content/formulas.json')).find((formula: any) => formula.id === 'rectifier-controlled-half');
+    expect(sheet.source.doc).toBe('reference-exam2');expect(sheet.source.page).toBe(2);
+    expect(sheet.math).toBe('V_{dc}=\\frac{V_p}{\\sqrt2\\pi}(1+\\cos\\alpha)');
+    for (const locale of locales) {
+      const part = article(locale, 4).parts[1], body = part.solution, equations = displayEquations(body);
+      expect(formulaReferences(body)).toEqual(['rectifier-controlled-half']);
+      expect(body).toContain(locale === 'en' ? 'RMS supply voltage' : '电源电压有效值');
+      expect(body).toContain(locale === 'en' ? 'two identical positive output-voltage pulses' : '两个同形的正向输出电压脉冲');
+      expect(equations[0]).toBe('V_{\\mathrm{hw}}=\\frac{V_p}{\\sqrt2\\pi}(1+\\cos\\alpha).');
+      expect(equations[1]).toContain('V_0&=2V_{\\mathrm{hw}}');
+      expect(equations[1]).toContain('2\\frac{V}{\\sqrt2\\pi}(1+\\cos\\alpha)');
+      expect(equations[1]).toContain('93.632897');expect(equations[1]).toContain('9.363290');
+      expect(equations[2]).toContain('\\frac{2}{2\\pi}\\int_\\alpha^\\pi I_0^2');
+      expect(equations[2]).toContain('6.620846');expect(equations[2]).toContain('876.711938');
+      expect(equations.at(-1)).toContain('0.636620');expect(part.note).toContain('0.637');
+    }
+    // Integrate the actual two positive voltage pulses independently. Only their
+    // areas are reused: this does not import a resistive half-wave current model.
+    const voltage = 208, peak = Math.SQRT2 * voltage, n = 10000;
+    for (const alpha of [0, Math.PI / 6, Math.PI / 2, 2 * Math.PI / 3, Math.PI]) {
+      const step = (Math.PI - alpha) / n;
+      let positive = 0, negativeRectified = 0;
+      for (let k = 0; k < n; k++) {
+        const theta = alpha + (k + .5) * step;
+        positive += peak * Math.sin(theta) * step;
+        negativeRectified += -peak * Math.sin(Math.PI + theta) * step;
+      }
+      const half = voltage / (Math.SQRT2 * Math.PI) * (1 + Math.cos(alpha));
+      expect(positive / (2 * Math.PI)).toBeCloseTo(half, 5);
+      expect((positive + negativeRectified) / (2 * Math.PI)).toBeCloseTo(2 * half, 5);
+    }
+  });
+
   test('semi-converter integration includes freewheeling, RMS duty and correct diode paths', () => {
     const n = 120000, step = 2 * Math.PI / n, alpha = Math.PI / 2;
     const vm = Math.sqrt(2) * 208;
