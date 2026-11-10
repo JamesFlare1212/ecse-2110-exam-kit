@@ -58,6 +58,9 @@ lifetime mismatch.
   persisted island, all four converter questions, ordinary questions, history,
   locale/theme changes and navigation during a held lazy import. Run it against
   both development and production; CI covers both, not just cold production URLs.
+  Its development step now uses `scripts/browser-cold-dev-qa.mjs` to own an empty
+  temporary optimizer cache and ephemeral port, so a warm local cache cannot hide
+  [first-request dependency invalidation](ci-cold-dev-imports.md).
 
 ## Verification
 

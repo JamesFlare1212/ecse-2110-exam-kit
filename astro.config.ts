@@ -12,6 +12,15 @@ export default defineConfig({
   server: { host: '127.0.0.1', port: 5173 },
   integrations: [svelte()],
   vite: {
+    // The virtual astro:transitions/client facade is discovered only at request
+    // time. Include its resolved re-exports before the first browser loads the
+    // dev toolbar, otherwise re-optimization invalidates that toolbar's chunks.
+    environments: { client: { optimizeDeps: { include: [
+      'astro/virtual-modules/transitions-router.js',
+      'astro/virtual-modules/transitions-types.js',
+      'astro/virtual-modules/transitions-events.js',
+      'astro/virtual-modules/transitions-swap-functions.js',
+    ] } } },
     plugins: [tailwindcss(), papersPlugin()],
     build: { assetsInlineLimit: criticalFontInlineLimit },
     server: { watch: {

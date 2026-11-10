@@ -18,8 +18,9 @@ test('CI isolates browser suites from the unit/build job and keeps all shards bo
  expect(browser.steps.find((step:any)=>step.name==='Run production browser suite').run).toContain("trap 'bun --bun astro preview stop' EXIT");
  expect(browser.steps.find((step:any)=>step.name==='Install locked dependencies and build the same ref').run).toContain('bun install --frozen-lockfile');
  const development=browser.steps.find((step:any)=>step.name==='Check lazy converter styles across development navigation');
- expect(development.if).toBe("matrix.suite == 'navigation'");expect(development.env.QA_URL).toBe('http://127.0.0.1:5173');
- expect(development.run).toContain('bun scripts/browser-converter-navigation-qa.mjs');
+ expect(development.if).toBe("matrix.suite == 'navigation'");expect(development.env.QA_URL).toBeUndefined();
+ expect(development.env.QA_STYLE_ARTIFACTS).toBe('artifacts/converter-navigation-dev');
+ expect(development.run).toBe('bun scripts/browser-cold-dev-qa.mjs');
  expect(browser.steps.find((step:any)=>step.name==='Upload browser diagnostics on failure').with.name).toBe('browser-diagnostics-${{ matrix.suite }}');
 });
 

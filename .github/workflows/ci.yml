@@ -99,12 +99,8 @@ jobs:
       - name: Check lazy converter styles across development navigation
         if: matrix.suite == 'navigation'
         env:
-          QA_URL: http://127.0.0.1:5173
           QA_STYLE_ARTIFACTS: artifacts/converter-navigation-dev
-        run: |
-          trap 'bun --bun astro dev stop' EXIT
-          bun run dev --background
-          bun scripts/browser-converter-navigation-qa.mjs
+        run: bun scripts/browser-cold-dev-qa.mjs
       - name: Upload browser diagnostics on failure
         if: failure()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

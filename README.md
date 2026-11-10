@@ -56,7 +56,7 @@ bun run build
 
 ### GitHub CI
 
-`.github/workflows/ci.yml` 在推送 `master`／`main`、PR 和手动触发时运行。`app-checks` 先执行类型检查、完整题库／元数据校验、测试与静态构建；浏览器回归按 `scripts/browser-ci-suites.ts` 分为 startup、reading、conduction、converter-focus、sources、navigation 六个独立并行任务，每组保留 15 分钟时限，避免把所有检查串在同一任务里超时。各组独立构建核心任务记录的同一提交 SHA，失败诊断按组保存；原有 `App checks, tests and build` 检查名作为汇总门禁，仅在核心检查和所有浏览器分组通过后成功，不会因拆分而提前放行；navigation 组另查开发服务器的样式生命周期。Python 3.12／3.14 任务仅安装 `scripts/requirements-figures.txt` 做图形和嵌入字体检查。
+`.github/workflows/ci.yml` 在推送 `master`／`main`、PR 和手动触发时运行。`app-checks` 先执行类型检查、完整题库／元数据校验、测试与静态构建；浏览器回归按 `scripts/browser-ci-suites.ts` 分为 startup、reading、conduction、converter-focus、sources、navigation 六个独立并行任务，每组保留 15 分钟时限，避免把所有检查串在同一任务里超时。各组独立构建核心任务记录的同一提交 SHA，失败诊断按组保存；原有 `App checks, tests and build` 检查名作为汇总门禁，仅在核心检查和所有浏览器分组通过后成功，不会因拆分而提前放行；navigation 组另用全新临时 Vite 缓存和临时端口启动开发服务器，检查首次访问及样式生命周期，不复用已预热缓存或停掉现有开发服务器。Python 3.12／3.14 任务仅安装 `scripts/requirements-figures.txt` 做图形和嵌入字体检查。
 
 CI **无需 PDF、资源包地址或秘密变量**。实际原文件的散列、PDF 对象和源裁图检查属于下面的可选离线维护流程，不伪装成网页构建的依赖。
 
@@ -141,6 +141,11 @@ PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
 # 对已启动的 bun run dev 再运行一次：
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
   QA_URL=http://127.0.0.1:5173 bun scripts/browser-converter-navigation-qa.mjs
+# 冷启动回归自行管理临时服务器和空缓存，无需停止现有 dev：
+PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
+  bun scripts/browser-cold-dev-qa.mjs
 ```
+
+开发端会提前预打包 `astro:transitions/client` 的实际重导出，避免首次导航触发重新优化并使开发工具栏模块失效；保留工具栏、懒加载及所有浏览器错误断言。详见 [冷启动 CI 调查](docs/reviews/ci-cold-dev-imports.md)。
 
 ECSE 2110 数值和内容测试保持启用；上游 ECSE 2100 专属回归按课程 ID 跳过。自动检查不替代科学推导、原文、翻译和最终图示的人工核对。
