@@ -2,7 +2,8 @@ import {atCycleAngle} from './semi-converter-model.mjs';
 import {pointOnRoute,type ConductionGeometry,type Point} from './conduction-geometry';
 import {waveX} from './converter-wave-scale';
 
-export type WaveKey='v'|'i'|'v0'|'i0'|'is1'|'is2'|'id1'|'id2'|'vs1'|'is3'|'is4';
+import type {ConverterSignal} from '../types';
+export type WaveKey=ConverterSignal;
 export type SemiWaveKey=Exclude<WaveKey,'is3'|'is4'>;
 export type ConverterValues=Record<WaveKey,number>&{phase:number;index:number};
 export interface Signal {key:WaveKey;symbol:string;unit:string;token:string;dash:string;pattern:string;trace:string}
@@ -17,7 +18,12 @@ const signals={
   id1:signal('id1','iᴅ₁','diode-current'),id2:signal('id2','iᴅ₂','diode-current','dashed','5 3'),
   vs1:signal('vs1','vₛ₁','thyristor-voltage','dashdot','8 2 2 2'),
 };
-export const defaultMeasurements:Record<WaveKey,boolean>={v:true,i:true,v0:true,i0:true,is1:false,is2:false,id1:false,id2:false,vs1:false,is3:false,is4:false};
+/** Each question declares its own initial focus; toggles remain independent per instance. */
+export function createMeasurementSelection(defaultSignals:readonly WaveKey[]):Record<WaveKey,boolean>{
+  const enabled:Record<WaveKey,boolean>={v:false,i:false,v0:false,i0:false,is1:false,is2:false,id1:false,id2:false,vs1:false,is3:false,is4:false};
+  for(const key of defaultSignals)enabled[key]=true;
+  return enabled;
+}
 
 /** Q4's existing equal-unit drawing coordinates, recovered from the owned sidecar.
  * Probes are annotations, never new connections. S1 voltage is anode minus cathode.

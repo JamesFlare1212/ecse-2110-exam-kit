@@ -24,5 +24,5 @@ test('converter owns a local thumb-above-ticks stack and keeps labels outside th
  expect(css).toContain('.conduction-boundaries>span:last-child::before { left:100%; }');
  // Raising the whole root would hide the ticks behind the track itself.
  expect(css).not.toMatch(/\.conduction-phase \[data-slot=slider\] \{[^}]*z-index:/);
- for(const path of ['.github/workflows/ci.yml','README.md'])expect(read(path)).toContain('scripts/browser-converter-slider-qa.mjs');
+ for(const path of ['scripts/browser-ci-suites.ts','README.md'])expect(read(path)).toContain('scripts/browser-converter-slider-qa.mjs');
 });

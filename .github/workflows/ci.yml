@@ -20,15 +20,20 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  app:
-    name: App checks, tests and build
+  app-checks:
+    name: App type checks, tests and build
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      sha: ${{ steps.revision.outputs.sha }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ inputs.ref || github.ref }}
+          ref: ${{ inputs.ref || github.sha }}
           persist-credentials: false
+      - name: Record tested revision
+        id: revision
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '24'
@@ -49,60 +54,82 @@ jobs:
         run: bun test
       - name: Build static app
         run: bun run build
-      - name: Install isolated startup-test browser
+
+  browser:
+    name: Browser (${{ matrix.suite }})
+    needs: app-checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        suite: [startup, reading, conduction, converter-focus, sources, navigation]
+    env:
+      QA_URL: http://127.0.0.1:4173
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.app-checks.outputs.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+      - name: Install pinned Bun from npm
+        run: |
+          bun_version="$(node -e 'const match=/^bun@(\d+\.\d+\.\d+)$/.exec(require("./package.json").packageManager); if(!match) throw new Error("Pin a stable Bun version in packageManager"); process.stdout.write(match[1]);')"
+          npm install --global "bun@$bun_version"
+          test "$(bun --version)" = "$bun_version"
+      - name: Install locked dependencies and build the same ref
+        run: |
+          bun install --frozen-lockfile
+          bun run build
+      - name: Install isolated browser
         run: |
           mkdir -p "$RUNNER_TEMP/fieldnotes-browser"
           bun add --cwd "$RUNNER_TEMP/fieldnotes-browser" playwright@1.64.1
           bun "$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/cli.js" install --with-deps chromium
-      - name: Check cold reading, delayed fonts and font budgets
+          echo "PLAYWRIGHT_MODULE=$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" >> "$GITHUB_ENV"
+      - name: Run production browser suite
+        env:
+          QA_SUITE: ${{ matrix.suite }}
         run: |
           trap 'bun --bun astro preview stop' EXIT
           bun run preview --background
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-startup-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-course-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-reader-layout-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-reader-sections-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-sidebar-controls-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-conduction-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-conduction-compact-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-converter-slider-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-converter-waves-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-conduction-colors-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-full-converter-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-converter-navigation-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-page-links-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-course-citations-qa.mjs
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:4173 bun scripts/browser-content-typography-qa.mjs
+          bun scripts/browser-ci.mjs "$QA_SUITE"
       - name: Check lazy converter styles across development navigation
+        if: matrix.suite == 'navigation'
+        env:
+          QA_URL: http://127.0.0.1:5173
+          QA_STYLE_ARTIFACTS: artifacts/converter-navigation-dev
         run: |
           trap 'bun --bun astro dev stop' EXIT
           bun run dev --background
-          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
-            QA_URL=http://127.0.0.1:5173 QA_STYLE_ARTIFACTS=artifacts/converter-navigation-dev \
-            bun scripts/browser-converter-navigation-qa.mjs
+          bun scripts/browser-converter-navigation-qa.mjs
       - name: Upload browser diagnostics on failure
         if: failure()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: app-browser-diagnostics
+          name: browser-diagnostics-${{ matrix.suite }}
           path: artifacts/
           if-no-files-found: ignore
           retention-days: 7
+
+  # Preserve the existing required check name, but do not turn it green until
+  # every browser shard passed. always() also makes skipped/failed prerequisites fail.
+  app:
+    name: App checks, tests and build
+    if: always()
+    needs: [app-checks, browser]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require successful core checks and every browser suite
+        env:
+          APP_RESULT: ${{ needs.app-checks.result }}
+          BROWSER_RESULT: ${{ needs.browser.result }}
+        run: |
+          test "$APP_RESULT" = success
+          test "$BROWSER_RESULT" = success
 
   figure-tools:
     name: Figure tools (Python ${{ matrix.python }})
@@ -118,7 +145,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ inputs.ref || github.ref }}
+          ref: ${{ inputs.ref || github.sha }}
           persist-credentials: false
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:

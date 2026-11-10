@@ -56,7 +56,7 @@ bun run build
 
 ### GitHub CI
 
-`.github/workflows/ci.yml` 在推送 `master`／`main`、PR 和手动触发时运行。前端执行类型检查、完整题库／元数据校验、测试、静态构建及桌面／手机浏览器回归；Python 3.12／3.14 任务仅安装 `scripts/requirements-figures.txt` 做图形和嵌入字体检查。
+`.github/workflows/ci.yml` 在推送 `master`／`main`、PR 和手动触发时运行。`app-checks` 先执行类型检查、完整题库／元数据校验、测试与静态构建；浏览器回归按 `scripts/browser-ci-suites.ts` 分为 startup、reading、conduction、converter-focus、sources、navigation 六个独立并行任务，每组保留 15 分钟时限，避免把所有检查串在同一任务里超时。各组独立构建核心任务记录的同一提交 SHA，失败诊断按组保存；原有 `App checks, tests and build` 检查名作为汇总门禁，仅在核心检查和所有浏览器分组通过后成功，不会因拆分而提前放行；navigation 组另查开发服务器的样式生命周期。Python 3.12／3.14 任务仅安装 `scripts/requirements-figures.txt` 做图形和嵌入字体检查。
 
 CI **无需 PDF、资源包地址或秘密变量**。实际原文件的散列、PDF 对象和源裁图检查属于下面的可选离线维护流程，不伪装成网页构建的依赖。
 
@@ -118,11 +118,15 @@ PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
 
 阅读区布局回归覆盖 320–2560 px、1180 px 两侧、侧栏开合、中英与深浅主题，检查内容宽度连续变化、手机抽屉及无 JavaScript 的布局。顶栏侧栏按钮回归覆盖居中、按压不位移、左右提示边缘对齐、快捷键与手机抽屉。阅读结构回归确认退役导读及其标题不在 DOM 中，验证全局／逐问展开、完整解答和旧记录兼容；历史 `Guide` 源文不再下发到阅读页。课程引用回归逐页核对中英文解答和纠错说明的原页链接、资源可达性、来源查看器与焦点返回；`content:check` 同时拒绝正文中纯文本的讲义引用。核对范围与记录见 [课程资料引用审查](docs/reviews/course-citation-links.md)。
 
+变流器默认波形由每小问的 `interaction.defaultSignals` 指定，必须对应题干所求，双语一致且符合桥的拓扑；不是全局的四条预设。Q4(a) 默认点亮所求八条，Q3(a) 聚焦 I₀，Q5(b)(iv)／Q6(a) 保留题目要求的四条。灰色参考波仍可手动点亮，选择不写入学习记录。
+
 变流器滑块回归覆盖 Q3–Q6、中英／深浅主题、320–1440 px（含 1.5 倍像素密度），核对五个刻度与圆点／填充的真实角坐标、按钮与轨道中心线、圆点盖住刻度的实际像素，以及拖动、点击、0.1° 键盘输入和触屏操作。
 
 ```bash
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
   QA_URL=http://127.0.0.1:4173 bun scripts/browser-converter-slider-qa.mjs
+PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
+  QA_URL=http://127.0.0.1:4173 bun scripts/browser-converter-defaults-qa.mjs
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
   QA_URL=http://127.0.0.1:4173 bun scripts/browser-converter-waves-qa.mjs
 ```

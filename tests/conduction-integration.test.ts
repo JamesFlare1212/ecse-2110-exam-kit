@@ -17,12 +17,12 @@ describe.skipIf(!p2)('production semi-converter progressive enhancement',()=>{
   test('only the opted-in solution figure is enhanced, with a full authored static fallback',()=>{
     const opted=exams.flatMap(e=>e.problems.flatMap(q=>q.parts)).filter(p=>p.interaction?.kind==='semi-converter');
     expect(opted.map(p=>p.id)).toEqual(['p2-f26-q4-a']);
-    expect(opted[0].interaction).toEqual({kind:'semi-converter',asset:'p2-f26-q4-conduction'});
+    expect(opted[0].interaction).toEqual({kind:'semi-converter',asset:'p2-f26-q4-conduction',defaultSignals:['i0','v0','is1','is2','id1','id2','i','vs1']});
     for(const locale of ['en','zh'] as const)expect(solutionFigures(opted[0].solution[locale])).toEqual([opted[0].figure!]);
   });
   test('metadata rejects unsupported models, unsafe asset paths and missing static figures',()=>{
     const source=readTemplate('question.en.md'),resources=JSON.parse(readTemplate('figure-sources.json'));
-    const withFigure=source.replace('    points: 4','    points: 4\n    figure: e1-f00-q1-circuit\n    interaction: {kind: semi-converter, asset: e1-f00-q1-conduction}');
+    const withFigure=source.replace('    points: 4','    points: 4\n    figure: e1-f00-q1-circuit\n    interaction: {kind: semi-converter, asset: e1-f00-q1-conduction, defaultSignals: [i0]}');
     expect(readQuestionMarkdown(withFigure,'test.md',resources).parts[0].interaction?.kind).toBe('semi-converter');
     expect(()=>readQuestionMarkdown(withFigure.replace('    figure: e1-f00-q1-circuit\n',''),'test.md',resources)).toThrow('static fallback');
     expect(()=>readQuestionMarkdown(withFigure.replace('kind: semi-converter','kind: arbitrary-html'),'test.md',resources)).toThrow('frontmatter');

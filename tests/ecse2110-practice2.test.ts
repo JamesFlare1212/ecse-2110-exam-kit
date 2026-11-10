@@ -153,7 +153,7 @@ describe('ECSE 2110 Practice Set 2', () => {
       expect(question.parts[0].id).toBe('p2-f26-q3-a');
       expect(question.parts[0].figure).toBe('p2-f26-q3-circuit');
       expect(question.parts[0].solution).toContain('(figure:p2-f26-q3-circuit)');
-      expect(question.parts[0].interaction).toEqual({kind:'full-converter',asset:'p2-f26-q3-conduction',profile:'reversed-emf'});
+      expect(question.parts[0].interaction).toEqual({kind:'full-converter',asset:'p2-f26-q3-conduction',profile:'reversed-emf',defaultSignals:['i0']});
       expect(existsSync(resolve(directory(locale), 'assets/original-figures/p2-f26-q3.webp'))).toBe(false);
       const review = json(resolve(directory(locale), 'extracted/source-review.json'));
       expect(review.questions[2].matchedPromptDiagram).toMatchObject({reference:'10.21',sourceQuestion:'p2-f26-q6',sourcePage:9});

@@ -112,7 +112,13 @@ Avoid repeating defaults:
   without a marker retain their historical end-of-solution placement for compatibility;
   all current course solution figures have explicit authored placements.
   An explicitly approved solution may additionally set
-  `interaction: {kind: semi-converter, asset: p2-f26-q4-conduction}`.
+  `interaction: {kind: semi-converter, asset: p2-f26-q4-conduction, defaultSignals: [i0, v0, is1, is2, id1, id2, i, vs1]}`.
+  Every interaction must declare a nonempty, unique `defaultSignals` list matching
+  the quantities requested by that printed part, with identical metadata in both
+  languages. Only signals supported by its bridge topology are accepted. These
+  are initial highlights, not a restriction on manual waveform/probe toggles and
+  not saved progress. Keep unrequested reference waves available in gray; never
+  fall back to a generic four-wave preset or infer defaults from localized prose.
   The reviewed half-controlled bridge retains alpha = 30 degrees. The matching
   full-controlled questions use `kind: full-converter`, a local `asset` and a
   reviewed `profile`: `reversed-emf`, `ideal-drive` or `ripple-drive`. Only the

@@ -19,14 +19,14 @@
   import Info from '@lucide/svelte/icons/info';
   import Figure from './Figure.svelte';
   import ConductionCircuit from './ConductionCircuit.svelte';
-  import {defaultMeasurements,type WaveKey,type ConverterValues} from '#lib/visualizations/conduction-measurements';
+  import {createMeasurementSelection,type WaveKey,type ConverterValues} from '#lib/visualizations/conduction-measurements';
   import {parseConductionGeometry,validateConductionSprite,type ConductionGeometry} from '#lib/visualizations/conduction-geometry';
   import {converterCopy,converterIntervals,converterValues,converterMeasurements,type RippleData} from '#lib/visualizations/converter-presentation';
   import {FULL_PROFILES,validateRippleData} from '#lib/visualizations/full-converter-model.mjs';
   import {WAVE_PLOT,waveX,wavePercent} from '#lib/visualizations/converter-wave-scale';
   import type {Locale,Localized,FullConverterProfile} from '#lib/types';
 
-  let {kind='semi-converter',profile,rippleAsset,asset,assetBase,locale,dark,active=false,staticFigure,fallback}:{kind?:'semi-converter'|'full-converter';profile?:FullConverterProfile;rippleAsset?:string;asset:string;assetBase:string;locale:Locale;dark:boolean;active?:boolean;staticFigure:{name:string;size:[number,number,number];caption?:Localized};fallback:Snippet}=$props();
+  let {kind='semi-converter',profile,rippleAsset,defaultSignals,asset,assetBase,locale,dark,active=false,staticFigure,fallback}:{kind?:'semi-converter'|'full-converter';profile?:FullConverterProfile;rippleAsset?:string;defaultSignals:WaveKey[];asset:string;assetBase:string;locale:Locale;dark:boolean;active?:boolean;staticFigure:{name:string;size:[number,number,number];caption?:Localized};fallback:Snippet}=$props();
   const id=$props.id();
   const copy=$derived(converterCopy(locale,profile));
   const intervals=$derived(converterIntervals(profile));
@@ -42,7 +42,7 @@
   const emptyValues:ConverterValues={phase:0,index:0,v:0,i:0,v0:0,i0:0,is1:0,is2:0,is3:0,is4:0,id1:0,id2:0,vs1:0};
   let theta=$state(0),playing=$state(false),reduced=$state(false),staticOpen=$state(false),helpOpen=$state(false),particleDistance=$state(0);
   let flowEnabled=$state(true),visible=$state(false),pageVisible=$state(true),pageAlive=$state(true),modalOpen=$state(false);
-  const enabled=$state({...defaultMeasurements});
+  const enabled=$state(untrack(()=>createMeasurementSelection(defaultSignals)));
   let status=$state('');
   let frame:number|undefined,lastTime:number|undefined;
   const values=$derived(profile==='ripple-drive'&&!ripple?emptyValues:converterValues(theta,profile,ripple));
@@ -55,7 +55,7 @@
   const playLabel=$derived(playing?copy.pause:complete?copy.restart:reduced?copy.jump:copy.play);
   const measurements=$derived(geometry&&(profile!=='ripple-drive'||ripple)?converterMeasurements(geometry,profile,ripple):[]);
   const cursor=$derived(waveX(theta));
-  const selectedCount=$derived(Object.values(enabled).filter(Boolean).length);
+  const selectedCount=$derived(measurements.filter(measurement=>enabled[measurement.key]).length);
   const canAnimate=$derived(ready&&active&&visible&&pageVisible&&pageAlive&&!reduced&&!staticOpen&&!helpOpen&&!modalOpen);
   const flowRunning=$derived(canAnimate&&flowEnabled);
   const flowLabel=$derived(reduced?copy.reducedMotion:flowEnabled?copy.pauseFlow:copy.resumeFlow);

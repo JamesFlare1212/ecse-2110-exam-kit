@@ -36,14 +36,16 @@ async function reveal(page,entry){
     const style=getComputedStyle(card),probe=getComputedStyle(root.querySelector('.probe-line'));
     return {problem:document.querySelector('main').dataset.problem,display:style.display,padding:style.paddingLeft,
       circuitWidth:circuit.getBoundingClientRect().width,transport:getComputedStyle(root.querySelector('.conduction-transport')).display,
-      boundaries:getComputedStyle(root.querySelector('.conduction-boundaries')).position,probeFill:probe.fill,
+      boundaries:getComputedStyle(root.querySelector('.conduction-boundaries')).position,
+      phase:getComputedStyle(root.querySelector('.conduction-phase')).position,phaseIsolation:getComputedStyle(root.querySelector('.conduction-phase')).isolation,probeFill:probe.fill,
       probeStroke:probe.stroke,probeVectorEffect:probe.vectorEffect,
       overflow:document.documentElement.scrollWidth-innerWidth,
       styles:[...document.querySelectorAll('style[data-vite-dev-id],link[rel=stylesheet]')].map(node=>node.dataset.viteDevId??node.getAttribute('href'))};
   });
   assert.equal(state.display,'flex',`Converter layout CSS disappeared: ${JSON.stringify(state)}`);
   assert.equal(state.padding,'12px');
-  assert.equal(state.transport,'grid');assert.equal(state.boundaries,'relative');
+  assert.equal(state.transport,'grid');assert.equal(state.boundaries,'absolute');
+  assert.equal(state.phase,'relative');assert.equal(state.phaseIsolation,'isolate','The tick/handle stack must retain its local positioned anchor');
   assert(state.circuitWidth<=360.5,'Circuit must keep its readable width, not fill the article');
   assert.equal(state.probeFill,'none');assert.notEqual(state.probeStroke,'none');assert.equal(state.probeVectorEffect,'non-scaling-stroke','Circuit child CSS must survive too');
   assert(state.overflow<=1,'No page-wide overflow');

@@ -14,8 +14,9 @@ export interface Formula {
 }
 export interface OriginalFigure { doc:string; page:number; region:Region }
 export type FullConverterProfile = 'reversed-emf' | 'ideal-drive' | 'ripple-drive';
-export type ConverterInteraction = {kind:'semi-converter';asset:string}
-  | {kind:'full-converter';asset:string;profile:FullConverterProfile;rippleAsset?:string};
+export type ConverterSignal = 'v'|'i'|'v0'|'i0'|'is1'|'is2'|'id1'|'id2'|'vs1'|'is3'|'is4';
+export type ConverterInteraction = ({kind:'semi-converter';asset:string}
+  | {kind:'full-converter';asset:string;profile:FullConverterProfile;rippleAsset?:string}) & {defaultSignals:ConverterSignal[]};
 export interface Part {
   id: string;
   label: string;

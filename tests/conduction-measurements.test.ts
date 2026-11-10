@@ -1,16 +1,18 @@
 import {describe,expect,test} from 'bun:test';
 import {readFileSync} from 'node:fs';
-import {conductionMeasurements,currentMarkers,defaultMeasurements,svgPath} from '../src/lib/visualizations/conduction-measurements';
+import {conductionMeasurements,currentMarkers,createMeasurementSelection,svgPath} from '../src/lib/visualizations/conduction-measurements';
 import {parseConductionGeometry,pointOnRoute} from '../src/lib/visualizations/conduction-geometry';
 import {semiConverterCopy} from '../src/lib/visualizations/semi-converter-copy';
 import {papers} from '../content/catalog.server';
 const paper=papers.find(p=>p.exam.id==='p2-f26');
 describe.skipIf(!paper)('linked conduction measurements',()=>{
   const geometry=()=>parseConductionGeometry(JSON.parse(readFileSync(`${paper!.directories.en}/assets/figures/p2-f26-q4-conduction.json`,'utf8')));
-  test('nine stable measurement identities, four defaults and complete localized references',()=>{
+  test('nine stable measurement identities, question-owned defaults and complete localized references',()=>{
     const rows=conductionMeasurements(geometry());
     expect(rows.map(m=>m.key)).toEqual(['v','i','v0','i0','is1','is2','id1','id2','vs1']);
-    expect(Object.keys(defaultMeasurements).filter(key=>defaultMeasurements[key as keyof typeof defaultMeasurements])).toEqual(['v','i','v0','i0']);
+    const enabled=createMeasurementSelection(['i0','v0','is1','is2','id1','id2','i','vs1']);
+    expect(rows.filter(row=>enabled[row.key]).map(row=>row.key)).toEqual(['i','v0','i0','is1','is2','id1','id2','vs1']);
+    expect(enabled.v).toBe(false);
     for(const m of rows){
       expect(m.trace.match(/\b[ML]/g)?.length).toBe(725);expect(m.trace).not.toMatch(/NaN|Infinity/);
       for(const locale of ['en','zh'] as const){expect(semiConverterCopy[locale].measurements[m.key].name.length).toBeGreaterThan(0);expect(semiConverterCopy[locale].measurements[m.key].reference.length).toBeGreaterThan(0);}

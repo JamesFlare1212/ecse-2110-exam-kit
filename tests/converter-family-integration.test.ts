@@ -36,10 +36,10 @@ describe.skipIf(!paper)('all comparable converter problems use the shared intera
   const parts=paper!.exam.problems.flatMap(q=>q.parts).filter(p=>p.interaction);
   expect(parts.map(p=>p.id)).toEqual(['p2-f26-q3-a','p2-f26-q4-a','p2-f26-q5-biv','p2-f26-q6-a']);
   expect(parts.map(p=>p.interaction)).toEqual([
-   {kind:'full-converter',asset:'p2-f26-q3-conduction',profile:'reversed-emf'},
-   {kind:'semi-converter',asset:'p2-f26-q4-conduction'},
-   {kind:'full-converter',asset:'p2-f26-q5-conduction',profile:'ideal-drive'},
-   {kind:'full-converter',asset:'p2-f26-q6-conduction',profile:'ripple-drive',rippleAsset:'p2-f26-q6-ripple'},
+   {kind:'full-converter',asset:'p2-f26-q3-conduction',profile:'reversed-emf',defaultSignals:['i0']},
+   {kind:'semi-converter',asset:'p2-f26-q4-conduction',defaultSignals:['i0','v0','is1','is2','id1','id2','i','vs1']},
+   {kind:'full-converter',asset:'p2-f26-q5-conduction',profile:'ideal-drive',defaultSignals:['v','i','v0','i0']},
+   {kind:'full-converter',asset:'p2-f26-q6-conduction',profile:'ripple-drive',rippleAsset:'p2-f26-q6-ripple',defaultSignals:['v','i','v0','i0']},
   ]);
   for(const p of parts)for(const locale of ['en','zh'] as const){expect(p.figure).toBeTruthy();expect(solutionFigures(p.solution[locale])).toEqual([p.figure!]);}
   expect(paper!.exam.problems[2].figure).toBe('p2-f26-q3');
@@ -73,7 +73,7 @@ describe.skipIf(!paper)('all comparable converter problems use the shared intera
  });
  test('metadata rejects missing/unknown profiles, mismatched ripple settings and unsafe resource paths',()=>{
   const q=paper!.exam.problems[2],base={id:q.id,title:'Test',topic:'Test',points:0,givens:[],lectures:[{doc:'lecture-11-12',page:23,label:'Bridge'}]};
-  const valid={kind:'full-converter',asset:'bridge',profile:'ideal-drive'};
+  const valid={kind:'full-converter',asset:'bridge',profile:'ideal-drive',defaultSignals:['v','i','v0','i0']};
   const accepts=(interaction:unknown)=>questionMetadataSchema.safeParse({...base,parts:{a:{figure:'circuit',interaction}}}).success;
   expect(accepts(valid)).toBe(true);
   for(const invalid of [{...valid,profile:undefined},{...valid,profile:'invented'},{...valid,asset:'../outside'},{...valid,rippleAsset:'data'},{...valid,profile:'ripple-drive'},{...valid,profile:'ripple-drive',rippleAsset:'../data'}])expect(accepts(invalid)).toBe(false);
