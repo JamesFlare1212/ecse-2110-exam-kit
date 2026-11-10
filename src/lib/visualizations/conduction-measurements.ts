@@ -1,5 +1,6 @@
 import {atCycleAngle} from './semi-converter-model.mjs';
 import {pointOnRoute,type ConductionGeometry,type Point} from './conduction-geometry';
+import {waveX} from './converter-wave-scale';
 
 export type WaveKey='v'|'i'|'v0'|'i0'|'is1'|'is2'|'id1'|'id2'|'vs1'|'is3'|'is4';
 export type SemiWaveKey=Exclude<WaveKey,'is3'|'is4'>;
@@ -8,7 +9,7 @@ export interface Signal {key:WaveKey;symbol:string;unit:string;token:string;dash
 export type Measurement=Signal&({kind:'voltage';pins:Point[];ends:Point[]}|{kind:'current';point:Point;arrow:Point[]});
 const samples=[...Array.from({length:721},(_,i)=>i*.5),29.999999,179.999999,209.999999,359.999999].sort((a,b)=>a-b);
 export const svgPath=(points:Point[])=>points.map(([x,y],i)=>`${i?'L':'M'}${x.toFixed(3)},${y.toFixed(3)}`).join(' ');
-const signal=(key:SemiWaveKey,symbol:string,token:string,pattern='',dash=''):Signal&{key:SemiWaveKey}=>({key,symbol,token:`--measurement-${token}`,unit:key[0]==='v'?'Vₘ':'I₀',pattern,dash,trace:svgPath(samples.map(t=>[5+310*t/360,15-atCycleAngle(t)[key]*10]))});
+const signal=(key:SemiWaveKey,symbol:string,token:string,pattern='',dash=''):Signal&{key:SemiWaveKey}=>({key,symbol,token:`--measurement-${token}`,unit:key[0]==='v'?'Vₘ':'I₀',pattern,dash,trace:svgPath(samples.map(t=>[waveX(t),15-atCycleAngle(t)[key]*10]))});
 const signals={
   v:signal('v','v','voltage'),i:signal('i','i','source-current'),
   v0:signal('v0','v₀','output-voltage'),i0:signal('i0','i₀','load-current'),

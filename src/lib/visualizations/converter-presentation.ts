@@ -2,6 +2,7 @@ import {CONDUCTION_INTERVALS,atCycleAngle} from './semi-converter-model.mjs';
 import {FULL_PROFILES,fullIntervals,atFullCycleAngle,validateRippleData} from './full-converter-model.mjs';
 import {semiConverterCopy} from './semi-converter-copy';
 import {conductionMeasurements,svgPath,type Measurement,type WaveKey,type ConverterValues} from './conduction-measurements';
+import {waveX} from './converter-wave-scale';
 import type {ConductionGeometry,RouteKey} from './conduction-geometry';
 import type {FullConverterProfile,Locale} from '../types';
 export type RippleData=ReturnType<typeof validateRippleData>;
@@ -24,7 +25,7 @@ export function converterMeasurements(geometry:ConductionGeometry,profile?:FullC
   return geometry.probes.map(probe=>{
     const key=probe.key,dash=key==='is2'||key==='is4'?'5 3':'';
     return{...probe,symbol:symbols[key]!,unit:key[0]==='v'?'Vₘ':'I₀',token:`--measurement-${tokens[key]}`,pattern:dash?'dashed':'',dash,
-      trace:svgPath(samples.map(t=>[5+310*t/360,15-converterValues(t,profile,ripple)[key]*10]))};
+      trace:svgPath(samples.map(t=>[waveX(t),15-converterValues(t,profile,ripple)[key]*10]))};
   });
 }
 export function converterCopy(locale:Locale,profile?:FullConverterProfile):ConverterCopy{

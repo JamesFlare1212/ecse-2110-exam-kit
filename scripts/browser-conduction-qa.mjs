@@ -80,7 +80,9 @@ try{
   await w.getByRole('button',{name:'播放进度',exact:true}).click();await p.waitForTimeout(100);await p.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await p.waitForFunction(()=>document.querySelector('[data-interaction]')?.getAttribute('data-playing')==='false');
   await w.getByRole('button',{name:'播放进度',exact:true}).click();await p.waitForTimeout(100);await p.locator('a[href="/problems/p2-f26-q5/"]').first().click();await p.waitForSelector('[data-problem="p2-f26-q5"][data-study-ready=true]');assert.equal(await p.locator(widget).count(),0);assert.deepEqual(errors,[]);results.push({localeThemeOffscreenNavigation:true,result:'pass'});await c.close();}
  // Real touch taps and pointer dragging stop at arbitrary angles, not detents.
- {const c=await contextFor('zh','dark',390,'no-preference',{hasTouch:true}),p=await c.newPage();await open(p);await p.waitForSelector(`${widget}[data-ready=true]`);const w=p.locator(widget),track=await w.locator('[data-slot=slider-track]').boundingBox(),y=track.y+track.height/2;
+ {const c=await contextFor('zh','dark',390,'no-preference',{hasTouch:true}),p=await c.newPage();await open(p);await p.waitForSelector(`${widget}[data-ready=true]`);const w=p.locator(widget);
+  // Unlike locator.click(), raw touch coordinates do not scroll an offscreen target.
+  await w.locator('[data-slot=slider-track]').scrollIntoViewIfNeeded();const track=await w.locator('[data-slot=slider-track]').boundingBox(),y=track.y+track.height/2;
   for(const fraction of [.137,.357,.543,.821]){
    await p.touchscreen.tap(track.x+track.width*fraction,y);const angle=Number(await w.getAttribute('data-angle'));assert(Math.abs(angle-fraction*360)<.25);assert(![0,30,180,210,360].includes(angle));
   }

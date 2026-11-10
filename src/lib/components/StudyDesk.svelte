@@ -194,14 +194,28 @@
     <div class="workspace">
       <header class="topbar">
         <div class="toolbar-navigation">
-          <Tooltip.Root><Tooltip.Trigger class={buttonVariants({variant:'ghost',size:'icon',highlightExpanded:false})} data-sidebar-toggle="navigation" onclick={toggleNavigation} aria-label={navigationLabel} aria-controls={compactNavigation?'mobile-exam-navigation':'exam-navigation'} aria-expanded={compactNavigation?navOpen:study.navigationOpen} aria-keyshortcuts="Control+b Meta+b"><PanelLeft aria-hidden="true"/></Tooltip.Trigger><Tooltip.Content>{navigationLabel}{#if !compactNavigation} · Ctrl / ⌘ B{/if}</Tooltip.Content></Tooltip.Root>
+          <Tooltip.Root>
+            <Tooltip.Trigger onclick={toggleNavigation}>
+              {#snippet child({props})}
+                <Button {...props} data-slot="button" variant="ghost" size="icon" highlightExpanded={false} class="active:not-aria-[haspopup]:translate-y-0" data-sidebar-toggle="navigation" aria-label={navigationLabel} aria-controls={compactNavigation?'mobile-exam-navigation':'exam-navigation'} aria-expanded={compactNavigation?navOpen:study.navigationOpen} aria-keyshortcuts="Control+b Meta+b"><PanelLeft aria-hidden="true"/></Button>
+              {/snippet}
+            </Tooltip.Trigger>
+            <Tooltip.Content side="bottom" align="start" sideOffset={8} collisionPadding={12}>{navigationLabel}{#if !compactNavigation} · Ctrl / ⌘ B{/if}</Tooltip.Content>
+          </Tooltip.Root>
           <Separator orientation="vertical" class="h-5 data-vertical:self-center"/>
           <StudyBreadcrumb {catalog} {exam} {problem} locale={study.locale} onselect={select}/>
         </div>
         <div class="toolbar-actions">
           <Tooltip.Root><Tooltip.Trigger class={buttonVariants({variant:'ghost',size:'sm'})} onclick={()=>study.locale=study.locale==='zh'?'en':'zh'} aria-label={t('Switch to English','切换为中文')}><span class="language-switch">{study.locale==='zh'?'EN':'中文'}</span></Tooltip.Trigger><Tooltip.Content>{t('切换为英文','Switch to Chinese')}</Tooltip.Content></Tooltip.Root>
           <Tooltip.Root><Tooltip.Trigger class={buttonVariants({variant:'ghost',size:'icon'})} onclick={()=>study.theme=dark?'light':'dark'} aria-label={t(dark?'切换浅色主题':'切换深色主题',dark?'Switch to light mode':'Switch to dark mode')}>{#if dark}<Sun aria-hidden="true"/>{:else}<Moon aria-hidden="true"/>{/if}</Tooltip.Trigger><Tooltip.Content>{t(dark?'浅色主题':'深色主题',dark?'Light mode':'Dark mode')}</Tooltip.Content></Tooltip.Root>
-          <Tooltip.Root><Tooltip.Trigger class={buttonVariants({variant:'ghost',size:'icon',highlightExpanded:false})} data-sidebar-toggle="references" onclick={toggleReferences} aria-label={referencesLabel} aria-controls={compactReferences?'mobile-reference-sidebar':'reference-sidebar'} aria-expanded={compactReferences?railOpen:study.referencesOpen}><PanelRight aria-hidden="true"/></Tooltip.Trigger><Tooltip.Content>{referencesLabel}</Tooltip.Content></Tooltip.Root>
+          <Tooltip.Root>
+            <Tooltip.Trigger onclick={toggleReferences}>
+              {#snippet child({props})}
+                <Button {...props} data-slot="button" variant="ghost" size="icon" highlightExpanded={false} class="active:not-aria-[haspopup]:translate-y-0" data-sidebar-toggle="references" aria-label={referencesLabel} aria-controls={compactReferences?'mobile-reference-sidebar':'reference-sidebar'} aria-expanded={compactReferences?railOpen:study.referencesOpen}><PanelRight aria-hidden="true"/></Button>
+              {/snippet}
+            </Tooltip.Trigger>
+            <Tooltip.Content side="bottom" align="end" sideOffset={8} collisionPadding={12}>{referencesLabel}</Tooltip.Content>
+          </Tooltip.Root>
         </div>
       </header>
       <div class="reading-layout" data-references={study.referencesOpen?'open':'closed'}>

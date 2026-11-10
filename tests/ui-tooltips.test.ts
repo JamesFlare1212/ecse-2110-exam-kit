@@ -20,6 +20,22 @@ test('tooltips share the workspace provider while source previews remain Hover C
   expect(component('FormulaLink')).toContain('<HoverCard.Content');
 });
 
+test('sidebar toggles use stable native button slots and inward-facing edge-aligned hints', () => {
+  const source = component('StudyDesk');
+  const controls = [...source.matchAll(/<Button\b[^>]*data-sidebar-toggle="(?:navigation|references)"[^>]*>/g)].map(match => match[0]);
+  expect(controls).toHaveLength(2);
+  for (const control of controls) {
+    expect(control).toContain('{...props}');
+    expect(control).toContain('size="icon"');
+    expect(control).toContain('highlightExpanded={false}');
+    expect(control).toContain('active:not-aria-[haspopup]:translate-y-0');
+  }
+  expect(source).toContain('<Tooltip.Trigger onclick={toggleNavigation}>');
+  expect(source).toContain('<Tooltip.Trigger onclick={toggleReferences}>');
+  expect(source).toContain('side="bottom" align="start" sideOffset={8} collisionPadding={12}');
+  expect(source).toContain('side="bottom" align="end" sideOffset={8} collisionPadding={12}');
+});
+
 test('composed waveform tooltips retain their measurement and live-value descriptions', () => {
   const source = component('Converter');
   expect(source).toContain("props['aria-describedby']");

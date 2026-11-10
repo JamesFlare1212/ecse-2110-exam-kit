@@ -23,6 +23,7 @@
   import {parseConductionGeometry,validateConductionSprite,type ConductionGeometry} from '#lib/visualizations/conduction-geometry';
   import {converterCopy,converterIntervals,converterValues,converterMeasurements,type RippleData} from '#lib/visualizations/converter-presentation';
   import {FULL_PROFILES,validateRippleData} from '#lib/visualizations/full-converter-model.mjs';
+  import {WAVE_PLOT,waveX,wavePercent} from '#lib/visualizations/converter-wave-scale';
   import type {Locale,Localized,FullConverterProfile} from '#lib/types';
 
   let {kind='semi-converter',profile,rippleAsset,asset,assetBase,locale,dark,active=false,staticFigure,fallback}:{kind?:'semi-converter'|'full-converter';profile?:FullConverterProfile;rippleAsset?:string;asset:string;assetBase:string;locale:Locale;dark:boolean;active?:boolean;staticFigure:{name:string;size:[number,number,number];caption?:Localized};fallback:Snippet}=$props();
@@ -53,7 +54,7 @@
   const phaseLabel=$derived(`${theta.toFixed(1)}°`);
   const playLabel=$derived(playing?copy.pause:complete?copy.restart:reduced?copy.jump:copy.play);
   const measurements=$derived(geometry&&(profile!=='ripple-drive'||ripple)?converterMeasurements(geometry,profile,ripple):[]);
-  const cursor=$derived(5+310*theta/360);
+  const cursor=$derived(waveX(theta));
   const selectedCount=$derived(Object.values(enabled).filter(Boolean).length);
   const canAnimate=$derived(ready&&active&&visible&&pageVisible&&pageAlive&&!reduced&&!staticOpen&&!helpOpen&&!modalOpen);
   const flowRunning=$derived(canAnimate&&flowEnabled);
@@ -163,7 +164,7 @@
         </div>
         <Field.Field class="conduction-phase">
           <Field.Label for={`${id}-angle`} class="sr-only">{copy.angle} θ = ωt</Field.Label>
-          <Slider type="single" id={`${id}-angle`} min={0} max={360} step={.1} value={sliderAngle} onValueChange={scrub} onpointerdowncapture={pause} onkeydowncapture={pause} thumbLabel={copy.angle} thumbValueText={`${phaseLabel}; ${complete?copy.completed:stateCopy.title}; ${copy.pairs[values.index]}`} thumbDescriptionId={`${id}-help`} class="min-h-8"/>
+          <Slider type="single" id={`${id}-angle`} min={0} max={360} step={.1} thumbPositioning="exact" value={sliderAngle} onValueChange={scrub} onpointerdowncapture={pause} onkeydowncapture={pause} thumbLabel={copy.angle} thumbValueText={`${phaseLabel}; ${complete?copy.completed:stateCopy.title}; ${copy.pairs[values.index]}`} thumbDescriptionId={`${id}-help`} class="h-8"/>
           <div class="conduction-boundaries" aria-hidden="true">{#each boundaries as angle}<span style={`left:${angle/360*100}%`} data-boundary={angle} data-trigger={angle===alpha||angle===180+alpha?true:undefined}>{angleText(angle)}°</span>{/each}</div>
         </Field.Field>
         <output for={`${id}-angle`} class="conduction-angle">θ = {phaseLabel}</output>
@@ -187,10 +188,10 @@
                   {#snippet child({props})}
                     <Button {...props} data-slot="button" variant="ghost" size="sm" class="conduction-wave-row active:not-aria-[haspopup]:translate-y-0" data-signal={m.key} aria-pressed={enabled[m.key]} aria-label={`${copy.measurements[m.key]!.name} ${m.symbol} / ${m.unit}`} aria-describedby={[props['aria-describedby'],`${id}-wave-help ${id}-${m.key}-reference ${id}-${m.key}-value`].filter(Boolean).join(' ')} style={`--paint:var(${enabled[m.key]?m.token:'--conduction-off'})`}>
                       <span class="wave-row-label"><span class="wave-swatch" data-pattern={m.pattern} aria-hidden="true"></span>{m.symbol}/{m.unit}</span>
-                      <svg class="conduction-wave-plot size-auto" viewBox="0 0 320 30" preserveAspectRatio="none" aria-hidden="true">
-                        <defs><clipPath id={`${id}-${m.key}-history`}><rect x="5" y="0" width={Math.max(0,cursor-5)} height="30"/></clipPath></defs>
-                        <line x1="5" x2="315" y1="15" y2="15" class="wave-axis"/>
-                        {#each [30,210] as angle}<line x1={5+310*angle/360} x2={5+310*angle/360} y1="1" y2="29" class="wave-trigger"/>{/each}
+                      <svg class="conduction-wave-plot size-auto" viewBox={`0 0 ${WAVE_PLOT.width} ${WAVE_PLOT.height}`} preserveAspectRatio="none" aria-hidden="true">
+                        <defs><clipPath id={`${id}-${m.key}-history`}><rect x={WAVE_PLOT.start} y="0" width={Math.max(0,cursor-WAVE_PLOT.start)} height={WAVE_PLOT.height}/></clipPath></defs>
+                        <line x1={WAVE_PLOT.start} x2={WAVE_PLOT.end} y1="15" y2="15" class="wave-axis"/>
+                        {#each boundaries as angle}<line x1={waveX(angle)} x2={waveX(angle)} y1="1" y2="29" class="wave-grid" data-wave-boundary={angle} data-trigger={angle===alpha||angle===180+alpha?true:undefined}/>{/each}
                         <path d={m.trace} class="wave-reference" stroke-dasharray={m.dash}/><path d={m.trace} class="wave-trace" clip-path={`url(#${id}-${m.key}-history)`} stroke-dasharray={m.dash}/>
                         <path d={`M ${cursor} 1 L ${cursor} 29`} class="wave-cursor"/>
                         <circle cx={cursor} cy={15-values[m.key]*10} r="2.5" class="wave-dot"/>
@@ -204,7 +205,12 @@
               </Tooltip.Root>
             {/each}
           </div>
-          <div class="conduction-wave-axis" aria-hidden="true"><span>0°</span><span>180°</span><span>360°</span></div>
+          <div class="conduction-wave-axis" aria-hidden="true">
+            <span class="conduction-wave-axis-label">θ = ωt</span>
+            <div class="conduction-wave-scale" style={`--wave-start:${wavePercent(0)}%;--wave-end:${wavePercent(360)}%`}>
+              {#each boundaries as angle}<span style={`left:${wavePercent(angle)}%`} data-wave-angle={angle} data-trigger={angle===alpha||angle===180+alpha?true:undefined}>{angleText(angle)}°</span>{/each}
+            </div>
+          </div>
         </section>
       </div>
       <p class="conduction-note">{copy.measurementNote}</p>

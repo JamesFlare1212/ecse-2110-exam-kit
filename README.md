@@ -111,10 +111,23 @@ PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
   QA_URL=http://127.0.0.1:4173 bun scripts/browser-reader-sections-qa.mjs
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
+  QA_URL=http://127.0.0.1:4173 bun scripts/browser-sidebar-controls-qa.mjs
+PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
   QA_URL=http://127.0.0.1:4173 bun scripts/browser-course-citations-qa.mjs
 ```
 
-阅读区布局回归覆盖 320–2560 px、1180 px 两侧、侧栏开合、中英与深浅主题，检查内容宽度连续变化、手机抽屉及无 JavaScript 的布局。阅读结构回归确认退役导读及其标题不在 DOM 中，验证全局／逐问展开、完整解答和旧记录兼容；历史 `Guide` 源文不再下发到阅读页。课程引用回归逐页核对中英文解答和纠错说明的原页链接、资源可达性、来源查看器与焦点返回；`content:check` 同时拒绝正文中纯文本的讲义引用。核对范围与记录见 [课程资料引用审查](docs/reviews/course-citation-links.md)。
+阅读区布局回归覆盖 320–2560 px、1180 px 两侧、侧栏开合、中英与深浅主题，检查内容宽度连续变化、手机抽屉及无 JavaScript 的布局。顶栏侧栏按钮回归覆盖居中、按压不位移、左右提示边缘对齐、快捷键与手机抽屉。阅读结构回归确认退役导读及其标题不在 DOM 中，验证全局／逐问展开、完整解答和旧记录兼容；历史 `Guide` 源文不再下发到阅读页。课程引用回归逐页核对中英文解答和纠错说明的原页链接、资源可达性、来源查看器与焦点返回；`content:check` 同时拒绝正文中纯文本的讲义引用。核对范围与记录见 [课程资料引用审查](docs/reviews/course-citation-links.md)。
+
+变流器滑块回归覆盖 Q3–Q6、中英／深浅主题、320–1440 px（含 1.5 倍像素密度），核对五个刻度与圆点／填充的真实角坐标、按钮与轨道中心线、圆点盖住刻度的实际像素，以及拖动、点击、0.1° 键盘输入和触屏操作。
+
+```bash
+PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
+  QA_URL=http://127.0.0.1:4173 bun scripts/browser-converter-slider-qa.mjs
+PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
+  QA_URL=http://127.0.0.1:4173 bun scripts/browser-converter-waves-qa.mjs
+```
+
+波形标尺回归直接比对 SVG 的屏幕坐标与 HTML 标签／刻度中心，覆盖 Q3–Q6 各自真实触发角、59° 游标、曲线裁剪终点、侧栏开合与窄屏标签错层；刻度、虚线和曲线必须共用坐标映射，不能只核对百分比或靠固定边距排版。
 
 变流器切题回归须分别对生产预览和开发服务器运行，覆盖组件缓存、前进后退、语言/主题切换及加载途中导航。只检查首次打开无法发现开发模式的样式生命周期问题，见 [调查记录](docs/reviews/converter-style-lifecycle.md)。
 

@@ -67,9 +67,15 @@ jobs:
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-reader-sections-qa.mjs
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-sidebar-controls-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-conduction-qa.mjs
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-conduction-compact-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-converter-slider-qa.mjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
+            QA_URL=http://127.0.0.1:4173 bun scripts/browser-converter-waves-qa.mjs
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
             QA_URL=http://127.0.0.1:4173 bun scripts/browser-conduction-colors-qa.mjs
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/fieldnotes-browser/node_modules/playwright/index.mjs" \
