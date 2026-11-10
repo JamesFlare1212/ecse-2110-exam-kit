@@ -18,7 +18,7 @@ function checkPublishedFiles(directory: string) {
 checkPublishedFiles(root);
 for (const asset of readdirSync(resolve(root, '_astro')).filter(name => /\.(?:js|css)$/.test(name))) {
   const source = readFileSync(resolve(root, '_astro', asset), 'utf8');
-  assert.ok(!/ProblemOverview|WORK IT THROUGH|Before the derivation|problem-overview|overview-prose|solution-section-heading/.test(source), `${asset}: retired overview code/styles must not be published`);
+  assert.ok(!/ProblemOverview|WORK IT THROUGH|Before the derivation|problem-overview|overview-prose|solution-section-heading|problem-subtitle|先写方程，再代入数值。|Start with the equation\. Then work through the numbers\./.test(source), `${asset}: retired reader code/styles must not be published`);
 }
 assert.ok(readFileSync(resolve(root, '404.html'), 'utf8').includes('startup-status'), 'readable static error fallback');
 const ids = problemEntries.map(({ problem }) => problem.id).sort();
@@ -67,7 +67,7 @@ for (const { problem } of problemEntries) {
   const data = revive(payload.data) as import('../content/types').StudyPageData;
   assert.deepEqual(data.problem, createStudyProblem(problem), `${problem.id}: lossless current reader data`);
   assert.ok(!('guide' in data.problem), `${problem.id}: retired overview text is not sent to the reader`);
-  assert.ok(!/problem-overview|overview-title|overview-prose|overview-references|data-problem-guide|solution-section-heading|worked-solution/.test(document), `${problem.id}: retired overview markup is removed`);
+  assert.ok(!/problem-overview|overview-title|overview-prose|overview-references|data-problem-guide|solution-section-heading|worked-solution|problem-subtitle|先写方程，再代入数值。|Start with the equation\. Then work through the numbers\./.test(document), `${problem.id}: retired reader markup is removed`);
   assert.ok(!('problems' in data.exam), `${problem.id}: exam metadata excludes other solutions`);
   for (const exam of data.examIndex) for (const question of exam.problems) {
     assert.deepEqual(Object.keys(question).sort(), ['id', 'number', 'parts', 'title'], `${problem.id}: index contains only navigation metadata`);

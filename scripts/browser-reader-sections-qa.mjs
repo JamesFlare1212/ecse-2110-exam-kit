@@ -11,11 +11,11 @@ const {chromium}=await import(process.env.PLAYWRIGHT_MODULE??'playwright');
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 const base=process.env.QA_URL??'http://127.0.0.1:4173',output='artifacts/reader-sections',checks=[];
 const fontCSS=process.env.QA_CJK_CSS?await readFile(process.env.QA_CJK_CSS,'utf8'):'';
-const retired='.problem-overview,#overview-title,.overview-prose,.overview-references,[data-problem-guide],.worked-solution,.solution-section-heading';
+const retired='.problem-overview,#overview-title,.overview-prose,.overview-references,[data-problem-guide],.worked-solution,.solution-section-heading,.problem-subtitle';
 await mkdir(output,{recursive:true});
 async function removed(page){
   assert.equal(await page.locator(retired).count(),0,'Retired elements must be absent, not hidden');
-  for(const label of ['一步一步推导','先读懂这道题','WORK IT THROUGH','Before the derivation'])assert.equal(await page.getByText(label,{exact:true}).count(),0);
+  for(const label of ['一步一步推导','先读懂这道题','WORK IT THROUGH','Before the derivation','先写方程，再代入数值。','Start with the equation. Then work through the numbers.'])assert.equal(await page.getByText(label,{exact:true}).count(),0);
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
 }
 try{

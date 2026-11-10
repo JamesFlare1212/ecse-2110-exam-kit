@@ -8,7 +8,10 @@ test('the reader starts with the problem heading, without a separate metadata ro
   const css = readFileSync('src/styles/layout.css', 'utf8');
   expect(desk).toMatch(/<main\b[^>]*>\s*<div class="problem-title-row">/);
   expect(desk).not.toContain('problem-meta');
-  expect(css).not.toMatch(/\.(?:problem-meta|metadata-dot)\b/);
+  expect(desk).not.toContain('problem-subtitle');
+  for (const text of ['先写方程，再代入数值。','Start with the equation. Then work through the numbers.'])
+    expect(desk).not.toContain(text);
+  expect(css).not.toMatch(/\.(?:problem-meta|metadata-dot|problem-subtitle)\b/);
   for (const rule of css.matchAll(/\.problem-title-row\s*\{([^}]*)\}/g))
     expect(rule[1]).not.toContain('margin-top');
 });

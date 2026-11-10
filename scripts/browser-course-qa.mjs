@@ -18,6 +18,8 @@ try {
       await page.goto(`${base}/problems/${question.id}/`);
       await page.waitForSelector('main[data-study-ready=true]');
       assert.equal(await page.locator('.part-trigger').count(),question.parts.length);
+      assert.equal(await page.locator('.problem-subtitle').count(),0,'Topic/study-tip subtitles must be removed on every question');
+      assert.equal(await page.locator('main > .problem-title-row + .problem-lectures').count(),1,'No empty subtitle spacer below the title');
       assert.equal(await page.locator('html').getAttribute('lang'),locale==='zh'?'zh-CN':'en');
       assert.equal(await page.locator('.part-trigger[aria-expanded=true]').count(),0);
       assert.equal(await page.locator('.study-figure:visible').count(),(question.figure?1:0)+question.parts.filter(p=>p.questionFigure).length,`${question.id}: no invented or leaked solution diagram in the prompt`);
@@ -44,6 +46,10 @@ try {
       if(question.id==='e2-u00-q3') {
         await page.locator('#problem-title').scrollIntoViewIfNeeded();
         await page.screenshot({path:`artifacts/course-review/reconstructed-${locale}-${theme}-${width}.png`,fullPage:true});
+      }
+      if(question.id==='p2-f26-q4') {
+        await page.locator('#problem-title').scrollIntoViewIfNeeded();
+        await page.screenshot({path:`artifacts/course-review/header-${locale}-${theme}-${width}.png`});
       }
       cases.push({id:question.id,locale,theme,width,parts:question.parts.length});
     }
