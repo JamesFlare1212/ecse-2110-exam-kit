@@ -1,4 +1,4 @@
 # Full offline PDF reconstruction/rendering tools; not needed to build the site.
 -r requirements-figures.txt
-PyMuPDF>=2.0,<3
+PyMuPDF>=2.1,<3
 reportlab>=5.1.0,<6
