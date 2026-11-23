@@ -1,6 +1,6 @@
 schemdraw==0.23
 matplotlib>=3.11.2,<4
-numpy>=2.5.4,<3
+numpy>=2.5.5,<3
 Pillow>=13.0.0,<14
 PyYAML>=6.0.3,<7
 fonttools[woff]>=4.68.0,<5
